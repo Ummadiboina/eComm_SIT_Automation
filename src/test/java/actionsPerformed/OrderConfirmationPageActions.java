@@ -883,12 +883,12 @@ public class OrderConfirmationPageActions extends Environment {
 		Thread.sleep(2000);
 		try {
 			if(BSCstatus.equalsIgnoreCase("Enabled")) {
-				if (driver.findElements(By.xpath("//p[contains(text(),'Spend Cap')]")).size() > 0) {
+				if (driver.findElements(By.xpath("//div[contains(text(),'Spend Cap')]")).size() > 0) {
 
 					log.debug("Bill spend cap section is displayed at "+pageTitle+" page \n");
 					JavascriptExecutor jse = (JavascriptExecutor) driver;
 					jse.executeScript("window.scrollBy(0,150)", "");
-					log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.OrderConfirmationPage.BillSpendCapHeader.getText());
+					//log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.OrderConfirmationPage.BillSpendCapHeader.getText());
 
 					Thread.sleep(2000);
 
@@ -924,7 +924,7 @@ public class OrderConfirmationPageActions extends Environment {
 					Assert.fail("Bill cap section is not present under order summary section in " + pageTitle + " page");
 				}
 			}else if(BSCstatus.equalsIgnoreCase("Disabled")){
-				if (driver.findElements(By.xpath("//p[contains(text(),'Spend Cap')]")).size() > 0) {
+				if (driver.findElements(By.xpath("//div[contains(text(),'Spend Cap')]")).size() > 0) {
 					log.debug("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
 					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
 				}else{

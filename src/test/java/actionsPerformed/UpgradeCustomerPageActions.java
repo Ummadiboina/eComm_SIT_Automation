@@ -510,7 +510,7 @@ public class UpgradeCustomerPageActions extends Environment {
             if (selectBtnEle.isDisplayed()) {
                 Thread.sleep(3000);
                 if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')] | //h3[contains(text(),'preloaded')]")).size()>0) {
-                    tariffNameTxt = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]")).getText();
+                    tariffNameTxt = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')] | //h3[contains(text(),'preloaded')]")).getText();
                     Thread.sleep(2000);
                     log.debug("Tariff:"+tariffNameTxt);
                 }
@@ -1512,7 +1512,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void Otac(String arg) throws IOException, InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(8000);
         log.debug("In OTAC page");
         if (arg.contains("skip")) {
             log.debug("Skipping OTAC entry to verify account");
@@ -1531,7 +1531,7 @@ public class UpgradeCustomerPageActions extends Environment {
             WebElement element = UpgradeCustomerPage.sendCode_OTAC;
             JavascriptExecutor executor = (JavascriptExecutor)driver;
             executor.executeScript("arguments[0].click();", element);
-            Thread.sleep(4000);
+            Thread.sleep(6000);
             log.debug("Clicked on Send Code button");
 
             pageobjects.UpgradeCustomerPage.enterCode_OTAC.sendKeys("999999");
@@ -1967,7 +1967,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void selectTariffFromRecommendedSection() throws IOException, InterruptedException {
         log.debug("Going to select tariff from recommended section");
         Screenshots.captureScreenshot();
-        Thread.sleep(7000);
+        Thread.sleep(5000);
         executor.executeScript("arguments[0].click();", UpgradeCustomerPage.RandomTariffUpgrade);
 
     }
@@ -2565,7 +2565,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnViewAllPhones() throws InterruptedException, IOException {
 
-        Thread.sleep(3000);
+        Thread.sleep(4000);
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.ViewAllPhones);

@@ -1,340 +1,292 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_CC_EndUser_MP_B1.feature");
 formatter.feature({
-  "line": 1,
-  "name": "01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number",
-  "description": "\r\nThis scenario ensures that the Agent shop accepts 10 digit home number",
-  "id": "01-reg-afa-checkout-delivery-validate-10-digit-and-11-contact-number",
+  "comments": [
+    {
+      "line": 1,
+      "value": "# Validating GDPR functionality"
+    },
+    {
+      "line": 2,
+      "value": "# Tags: optional"
+    }
+  ],
+  "line": 4,
+  "name": "01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_CC_EndUser_MP_B1",
+  "description": "\r\nThis Scenario ensures that when the Customer in acquisition journey selects \u0027PAYM Phone\u0027 and lands on delivery page\r\nthen customer should not be displayed with end user question instead the customer should see GDPR consent and placed\r\nan order by opting of Marketing preference \u0027B1\u0027, with CC then the Order consent profile should be created in CMT as expected",
+  "id": "01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 6,
-  "name": "AgentToAcceptTenDigitsPhoneNumber",
+  "line": 11,
+  "name": "01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_CC_EndUser_MP_B1",
   "description": "",
-  "id": "01-reg-afa-checkout-delivery-validate-10-digit-and-11-contact-number;agenttoaccepttendigitsphonenumber",
+  "id": "01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1;01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 5,
+      "line": 10,
       "name": "@Web"
     }
   ]
 });
 formatter.step({
-  "line": 7,
-  "name": "I login to Agent shop",
+  "line": 13,
+  "name": "I am an CFA user and Lands on shop page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
-  "name": "performs Acquisition for New user",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select a valid PayM \u003cDevice\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Select valid \u003cTariffs\u003e from tariffs tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select a valid Handset and Tariff combination",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Select valid \u003cExtras\u003e from extras tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Validate Bill Spend Cap in agent deal builder section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
   "line": 14,
-  "name": "Add your Bill Spend Cap \u003cBillCapAmount\u003e in agent deal builder when BSC is \u003cBSCstatus\u003e",
+  "name": "navigate to PAYM Phones page",
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 15,
-      "value": "#And Dont cap my bill when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
+  "line": 15,
+  "name": "I choose PayM \u003chandset\u003e",
+  "keyword": "And "
+});
+formatter.step({
   "line": 16,
-  "name": "Validate all the Basket content and checkout",
+  "name": "click on the color dropdown",
   "keyword": "And "
 });
 formatter.step({
   "line": 17,
-  "name": "Validate deal summary for applied Bill Spend Cap \u003cBillCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "Then "
+  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
+  "keyword": "And "
 });
 formatter.step({
   "line": 18,
-  "name": "perform all the advisory checks",
-  "keyword": "Then "
+  "name": "select \u003ccolor\u003e color of the connected device",
+  "keyword": "And "
 });
 formatter.step({
   "line": 19,
-  "name": "enter ten digit contact number perform the credit checks using valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and valid \u003cUsername\u003e",
+  "name": "Navigate to device details page",
   "keyword": "And "
 });
 formatter.step({
   "line": 20,
-  "name": "Register the customer with valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and other valid details in delivery page",
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
   "keyword": "And "
 });
 formatter.step({
   "line": 21,
-  "name": "validate register status",
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 22,
-  "name": "Choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e and Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e for \u003cConsumer\u003e when GDPR \u003cstatus\u003e \u003cDeviceType\u003e \u003cDeviceModule\u003e for AFA journey",
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 23,
-  "name": "Choose \u003cDeliveryType\u003e delivery address and delivery time",
+  "name": "I Land on the basket page and choose home delivery option",
   "keyword": "And "
 });
 formatter.step({
   "line": 24,
-  "name": "Pay by card for PAYM device",
-  "keyword": "When "
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
 });
 formatter.step({
   "line": 25,
-  "name": "Order confirmation message should be displayed",
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR to click and collect",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details for Click and collect order and click \u0027Continue on next step\u0027 for payments",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 31,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
   "keyword": "Then "
 });
 formatter.examples({
-  "comments": [
-    {
-      "line": 27,
-      "value": "# And Update Device Plan Link Email Address"
-    },
-    {
-      "line": 28,
-      "value": "# Then CCALink Should be generated"
-    }
-  ],
-  "line": 30,
+  "line": 33,
   "name": "",
   "description": "",
-  "id": "01-reg-afa-checkout-delivery-validate-10-digit-and-11-contact-number;agenttoaccepttendigitsphonenumber;",
+  "id": "01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1;01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1;",
   "rows": [
     {
       "cells": [
-        "Device",
-        "Tariffs",
-        "Extras",
-        "BSCstatus",
-        "BillCapAmount",
-        "DeliveryType",
+        "handset",
+        "color",
         "Firstname",
         "Surname",
         "Username",
-        "HouseNumber",
-        "PostCode",
+        "GDPRstatus",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
         "B1",
         "B2",
         "B3",
         "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "Consumer",
-        "status",
-        "MBBStatus",
         "DeviceType",
-        "DeviceModule"
+        "PreSelected",
+        "KeyEvent"
       ],
-      "line": 31,
-      "id": "01-reg-afa-checkout-delivery-validate-10-digit-and-11-contact-number;agenttoaccepttendigitsphonenumber;;1"
+      "line": 34,
+      "id": "01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1;01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1;;1"
     },
     {
       "cells": [
-        "iphone 7 plus 32GB Black",
-        "Refresh",
-        "Base",
-        "Enabled",
-        "£5",
-        "HomeDelivery",
+        "Galaxy S9",
+        "Lilac Purple",
         "TEST",
         "ACCEPTA",
         "TEST ACCEPTA",
-        "14",
-        "SL11UP",
-        "Select",
-        "Not",
-        "Select",
-        "Not",
-        "Select",
-        "Select",
-        "Not",
-        "Not",
-        "Me",
         "Enabled",
-        "No",
+        "Enabled",
+        "CapMyBill",
+        "£15",
+        "Select",
+        "Not",
+        "Not",
+        "Not",
         "Connected",
-        "Phone"
+        "No",
+        "No"
       ],
-      "line": 32,
-      "id": "01-reg-afa-checkout-delivery-validate-10-digit-and-11-contact-number;agenttoaccepttendigitsphonenumber;;2"
+      "line": 35,
+      "id": "01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1;01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 46562904535,
+  "duration": 29979136006,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 32,
-  "name": "AgentToAcceptTenDigitsPhoneNumber",
+  "line": 35,
+  "name": "01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_CC_EndUser_MP_B1",
   "description": "",
-  "id": "01-reg-afa-checkout-delivery-validate-10-digit-and-11-contact-number;agenttoaccepttendigitsphonenumber;;2",
+  "id": "01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1;01-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-b1;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 5,
+      "line": 10,
       "name": "@Web"
     }
   ]
 });
 formatter.step({
-  "line": 7,
-  "name": "I login to Agent shop",
+  "line": 13,
+  "name": "I am an CFA user and Lands on shop page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
-  "name": "performs Acquisition for New user",
+  "line": 14,
+  "name": "navigate to PAYM Phones page",
   "keyword": "And "
 });
 formatter.step({
-  "line": 9,
-  "name": "Select a valid PayM iphone 7 plus 32GB Black",
+  "line": 15,
+  "name": "I choose PayM Galaxy S9",
   "matchedColumns": [
     0
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 10,
-  "name": "Select valid Refresh from tariffs tab",
+  "line": 16,
+  "name": "click on the color dropdown",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "select Lilac Purple color of the connected device",
   "matchedColumns": [
     1
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 11,
-  "name": "select a valid Handset and Tariff combination",
+  "line": 19,
+  "name": "Navigate to device details page",
   "keyword": "And "
 });
 formatter.step({
-  "line": 12,
-  "name": "Select valid Base from extras tab",
+  "line": 20,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
   "matchedColumns": [
-    2
+    6
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 13,
-  "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
+  "line": 22,
+  "name": "Choose your bill cap CapMyBill £15 when BSC is Enabled",
   "matchedColumns": [
+    6,
+    7,
+    8
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR to click and collect",
+  "matchedColumns": [
+    2,
     3
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 14,
-  "name": "Add your Bill Spend Cap £5 in agent deal builder when BSC is Enabled",
+  "line": 26,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Not Not with No for Connected in delivery page when GDPR is Enabled and No",
   "matchedColumns": [
-    3,
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 15,
-      "value": "#And Dont cap my bill when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 16,
-  "name": "Validate all the Basket content and checkout",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Validate deal summary for applied Bill Spend Cap £5 when BSC is Enabled",
-  "matchedColumns": [
-    3,
-    4
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 18,
-  "name": "perform all the advisory checks",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 19,
-  "name": "enter ten digit contact number perform the credit checks using valid TEST, ACCEPTA, 14, SL11UP and valid TEST ACCEPTA",
-  "matchedColumns": [
-    6,
-    7,
-    8,
+    5,
     9,
-    10
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Register the customer with valid TEST, ACCEPTA, 14, SL11UP and other valid details in delivery page",
-  "matchedColumns": [
-    6,
-    7,
-    9,
-    10
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "validate register status",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Choose Business preferences Select Not Select Not and Channel Preferences Select Select Not Not for Me when GDPR Enabled Connected Phone for AFA journey",
-  "matchedColumns": [
-    16,
-    17,
-    18,
-    19,
-    20,
-    22,
-    23,
+    10,
     11,
-    12,
     13,
     14,
     15
@@ -342,1350 +294,65 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
-  "line": 23,
-  "name": "Choose HomeDelivery delivery address and delivery time",
-  "matchedColumns": [
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Pay by card for PAYM device",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 25,
-  "name": "Order confirmation message should be displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
-});
-formatter.result({
-  "duration": 4278360914,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
-});
-formatter.result({
-  "duration": 13690818981,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iphone 7 plus 32GB Black",
-      "offset": 20
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
-});
-formatter.result({
-  "duration": 36718355562,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Refresh",
-      "offset": 13
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
-});
-formatter.result({
-  "duration": 28006350104,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
-});
-formatter.result({
-  "duration": 14840991526,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Base",
-      "offset": 13
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_valid_Random_from_extras_tab(String)"
-});
-formatter.result({
-  "duration": 4122985975,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 66
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
-});
-formatter.result({
-  "duration": 25763072427,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "£5",
-      "offset": 24
-    },
-    {
-      "val": "Enabled",
-      "offset": 61
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
-});
-formatter.result({
-  "duration": 45037284521,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
-});
-formatter.result({
-  "duration": 22735092049,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "£5",
-      "offset": 49
-    },
-    {
-      "val": "Enabled",
-      "offset": 64
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateYourCapInAgentDealSummary(String,String)"
-});
-formatter.result({
-  "duration": 28538855679,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.advisory_checks()"
-});
-formatter.result({
-  "duration": 23452971610,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 69
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 75
-    },
-    {
-      "val": "14",
-      "offset": 84
-    },
-    {
-      "val": "SL11UP",
-      "offset": 88
-    },
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 105
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.enter_ten_digit_contact_number_perform_the_credit_checks(String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 95291048027,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 33
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 39
-    },
-    {
-      "val": "14",
-      "offset": 48
-    },
-    {
-      "val": "SL11UP",
-      "offset": 52
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.register_the_customer(String,String,String,String)"
-});
-formatter.result({
-  "duration": 17612430957,
-  "error_message": "java.lang.AssertionError: Unable to Register customer , please see the failure screenshot\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.register_the_customer(E2EOrderPlaced_Steps.java:3205)\r\n\tat ✽.And Register the customer with valid TEST, ACCEPTA, 14, SL11UP and other valid details in delivery page(01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number.feature:20)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Validate_Register_Status()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Select",
-      "offset": 28
-    },
-    {
-      "val": "Not",
-      "offset": 35
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Select",
-      "offset": 74
-    },
-    {
-      "val": "Select",
-      "offset": 81
-    },
-    {
-      "val": "Not",
-      "offset": 88
-    },
-    {
-      "val": "Not",
-      "offset": 92
-    },
-    {
-      "val": "Me",
-      "offset": 100
-    },
-    {
-      "val": "Enabled",
-      "offset": 113
-    },
-    {
-      "val": "Connected",
-      "offset": 121
-    },
-    {
-      "val": "Phone",
-      "offset": 131
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences_AFA(String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.pay_by_card_payn_device()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20495691393,
-  "status": "passed"
-});
-formatter.uri("05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages.feature");
-formatter.feature({
-  "line": 1,
-  "name": "05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages",
-  "description": "This scenario ensures that when the pop up is displayed then the links in the pop up should launch the respective pages",
-  "id": "05-reg-cfa--cookie-pop-up-for-the-shop-pages",
-  "keyword": "Feature"
-});
-formatter.before({
-  "duration": 104141703971,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 5,
-  "name": "DrupalPageCookiesPopUp",
-  "description": "",
-  "id": "05-reg-cfa--cookie-pop-up-for-the-shop-pages;drupalpagecookiespopup",
-  "type": "scenario",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "line": 4,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 7,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "a cookies pop up should be displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Click on \u0027cookie policy\u0027 link",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "the \u0027cookie policy\u0027 page should be opened",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 11,
-  "name": "Delete all cookies",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "launch the shop phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on \u0027manage cookies\u0027 link",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "the \u0027manage cookies\u0027 page should be opened",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 15,
-  "name": "Delete all cookies",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "launch the shop phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "click on \u0027close icon\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "The Shop home page should be displayed without the cookies",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 807798493,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.a_cookies_pop_up_should_be_displayed()"
-});
-formatter.result({
-  "duration": 753475251,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.clickOnCookiePolicyLink()"
-});
-formatter.result({
-  "duration": 4156013382,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.theCookiePolicyPageShouldBeOpened()"
-});
-formatter.result({
-  "duration": 6807307273,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Delete_all_cookies()"
-});
-formatter.result({
-  "duration": 2851616086,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.launch_the_shop_phones_page()"
-});
-formatter.result({
-  "duration": 9290309075,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.clickOnManageCookiesLink()"
-});
-formatter.result({
-  "duration": 3832126932,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.theManageCookiesPageShouldBeOpened()"
-});
-formatter.result({
-  "duration": 5795934561,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Delete_all_cookies()"
-});
-formatter.result({
-  "duration": 3581800544,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.launch_the_shop_phones_page()"
-});
-formatter.result({
-  "duration": 141399517204,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.clickOnCloseIcon()"
-});
-formatter.result({
-  "duration": 28477633429,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.theShopHomePageShouldBeDisplayedWithoutTheCookies()"
-});
-formatter.result({
-  "duration": 23404530966,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 20080191872,
-  "status": "passed"
-});
-formatter.uri("06_Reg_CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk.feature");
-formatter.feature({
-  "line": 1,
-  "name": "06_Reg_CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk",
-  "description": "",
-  "id": "06-reg-cfa-payg-freesim-phones-delivery-page-mark-mandatory-fields-with-asterisk",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "CFA_PAYG_sims_Asterisk validation",
-  "description": "",
-  "id": "06-reg-cfa-payg-freesim-phones-delivery-page-mark-mandatory-fields-with-asterisk;cfa-payg-sims-asterisk-validation",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PayG SIMO page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "Select a pay as you go bundle",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify asterisk is displayed against mandatory fields of \"PAYG Free sim\"",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 10,
-      "value": "#Add url redirection step above"
-    },
-    {
-      "line": 11,
-      "value": "#And I enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e"
-    }
-  ],
-  "line": 12,
-  "name": "Enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e for GDPR \u003cCheckBox\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "comments": [
-    {
-      "line": 15,
-      "value": "#Close the browser"
-    }
-  ],
-  "line": 16,
-  "name": "",
-  "description": "",
-  "id": "06-reg-cfa-payg-freesim-phones-delivery-page-mark-mandatory-fields-with-asterisk;cfa-payg-sims-asterisk-validation;",
-  "rows": [
-    {
-      "cells": [
-        "Firstname",
-        "Surname",
-        "CheckBox"
-      ],
-      "line": 17,
-      "id": "06-reg-cfa-payg-freesim-phones-delivery-page-mark-mandatory-fields-with-asterisk;cfa-payg-sims-asterisk-validation;;1"
-    },
-    {
-      "cells": [
-        "TEST",
-        "ACCEPTA",
-        "No"
-      ],
-      "line": 18,
-      "id": "06-reg-cfa-payg-freesim-phones-delivery-page-mark-mandatory-fields-with-asterisk;cfa-payg-sims-asterisk-validation;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 119538194586,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 18,
-  "name": "CFA_PAYG_sims_Asterisk validation",
-  "description": "",
-  "id": "06-reg-cfa-payg-freesim-phones-delivery-page-mark-mandatory-fields-with-asterisk;cfa-payg-sims-asterisk-validation;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PayG SIMO page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "Select a pay as you go bundle",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify asterisk is displayed against mandatory fields of \"PAYG Free sim\"",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 10,
-      "value": "#Add url redirection step above"
-    },
-    {
-      "line": 11,
-      "value": "#And I enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e"
-    }
-  ],
-  "line": 12,
-  "name": "Enter details in Delivery Page TEST and ACCEPTA for GDPR No",
-  "matchedColumns": [
-    0,
-    1,
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 720380956,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
-});
-formatter.result({
-  "duration": 194454322108,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.selectAPayAsYouGoBundle()"
-});
-formatter.result({
-  "duration": 11161011218,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk_PAYG_sim_journey()"
-});
-formatter.result({
-  "duration": 356711423,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "PAYG Free sim",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 5686795797,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 31
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 40
-    },
-    {
-      "val": "No",
-      "offset": 57
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
-});
-formatter.result({
-  "duration": 63648304109,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "duration": 23455725693,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 19865447726,
-  "status": "passed"
-});
-formatter.uri("07_Reg_CFA_PayG_Freesim_To_Show_BigBundle_DataRollOver_In_DeliveryPage.feature");
-formatter.feature({
-  "line": 1,
-  "name": "07_Reg_CFA_PayG_Freesim_To_Show_BigBundle_DataRollOver_In_DeliveryPage",
-  "description": "This scenario ensures that when the customer on acquisition journey selects Big Bundle \u0027Pay As You Go\u0027 Sim\r\nthen Data Roll over copy text is displayed in the tile info and Delivery page",
-  "id": "07-reg-cfa-payg-freesim-to-show-bigbundle-datarollover-in-deliverypage",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 6,
-  "name": "CFA_PayG_Simo_To_Show_BigBundle_DataRollOver_In_Delivery_Page",
-  "description": "",
-  "id": "07-reg-cfa-payg-freesim-to-show-bigbundle-datarollover-in-deliverypage;cfa-payg-simo-to-show-bigbundle-datarollover-in-delivery-page",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 7,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "navigate to PayG SIMO page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select a pay as you go data roll over \u003cFreeSim_Type\u003e and validate Data Roll over copy for \u003cTariff_Value\u003e and \u003cData\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Validate Your order section in Delivery page \u003cTariff_Value\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e for GDPR \u003cCheckBox\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Free Sim order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 14,
-  "name": "",
-  "description": "",
-  "id": "07-reg-cfa-payg-freesim-to-show-bigbundle-datarollover-in-deliverypage;cfa-payg-simo-to-show-bigbundle-datarollover-in-delivery-page;",
-  "rows": [
-    {
-      "cells": [
-        "Firstname",
-        "Surname",
-        "FreeSim_Type",
-        "Tariff_Value",
-        "Data",
-        "CheckBox"
-      ],
-      "line": 15,
-      "id": "07-reg-cfa-payg-freesim-to-show-bigbundle-datarollover-in-deliverypage;cfa-payg-simo-to-show-bigbundle-datarollover-in-delivery-page;;1"
-    },
-    {
-      "cells": [
-        "TEST",
-        "ACCEPTA",
-        "BigBundle",
-        "£15",
-        "5GB",
-        "No"
-      ],
-      "line": 16,
-      "id": "07-reg-cfa-payg-freesim-to-show-bigbundle-datarollover-in-deliverypage;cfa-payg-simo-to-show-bigbundle-datarollover-in-delivery-page;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 102375286795,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 16,
-  "name": "CFA_PayG_Simo_To_Show_BigBundle_DataRollOver_In_Delivery_Page",
-  "description": "",
-  "id": "07-reg-cfa-payg-freesim-to-show-bigbundle-datarollover-in-deliverypage;cfa-payg-simo-to-show-bigbundle-datarollover-in-delivery-page;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 7,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "navigate to PayG SIMO page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select a pay as you go data roll over BigBundle and validate Data Roll over copy for £15 and 5GB",
-  "matchedColumns": [
-    2,
-    3,
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Validate Your order section in Delivery page £15",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Enter details in Delivery Page TEST and ACCEPTA for GDPR No",
-  "matchedColumns": [
-    0,
-    1,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Free Sim order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 547797070,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
-});
-formatter.result({
-  "duration": 165487680062,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "BigBundle",
-      "offset": 38
-    },
-    {
-      "val": "£15",
-      "offset": 85
-    },
-    {
-      "val": "5GB",
-      "offset": 93
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.selectAPayAsYouGoBundleHavingDataRollOver(String,String,String)"
-});
-formatter.result({
-  "duration": 32189548642,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "£15",
-      "offset": 45
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.validateYourOrderSectionDeliveryPage(String)"
-});
-formatter.result({
-  "duration": 10131736258,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 31
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 40
-    },
-    {
-      "val": "No",
-      "offset": 57
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
-});
-formatter.result({
-  "duration": 63362039098,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.free_Sim_order_confirmation_is_displayed()"
-});
-formatter.result({
-  "duration": 2443156783,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 19836982146,
-  "status": "passed"
-});
-formatter.uri("08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number.feature");
-formatter.feature({
-  "line": 1,
-  "name": "08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number",
-  "description": "\r\nThis scenario ensures that the consumer shop accepts 10 digit home number",
-  "id": "08-reg-cfa-phones-checkout-delivery-validate-10-digit-contact-number",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 6,
-  "name": "ConsumerToAcceptTenDigitsPhoneNumber",
-  "description": "",
-  "id": "08-reg-cfa-phones-checkout-delivery-validate-10-digit-contact-number;consumertoaccepttendigitsphonenumber",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 8,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 9,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 11,
-      "value": "#provide handset which is already set as delayed delivery"
-    }
-  ],
-  "line": 12,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Navigate to View tariff page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Validate Basket Page for applied Bill Spend Cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 22,
-      "value": "#The below statement also checks for 0 in case of a mobile number"
-    }
-  ],
-  "line": 23,
-  "name": "enter a \u003cFirstname\u003e and \u003cSurname\u003e and ten digit home number",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 24,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR"
-    }
-  ],
-  "line": 25,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
   "line": 27,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 29,
-  "name": "order confirmation is displayed",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 30,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "comments": [
-    {
-      "line": 32,
-      "value": "#Step 12 and Step 13 of ALM clubbed together"
-    },
-    {
-      "line": 33,
-      "value": "#Close the browser"
-    }
-  ],
-  "line": 34,
-  "name": "",
-  "description": "",
-  "id": "08-reg-cfa-phones-checkout-delivery-validate-10-digit-contact-number;consumertoaccepttendigitsphonenumber;",
-  "rows": [
-    {
-      "cells": [
-        "handset",
-        "Firstname",
-        "Surname",
-        "Username",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount",
-        "color",
-        "consumer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "PreSelected"
-      ],
-      "line": 35,
-      "id": "08-reg-cfa-phones-checkout-delivery-validate-10-digit-contact-number;consumertoaccepttendigitsphonenumber;;1"
-    },
-    {
-      "cells": [
-        "iPhone X",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA",
-        "Enabled",
-        "CapMyBill",
-        "£5",
-        "Space Grey",
-        "Me",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "No"
-      ],
-      "line": 36,
-      "id": "08-reg-cfa-phones-checkout-delivery-validate-10-digit-contact-number;consumertoaccepttendigitsphonenumber;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 103412678550,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 36,
-  "name": "ConsumerToAcceptTenDigitsPhoneNumber",
-  "description": "",
-  "id": "08-reg-cfa-phones-checkout-delivery-validate-10-digit-contact-number;consumertoaccepttendigitsphonenumber;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 8,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 9,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I choose PayM iPhone X",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 11,
-      "value": "#provide handset which is already set as delayed delivery"
-    }
-  ],
-  "line": 12,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "select Space Grey color of the connected device",
-  "matchedColumns": [
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Navigate to View tariff page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "name": "land on the payment page and input TEST ACCEPTA and other details for Click and collect order and click \u0027Continue on next step\u0027 for payments",
   "matchedColumns": [
     4
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 18,
-  "name": "Choose your bill cap CapMyBill £5 when BSC is Enabled",
-  "matchedColumns": [
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Validate Basket Page for applied Bill Spend Cap CapMyBill £5 when BSC is Enabled",
-  "matchedColumns": [
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 22,
-      "value": "#The below statement also checks for 0 in case of a mobile number"
-    }
-  ],
-  "line": 23,
-  "name": "enter a TEST and ACCEPTA and ten digit home number",
-  "matchedColumns": [
-    1,
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 24,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR"
-    }
-  ],
-  "line": 25,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    17,
-    8
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
+  "line": 28,
   "name": "Continue to Agreements page and confirm all the agreement checks",
   "keyword": "And "
 });
 formatter.step({
-  "line": 28,
+  "line": 29,
   "name": "Continue to Review page and review the order",
   "keyword": "And "
 });
 formatter.step({
-  "line": 29,
+  "line": 30,
   "name": "order confirmation is displayed",
-  "keyword": "When "
+  "keyword": "Then "
 });
 formatter.step({
-  "line": 30,
-  "name": "Choose Me Enabled Business preferences Not Not Select Not And Channel Preferences Not Select Not Not No Connected No",
-  "matchedColumns": [
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20
-  ],
+  "line": 31,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
   "keyword": "Then "
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 572686095,
+  "duration": 1638073561,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 132303574468,
+  "duration": 57542112842,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "iPhone X",
+      "val": "Galaxy S9",
       "offset": 14
     }
   ],
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 28760390186,
+  "duration": 29688271733,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 30027303360,
+  "duration": 16591677271,
   "status": "passed"
 });
 formatter.match({
@@ -1698,34 +365,34 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 201929628,
+  "duration": 322638415,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Space Grey",
+      "val": "Lilac Purple",
       "offset": 7
     }
   ],
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 17646567500,
+  "duration": 15985622476,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_View_tariff_page()"
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 102224235859,
+  "duration": 31521875194,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16170443828,
+  "duration": 14405754765,
   "status": "passed"
 });
 formatter.match({
@@ -1738,7 +405,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 39676527618,
+  "duration": 40564751768,
   "status": "passed"
 });
 formatter.match({
@@ -1748,46 +415,25 @@ formatter.match({
       "offset": 21
     },
     {
-      "val": "£5",
+      "val": "£15",
       "offset": 31
     },
     {
       "val": "Enabled",
-      "offset": 46
+      "offset": 47
     }
   ],
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 68633619913,
+  "duration": 70048340182,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 39788425774,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": " CapMyBill",
-      "offset": 47
-    },
-    {
-      "val": "£5",
-      "offset": 58
-    },
-    {
-      "val": "Enabled",
-      "offset": 73
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillCapIn_BasketPage(String,String,String)"
-});
-formatter.result({
-  "duration": 31220532958,
+  "duration": 39147388261,
   "status": "passed"
 });
 formatter.match({
@@ -1800,41 +446,550 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 34078885612,
+  "duration": 32317187323,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
       "val": "TEST",
-      "offset": 8
+      "offset": 6
     },
     {
       "val": "ACCEPTA",
-      "offset": 17
+      "offset": 15
     }
   ],
-  "location": "E2EOrderPlaced_Steps.enter_a_digit_home_number(String,String)"
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr_ClickAndCollect(String,String)"
 });
 formatter.result({
-  "duration": 82356439270,
+  "duration": 43669895490,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Me",
-      "offset": 38
+      "val": "Select",
+      "offset": 71
     },
+    {
+      "val": "Not",
+      "offset": 78
+    },
+    {
+      "val": "Not",
+      "offset": 82
+    },
+    {
+      "val": "No",
+      "offset": 91
+    },
+    {
+      "val": "Connected",
+      "offset": 98
+    },
+    {
+      "val": "Enabled",
+      "offset": 138
+    },
+    {
+      "val": "No",
+      "offset": 150
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 67935105725,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_ClickAndCollect_CreditCheck(String)"
+});
+formatter.result({
+  "duration": 225723362496,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "duration": 70332138857,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 56531624809,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 5878136071,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20042281517,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17017083728,
+  "status": "passed"
+});
+formatter.uri("02_CFA_NewConnection_PAYM_Tablet_With_Accessory_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_All.feature");
+formatter.feature({
+  "line": 1,
+  "name": "02_CFA_NewConnection_PAYM_Tablet_With_Accessory_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_All",
+  "description": "\r\nThis Scenario ensures that when the Customer in acquisition journey selects \u0027PAYM Tablet\u0027 and any accessories with home\r\ndelivery option and lands on delivery page then customer should not be displayed with end user question instead the customer\r\nshould see GDPR consent and placed an order by opting of Marketing preference \u0027All\u0027, then the Order consent profile should\r\nbe created in CMT as expected",
+  "id": "02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 9,
+  "name": "02_CFA_NewConnection_PAYM_Tablet_With_Accessory_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_All",
+  "description": "",
+  "id": "02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 11,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 12,
+  "name": "navigate to PAYM Tablets page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Select PayM Tablet \u003ctabletname\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Choose some Accesssory",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 27,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 29,
+  "name": "",
+  "description": "",
+  "id": "02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;",
+  "rows": [
+    {
+      "cells": [
+        "Firstname",
+        "Surname",
+        "Username",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "tabletname",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 30,
+      "id": "02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;;1"
+    },
+    {
+      "cells": [
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Enabled",
+        "CapMyBill",
+        "£15",
+        "iPad Pro 10.5 inch",
+        "Select",
+        "Select",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 31,
+      "id": "02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 26767546947,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 31,
+  "name": "02_CFA_NewConnection_PAYM_Tablet_With_Accessory_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_All",
+  "description": "",
+  "id": "02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;02-cfa-newconnection-paym-tablet-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 11,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 12,
+  "name": "navigate to PAYM Tablets page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Select PayM Tablet iPad Pro 10.5 inch",
+  "matchedColumns": [
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Choose your bill cap CapMyBill £15 when BSC is Enabled",
+  "matchedColumns": [
+    3,
+    4,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Choose some Accesssory",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Select Select with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 27,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1333483140,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
+});
+formatter.result({
+  "duration": 57284484186,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "iPad Pro 10.5 inch",
+      "offset": 19
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.Choose_PayMTablet(String)"
+});
+formatter.result({
+  "duration": 28844616577,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 43782905235,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+});
+formatter.result({
+  "duration": 14268196901,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
     {
       "val": "Enabled",
       "offset": 54
     }
   ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 78575660660,
+  "duration": 40270785346,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£15",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 47
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 69181762224,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
+});
+formatter.result({
+  "duration": 20800594261,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "duration": 40406817449,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 32440683394,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+});
+formatter.result({
+  "duration": 37651264952,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Select",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 78
+    },
+    {
+      "val": "Select",
+      "offset": 85
+    },
+    {
+      "val": "No",
+      "offset": 97
+    },
+    {
+      "val": "Connected",
+      "offset": 104
+    },
+    {
+      "val": "Enabled",
+      "offset": 144
+    },
+    {
+      "val": "No",
+      "offset": 156
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 67691029137,
   "status": "passed"
 });
 formatter.match({
@@ -1847,5013 +1002,160 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "duration": 41493410833,
-  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number.feature:26)\r\n",
-  "status": "failed"
+  "duration": 154493452375,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 84959136723,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 56170588680,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Not",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 43
-    },
-    {
-      "val": "Select",
-      "offset": 47
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Not",
-      "offset": 82
-    },
-    {
-      "val": "Select",
-      "offset": 86
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20440669899,
+  "duration": 5949292672,
   "status": "passed"
 });
-formatter.uri("102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature");
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20038497838,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17003202274,
+  "status": "passed"
+});
+formatter.uri("03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B2B3.feature");
 formatter.feature({
   "line": 1,
-  "name": "102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature",
-  "description": "",
-  "id": "102-fr-upfront-cfa-paymtablets-till-tne.feature",
+  "name": "03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B2B3",
+  "description": "\r\nThis Scenario ensures that when the Customer in acquisition journey selects \u0027PAYM MBB\u0027 device with home delivery option\r\nand lands on delivery page then customer should not be displayed with end user question instead the customer should see\r\nGDPR consent  and placed an order by opting of Marketing preference \u0027B2, B3\u0027, then the Order consent profile should be created in CMT as expected",
+  "id": "03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 4,
-  "name": "102_FR_Upfront_CFA_PayMTablets_Till_TnE",
+  "line": 8,
+  "name": "03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B2B3",
   "description": "",
-  "id": "102-fr-upfront-cfa-paymtablets-till-tne.feature;102-fr-upfront-cfa-paymtablets-till-tne",
+  "id": "03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3;03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 3,
+      "line": 7,
       "name": "@Web"
     }
   ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available \u003cDevice\u003e Tablet",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
 });
 formatter.step({
   "line": 10,
-  "name": "select \u003ccolor\u003e color of the connected device",
+  "name": "Navigate to PayM MBB page",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "select \u003cCapacity\u003e capacity of the connected device",
+  "name": "I choose MBB PayM \u003cDevice_Name\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "#And Click on Dont Select Cap My Bill CTA"
-    }
-  ],
-  "line": 14,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 27,
-  "name": "",
-  "description": "",
-  "id": "102-fr-upfront-cfa-paymtablets-till-tne.feature;102-fr-upfront-cfa-paymtablets-till-tne;",
-  "rows": [
-    {
-      "cells": [
-        "Device",
-        "tariffAmt",
-        "dataValue",
-        "color",
-        "Capacity",
-        "Firstname",
-        "Surname",
-        "consumer",
-        "BSCstatus",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "upFront",
-        "term",
-        "data",
-        "PreSelected"
-      ],
-      "line": 28,
-      "id": "102-fr-upfront-cfa-paymtablets-till-tne.feature;102-fr-upfront-cfa-paymtablets-till-tne;;1"
-    },
-    {
-      "cells": [
-        "iPad Pro 10.5 inch",
-        "£39",
-        "8GB",
-        "Space Grey",
-        "512GB",
-        "Test",
-        "Accepta",
-        "Me",
-        "Enabled",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "avg",
-        "avg",
-        "avg",
-        "No"
-      ],
-      "line": 29,
-      "id": "102-fr-upfront-cfa-paymtablets-till-tne.feature;102-fr-upfront-cfa-paymtablets-till-tne;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 46323042387,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 29,
-  "name": "102_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "102-fr-upfront-cfa-paymtablets-till-tne.feature;102-fr-upfront-cfa-paymtablets-till-tne;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available iPad Pro 10.5 inch Tablet",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select Space Grey color of the connected device",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select 512GB capacity of the connected device",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Build your plan with avg avg and avg",
-  "matchedColumns": [
-    20,
-    21,
-    22
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "#And Click on Dont Select Cap My Bill CTA"
-    }
-  ],
-  "line": 14,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    17,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Choose Me Enabled Business preferences Select Not Not Not And Channel Preferences Select Not Not Not No Connected No",
-  "matchedColumns": [
-    7,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    23
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 747807475,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
-});
-formatter.result({
-  "duration": 133116340007,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPad Pro 10.5 inch",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
-});
-formatter.result({
-  "duration": 64830499681,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 10713369760,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 206160907,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Space Grey",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 21738579068,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "512GB",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
-});
-formatter.result({
-  "duration": 23432127358,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "avg",
-      "offset": 21
-    },
-    {
-      "val": "avg",
-      "offset": 25
-    },
-    {
-      "val": "avg",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
-});
-formatter.result({
-  "duration": 314952037126,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 38095053374,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 34122431053,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 345533357,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Delivery page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 5663413343,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 6
-    },
-    {
-      "val": "Accepta",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 37387819252,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78700580367,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 969584052,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Payments page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 26501591684,
-  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Not",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Select",
-      "offset": 82
-    },
-    {
-      "val": "Not",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20407173922,
-  "status": "passed"
-});
-formatter.uri("111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature");
-formatter.feature({
-  "line": 1,
-  "name": "111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature",
-  "description": "",
-  "id": "111-fr-upfront-cfa-paymtablets-till-tne.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "111_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "111-fr-upfront-cfa-paymtablets-till-tne.feature;111-fr-upfront-cfa-paymtablets-till-tne",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available \u003cDevice\u003e Tablet",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 8,
-      "value": "#And click on the color dropdown"
-    },
-    {
-      "line": 9,
-      "value": "#And verify the name of the colour is next to the colour tile in CFAPhoneColour"
-    },
-    {
-      "line": 10,
-      "value": "#And select \u003ccolor\u003e color of the connected device"
-    },
-    {
-      "line": 11,
-      "value": "#And select \u003cCapacity\u003e capacity of the connected device"
-    }
-  ],
-  "line": 12,
-  "name": "Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 14,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 27,
-  "name": "",
-  "description": "",
-  "id": "111-fr-upfront-cfa-paymtablets-till-tne.feature;111-fr-upfront-cfa-paymtablets-till-tne;",
-  "rows": [
-    {
-      "cells": [
-        "Device",
-        "tariffAmt",
-        "dataValue",
-        "color",
-        "Capacity",
-        "Firstname",
-        "Surname",
-        "consumer",
-        "BSCstatus",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "upFront",
-        "term",
-        "data",
-        "PreSelected"
-      ],
-      "line": 28,
-      "id": "111-fr-upfront-cfa-paymtablets-till-tne.feature;111-fr-upfront-cfa-paymtablets-till-tne;;1"
-    },
-    {
-      "cells": [
-        "Galaxy Book 10.6",
-        "£39",
-        "8GB",
-        "Gold",
-        "64GB",
-        "Test",
-        "Accepta",
-        "Me",
-        "Enabled",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "max",
-        "min",
-        "max",
-        "No"
-      ],
-      "line": 29,
-      "id": "111-fr-upfront-cfa-paymtablets-till-tne.feature;111-fr-upfront-cfa-paymtablets-till-tne;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 122009992487,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 29,
-  "name": "111_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "111-fr-upfront-cfa-paymtablets-till-tne.feature;111-fr-upfront-cfa-paymtablets-till-tne;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available Galaxy Book 10.6 Tablet",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 8,
-      "value": "#And click on the color dropdown"
-    },
-    {
-      "line": 9,
-      "value": "#And verify the name of the colour is next to the colour tile in CFAPhoneColour"
-    },
-    {
-      "line": 10,
-      "value": "#And select \u003ccolor\u003e color of the connected device"
-    },
-    {
-      "line": 11,
-      "value": "#And select \u003cCapacity\u003e capacity of the connected device"
-    }
-  ],
-  "line": 12,
-  "name": "Build your plan with max min and max",
-  "matchedColumns": [
-    20,
-    21,
-    22
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 14,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    17,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Choose Me Enabled Business preferences Select Not Not Not And Channel Preferences Select Not Not Not No Connected No",
-  "matchedColumns": [
-    7,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    23
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 760365413,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
-});
-formatter.result({
-  "duration": 58611846661,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Galaxy Book 10.6",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
-});
-formatter.result({
-  "duration": 58648481768,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "max",
-      "offset": 21
-    },
-    {
-      "val": "min",
-      "offset": 25
-    },
-    {
-      "val": "max",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
-});
-formatter.result({
-  "duration": 2579477496821,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 37269524633,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 32567456097,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 335587586,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Delivery page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 5698208147,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 6
-    },
-    {
-      "val": "Accepta",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 36561083344,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78605337655,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 760210049,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Payments page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 26225698191,
-  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Not",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Select",
-      "offset": 82
-    },
-    {
-      "val": "Not",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20478728408,
-  "status": "passed"
-});
-formatter.uri("112_FR_Term_CFA_PayMTablets_Till_TnE.feature");
-formatter.feature({
-  "line": 1,
-  "name": "112_FR_Upfront_CFA_PayMTablets_Till_TnE.feature",
-  "description": "",
-  "id": "112-fr-upfront-cfa-paymtablets-till-tne.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "112_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "112-fr-upfront-cfa-paymtablets-till-tne.feature;112-fr-upfront-cfa-paymtablets-till-tne",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available \u003cDevice\u003e Tablet",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 9,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 10,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 21,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 23,
-  "name": "",
-  "description": "",
-  "id": "112-fr-upfront-cfa-paymtablets-till-tne.feature;112-fr-upfront-cfa-paymtablets-till-tne;",
-  "rows": [
-    {
-      "cells": [
-        "Device",
-        "tariffAmt",
-        "dataValue",
-        "color",
-        "Firstname",
-        "Surname",
-        "consumer",
-        "BSCstatus",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "upFront",
-        "term",
-        "data",
-        "PreSelected"
-      ],
-      "line": 24,
-      "id": "112-fr-upfront-cfa-paymtablets-till-tne.feature;112-fr-upfront-cfa-paymtablets-till-tne;;1"
-    },
-    {
-      "cells": [
-        "iPad Pro 10.5 inch",
-        "£39",
-        "8GB",
-        "Space Grey",
-        "Test",
-        "Accepta",
-        "Me",
-        "Enabled",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "min",
-        "max",
-        "max",
-        "No"
-      ],
-      "line": 25,
-      "id": "112-fr-upfront-cfa-paymtablets-till-tne.feature;112-fr-upfront-cfa-paymtablets-till-tne;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 106861626621,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 25,
-  "name": "112_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "112-fr-upfront-cfa-paymtablets-till-tne.feature;112-fr-upfront-cfa-paymtablets-till-tne;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available iPad Pro 10.5 inch Tablet",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Build your plan with min max and max",
-  "matchedColumns": [
-    19,
-    20,
-    21
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 9,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 10,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    16,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 21,
-  "name": "Choose Me Enabled Business preferences Select Not Not Not And Channel Preferences Select Not Not Not No Connected No",
-  "matchedColumns": [
-    6,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    22
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 783002898,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
-});
-formatter.result({
-  "duration": 133429119879,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPad Pro 10.5 inch",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
-});
-formatter.result({
-  "duration": 59861182118,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "min",
-      "offset": 21
-    },
-    {
-      "val": "max",
-      "offset": 25
-    },
-    {
-      "val": "max",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
-});
-formatter.result({
-  "duration": 197178967258,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 38704297424,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 35038930176,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 350408034,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Delivery page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 5670366145,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 6
-    },
-    {
-      "val": "Accepta",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 36497751116,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78693014603,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 923126334,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Payments page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 26189527407,
-  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(112_FR_Term_CFA_PayMTablets_Till_TnE.feature:17)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Not",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Select",
-      "offset": 82
-    },
-    {
-      "val": "Not",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20301275152,
-  "status": "passed"
-});
-formatter.uri("113_FR_Term_CFA_PayMTablets_Till_TnE.feature");
-formatter.feature({
-  "line": 1,
-  "name": "113_FR_Upfront_CFA_PayMTablets_Till_TnE.feature",
-  "description": "",
-  "id": "113-fr-upfront-cfa-paymtablets-till-tne.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "113_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "113-fr-upfront-cfa-paymtablets-till-tne.feature;113-fr-upfront-cfa-paymtablets-till-tne",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available \u003cDevice\u003e Tablet",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select \u003cCapacity\u003e capacity of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 14,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 27,
-  "name": "",
-  "description": "",
-  "id": "113-fr-upfront-cfa-paymtablets-till-tne.feature;113-fr-upfront-cfa-paymtablets-till-tne;",
-  "rows": [
-    {
-      "cells": [
-        "Device",
-        "tariffAmt",
-        "dataValue",
-        "Capacity",
-        "color",
-        "Firstname",
-        "Surname",
-        "consumer",
-        "BSCstatus",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "upFront",
-        "term",
-        "data",
-        "PreSelected"
-      ],
-      "line": 28,
-      "id": "113-fr-upfront-cfa-paymtablets-till-tne.feature;113-fr-upfront-cfa-paymtablets-till-tne;;1"
-    },
-    {
-      "cells": [
-        "iPad Pro 10.5 inch",
-        "£39",
-        "8GB",
-        "64GB",
-        "Space Grey",
-        "Test",
-        "Accepta",
-        "Me",
-        "Enabled",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "avg",
-        "avg",
-        "min",
-        "No"
-      ],
-      "line": 29,
-      "id": "113-fr-upfront-cfa-paymtablets-till-tne.feature;113-fr-upfront-cfa-paymtablets-till-tne;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 101168719253,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 29,
-  "name": "113_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "113-fr-upfront-cfa-paymtablets-till-tne.feature;113-fr-upfront-cfa-paymtablets-till-tne;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available iPad Pro 10.5 inch Tablet",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select Space Grey color of the connected device",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select 64GB capacity of the connected device",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Build your plan with avg avg and min",
-  "matchedColumns": [
-    20,
-    21,
-    22
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 14,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    17,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Choose Me Enabled Business preferences Select Not Not Not And Channel Preferences Select Not Not Not No Connected No",
-  "matchedColumns": [
-    7,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    23
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 739018617,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
-});
-formatter.result({
-  "duration": 135308045695,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPad Pro 10.5 inch",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
-});
-formatter.result({
-  "duration": 61047538897,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 10709545824,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 206811383,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Space Grey",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 21721856030,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "64GB",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
-});
-formatter.result({
-  "duration": 19180251577,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "avg",
-      "offset": 21
-    },
-    {
-      "val": "avg",
-      "offset": 25
-    },
-    {
-      "val": "min",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
-});
-formatter.result({
-  "duration": 255895910388,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 37624578367,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 35698290607,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 342259035,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Delivery page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 5647752372,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 6
-    },
-    {
-      "val": "Accepta",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 36582449604,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78566950368,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 2757554352,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Payments page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 26206334674,
-  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(113_FR_Term_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Not",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Select",
-      "offset": 82
-    },
-    {
-      "val": "Not",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20250025570,
-  "status": "passed"
-});
-formatter.uri("114_FR_Term_CFA_PayMTablets_Till_TnE.feature");
-formatter.feature({
-  "line": 1,
-  "name": "114_FR_Upfront_CFA_PayMTablets_Till_TnE.feature",
-  "description": "",
-  "id": "114-fr-upfront-cfa-paymtablets-till-tne.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "114_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "114-fr-upfront-cfa-paymtablets-till-tne.feature;114-fr-upfront-cfa-paymtablets-till-tne",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available \u003cDevice\u003e Tablet",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 9,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 10,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 21,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 23,
-  "name": "",
-  "description": "",
-  "id": "114-fr-upfront-cfa-paymtablets-till-tne.feature;114-fr-upfront-cfa-paymtablets-till-tne;",
-  "rows": [
-    {
-      "cells": [
-        "Device",
-        "tariffAmt",
-        "dataValue",
-        "color",
-        "Firstname",
-        "Surname",
-        "consumer",
-        "BSCstatus",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "upFront",
-        "term",
-        "data",
-        "PreSelected"
-      ],
-      "line": 24,
-      "id": "114-fr-upfront-cfa-paymtablets-till-tne.feature;114-fr-upfront-cfa-paymtablets-till-tne;;1"
-    },
-    {
-      "cells": [
-        "Galaxy Book 10.6",
-        "£39",
-        "8GB",
-        "Space Grey",
-        "Test",
-        "Accepta",
-        "Me",
-        "Enabled",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "max",
-        "max",
-        "min",
-        "No"
-      ],
-      "line": 25,
-      "id": "114-fr-upfront-cfa-paymtablets-till-tne.feature;114-fr-upfront-cfa-paymtablets-till-tne;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 102018312775,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 25,
-  "name": "114_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "114-fr-upfront-cfa-paymtablets-till-tne.feature;114-fr-upfront-cfa-paymtablets-till-tne;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available Galaxy Book 10.6 Tablet",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Build your plan with max max and min",
-  "matchedColumns": [
-    19,
-    20,
-    21
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 9,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 10,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    16,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 21,
-  "name": "Choose Me Enabled Business preferences Select Not Not Not And Channel Preferences Select Not Not Not No Connected No",
-  "matchedColumns": [
-    6,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    22
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 749342003,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
-});
-formatter.result({
-  "duration": 91683923156,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Galaxy Book 10.6",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
-});
-formatter.result({
-  "duration": 56854413346,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "max",
-      "offset": 21
-    },
-    {
-      "val": "max",
-      "offset": 25
-    },
-    {
-      "val": "min",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
-});
-formatter.result({
-  "duration": 1808675522177,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 38834942241,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 32586744233,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 367499840,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Delivery page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 5824136836,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 6
-    },
-    {
-      "val": "Accepta",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 37102009008,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78549207732,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 1612713019,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Payments page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 26246082722,
-  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(114_FR_Term_CFA_PayMTablets_Till_TnE.feature:17)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Not",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Select",
-      "offset": 82
-    },
-    {
-      "val": "Not",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20333989354,
-  "status": "passed"
-});
-formatter.uri("115_FR_Data_CFA_PayMTablets_Till_TnE.feature");
-formatter.feature({
-  "line": 1,
-  "name": "115_FR_Upfront_CFA_PayMTablets_Till_TnE.feature",
-  "description": "",
-  "id": "115-fr-upfront-cfa-paymtablets-till-tne.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "115_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "115-fr-upfront-cfa-paymtablets-till-tne.feature;115-fr-upfront-cfa-paymtablets-till-tne",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available \u003cDevice\u003e Tablet",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select \u003cCapacity\u003e capacity of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 14,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 27,
-  "name": "",
-  "description": "",
-  "id": "115-fr-upfront-cfa-paymtablets-till-tne.feature;115-fr-upfront-cfa-paymtablets-till-tne;",
-  "rows": [
-    {
-      "cells": [
-        "Device",
-        "tariffAmt",
-        "dataValue",
-        "Capacity",
-        "color",
-        "Firstname",
-        "Surname",
-        "consumer",
-        "BSCstatus",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "upFront",
-        "term",
-        "data",
-        "PreSelected"
-      ],
-      "line": 28,
-      "id": "115-fr-upfront-cfa-paymtablets-till-tne.feature;115-fr-upfront-cfa-paymtablets-till-tne;;1"
-    },
-    {
-      "cells": [
-        "iPad Pro 10.5 inch",
-        "£39",
-        "8GB",
-        "512GB",
-        "Space Grey",
-        "Test",
-        "Accepta",
-        "Me",
-        "Enabled",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "avg",
-        "max",
-        "avg",
-        "No"
-      ],
-      "line": 29,
-      "id": "115-fr-upfront-cfa-paymtablets-till-tne.feature;115-fr-upfront-cfa-paymtablets-till-tne;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 106326400231,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 29,
-  "name": "115_FR_Upfront_CFA_PayMTablets_Till_TnE",
-  "description": "",
-  "id": "115-fr-upfront-cfa-paymtablets-till-tne.feature;115-fr-upfront-cfa-paymtablets-till-tne;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available iPad Pro 10.5 inch Tablet",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select Space Grey color of the connected device",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select 512GB capacity of the connected device",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Build your plan with avg max and avg",
-  "matchedColumns": [
-    20,
-    21,
-    22
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 14,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    17,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Choose Me Enabled Business preferences Select Not Not Not And Channel Preferences Select Not Not Not No Connected No",
-  "matchedColumns": [
-    7,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    23
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 735474619,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
-});
-formatter.result({
-  "duration": 116426459227,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPad Pro 10.5 inch",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
-});
-formatter.result({
-  "duration": 59500445035,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 10717121145,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 191319932,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Space Grey",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 21720619842,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "512GB",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
-});
-formatter.result({
-  "duration": 23358386805,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "avg",
-      "offset": 21
-    },
-    {
-      "val": "max",
-      "offset": 25
-    },
-    {
-      "val": "avg",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
-});
-formatter.result({
-  "duration": 179347030725,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 37154714199,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 33696668664,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 331303574,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Delivery page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 5660662092,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 6
-    },
-    {
-      "val": "Accepta",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 37421808925,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78630072023,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 1117144078,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Payments page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 26312089758,
-  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(115_FR_Data_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Not",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Select",
-      "offset": 82
-    },
-    {
-      "val": "Not",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20276845496,
-  "status": "passed"
-});
-formatter.uri("116_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature");
-formatter.feature({
-  "line": 1,
-  "name": "116_FR_Upfront_CFA_Phones_Till_TnE.feature",
-  "description": "",
-  "id": "116-fr-upfront-cfa-phones-till-tne.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "116_FR_Upfront_CFA_Phones_Till_TnE",
-  "description": "",
-  "id": "116-fr-upfront-cfa-phones-till-tne.feature;116-fr-upfront-cfa-phones-till-tne",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 12,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 13,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 24,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 26,
-  "name": "",
-  "description": "",
-  "id": "116-fr-upfront-cfa-phones-till-tne.feature;116-fr-upfront-cfa-phones-till-tne;",
-  "rows": [
-    {
-      "cells": [
-        "handset",
-        "tariffAmt",
-        "dataValue",
-        "color",
-        "Firstname",
-        "Surname",
-        "consumer",
-        "BSCstatus",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "upFront",
-        "term",
-        "data",
-        "PreSelected"
-      ],
-      "line": 27,
-      "id": "116-fr-upfront-cfa-phones-till-tne.feature;116-fr-upfront-cfa-phones-till-tne;;1"
-    },
-    {
-      "cells": [
-        "iPhone X",
-        "£39",
-        "8GB",
-        "Space Grey",
-        "Test",
-        "Accepta",
-        "Me",
-        "Enabled",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "min",
-        "max",
-        "min",
-        "No"
-      ],
-      "line": 28,
-      "id": "116-fr-upfront-cfa-phones-till-tne.feature;116-fr-upfront-cfa-phones-till-tne;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 102457607048,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 28,
-  "name": "116_FR_Upfront_CFA_Phones_Till_TnE",
-  "description": "",
-  "id": "116-fr-upfront-cfa-phones-till-tne.feature;116-fr-upfront-cfa-phones-till-tne;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I choose PayM iPhone X",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select Space Grey color of the connected device",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Build your plan with min max and min",
-  "matchedColumns": [
-    19,
-    20,
-    21
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 12,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 13,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    16,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 24,
-  "name": "Choose Me Enabled Business preferences Select Not Not Not And Channel Preferences Select Not Not Not No Connected No",
-  "matchedColumns": [
-    6,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    22
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 908762422,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-});
-formatter.result({
-  "duration": 133627861537,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone X",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-});
-formatter.result({
-  "duration": 29182215037,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 85989093379,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 181340893,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Space Grey",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 17669799192,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "min",
-      "offset": 21
-    },
-    {
-      "val": "max",
-      "offset": 25
-    },
-    {
-      "val": "min",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
-});
-formatter.result({
-  "duration": 132994343548,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 41000810086,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 39369271485,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 325289326,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Delivery page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 5644946619,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 6
-    },
-    {
-      "val": "Accepta",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 36498295775,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78424025781,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 1072020577,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Payments page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "duration": 26252286310,
-  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(116_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature:20)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Not",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Select",
-      "offset": 82
-    },
-    {
-      "val": "Not",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20311376287,
-  "status": "passed"
-});
-formatter.uri("119_FR_All_CFA_Phones_Till_TnE.feature");
-formatter.feature({
-  "line": 1,
-  "name": "119_FR_All_CFA_Phones_Till_TnE",
-  "description": "",
-  "id": "119-fr-all-cfa-phones-till-tne",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "101_FR_Upfront_CFA_Phones_Till_TnE",
-  "description": "",
-  "id": "119-fr-all-cfa-phones-till-tne;101-fr-upfront-cfa-phones-till-tne",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 12,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 13,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 24,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 26,
-  "name": "",
-  "description": "",
-  "id": "119-fr-all-cfa-phones-till-tne;101-fr-upfront-cfa-phones-till-tne;",
-  "rows": [
-    {
-      "cells": [
-        "handset",
-        "tariffAmt",
-        "dataValue",
-        "color",
-        "Firstname",
-        "Surname",
-        "consumer",
-        "BSCstatus",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "upFront",
-        "term",
-        "data",
-        "PreSelected"
-      ],
-      "line": 27,
-      "id": "119-fr-all-cfa-phones-till-tne;101-fr-upfront-cfa-phones-till-tne;;1"
-    },
-    {
-      "cells": [
-        "iPhone X",
-        "£39",
-        "8GB",
-        "Space Grey",
-        "Test",
-        "Accepta",
-        "Me",
-        "Enabled",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "max",
-        "max",
-        "max",
-        "No"
-      ],
-      "line": 28,
-      "id": "119-fr-all-cfa-phones-till-tne;101-fr-upfront-cfa-phones-till-tne;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 33955340469,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 28,
-  "name": "101_FR_Upfront_CFA_Phones_Till_TnE",
-  "description": "",
-  "id": "119-fr-all-cfa-phones-till-tne;101-fr-upfront-cfa-phones-till-tne;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I choose PayM iPhone X",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select Space Grey color of the connected device",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Build your plan with max max and max",
-  "matchedColumns": [
-    19,
-    20,
-    21
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 12,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 13,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    16,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 24,
-  "name": "Choose Me Enabled Business preferences Select Not Not Not And Channel Preferences Select Not Not Not No Connected No",
-  "matchedColumns": [
-    6,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    22
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 729458246,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-});
-formatter.result({
-  "duration": 57825155727,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone X",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-});
-formatter.result({
-  "duration": 28739123372,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 23969808782,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 175006361,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Space Grey",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 17648409926,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "max",
-      "offset": 21
-    },
-    {
-      "val": "max",
-      "offset": 25
-    },
-    {
-      "val": "max",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
-});
-formatter.result({
-  "duration": 1666335822224,
-  "error_message": "java.lang.AssertionError: \"Failed to displayed - the upfront MAx icon is not disable though changed to main value\"\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.ConnectedDeviceDetailsPageAction.flexibleReressh_CFA(ConnectedDeviceDetailsPageAction.java:781)\r\n\tat steps.E2EOrderPlaced_Steps.fr_PDpage(E2EOrderPlaced_Steps.java:11284)\r\n\tat ✽.And Build your plan with max max and max(119_FR_All_CFA_Phones_Till_TnE.feature:11)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Delivery page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 6
-    },
-    {
-      "val": "Accepta",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Payments page",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Not",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Select",
-      "offset": 82
-    },
-    {
-      "val": "Not",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20784002324,
-  "status": "passed"
-});
-formatter.uri("11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature");
-formatter.feature({
-  "line": 1,
-  "name": "11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk",
-  "description": "",
-  "id": "11-reg-cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk",
-  "description": "",
-  "id": "11-reg-cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk;cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
   "name": "Navigate to device details page",
   "keyword": "And "
 });
 formatter.step({
-  "line": 12,
+  "line": 13,
   "name": "Land on the \u0027Tariffs and extra\u0027 page",
   "keyword": "And "
 });
 formatter.step({
-  "line": 13,
+  "line": 14,
   "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
   "keyword": "And "
 });
 formatter.step({
-  "line": 14,
+  "line": 15,
   "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
   "keyword": "And "
 });
 formatter.step({
-  "line": 15,
+  "line": 16,
   "name": "I Land on the basket page and choose home delivery option",
   "keyword": "And "
 });
 formatter.step({
-  "line": 16,
+  "line": 17,
   "name": "click on \"go to checkout\" button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 17,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
   "line": 18,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
   "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
   "keyword": "And "
 });
 formatter.step({
+  "line": 19,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
   "line": 20,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
+  "name": "land on the payment page and verify copy text message below home address",
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 21,
-      "value": "#And input the below details in Delivery page"
-    },
-    {
-      "line": 22,
-      "value": "#| HouseNumber           | 5            |"
-    },
-    {
-      "line": 23,
-      "value": "#| Post Code             | BS7 0NP      |"
-    },
-    {
-      "line": 24,
-      "value": "#| Title                 | Mr           |"
-    },
-    {
-      "line": 25,
-      "value": "#| FirstName             | Test         |"
-    },
-    {
-      "line": 26,
-      "value": "#| Surname               | Accepta      |"
-    },
-    {
-      "line": 27,
-      "value": "#| Contact Number        | 07822837733  |"
-    },
-    {
-      "line": 28,
-      "value": "#| Password              | TesterSit123 |"
-    },
-    {
-      "line": 29,
-      "value": "#| Security Answer       | Sit Testers  |"
-    },
-    {
-      "line": 30,
-      "value": "#| Date of Birth - Date  | 22           |"
-    },
-    {
-      "line": 31,
-      "value": "#| Date of Birth - Month | 10           |"
-    },
-    {
-      "line": 32,
-      "value": "#| Date of Birth - Year  | 1990         |"
-    }
-  ],
-  "line": 33,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
+  "line": 21,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
   "keyword": "And "
 });
 formatter.step({
-  "line": 34,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 35,
+  "line": 22,
   "name": "Continue to Agreements page and confirm all the agreement checks",
   "keyword": "And "
 });
 formatter.step({
-  "line": 36,
+  "line": 23,
   "name": "Continue to Review page and review the order",
   "keyword": "And "
 });
 formatter.step({
-  "line": 37,
+  "line": 24,
   "name": "order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 38,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
+  "line": 25,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 40,
+  "line": 27,
   "name": "",
   "description": "",
-  "id": "11-reg-cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk;cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk;",
+  "id": "03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3;03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3;",
   "rows": [
     {
       "cells": [
-        "handset",
-        "tariffAmt",
-        "dataValue",
-        "color",
+        "Device_Name",
         "Firstname",
         "Surname",
-        "consumer",
+        "Username",
         "BSCstatus",
         "BillCap",
         "CapAmount",
@@ -6861,336 +1163,207 @@ formatter.examples({
         "B2",
         "B3",
         "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
+        "GDPRstatus",
         "DeviceType",
-        "PreSelected"
+        "PreSelected",
+        "KeyEvent"
       ],
-      "line": 41,
-      "id": "11-reg-cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk;cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk;;1"
+      "line": 28,
+      "id": "03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3;03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3;;1"
     },
     {
       "cells": [
-        "iPhone X",
-        "£39",
-        "8GB",
-        "Space Grey",
-        "Test",
-        "Accepta",
-        "Me",
+        "Random Device",
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA",
         "Enabled",
-        "CapMyBill",
-        "£10",
-        "Select",
-        "Not",
-        "Not",
+        "DontCapMyBill",
+        "Nill",
         "Not",
         "Select",
-        "Not",
-        "Not",
+        "Select",
         "Not",
         "Enabled",
-        "No",
         "Connected",
+        "No",
         "No"
       ],
-      "line": 42,
-      "id": "11-reg-cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk;cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk;;2"
+      "line": 29,
+      "id": "03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3;03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 126203324011,
+  "duration": 27156005787,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 42,
-  "name": "CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk",
+  "line": 29,
+  "name": "03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B2B3",
   "description": "",
-  "id": "11-reg-cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk;cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk;;2",
+  "id": "03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3;03-cfa-newconnection-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2b3;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 3,
+      "line": 7,
       "name": "@Web"
     }
   ]
 });
 formatter.step({
-  "line": 5,
+  "line": 9,
   "name": "I am an CFA user and Lands on shop page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
+  "line": 10,
+  "name": "Navigate to PayM MBB page",
   "keyword": "And "
 });
 formatter.step({
-  "line": 7,
-  "name": "I choose PayM iPhone X",
+  "line": 11,
+  "name": "I choose MBB PayM Random Device",
   "matchedColumns": [
     0
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
+  "line": 12,
+  "name": "Navigate to device details page",
   "keyword": "And "
 });
 formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
+  "line": 13,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
   "keyword": "And "
 });
 formatter.step({
-  "line": 10,
-  "name": "select Space Grey color of the connected device",
+  "line": 14,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Choose your bill cap DontCapMyBill Nill when BSC is Enabled",
+  "matchedColumns": [
+    4,
+    5,
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+  "matchedColumns": [
+    1,
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Select Select with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "land on the payment page and verify copy text message below home address",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
   "matchedColumns": [
     3
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 11,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Choose your bill cap CapMyBill £10 when BSC is Enabled",
-  "matchedColumns": [
-    7,
-    8,
-    9
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    18,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 21,
-      "value": "#And input the below details in Delivery page"
-    },
-    {
-      "line": 22,
-      "value": "#| HouseNumber           | 5            |"
-    },
-    {
-      "line": 23,
-      "value": "#| Post Code             | BS7 0NP      |"
-    },
-    {
-      "line": 24,
-      "value": "#| Title                 | Mr           |"
-    },
-    {
-      "line": 25,
-      "value": "#| FirstName             | Test         |"
-    },
-    {
-      "line": 26,
-      "value": "#| Surname               | Accepta      |"
-    },
-    {
-      "line": 27,
-      "value": "#| Contact Number        | 07822837733  |"
-    },
-    {
-      "line": 28,
-      "value": "#| Password              | TesterSit123 |"
-    },
-    {
-      "line": 29,
-      "value": "#| Security Answer       | Sit Testers  |"
-    },
-    {
-      "line": 30,
-      "value": "#| Date of Birth - Date  | 22           |"
-    },
-    {
-      "line": 31,
-      "value": "#| Date of Birth - Month | 10           |"
-    },
-    {
-      "line": 32,
-      "value": "#| Date of Birth - Year  | 1990         |"
-    }
-  ],
-  "line": 33,
-  "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 34,
-  "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 35,
+  "line": 22,
   "name": "Continue to Agreements page and confirm all the agreement checks",
   "keyword": "And "
 });
 formatter.step({
-  "line": 36,
+  "line": 23,
   "name": "Continue to Review page and review the order",
   "keyword": "And "
 });
 formatter.step({
-  "line": 37,
+  "line": 24,
   "name": "order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 38,
-  "name": "Choose Me Enabled Business preferences Select Not Not Not And Channel Preferences Select Not Not Not No Connected No",
-  "matchedColumns": [
-    6,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21
-  ],
+  "line": 25,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
   "keyword": "Then "
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 739118417,
+  "duration": 1344765342,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+  "location": "E2EOrderPlaced_Steps.navigate_to_PayM_MBB_page()"
 });
 formatter.result({
-  "duration": 132809626762,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone X",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-});
-formatter.result({
-  "duration": 28768145999,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 27270969977,
+  "duration": 51889037116,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "",
-      "offset": 74
+      "val": "Random Device",
+      "offset": 18
     }
   ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
+  "location": "E2EOrderPlaced_Steps.i_choose_MBB_PayM(String)"
 });
 formatter.result({
-  "duration": 174481522,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Space Grey",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 17618012382,
+  "duration": 15606433677,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 165870309663,
+  "duration": 39467043992,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16006541920,
+  "duration": 14327999622,
   "status": "passed"
 });
 formatter.match({
@@ -7203,7 +1376,6235 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 39582748654,
+  "duration": 40016520528,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "DontCapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "Nill",
+      "offset": 35
+    },
+    {
+      "val": "Enabled",
+      "offset": 52
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 40238957727,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "duration": 39418583205,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 40863664110,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+});
+formatter.result({
+  "duration": 37494662401,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 75
+    },
+    {
+      "val": "Select",
+      "offset": 82
+    },
+    {
+      "val": "No",
+      "offset": 94
+    },
+    {
+      "val": "Connected",
+      "offset": 101
+    },
+    {
+      "val": "Enabled",
+      "offset": 141
+    },
+    {
+      "val": "No",
+      "offset": 153
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 68382911607,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.VerifyCopyTextinPaymentPage()"
+});
+formatter.result({
+  "duration": 972644986,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+});
+formatter.result({
+  "duration": 163877563768,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "duration": 71308422455,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 55851022833,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 5810319982,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20060907502,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17003021368,
+  "status": "passed"
+});
+formatter.uri("04_CFA_NewConnection_Phone_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B1B3.feature");
+formatter.feature({
+  "line": 1,
+  "name": "04_CFA_NewConnection_Phone_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B1B3",
+  "description": "\r\nThis Scenario ensures that when the Customer in Phone SIMO acquisition journey selects \u0027simo tariff\u0027 with home delivery\r\noption and lands on delivery page then customer should not be displayed with end user question instead the customer\r\nshould see GDPR consent and placed an order by opting of Marketing preference \u0027B1, B3\u0027, then the Order consent profile\r\nshould be created in CMT as expected",
+  "id": "04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 9,
+  "name": "04_CFA_NewConnection_Phone_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B1B3",
+  "description": "",
+  "id": "04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3;04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "navigate to PAYM SIMO page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Click on different \u003cContract\u003e  Months Tariff in Tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Select any Random Tariff in the displayed list of Tariffs under different \u003cContract\u003e tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I Land on the Plan included basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 for SimOnly",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 25,
+  "name": "",
+  "description": "",
+  "id": "04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3;04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3;",
+  "rows": [
+    {
+      "cells": [
+        "Contract",
+        "Firstname",
+        "Surname",
+        "Username",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 26,
+      "id": "04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3;04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3;;1"
+    },
+    {
+      "cells": [
+        "12 Months",
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Enabled",
+        "CapMyBill",
+        "£0",
+        "Select",
+        "Not",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 27,
+      "id": "04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3;04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 26596987848,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 27,
+  "name": "04_CFA_NewConnection_Phone_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B1B3",
+  "description": "",
+  "id": "04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3;04-cfa-newconnection-phone-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b3;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "navigate to PAYM SIMO page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Click on different 12 Months  Months Tariff in Tab",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Select any Random Tariff in the displayed list of Tariffs under different 12 Months tab",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Choose your bill cap CapMyBill £0 when BSC is Enabled",
+  "matchedColumns": [
+    4,
+    5,
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I Land on the Plan included basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+  "matchedColumns": [
+    1,
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Not Select with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for SimOnly",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1294413000,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page()"
+});
+formatter.result({
+  "duration": 82756721562,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "12 Months ",
+      "offset": 19
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.click_on_different_Months_Tariff_in_Tab(String)"
+});
+formatter.result({
+  "duration": 11612121995,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "12 Months",
+      "offset": 74
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_any_Random_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String)"
+});
+formatter.result({
+  "duration": 17571509028,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 40138197294,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£0",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 46
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 68981229516,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "duration": 25369391966,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 33500980480,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+});
+formatter.result({
+  "duration": 37379388478,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Select",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 78
+    },
+    {
+      "val": "Select",
+      "offset": 82
+    },
+    {
+      "val": "No",
+      "offset": 94
+    },
+    {
+      "val": "Connected",
+      "offset": 101
+    },
+    {
+      "val": "Enabled",
+      "offset": 141
+    },
+    {
+      "val": "No",
+      "offset": 153
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 67995756090,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery_SimOnly(String)"
+});
+formatter.result({
+  "duration": 118994946561,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 54049622457,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 5897382145,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20070803322,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17002475235,
+  "status": "passed"
+});
+formatter.uri("05_CFA_NewConnection_PAYG_Phone_With_Accessory_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_ALL.feature");
+formatter.feature({
+  "line": 1,
+  "name": "05_CFA_NewConnection_PAYG_Phone_With_Accessory_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_ALL",
+  "description": "\r\nThis Scenario ensures that when the Customer in acquisition journey selects \u0027PAYG Phone\u0027 and any accessories with home\r\ndelivery option and lands on delivery page then customer should not be displayed with end user question instead the\r\ncustomer should see GDPR consent and place an order by opting of Marketing preference \u0027All\u0027, then the Order consent\r\nprofile should be created in CMT as expected",
+  "id": "05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 9,
+  "name": "05_CFA_NewConnection_PAYG_Phone_With_Accessory_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_ALL",
+  "description": "",
+  "id": "05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "navigate to Pay as you Go Phones page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I choose PayG \u003chandset\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "click on the color dropdown",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "select \u003ccolor\u003e color of the connected device",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Select a PayG tariff \u003ctariff\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Choose some Accesssory",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 for GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 27,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 29,
+  "name": "",
+  "description": "",
+  "id": "05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;",
+  "rows": [
+    {
+      "cells": [
+        "handset",
+        "color",
+        "Firstname",
+        "tariff",
+        "BSCstatus",
+        "Surname",
+        "Username",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 30,
+      "id": "05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;;1"
+    },
+    {
+      "cells": [
+        "iPhone X",
+        "Space Grey",
+        "TEST",
+        "1GB Preloaded",
+        "Disabled",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Select",
+        "Select",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 31,
+      "id": "05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 26530341396,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 31,
+  "name": "05_CFA_NewConnection_PAYG_Phone_With_Accessory_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_ALL",
+  "description": "",
+  "id": "05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;05-cfa-newconnection-payg-phone-with-accessory-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-all;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "navigate to Pay as you Go Phones page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I choose PayG iPhone X",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "click on the color dropdown",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "select Space Grey color of the connected device",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Select a PayG tariff 1GB Preloaded",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Disabled",
+  "matchedColumns": [
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Choose some Accesssory",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+  "matchedColumns": [
+    2,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Select Select with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for GDPR",
+  "matchedColumns": [
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 27,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1222607865,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_Pay_as_you_Go_Phones_page()"
+});
+formatter.result({
+  "duration": 68739522349,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "iPhone X",
+      "offset": 14
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.Choose_PAYG_Handset(String)"
+});
+formatter.result({
+  "duration": 91849089181,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
+});
+formatter.result({
+  "duration": 16905473449,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "",
+      "offset": 74
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
+});
+formatter.result({
+  "duration": 199476850,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Space Grey",
+      "offset": 7
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
+});
+formatter.result({
+  "duration": 17732186529,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 35784013999,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1GB Preloaded",
+      "offset": 21
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.selectPayGTariffTariff(String)"
+});
+formatter.result({
+  "duration": 51703289258,
+  "error_message": "java.lang.AssertionError: Unable to select PayG tariff\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.selectPayGTariffTariff(E2EOrderPlaced_Steps.java:8561)\r\n\tat ✽.And Select a PayG tariff 1GB Preloaded(05_CFA_NewConnection_PAYG_Phone_With_Accessory_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_ALL.feature:17)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Disabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Select",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 78
+    },
+    {
+      "val": "Select",
+      "offset": 85
+    },
+    {
+      "val": "No",
+      "offset": 97
+    },
+    {
+      "val": "Connected",
+      "offset": 104
+    },
+    {
+      "val": "Enabled",
+      "offset": 144
+    },
+    {
+      "val": "No",
+      "offset": 156
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 52
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery_for_GDPR(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 17515330129,
+  "status": "passed"
+});
+formatter.uri("06_CFA_Fitness_Tracker_Home_Delivery_GDPR_Should_Not_Display_For_NonConnectedDevice_User.feature");
+formatter.feature({
+  "line": 1,
+  "name": "06_CFA_Fitness_Tracker_Home_Delivery_GDPR_Should_Not_Display_For_NonConnectedDevice_User",
+  "description": "\r\nThis Scenario ensures that when the Customer in acquisition journey selects \u0027fitness tracker\u0027 and lands on delivery page\r\nthen customer should not be displayed with gdpr end user question and consent",
+  "id": "06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 7,
+  "name": "06_CFA_Fitness_Tracker_Home_Delivery_GDPR_Should_Not_Display_For_NonConnectedDevice_User",
+  "description": "",
+  "id": "06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 6,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 8,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 9,
+  "name": "Navigate to Fitness Trackers",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 10,
+  "name": "select any available \u003cDevice\u003e Fitness tracker",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "add FitnessTracker to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 21,
+  "name": "",
+  "description": "",
+  "id": "06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;",
+  "rows": [
+    {
+      "cells": [
+        "Device",
+        "Firstname",
+        "Surname",
+        "Username",
+        "B1",
+        "B2",
+        "B3",
+        "DeviceType",
+        "GDPRstatus",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 22,
+      "id": "06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;;1"
+    },
+    {
+      "cells": [
+        "Random Device",
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Not",
+        "Not",
+        "Not",
+        "NonConnected",
+        "Enabled",
+        "No",
+        "No"
+      ],
+      "line": 23,
+      "id": "06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 25732255934,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 23,
+  "name": "06_CFA_Fitness_Tracker_Home_Delivery_GDPR_Should_Not_Display_For_NonConnectedDevice_User",
+  "description": "",
+  "id": "06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;06-cfa-fitness-tracker-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 6,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 8,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 9,
+  "name": "Navigate to Fitness Trackers",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 10,
+  "name": "select any available Random Device Fitness tracker",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "add FitnessTracker to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+  "matchedColumns": [
+    1,
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Not Not with No for NonConnected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1181932322,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_Fitness_Trackers()"
+});
+formatter.result({
+  "duration": 59311407983,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Random Device",
+      "offset": 21
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_any_available_Fitness_tracker(String)"
+});
+formatter.result({
+  "duration": 13064587075,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.add_FitnessTracker_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
+});
+formatter.result({
+  "duration": 32721904435,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
+});
+formatter.result({
+  "duration": 12105904325,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 34348067172,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+});
+formatter.result({
+  "duration": 37427433976,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 75
+    },
+    {
+      "val": "Not",
+      "offset": 79
+    },
+    {
+      "val": "No",
+      "offset": 88
+    },
+    {
+      "val": "NonConnected",
+      "offset": 95
+    },
+    {
+      "val": "Enabled",
+      "offset": 138
+    },
+    {
+      "val": "No",
+      "offset": 150
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 49107696325,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 52
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
+});
+formatter.result({
+  "duration": 153733485872,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 59524204224,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 5797100147,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20041983419,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17004193279,
+  "status": "passed"
+});
+formatter.uri("07_CFA_Smart_Watch_Home_Delivery_GDPR_Should_Not_Display_For_NonConnectedDevice_User.feature");
+formatter.feature({
+  "line": 1,
+  "name": "07_CFA_Smart_Watch_Home_Delivery_GDPR_Should_Not_Display_For_NonConnectedDevice_User",
+  "description": "\r\nThis Scenario ensures that when the Customer in acquisition journey selects \u0027smart watch\u0027 and lands on delivery page\r\nthen customer should not be displayed with gdpr end user question and GDPR consent",
+  "id": "07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 7,
+  "name": "07_CFA_Smart_Watch_Home_Delivery_GDPR_Should_Not_Display_For_NonConnectedDevice_User",
+  "description": "",
+  "id": "07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 6,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 8,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 9,
+  "name": "Navigate to SmartWatches",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 10,
+  "name": "select any available \u003cDevice\u003e Smartwatch",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "add SmartWatch to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 21,
+  "name": "",
+  "description": "",
+  "id": "07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;",
+  "rows": [
+    {
+      "cells": [
+        "Firstname",
+        "Surname",
+        "Username",
+        "Device",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 22,
+      "id": "07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;;1"
+    },
+    {
+      "cells": [
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Random Device",
+        "Not",
+        "Not",
+        "Not",
+        "Not",
+        "Enabled",
+        "Non Connected",
+        "No",
+        "No"
+      ],
+      "line": 23,
+      "id": "07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 27353944361,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 23,
+  "name": "07_CFA_Smart_Watch_Home_Delivery_GDPR_Should_Not_Display_For_NonConnectedDevice_User",
+  "description": "",
+  "id": "07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;07-cfa-smart-watch-home-delivery-gdpr-should-not-display-for-nonconnecteddevice-user;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 6,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 8,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 9,
+  "name": "Navigate to SmartWatches",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 10,
+  "name": "select any available Random Device Smartwatch",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "add SmartWatch to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Not Not with No for Non Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1258865989,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
+});
+formatter.result({
+  "duration": 92682917922,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Random Device",
+      "offset": 21
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_any_available_Smartwatch(String)"
+});
+formatter.result({
+  "duration": 18596706248,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
+});
+formatter.result({
+  "duration": 26780832204,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
+});
+formatter.result({
+  "duration": 12162294283,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 36183559344,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+});
+formatter.result({
+  "duration": 37423419898,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 75
+    },
+    {
+      "val": "Not",
+      "offset": 79
+    },
+    {
+      "val": "No",
+      "offset": 88
+    },
+    {
+      "val": "Non Connected",
+      "offset": 95
+    },
+    {
+      "val": "Enabled",
+      "offset": 139
+    },
+    {
+      "val": "No",
+      "offset": 151
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 49051575452,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 52
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
+});
+formatter.result({
+  "duration": 152784534532,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 61179467895,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 5832931604,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20048178617,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17004076657,
+  "status": "passed"
+});
+formatter.uri("08_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptOut_All.feature");
+formatter.feature({
+  "line": 1,
+  "name": "08_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptOut_All",
+  "description": "\r\nThis Scenario ensures that when the Customer in acquisition journey selects \u0027PAYG Tablet\u0027  with home delivery option\r\nand lands on delivery page then customer should not be displayed with end user question instead the customer should\r\nsee GDPR consent and place an order with MP OptOut \u0027All\u0027, then the Order consent profile should be created in CMT as expected",
+  "id": "08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 8,
+  "name": "08_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptOut_All",
+  "description": "",
+  "id": "08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "navigate to Pay as you Go Tablets page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "select any available \u003cDevice\u003e Tablet",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Select a PayG tariff \u003ctariff\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 for GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 22,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 24,
+  "name": "",
+  "description": "",
+  "id": "08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;",
+  "rows": [
+    {
+      "cells": [
+        "Device",
+        "Firstname",
+        "tariff",
+        "BSCstatus",
+        "Surname",
+        "Username",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 25,
+      "id": "08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;;1"
+    },
+    {
+      "cells": [
+        "iPad Pro 10.5 inch",
+        "TEST",
+        "1GB Preloaded",
+        "Disabled",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Not",
+        "Not",
+        "Not",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 26,
+      "id": "08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 26256553455,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 26,
+  "name": "08_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptOut_All",
+  "description": "",
+  "id": "08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;08-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "navigate to Pay as you Go Tablets page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "select any available iPad Pro 10.5 inch Tablet",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Select a PayG tariff 1GB Preloaded",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Disabled",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+  "matchedColumns": [
+    1,
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Not Not with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    6,
+    7,
+    8,
+    10,
+    11,
+    12,
+    13
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for GDPR",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 22,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1238461657,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigateToPayAsYouGoTabletsPage()"
+});
+formatter.result({
+  "duration": 72268135462,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "iPad Pro 10.5 inch",
+      "offset": 21
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
+});
+formatter.result({
+  "duration": 55183857441,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 34385966539,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1GB Preloaded",
+      "offset": 21
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.selectPayGTariffTariff(String)"
+});
+formatter.result({
+  "duration": 34554135736,
+  "error_message": "java.lang.AssertionError: Unable to select PayG tariff\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.selectPayGTariffTariff(E2EOrderPlaced_Steps.java:8561)\r\n\tat ✽.And Select a PayG tariff 1GB Preloaded(08_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptOut_All.feature:13)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Disabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 75
+    },
+    {
+      "val": "Not",
+      "offset": 79
+    },
+    {
+      "val": "No",
+      "offset": 88
+    },
+    {
+      "val": "Connected",
+      "offset": 95
+    },
+    {
+      "val": "Enabled",
+      "offset": 135
+    },
+    {
+      "val": "No",
+      "offset": 147
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 52
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery_for_GDPR(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 17368448179,
+  "status": "passed"
+});
+formatter.uri("09_CFA_NewConnection_PAYG_MBB_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B3.feature");
+formatter.feature({
+  "line": 1,
+  "name": "09_CFA_NewConnection_PAYG_MBB_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B3",
+  "description": "\r\nThis Scenario ensures that when the Customer in acquisition journey selects \u0027PAYG MBB\u0027  with home delivery option and\r\nlands on delivery page then customer should not be displayed with end user question instead the customer should see\r\nGDPR consent and place an order by opting of Marketing preference \u0027B3\u0027, then the Order consent profile should be\r\ncreated in CMT as expected",
+  "id": "09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 9,
+  "name": "09_CFA_NewConnection_PAYG_MBB_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B3",
+  "description": "",
+  "id": "09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3;09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Navigate to PayG MBB page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I choose MBB PayG \"Random Device\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select a PayG tariff \u003ctariff\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 for GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 25,
+  "name": "",
+  "description": "",
+  "id": "09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3;09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3;",
+  "rows": [
+    {
+      "cells": [
+        "Firstname",
+        "tariff",
+        "BSCstatus",
+        "Surname",
+        "Username",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 26,
+      "id": "09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3;09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3;;1"
+    },
+    {
+      "cells": [
+        "TEST",
+        "1GB Preloaded",
+        "Disabled",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Not",
+        "Not",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 27,
+      "id": "09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3;09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 35275794411,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 27,
+  "name": "09_CFA_NewConnection_PAYG_MBB_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B3",
+  "description": "",
+  "id": "09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3;09-cfa-newconnection-payg-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b3;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Navigate to PayG MBB page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I choose MBB PayG \"Random Device\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select a PayG tariff 1GB Preloaded",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Disabled",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+  "matchedColumns": [
+    0,
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Not Select with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for GDPR",
+  "matchedColumns": [
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1494721566,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PayG_MBB_page()"
+});
+formatter.result({
+  "duration": 71399266020,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Random Device",
+      "offset": 19
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_choose_MBB_PayG(String)"
+});
+formatter.result({
+  "duration": 10505755163,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 48842652774,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1GB Preloaded",
+      "offset": 21
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.selectPayGTariffTariff(String)"
+});
+formatter.result({
+  "duration": 22610764057,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Disabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 29886452085,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "duration": 40886257525,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 32550009585,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+});
+formatter.result({
+  "duration": 37394974892,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 75
+    },
+    {
+      "val": "Select",
+      "offset": 79
+    },
+    {
+      "val": "No",
+      "offset": 91
+    },
+    {
+      "val": "Connected",
+      "offset": 98
+    },
+    {
+      "val": "Enabled",
+      "offset": 138
+    },
+    {
+      "val": "No",
+      "offset": 150
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 70381142362,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 52
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery_for_GDPR(String)"
+});
+formatter.result({
+  "duration": 113446150415,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 71934960090,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 6041338868,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20026627975,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17005026700,
+  "status": "passed"
+});
+formatter.uri("10_CFA_NewConnection_Tablet_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptOut_All.feature");
+formatter.feature({
+  "line": 1,
+  "name": "10_CFA_NewConnection_Tablet_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptOut_All",
+  "description": "\r\nThis Scenario ensures that when the Customer in Tablet SIMO acquisition journey selects \u0027simo tariff\u0027 with home\r\ndelivery option and lands on delivery page then customer should not be displayed with end user question instead the\r\ncustomer should see GDPR consent and placed an order with Marketing preference OptOut-\u0027All\u0027, then the Order consent\r\nprofile should be created in CMT as expected",
+  "id": "10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 9,
+  "name": "10_CFA_NewConnection_Tablet_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptOut_All",
+  "description": "",
+  "id": "10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "navigate to PAYM SIMO page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Select \u0027Tablets\u0027 tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on different \u003cContract\u003e  Months Tariff in Tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select any Random Tariff in the displayed list of Tariffs under different \u003cContract\u003e tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "I Land on the Plan included basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 for SimOnly",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 24,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 26,
+  "name": "",
+  "description": "",
+  "id": "10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;",
+  "rows": [
+    {
+      "cells": [
+        "Contract",
+        "Firstname",
+        "Surname",
+        "Username",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 27,
+      "id": "10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;;1"
+    },
+    {
+      "cells": [
+        "12 Months",
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Enabled",
+        "CapMyBill",
+        "£20",
+        "Not",
+        "Not",
+        "Not",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 28,
+      "id": "10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 24884103713,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 28,
+  "name": "10_CFA_NewConnection_Tablet_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptOut_All",
+  "description": "",
+  "id": "10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;10-cfa-newconnection-tablet-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optout-all;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "navigate to PAYM SIMO page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Select \u0027Tablets\u0027 tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on different 12 Months  Months Tariff in Tab",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select any Random Tariff in the displayed list of Tariffs under different 12 Months tab",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Choose your bill cap CapMyBill £20 when BSC is Enabled",
+  "matchedColumns": [
+    4,
+    5,
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "I Land on the Plan included basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+  "matchedColumns": [
+    1,
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Not Not with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for SimOnly",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 24,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1338818180,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page()"
+});
+formatter.result({
+  "duration": 84913115331,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.selectTabletsTab()"
+});
+formatter.result({
+  "duration": 3174042972,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "12 Months ",
+      "offset": 19
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.click_on_different_Months_Tariff_in_Tab(String)"
+});
+formatter.result({
+  "duration": 11447559553,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "12 Months",
+      "offset": 74
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_any_Random_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String)"
+});
+formatter.result({
+  "duration": 17489759718,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 40214782232,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£20",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 47
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 69146149789,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "duration": 22454703088,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 31911371687,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+});
+formatter.result({
+  "duration": 37489608963,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 75
+    },
+    {
+      "val": "Not",
+      "offset": 79
+    },
+    {
+      "val": "No",
+      "offset": 88
+    },
+    {
+      "val": "Connected",
+      "offset": 95
+    },
+    {
+      "val": "Enabled",
+      "offset": 135
+    },
+    {
+      "val": "No",
+      "offset": 147
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 63682948641,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery_SimOnly(String)"
+});
+formatter.result({
+  "duration": 119053620607,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 54623557227,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 5941110915,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20057735948,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17005087003,
+  "status": "passed"
+});
+formatter.uri("11_CFA_NewConnection_MBB_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B2.feature");
+formatter.feature({
+  "line": 1,
+  "name": "11_CFA_NewConnection_MBB_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B2",
+  "description": "\r\nThis Scenario ensures that when the Customer in MBB SIMO acquisition journey selects \u0027simo tariff\u0027 with home delivery\r\noption and lands on delivery page then customer should not be displayed with end user question instead the customer\r\nshould see GDPR consent and placed an order by opting of Marketing preference \u0027B2\u0027, then the Order consent profile\r\nshould be created in CMT as expected",
+  "id": "11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 9,
+  "name": "11_CFA_NewConnection_MBB_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B2",
+  "description": "",
+  "id": "11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2;11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "navigate to PAYM SIMO page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Select \u0027MBB\u0027 tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on different \u003cContract\u003e  Months Tariff in Tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select any Random Tariff in the displayed list of Tariffs under different \u003cContract\u003e tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "I Land on the Plan included basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 for SimOnly",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 24,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 26,
+  "name": "",
+  "description": "",
+  "id": "11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2;11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2;",
+  "rows": [
+    {
+      "cells": [
+        "Contract",
+        "Firstname",
+        "Surname",
+        "Username",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 27,
+      "id": "11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2;11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2;;1"
+    },
+    {
+      "cells": [
+        "12 Months",
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Enabled",
+        "CapMyBill",
+        "£60",
+        "Not",
+        "Select",
+        "Not",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 28,
+      "id": "11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2;11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 23705265008,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 28,
+  "name": "11_CFA_NewConnection_MBB_SIMO_GDPR_Enabled_Refresh_HomeDelivery_EndUser_MP_OptIn_B2",
+  "description": "",
+  "id": "11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2;11-cfa-newconnection-mbb-simo-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b2;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "navigate to PAYM SIMO page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Select \u0027MBB\u0027 tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on different 12 Months  Months Tariff in Tab",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select any Random Tariff in the displayed list of Tariffs under different 12 Months tab",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Choose your bill cap CapMyBill £60 when BSC is Enabled",
+  "matchedColumns": [
+    4,
+    5,
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "I Land on the Plan included basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+  "matchedColumns": [
+    1,
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Select Not with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for SimOnly",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 24,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1283362337,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page()"
+});
+formatter.result({
+  "duration": 81431371824,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.selectMBBTab()"
+});
+formatter.result({
+  "duration": 3159695030,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "12 Months ",
+      "offset": 19
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.click_on_different_Months_Tariff_in_Tab(String)"
+});
+formatter.result({
+  "duration": 11414924113,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "12 Months",
+      "offset": 74
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_any_Random_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String)"
+});
+formatter.result({
+  "duration": 17502028373,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 40236186102,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£60",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 47
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 69344243103,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "duration": 23278207068,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 32086052384,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+});
+formatter.result({
+  "duration": 37549892395,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 75
+    },
+    {
+      "val": "Not",
+      "offset": 82
+    },
+    {
+      "val": "No",
+      "offset": 91
+    },
+    {
+      "val": "Connected",
+      "offset": 98
+    },
+    {
+      "val": "Enabled",
+      "offset": 138
+    },
+    {
+      "val": "No",
+      "offset": 150
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 64898793558,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery_SimOnly(String)"
+});
+formatter.result({
+  "duration": 119011079108,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 54961907780,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 5916392131,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20074953934,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17004512994,
+  "status": "passed"
+});
+formatter.uri("12_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_CC_EndUser_MP_OptOut_All.feature");
+formatter.feature({
+  "comments": [
+    {
+      "line": 1,
+      "value": "# Validating GDPR functionality"
+    },
+    {
+      "line": 2,
+      "value": "# Tags: optional"
+    }
+  ],
+  "line": 4,
+  "name": "12_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_CC_EndUser_MP_OptOut_All",
+  "description": "\r\nThis Scenario ensures that when the Customer in acquisition journey selects \u0027PAYM Phone\u0027 and lands on delivery page\r\nthen customer should not be displayed with end user question instead the customer should see GDPR consent and placed\r\nan order by opting out \u0027All\u0027 Marketing preference, with CC then the Order consent profile should be created in CMT as expected",
+  "id": "12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 11,
+  "name": "12_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_CC_EndUser_MP_OptOut_All",
+  "description": "",
+  "id": "12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all;12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 10,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 13,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 14,
+  "name": "navigate to PAYM Phones page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "I choose PayM \u003chandset\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "click on the color dropdown",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "select \u003ccolor\u003e color of the connected device",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR to click and collect",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details for Click and collect order and click \u0027Continue on next step\u0027 for payments",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 31,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 33,
+  "name": "",
+  "description": "",
+  "id": "12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all;12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all;",
+  "rows": [
+    {
+      "cells": [
+        "handset",
+        "color",
+        "Firstname",
+        "Surname",
+        "Username",
+        "GDPRstatus",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 34,
+      "id": "12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all;12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all;;1"
+    },
+    {
+      "cells": [
+        "iPhone X",
+        "Silver",
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Enabled",
+        "Enabled",
+        "CapMyBill",
+        "£30",
+        "Not",
+        "Not",
+        "Not",
+        "Not",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 35,
+      "id": "12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all;12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 27824681009,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 35,
+  "name": "12_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_CC_EndUser_MP_OptOut_All",
+  "description": "",
+  "id": "12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all;12-cfa-newconnection-paym-phone-gdpr-enabled-refresh-cc-enduser-mp-optout-all;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 10,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 13,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 14,
+  "name": "navigate to PAYM Phones page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "I choose PayM iPhone X",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "click on the color dropdown",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "select Silver color of the connected device",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Choose your bill cap CapMyBill £30 when BSC is Enabled",
+  "matchedColumns": [
+    6,
+    7,
+    8
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR to click and collect",
+  "matchedColumns": [
+    2,
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Not Not with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    5,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "land on the payment page and input TEST ACCEPTA and other details for Click and collect order and click \u0027Continue on next step\u0027 for payments",
+  "matchedColumns": [
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 31,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1239471435,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+});
+formatter.result({
+  "duration": 57085002785,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "iPhone X",
+      "offset": 14
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
+});
+formatter.result({
+  "duration": 29355712468,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
+});
+formatter.result({
+  "duration": 15114251630,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "",
+      "offset": 74
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
+});
+formatter.result({
+  "duration": 215134374,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Silver",
+      "offset": 7
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
+});
+formatter.result({
+  "duration": 15815015590,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 30645006608,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+});
+formatter.result({
+  "duration": 14369481282,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 40082277239,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£30",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 47
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 69369752641,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "duration": 40319416798,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 32440013813,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr_ClickAndCollect(String,String)"
+});
+formatter.result({
+  "duration": 43546502387,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 75
+    },
+    {
+      "val": "Not",
+      "offset": 79
+    },
+    {
+      "val": "No",
+      "offset": 88
+    },
+    {
+      "val": "Connected",
+      "offset": 95
+    },
+    {
+      "val": "Enabled",
+      "offset": 135
+    },
+    {
+      "val": "No",
+      "offset": 147
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 64306010366,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_ClickAndCollect_CreditCheck(String)"
+});
+formatter.result({
+  "duration": 225817461812,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "duration": 70248473529,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 57505759714,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 6119322135,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20050839310,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17004766718,
+  "status": "passed"
+});
+formatter.uri("13_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1B2.feature");
+formatter.feature({
+  "line": 1,
+  "name": "13_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1B2",
+  "description": "\r\nThis Scenario ensures that when the Customer in acquisition journey selects \u0027PAYG Tablet\u0027  and lands on delivery page\r\nthen customer should not be displayed with end user question instead the customer should see GDPR consent and placed\r\nan order by opting of Marketing preference \u0027B1B2\u0027, with CC then the Order consent profile should be created in CMT as expected",
+  "id": "13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 8,
+  "name": "13_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1B2",
+  "description": "",
+  "id": "13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2;13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "navigate to Pay as you Go Tablets page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "select any available \u003cDevice\u003e Tablet",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Select a PayG tariff \u003ctariff\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR to click and collect",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 for GDPR",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 22,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 24,
+  "name": "",
+  "description": "",
+  "id": "13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2;13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2;",
+  "rows": [
+    {
+      "cells": [
+        "Device",
+        "Firstname",
+        "tariff",
+        "BSCstatus",
+        "Surname",
+        "Username",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 25,
+      "id": "13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2;13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2;;1"
+    },
+    {
+      "cells": [
+        "A3 10",
+        "TEST",
+        "1GB Preloaded",
+        "Disabled",
+        "ACCEPTA",
+        "TEST ACCEPTA",
+        "Select",
+        "Select",
+        "Not",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 26,
+      "id": "13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2;13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 24725884949,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 26,
+  "name": "13_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1B2",
+  "description": "",
+  "id": "13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2;13-cfa-newconnection-payg-tablet-gdpr-enabled-refresh-cc-enduser-mp-optin-b1b2;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am an CFA user and Lands on shop page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "navigate to Pay as you Go Tablets page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "select any available A3 10 Tablet",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Select a PayG tariff 1GB Preloaded",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Disabled",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR to click and collect",
+  "matchedColumns": [
+    1,
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Select Not with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    6,
+    7,
+    8,
+    10,
+    11,
+    12,
+    13
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for GDPR",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 22,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 1520437043,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigateToPayAsYouGoTabletsPage()"
+});
+formatter.result({
+  "duration": 78728802779,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "A3 10",
+      "offset": 21
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
+});
+formatter.result({
+  "duration": 53191586363,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 33685110418,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1GB Preloaded",
+      "offset": 21
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.selectPayGTariffTariff(String)"
+});
+formatter.result({
+  "duration": 22556432908,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Disabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 29857104823,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "duration": 40230246334,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 32590843281,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr_ClickAndCollect(String,String)"
+});
+formatter.result({
+  "duration": 43748527290,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Select",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 78
+    },
+    {
+      "val": "Not",
+      "offset": 85
+    },
+    {
+      "val": "No",
+      "offset": 94
+    },
+    {
+      "val": "Connected",
+      "offset": 101
+    },
+    {
+      "val": "Enabled",
+      "offset": 141
+    },
+    {
+      "val": "No",
+      "offset": 153
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 69278465343,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 52
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery_for_GDPR(String)"
+});
+formatter.result({
+  "duration": 95042040877,
+  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery_for_GDPR(E2EOrderPlaced_Steps.java:2151)\r\n\tat ✽.And land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for GDPR(13_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1B2.feature:19)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 17381191287,
+  "status": "passed"
+});
+formatter.uri("14_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptIn_B1B2B3.feature");
+formatter.feature({
+  "line": 1,
+  "name": "14_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptIn_B1B2B3",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM Tablet\u0027 and lands on\r\ndelivery page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand select MP OptIn - B1B2B3 and place an order as an CC End user then the Order consent profile should be created in CMT as expected",
+  "id": "14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 9,
+  "name": "14_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptIn_B1B2B3",
+  "description": "",
+  "id": "14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3;14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Click on Tablet section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on View all Tablets link in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Select PayM Tablet \u003cTablet\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "click on the color dropdown",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "select \u003ccolor\u003e color of the connected device",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "select \u003cCapacity\u003e capacity of the connected device",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "perform \u003cAction\u003e in OTAC page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Enter details in Delivery page for Click and collect",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "Enter cardDetails in payment page input \u003cUsername\u003e and click \u0027Continue on next step\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 34,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 36,
+  "name": "",
+  "description": "",
+  "id": "14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3;14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3;",
+  "rows": [
+    {
+      "cells": [
+        "username",
+        "password",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "Tablet",
+        "color",
+        "Capacity",
+        "Username",
+        "Action",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 37,
+      "id": "14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3;14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3;;1"
+    },
+    {
+      "cells": [
+        "cucumber024@o2.com",
+        "test123",
+        "Enabled",
+        "CapMyBill",
+        "£60",
+        "iPad 9.7 inch 2018",
+        "Space Grey",
+        "32GB",
+        "TEST ACCEPTA",
+        "enterCode",
+        "Select",
+        "Select",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 38,
+      "id": "14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3;14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 28165296308,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 38,
+  "name": "14_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptIn_B1B2B3",
+  "description": "",
+  "id": "14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3;14-cfu-tablets-gdpr-enabled-cc-enduser-complaint-mp-optin-b1b2b3;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid cucumber024@o2.com and test123 credentials",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Click on Tablet section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on View all Tablets link in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Select PayM Tablet iPad 9.7 inch 2018",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "click on the color dropdown",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "select Space Grey color of the connected device",
+  "matchedColumns": [
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "select 32GB capacity of the connected device",
+  "matchedColumns": [
+    7
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Choose your bill cap CapMyBill £60 when BSC is Enabled",
+  "matchedColumns": [
+    2,
+    3,
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "perform enterCode in OTAC page",
+  "matchedColumns": [
+    9
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Enter details in Delivery page for Click and collect",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Select Select with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    16,
+    17,
+    10,
+    11,
+    12,
+    14,
+    15
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "Enter cardDetails in payment page input TEST ACCEPTA and click \u0027Continue on next step\u0027",
+  "matchedColumns": [
+    8
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 34,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+});
+formatter.result({
+  "duration": 35369204801,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "cucumber024@o2.com",
+      "offset": 19
+    },
+    {
+      "val": "test123",
+      "offset": 42
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+});
+formatter.result({
+  "duration": 34698219890,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
+});
+formatter.result({
+  "duration": 58415066335,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
+});
+formatter.result({
+  "duration": 15501860551,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Tablets_tab()"
+});
+formatter.result({
+  "duration": 11534478354,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_View_all_tablets()"
+});
+formatter.result({
+  "duration": 177801111381,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "iPad 9.7 inch 2018",
+      "offset": 19
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.Choose_PayMTablet(String)"
+});
+formatter.result({
+  "duration": 28512932263,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
+});
+formatter.result({
+  "duration": 81371777317,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "",
+      "offset": 74
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
+});
+formatter.result({
+  "duration": 242533193,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Space Grey",
+      "offset": 7
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
+});
+formatter.result({
+  "duration": 20073412815,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "32GB",
+      "offset": 7
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
+});
+formatter.result({
+  "duration": 19837793895,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 32503470506,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+});
+formatter.result({
+  "duration": 14555151202,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 40430311415,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£60",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 47
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 69752514630,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
+});
+formatter.result({
+  "duration": 45579744262,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 36576798556,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "enterCode",
+      "offset": 8
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
+});
+formatter.result({
+  "duration": 40299357213,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_ClickandCollect()"
+});
+formatter.result({
+  "duration": 26952858467,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Select",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 78
+    },
+    {
+      "val": "Select",
+      "offset": 85
+    },
+    {
+      "val": "No",
+      "offset": 97
+    },
+    {
+      "val": "Connected",
+      "offset": 104
+    },
+    {
+      "val": "Enabled",
+      "offset": 144
+    },
+    {
+      "val": "No",
+      "offset": 156
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 62873204374,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 40
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPg_ClickAndCollect(String)"
+});
+formatter.result({
+  "duration": 132424391560,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "duration": 67167146334,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 52423605355,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 28424280057,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20066322185,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17002377955,
+  "status": "passed"
+});
+formatter.uri("15_CFU_SIMO_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_Preticked_to_MP_ALL.feature");
+formatter.feature({
+  "line": 1,
+  "name": "15_CFU_SIMO_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_Preticked_to_MP_ALL",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM Tablet\u0027 and lands on\r\nreview page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand MP PreTicked - B1B2B3 and place an order as an End user then the Order consent profile should be created in CMT as expected",
+  "id": "15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 8,
+  "name": "15_CFU_SIMO_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_Preticked_to_MP_ALL",
+  "description": "",
+  "id": "15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all;15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "verify that the url has simo at the end",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "the \u0027Phones\u0027 button should be selected by default",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 15,
+  "name": "the two contract lenght should be displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "all the tariffs under twelve months should be displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Click on \u0027Select\u0027 CTA to buy a tariff",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "copy text SIM delivery required or not is displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Select \u0027I’ll keep my current sim\u0027 option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Click on \u0027I agree to the terms and condition\u0027 checkbox in SIMO review page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 25,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 28,
+  "name": "",
+  "description": "",
+  "id": "15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all;15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all;",
+  "rows": [
+    {
+      "cells": [
+        "username",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "password",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 29,
+      "id": "15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all;15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all;;1"
+    },
+    {
+      "cells": [
+        "in056936_403407",
+        "Enabled",
+        "CapMyBill",
+        "£30",
+        "test123",
+        "Select",
+        "Select",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "Yes",
+        "No"
+      ],
+      "line": 30,
+      "id": "15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all;15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 28257191749,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 30,
+  "name": "15_CFU_SIMO_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_Preticked_to_MP_ALL",
+  "description": "",
+  "id": "15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all;15-cfu-simo-review-page-home-delivery-gdpr-enabled-enduser-preticked-to-mp-all;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "Signin using valid in056936_403407 and test123 credentials",
+  "matchedColumns": [
+    0,
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "verify that the url has simo at the end",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "the \u0027Phones\u0027 button should be selected by default",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 15,
+  "name": "the two contract lenght should be displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "all the tariffs under twelve months should be displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Click on \u0027Select\u0027 CTA to buy a tariff",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "copy text SIM delivery required or not is displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Choose your bill cap CapMyBill £30 when BSC is Enabled",
+  "matchedColumns": [
+    1,
+    2,
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Select \u0027I’ll keep my current sim\u0027 option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Click on \u0027I agree to the terms and condition\u0027 checkbox in SIMO review page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Select Select with No for Connected in delivery page when GDPR is Enabled and Yes",
+  "matchedColumns": [
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 25,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+});
+formatter.result({
+  "duration": 35824029064,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "in056936_403407",
+      "offset": 19
+    },
+    {
+      "val": "test123",
+      "offset": 39
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+});
+formatter.result({
+  "duration": 40524543851,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
+});
+formatter.result({
+  "duration": 67369265672,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
+});
+formatter.result({
+  "duration": 28495736464,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_the_url_has_simo_at_end()"
+});
+formatter.result({
+  "duration": 5585286376,
+  "error_message": "java.lang.AssertionError:  Failed to  verify that the url has simo at the end\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat actionsPerformed.SimsPageActions.verifyThatURL_has_simo_at_end(SimsPageActions.java:132)\r\n\tat steps.E2EOrderPlaced_Steps.verify_that_the_url_has_simo_at_end(E2EOrderPlaced_Steps.java:9814)\r\n\tat ✽.And verify that the url has simo at the end(15_CFU_SIMO_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_Preticked_to_MP_ALL.feature:13)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.phones_button_should_be_selected_by_default()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.two_contract_length_should_displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.all_the_tariffs_under_twelve_months_should_be_displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Click_on_Select_CTA_to_buy_SIMO_Tariff()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.copyTextSIMDeliveryRequiredOrNotIsDisplayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£30",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 47
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.selectILlKeepMyCurrentSimOption()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.clickOnIAgreeToTheTermsAndConditionCheckbox()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Select",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 78
+    },
+    {
+      "val": "Select",
+      "offset": 85
+    },
+    {
+      "val": "No",
+      "offset": 97
+    },
+    {
+      "val": "Connected",
+      "offset": 104
+    },
+    {
+      "val": "Enabled",
+      "offset": 144
+    },
+    {
+      "val": "Yes",
+      "offset": 156
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 17449936370,
+  "status": "passed"
+});
+formatter.uri("16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B2.feature");
+formatter.feature({
+  "line": 1,
+  "name": "16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B2",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM Tablet\u0027 and lands on\r\ndelivery page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand Pre Ticked MP - B2 and place an order as an CC End user then the Order consent profile should be created in CMT as expected",
+  "id": "16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 8,
+  "name": "16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B2",
+  "description": "",
+  "id": "16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2;16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on Tablet section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select a \u003cTablet\u003e device from Recommended devices section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on device \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Select a tariff \u003ctariff\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I should see \u0027Your Sim Card\u0027section",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 20,
+  "name": "no option should be selected",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "verify that Confirm CTA is not displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "verify that copy text \u0027Your Sim Card\u0027section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "verfiy that two option are displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "verify that \u0027Sim Swap Form\u0027link is diplayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "I click on \u0027Sim Swap Form\u0027 I should be opned with a new tab",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 26,
+  "name": "Select a \u0027I dont need a new sim\u0027option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Verify that \u0027Confirm CTA\u0027 is displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Click on \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Click on \u0027Continue\u0027 button on upgrade page at extra section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "I Land on the basket page and choose to collect from store",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "verify that \u0027Go to checkout\u0027 CTA is enabled",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "Verify that the option selected by the user in \u0027Your sim card\u0027 section in upgrade options page is retained",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 34,
+  "name": "perform \u003cAction\u003e in OTAC page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 35,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 36,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 in upgrade journey",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 37,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 38,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 39,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 40,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 42,
+  "name": "",
+  "description": "",
+  "id": "16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2;16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2;",
+  "rows": [
+    {
+      "cells": [
+        "username",
+        "password",
+        "tariff",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "Tablet",
+        "Username",
+        "Action",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 43,
+      "id": "16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2;16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2;;1"
+    },
+    {
+      "cells": [
+        "inavl0ww_555130@o2.com",
+        "test123",
+        "",
+        "Enabled",
+        "CapMyBill",
+        "£10",
+        "iPad 9.7 inch 2018",
+        "TEST ACCEPTA",
+        "enterCode",
+        "Not",
+        "Select",
+        "Not",
+        "Not",
+        "Enabled",
+        "Connected",
+        "Yes",
+        "No"
+      ],
+      "line": 44,
+      "id": "16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2;16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 29198538184,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 44,
+  "name": "16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B2",
+  "description": "",
+  "id": "16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2;16-cfu-tablets-gdpr-enabled-cc-enduser-complaint-preticked-to-mp-b2;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "Signin using valid inavl0ww_555130@o2.com and test123 credentials",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on Tablet section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select a iPad 9.7 inch 2018 device from Recommended devices section",
+  "matchedColumns": [
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on device \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Select a tariff ",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Choose your bill cap CapMyBill £10 when BSC is Enabled",
+  "matchedColumns": [
+    3,
+    4,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I should see \u0027Your Sim Card\u0027section",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 20,
+  "name": "no option should be selected",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "verify that Confirm CTA is not displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "verify that copy text \u0027Your Sim Card\u0027section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "verfiy that two option are displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "verify that \u0027Sim Swap Form\u0027link is diplayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "I click on \u0027Sim Swap Form\u0027 I should be opned with a new tab",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 26,
+  "name": "Select a \u0027I dont need a new sim\u0027option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Verify that \u0027Confirm CTA\u0027 is displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Click on \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Click on \u0027Continue\u0027 button on upgrade page at extra section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "I Land on the basket page and choose to collect from store",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "verify that \u0027Go to checkout\u0027 CTA is enabled",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "Verify that the option selected by the user in \u0027Your sim card\u0027 section in upgrade options page is retained",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 34,
+  "name": "perform enterCode in OTAC page",
+  "matchedColumns": [
+    8
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 35,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Select Not with No for Connected in delivery page when GDPR is Enabled and Yes",
+  "matchedColumns": [
+    16,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 36,
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 in upgrade journey",
+  "matchedColumns": [
+    7
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 37,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 38,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 39,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 40,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+});
+formatter.result({
+  "duration": 35109578209,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "inavl0ww_555130@o2.com",
+      "offset": 19
+    },
+    {
+      "val": "test123",
+      "offset": 46
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+});
+formatter.result({
+  "duration": 35960354144,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
+});
+formatter.result({
+  "duration": 58040552095,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
+});
+formatter.result({
+  "duration": 16012892725,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Tablets_tab()"
+});
+formatter.result({
+  "duration": 11563187324,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "iPad 9.7 inch 2018",
+      "offset": 9
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_device_from_recommended_devices_section(String)"
+});
+formatter.result({
+  "duration": 22524942642,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.clickOnDeviceConfirm_CTA()"
+});
+formatter.result({
+  "duration": 10617720429,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "",
+      "offset": 16
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.selectATariffTariff(String)"
+});
+formatter.result({
+  "duration": 6017367604,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 40696446096,
   "status": "passed"
 });
 formatter.match({
@@ -7224,14 +7625,105 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 68520334454,
+  "duration": 69755277154,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+  "location": "E2EOrderPlaced_Steps.i_should_see_Your_Sim_Card_section()"
 });
 formatter.result({
-  "duration": 40664483549,
+  "duration": 493489921,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.no_option_should_be_selected()"
+});
+formatter.result({
+  "duration": 515695924,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Confirm_CTA_is_not_displayed()"
+});
+formatter.result({
+  "duration": 2475557411,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_copy_text_Your_Sim_Card_section()"
+});
+formatter.result({
+  "duration": 454158093,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verfiy_that_two_option_are_displayed()"
+});
+formatter.result({
+  "duration": 603485695,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Sim_Swap_Form_link_is_diplayed()"
+});
+formatter.result({
+  "duration": 20412591670,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_click_on_Sim_Swap_Form_I_should_be_opned_with_a_new_tab()"
+});
+formatter.result({
+  "duration": 20057420784,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.select_a_I_dont_need_a_new_sim_option()"
+});
+formatter.result({
+  "duration": 3200509383,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Confirm_CTA_is_displayed()"
+});
+formatter.result({
+  "duration": 526319922,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Confirm_CTA()"
+});
+formatter.result({
+  "duration": 3767246004,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.clickOnContinueUpgrade_extraSection()"
+});
+formatter.result({
+  "duration": 9955633506,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_to_collect_from_store()"
+});
+formatter.result({
+  "duration": 86037911883,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Go_to_checkout_CTA_is_enabled()"
+});
+formatter.result({
+  "duration": 453827568,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_the_option_selected_by_the_user_in_Your_sim_card_section_in_upgrade_options_page_is_retained()"
+});
+formatter.result({
+  "duration": 565620461,
   "status": "passed"
 });
 formatter.match({
@@ -7244,82 +7736,3363 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 33159405908,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 335596787,
+  "duration": 40720885555,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Delivery page",
-      "offset": 58
+      "val": "enterCode",
+      "offset": 8
     }
   ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
+  "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
 });
 formatter.result({
-  "duration": 5688560363,
+  "duration": 39005581367,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Test",
-      "offset": 6
+      "val": "Not",
+      "offset": 71
     },
     {
-      "val": "Accepta",
-      "offset": 15
+      "val": "Select",
+      "offset": 75
+    },
+    {
+      "val": "Not",
+      "offset": 82
+    },
+    {
+      "val": "No",
+      "offset": 91
+    },
+    {
+      "val": "Connected",
+      "offset": 98
+    },
+    {
+      "val": "Enabled",
+      "offset": 138
+    },
+    {
+      "val": "Yes",
+      "offset": 150
     }
   ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 36572088704,
+  "duration": 59811060676,
+  "error_message": "java.lang.AssertionError: Failed:: \u0027O2 Perks And Extras Preference\u0027 is expected to be selected by default as the customer was selected this preference earlier\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat actionsPerformed.DeliveryPageActions.GDPRvalidation(DeliveryPageActions.java:1249)\r\n\tat steps.E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(E2EOrderPlaced_Steps.java:11434)\r\n\tat ✽.And Validate consumer GDPR consent section and choose Business preferences Not Select Not with No for Connected in delivery page when GDPR is Enabled and Yes(16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B2.feature:35)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery_Upgrade(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 17366950865,
+  "status": "passed"
+});
+formatter.uri("17_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_PreTicked_To_MP_B1B2B3.feature");
+formatter.feature({
+  "line": 1,
+  "name": "17_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_PreTicked_To_MP_B1B2B3",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM Phones\u0027 and lands on\r\ndelivery page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand Pre Ticked MP - B1B3 and place an order as an End user then the Order consent profile should be created in CMT as expected",
+  "id": "17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 8,
+  "name": "17_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_PreTicked_To_MP_B1B2B3",
+  "description": "",
+  "id": "17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3;17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am existing user and I click on Signin button",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+  "keyword": "And "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 11,
+      "value": "#And Navigate to upgrade phone"
+    }
+  ],
+  "line": 12,
+  "name": "choose to upgrade any Phone in My upgrade page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select a \u003chandset\u003e device from Recommended devices section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on device \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Select a tariff \u003ctariff\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I should see \u0027Your Sim Card\u0027section",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 20,
+  "name": "no option should be selected",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "verify that Confirm CTA is not displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "verify that copy text \u0027Your Sim Card\u0027section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "verfiy that two option are displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "verify that \u0027Sim Swap Form\u0027link is diplayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "I click on \u0027Sim Swap Form\u0027 I should be opned with a new tab",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 26,
+  "name": "Select a \u0027I dont need a new sim\u0027option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Verify that \u0027Confirm CTA\u0027 is displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Click on \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Click on \u0027Continue\u0027 button on upgrade page at extra section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "verify that \u0027Go to checkout\u0027 CTA is enabled",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "Verify that the option selected by the user in \u0027Your sim card\u0027 section in upgrade options page is retained",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 34,
+  "name": "perform \u003cAction\u003e in OTAC page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 35,
+  "name": "Click on \u0027Use a different delivery address\u0027link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 36,
+  "name": "enter a \u003chouseNumber\u003e and an \u003cPostCode\u003e in Delivery section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 37,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 38,
+  "name": "Select the Home address",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 39,
+  "name": "Enter cardDetails in payment page input \u003cUsername\u003e and click \u0027Continue on next step\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 40,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 41,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 42,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 43,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 45,
+  "name": "",
+  "description": "",
+  "id": "17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3;17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3;",
+  "rows": [
+    {
+      "cells": [
+        "username",
+        "password",
+        "houseNumber",
+        "PostCode",
+        "handset",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "Username",
+        "Action",
+        "tariff",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 46,
+      "id": "17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3;17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3;;1"
+    },
+    {
+      "cells": [
+        "22fe97536512@stf.ref.o2.co.uk",
+        "test123",
+        "11",
+        "SL11Er",
+        "iPhone 8 Plus",
+        "Enabled",
+        "DontCapMyBill",
+        "Nill",
+        "TEST ACCEPTA",
+        "enterCode",
+        "129.99upfront37.00amonth",
+        "Select",
+        "Select",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "Yes",
+        "No"
+      ],
+      "line": 47,
+      "id": "17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3;17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 34419022956,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 47,
+  "name": "17_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_PreTicked_To_MP_B1B2B3",
+  "description": "",
+  "id": "17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3;17-cfu-phones-gdpr-enabled-home-delivery-enduser-complaint-preticked-to-mp-b1b2b3;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am existing user and I click on Signin button",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "Signin using valid 22fe97536512@stf.ref.o2.co.uk and test123 credentials",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 11,
+      "value": "#And Navigate to upgrade phone"
+    }
+  ],
+  "line": 12,
+  "name": "choose to upgrade any Phone in My upgrade page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select a iPhone 8 Plus device from Recommended devices section",
+  "matchedColumns": [
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on device \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Select a tariff 129.99upfront37.00amonth",
+  "matchedColumns": [
+    10
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Choose your bill cap DontCapMyBill Nill when BSC is Enabled",
+  "matchedColumns": [
+    5,
+    6,
+    7
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I should see \u0027Your Sim Card\u0027section",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 20,
+  "name": "no option should be selected",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "verify that Confirm CTA is not displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "verify that copy text \u0027Your Sim Card\u0027section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "verfiy that two option are displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "verify that \u0027Sim Swap Form\u0027link is diplayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "I click on \u0027Sim Swap Form\u0027 I should be opned with a new tab",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 26,
+  "name": "Select a \u0027I dont need a new sim\u0027option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Verify that \u0027Confirm CTA\u0027 is displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Click on \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Click on \u0027Continue\u0027 button on upgrade page at extra section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "verify that \u0027Go to checkout\u0027 CTA is enabled",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "Verify that the option selected by the user in \u0027Your sim card\u0027 section in upgrade options page is retained",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 34,
+  "name": "perform enterCode in OTAC page",
+  "matchedColumns": [
+    9
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 35,
+  "name": "Click on \u0027Use a different delivery address\u0027link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 36,
+  "name": "enter a 11 and an SL11Er in Delivery section",
+  "matchedColumns": [
+    2,
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 37,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Select Select with No for Connected in delivery page when GDPR is Enabled and Yes",
+  "matchedColumns": [
+    16,
+    17,
+    18,
+    11,
+    12,
+    13,
+    15
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 38,
+  "name": "Select the Home address",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 39,
+  "name": "Enter cardDetails in payment page input TEST ACCEPTA and click \u0027Continue on next step\u0027",
+  "matchedColumns": [
+    8
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 40,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 41,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 42,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 43,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+});
+formatter.result({
+  "duration": 15098348345,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Me",
-      "offset": 38
+      "val": "22fe97536512@stf.ref.o2.co.uk",
+      "offset": 19
     },
+    {
+      "val": "test123",
+      "offset": 53
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+});
+formatter.result({
+  "duration": 34357538600,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.choose_to_upgrade_any_Phone_in_My_upgrade_page()"
+});
+formatter.result({
+  "duration": 51139893720,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
+});
+formatter.result({
+  "duration": 15847012168,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "iPhone 8 Plus",
+      "offset": 9
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_device_from_recommended_devices_section(String)"
+});
+formatter.result({
+  "duration": 22596725021,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.clickOnDeviceConfirm_CTA()"
+});
+formatter.result({
+  "duration": 10709509487,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "129.99upfront37.00amonth",
+      "offset": 16
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.selectATariffTariff(String)"
+});
+formatter.result({
+  "duration": 5745550863,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
     {
       "val": "Enabled",
       "offset": 54
     }
   ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 78470337692,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
-});
-formatter.result({
-  "duration": 3343932294,
+  "duration": 40576902663,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Payments page",
-      "offset": 58
+      "val": "DontCapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "Nill",
+      "offset": 35
+    },
+    {
+      "val": "Enabled",
+      "offset": 52
     }
   ],
-  "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 26183816454,
-  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature:34)\r\n",
+  "duration": 40524618375,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_should_see_Your_Sim_Card_section()"
+});
+formatter.result({
+  "duration": 624645511,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.no_option_should_be_selected()"
+});
+formatter.result({
+  "duration": 555258154,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Confirm_CTA_is_not_displayed()"
+});
+formatter.result({
+  "duration": 2539233696,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_copy_text_Your_Sim_Card_section()"
+});
+formatter.result({
+  "duration": 645465132,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verfiy_that_two_option_are_displayed()"
+});
+formatter.result({
+  "duration": 801156892,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Sim_Swap_Form_link_is_diplayed()"
+});
+formatter.result({
+  "duration": 20548027577,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_click_on_Sim_Swap_Form_I_should_be_opned_with_a_new_tab()"
+});
+formatter.result({
+  "duration": 20069912442,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.select_a_I_dont_need_a_new_sim_option()"
+});
+formatter.result({
+  "duration": 3215852312,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Confirm_CTA_is_displayed()"
+});
+formatter.result({
+  "duration": 534636506,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Confirm_CTA()"
+});
+formatter.result({
+  "duration": 3693185225,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.clickOnContinueUpgrade_extraSection()"
+});
+formatter.result({
+  "duration": 10083005416,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
+});
+formatter.result({
+  "duration": 54772527567,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Go_to_checkout_CTA_is_enabled()"
+});
+formatter.result({
+  "duration": 559826330,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_the_option_selected_by_the_user_in_Your_sim_card_section_in_upgrade_options_page_is_retained()"
+});
+formatter.result({
+  "duration": 689998879,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 50309521548,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "enterCode",
+      "offset": 8
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
+});
+formatter.result({
+  "duration": 45025112456,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Use_a_different_delivery_address_link()"
+});
+formatter.result({
+  "duration": 3104174904,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "11",
+      "offset": 8
+    },
+    {
+      "val": "SL11Er",
+      "offset": 18
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.enter_houseNum_and_PostCode(String,String)"
+});
+formatter.result({
+  "duration": 9234560218,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Select",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 78
+    },
+    {
+      "val": "Select",
+      "offset": 85
+    },
+    {
+      "val": "No",
+      "offset": 97
+    },
+    {
+      "val": "Connected",
+      "offset": 104
+    },
+    {
+      "val": "Enabled",
+      "offset": 144
+    },
+    {
+      "val": "Yes",
+      "offset": 156
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 70853599899,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.selectTheHomeAddress()"
+});
+formatter.result({
+  "duration": 13245300268,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 40
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPg_ClickAndCollect(String)"
+});
+formatter.result({
+  "duration": 118885800139,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "duration": 65813413600,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 64080240617,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 5420560094,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20015506769,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17002158933,
+  "status": "passed"
+});
+formatter.uri("18_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_EndUser_MP_OptOut.feature");
+formatter.feature({
+  "line": 1,
+  "name": "18_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_EndUser_MP_OptOut",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM MBB\u0027 and lands on\r\ndelivery page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand MP OptOut - B1B2B3 and place an order as an End user then the Order consent profile should be created in CMT as expected",
+  "id": "18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 8,
+  "name": "18_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_EndUser_MP_OptOut",
+  "description": "",
+  "id": "18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout;18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Click on Tablet section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on MBB section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I choose MBB PayM \u003cDevice_Name\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "perform \u003cAction\u003e in OTAC page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 for DD confirmation",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 29,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 31,
+  "name": "",
+  "description": "",
+  "id": "18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout;18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout;",
+  "rows": [
+    {
+      "cells": [
+        "Device_Name",
+        "Action",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "Username",
+        "username",
+        "password",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 32,
+      "id": "18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout;18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout;;1"
+    },
+    {
+      "cells": [
+        "Random Device",
+        "skip",
+        "Enabled",
+        "CapMyBill",
+        "£100",
+        "TEST ACCEPTA",
+        "inavl0wx_492663@o2.com",
+        "test123",
+        "Not",
+        "Not",
+        "Not",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 33,
+      "id": "18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout;18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 29146883087,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 33,
+  "name": "18_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_EndUser_MP_OptOut",
+  "description": "",
+  "id": "18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout;18-cfu-mbb-gdpr-enabled-hme-delivery-complaint-enduser-mp-optout;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid inavl0wx_492663@o2.com and test123 credentials",
+  "matchedColumns": [
+    6,
+    7
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Click on Tablet section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on MBB section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I choose MBB PayM Random Device",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Choose your bill cap CapMyBill £100 when BSC is Enabled",
+  "matchedColumns": [
+    2,
+    3,
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "perform skip in OTAC page",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Not Not with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    15
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for DD confirmation",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 29,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+});
+formatter.result({
+  "duration": 34604975615,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "inavl0wx_492663@o2.com",
+      "offset": 19
+    },
+    {
+      "val": "test123",
+      "offset": 46
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+});
+formatter.result({
+  "duration": 35785352594,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
+});
+formatter.result({
+  "duration": 67793551419,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
+});
+formatter.result({
+  "duration": 15136166361,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Tablets_tab()"
+});
+formatter.result({
+  "duration": 11413474585,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_MBB_tab()"
+});
+formatter.result({
+  "duration": 67184029245,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Random Device",
+      "offset": 18
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_choose_MBB_PayM(String)"
+});
+formatter.result({
+  "duration": 15458235887,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 52478955953,
+  "error_message": "java.lang.AssertionError: Unable to navigate to device details page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Navigate_to_device_details_page(E2EOrderPlaced_Steps.java:630)\r\n\tat ✽.And Navigate to device details page(18_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_EndUser_MP_OptOut.feature:17)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£100",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 48
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "skip",
+      "offset": 8
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 75
+    },
+    {
+      "val": "Not",
+      "offset": 79
+    },
+    {
+      "val": "No",
+      "offset": 88
+    },
+    {
+      "val": "Connected",
+      "offset": 95
+    },
+    {
+      "val": "Enabled",
+      "offset": 135
+    },
+    {
+      "val": "No",
+      "offset": 147
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery_forDD(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 17319586896,
+  "status": "passed"
+});
+formatter.uri("19_CFU_MBB_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B2B3.feature");
+formatter.feature({
+  "line": 1,
+  "name": "19_CFU_MBB_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B2B3",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM MBB\u0027 and lands on\r\ndelivery page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand selects MP OptIn - B1B2B3 and place an order as an End user then the Order consent profile should be created in CMT as expected",
+  "id": "19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 8,
+  "name": "19_CFU_MBB_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B2B3",
+  "description": "",
+  "id": "19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3;19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Click on Tablet section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on MBB section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I choose MBB PayM \u003cDevice_Name\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "perform \u003cAction\u003e in OTAC page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 for DD confirmation",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 29,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 31,
+  "name": "",
+  "description": "",
+  "id": "19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3;19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3;",
+  "rows": [
+    {
+      "cells": [
+        "Device_Name",
+        "Action",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "Username",
+        "username",
+        "password",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 32,
+      "id": "19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3;19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3;;1"
+    },
+    {
+      "cells": [
+        "Random Device",
+        "enterCode",
+        "Enabled",
+        "CapMyBill",
+        "£200",
+        "TEST ACCEPTA",
+        "in02818o_820724@o2.com",
+        "test123",
+        "Select",
+        "Select",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 33,
+      "id": "19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3;19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 29459019248,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 33,
+  "name": "19_CFU_MBB_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B2B3",
+  "description": "",
+  "id": "19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3;19-cfu-mbb-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b2b3;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid in02818o_820724@o2.com and test123 credentials",
+  "matchedColumns": [
+    6,
+    7
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Click on Tablet section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on MBB section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I choose MBB PayM Random Device",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Choose your bill cap CapMyBill £200 when BSC is Enabled",
+  "matchedColumns": [
+    2,
+    3,
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "perform enterCode in OTAC page",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Select Select with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    15
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for DD confirmation",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 29,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+});
+formatter.result({
+  "duration": 38308228463,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "in02818o_820724@o2.com",
+      "offset": 19
+    },
+    {
+      "val": "test123",
+      "offset": 46
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+});
+formatter.result({
+  "duration": 36411820825,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
+});
+formatter.result({
+  "duration": 62446105473,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
+});
+formatter.result({
+  "duration": 15155051191,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Tablets_tab()"
+});
+formatter.result({
+  "duration": 11398214145,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_MBB_tab()"
+});
+formatter.result({
+  "duration": 92172669675,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Random Device",
+      "offset": 18
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_choose_MBB_PayM(String)"
+});
+formatter.result({
+  "duration": 15430612926,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 45856874423,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+});
+formatter.result({
+  "duration": 13832459425,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 39505356940,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£200",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 48
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 68270047497,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
+});
+formatter.result({
+  "duration": 47748818560,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 31360345498,
+  "error_message": "java.lang.AssertionError: Unable to click on Go to Checkout button\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CheckoutFromBasket(E2EOrderPlaced_Steps.java:1355)\r\n\tat ✽.And click on \"go to checkout\" button(19_CFU_MBB_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B2B3.feature:22)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "enterCode",
+      "offset": 8
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Select",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 78
+    },
+    {
+      "val": "Select",
+      "offset": 85
+    },
+    {
+      "val": "No",
+      "offset": 97
+    },
+    {
+      "val": "Connected",
+      "offset": 104
+    },
+    {
+      "val": "Enabled",
+      "offset": 144
+    },
+    {
+      "val": "No",
+      "offset": 156
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery_forDD(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 17310377156,
+  "status": "passed"
+});
+formatter.uri("20_CFU_Phones_GDPR_Enabled_HomeDelivery_EndUser_MP_OptIn_B1B2B3.feature");
+formatter.feature({
+  "line": 1,
+  "name": "20_CFU_Phones_GDPR_Enabled_HomeDelivery_EndUser_MP_OptIn_B1B2B3",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM Phones\u0027 and lands on\r\ndelivery page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand selects MP OptIn - B1B2B3 and place an order as an End user then the Order consent profile should be created in CMT as expected",
+  "id": "20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 8,
+  "name": "20_CFU_Phones_GDPR_Enabled_HomeDelivery_EndUser_MP_OptIn_B1B2B3",
+  "description": "",
+  "id": "20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3;20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am existing user and I click on Signin button",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+  "keyword": "And "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 11,
+      "value": "#And Navigate to upgrade phone"
+    }
+  ],
+  "line": 12,
+  "name": "choose to upgrade any Phone in My upgrade page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select a \u003chandset\u003e device from Recommended devices section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on device \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Select a tariff \u003ctariff\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I should see \u0027Your Sim Card\u0027section",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 20,
+  "name": "no option should be selected",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "verify that Confirm CTA is not displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "verify that copy text \u0027Your Sim Card\u0027section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "verfiy that two option are displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "verify that \u0027Sim Swap Form\u0027link is diplayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "I click on \u0027Sim Swap Form\u0027 I should be opned with a new tab",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 26,
+  "name": "Select a \u0027I dont need a new sim\u0027option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Verify that \u0027Confirm CTA\u0027 is displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Click on \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Click on \u0027Continue\u0027 button on upgrade page at extra section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "verify that \u0027Go to checkout\u0027 CTA is enabled",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "Verify that the option selected by the user in \u0027Your sim card\u0027 section in upgrade options page is retained",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 34,
+  "name": "perform \u003cAction\u003e in OTAC page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 35,
+  "name": "Click on \u0027Use a different delivery address\u0027link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 36,
+  "name": "enter a \u003chouseNumber\u003e and an \u003cPostCode\u003e in Delivery section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 37,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 38,
+  "name": "Select the Home address",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 39,
+  "name": "Enter cardDetails in payment page input \u003cUsername\u003e and click \u0027Continue on next step\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 40,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 41,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 42,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 43,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 45,
+  "name": "",
+  "description": "",
+  "id": "20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3;20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3;",
+  "rows": [
+    {
+      "cells": [
+        "username",
+        "password",
+        "houseNumber",
+        "PostCode",
+        "handset",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "Username",
+        "Action",
+        "tariff",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 46,
+      "id": "20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3;20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3;;1"
+    },
+    {
+      "cells": [
+        "in01808o_486312@o2.com",
+        "test123",
+        "11",
+        "SL11Er",
+        "iPhone 8 Plus",
+        "Enabled",
+        "DontCapMyBill",
+        "Nill",
+        "TEST ACCEPTA",
+        "enterCode",
+        "129.99upfront37.00amonth",
+        "Select",
+        "Select",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 47,
+      "id": "20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3;20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 23034749431,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 47,
+  "name": "20_CFU_Phones_GDPR_Enabled_HomeDelivery_EndUser_MP_OptIn_B1B2B3",
+  "description": "",
+  "id": "20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3;20-cfu-phones-gdpr-enabled-homedelivery-enduser-mp-optin-b1b2b3;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 9,
+  "name": "I am existing user and I click on Signin button",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "Signin using valid in01808o_486312@o2.com and test123 credentials",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 11,
+      "value": "#And Navigate to upgrade phone"
+    }
+  ],
+  "line": 12,
+  "name": "choose to upgrade any Phone in My upgrade page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Select a iPhone 8 Plus device from Recommended devices section",
+  "matchedColumns": [
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on device \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Select a tariff 129.99upfront37.00amonth",
+  "matchedColumns": [
+    10
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Choose your bill cap DontCapMyBill Nill when BSC is Enabled",
+  "matchedColumns": [
+    5,
+    6,
+    7
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I should see \u0027Your Sim Card\u0027section",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 20,
+  "name": "no option should be selected",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "verify that Confirm CTA is not displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "verify that copy text \u0027Your Sim Card\u0027section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "verfiy that two option are displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "verify that \u0027Sim Swap Form\u0027link is diplayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "I click on \u0027Sim Swap Form\u0027 I should be opned with a new tab",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 26,
+  "name": "Select a \u0027I dont need a new sim\u0027option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Verify that \u0027Confirm CTA\u0027 is displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Click on \u0027Confirm CTA\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Click on \u0027Continue\u0027 button on upgrade page at extra section",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "verify that \u0027Go to checkout\u0027 CTA is enabled",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "Verify that the option selected by the user in \u0027Your sim card\u0027 section in upgrade options page is retained",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 34,
+  "name": "perform enterCode in OTAC page",
+  "matchedColumns": [
+    9
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 35,
+  "name": "Click on \u0027Use a different delivery address\u0027link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 36,
+  "name": "enter a 11 and an SL11Er in Delivery section",
+  "matchedColumns": [
+    2,
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 37,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Select Select with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    16,
+    17,
+    18,
+    11,
+    12,
+    13,
+    15
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 38,
+  "name": "Select the Home address",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 39,
+  "name": "Enter cardDetails in payment page input TEST ACCEPTA and click \u0027Continue on next step\u0027",
+  "matchedColumns": [
+    8
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 40,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 41,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 42,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 43,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+});
+formatter.result({
+  "duration": 10676792696,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "in01808o_486312@o2.com",
+      "offset": 19
+    },
+    {
+      "val": "test123",
+      "offset": 46
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+});
+formatter.result({
+  "duration": 29594576898,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.choose_to_upgrade_any_Phone_in_My_upgrade_page()"
+});
+formatter.result({
+  "duration": 40827947000,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
+});
+formatter.result({
+  "duration": 15121489032,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "iPhone 8 Plus",
+      "offset": 9
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_device_from_recommended_devices_section(String)"
+});
+formatter.result({
+  "duration": 21856043845,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.clickOnDeviceConfirm_CTA()"
+});
+formatter.result({
+  "duration": 9952464795,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "129.99upfront37.00amonth",
+      "offset": 16
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.selectATariffTariff(String)"
+});
+formatter.result({
+  "duration": 5082464403,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 39538701216,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "DontCapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "Nill",
+      "offset": 35
+    },
+    {
+      "val": "Enabled",
+      "offset": 52
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 39906838213,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_should_see_Your_Sim_Card_section()"
+});
+formatter.result({
+  "duration": 368494828,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.no_option_should_be_selected()"
+});
+formatter.result({
+  "duration": 365146349,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Confirm_CTA_is_not_displayed()"
+});
+formatter.result({
+  "duration": 2407860222,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_copy_text_Your_Sim_Card_section()"
+});
+formatter.result({
+  "duration": 339392188,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verfiy_that_two_option_are_displayed()"
+});
+formatter.result({
+  "duration": 439517742,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Sim_Swap_Form_link_is_diplayed()"
+});
+formatter.result({
+  "duration": 20340149379,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_click_on_Sim_Swap_Form_I_should_be_opned_with_a_new_tab()"
+});
+formatter.result({
+  "duration": 20060671414,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.select_a_I_dont_need_a_new_sim_option()"
+});
+formatter.result({
+  "duration": 2742646117,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Confirm_CTA_is_displayed()"
+});
+formatter.result({
+  "duration": 334750056,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Confirm_CTA()"
+});
+formatter.result({
+  "duration": 3476448860,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.clickOnContinueUpgrade_extraSection()"
+});
+formatter.result({
+  "duration": 9665187935,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
+});
+formatter.result({
+  "duration": 47563885920,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_Go_to_checkout_CTA_is_enabled()"
+});
+formatter.result({
+  "duration": 353751508,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_the_option_selected_by_the_user_in_Your_sim_card_section_in_upgrade_options_page_is_retained()"
+});
+formatter.result({
+  "duration": 403914409,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 34001208889,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "enterCode",
+      "offset": 8
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
+});
+formatter.result({
+  "duration": 37855240005,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Use_a_different_delivery_address_link()"
+});
+formatter.result({
+  "duration": 3047458973,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "11",
+      "offset": 8
+    },
+    {
+      "val": "SL11Er",
+      "offset": 18
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.enter_houseNum_and_PostCode(String,String)"
+});
+formatter.result({
+  "duration": 8054584873,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Select",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 78
+    },
+    {
+      "val": "Select",
+      "offset": 85
+    },
+    {
+      "val": "No",
+      "offset": 97
+    },
+    {
+      "val": "Connected",
+      "offset": 104
+    },
+    {
+      "val": "Enabled",
+      "offset": 144
+    },
+    {
+      "val": "No",
+      "offset": 156
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 64606452449,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.selectTheHomeAddress()"
+});
+formatter.result({
+  "duration": 13139036974,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 40
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPg_ClickAndCollect(String)"
+});
+formatter.result({
+  "duration": 118384150647,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "duration": 65835180420,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "duration": 60401597326,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 5416614850,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "duration": 20043434654,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 17004352567,
+  "status": "passed"
+});
+formatter.uri("21_CFU_MBB_GDPR_Enabled_HomeDelivery_EndUser_expired_PreTicked_To_MP_B2B3.feature");
+formatter.feature({
+  "line": 1,
+  "name": "21_CFU_MBB_GDPR_Enabled_HomeDelivery_EndUser_expired_PreTicked_To_MP_B2B3",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM MBB\u0027 and lands on\r\ndelivery page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand Pre Ticked MP - B2B3 and place an order as an End user then the Order consent profile should be created in CMT as expected",
+  "id": "21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 8,
+  "name": "21_CFU_MBB_GDPR_Enabled_HomeDelivery_EndUser_expired_PreTicked_To_MP_B2B3",
+  "description": "",
+  "id": "21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3;21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Click on Tablet section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on MBB section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I choose MBB PayM \u003cDevice_Name\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "perform \u003cAction\u003e in OTAC page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027 for DD confirmation",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 29,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 31,
+  "name": "",
+  "description": "",
+  "id": "21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3;21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3;",
+  "rows": [
+    {
+      "cells": [
+        "Device_Name",
+        "Action",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "Username",
+        "username",
+        "password",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 32,
+      "id": "21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3;21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3;;1"
+    },
+    {
+      "cells": [
+        "Random Device",
+        "enterCode",
+        "Enabled",
+        "CapMyBill",
+        "£20",
+        "TEST ACCEPTA",
+        "in00533s_540350@o2.com",
+        "test123",
+        "Not",
+        "Select",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "Yes",
+        "No"
+      ],
+      "line": 33,
+      "id": "21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3;21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 28768078288,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 33,
+  "name": "21_CFU_MBB_GDPR_Enabled_HomeDelivery_EndUser_expired_PreTicked_To_MP_B2B3",
+  "description": "",
+  "id": "21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3;21-cfu-mbb-gdpr-enabled-homedelivery-enduser-expired-preticked-to-mp-b2b3;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid in00533s_540350@o2.com and test123 credentials",
+  "matchedColumns": [
+    6,
+    7
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to upgrade \u003e upgrade now",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Click on Tablet section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Click on MBB section in upgrade options page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "I choose MBB PayM Random Device",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Choose your bill cap CapMyBill £20 when BSC is Enabled",
+  "matchedColumns": [
+    2,
+    3,
+    4
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "perform enterCode in OTAC page",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Select Select with No for Connected in delivery page when GDPR is Enabled and Yes",
+  "matchedColumns": [
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    15
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for DD confirmation",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 29,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+});
+formatter.result({
+  "duration": 33836596384,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "in00533s_540350@o2.com",
+      "offset": 19
+    },
+    {
+      "val": "test123",
+      "offset": 46
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+});
+formatter.result({
+  "duration": 34880529385,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
+});
+formatter.result({
+  "duration": 59496840107,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
+});
+formatter.result({
+  "duration": 15164714904,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Tablets_tab()"
+});
+formatter.result({
+  "duration": 11455911408,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_MBB_tab()"
+});
+formatter.result({
+  "duration": 143859295045,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Random Device",
+      "offset": 18
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_choose_MBB_PayM(String)"
+});
+formatter.result({
+  "duration": 15423055809,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 41420180076,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+});
+formatter.result({
+  "duration": 13831171462,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 39472430230,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£20",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 47
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 68243186847,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
+});
+formatter.result({
+  "duration": 43891144849,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 34954880866,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "enterCode",
+      "offset": 8
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
+});
+formatter.result({
+  "duration": 41859706920,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Select",
+      "offset": 75
+    },
+    {
+      "val": "Select",
+      "offset": 82
+    },
+    {
+      "val": "No",
+      "offset": 94
+    },
+    {
+      "val": "Connected",
+      "offset": 101
+    },
+    {
+      "val": "Enabled",
+      "offset": 141
+    },
+    {
+      "val": "Yes",
+      "offset": 153
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 58748736641,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery_forDD(String)"
+});
+formatter.result({
+  "duration": 82065695270,
+  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery_forDD(E2EOrderPlaced_Steps.java:1970)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027 for DD confirmation(21_CFU_MBB_GDPR_Enabled_HomeDelivery_EndUser_expired_PreTicked_To_MP_B2B3.feature:25)\r\n",
   "status": "failed"
 });
 formatter.match({
@@ -7341,490 +11114,792 @@ formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Not",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Select",
-      "offset": 82
-    },
-    {
-      "val": "Not",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 20279250983,
+  "duration": 17321242362,
   "status": "passed"
 });
-formatter.uri("12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature");
+formatter.uri("22_CFU_SIMO_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B3.feature");
 formatter.feature({
   "line": 1,
-  "name": "12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation",
-  "description": "This scenario ensures that when the customer on Existing customer new aquisition journey selects \u0027Freesim\u0027 for Phones then\r\nData Roll over copy text is displayed in the tile info, Your package section and Basket page",
-  "id": "12-reg-consumer-existing-payg-phone-bigbundle-to-show-£15-data-roll-over-copy-on-basket-page-package-summary-cc-order-confirmation",
+  "name": "22_CFU_SIMO_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B3",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM SIMO\u0027 and lands on\r\nreview page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand select MP OptIn - B1B3 and place an order as an End user then the Order consent profile should be created in CMT as expected",
+  "id": "22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 6,
-  "name": "CFU_New_PayG_To_Show_DataRollover_In_Basket_Page",
+  "line": 8,
+  "name": "22_CFU_SIMO_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B3",
   "description": "",
-  "id": "12-reg-consumer-existing-payg-phone-bigbundle-to-show-£15-data-roll-over-copy-on-basket-page-package-summary-cc-order-confirmation;cfu-new-payg-to-show-datarollover-in-basket-page",
+  "id": "22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3;22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 5,
+      "line": 7,
       "name": "@Web"
     }
   ]
 });
 formatter.step({
-  "line": 7,
+  "line": 9,
   "name": "I am an Existing user and Navigates to Signin page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
+  "line": 10,
   "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
   "keyword": "And "
 });
 formatter.step({
-  "line": 9,
-  "name": "navigate to Pay as you Go Phones page",
+  "line": 11,
+  "name": "Navigate to upgrade \u003e upgrade now",
   "keyword": "And "
 });
 formatter.step({
-  "line": 10,
-  "name": "I choose PayG \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 11,
-      "value": "#And I choose PayM \u003chandset\u003e"
-    }
-  ],
   "line": 12,
-  "name": "click on the color dropdown",
+  "name": "Click on \u0027Get Started\u0027 CTA",
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
+  "name": "verify that the url has simo at the end",
   "keyword": "And "
 });
 formatter.step({
   "line": 14,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
+  "name": "the \u0027Phones\u0027 button should be selected by default",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 15,
-  "name": "Navigate to device details page",
+  "name": "the two contract lenght should be displayed",
   "keyword": "And "
 });
 formatter.step({
   "line": 16,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page and validate Data Roll over copy for \u003cTariff_Value\u003e and \u003cData\u003e",
+  "name": "all the tariffs under twelve months should be displayed",
   "keyword": "And "
 });
 formatter.step({
   "line": 17,
+  "name": "Click on \u0027Select\u0027 CTA to buy a tariff",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "copy text SIM delivery required or not is displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
   "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 18,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 19,
-  "name": "I Land on the basket page and choose to collect from store",
-  "keyword": "And "
-});
-formatter.step({
   "line": 20,
-  "name": "Validate all the Basket contents",
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 21,
-  "name": "click on \"go to checkout\" button",
+  "name": "Select \u0027I’ll keep my current sim\u0027 option",
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 22,
-      "value": "#And Select existing account and begin fast checkout"
-    }
-  ],
+  "line": 22,
+  "name": "Click on \u0027I agree to the terms and condition\u0027 checkbox in SIMO review page",
+  "keyword": "And "
+});
+formatter.step({
   "line": 23,
-  "name": "scroll to an element in DeliveryPage for taking screenshots",
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 24,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 25,
-      "value": "#And land on the payment page and input \u003cUsername\u003e and other details for Click and collect order and click \u0027Continue on next step\u0027"
-    }
-  ],
-  "line": 26,
-  "name": "land on the existing customer payment page and input \u003cUsername\u003e and other details for Click and collect order",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 27,
-      "value": "#And Continue to Agreements page and confirm all the agreement checks"
-    }
-  ],
-  "line": 28,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 29,
   "name": "order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 30,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
+  "line": 25,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 32,
+  "line": 28,
   "name": "",
   "description": "",
-  "id": "12-reg-consumer-existing-payg-phone-bigbundle-to-show-£15-data-roll-over-copy-on-basket-page-package-summary-cc-order-confirmation;cfu-new-payg-to-show-datarollover-in-basket-page;",
+  "id": "22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3;22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3;",
   "rows": [
     {
       "cells": [
         "username",
-        "password",
-        "handset",
-        "color",
-        "Username",
-        "Tariff_Value",
-        "Data",
-        "consumer",
         "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "password",
         "B1",
         "B2",
         "B3",
         "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
+        "GDPRstatus",
         "DeviceType",
-        "PreSelected"
+        "PreSelected",
+        "KeyEvent"
       ],
-      "line": 33,
-      "id": "12-reg-consumer-existing-payg-phone-bigbundle-to-show-£15-data-roll-over-copy-on-basket-page-package-summary-cc-order-confirmation;cfu-new-payg-to-show-datarollover-in-basket-page;;1"
+      "line": 29,
+      "id": "22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3;22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3;;1"
     },
     {
       "cells": [
-        "ins_feb2109@stf.ref.o2.co.uk",
+        "15ju81666468",
+        "Enabled",
+        "CapMyBill",
+        "£20",
         "test123",
-        "iPhone X",
-        "Space Grey",
-        "TEST ACCEPTA",
-        "£15",
-        "5GB",
-        "Me",
-        "Disabled",
         "Select",
         "Not",
         "Select",
-        "Not",
-        "Select",
-        "Select",
-        "Not",
         "Not",
         "Enabled",
-        "No",
         "Connected",
+        "No",
         "No"
       ],
-      "line": 34,
-      "id": "12-reg-consumer-existing-payg-phone-bigbundle-to-show-£15-data-roll-over-copy-on-basket-page-package-summary-cc-order-confirmation;cfu-new-payg-to-show-datarollover-in-basket-page;;2"
+      "line": 30,
+      "id": "22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3;22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 112289640550,
+  "duration": 98485209178,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 34,
-  "name": "CFU_New_PayG_To_Show_DataRollover_In_Basket_Page",
+  "line": 30,
+  "name": "22_CFU_SIMO_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B3",
   "description": "",
-  "id": "12-reg-consumer-existing-payg-phone-bigbundle-to-show-£15-data-roll-over-copy-on-basket-page-package-summary-cc-order-confirmation;cfu-new-payg-to-show-datarollover-in-basket-page;;2",
+  "id": "22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3;22-cfu-simo-gdpr-enabled-home-delivery-complaint-enduser-mp-optin-b1b3;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 5,
+      "line": 7,
       "name": "@Web"
     }
   ]
 });
 formatter.step({
-  "line": 7,
+  "line": 9,
   "name": "I am an Existing user and Navigates to Signin page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
-  "name": "Signin using valid ins_feb2109@stf.ref.o2.co.uk and test123 credentials",
+  "line": 10,
+  "name": "Signin using valid 15ju81666468 and test123 credentials",
   "matchedColumns": [
     0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "navigate to Pay as you Go Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I choose PayG iPhone X",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 11,
-      "value": "#And I choose PayM \u003chandset\u003e"
-    }
-  ],
-  "line": 12,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "select Space Grey color of the connected device",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page and validate Data Roll over copy for £15 and 5GB",
-  "matchedColumns": [
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Disabled",
-  "matchedColumns": [
-    8
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 18,
-      "value": "#And Click on Dont Select Cap My Bill CTA when BSC is \u003cBSCstatus\u003e"
-    }
-  ],
-  "line": 19,
-  "name": "I Land on the basket page and choose to collect from store",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Validate all the Basket contents",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 22,
-      "value": "#And Select existing account and begin fast checkout"
-    }
-  ],
-  "line": 23,
-  "name": "scroll to an element in DeliveryPage for taking screenshots",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    17,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 25,
-      "value": "#And land on the payment page and input \u003cUsername\u003e and other details for Click and collect order and click \u0027Continue on next step\u0027"
-    }
-  ],
-  "line": 26,
-  "name": "land on the existing customer payment page and input TEST ACCEPTA and other details for Click and collect order",
-  "matchedColumns": [
     4
   ],
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 27,
-      "value": "#And Continue to Agreements page and confirm all the agreement checks"
-    }
-  ],
-  "line": 28,
-  "name": "Continue to Review page and review the order",
+  "line": 11,
+  "name": "Navigate to upgrade \u003e upgrade now",
   "keyword": "And "
 });
 formatter.step({
-  "line": 29,
-  "name": "order confirmation is displayed",
+  "line": 12,
+  "name": "Click on \u0027Get Started\u0027 CTA",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "verify that the url has simo at the end",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "the \u0027Phones\u0027 button should be selected by default",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 30,
-  "name": "Choose Me Enabled Business preferences Select Not Select Not And Channel Preferences Select Select Not Not No Connected No",
+  "line": 15,
+  "name": "the two contract lenght should be displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "all the tariffs under twelve months should be displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Click on \u0027Select\u0027 CTA to buy a tariff",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "copy text SIM delivery required or not is displayed",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
   "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Choose your bill cap CapMyBill £20 when BSC is Enabled",
+  "matchedColumns": [
+    1,
+    2,
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Select \u0027I’ll keep my current sim\u0027 option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Click on \u0027I agree to the terms and condition\u0027 checkbox in SIMO review page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Select Not Select with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    5,
+    6,
     7,
     9,
     10,
     11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20
+    12
   ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 25,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
   "keyword": "Then "
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
 });
 formatter.result({
-  "duration": 1537825110,
+  "duration": 33501119289,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "ins_feb2109@stf.ref.o2.co.uk",
+      "val": "15ju81666468",
       "offset": 19
     },
     {
       "val": "test123",
-      "offset": 52
+      "offset": 36
     }
   ],
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 39141874199,
+  "duration": 32419513338,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_Pay_as_you_Go_Phones_page()"
+  "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
 });
 formatter.result({
-  "duration": 140781222052,
+  "duration": 55157980969,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
+});
+formatter.result({
+  "duration": 28347629128,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_that_the_url_has_simo_at_end()"
+});
+formatter.result({
+  "duration": 5334930962,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.phones_button_should_be_selected_by_default()"
+});
+formatter.result({
+  "duration": 352811135,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.two_contract_length_should_displayed()"
+});
+formatter.result({
+  "duration": 428150207,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.all_the_tariffs_under_twelve_months_should_be_displayed()"
+});
+formatter.result({
+  "duration": 561425475,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Click_on_Select_CTA_to_buy_SIMO_Tariff()"
+});
+formatter.result({
+  "duration": 28194040549,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.copyTextSIMDeliveryRequiredOrNotIsDisplayed()"
+});
+formatter.result({
+  "duration": 12874383112,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 39395701932,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£20",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 47
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 68230106957,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.selectILlKeepMyCurrentSimOption()"
+});
+formatter.result({
+  "duration": 7665864344,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.clickOnIAgreeToTheTermsAndConditionCheckbox()"
+});
+formatter.result({
+  "duration": 11403794374,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Select",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 78
+    },
+    {
+      "val": "Select",
+      "offset": 82
+    },
+    {
+      "val": "No",
+      "offset": 94
+    },
+    {
+      "val": "Connected",
+      "offset": 101
+    },
+    {
+      "val": "Enabled",
+      "offset": 141
+    },
+    {
+      "val": "No",
+      "offset": 153
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 45404430961,
+  "error_message": "java.lang.AssertionError: Unable to validate GDPR consent in delivery page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(E2EOrderPlaced_Steps.java:11440)\r\n\tat ✽.And Validate consumer GDPR consent section and choose Business preferences Select Not Select with No for Connected in delivery page when GDPR is Enabled and No(22_CFU_SIMO_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B3.feature:23)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 17305149637,
+  "status": "passed"
+});
+formatter.uri("23_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUser_PreTicked_To_MP_B3.feature");
+formatter.feature({
+  "line": 1,
+  "name": "23_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUser_PreTicked_To_MP_B3",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM Phone\u0027 and lands on\r\ndelivery page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand MP Pre Ticked - B3 and place an order as an CC End user then the Order consent profile should be created in CMT as expected",
+  "id": "23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-b3",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 9,
+  "name": "23_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUser_PreTicked_To_MP_Optin_B3",
+  "description": "",
+  "id": "23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-b3;23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-optin-b3",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "navigate to PAYM Phones page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "I choose PayM \u003chandset\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Navigate to View tariff page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Select existing account and begin fast checkout",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details for existing customer",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 26,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 28,
+  "name": "",
+  "description": "",
+  "id": "23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-b3;23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-optin-b3;",
+  "rows": [
+    {
+      "cells": [
+        "handset",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "username",
+        "password",
+        "Username",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 29,
+      "id": "23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-b3;23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-optin-b3;;1"
+    },
+    {
+      "cells": [
+        "iPhone X",
+        "Enabled",
+        "CapMyBill",
+        "£60",
+        "in0183b9_561635@o2.com",
+        "test123",
+        "TEST ACCEPTA",
+        "Not",
+        "Not",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "Yes",
+        "No"
+      ],
+      "line": 30,
+      "id": "23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-b3;23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-optin-b3;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 29885408744,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 30,
+  "name": "23_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUser_PreTicked_To_MP_Optin_B3",
+  "description": "",
+  "id": "23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-b3;23-existing-customer-paym-phone-gdpr-enabled-refresh-homedelivery-enduser-preticked-to-mp-optin-b3;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid in0183b9_561635@o2.com and test123 credentials",
+  "matchedColumns": [
+    4,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "navigate to PAYM Phones page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "I choose PayM iPhone X",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Navigate to View tariff page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Choose your bill cap CapMyBill £60 when BSC is Enabled",
+  "matchedColumns": [
+    1,
+    2,
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Select existing account and begin fast checkout",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Not Select with No for Connected in delivery page when GDPR is Enabled and Yes",
+  "matchedColumns": [
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "land on the payment page and input TEST ACCEPTA and other details for existing customer",
+  "matchedColumns": [
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 26,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+});
+formatter.result({
+  "duration": 1821033864,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "in0183b9_561635@o2.com",
+      "offset": 19
+    },
+    {
+      "val": "test123",
+      "offset": 46
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+});
+formatter.result({
+  "duration": 65642914235,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+});
+formatter.result({
+  "duration": 60028587797,
   "status": "passed"
 });
 formatter.match({
@@ -7834,94 +11909,65 @@ formatter.match({
       "offset": 14
     }
   ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYG_Handset(String)"
+  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 120291239489,
+  "duration": 27981483810,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
+  "location": "E2EOrderPlaced_Steps.Navigate_to_View_tariff_page()"
 });
 formatter.result({
-  "duration": 10738416625,
+  "duration": 35780862924,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
+  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 159668505,
+  "duration": 13861780519,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Space Grey",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 17676246265,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 67277802807,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "£15",
-      "offset": 74
-    },
-    {
-      "val": "5GB",
-      "offset": 82
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page_validate_Data_Roll_Over(String,String)"
-});
-formatter.result({
-  "duration": 74418035598,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Disabled",
+      "val": "Enabled",
       "offset": 54
     }
   ],
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 29736643211,
+  "duration": 39641567676,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_to_collect_from_store()"
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£60",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 47
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 79561303118,
+  "duration": 68420097587,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_contents()"
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
 });
 formatter.result({
-  "duration": 13411038203,
+  "duration": 47026682588,
   "status": "passed"
 });
 formatter.match({
@@ -7934,46 +11980,70 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 44057791503,
+  "duration": 35958893239,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.scrollToAnElement()"
+  "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
 });
 formatter.result({
-  "duration": 13611285016,
-  "status": "passed"
+  "duration": 5371421761,
+  "error_message": "java.lang.AssertionError: Unable to select existing account\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout(E2EOrderPlaced_Steps.java:3793)\r\n\tat ✽.And Select existing account and begin fast checkout(23_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUser_PreTicked_To_MP_B3.feature:20)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Me",
-      "offset": 38
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 75
+    },
+    {
+      "val": "Select",
+      "offset": 79
+    },
+    {
+      "val": "No",
+      "offset": 91
+    },
+    {
+      "val": "Connected",
+      "offset": 98
     },
     {
       "val": "Enabled",
-      "offset": 54
+      "offset": 138
+    },
+    {
+      "val": "Yes",
+      "offset": 150
     }
   ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 78563075825,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
     {
       "val": "TEST ACCEPTA",
-      "offset": 53
+      "offset": 35
     }
   ],
-  "location": "E2EOrderPlaced_Steps.existingCustomerPaymentPage_ClickAndCollect(String)"
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_MBBurlUpgrade(String)"
 });
 formatter.result({
-  "duration": 98210733350,
-  "error_message": "java.lang.AssertionError: Unable to input details in existing customer payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.existingCustomerPaymentPage_ClickAndCollect(E2EOrderPlaced_Steps.java:2056)\r\n\tat ✽.And land on the existing customer payment page and input TEST ACCEPTA and other details for Click and collect order(12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature:26)\r\n",
-  "status": "failed"
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
@@ -7988,75 +12058,505 @@ formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Select",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 57
-    },
-    {
-      "val": "Select",
-      "offset": 85
-    },
-    {
-      "val": "Select",
-      "offset": 92
-    },
-    {
-      "val": "Not",
-      "offset": 99
-    },
-    {
-      "val": "Not",
-      "offset": 103
-    },
-    {
-      "val": "No",
-      "offset": 107
-    },
-    {
-      "val": "Connected",
-      "offset": 110
-    },
-    {
-      "val": "No",
-      "offset": 120
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 20450949401,
+  "duration": 17308355895,
   "status": "passed"
 });
-formatter.uri("130_FR_UpFront_AFA_Tablets_E2E.feature");
+formatter.uri("24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B2.feature");
 formatter.feature({
   "line": 1,
-  "name": "130_FR_UpFront_AFA_Tablets_E2E",
+  "name": "24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B2",
+  "description": "\r\nThis Scenario ensures that when the upgrade customer with complaint consent status selects \u0027PAYM MBB\u0027 and lands on\r\ndelivery page then customer should not be displayed with end user question instead the customer should see GDPR consent\r\nand select MP OptIn - B1B2 and place an order as an End user then the Order consent profile should be created in CMT as expected",
+  "id": "24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 9,
+  "name": "24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B2",
   "description": "",
-  "id": "130-fr-upfront-afa-tablets-e2e",
+  "id": "24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2;24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to PayM MBB page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "I choose MBB PayM \u003cDevice_Name\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Navigate to View tariff page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Select existing account and begin fast checkout",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details for existing customer",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 26,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 28,
+  "name": "",
+  "description": "",
+  "id": "24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2;24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2;",
+  "rows": [
+    {
+      "cells": [
+        "Device_Name",
+        "BSCstatus",
+        "BillCap",
+        "CapAmount",
+        "username",
+        "password",
+        "Username",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "GDPRstatus",
+        "DeviceType",
+        "PreSelected",
+        "KeyEvent"
+      ],
+      "line": 29,
+      "id": "24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2;24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2;;1"
+    },
+    {
+      "cells": [
+        "Random Device",
+        "Enabled",
+        "CapMyBill",
+        "£30",
+        "dont36182576@stf.ref.o2.co.uk",
+        "test123",
+        "TEST ACCEPTA",
+        "Not",
+        "Not",
+        "Select",
+        "Not",
+        "Enabled",
+        "Connected",
+        "No",
+        "No"
+      ],
+      "line": 30,
+      "id": "24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2;24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 49223479972,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 30,
+  "name": "24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B2",
+  "description": "",
+  "id": "24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2;24-existing-customer-paym-mbb-gdpr-enabled-refresh-homedelivery-enduser-mp-optin-b1b2;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@Web"
+    }
+  ]
+});
+formatter.step({
+  "line": 10,
+  "name": "I am an Existing user and Navigates to Signin page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 11,
+  "name": "Signin using valid dont36182576@stf.ref.o2.co.uk and test123 credentials",
+  "matchedColumns": [
+    4,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Navigate to PayM MBB page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "I choose MBB PayM Random Device",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Navigate to View tariff page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Choose your bill cap CapMyBill £30 when BSC is Enabled",
+  "matchedColumns": [
+    1,
+    2,
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "I Land on the basket page by clicking on Add to Basket button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Select existing account and begin fast checkout",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Not Select with No for Connected in delivery page when GDPR is Enabled and No",
+  "matchedColumns": [
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "land on the payment page and input TEST ACCEPTA and other details for existing customer",
+  "matchedColumns": [
+    6
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 26,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+});
+formatter.result({
+  "duration": 1839220668,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "dont36182576@stf.ref.o2.co.uk",
+      "offset": 19
+    },
+    {
+      "val": "test123",
+      "offset": 53
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+});
+formatter.result({
+  "duration": 46797286742,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PayM_MBB_page()"
+});
+formatter.result({
+  "duration": 62268523444,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Random Device",
+      "offset": 18
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_choose_MBB_PayM(String)"
+});
+formatter.result({
+  "duration": 15380708870,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_View_tariff_page()"
+});
+formatter.result({
+  "duration": 54483337533,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+});
+formatter.result({
+  "duration": 13839950553,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Enabled",
+      "offset": 54
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
+});
+formatter.result({
+  "duration": 39426688163,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "CapMyBill",
+      "offset": 21
+    },
+    {
+      "val": "£30",
+      "offset": 31
+    },
+    {
+      "val": "Enabled",
+      "offset": 47
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+});
+formatter.result({
+  "duration": 68225247510,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
+});
+formatter.result({
+  "duration": 42090243956,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "duration": 42814380710,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
+});
+formatter.result({
+  "duration": 5332000047,
+  "error_message": "java.lang.AssertionError: Unable to select existing account\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout(E2EOrderPlaced_Steps.java:3793)\r\n\tat ✽.And Select existing account and begin fast checkout(24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B2.feature:20)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Not",
+      "offset": 71
+    },
+    {
+      "val": "Not",
+      "offset": 75
+    },
+    {
+      "val": "Select",
+      "offset": 79
+    },
+    {
+      "val": "No",
+      "offset": 91
+    },
+    {
+      "val": "Connected",
+      "offset": 98
+    },
+    {
+      "val": "Enabled",
+      "offset": 138
+    },
+    {
+      "val": "No",
+      "offset": 150
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_MBBurlUpgrade(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 17318131679,
+  "status": "passed"
+});
+formatter.uri("25_Reg_Agent_GenerateCCA_Not_EndUser.feature");
+formatter.feature({
+  "line": 1,
+  "name": "25_Reg_Agent_GenerateCCA_Not_EndUser",
+  "description": "",
+  "id": "25-reg-agent-generatecca-not-enduser",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
@@ -8067,9 +12567,9 @@ formatter.scenarioOutline({
     }
   ],
   "line": 5,
-  "name": "Successful completion of a Tablet Journey",
+  "name": "Successful completion of a PAY M Acquistion journey by CCA settlement",
   "description": "",
-  "id": "130-fr-upfront-afa-tablets-e2e;successful-completion-of-a-tablet-journey",
+  "id": "25-reg-agent-generatecca-not-enduser;successful-completion-of-a-pay-m-acquistion-journey-by-cca-settlement",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
@@ -8101,7 +12601,7 @@ formatter.step({
 });
 formatter.step({
   "line": 10,
-  "name": "In Agent Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
+  "name": "select a valid Handset and Tariff combination_new",
   "keyword": "And "
 });
 formatter.step({
@@ -8146,7 +12646,7 @@ formatter.step({
 });
 formatter.step({
   "line": 19,
-  "name": "Choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e and Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e for \u003cConsumer\u003e when GDPR \u003cstatus\u003e \u003cDeviceType\u003e \u003cDeviceModule\u003e for AFA journey",
+  "name": "Choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e and Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e for \u003cConsumer\u003e when GDPR \u003cGDPRstatus\u003e \u003cDeviceType\u003e \u003cDeviceModule\u003e for AFA journey",
   "keyword": "And "
 });
 formatter.step({
@@ -8159,28 +12659,79 @@ formatter.step({
   "name": "Click on \u0027Generate CCA\u0027 button",
   "keyword": "And "
 });
-formatter.examples({
+formatter.step({
+  "comments": [
+    {
+      "line": 22,
+      "value": "#Then CCALink Should be generated"
+    }
+  ],
   "line": 23,
+  "name": "click on the \u0027CCA\u0027 link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials for New User",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "Click on \u0027Continue\u0027 button on upgrade page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Validate consumer GDPR consent section and choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e with \u003cKeyEvent\u003e for \u003cDeviceType\u003e in delivery page when GDPR is \u003cGDPRstatus2\u003e and \u003cPreSelected\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "land on the payment page and input details and click \u0027Continue on next step\u0027 in upgrade journey for CCA Link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks for SECCI and CCA not accepted",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Continue to Review page, check order contract text and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 31,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 33,
   "name": "",
   "description": "",
-  "id": "130-fr-upfront-afa-tablets-e2e;successful-completion-of-a-tablet-journey;",
+  "id": "25-reg-agent-generatecca-not-enduser;successful-completion-of-a-pay-m-acquistion-journey-by-cca-settlement;",
   "rows": [
     {
       "cells": [
         "Device",
         "Tariffs",
-        "upFront",
-        "term",
-        "data",
-        "DeliveryType",
+        "Extras",
         "BSCstatus",
         "BillCapAmount",
+        "DeliveryType",
         "Firstname",
         "Surname",
         "Username",
         "HouseNumber",
         "PostCode",
-        "Consumer",
+        "Password",
+        "confirmPassword",
+        "SecurityAnswer",
         "B1",
         "B2",
         "B3",
@@ -8189,64 +12740,70 @@ formatter.examples({
         "Email",
         "Phone",
         "Post",
-        "status",
+        "Consumer",
+        "GDPRstatus",
+        "GDPRstatus2",
+        "username",
+        "password",
         "MBBStatus",
         "DeviceType",
         "DeviceModule",
-        "Password",
-        "confirmPassword",
-        "SecurityAnswer"
+        "PreSelected",
+        "KeyEvent"
       ],
-      "line": 24,
-      "id": "130-fr-upfront-afa-tablets-e2e;successful-completion-of-a-tablet-journey;;1"
+      "line": 34,
+      "id": "25-reg-agent-generatecca-not-enduser;successful-completion-of-a-pay-m-acquistion-journey-by-cca-settlement;;1"
     },
     {
       "cells": [
-        "iPad Pro 10.5 inch 256GB Space Grey",
+        "iPhone 7 Plus 32GB Rose Gold",
         "Refresh",
-        "avg",
-        "avg",
-        "avg",
-        "HomeDelivery",
+        "Base",
         "Enabled",
-        "£100",
+        "£60",
+        "HomeDelivery",
         "TEST",
         "ACCEPTA",
         "TEST ACCEPTA",
-        "18",
+        "14",
         "SL11UP",
-        "Me",
-        "Select",
-        "Select",
-        "Select",
+        "test123",
+        "test123",
+        "vinudeep",
         "Not",
-        "Select",
-        "Select",
-        "Select",
-        "Select",
+        "Not",
+        "Not",
+        "Not",
+        "Not",
+        "Not",
+        "Not",
+        "Not",
+        "Someone",
         "Enabled",
+        "Disabled",
+        "ink_jun8829@stf.ref.o2.co.uk",
+        "test123",
         "No",
         "Connected",
-        "Tablet",
-        "test123",
-        "test123",
-        "vinudeep"
+        "Phone",
+        "Yes",
+        "No"
       ],
-      "line": 25,
-      "id": "130-fr-upfront-afa-tablets-e2e;successful-completion-of-a-tablet-journey;;2"
+      "line": 35,
+      "id": "25-reg-agent-generatecca-not-enduser;successful-completion-of-a-pay-m-acquistion-journey-by-cca-settlement;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 103160473637,
+  "duration": 75196464584,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 25,
-  "name": "Successful completion of a Tablet Journey",
+  "line": 35,
+  "name": "Successful completion of a PAY M Acquistion journey by CCA settlement",
   "description": "",
-  "id": "130-fr-upfront-afa-tablets-e2e;successful-completion-of-a-tablet-journey;;2",
+  "id": "25-reg-agent-generatecca-not-enduser;successful-completion-of-a-pay-m-acquistion-journey-by-cca-settlement;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -8268,7 +12825,7 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "Select a valid PayM iPad Pro 10.5 inch 256GB Space Grey",
+  "name": "Select a valid PayM iPhone 7 Plus 32GB Rose Gold",
   "matchedColumns": [
     0
   ],
@@ -8284,28 +12841,23 @@ formatter.step({
 });
 formatter.step({
   "line": 10,
-  "name": "In Agent Build your plan with avg avg and avg",
-  "matchedColumns": [
-    2,
-    3,
-    4
-  ],
+  "name": "select a valid Handset and Tariff combination_new",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
   "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
   "matchedColumns": [
-    6
+    3
   ],
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "Add your Bill Spend Cap £100 in agent deal builder when BSC is Enabled",
+  "name": "Add your Bill Spend Cap £60 in agent deal builder when BSC is Enabled",
   "matchedColumns": [
-    6,
-    7
+    3,
+    4
   ],
   "keyword": "And "
 });
@@ -8316,10 +12868,10 @@ formatter.step({
 });
 formatter.step({
   "line": 14,
-  "name": "Validate deal summary for applied Bill Spend Cap £100 when BSC is Enabled",
+  "name": "Validate deal summary for applied Bill Spend Cap £60 when BSC is Enabled",
   "matchedColumns": [
-    6,
-    7
+    3,
+    4
   ],
   "keyword": "Then "
 });
@@ -8330,13 +12882,13 @@ formatter.step({
 });
 formatter.step({
   "line": 16,
-  "name": "perform the credit checks using valid TEST, ACCEPTA, 18, SL11UP and valid TEST ACCEPTA",
+  "name": "perform the credit checks using valid TEST, ACCEPTA, 14, SL11UP and valid TEST ACCEPTA",
   "matchedColumns": [
+    6,
+    7,
     8,
     9,
-    10,
-    11,
-    12
+    10
   ],
   "keyword": "And "
 });
@@ -8344,9 +12896,9 @@ formatter.step({
   "line": 17,
   "name": "Register customer with valid test123, test123, vinudeep in delivery page",
   "matchedColumns": [
-    26,
-    27,
-    28
+    11,
+    12,
+    13
   ],
   "keyword": "And "
 });
@@ -8357,7 +12909,7 @@ formatter.step({
 });
 formatter.step({
   "line": 19,
-  "name": "Choose Business preferences Select Select Select Not and Channel Preferences Select Select Select Select for Me when GDPR Enabled Connected Tablet for AFA journey",
+  "name": "Choose Business preferences Not Not Not Not and Channel Preferences Not Not Not Not for Someone when GDPR Enabled Connected Phone for AFA journey",
   "matchedColumns": [
     16,
     17,
@@ -8366,9 +12918,9 @@ formatter.step({
     20,
     21,
     22,
-    24,
-    25,
-    13,
+    23,
+    28,
+    29,
     14,
     15
   ],
@@ -8387,31 +12939,95 @@ formatter.step({
   "name": "Click on \u0027Generate CCA\u0027 button",
   "keyword": "And "
 });
+formatter.step({
+  "comments": [
+    {
+      "line": 22,
+      "value": "#Then CCALink Should be generated"
+    }
+  ],
+  "line": 23,
+  "name": "click on the \u0027CCA\u0027 link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "Signin using valid ink_jun8829@stf.ref.o2.co.uk and test123 credentials for New User",
+  "matchedColumns": [
+    25,
+    26
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "Click on \u0027Continue\u0027 button on upgrade page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Validate consumer GDPR consent section and choose Business preferences Not Not Not with No for Connected in delivery page when GDPR is Disabled and Yes",
+  "matchedColumns": [
+    16,
+    24,
+    28,
+    14,
+    30,
+    15,
+    31
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "land on the payment page and input details and click \u0027Continue on next step\u0027 in upgrade journey for CCA Link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks for SECCI and CCA not accepted",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Continue to Review page, check order contract text and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "order confirmation is displayed",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 31,
+  "name": "Validate consumer GDPR consent section is hidden in Order confirmation page or not",
+  "keyword": "Then "
+});
 formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 3235721467,
+  "duration": 2673563115,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 12142467342,
+  "duration": 10087098571,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "iPad Pro 10.5 inch 256GB Space Grey",
+      "val": "iPhone 7 Plus 32GB Rose Gold",
       "offset": 20
     }
   ],
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "duration": 34200425534,
+  "duration": 34214273646,
   "status": "passed"
 });
 formatter.match({
@@ -8424,28 +13040,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 27773147019,
+  "duration": 27663626336,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "avg",
-      "offset": 30
-    },
-    {
-      "val": "avg",
-      "offset": 34
-    },
-    {
-      "val": "avg",
-      "offset": 42
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Agent_fr_DealBuilder(String,String,String)"
+  "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination_new()"
 });
 formatter.result({
-  "duration": 221149341225,
+  "duration": 16560093708,
   "status": "passed"
 });
 formatter.match({
@@ -8458,55 +13060,55 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "duration": 25288651033,
+  "duration": 25176767381,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "£100",
+      "val": "£60",
       "offset": 24
     },
     {
       "val": "Enabled",
-      "offset": 63
+      "offset": 62
     }
   ],
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "duration": 57150215369,
+  "duration": 57109298885,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "duration": 22679799464,
+  "duration": 22696784015,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "£100",
+      "val": "£60",
       "offset": 49
     },
     {
       "val": "Enabled",
-      "offset": 66
+      "offset": 65
     }
   ],
   "location": "E2EOrderPlaced_Steps.ValidateYourCapInAgentDealSummary(String,String)"
 });
 formatter.result({
-  "duration": 28443943512,
+  "duration": 14451420032,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.advisory_checks()"
 });
 formatter.result({
-  "duration": 23417479261,
+  "duration": 39410681341,
   "status": "passed"
 });
 formatter.match({
@@ -8520,7 +13122,7 @@ formatter.match({
       "offset": 44
     },
     {
-      "val": "18",
+      "val": "14",
       "offset": 53
     },
     {
@@ -8535,7 +13137,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 84944927189,
+  "duration": 91584252705,
   "status": "passed"
 });
 formatter.match({
@@ -8556,979 +13158,29 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Register_Customer_Phones(String,String,String)"
 });
 formatter.result({
-  "duration": 40101548579,
-  "error_message": "java.lang.AssertionError: Unable to Register customer\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Register_Customer_Phones(E2EOrderPlaced_Steps.java:8326)\r\n\tat ✽.And Register customer with valid test123, test123, vinudeep in delivery page(130_FR_UpFront_AFA_Tablets_E2E.feature:17)\r\n",
-  "status": "failed"
+  "duration": 60463265433,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Validate_Register_Status()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16055821637,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Select",
+      "val": "Not",
       "offset": 28
     },
     {
-      "val": "Select",
-      "offset": 35
-    },
-    {
-      "val": "Select",
-      "offset": 42
+      "val": "Not",
+      "offset": 32
     },
     {
       "val": "Not",
-      "offset": 49
-    },
-    {
-      "val": "Select",
-      "offset": 77
-    },
-    {
-      "val": "Select",
-      "offset": 84
-    },
-    {
-      "val": "Select",
-      "offset": 91
-    },
-    {
-      "val": "Select",
-      "offset": 98
-    },
-    {
-      "val": "Me",
-      "offset": 109
-    },
-    {
-      "val": "Enabled",
-      "offset": 122
-    },
-    {
-      "val": "Connected",
-      "offset": 130
-    },
-    {
-      "val": "Tablet",
-      "offset": 140
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences_AFA(String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_Generate_CCA_button()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 18335303400,
-  "status": "passed"
-});
-formatter.uri("133_FR_UpFront_AFU_PAYM_Dongle_payByCard.feature");
-formatter.feature({
-  "line": 1,
-  "name": "133_FR_UpFront_AFU_PAYM_Dongle_payByCard",
-  "description": "",
-  "id": "133-fr-upfront-afu-paym-dongle-paybycard",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "comments": [
-    {
-      "line": 3,
-      "value": "#launch hooks and get browser"
-    }
-  ],
-  "line": 5,
-  "name": "Successful completion of a PAY M dongle Acqusistion Journey",
-  "description": "",
-  "id": "133-fr-upfront-afu-paym-dongle-paybycard;successful-completion-of-a-pay-m-dongle-acqusistion-journey",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 4,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "performs Upgrade for \u003cuser\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Select a valid PayM \u003cDevice\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select valid \u003cTariffs\u003e from tariffs tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "In Agent Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Validate Bill Spend Cap in agent deal builder section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Add your Bill Spend Cap \u003cBillCapAmount\u003e in agent deal builder when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Validate all the Basket content and checkout",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 16,
-  "name": "",
-  "description": "",
-  "id": "133-fr-upfront-afu-paym-dongle-paybycard;successful-completion-of-a-pay-m-dongle-acqusistion-journey;",
-  "rows": [
-    {
-      "cells": [
-        "user",
-        "Device",
-        "Tariffs",
-        "upFront",
-        "term",
-        "data",
-        "BSCstatus",
-        "BillCapAmount",
-        "consumer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType"
-      ],
-      "line": 17,
-      "id": "133-fr-upfront-afu-paym-dongle-paybycard;successful-completion-of-a-pay-m-dongle-acqusistion-journey;;1"
-    },
-    {
-      "cells": [
-        "07521128943",
-        "dongle",
-        "Refresh",
-        "max",
-        "avg",
-        "avg",
-        "Enabled",
-        "£100",
-        "Me",
-        "Select",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected"
-      ],
-      "line": 18,
-      "id": "133-fr-upfront-afu-paym-dongle-paybycard;successful-completion-of-a-pay-m-dongle-acqusistion-journey;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 34888923611,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 18,
-  "name": "Successful completion of a PAY M dongle Acqusistion Journey",
-  "description": "",
-  "id": "133-fr-upfront-afu-paym-dongle-paybycard;successful-completion-of-a-pay-m-dongle-acqusistion-journey;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 4,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "performs Upgrade for 07521128943",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Select a valid PayM dongle",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select valid Refresh from tariffs tab",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "In Agent Build your plan with max avg and avg",
-  "matchedColumns": [
-    3,
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
-  "matchedColumns": [
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Add your Bill Spend Cap £100 in agent deal builder when BSC is Enabled",
-  "matchedColumns": [
-    6,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Validate all the Basket content and checkout",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
-});
-formatter.result({
-  "duration": 3660289076,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07521128943",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
-});
-formatter.result({
-  "duration": 94821528916,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "dongle",
-      "offset": 20
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
-});
-formatter.result({
-  "duration": 32743559916,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Refresh",
-      "offset": 13
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
-});
-formatter.result({
-  "duration": 27746608447,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "max",
-      "offset": 30
-    },
-    {
-      "val": "avg",
-      "offset": 34
-    },
-    {
-      "val": "avg",
-      "offset": 42
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Agent_fr_DealBuilder(String,String,String)"
-});
-formatter.result({
-  "duration": 189308649809,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 66
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
-});
-formatter.result({
-  "duration": 25326710959,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "£100",
-      "offset": 24
-    },
-    {
-      "val": "Enabled",
-      "offset": 63
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
-});
-formatter.result({
-  "duration": 57124534306,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
-});
-formatter.result({
-  "duration": 22669568092,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 17930179645,
-  "status": "passed"
-});
-formatter.uri("134_FR_UpFront_AFU_PAYM_Tablet.feature");
-formatter.feature({
-  "line": 1,
-  "name": "134_FR_UpFront_AFU_PAYM_Tablet",
-  "description": "",
-  "id": "134-fr-upfront-afu-paym-tablet",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "comments": [
-    {
-      "line": 3,
-      "value": "#launch hooks and get browser"
-    }
-  ],
-  "line": 5,
-  "name": "Successful completion of a PAY M Tablet Acqusistion Journey",
-  "description": "",
-  "id": "134-fr-upfront-afu-paym-tablet;successful-completion-of-a-pay-m-tablet-acqusistion-journey",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 4,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "performs Upgrade for \u003cuser\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Select a valid PayM \u003cDevice\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select valid \u003cTariffs\u003e from tariffs tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "In Agent Build your plan with \u003cupFront\u003e \u003cterm\u003e and \u003cdata\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Validate Bill Spend Cap in agent deal builder section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Add your Bill Spend Cap \u003cBillCapAmount\u003e in agent deal builder when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Validate all the Basket content and checkout",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 16,
-  "name": "",
-  "description": "",
-  "id": "134-fr-upfront-afu-paym-tablet;successful-completion-of-a-pay-m-tablet-acqusistion-journey;",
-  "rows": [
-    {
-      "cells": [
-        "user",
-        "Device",
-        "Tariffs",
-        "upFront",
-        "term",
-        "data",
-        "BSCstatus",
-        "BillCapAmount",
-        "consumer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType"
-      ],
-      "line": 17,
-      "id": "134-fr-upfront-afu-paym-tablet;successful-completion-of-a-pay-m-tablet-acqusistion-journey;;1"
-    },
-    {
-      "cells": [
-        "07568417868",
-        "Samsung galaxy Book 10.6",
-        "Refresh",
-        "avg",
-        "avg",
-        "min",
-        "Enabled",
-        "£10",
-        "Me",
-        "Select",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected"
-      ],
-      "line": 18,
-      "id": "134-fr-upfront-afu-paym-tablet;successful-completion-of-a-pay-m-tablet-acqusistion-journey;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 34980470501,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 18,
-  "name": "Successful completion of a PAY M Tablet Acqusistion Journey",
-  "description": "",
-  "id": "134-fr-upfront-afu-paym-tablet;successful-completion-of-a-pay-m-tablet-acqusistion-journey;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 4,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "performs Upgrade for 07568417868",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Select a valid PayM Samsung galaxy Book 10.6",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select valid Refresh from tariffs tab",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "In Agent Build your plan with avg avg and min",
-  "matchedColumns": [
-    3,
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
-  "matchedColumns": [
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Add your Bill Spend Cap £10 in agent deal builder when BSC is Enabled",
-  "matchedColumns": [
-    6,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Validate all the Basket content and checkout",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
-});
-formatter.result({
-  "duration": 2973809669,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07568417868",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
-});
-formatter.result({
-  "duration": 96420741550,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Samsung galaxy Book 10.6",
-      "offset": 20
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
-});
-formatter.result({
-  "duration": 34216143838,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Refresh",
-      "offset": 13
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
-});
-formatter.result({
-  "duration": 27757695205,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "avg",
-      "offset": 30
-    },
-    {
-      "val": "avg",
-      "offset": 34
-    },
-    {
-      "val": "min",
-      "offset": 42
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Agent_fr_DealBuilder(String,String,String)"
-});
-formatter.result({
-  "duration": 159774808245,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 66
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
-});
-formatter.result({
-  "duration": 25269888092,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "£10",
-      "offset": 24
-    },
-    {
-      "val": "Enabled",
-      "offset": 62
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
-});
-formatter.result({
-  "duration": 46959729235,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
-});
-formatter.result({
-  "duration": 22708590990,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 17888137236,
-  "status": "passed"
-});
-formatter.uri("14_Reg_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature");
-formatter.feature({
-  "line": 1,
-  "name": "14_Reg_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others",
-  "description": "\r\nThis scenario ensures that when the customer on acquisition journey selects \u0027Freesim\u0027 for Phones  and enters the postcode in Delivery page, then all the other addresses in the drop down should be compressed on selecting one of the address",
-  "id": "14-reg-cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 6,
-  "name": "CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others",
-  "description": "",
-  "id": "14-reg-cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others;cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 7,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "navigate to PayG SIMO page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select a pay as you go bundle",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 10,
-      "value": "#And Land on the \u0027Tariffs and extra\u0027 page"
-    },
-    {
-      "line": 11,
-      "value": "#And I enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e"
-    },
-    {
-      "line": 12,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR"
-    }
-  ],
-  "line": 13,
-  "name": "Enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e for GDPR \u003cCheckBox\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Free Sim order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 15,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 17,
-  "name": "",
-  "description": "",
-  "id": "14-reg-cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others;cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others;",
-  "rows": [
-    {
-      "cells": [
-        "Firstname",
-        "Surname",
-        "consumer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "CheckBox",
-        "PreSelected"
-      ],
-      "line": 18,
-      "id": "14-reg-cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others;cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others;;1"
-    },
-    {
-      "cells": [
-        "TEST",
-        "ACCEPTA",
-        "Me",
-        "Not",
-        "Not",
-        "Not",
-        "Not",
-        "Not",
-        "Not",
-        "Not",
-        "Not",
-        "Disabled",
-        "No",
-        "Connected",
-        "Yes",
-        "No"
-      ],
-      "line": 19,
-      "id": "14-reg-cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others;cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 101584391831,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 19,
-  "name": "CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others",
-  "description": "",
-  "id": "14-reg-cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others;cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 7,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "navigate to PayG SIMO page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select a pay as you go bundle",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 10,
-      "value": "#And Land on the \u0027Tariffs and extra\u0027 page"
-    },
-    {
-      "line": 11,
-      "value": "#And I enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e"
-    },
-    {
-      "line": 12,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR"
-    }
-  ],
-  "line": 13,
-  "name": "Enter details in Delivery Page TEST and ACCEPTA for GDPR Yes",
-  "matchedColumns": [
-    0,
-    1,
-    14
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Free Sim order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 15,
-  "name": "Choose Me Disabled Business preferences Not Not Not Not And Channel Preferences Not Not Not Not No Connected No",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    15
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 687788852,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
-});
-formatter.result({
-  "duration": 88856227459,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.selectAPayAsYouGoBundle()"
-});
-formatter.result({
-  "duration": 12692814293,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 31
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 40
-    },
-    {
-      "val": "Yes",
-      "offset": 57
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
-});
-formatter.result({
-  "duration": 67333052923,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.free_Sim_order_confirmation_is_displayed()"
-});
-formatter.result({
-  "duration": 2593863017,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Disabled",
-      "offset": 10
+      "offset": 36
     },
     {
       "val": "Not",
@@ -9536,6610 +13188,90 @@ formatter.match({
     },
     {
       "val": "Not",
-      "offset": 44
+      "offset": 68
     },
     {
       "val": "Not",
-      "offset": 48
+      "offset": 72
     },
     {
       "val": "Not",
-      "offset": 52
+      "offset": 76
     },
     {
       "val": "Not",
       "offset": 80
     },
     {
-      "val": "Not",
-      "offset": 84
-    },
-    {
-      "val": "Not",
+      "val": "Someone",
       "offset": 88
     },
     {
-      "val": "Not",
-      "offset": 92
-    },
-    {
-      "val": "No",
-      "offset": 96
-    },
-    {
-      "val": "Connected",
-      "offset": 99
-    },
-    {
-      "val": "No",
-      "offset": 109
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 30395154272,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 19816235570,
-  "status": "passed"
-});
-formatter.uri("15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature");
-formatter.feature({
-  "line": 1,
-  "name": "15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others",
-  "description": "\r\nThis scenario ensures that when the customer on acquisition journey selects \u0027Phones\u0027 with click and collect enters the postcode in payment page, then all the other addresses in the drop down should be compressed on selecting one of the address",
-  "id": "15-reg-cfa-phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 6,
-  "name": "Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others",
-  "description": "",
-  "id": "15-reg-cfa-phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others;phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 8,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 9,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 20,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR"
-    }
-  ],
-  "line": 21,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR to click and collect",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details for Click and collect order and click \u0027Continue on next step\u0027 for payments",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 27,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 29,
-  "name": "",
-  "description": "",
-  "id": "15-reg-cfa-phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others;phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others;",
-  "rows": [
-    {
-      "cells": [
-        "handset",
-        "color",
-        "Firstname",
-        "Surname",
-        "Username",
-        "consumer",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "PreSelected"
-      ],
-      "line": 30,
-      "id": "15-reg-cfa-phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others;phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others;;1"
-    },
-    {
-      "cells": [
-        "iPhone X",
-        "Silver",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA",
-        "Me",
-        "Enabled",
-        "CapMyBill",
-        "£15",
-        "Select",
-        "Select",
-        "Select",
-        "Not",
-        "Select",
-        "Select",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "No"
-      ],
-      "line": 31,
-      "id": "15-reg-cfa-phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others;phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 102344473060,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 31,
-  "name": "Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others",
-  "description": "",
-  "id": "15-reg-cfa-phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others;phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 8,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 9,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I choose PayM iPhone X",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "select Silver color of the connected device",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Choose your bill cap CapMyBill £15 when BSC is Enabled",
-  "matchedColumns": [
-    6,
-    7,
-    8
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 20,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR"
-    }
-  ],
-  "line": 21,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR to click and collect",
-  "matchedColumns": [
-    2,
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    17,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "land on the payment page and input TEST ACCEPTA and other details for Click and collect order and click \u0027Continue on next step\u0027 for payments",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 27,
-  "name": "Choose Me Enabled Business preferences Select Select Select Not And Channel Preferences Select Select Not Not No Connected No",
-  "matchedColumns": [
-    5,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 475777908,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-});
-formatter.result({
-  "duration": 59300622553,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone X",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-});
-formatter.result({
-  "duration": 28910715619,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 27482844314,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 147413862,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Silver",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 15594038908,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 89181860779,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 16039278417,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
       "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "duration": 39570815710,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "CapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "£15",
-      "offset": 31
-    },
-    {
-      "val": "Enabled",
-      "offset": 47
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "duration": 68542347299,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 38662176094,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 33397109593,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 6
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr_ClickAndCollect(String,String)"
-});
-formatter.result({
-  "duration": 35252850079,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78585103887,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_ClickAndCollect_CreditCheck(String)"
-});
-formatter.result({
-  "duration": 121423331421,
-  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_ClickAndCollect_CreditCheck(E2EOrderPlaced_Steps.java:2082)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details for Click and collect order and click \u0027Continue on next step\u0027 for payments(15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature:23)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Select",
-      "offset": 46
-    },
-    {
-      "val": "Select",
-      "offset": 53
-    },
-    {
-      "val": "Not",
-      "offset": 60
-    },
-    {
-      "val": "Select",
-      "offset": 88
-    },
-    {
-      "val": "Select",
-      "offset": 95
-    },
-    {
-      "val": "Not",
-      "offset": 102
-    },
-    {
-      "val": "Not",
       "offset": 106
     },
     {
-      "val": "No",
-      "offset": 110
-    },
-    {
       "val": "Connected",
-      "offset": 113
+      "offset": 114
     },
     {
-      "val": "No",
-      "offset": 123
+      "val": "Phone",
+      "offset": 124
     }
   ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
+  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences_AFA(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20290214937,
+  "duration": 18340070303,
   "status": "passed"
-});
-formatter.uri("18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature");
-formatter.feature({
-  "line": 1,
-  "name": "18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others",
-  "description": "\r\nThis scenario ensures that when the customer on upgrade journey selects \u0027Tablet\u0027 proceeds till Delivery page and enters the postcode, then all the other addresses in the drop down should be compressed on selecting one of the address",
-  "id": "18-reg-cfu-tablet-delivery-page-more-than-one-address-select-one-compress-others",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 6,
-  "name": "CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_changes",
-  "description": "",
-  "id": "18-reg-cfu-tablet-delivery-page-more-than-one-address-select-one-compress-others;cfu-user-with-direct-debit-details-simo-order-tablets-user-review-page-changes",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 7,
-  "name": "I am an Existing user and Navigates to Signin page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Navigate to upgrade \u003e upgrade now",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Click on \u0027Get Started\u0027 CTA",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Click on Tablet section in upgrade options page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Click on View all Tablets link in upgrade options page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Select PayM Tablet \u003cTablet\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 15,
-      "value": "#And Select a \u003cTablet\u003e device from Recommended devices section"
-    },
-    {
-      "line": 16,
-      "value": "#And Click on device \u0027Confirm CTA\u0027"
-    },
-    {
-      "line": 17,
-      "value": "#And Click on View all Tariffs link in upgrade options page"
-    }
-  ],
-  "line": 18,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "perform \u003cAction\u003e in OTAC page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Click on \u0027Use a different delivery address\u0027link",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "enter a \u003chouseNumber\u003e and an \u003cPostCode\u003e in Delivery section",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "Select the Home address",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "Enter cardDetails in payment page input \u003cUsername\u003e and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 29,
-      "value": "#And land on the payment page and input and other details and click \u0027Continue\u0027 on next step for otac"
-    }
-  ],
-  "line": 30,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 31,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 32,
-      "value": "#And Click on \u0027I agree to the terms and condition\u0027 checkbox"
-    }
-  ],
-  "line": 33,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 34,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 36,
-  "name": "",
-  "description": "",
-  "id": "18-reg-cfu-tablet-delivery-page-more-than-one-address-select-one-compress-others;cfu-user-with-direct-debit-details-simo-order-tablets-user-review-page-changes;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "Tablet",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount",
-        "color",
-        "tariff",
-        "houseNumber",
-        "PostCode",
-        "Username",
-        "Action",
-        "consumer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "PreSelected"
-      ],
-      "line": 37,
-      "id": "18-reg-cfu-tablet-delivery-page-more-than-one-address-select-one-compress-others;cfu-user-with-direct-debit-details-simo-order-tablets-user-review-page-changes;;1"
-    },
-    {
-      "cells": [
-        "inavl0wx_700444@o2.com",
-        "test123",
-        "Galaxy Book 10.6",
-        "Enabled",
-        "CapMyBill",
-        "£60",
-        "Gold",
-        "9.99upfront60.00amonth",
-        "11",
-        "SL11Er",
-        "Test Accepta",
-        "enterCode",
-        "Me",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Select",
-        "Enabled",
-        "No",
-        "Connected",
-        "No"
-      ],
-      "line": 38,
-      "id": "18-reg-cfu-tablet-delivery-page-more-than-one-address-select-one-compress-others;cfu-user-with-direct-debit-details-simo-order-tablets-user-review-page-changes;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 161231677404,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 38,
-  "name": "CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_changes",
-  "description": "",
-  "id": "18-reg-cfu-tablet-delivery-page-more-than-one-address-select-one-compress-others;cfu-user-with-direct-debit-details-simo-order-tablets-user-review-page-changes;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 7,
-  "name": "I am an Existing user and Navigates to Signin page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "Signin using valid inavl0wx_700444@o2.com and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Navigate to upgrade \u003e upgrade now",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Click on \u0027Get Started\u0027 CTA",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Click on Tablet section in upgrade options page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Click on View all Tablets link in upgrade options page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Select PayM Tablet Galaxy Book 10.6",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 15,
-      "value": "#And Select a \u003cTablet\u003e device from Recommended devices section"
-    },
-    {
-      "line": 16,
-      "value": "#And Click on device \u0027Confirm CTA\u0027"
-    },
-    {
-      "line": 17,
-      "value": "#And Click on View all Tariffs link in upgrade options page"
-    }
-  ],
-  "line": 18,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Choose your bill cap CapMyBill £60 when BSC is Enabled",
-  "matchedColumns": [
-    3,
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "perform enterCode in OTAC page",
-  "matchedColumns": [
-    11
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Click on \u0027Use a different delivery address\u0027link",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "enter a 11 and an SL11Er in Delivery section",
-  "matchedColumns": [
-    8,
-    9
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    21,
-    12
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "Select the Home address",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "Enter cardDetails in payment page input Test Accepta and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    10
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 29,
-      "value": "#And land on the payment page and input and other details and click \u0027Continue\u0027 on next step for otac"
-    }
-  ],
-  "line": 30,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 31,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 32,
-      "value": "#And Click on \u0027I agree to the terms and condition\u0027 checkbox"
-    }
-  ],
-  "line": 33,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 34,
-  "name": "Choose Me Enabled Business preferences Not Not Select Not And Channel Preferences Not Select Not Select No Connected No",
-  "matchedColumns": [
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24
-  ],
-  "keyword": "Then "
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+  "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
 });
 formatter.result({
-  "duration": 1474378217,
+  "duration": 5000314595,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Generate_CCA_button()"
+});
+formatter.result({
+  "duration": 28400393558,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_the_CCA_link()"
+});
+formatter.result({
+  "duration": 19999878826,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "inavl0wx_700444@o2.com",
+      "val": "ink_jun8829@stf.ref.o2.co.uk",
       "offset": 19
     },
     {
       "val": "test123",
-      "offset": 46
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 43326544270,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
-});
-formatter.result({
-  "duration": 58955976788,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
-});
-formatter.result({
-  "duration": 14210169580,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_Tablets_tab()"
-});
-formatter.result({
-  "duration": 11350515621,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_View_all_tablets()"
-});
-formatter.result({
-  "duration": 157399157637,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Galaxy Book 10.6",
-      "offset": 19
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PayMTablet(String)"
-});
-formatter.result({
-  "duration": 27801761240,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 126097014357,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 15967584847,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "duration": 39619569914,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "CapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "£60",
-      "offset": 31
-    },
-    {
-      "val": "Enabled",
-      "offset": 47
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "duration": 68470206747,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
-});
-formatter.result({
-  "duration": 40816949748,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 39983128323,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "enterCode",
-      "offset": 8
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
-});
-formatter.result({
-  "duration": 36953193331,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_Use_a_different_delivery_address_link()"
-});
-formatter.result({
-  "duration": 3071292950,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "11",
-      "offset": 8
-    },
-    {
-      "val": "SL11Er",
-      "offset": 18
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.enter_houseNum_and_PostCode(String,String)"
-});
-formatter.result({
-  "duration": 8450749446,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78478654796,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.selectTheHomeAddress()"
-});
-formatter.result({
-  "duration": 13168729869,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test Accepta",
-      "offset": 40
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPg_ClickAndCollect(String)"
-});
-formatter.result({
-  "duration": 100605371630,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "duration": 64127411902,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "duration": 57144026645,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "duration": 3309140320,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Not",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 43
-    },
-    {
-      "val": "Select",
-      "offset": 47
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Not",
-      "offset": 82
-    },
-    {
-      "val": "Select",
-      "offset": 86
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Select",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 104
-    },
-    {
-      "val": "Connected",
-      "offset": 107
-    },
-    {
-      "val": "No",
-      "offset": 117
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 95935492810,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 20169028565,
-  "status": "passed"
-});
-formatter.uri("27_Reg_AFU_SavedBasket.feature");
-formatter.feature({
-  "line": 1,
-  "name": "27_Reg_AFU_SavedBasket",
-  "description": "",
-  "id": "27-reg-afu-savedbasket",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "comments": [
-    {
-      "line": 3,
-      "value": "#launch hooks and get browser"
-    }
-  ],
-  "line": 5,
-  "name": "AFU_Saved Basket functionality",
-  "description": "",
-  "id": "27-reg-afu-savedbasket;afu-saved-basket-functionality",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 4,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "performs Upgrade for \u003cuser\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Select a valid PayM \u003cDevice\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select valid \u003cTariffs\u003e from tariffs tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select a valid Handset and Tariff combination",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Validate Bill Spend Cap in agent deal builder section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Add your Bill Spend Cap \u003cBillCapAmount\u003e in agent deal builder when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "# And Select a valid Accessory \u003cDevice\u003e"
-    }
-  ],
-  "line": 14,
-  "name": "choose to email basket to save the basket",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Verify email is sent successfully",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 17,
-  "name": "",
-  "description": "",
-  "id": "27-reg-afu-savedbasket;afu-saved-basket-functionality;",
-  "rows": [
-    {
-      "cells": [
-        "user",
-        "Device",
-        "Tariffs",
-        "BSCstatus",
-        "BillCapAmount"
-      ],
-      "line": 18,
-      "id": "27-reg-afu-savedbasket;afu-saved-basket-functionality;;1"
-    },
-    {
-      "cells": [
-        "07729000024",
-        "iPhone Xs 64GB Silver",
-        "Refresh",
-        "Enabled",
-        "No spend cap"
-      ],
-      "line": 19,
-      "id": "27-reg-afu-savedbasket;afu-saved-basket-functionality;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 100417241083,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 19,
-  "name": "AFU_Saved Basket functionality",
-  "description": "",
-  "id": "27-reg-afu-savedbasket;afu-saved-basket-functionality;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 4,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "performs Upgrade for 07729000024",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Select a valid PayM iPhone Xs 64GB Silver",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select valid Refresh from tariffs tab",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select a valid Handset and Tariff combination",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Add your Bill Spend Cap No spend cap in agent deal builder when BSC is Enabled",
-  "matchedColumns": [
-    3,
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "# And Select a valid Accessory \u003cDevice\u003e"
-    }
-  ],
-  "line": 14,
-  "name": "choose to email basket to save the basket",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Verify email is sent successfully",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
-});
-formatter.result({
-  "duration": 3089247221,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07729000024",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
-});
-formatter.result({
-  "duration": 111733710052,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone Xs 64GB Silver",
-      "offset": 20
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
-});
-formatter.result({
-  "duration": 35209459648,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Refresh",
-      "offset": 13
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
-});
-formatter.result({
-  "duration": 27713774980,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
-});
-formatter.result({
-  "duration": 14685960582,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 66
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
-});
-formatter.result({
-  "duration": 25270962546,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "No spend cap",
-      "offset": 24
-    },
-    {
-      "val": "Enabled",
-      "offset": 71
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
-});
-formatter.result({
-  "duration": 40812463659,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.choose_to_email_basket_to_save_the_basket()"
-});
-formatter.result({
-  "duration": 12824201955,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verifyEmailSentConfirmation()"
-});
-formatter.result({
-  "duration": 33485854270,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 20017702645,
-  "status": "passed"
-});
-formatter.uri("37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature");
-formatter.feature({
-  "line": 1,
-  "name": "37_Reg_CFA_Cover_me_copy_update_on_basket_summary",
-  "description": "",
-  "id": "37-reg-cfa-cover-me-copy-update-on-basket-summary",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "",
-  "description": "This scenario ensures that when the customer on acquisition journey selects insurance,\r\nthen the customer should be able to see \u0027Insurance\u0027 copy text in the SSC checkout Your order section instead of \u0027Cover Me\u0027\r\n\r\nselect tablet\r\nand view tariff\r\nselect insurance\r\ngo to basket\r\ngo to checkout\r\nverify insurance copy text is displayed on delivery page\r\ncontinue to payment page\r\nverify insurance copy text is displayed on payment page\r\ncontinue to next step\r\nverify insurance copy text is displayed on the agreement page\r\ncontinue to next step\r\nverify insurance copy text is displayed on your order section\r\ncontinue to next step\r\ndownload pdf and  verify insurance copy text is displayed on pdf",
-  "id": "37-reg-cfa-cover-me-copy-update-on-basket-summary;",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 23,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 24,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 25,
-      "value": "#And I choose \u003ctabletname\u003e Tablet"
-    }
-  ],
-  "line": 26,
-  "name": "Select PayM Tablet \u003ctabletname\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 29,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 30,
-  "name": "select \u003ccapacity\u003e capacity of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 31,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 32,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 33,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 34,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 35,
-  "name": "select an insurance",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 36,
-      "value": "#And Click on \"Buy Now\" button for \u003ctabletname\u003e"
-    }
-  ],
-  "line": 37,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 38,
-  "name": "verify cover me is present in Basket page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 39,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 40,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 41,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 42,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 43,
-  "name": "verify cover me is present in  payment page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 44,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 45,
-  "name": "verify cover me is present in  agreements page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 46,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 47,
-  "name": "verify cover me is present in review page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 48,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 49,
-  "name": "order confirmation is displayed",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 50,
-  "name": "verify cover me is present in  pdf download",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 51,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "comments": [
-    {
-      "line": 53,
-      "value": "#And pdf content"
-    }
-  ],
-  "line": 54,
-  "name": "",
-  "description": "",
-  "id": "37-reg-cfa-cover-me-copy-update-on-basket-summary;;",
-  "rows": [
-    {
-      "cells": [
-        "tabletname",
-        "color",
-        "capacity",
-        "Status",
-        "handset",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount",
-        "Firstname",
-        "Surname",
-        "Username",
-        "consumer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "PreSelected"
-      ],
-      "line": 55,
-      "id": "37-reg-cfa-cover-me-copy-update-on-basket-summary;;;1"
-    },
-    {
-      "cells": [
-        "iPad 9.7 inch 2018",
-        "Space Grey",
-        "32GB",
-        "In Stock",
-        "Samsung",
-        "Enabled",
-        "CapMyBill",
-        "£60",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA",
-        "Me",
-        "Not",
-        "Select",
-        "Select",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "No"
-      ],
-      "line": 56,
-      "id": "37-reg-cfa-cover-me-copy-update-on-basket-summary;;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 33715737379,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 56,
-  "name": "",
-  "description": "This scenario ensures that when the customer on acquisition journey selects insurance,\r\nthen the customer should be able to see \u0027Insurance\u0027 copy text in the SSC checkout Your order section instead of \u0027Cover Me\u0027\r\n\r\nselect tablet\r\nand view tariff\r\nselect insurance\r\ngo to basket\r\ngo to checkout\r\nverify insurance copy text is displayed on delivery page\r\ncontinue to payment page\r\nverify insurance copy text is displayed on payment page\r\ncontinue to next step\r\nverify insurance copy text is displayed on the agreement page\r\ncontinue to next step\r\nverify insurance copy text is displayed on your order section\r\ncontinue to next step\r\ndownload pdf and  verify insurance copy text is displayed on pdf",
-  "id": "37-reg-cfa-cover-me-copy-update-on-basket-summary;;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 23,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 24,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 25,
-      "value": "#And I choose \u003ctabletname\u003e Tablet"
-    }
-  ],
-  "line": 26,
-  "name": "Select PayM Tablet iPad 9.7 inch 2018",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 29,
-  "name": "select Space Grey color of the connected device",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 30,
-  "name": "select 32GB capacity of the connected device",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 31,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 32,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 33,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 34,
-  "name": "Choose your bill cap CapMyBill £60 when BSC is Enabled",
-  "matchedColumns": [
-    5,
-    6,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 35,
-  "name": "select an insurance",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 36,
-      "value": "#And Click on \"Buy Now\" button for \u003ctabletname\u003e"
-    }
-  ],
-  "line": 37,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 38,
-  "name": "verify cover me is present in Basket page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 39,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 40,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    8,
-    9
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 41,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    20,
-    11
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 42,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 43,
-  "name": "verify cover me is present in  payment page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 44,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    10
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 45,
-  "name": "verify cover me is present in  agreements page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 46,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 47,
-  "name": "verify cover me is present in review page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 48,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 49,
-  "name": "order confirmation is displayed",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 50,
-  "name": "verify cover me is present in  pdf download",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 51,
-  "name": "Choose Me Enabled Business preferences Not Select Select Not And Channel Preferences Not Select Not Not No Connected No",
-  "matchedColumns": [
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 653272925,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
-});
-formatter.result({
-  "duration": 58985964865,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPad 9.7 inch 2018",
-      "offset": 19
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PayMTablet(String)"
-});
-formatter.result({
-  "duration": 27814931433,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 30588366884,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 265183997,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Space Grey",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 19758627743,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "32GB",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
-});
-formatter.result({
-  "duration": 19232201890,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 36697614650,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 16119385707,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "duration": 39757418099,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "CapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "£60",
-      "offset": 31
-    },
-    {
-      "val": "Enabled",
-      "offset": 47
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "duration": 68993173541,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_an_insurance()"
-});
-formatter.result({
-  "duration": 10468824044,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 42700771829,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_Basket_page()"
-});
-formatter.result({
-  "duration": 7463755426,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 35443824954,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 6
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 37413271339,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 79027914199,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_payment_page()"
-});
-formatter.result({
-  "duration": 12453540688,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
-});
-formatter.result({
-  "duration": 41850187729,
-  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature:44)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_agreements_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_review_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_pdf_download()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Not",
-      "offset": 39
-    },
-    {
-      "val": "Select",
-      "offset": 43
-    },
-    {
-      "val": "Select",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 57
-    },
-    {
-      "val": "Not",
-      "offset": 85
-    },
-    {
-      "val": "Select",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 96
-    },
-    {
-      "val": "Not",
-      "offset": 100
-    },
-    {
-      "val": "No",
-      "offset": 104
-    },
-    {
-      "val": "Connected",
-      "offset": 107
-    },
-    {
-      "val": "No",
-      "offset": 117
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20347493633,
-  "status": "passed"
-});
-formatter.uri("57_Reg_CS_CFU_SavedBasket.feature");
-formatter.feature({
-  "line": 1,
-  "name": "57_Reg_CS_CFU_SavedBasket",
-  "description": "",
-  "id": "57-reg-cs-cfu-savedbasket",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "CFU to Verify is user can upgrade phone to refresh Tariff",
-  "description": "",
-  "id": "57-reg-cs-cfu-savedbasket;cfu-to-verify-is-user-can-upgrade-phone-to-refresh-tariff",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an Existing user and Navigates to Signin page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "choose to upgrade any Phone in My upgrade page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Click on \u0027Get Started\u0027 CTA",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select a \u003chandset\u003e device from Recommended devices section",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Click on device \u0027Confirm CTA\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Select a tariff \u003ctariff\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Select a \u0027I need a sim\u0027option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Verify that \u0027Confirm CTA\u0027 is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Click on \u0027Confirm CTA\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "verify that \u0027Go to checkout\u0027 CTA is enabled",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Verifies the basket page for the upgrade journey",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "choose to email basket to save the basket in CFU for \u003cusername\u003e",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 22,
-  "name": "",
-  "description": "",
-  "id": "57-reg-cs-cfu-savedbasket;cfu-to-verify-is-user-can-upgrade-phone-to-refresh-tariff;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "status",
-        "consumer",
-        "handset",
-        "tariff",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount"
-      ],
-      "line": 23,
-      "id": "57-reg-cs-cfu-savedbasket;cfu-to-verify-is-user-can-upgrade-phone-to-refresh-tariff;;1"
-    },
-    {
-      "cells": [
-        "inavl0wx_104860@o2.com",
-        "test123",
-        "Enabled",
-        "Me",
-        "iPhone X",
-        "Random",
-        "Enabled",
-        "DontCapMyBill",
-        "Nill"
-      ],
-      "line": 24,
-      "id": "57-reg-cs-cfu-savedbasket;cfu-to-verify-is-user-can-upgrade-phone-to-refresh-tariff;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 103879289630,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 24,
-  "name": "CFU to Verify is user can upgrade phone to refresh Tariff",
-  "description": "",
-  "id": "57-reg-cs-cfu-savedbasket;cfu-to-verify-is-user-can-upgrade-phone-to-refresh-tariff;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an Existing user and Navigates to Signin page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "Signin using valid inavl0wx_104860@o2.com and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "choose to upgrade any Phone in My upgrade page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Click on \u0027Get Started\u0027 CTA",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select a iPhone X device from Recommended devices section",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Click on device \u0027Confirm CTA\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Select a tariff Random",
-  "matchedColumns": [
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Choose your bill cap DontCapMyBill Nill when BSC is Enabled",
-  "matchedColumns": [
-    6,
-    7,
-    8
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Select a \u0027I need a sim\u0027option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Verify that \u0027Confirm CTA\u0027 is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Click on \u0027Confirm CTA\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "verify that \u0027Go to checkout\u0027 CTA is enabled",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Verifies the basket page for the upgrade journey",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "choose to email basket to save the basket in CFU for inavl0wx_104860@o2.com",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
-});
-formatter.result({
-  "duration": 38767374840,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "inavl0wx_104860@o2.com",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 46
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 27688437559,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.choose_to_upgrade_any_Phone_in_My_upgrade_page()"
-});
-formatter.result({
-  "duration": 48769868096,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
-});
-formatter.result({
-  "duration": 14346088986,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone X",
-      "offset": 9
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_device_from_recommended_devices_section(String)"
-});
-formatter.result({
-  "duration": 18995528420,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.clickOnDeviceConfirm_CTA()"
-});
-formatter.result({
-  "duration": 17644732153,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Random",
-      "offset": 16
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.selectATariffTariff(String)"
-});
-formatter.result({
-  "duration": 5474414315,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "duration": 39986424233,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "DontCapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "Nill",
-      "offset": 35
-    },
-    {
-      "val": "Enabled",
       "offset": 52
     }
   ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
+  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials_New(String,String)"
 });
 formatter.result({
-  "duration": 40070208941,
+  "duration": 18521846749,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_a_I_need_a_sim_option()"
+  "location": "E2EOrderPlaced_Steps.click_on_continue_link_for_the_upgrade_journey()"
 });
 formatter.result({
-  "duration": 7785892881,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_that_Confirm_CTA_is_displayed()"
-});
-formatter.result({
-  "duration": 373209731,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_Confirm_CTA()"
-});
-formatter.result({
-  "duration": 3651034834,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
-});
-formatter.result({
-  "duration": 50909980560,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_that_Go_to_checkout_CTA_is_enabled()"
-});
-formatter.result({
-  "duration": 365500281,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verifies_the_basket_page_for_the_upgrade_journey()"
-});
-formatter.result({
-  "duration": 557513158,
+  "duration": 6794784201,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
-    {
-      "val": "inavl0wx_104860@o2.com",
-      "offset": 53
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.choose_to_email_basket_to_save_the_basket_CFU(String)"
-});
-formatter.result({
-  "duration": 6242266573,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 20097497791,
-  "status": "passed"
-});
-formatter.uri("60_Reg_CS_Free_Sim_Tablet.feature");
-formatter.feature({
-  "line": 1,
-  "name": "60_Reg_CS_Free_Sim_Tablet",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "Light surfer Tablet Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;light-surfer-tablet-sim-entering-delivery-details-manually",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "I select \u003cSurfer_Type\u003e surfer and \u003csim_type\u003e sim",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "I select \u0027Enter manually\u0027 and input \u003cFlatnumber\u003e, \u003cHousename\u003e, \u003cAddress1\u003e, \u003cTown\u003e, \u003cPostcode\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 10,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 11,
-  "name": "Enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e for GDPR \u003cCheckBox\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 14,
-  "name": "",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;light-surfer-tablet-sim-entering-delivery-details-manually;",
-  "rows": [
-    {
-      "cells": [
-        "Surfer_Type",
-        "sim_type",
-        "Flatnumber",
-        "Housename",
-        "Address1",
-        "Town",
-        "Postcode",
-        "Surname",
-        "CheckBox",
-        "Firstname",
-        "Lastname",
-        "Contact_number"
-      ],
-      "line": 15,
-      "id": "60-reg-cs-free-sim-tablet;light-surfer-tablet-sim-entering-delivery-details-manually;;1"
-    },
-    {
-      "cells": [
-        "Light surfer",
-        "Tablet",
-        "26",
-        "100",
-        "slough",
-        "Berks",
-        "Sl11er",
-        "Accepta",
-        "Yes",
-        "Test",
-        "Accepta",
-        "07123456789"
-      ],
-      "line": 16,
-      "id": "60-reg-cs-free-sim-tablet;light-surfer-tablet-sim-entering-delivery-details-manually;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 102857908858,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 16,
-  "name": "Light surfer Tablet Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;light-surfer-tablet-sim-entering-delivery-details-manually;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "I select Light surfer surfer and Tablet sim",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 10,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 11,
-  "name": "Enter details in Delivery Page Test and Accepta for GDPR Yes",
-  "matchedColumns": [
-    7,
-    8,
-    9
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 773542330,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
-});
-formatter.result({
-  "duration": 210378409292,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
-});
-formatter.result({
-  "duration": 10379425352,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Light surfer",
-      "offset": 9
-    },
-    {
-      "val": "Tablet",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
-});
-formatter.result({
-  "duration": 24627672906,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "26",
-      "offset": 36
-    },
-    {
-      "val": "100",
-      "offset": 40
-    },
-    {
-      "val": "slough",
-      "offset": 45
-    },
-    {
-      "val": "Berks",
-      "offset": 53
-    },
-    {
-      "val": "Sl11er",
-      "offset": 60
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 9383937985,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 31
-    },
-    {
-      "val": "Accepta",
-      "offset": 40
-    },
-    {
-      "val": "Yes",
-      "offset": 57
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
-});
-formatter.result({
-  "duration": 63418435510,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
-});
-formatter.result({
-  "duration": 945170676,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 20545869354,
-  "status": "passed"
-});
-formatter.scenarioOutline({
-  "line": 19,
-  "name": "Light surfer Dongle Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;light-surfer-dongle-sim-entering-delivery-details-manually",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 18,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 20,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 21,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "I select \u003cSurfer_Type\u003e surfer and \u003csim_type\u003e sim",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "I select \u0027Enter manually\u0027 and input \u003cFlatnumber\u003e, \u003cHousename\u003e, \u003cAddress1\u003e, \u003cTown\u003e, \u003cPostcode\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 25,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 26,
-  "name": "Enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e for GDPR \u003cCheckBox\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 29,
-  "name": "",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;light-surfer-dongle-sim-entering-delivery-details-manually;",
-  "rows": [
-    {
-      "cells": [
-        "Surfer_Type",
-        "sim_type",
-        "Flatnumber",
-        "Housename",
-        "Address1",
-        "Town",
-        "Postcode",
-        "Firstname",
-        "Lastname",
-        "Contact_number",
-        "Surname",
-        "CheckBox"
-      ],
-      "line": 30,
-      "id": "60-reg-cs-free-sim-tablet;light-surfer-dongle-sim-entering-delivery-details-manually;;1"
-    },
-    {
-      "cells": [
-        "Light surfer",
-        "Dongle",
-        "26",
-        "100",
-        "slough",
-        "Berks",
-        "Sl11er",
-        "Test",
-        "Accepta",
-        "07123456789",
-        "Accepta",
-        "Yes"
-      ],
-      "line": 31,
-      "id": "60-reg-cs-free-sim-tablet;light-surfer-dongle-sim-entering-delivery-details-manually;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 100648377367,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 31,
-  "name": "Light surfer Dongle Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;light-surfer-dongle-sim-entering-delivery-details-manually;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 18,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 20,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 21,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "I select Light surfer surfer and Dongle sim",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 25,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 26,
-  "name": "Enter details in Delivery Page Test and Accepta for GDPR Yes",
-  "matchedColumns": [
-    7,
-    10,
-    11
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 549719124,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
-});
-formatter.result({
-  "duration": 84613193622,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
-});
-formatter.result({
-  "duration": 10173916337,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Light surfer",
-      "offset": 9
-    },
-    {
-      "val": "Dongle",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
-});
-formatter.result({
-  "duration": 23951307729,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "26",
-      "offset": 36
-    },
-    {
-      "val": "100",
-      "offset": 40
-    },
-    {
-      "val": "slough",
-      "offset": 45
-    },
-    {
-      "val": "Berks",
-      "offset": 53
-    },
-    {
-      "val": "Sl11er",
-      "offset": 60
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 9314630792,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 31
-    },
-    {
-      "val": "Accepta",
-      "offset": 40
-    },
-    {
-      "val": "Yes",
-      "offset": 57
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
-});
-formatter.result({
-  "duration": 68723350213,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
-});
-formatter.result({
-  "duration": 1029624617,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 19893996475,
-  "status": "passed"
-});
-formatter.scenarioOutline({
-  "line": 35,
-  "name": "Steady surfer Tablet Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;steady-surfer-tablet-sim-entering-delivery-details-manually",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 34,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 36,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 37,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 38,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 39,
-  "name": "I select \u003cSurfer_Type\u003e surfer and \u003csim_type\u003e sim",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 40,
-  "name": "I select \u0027Enter manually\u0027 and input \u003cFlatnumber\u003e, \u003cHousename\u003e, \u003cAddress1\u003e, \u003cTown\u003e, \u003cPostcode\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 41,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 42,
-  "name": "Enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e for GDPR \u003cCheckBox\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 43,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 45,
-  "name": "",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;steady-surfer-tablet-sim-entering-delivery-details-manually;",
-  "rows": [
-    {
-      "cells": [
-        "Surfer_Type",
-        "sim_type",
-        "Flatnumber",
-        "Housename",
-        "Address1",
-        "Town",
-        "Postcode",
-        "Firstname",
-        "Lastname",
-        "Contact_number",
-        "Surname",
-        "CheckBox"
-      ],
-      "line": 46,
-      "id": "60-reg-cs-free-sim-tablet;steady-surfer-tablet-sim-entering-delivery-details-manually;;1"
-    },
-    {
-      "cells": [
-        "Steady surfer",
-        "Tablet",
-        "26",
-        "100",
-        "slough",
-        "Berks",
-        "Sl11er",
-        "Test",
-        "Accepta",
-        "07123456789",
-        "Accepta",
-        "No"
-      ],
-      "line": 47,
-      "id": "60-reg-cs-free-sim-tablet;steady-surfer-tablet-sim-entering-delivery-details-manually;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 34707985460,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 47,
-  "name": "Steady surfer Tablet Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;steady-surfer-tablet-sim-entering-delivery-details-manually;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 34,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 36,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 37,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 38,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 39,
-  "name": "I select Steady surfer surfer and Tablet sim",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 40,
-  "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 41,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 42,
-  "name": "Enter details in Delivery Page Test and Accepta for GDPR No",
-  "matchedColumns": [
-    7,
-    10,
-    11
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 43,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 533758042,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
-});
-formatter.result({
-  "duration": 75734154910,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
-});
-formatter.result({
-  "duration": 10064393233,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Steady surfer",
-      "offset": 9
-    },
-    {
-      "val": "Tablet",
-      "offset": 34
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
-});
-formatter.result({
-  "duration": 22536478857,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "26",
-      "offset": 36
-    },
-    {
-      "val": "100",
-      "offset": 40
-    },
-    {
-      "val": "slough",
-      "offset": 45
-    },
-    {
-      "val": "Berks",
-      "offset": 53
-    },
-    {
-      "val": "Sl11er",
-      "offset": 60
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 9069212701,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 31
-    },
-    {
-      "val": "Accepta",
-      "offset": 40
-    },
-    {
-      "val": "No",
-      "offset": 57
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
-});
-formatter.result({
-  "duration": 62429914395,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
-});
-formatter.result({
-  "duration": 858408924,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 18254989784,
-  "status": "passed"
-});
-formatter.scenarioOutline({
-  "line": 50,
-  "name": "Steady surfer Dongle Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;steady-surfer-dongle-sim-entering-delivery-details-manually",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 49,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 51,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 52,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 53,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 54,
-  "name": "I select \u003cSurfer_Type\u003e surfer and \u003csim_type\u003e sim",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 55,
-  "name": "I select \u0027Enter manually\u0027 and input \u003cFlatnumber\u003e, \u003cHousename\u003e, \u003cAddress1\u003e, \u003cTown\u003e, \u003cPostcode\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 56,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 57,
-  "name": "Enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e for GDPR \u003cCheckBox\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 58,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 60,
-  "name": "",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;steady-surfer-dongle-sim-entering-delivery-details-manually;",
-  "rows": [
-    {
-      "cells": [
-        "Surfer_Type",
-        "sim_type",
-        "Flatnumber",
-        "Housename",
-        "Address1",
-        "Town",
-        "Postcode",
-        "Firstname",
-        "Lastname",
-        "Contact_number",
-        "Surname",
-        "CheckBox"
-      ],
-      "line": 61,
-      "id": "60-reg-cs-free-sim-tablet;steady-surfer-dongle-sim-entering-delivery-details-manually;;1"
-    },
-    {
-      "cells": [
-        "Steady surfer",
-        "Dongle",
-        "26",
-        "100",
-        "slough",
-        "Berks",
-        "Sl11er",
-        "Test",
-        "Accepta",
-        "07123456789",
-        "Accepta",
-        "Yes"
-      ],
-      "line": 62,
-      "id": "60-reg-cs-free-sim-tablet;steady-surfer-dongle-sim-entering-delivery-details-manually;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 34635944002,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 62,
-  "name": "Steady surfer Dongle Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;steady-surfer-dongle-sim-entering-delivery-details-manually;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 49,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 51,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 52,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 53,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 54,
-  "name": "I select Steady surfer surfer and Dongle sim",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 55,
-  "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 56,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 57,
-  "name": "Enter details in Delivery Page Test and Accepta for GDPR Yes",
-  "matchedColumns": [
-    7,
-    10,
-    11
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 58,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 546908062,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
-});
-formatter.result({
-  "duration": 76077592800,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
-});
-formatter.result({
-  "duration": 10146333392,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Steady surfer",
-      "offset": 9
-    },
-    {
-      "val": "Dongle",
-      "offset": 34
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
-});
-formatter.result({
-  "duration": 22653852265,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "26",
-      "offset": 36
-    },
-    {
-      "val": "100",
-      "offset": 40
-    },
-    {
-      "val": "slough",
-      "offset": 45
-    },
-    {
-      "val": "Berks",
-      "offset": 53
-    },
-    {
-      "val": "Sl11er",
-      "offset": 60
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 9098377243,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 31
-    },
-    {
-      "val": "Accepta",
-      "offset": 40
-    },
-    {
-      "val": "Yes",
-      "offset": 57
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
-});
-formatter.result({
-  "duration": 62271482077,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
-});
-formatter.result({
-  "duration": 802951420,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 20104257716,
-  "status": "passed"
-});
-formatter.scenarioOutline({
-  "line": 66,
-  "name": "Ultimate surfer Tablet Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;ultimate-surfer-tablet-sim-entering-delivery-details-manually",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 65,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 67,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 68,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 69,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 70,
-  "name": "I select \u003cSurfer_Type\u003e surfer and \u003csim_type\u003e sim",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 71,
-  "name": "I select \u0027Enter manually\u0027 and input \u003cFlatnumber\u003e, \u003cHousename\u003e, \u003cAddress1\u003e, \u003cTown\u003e, \u003cPostcode\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 72,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 73,
-  "name": "Enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e for GDPR \u003cCheckBox\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 74,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 76,
-  "name": "",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;ultimate-surfer-tablet-sim-entering-delivery-details-manually;",
-  "rows": [
-    {
-      "cells": [
-        "Surfer_Type",
-        "sim_type",
-        "Flatnumber",
-        "Housename",
-        "Address1",
-        "Town",
-        "Postcode",
-        "Firstname",
-        "Lastname",
-        "Contact_number",
-        "Surname",
-        "CheckBox"
-      ],
-      "line": 77,
-      "id": "60-reg-cs-free-sim-tablet;ultimate-surfer-tablet-sim-entering-delivery-details-manually;;1"
-    },
-    {
-      "cells": [
-        "Ultimate surfer",
-        "Tablet",
-        "26",
-        "100",
-        "slough",
-        "Berks",
-        "Sl11er",
-        "Test",
-        "Accepta",
-        "07123456789",
-        "Accepta",
-        "No"
-      ],
-      "line": 78,
-      "id": "60-reg-cs-free-sim-tablet;ultimate-surfer-tablet-sim-entering-delivery-details-manually;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 35028592279,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 78,
-  "name": "Ultimate surfer Tablet Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;ultimate-surfer-tablet-sim-entering-delivery-details-manually;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 65,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 67,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 68,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 69,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 70,
-  "name": "I select Ultimate surfer surfer and Tablet sim",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 71,
-  "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 72,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 73,
-  "name": "Enter details in Delivery Page Test and Accepta for GDPR No",
-  "matchedColumns": [
-    7,
-    10,
-    11
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 74,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 856188175,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
-});
-formatter.result({
-  "duration": 153846598077,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
-});
-formatter.result({
-  "duration": 10210026603,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Ultimate surfer",
-      "offset": 9
-    },
-    {
-      "val": "Tablet",
-      "offset": 36
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
-});
-formatter.result({
-  "duration": 23431793625,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "26",
-      "offset": 36
-    },
-    {
-      "val": "100",
-      "offset": 40
-    },
-    {
-      "val": "slough",
-      "offset": 45
-    },
-    {
-      "val": "Berks",
-      "offset": 53
-    },
-    {
-      "val": "Sl11er",
-      "offset": 60
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 9086183472,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 31
-    },
-    {
-      "val": "Accepta",
-      "offset": 40
-    },
-    {
-      "val": "No",
-      "offset": 57
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
-});
-formatter.result({
-  "duration": 66998663657,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
-});
-formatter.result({
-  "duration": 1046369243,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 20175444494,
-  "status": "passed"
-});
-formatter.scenarioOutline({
-  "line": 81,
-  "name": "Ultimate surfer Dongle Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;ultimate-surfer-dongle-sim-entering-delivery-details-manually",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 80,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 82,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 83,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 84,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 85,
-  "name": "I select \u003cSurfer_Type\u003e surfer and \u003csim_type\u003e sim",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 86,
-  "name": "I select \u0027Enter manually\u0027 and input \u003cFlatnumber\u003e, \u003cHousename\u003e, \u003cAddress1\u003e, \u003cTown\u003e, \u003cPostcode\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 87,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 88,
-  "name": "Enter details in Delivery Page \u003cFirstname\u003e and \u003cSurname\u003e for GDPR \u003cCheckBox\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 89,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 91,
-  "name": "",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;ultimate-surfer-dongle-sim-entering-delivery-details-manually;",
-  "rows": [
-    {
-      "cells": [
-        "Surfer_Type",
-        "sim_type",
-        "Flatnumber",
-        "Housename",
-        "Address1",
-        "Town",
-        "Postcode",
-        "Firstname",
-        "Lastname",
-        "Contact_number",
-        "Surname",
-        "CheckBox"
-      ],
-      "line": 92,
-      "id": "60-reg-cs-free-sim-tablet;ultimate-surfer-dongle-sim-entering-delivery-details-manually;;1"
-    },
-    {
-      "cells": [
-        "Ultimate surfer",
-        "Dongle",
-        "26",
-        "100",
-        "slough",
-        "Berks",
-        "Sl11er",
-        "Test",
-        "Accepta",
-        "07123456789",
-        "Accepta",
-        "Yes"
-      ],
-      "line": 93,
-      "id": "60-reg-cs-free-sim-tablet;ultimate-surfer-dongle-sim-entering-delivery-details-manually;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 104149941801,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 93,
-  "name": "Ultimate surfer Dongle Sim entering delivery details manually",
-  "description": "",
-  "id": "60-reg-cs-free-sim-tablet;ultimate-surfer-dongle-sim-entering-delivery-details-manually;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 80,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 82,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 83,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 84,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 85,
-  "name": "I select Ultimate surfer surfer and Dongle sim",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 86,
-  "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 87,
-      "value": "#And I input \u003cFirstname\u003e, \u003cLastname\u003e, \u003cContact_number\u003e in About You Section"
-    }
-  ],
-  "line": 88,
-  "name": "Enter details in Delivery Page Test and Accepta for GDPR Yes",
-  "matchedColumns": [
-    7,
-    10,
-    11
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 89,
-  "name": "verify order number is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 515739361,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
-});
-formatter.result({
-  "duration": 178612296474,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
-});
-formatter.result({
-  "duration": 10160556451,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Ultimate surfer",
-      "offset": 9
-    },
-    {
-      "val": "Dongle",
-      "offset": 36
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
-});
-formatter.result({
-  "duration": 26858559334,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "26",
-      "offset": 36
-    },
-    {
-      "val": "100",
-      "offset": 40
-    },
-    {
-      "val": "slough",
-      "offset": 45
-    },
-    {
-      "val": "Berks",
-      "offset": 53
-    },
-    {
-      "val": "Sl11er",
-      "offset": 60
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 9076503129,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Test",
-      "offset": 31
-    },
-    {
-      "val": "Accepta",
-      "offset": 40
-    },
-    {
-      "val": "Yes",
-      "offset": 57
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
-});
-formatter.result({
-  "duration": 63080230802,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
-});
-formatter.result({
-  "duration": 824803592,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 20132791247,
-  "status": "passed"
-});
-formatter.uri("81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC.feature");
-formatter.feature({
-  "line": 1,
-  "name": "81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC",
-  "description": "\r\nThis scenario ensures that when customer on aquisition journey has selected a device which is out of stock for both Home delivery and click and collect then the updated\r\nerror messages should be displayed",
-  "id": "81-reg-jan-cfa-oosforhomedeliveryandcnc",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 8,
-  "name": "Aquisition_OOSForHomeDeliveryandCnC",
-  "description": "",
-  "id": "81-reg-jan-cfa-oosforhomedeliveryandcnc;aquisition-oosforhomedeliveryandcnc",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 6,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 10,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 11,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "the Delivery information section should show the \u0027OOS message\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 21,
-      "value": "#And the Delivery section should show \u0027OOS message\u0027"
-    }
-  ],
-  "line": 22,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "the Delivery section should show \u0027OOS message\u0027",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 26,
-  "name": "",
-  "description": "",
-  "id": "81-reg-jan-cfa-oosforhomedeliveryandcnc;aquisition-oosforhomedeliveryandcnc;",
-  "rows": [
-    {
-      "cells": [
-        "handset",
-        "color",
-        "username",
-        "password",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount"
-      ],
-      "line": 27,
-      "id": "81-reg-jan-cfa-oosforhomedeliveryandcnc;aquisition-oosforhomedeliveryandcnc;;1"
-    },
-    {
-      "cells": [
-        "iPhone 5s Like New",
-        "Silver",
-        "dasdasdkjaskd@sdsd.com",
-        "test123",
-        "Enabled",
-        "DontCapMyBill",
-        "Nill"
-      ],
-      "line": 28,
-      "id": "81-reg-jan-cfa-oosforhomedeliveryandcnc;aquisition-oosforhomedeliveryandcnc;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 35715042311,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 28,
-  "name": "Aquisition_OOSForHomeDeliveryandCnC",
-  "description": "",
-  "id": "81-reg-jan-cfa-oosforhomedeliveryandcnc;aquisition-oosforhomedeliveryandcnc;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 6,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 10,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 11,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I choose PayM iPhone 5s Like New",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "select Silver color of the connected device",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "the Delivery information section should show the \u0027OOS message\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Choose your bill cap DontCapMyBill Nill when BSC is Enabled",
-  "matchedColumns": [
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 21,
-      "value": "#And the Delivery section should show \u0027OOS message\u0027"
-    }
-  ],
-  "line": 22,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "the Delivery section should show \u0027OOS message\u0027",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 518132816,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-});
-formatter.result({
-  "duration": 134721319157,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone 5s Like New",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-});
-formatter.result({
-  "duration": 32902430721,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 23417238606,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 236626047,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Silver",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 15711759141,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 145434874716,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.deliveryInformationSection_OOS_message_validation()"
-});
-formatter.result({
-  "duration": 101923363,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 16161031744,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "duration": 39998761689,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "DontCapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "Nill",
-      "offset": 35
-    },
-    {
-      "val": "Enabled",
-      "offset": 52
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "duration": 40196574702,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
-});
-formatter.result({
-  "duration": 56668388175,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.delivery_section_should_show_OOS_message()"
-});
-formatter.result({
-  "duration": 949930334,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 20079731089,
-  "status": "passed"
-});
-formatter.uri("83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature");
-formatter.feature({
-  "line": 1,
-  "name": "83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC",
-  "description": "\r\nThis scenario ensures that when an existing customer has selected a device which is out of stock for both Home delivery and click and collect then the updated\r\nerror messages should be displayed",
-  "id": "83--reg-jan-existing-oosforhomedeliveryandcnc",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 8,
-  "name": "Existing_OOSForHomeDeliveryandCnC",
-  "description": "",
-  "id": "83--reg-jan-existing-oosforhomedeliveryandcnc;existing-oosforhomedeliveryandcnc",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 6,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 10,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 11,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 18,
-      "value": "#And select \u003ccolor\u003e color of the connected device"
-    }
-  ],
-  "line": 19,
-  "name": "the Delivery information section should show the \u0027OOS message\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 23,
-      "value": "#And the Delivery section should show \u0027OOS message\u0027"
-    }
-  ],
-  "line": 24,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "the Delivery section should show \u0027OOS message\u0027",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 28,
-  "name": "",
-  "description": "",
-  "id": "83--reg-jan-existing-oosforhomedeliveryandcnc;existing-oosforhomedeliveryandcnc;",
-  "rows": [
-    {
-      "cells": [
-        "handset",
-        "color",
-        "username",
-        "password",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount"
-      ],
-      "line": 29,
-      "id": "83--reg-jan-existing-oosforhomedeliveryandcnc;existing-oosforhomedeliveryandcnc;;1"
-    },
-    {
-      "cells": [
-        "iPhone 5s Like New",
-        "Silver",
-        "b@o2.com",
-        "test123",
-        "Enabled",
-        "CapMyBill",
-        "£10"
-      ],
-      "line": 30,
-      "id": "83--reg-jan-existing-oosforhomedeliveryandcnc;existing-oosforhomedeliveryandcnc;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 104296651747,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 30,
-  "name": "Existing_OOSForHomeDeliveryandCnC",
-  "description": "",
-  "id": "83--reg-jan-existing-oosforhomedeliveryandcnc;existing-oosforhomedeliveryandcnc;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 6,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 10,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 11,
-  "name": "Signin using valid b@o2.com and test123 credentials",
-  "matchedColumns": [
-    2,
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "I choose PayM iPhone 5s Like New",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "select Silver color of the connected device",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 18,
-      "value": "#And select \u003ccolor\u003e color of the connected device"
-    }
-  ],
-  "line": 19,
-  "name": "the Delivery information section should show the \u0027OOS message\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Choose your bill cap CapMyBill £10 when BSC is Enabled",
-  "matchedColumns": [
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 23,
-      "value": "#And the Delivery section should show \u0027OOS message\u0027"
-    }
-  ],
-  "line": 24,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "the Delivery section should show \u0027OOS message\u0027",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
-});
-formatter.result({
-  "duration": 1664397905,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "b@o2.com",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 32
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 37436746162,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-});
-formatter.result({
-  "duration": 133704493841,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone 5s Like New",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-});
-formatter.result({
-  "duration": 33212736448,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 27432981682,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 233503196,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Silver",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 15706109414,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 107523053500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.deliveryInformationSection_OOS_message_validation()"
-});
-formatter.result({
-  "duration": 124302145,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 16207694374,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "duration": 39799254890,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "CapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "£10",
-      "offset": 31
-    },
-    {
-      "val": "Enabled",
-      "offset": 47
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "duration": 68908536630,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
-});
-formatter.result({
-  "duration": 58394029919,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.delivery_section_should_show_OOS_message()"
-});
-formatter.result({
-  "duration": 909868373,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 19961298446,
-  "status": "passed"
-});
-formatter.uri("86_Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature");
-formatter.feature({
-  "line": 1,
-  "name": "86_Reg_Jan_FreeSim_InvalidPostCode_EnteredManually",
-  "description": "\r\nThis ensures that a valid error message should get displayed when user enters invalid postcode in the enter manually section",
-  "id": "86-reg-jan-freesim-invalidpostcode-enteredmanually",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 6,
-  "name": "This ensures that a valid error message should get displayed when user enters invalid postcode in the enter manually section",
-  "description": "",
-  "id": "86-reg-jan-freesim-invalidpostcode-enteredmanually;this-ensures-that-a-valid-error-message-should-get-displayed-when-user-enters-invalid-postcode-in-the-enter-manually-section",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 8,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 9,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I select \u003cSurfer_Type\u003e surfer and \u003csim_type\u003e sim",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I select \u0027Enter manually\u0027 and input \u003cFlatnumber\u003e, \u003cHousename\u003e, \u003cAddress1\u003e, \u003cTown\u003e, \u003cPostCode\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "the respective \u003cerror\u003e message should be displayed in enter manually section",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 15,
-  "name": "",
-  "description": "",
-  "id": "86-reg-jan-freesim-invalidpostcode-enteredmanually;this-ensures-that-a-valid-error-message-should-get-displayed-when-user-enters-invalid-postcode-in-the-enter-manually-section;",
-  "rows": [
-    {
-      "cells": [
-        "Surfer_Type",
-        "sim_type",
-        "Flatnumber",
-        "Housename",
-        "Address1",
-        "Town",
-        "PostCode",
-        "error"
-      ],
-      "line": 16,
-      "id": "86-reg-jan-freesim-invalidpostcode-enteredmanually;this-ensures-that-a-valid-error-message-should-get-displayed-when-user-enters-invalid-postcode-in-the-enter-manually-section;;1"
-    },
-    {
-      "cells": [
-        "Light surfer",
-        "iPad",
-        "26",
-        "100",
-        "High Street",
-        "Slough",
-        "SL111ER1232",
-        "Enter a valid UK postcode"
-      ],
-      "line": 17,
-      "id": "86-reg-jan-freesim-invalidpostcode-enteredmanually;this-ensures-that-a-valid-error-message-should-get-displayed-when-user-enters-invalid-postcode-in-the-enter-manually-section;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 62158468416,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 17,
-  "name": "This ensures that a valid error message should get displayed when user enters invalid postcode in the enter manually section",
-  "description": "",
-  "id": "86-reg-jan-freesim-invalidpostcode-enteredmanually;this-ensures-that-a-valid-error-message-should-get-displayed-when-user-enters-invalid-postcode-in-the-enter-manually-section;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 8,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 9,
-  "name": "Navigate to FreeSim page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I select \u0027iPads and Tablets\u0027 tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I select Light surfer surfer and iPad sim",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I select \u0027Enter manually\u0027 and input 26, 100, High Street, Slough, SL111ER1232",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "the respective Enter a valid UK postcode message should be displayed in enter manually section",
-  "matchedColumns": [
-    7
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 962624526,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
-});
-formatter.result({
-  "duration": 183500890600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
-});
-formatter.result({
-  "duration": 10208009349,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Light surfer",
-      "offset": 9
-    },
-    {
-      "val": "iPad",
-      "offset": 33
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
-});
-formatter.result({
-  "duration": 21286280229,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "26",
-      "offset": 36
-    },
-    {
-      "val": "100",
-      "offset": 40
-    },
-    {
-      "val": "High Street",
-      "offset": 45
-    },
-    {
-      "val": "Slough",
-      "offset": 58
-    },
-    {
-      "val": "SL111ER1232",
-      "offset": 66
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 9217478765,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enter a valid UK postcode",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.respective_Error_messageShould_Be_Displayed_Enter_Manually_section(String)"
-});
-formatter.result({
-  "duration": 81423813,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 19943860169,
-  "status": "passed"
-});
-formatter.uri("87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature");
-formatter.feature({
-  "line": 1,
-  "name": "87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary",
-  "description": "",
-  "id": "87-reg-payg-tablets-showmarketingmessageontariffandextraspagepackagesummary",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary",
-  "description": "",
-  "id": "87-reg-payg-tablets-showmarketingmessageontariffandextraspagepackagesummary;payg-tablets-showmarketingmessageontariffandextraspagepackagesummary",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to Pay as you Go Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available \u003cDevice\u003e Tablet",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select a PayG tariff \u003ctariff\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Verify the copytext of marketing message",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Verify the copytext of marketing message",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 18,
-      "value": "#And Verify the copytext of marketing message in \u003cAgreementSectionName\u003e"
-    }
-  ],
-  "line": 19,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 20,
-      "value": "#And Verify the copytext of marketing message in \u003cReviewSectionName\u003e"
-    }
-  ],
-  "line": 21,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 22,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 24,
-  "name": "",
-  "description": "",
-  "id": "87-reg-payg-tablets-showmarketingmessageontariffandextraspagepackagesummary;payg-tablets-showmarketingmessageontariffandextraspagepackagesummary;",
-  "rows": [
-    {
-      "cells": [
-        "Device",
-        "Firstname",
-        "Surname",
-        "Username",
-        "BSCstatus",
-        "PaymentSectionName",
-        "AgreementSectionName",
-        "tariff",
-        "consumer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "PreSelected"
-      ],
-      "line": 25,
-      "id": "87-reg-payg-tablets-showmarketingmessageontariffandextraspagepackagesummary;payg-tablets-showmarketingmessageontariffandextraspagepackagesummary;;1"
-    },
-    {
-      "cells": [
-        "Galaxy Book 10.6",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA",
-        "Disabled",
-        "Payment Page",
-        "Order Summary",
-        "1GB Preloaded",
-        "Me",
-        "Select",
-        "Select",
-        "Select",
-        "Not",
-        "Select",
-        "Select",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "No"
-      ],
-      "line": 26,
-      "id": "87-reg-payg-tablets-showmarketingmessageontariffandextraspagepackagesummary;payg-tablets-showmarketingmessageontariffandextraspagepackagesummary;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 35375838532,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 26,
-  "name": "PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary",
-  "description": "",
-  "id": "87-reg-payg-tablets-showmarketingmessageontariffandextraspagepackagesummary;payg-tablets-showmarketingmessageontariffandextraspagepackagesummary;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to Pay as you Go Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available Galaxy Book 10.6 Tablet",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select a PayG tariff 1GB Preloaded",
-  "matchedColumns": [
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Disabled",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Verify the copytext of marketing message",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Verify the copytext of marketing message",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    1,
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    17,
-    8
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 18,
-      "value": "#And Verify the copytext of marketing message in \u003cAgreementSectionName\u003e"
-    }
-  ],
-  "line": 19,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 20,
-      "value": "#And Verify the copytext of marketing message in \u003cReviewSectionName\u003e"
-    }
-  ],
-  "line": 21,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 22,
-  "name": "Choose Me Enabled Business preferences Select Select Select Not And Channel Preferences Select Select Not Not No Connected No",
-  "matchedColumns": [
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 877277330,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigateToPayAsYouGoTabletsPage()"
-});
-formatter.result({
-  "duration": 258925139341,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Galaxy Book 10.6",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
-});
-formatter.result({
-  "duration": 59993844543,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 35521149495,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1GB Preloaded",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.selectPayGTariffTariff(String)"
-});
-formatter.result({
-  "duration": 36744162615,
-  "error_message": "java.lang.AssertionError: Unable to select PayG tariff\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.selectPayGTariffTariff(E2EOrderPlaced_Steps.java:8464)\r\n\tat ✽.And Select a PayG tariff 1GB Preloaded(87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature:9)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Disabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verifyTheCopytextOfMarketingMessage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verifyTheCopytextOfMarketingMessage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 6
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 52
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Select",
-      "offset": 46
-    },
-    {
-      "val": "Select",
-      "offset": 53
-    },
-    {
-      "val": "Not",
-      "offset": 60
-    },
-    {
-      "val": "Select",
-      "offset": 88
-    },
-    {
-      "val": "Select",
-      "offset": 95
-    },
-    {
-      "val": "Not",
-      "offset": 102
-    },
-    {
-      "val": "Not",
-      "offset": 106
-    },
-    {
-      "val": "No",
-      "offset": 110
-    },
-    {
-      "val": "Connected",
-      "offset": 113
-    },
-    {
-      "val": "No",
-      "offset": 123
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 21586257969,
-  "status": "passed"
-});
-formatter.uri("90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature");
-formatter.feature({
-  "line": 1,
-  "name": "90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect",
-  "description": "",
-  "id": "90-reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 5,
-  "name": "Trustev PayM Tablets Click and Collect E2E journey with Accessory in Agent shop",
-  "description": "",
-  "id": "90-reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect;trustev-paym-tablets-click-and-collect-e2e-journey-with-accessory-in-agent-shop",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "performs Acquisition for New user",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Select a valid PayM \u003cDevice\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select valid \u003cTariffs\u003e from tariffs tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Select a valid Accessory \u003cAccessory\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select a valid Handset and Tariff combination",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Validate Bill Spend Cap in agent deal builder section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Add your Bill Spend Cap \u003cBillCapAmount\u003e in agent deal builder when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "select a valid store for Click and Collect",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Validate all the Basket content and checkout",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Validate deal summary for applied Bill Spend Cap \u003cBillCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 17,
-  "name": "perform all the advisory checks",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 18,
-  "name": "perform the credit checks using valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and valid \u003cUsername\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Register customer with valid \u003cPassword\u003e, \u003cConfirm_Password\u003e, \u003cSecurity_Answer\u003e in delivery page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "validate register status",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Choose Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e and Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e for \u003cConsumer\u003e when GDPR \u003cstatus\u003e \u003cDeviceType\u003e \u003cDeviceModule\u003e for AFA journey",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Pay by card for PAYM device",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 23,
-  "name": "Order confirmation message should be displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 25,
-  "name": "",
-  "description": "",
-  "id": "90-reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect;trustev-paym-tablets-click-and-collect-e2e-journey-with-accessory-in-agent-shop;",
-  "rows": [
-    {
-      "cells": [
-        "Device",
-        "Tariffs",
-        "BSCstatus",
-        "BillCapAmount",
-        "Accessory",
-        "Firstname",
-        "Surname",
-        "HouseNumber",
-        "PostCode",
-        "Username",
-        "Password",
-        "Confirm_Password",
-        "Security_Answer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "Consumer",
-        "status",
-        "Password",
-        "confirmPassword",
-        "SecurityAnswer",
-        "MBBStatus",
-        "DeviceType",
-        "DeviceModule"
-      ],
-      "line": 26,
-      "id": "90-reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect;trustev-paym-tablets-click-and-collect-e2e-journey-with-accessory-in-agent-shop;;1"
-    },
-    {
-      "cells": [
-        "Galaxy Tab A 10.5",
-        "Random",
-        "Enabled",
-        "£100",
-        "iPhone 7 Evo Elite Brushed Black",
-        "TEST",
-        "ACCEPTA",
-        "32",
-        "SL11ER",
-        "TEST ACCEPTA",
-        "test123",
-        "test123",
-        "Anything",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Select",
-        "Select",
-        "Me",
-        "Enabled",
-        "test123",
-        "test123",
-        "Jkhan",
-        "No",
-        "Connected",
-        "Tablet"
-      ],
-      "line": 27,
-      "id": "90-reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect;trustev-paym-tablets-click-and-collect-e2e-journey-with-accessory-in-agent-shop;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 105571994212,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 27,
-  "name": "Trustev PayM Tablets Click and Collect E2E journey with Accessory in Agent shop",
-  "description": "",
-  "id": "90-reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect;trustev-paym-tablets-click-and-collect-e2e-journey-with-accessory-in-agent-shop;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "performs Acquisition for New user",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "Select a valid PayM Galaxy Tab A 10.5",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Select valid Random from tariffs tab",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Select a valid Accessory iPhone 7 Evo Elite Brushed Black",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select a valid Handset and Tariff combination",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Add your Bill Spend Cap £100 in agent deal builder when BSC is Enabled",
-  "matchedColumns": [
-    2,
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "select a valid store for Click and Collect",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Validate all the Basket content and checkout",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Validate deal summary for applied Bill Spend Cap £100 when BSC is Enabled",
-  "matchedColumns": [
-    2,
-    3
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 17,
-  "name": "perform all the advisory checks",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 18,
-  "name": "perform the credit checks using valid TEST, ACCEPTA, 32, SL11ER and valid TEST ACCEPTA",
-  "matchedColumns": [
-    5,
-    6,
-    7,
-    8,
-    9
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Register customer with valid test123, test123, Anything in delivery page",
-  "matchedColumns": [
-    10,
-    11,
-    12
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "validate register status",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Choose Business preferences Not Not Select Not and Channel Preferences Not Not Select Select for Me when GDPR Enabled Connected Tablet for AFA journey",
-  "matchedColumns": [
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    27,
-    28,
-    13,
-    14,
-    15
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Pay by card for PAYM device",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 23,
-  "name": "Order confirmation message should be displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
-});
-formatter.result({
-  "duration": 3317474058,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
-});
-formatter.result({
-  "duration": 11611755709,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Galaxy Tab A 10.5",
-      "offset": 20
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
-});
-formatter.result({
-  "duration": 35514969265,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Random",
-      "offset": 13
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
-});
-formatter.result({
-  "duration": 25134305956,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone 7 Evo Elite Brushed Black",
-      "offset": 25
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Select_Accessory(String)"
-});
-formatter.result({
-  "duration": 27842244348,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
-});
-formatter.result({
-  "duration": 49473340216,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 66
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
-});
-formatter.result({
-  "duration": 25569279765,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "£100",
-      "offset": 24
-    },
-    {
-      "val": "Enabled",
-      "offset": 63
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
-});
-formatter.result({
-  "duration": 57446004651,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_Store_for_click_and_Collect()"
-});
-formatter.result({
-  "duration": 32496991637,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
-});
-formatter.result({
-  "duration": 22803444408,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "£100",
-      "offset": 49
-    },
-    {
-      "val": "Enabled",
-      "offset": 66
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateYourCapInAgentDealSummary(String,String)"
-});
-formatter.result({
-  "duration": 28515115073,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.advisory_checks()"
-});
-formatter.result({
-  "duration": 23457392228,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 38
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 44
-    },
-    {
-      "val": "32",
-      "offset": 53
-    },
-    {
-      "val": "SL11ER",
-      "offset": 57
-    },
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 86585750116,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "test123",
-      "offset": 29
-    },
-    {
-      "val": "test123",
-      "offset": 38
-    },
-    {
-      "val": "Anything",
-      "offset": 47
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Register_Customer_Phones(String,String,String)"
-});
-formatter.result({
-  "duration": 40063095820,
-  "error_message": "java.lang.AssertionError: Unable to Register customer\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Register_Customer_Phones(E2EOrderPlaced_Steps.java:8326)\r\n\tat ✽.And Register customer with valid test123, test123, Anything in delivery page(90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature:19)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Validate_Register_Status()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Not",
-      "offset": 28
-    },
-    {
-      "val": "Not",
-      "offset": 32
-    },
-    {
-      "val": "Select",
-      "offset": 36
-    },
-    {
-      "val": "Not",
-      "offset": 43
-    },
     {
       "val": "Not",
       "offset": 71
@@ -16149,2597 +13281,69 @@ formatter.match({
       "offset": 75
     },
     {
-      "val": "Select",
+      "val": "Not",
       "offset": 79
     },
     {
-      "val": "Select",
-      "offset": 86
-    },
-    {
-      "val": "Me",
-      "offset": 97
-    },
-    {
-      "val": "Enabled",
-      "offset": 110
+      "val": "No",
+      "offset": 88
     },
     {
       "val": "Connected",
-      "offset": 118
+      "offset": 95
     },
     {
-      "val": "Tablet",
-      "offset": 128
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences_AFA(String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.pay_by_card_payn_device()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 18378159436,
-  "status": "passed"
-});
-formatter.uri("92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory.feature");
-formatter.feature({
-  "line": 1,
-  "name": "92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory",
-  "description": "",
-  "id": "92-reg-trustev-cfa-paymphoneshomedeliverywithoutaccessory",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "comments": [
-    {
-      "line": 3,
-      "value": "#launch hooks and get browser"
-    }
-  ],
-  "line": 6,
-  "name": "Trustev PayM Phones Home delivery E2E journey without accessory",
-  "description": "",
-  "id": "92-reg-trustev-cfa-paymphoneshomedeliverywithoutaccessory;trustev-paym-phones-home-delivery-e2e-journey-without-accessory",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 8,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 9,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "select \u003cCapacity\u003e capacity of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 21,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 22,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "Continue to Review page and review the order for Trustev details",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 28,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "comments": [
-    {
-      "line": 30,
-      "value": "#Close the browser"
-    }
-  ],
-  "line": 31,
-  "name": "",
-  "description": "",
-  "id": "92-reg-trustev-cfa-paymphoneshomedeliverywithoutaccessory;trustev-paym-phones-home-delivery-e2e-journey-without-accessory;",
-  "rows": [
-    {
-      "cells": [
-        "handset",
-        "color",
-        "Capacity",
-        "Firstname",
-        "Surname",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount",
-        "Username",
-        "consumer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "PreSelected"
-      ],
-      "line": 32,
-      "id": "92-reg-trustev-cfa-paymphoneshomedeliverywithoutaccessory;trustev-paym-phones-home-delivery-e2e-journey-without-accessory;;1"
+      "val": "Disabled",
+      "offset": 135
     },
     {
-      "cells": [
-        "iPhone X",
-        "Silver",
-        "256GB",
-        "TEST",
-        "ACCEPTA",
-        "Enabled",
-        "CapMyBill",
-        "DontCapMyBillLink",
-        "TEST ACCEPTA",
-        "Me",
-        "Select",
-        "Not",
-        "Select",
-        "Not",
-        "Select",
-        "Select",
-        "Select",
-        "Select",
-        "Enabled",
-        "No",
-        "Connected",
-        "No"
-      ],
-      "line": 33,
-      "id": "92-reg-trustev-cfa-paymphoneshomedeliverywithoutaccessory;trustev-paym-phones-home-delivery-e2e-journey-without-accessory;;2"
+      "val": "Yes",
+      "offset": 148
     }
   ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 40958578339,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 33,
-  "name": "Trustev PayM Phones Home delivery E2E journey without accessory",
-  "description": "",
-  "id": "92-reg-trustev-cfa-paymphoneshomedeliverywithoutaccessory;trustev-paym-phones-home-delivery-e2e-journey-without-accessory;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 8,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 9,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I choose PayM iPhone X",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "select Silver color of the connected device",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "select 256GB capacity of the connected device",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Choose your bill cap CapMyBill DontCapMyBillLink when BSC is Enabled",
-  "matchedColumns": [
-    5,
-    6,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 21,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 22,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    3,
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    18,
-    9
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    8
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "Continue to Review page and review the order for Trustev details",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 28,
-  "name": "Choose Me Enabled Business preferences Select Not Select Not And Channel Preferences Select Select Select Select No Connected No",
-  "matchedColumns": [
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+  "location": "E2EOrderPlaced_Steps.gdprConsentValidationIn_DeliveryPage(String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 525737156,
+  "duration": 53693614736,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery_Upgrade_CCA_Link()"
 });
 formatter.result({
-  "duration": 60541100494,
+  "duration": 126451343231,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone X",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
+  "location": "E2EOrderPlaced_Steps.continue_to_CCA_or_Buyout_or_Trade_In_Agreements_page_and_confirm_all_the_agreement_checks_New()"
 });
 formatter.result({
-  "duration": 31634156786,
+  "duration": 40022266873,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
+  "location": "E2EOrderPlaced_Steps.ReviewPageOrderContractTextConfirmation()"
 });
 formatter.result({
-  "duration": 25971920174,
+  "duration": 41283936346,
   "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 217529373,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Silver",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 15760196247,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "256GB",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
-});
-formatter.result({
-  "duration": 21577623059,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 109267842525,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 16184055693,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "duration": 39844331675,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "CapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "DontCapMyBillLink",
-      "offset": 31
-    },
-    {
-      "val": "Enabled",
-      "offset": 61
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "duration": 59490291875,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 39347711284,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 38200398992,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 6
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 37058750230,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78612714789,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
-});
-formatter.result({
-  "duration": 41718458548,
-  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory.feature:24)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmationwithTrustev()"
-});
-formatter.result({
-  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5398647069,
+  "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 46
-    },
-    {
-      "val": "Select",
-      "offset": 50
-    },
-    {
-      "val": "Not",
-      "offset": 57
-    },
-    {
-      "val": "Select",
-      "offset": 85
-    },
-    {
-      "val": "Select",
-      "offset": 92
-    },
-    {
-      "val": "Select",
-      "offset": 99
-    },
-    {
-      "val": "Select",
-      "offset": 106
-    },
-    {
-      "val": "No",
-      "offset": 113
-    },
-    {
-      "val": "Connected",
-      "offset": 116
-    },
-    {
-      "val": "No",
-      "offset": 126
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
+  "location": "E2EOrderPlaced_Steps.gdprValidationInOrderConfirmationPage()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 20020833843,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18544920890,
-  "status": "passed"
-});
-formatter.uri("93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature");
-formatter.feature({
-  "line": 1,
-  "name": "93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory",
-  "description": "",
-  "id": "93-reg-trustev-cfa-paymtabletshomedeliverywithaccessory",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "Trustev PayM Tablets Home delivery E2E journey with Accessory",
-  "description": "",
-  "id": "93-reg-trustev-cfa-paymtabletshomedeliverywithaccessory;trustev-paym-tablets-home-delivery-e2e-journey-with-accessory",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available \u003cDevice\u003e Tablet",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select \u003cCapacity\u003e capacity of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Choose some Accesssory",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 19,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 20,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Continue to Review page and review the order for Trustev details",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 26,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 28,
-  "name": "",
-  "description": "",
-  "id": "93-reg-trustev-cfa-paymtabletshomedeliverywithaccessory;trustev-paym-tablets-home-delivery-e2e-journey-with-accessory;",
-  "rows": [
-    {
-      "cells": [
-        "Device",
-        "color",
-        "Capacity",
-        "Firstname",
-        "Surname",
-        "Username",
-        "consumer",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "PreSelected"
-      ],
-      "line": 29,
-      "id": "93-reg-trustev-cfa-paymtabletshomedeliverywithaccessory;trustev-paym-tablets-home-delivery-e2e-journey-with-accessory;;1"
-    },
-    {
-      "cells": [
-        "iPad Pro 10.5 inch",
-        "Space Grey",
-        "512GB",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA",
-        "Me",
-        "Enabled",
-        "CapMyBill",
-        "£15",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "No"
-      ],
-      "line": 30,
-      "id": "93-reg-trustev-cfa-paymtabletshomedeliverywithaccessory;trustev-paym-tablets-home-delivery-e2e-journey-with-accessory;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 160968352112,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 30,
-  "name": "Trustev PayM Tablets Home delivery E2E journey with Accessory",
-  "description": "",
-  "id": "93-reg-trustev-cfa-paymtabletshomedeliverywithaccessory;trustev-paym-tablets-home-delivery-e2e-journey-with-accessory;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "select any available iPad Pro 10.5 inch Tablet",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select Space Grey color of the connected device",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select 512GB capacity of the connected device",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Choose your bill cap CapMyBill £15 when BSC is Enabled",
-  "matchedColumns": [
-    7,
-    8,
-    9
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Choose some Accesssory",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 19,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 20,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    3,
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    18,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Continue to Review page and review the order for Trustev details",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 26,
-  "name": "Choose Me Enabled Business preferences Not Not Select Not And Channel Preferences Not Select Not Not No Connected No",
-  "matchedColumns": [
-    6,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 808831185,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
-});
-formatter.result({
-  "duration": 135606206136,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPad Pro 10.5 inch",
-      "offset": 21
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
-});
-formatter.result({
-  "duration": 61190331478,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 10834372101,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 261069506,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Space Grey",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 21861456748,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "512GB",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
-});
-formatter.result({
-  "duration": 23583199882,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 34462315745,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 16151713092,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "duration": 39829806736,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "CapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "£15",
-      "offset": 31
-    },
-    {
-      "val": "Enabled",
-      "offset": 47
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "duration": 68898044077,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
-});
-formatter.result({
-  "duration": 7845660939,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 40088399974,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 33774837266,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 6
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 37413696024,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78755244773,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
-});
-formatter.result({
-  "duration": 41718634793,
-  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature:22)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmationwithTrustev()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Not",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 43
-    },
-    {
-      "val": "Select",
-      "offset": 47
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Not",
-      "offset": 82
-    },
-    {
-      "val": "Select",
-      "offset": 86
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20581605898,
-  "status": "passed"
-});
-formatter.uri("96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature");
-formatter.feature({
-  "line": 1,
-  "name": "96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory",
-  "description": "",
-  "id": "96-reg-volte-paymphoneshomedeliverywithaccessory",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "CFA PayM Phones Home delivery E2E journey with Accessory",
-  "description": "",
-  "id": "96-reg-volte-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select \u003cCapacity\u003e capacity of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Choose some Accesssory",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 19,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 20,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "order confirmation is displayed with Volte message",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 26,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 28,
-  "name": "",
-  "description": "",
-  "id": "96-reg-volte-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;",
-  "rows": [
-    {
-      "cells": [
-        "handset",
-        "color",
-        "Capacity",
-        "Firstname",
-        "Surname",
-        "Username",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount",
-        "consumer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "PreSelected"
-      ],
-      "line": 29,
-      "id": "96-reg-volte-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;1"
-    },
-    {
-      "cells": [
-        "Galaxy Note9",
-        "Midnight Black",
-        "128GB",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA",
-        "Enabled",
-        "CapMyBill",
-        "£20",
-        "Me",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected",
-        "No"
-      ],
-      "line": 30,
-      "id": "96-reg-volte-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 35908238997,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 30,
-  "name": "CFA PayM Phones Home delivery E2E journey with Accessory",
-  "description": "",
-  "id": "96-reg-volte-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I choose PayM Galaxy Note9",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "select Midnight Black color of the connected device",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select 128GB capacity of the connected device",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Choose your bill cap CapMyBill £20 when BSC is Enabled",
-  "matchedColumns": [
-    6,
-    7,
-    8
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Choose some Accesssory",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 19,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 20,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    3,
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    18,
-    9
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "order confirmation is displayed with Volte message",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 26,
-  "name": "Choose Me Enabled Business preferences Not Not Select Not And Channel Preferences Select Not Not Not No Connected No",
-  "matchedColumns": [
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 842860495,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-});
-formatter.result({
-  "duration": 167041385209,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Galaxy Note9",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-});
-formatter.result({
-  "duration": 32711466817,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 28743685198,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 227522214,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Midnight Black",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 19843716589,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "128GB",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
-});
-formatter.result({
-  "duration": 19244979248,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 35538056563,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 16294664929,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "duration": 39900670401,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "CapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "£20",
-      "offset": 31
-    },
-    {
-      "val": "Enabled",
-      "offset": 47
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "duration": 69836691590,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
-});
-formatter.result({
-  "duration": 8345840192,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 45638564664,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 33936079230,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 6
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 38419785655,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78729858159,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
-});
-formatter.result({
-  "duration": 41720525350,
-  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature:22)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationVolte()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Not",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 43
-    },
-    {
-      "val": "Select",
-      "offset": 47
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Select",
-      "offset": 82
-    },
-    {
-      "val": "Not",
-      "offset": 89
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Not",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 101
-    },
-    {
-      "val": "Connected",
-      "offset": 104
-    },
-    {
-      "val": "No",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20076164796,
-  "status": "passed"
-});
-formatter.uri("97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature");
-formatter.feature({
-  "line": 1,
-  "name": "97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory",
-  "description": "",
-  "id": "97-reg-volte-paymphoneshomedeliverywithoutaccessory",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "comments": [
-    {
-      "line": 3,
-      "value": "#launch hooks and get browser"
-    }
-  ],
-  "line": 5,
-  "name": "Volte PayM Phones Home delivery E2E journey without accessory",
-  "description": "",
-  "id": "97-reg-volte-paymphoneshomedeliverywithoutaccessory;volte-paym-phones-home-delivery-e2e-journey-without-accessory",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 4,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 6,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 18,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 19,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "order confirmation is displayed with Volte message",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e \u003cPreSelected\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 27,
-  "name": "",
-  "description": "",
-  "id": "97-reg-volte-paymphoneshomedeliverywithoutaccessory;volte-paym-phones-home-delivery-e2e-journey-without-accessory;",
-  "rows": [
-    {
-      "cells": [
-        "handset",
-        "color",
-        "Firstname",
-        "Surname",
-        "Username",
-        "consumer",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType",
-        "PreSelected"
-      ],
-      "line": 28,
-      "id": "97-reg-volte-paymphoneshomedeliverywithoutaccessory;volte-paym-phones-home-delivery-e2e-journey-without-accessory;;1"
-    },
-    {
-      "cells": [
-        "iPhone 7",
-        "Black",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA",
-        "Me",
-        "Enabled",
-        "CapMyBill",
-        "£5",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Select",
-        "Enabled",
-        "No",
-        "Connected",
-        "No"
-      ],
-      "line": 29,
-      "id": "97-reg-volte-paymphoneshomedeliverywithoutaccessory;volte-paym-phones-home-delivery-e2e-journey-without-accessory;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 105630712235,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 29,
-  "name": "Volte PayM Phones Home delivery E2E journey without accessory",
-  "description": "",
-  "id": "97-reg-volte-paymphoneshomedeliverywithoutaccessory;volte-paym-phones-home-delivery-e2e-journey-without-accessory;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 4,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 6,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "I choose PayM iPhone 7",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select Black color of the connected device",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Choose your bill cap CapMyBill £5 when BSC is Enabled",
-  "matchedColumns": [
-    6,
-    7,
-    8
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 18,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 19,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    2,
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    17,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "order confirmation is displayed with Volte message",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 25,
-  "name": "Choose Me Enabled Business preferences Not Not Select Not And Channel Preferences Not Select Not Select No Connected No",
-  "matchedColumns": [
-    5,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 859374729,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-});
-formatter.result({
-  "duration": 133585783737,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone 7",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-});
-formatter.result({
-  "duration": 30174775616,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 86783799184,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 283045544,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Black",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 21927591897,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 32708945602,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 16142251107,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "duration": 39835842220,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "CapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "£5",
-      "offset": 31
-    },
-    {
-      "val": "Enabled",
-      "offset": 46
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "duration": 68916219185,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 54298328899,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 36172073203,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 6
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "duration": 37307284093,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "duration": 78703414787,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
-});
-formatter.result({
-  "duration": 41681062548,
-  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature:21)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationVolte()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Not",
-      "offset": 39
-    },
-    {
-      "val": "Not",
-      "offset": 43
-    },
-    {
-      "val": "Select",
-      "offset": 47
-    },
-    {
-      "val": "Not",
-      "offset": 54
-    },
-    {
-      "val": "Not",
-      "offset": 82
-    },
-    {
-      "val": "Select",
-      "offset": 86
-    },
-    {
-      "val": "Not",
-      "offset": 93
-    },
-    {
-      "val": "Select",
-      "offset": 97
-    },
-    {
-      "val": "No",
-      "offset": 104
-    },
-    {
-      "val": "Connected",
-      "offset": 107
-    },
-    {
-      "val": "No",
-      "offset": 117
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 21646456729,
+  "duration": 17003185777,
   "status": "passed"
 });
 });

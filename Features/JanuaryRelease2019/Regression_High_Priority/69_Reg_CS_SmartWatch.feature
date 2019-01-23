@@ -19,5 +19,5 @@ Feature: 69_Reg_CS_SmartWatch
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Firstname | Surname | Username     | Device          | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType   | PreSelected | KeyEvent |
-      | TEST      | ACCEPTA | TEST ACCEPTA | Pebble Original | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | NonConnected | No          | No       |
+      | Firstname | Surname | Username     | Device        | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType   | PreSelected | KeyEvent |
+      | TEST      | ACCEPTA | TEST ACCEPTA | Random Device | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | NonConnected | No          | No       |

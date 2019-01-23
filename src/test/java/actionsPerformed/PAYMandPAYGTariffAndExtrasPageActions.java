@@ -640,7 +640,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			log.debug("Free insurance is present");
 		}
 		WebElement FirstInsuranceText = driver.findElement(By.xpath("//h4[contains(@class, 'insuranceName')][1]"));
-		if (FirstInsuranceText.getText().equals("Free Insurance")) {
+		if (FirstInsuranceText.getText().contains("Free")) {
 			log.debug("Free insurance is present");
 		}
 		List<WebElement> RemovebtnFirstTile = driver
@@ -1512,7 +1512,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						}
 
 						//Cap My bill Continue button under Bill spend cap section Before selecting cap amount
-						if (BSCRetainedFlag == true) {
+						if (BSCRetainedFlag == true || (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && driver.findElements(By.xpath("//div[@class='caps-holder']/div/a[@class='capButton selected']")).size()>0)) {
 							log.debug("Cap My Bill button is Enabled as it already selected cap amount and trying to change BSC cap option by clicking edit link");
 						} else if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && BSCRetainedFlag == false) {
 							log.debug("Cap My Bill button is Enabled before selecting cap amount");

@@ -15,7 +15,7 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='order-number'] | //div[@class='order-confirmation']/p")
 	public static WebElement OrderconfirmationMessage;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='delivery-section']")
+	@FindBy(how = How.XPATH, using = "//*[@id='delivery-section'] | //div[@class='main-order']/div/div/div[3]/div[2]")
 	public static WebElement deliverySection;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='imsMessage'] | //div[@class='order-status-text']")
@@ -120,7 +120,7 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.XPATH, using = "//p[contains(text(),'Spend Cap')]")
 	public static WebElement BillSpendCapHeader;
 
-	@FindBy(how = How.XPATH, using = "//p[contains(text(),'Spend Cap')]")
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Spend Cap')]")
 	public static WebElement AppliedBillCap;
 
 }

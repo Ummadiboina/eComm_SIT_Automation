@@ -824,9 +824,9 @@ public class PAYMSimOPageActions extends Environment {
 	}
 
 	public static void selectIWillKeepMyCurrentSIM() throws IOException, InterruptedException {
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		WebElement element = pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM;
-		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM);
+		//scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM);
 		Screenshots.captureScreenshot();
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
@@ -858,6 +858,8 @@ public class PAYMSimOPageActions extends Environment {
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 		Thread.sleep(2000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,-100)", "");
 	}
 
 	public static void clickOnPlaceYourOrderButton() throws InterruptedException {

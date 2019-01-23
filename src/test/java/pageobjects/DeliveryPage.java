@@ -144,11 +144,18 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[@id='stock-extended-message-single']")
     public static WebElement StockExtMessageDDPODP;
 
-    @FindBy(how = How.XPATH, using = "(//div[@id='account-tiles']/div[@class='account'])[1]")
+    @FindBy(how = How.XPATH, using = "(//div[@id='account-tiles']/div[@class='account'])[1] | (//div[@id='account-tiles'])[1]")
     public static WebElement SelectAcct;
+
+    @FindBy(how = How.XPATH, using = "//p[normalize-space()='Get a new number']")
+    public static WebElement getNewNumberTab;
 
     @FindBy(how = How.XPATH, using = "//button[@id='btn-continue-1']")
     public static WebElement FastCheckOut;
+
+    @FindBy(how = How.XPATH, using = "//button[@class='button primary ']")
+    public static WebElement ContinueCTA;
+
 
     @FindBy(how = How.XPATH, using = "//tr[@id='basket-insurance']")
     public static WebElement InsuranceSection;
@@ -230,10 +237,10 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@id='consent-yes']")
     public static WebElement Me_radioBtn;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/h2")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/h2 | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/h2")
     public static WebElement gdprHeaderTxt;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/p")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")
     public static WebElement gdprHeaderDescription;
 
     @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/span")
@@ -242,43 +249,43 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/span/a")
     public static WebElement O2Products_MoreInfoLink;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B1']/div[2]")
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B1')]/div[2]")
     public static WebElement O2Products_OverlayText;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B1']/div[1]/a")
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B1')]/div[1]/a")
     public static WebElement O2Products_OverlayCloseButton;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/span")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/span | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/span")
     public static WebElement O2PerksAndExtras_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/span/a")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/span/a | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/span/a")
     public static WebElement O2PerksAndExtras_MoreInfoLink;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B2']/div[2]")
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B2')]/div[2]")
     public static WebElement O2PerksAndExtras_OverlayText;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B2']/div[1]/a")
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B2')]/div[1]/a")
     public static WebElement O2PerksAndExtras_OverlayCloseButton;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[3]/div/div/div/label/span")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][3]/div/div/div/label/span")
     public static WebElement OffersFromO2Partner_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[3]/div/div/div/label/span/a")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][3]/div/div/div/label/span/a")
     public static WebElement OffersFromO2Partner_MoreInfoLink;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B3']/div[2]")
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B3')]/div[2]")
     public static WebElement OffersFromO2Partner_OverlayText;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B3']/div[1]/a")
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B3')]/div[1]/a")
     public static WebElement OffersFromO2Partner_OverlayCloseButton;
 
     @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/input")
     public static WebElement O2Products;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/input")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/input | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/input")
     public static WebElement O2PerksAndExtras;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[3]/div/div/div/label/input")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][3]/div/div/div/label/input")
     public static WebElement OffersFromO2Partner;
 
     @FindBy(how = How.XPATH, using = "//input[@id='consent-no']")

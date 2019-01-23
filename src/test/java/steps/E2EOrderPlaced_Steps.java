@@ -2142,6 +2142,8 @@ public class E2EOrderPlaced_Steps {
             /*Thread.sleep(5000);
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
             Thread.sleep(10000);
+            DeliveryPageActions.SetDelivery();
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
@@ -2257,10 +2259,11 @@ public class E2EOrderPlaced_Steps {
         try {
             // Write code here that turns the phrase above into concrete actions
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            //Thread.sleep(25000);
+            log.debug("We are at agreement page\n");
+            Thread.sleep(30000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
-            Thread.sleep(35000);
+
             AgreementPageActions.gettitlepage();
             //CommonFunctionscheckTitle("Agreement Page");
             Thread.sleep(3000);
@@ -2710,7 +2713,7 @@ public class E2EOrderPlaced_Steps {
         Agent_HomePagePageActions.FindUser(msisdn);
         Thread.sleep(3000);
         Agent_HomePagePageActions.upgradeUser();
-        Thread.sleep(4000);
+        Thread.sleep(7000);
         Screenshots.captureScreenshot();
         /*
          * } catch (Exception e) { // TODO Auto-generated catch block System.out.
@@ -8628,7 +8631,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-            Thread.sleep(4000);
+            Thread.sleep(5000);
             ConnectedDeviceDetailsPageAction.UpdatedColordropdown();
 
         } catch (Exception e) {
@@ -8784,6 +8787,7 @@ public class E2EOrderPlaced_Steps {
             //driver.findElement(By.xpath("//*[@id='callToAction'][1]")).click();
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,200)", "");
+            Thread.sleep(5000);
             Screenshots.captureScreenshot();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//*[@id='callToAction'])[1]")));
@@ -9995,6 +9999,7 @@ public class E2EOrderPlaced_Steps {
     @And("^click on the 'MBB' button$")
     public void click_on_MBB_button() {
         try {
+            Thread.sleep(3000);
             SimsPageActions.clickOnMBB_Button();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -11359,7 +11364,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            Thread.sleep(5000);
+            Thread.sleep(6000);
             // Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.clickOnViewAllPhones();
             Thread.sleep(5000);

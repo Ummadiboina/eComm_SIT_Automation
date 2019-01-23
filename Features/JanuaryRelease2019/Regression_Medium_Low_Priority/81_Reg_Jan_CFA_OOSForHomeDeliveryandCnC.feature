@@ -13,6 +13,7 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
     #And click on the color dropdown
     #And verify the name of the colour is next to the colour tile in CFAPhoneColour
     #And select <color> color of the connected device
+    And the Delivery information section should show the 'OOS message'
     And Navigate to device details page
     And the Delivery information section should show the 'OOS message'
     And Land on the 'Tariffs and extra' page
@@ -24,5 +25,5 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
 
 
     Examples:
-      | handset            | color  | username               | password | BSCstatus | BillCap       | CapAmount |
-      | iPhone 5s Like New | Silver | dasdasdkjaskd@sdsd.com | test123  | Enabled   | DontCapMyBill | Nill      |
+      | handset          | color  | username               | password | BSCstatus | BillCap       | CapAmount |
+      | P20 Pro Like New | Silver | dasdasdkjaskd@sdsd.com | test123  | Enabled   | DontCapMyBill | Nill      |

@@ -946,9 +946,10 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         totalCostPerMonth = ConnectedDeviceDetailsPage.totalPrice.getText();
         upFrontCost = ConnectedDeviceDetailsPage.upfrentVal.getText();
         Screenshots.captureScreenshot();
+        Thread.sleep(3000);
         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.chooseThisPlan);
         log.debug("Clicked on Choose this plan CTA\n");
-        Thread.sleep(12000);
+        Thread.sleep(15000);
         log.debug("We are at TnE page\n");
         Screenshots.captureScreenshot();
 

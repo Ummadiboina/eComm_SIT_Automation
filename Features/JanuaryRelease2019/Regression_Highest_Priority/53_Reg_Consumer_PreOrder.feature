@@ -12,8 +12,7 @@ Feature: 53_Reg_Consumer_PreOrder
     #And select <color> color of the connected device
     #And select <Capacity> capacity of the connected device
     And check the status <Status> of the device
-    And Choose this plan
-    #And Navigate to View tariff page
+    And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
