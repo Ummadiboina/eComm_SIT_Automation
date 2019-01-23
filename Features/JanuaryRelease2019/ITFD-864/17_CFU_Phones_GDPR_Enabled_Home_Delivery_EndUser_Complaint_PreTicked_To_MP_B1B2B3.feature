@@ -1,11 +1,11 @@
-Feature: 17_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_PreTicked_To_MP_B1_B3
+Feature: 17_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_PreTicked_To_MP_B1B2B3
 
   This Scenario ensures that when the upgrade customer with complaint consent status selects 'PAYM Phones' and lands on
   delivery page then customer should not be displayed with end user question instead the customer should see GDPR consent
   and Pre Ticked MP - B1B3 and place an order as an End user then the Order consent profile should be created in CMT as expected
 
   @Web
-  Scenario Outline: 17_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_PreTicked_To_MP_B1_B3
+  Scenario Outline: 17_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_PreTicked_To_MP_B1B2B3
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     #And Navigate to upgrade phone
@@ -43,5 +43,5 @@ Feature: 17_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_PreTicked_To
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | password | houseNumber | PostCode | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | 22fe97536512@stf.ref.o2.co.uk | test123  | 11          | SL11Er   | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |
+      | username                      | password | houseNumber | PostCode | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | 22fe97536512@stf.ref.o2.co.uk | test123  | 11          | SL11Er   | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Select | Select | Select | Not | Enabled    | Connected  | Yes         | No       |

@@ -40,4 +40,4 @@ Feature: 39_Reg_CFA_morethan12Tablet
 
     Examples:
       | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | limit1 | tabletname         | color      | capacity | limit2 | accessoryname | fitnesstrackername | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £100      | 6      | iPad 9.7 inch 2018 | Space Grey | 256GB    | 6      | AirPods       | Fitbit Ionic       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £100      | 6      | iPad 9.7 inch 2018 | Space Grey | 256GB    | 6      | Random        | Fitbit Ionic       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

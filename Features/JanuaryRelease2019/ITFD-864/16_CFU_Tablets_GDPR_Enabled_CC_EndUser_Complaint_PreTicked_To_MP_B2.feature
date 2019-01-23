@@ -1,11 +1,11 @@
-Feature: 16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B2
+Feature: 16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B3
 
   This Scenario ensures that when the upgrade customer with complaint consent status selects 'PAYM Tablet' and lands on
   delivery page then customer should not be displayed with end user question instead the customer should see GDPR consent
-  and Pre Ticked MP - B2 and place an order as an CC End user then the Order consent profile should be created in CMT as expected
+  and Pre Ticked MP - B3 and place an order as an CC End user then the Order consent profile should be created in CMT as expected
 
   @Web
-  Scenario Outline: 16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B2
+  Scenario Outline: 16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B3
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
@@ -40,5 +40,5 @@ Feature: 16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B2
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username               | password | tariff | BSCstatus | BillCap   | CapAmount | Tablet             | Username     | Action    | B1  | B2     | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | inavl0ww_555130@o2.com | test123  |        | Enabled   | CapMyBill | £10       | iPad 9.7 inch 2018 | TEST ACCEPTA | enterCode | Not | Select | Not | Not | Enabled    | Connected  | Yes         | No       |
+      | username               | password | tariff | BSCstatus | BillCap   | CapAmount | Tablet             | Username     | Action    | B1  | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | inavl0ww_555130@o2.com | test123  |        | Enabled   | CapMyBill | £10       | iPad 9.7 inch 2018 | TEST ACCEPTA | enterCode | Not | Not | Select | Not | Enabled    | Connected  | Yes         | No       |

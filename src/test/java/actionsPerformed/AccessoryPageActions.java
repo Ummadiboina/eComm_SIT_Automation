@@ -125,8 +125,10 @@ public class AccessoryPageActions extends Environment {
 
 		if (elementName.contains("Random")) {
 			log.debug("Selecting Any Accessory");
+			Thread.sleep(2000	);
 			accessoryName = pageobjects.AccessoryPage.RandomAccessory.getText();
 			log.debug("Selected an accessory -  " + accessoryName);
+			Thread.sleep(3000);
 			pageobjects.AccessoryPage.RandomAccessory.click();
 
 		}

@@ -68,11 +68,12 @@ public class Agent_HomePagePageActions extends Environment {
 		log.debug("Clicking on upgrade link");
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		Screenshots.captureScreenshot();
+		Thread.sleep(4000);
 
 		if(driver.findElements(By.xpath("//a[@id='abandonCheckout']")).size()>0)
 		{
 			driver.findElement(By.xpath("//a[@id='abandonCheckout']")).click();
-			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			Thread.sleep(10000);
 			if(driver.findElements(By.className("tradeInMessage")).size()>0) {
 				String TradeInUpgradeOptions = driver.findElement(By.className("tradeInMessage")).getText();
 				log.debug("Displaying Trade-in Upgrade Options Message");

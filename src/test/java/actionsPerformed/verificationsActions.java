@@ -33,7 +33,7 @@ public class verificationsActions extends Environment {
 
     public static void verifyAsteriskMandatory(String Field) throws Exception {
 
-        Thread.sleep(5000);
+        Thread.sleep(15000);
         String ExpectedText = "";
         String ActualText = "";
 

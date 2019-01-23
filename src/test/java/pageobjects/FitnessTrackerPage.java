@@ -1,8 +1,8 @@
 package pageobjects;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+        import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.support.FindBy;
+        import org.openqa.selenium.support.How;
 
 
 public class FitnessTrackerPage {
@@ -25,7 +25,7 @@ public class FitnessTrackerPage {
     @FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/fitness-trackers/jawbone/up2/#contractType=nonconnected')]")
     public static WebElement JawboneUP2;
 
-    @FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/fitbit/ionic#contractType=nonconnected')]")
+    @FindBy(how = How.XPATH, using = "(//img[@class='device-image'])[2] | (//img[@class='device-image lazyload'])[2] | (//img[@class='device-image lazy'])[2]")
     public static WebElement FitbitIonic;
 
 }

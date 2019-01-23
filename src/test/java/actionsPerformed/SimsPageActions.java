@@ -77,10 +77,13 @@ public class SimsPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 
             if (driver.findElements(By.xpath("//input[@value='Mobile broadband']")).size() > 0) {
-                scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//input[@value='Mobile broadband']")));
-                Thread.sleep(4000);
+                //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//input[@value='Mobile broadband']")));
+
                 Screenshots.captureScreenshot();
-                driver.findElement(By.xpath("//input[@value='Mobile broadband']")).click();
+                WebElement element = driver.findElement(By.xpath("//input[@value='Mobile broadband']"));
+                Thread.sleep(3000);
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", element);
                 log.debug(" Clicked on the 'MBB' button");
 
             } else {

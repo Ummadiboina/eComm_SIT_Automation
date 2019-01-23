@@ -53,10 +53,10 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(6000);
             log.debug("Selected device ");
         } else {
-            Thread.sleep(3000);
+            Thread.sleep(4000);
             Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Device);
             log.debug("Clicked on SearchTextBox to enter" + Device);
-            Thread.sleep(4000);
+            Thread.sleep(5000);
             Screenshots.captureScreenshot();
             Agent_DealBuilderPage.SelectInStockPAYMDevice.click();
             Thread.sleep(6000);
@@ -481,7 +481,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
         Agent_DealBuilderPage.DeviceSearchFilter.click();
         log.debug("Clicked on Device Search field");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
 
         if (Status.contains("Delayed")) {
 
