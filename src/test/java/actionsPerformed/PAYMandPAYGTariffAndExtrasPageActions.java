@@ -1512,9 +1512,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						}
 
 						//Cap My bill Continue button under Bill spend cap section Before selecting cap amount
-						if (BSCRetainedFlag == true || (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && driver.findElements(By.xpath("//div[@class='caps-holder']/div/a[@class='capButton selected']")).size()>0)) {
+						if ((pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && driver.findElements(By.xpath("//div[@class='caps-holder']/div/a[@class='capButton selected']")).size()>0)) {
 							log.debug("Cap My Bill button is Enabled as it already selected cap amount and trying to change BSC cap option by clicking edit link");
-						} else if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && BSCRetainedFlag == false) {
+						} else if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && driver.findElements(By.xpath("//div[@class='caps-holder']/div/a[@class='capButton selected']")).size()==0) {
 							log.debug("Cap My Bill button is Enabled before selecting cap amount");
 							Assert.fail("Cap My Bill button is Enabled before selecting cap amount");
 						} else {

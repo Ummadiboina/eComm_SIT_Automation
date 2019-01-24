@@ -315,7 +315,7 @@ public class PaymentPageActions extends Environment {
 
 
     public static void Card_Details() throws InterruptedException, IOException {
-
+        Thread.sleep(10000);
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
         log.debug("********We are switch to the iframe*******");

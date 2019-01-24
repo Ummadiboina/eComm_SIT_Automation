@@ -1959,7 +1959,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PaymentPage.class);
             /*Thread.sleep(5000);
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
-            Thread.sleep(12000);
+            Thread.sleep(15000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -2536,6 +2536,7 @@ public class E2EOrderPlaced_Steps {
             // Write code here that turns the phrase above into concrete actions
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
+            Thread.sleep(40000);
             OrderConfirmationPageActions.gettitlepage();
             OrderConfirmationPageActions.OrderDeclineMessageDisplayed();
             // /Assert.assertEquals(MessageDisplayed(), actual);
@@ -3072,7 +3073,7 @@ public class E2EOrderPlaced_Steps {
     public void advisory_checks() {
         try {
             //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            Thread.sleep(6000);
+            Thread.sleep(12000);
             PageFactory.initElements(driver, Agent_AdvisoryPage.class);
             PageFactory.initElements(driver, DeliveryPage.class);
 
@@ -3088,9 +3089,11 @@ public class E2EOrderPlaced_Steps {
             }
 
             //if (pageobjects.DeliveryPage.HouseNum.isDisplayed()) {
-            if (pageobjects.DeliveryPage.crdeitCheckContent.isDisplayed()) {
-                DeliveryPageActions.SetDelivery_AFU();
-                Thread.sleep(4000);
+            if(driver.findElements(By.xpath("//div[@id='creditCheckContent']")).size()>0) {
+                if (pageobjects.DeliveryPage.crdeitCheckContent.isDisplayed()) {
+                    DeliveryPageActions.SetDelivery_AFU();
+                    Thread.sleep(4000);
+                }
             }
 
             Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
@@ -6220,7 +6223,7 @@ public class E2EOrderPlaced_Steps {
             //log.debug("Clicked on continue button");
         } catch (Exception e) {
             e.printStackTrace();
-            Assert.fail("Unable to perform action in OTAC Page");
+            Assert.fail("Unable to perform action -Bring TradeIn Device checkbox is not displayed");
         }
 
     }
@@ -6391,9 +6394,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            Thread.sleep(3000);
+            Thread.sleep(6000);
             PAYMandPAYGTariffAndExtrasPageActions.verifyFreeInsuranceAutoSelected();
-            Thread.sleep(3000);
+            Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.deselectAutoSelectedInsurance();
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -7177,6 +7180,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(4000);
             int TradeInValueFromMyPackageSection = TradeInValue;
 
             UpgradeCustomerPageActions.verifyTradeInDisplayed_OrderSummarySection(TradeInValueFromMyPackageSection, pageName);
@@ -7430,6 +7434,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(3000);
             DataFilterRange = range;
             PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
             datalistbefore = UpgradeCustomerPageActions.getDataListBeforeSelectingFilter_UpgradeSIMO_MBBTablet();
@@ -10544,7 +10549,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
 
             PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
-            Thread.sleep(2000);
+            Thread.sleep(6000);
 
             ArrayList<Integer> TempList1 = null;
             ArrayList<Integer> TempList2 = null;

@@ -29,6 +29,6 @@ Feature: 19_CFU_MBB_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B2B3
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Device_Name   | Action    | BSCstatus | BillCap   | CapAmount | Username     | username               | password | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | Random Device | enterCode | Enabled   | CapMyBill | £200      | TEST ACCEPTA | in02818o_820724@o2.com | test123  | Select | Select | Select | Not | Enabled    | Connected  | No          | No       |
+      | Device_Name   | Action | BSCstatus | BillCap   | CapAmount | Username     | username                                                | password | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | Random Device | skip   | Enabled   | CapMyBill | £200      | TEST ACCEPTA | stester110af0917c-3028-47e4-a37a-3078010ac655@gmail.com | test123  | Select | Select | Select | Not | Enabled    | Connected  | No          | No       |
 

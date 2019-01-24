@@ -33,7 +33,7 @@ public class verificationsActions extends Environment {
 
     public static void verifyAsteriskMandatory(String Field) throws Exception {
 
-        Thread.sleep(15000);
+        Thread.sleep(20000);
         String ExpectedText = "";
         String ActualText = "";
 
@@ -120,7 +120,7 @@ public class verificationsActions extends Environment {
 
             log.debug("********We are switch to the iframe*******");
             log.debug("Entering the Payments section");
-            Thread.sleep(5000);
+            Thread.sleep(12000);
 
           /*  ActualText = pageobjects.PaymentPage.NameOnCardText.getText();
             Assert.assertTrue(ActualText.contains("*"),
@@ -160,7 +160,7 @@ public class verificationsActions extends Environment {
 
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
-            Thread.sleep(10000);
+            Thread.sleep(12000);
         }
 
         if (Field.contains("Review")) {
