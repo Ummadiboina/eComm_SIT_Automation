@@ -15,7 +15,7 @@ Feature: 33_Reg_Agent_TradeIn
     And Validate all the Basket content and checkout
     Then Validate deal summary for applied Bill Spend Cap <BillCapAmount> when BSC is <BSCstatus>
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey <PreSelected>
-    Then perform all the advisory checks
+    Then perform all the advisory checks_new
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials for upgrade CCA User

@@ -1561,13 +1561,13 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 								Thread.sleep(3000);
 								Screenshots.captureScreenshot();
-								Thread.sleep(3000);
+								Thread.sleep(2000);
 								// SaveMyPreferences button status after selecting business preferences and channel preferences
 								if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
 									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
 										System.out.println("As expected Save My Preference Button is displayed after selecting channel/business preferences so, clicking on Save Preference CTA");
 										log.debug("As expected Save My Preference Button is displayed after selecting channel/business preferences so, clicking on Save Preference CTA");
-
+										Thread.sleep(2000);
 										Agent_RegisterCustomerPage.SaveMyPreferences.click();
 										System.out.println("Save My Preference button is clicked");
 										log.debug("Save My Preference button is clicked");
