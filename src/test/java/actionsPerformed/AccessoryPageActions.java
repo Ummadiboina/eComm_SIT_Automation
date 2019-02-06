@@ -323,7 +323,7 @@ public class AccessoryPageActions extends Environment {
 				Thread.sleep(3000);
 				driver.findElement(By.id("deviceDetailsSubmit")).click();
 
-				Thread.sleep(7000);
+				Thread.sleep(10000);
 
 			} else {
 				driver.navigate().back();
@@ -787,11 +787,12 @@ public class AccessoryPageActions extends Environment {
 				Thread.sleep(3000);
 
 				WebElement DeviceDetailsQuantity = driver.findElement(
-						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span"));
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
 				log.debug("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
 				count = count + Integer.parseInt(Limit);
-				driver.findElement(By.id("deviceDetailsSubmit")).click();
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//button[@id='deviceDetailsSubmit']")).click();
 
 				Thread.sleep(3000);
 

@@ -357,8 +357,14 @@ public class DeliveryPageActions extends Environment {
 
 
     public static void select_BringTradeInDevice_CheckBox() throws InterruptedException, IOException {
-        Thread.sleep(8000);
-        log.debug("Running select_BringTradeInDevice_CheckBox function");
+        Thread.sleep(10000);
+        log.debug("Running select_Bring Trade In Device_CheckBox function");
+
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//h2[normalize-space()='About you']")));
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+
 
         Boolean isPresent = driver.findElements(By.xpath("//*[@id='trade-in-confirmation-required']")).size() > 0;
         if (isPresent) {
@@ -417,7 +423,7 @@ public class DeliveryPageActions extends Environment {
                 Thread.sleep(3000);
             }
         }
-
+        Thread.sleep(3000);
         //pageobjects.DeliveryPage.SelectAcct.click();
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SelectAcct);
         log.debug("Selected existing account\n");

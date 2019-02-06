@@ -2468,7 +2468,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnTabletstab() throws InterruptedException, IOException {
         log.debug("In tablets clicking function");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.TabletsTab);
         Thread.sleep(5000);

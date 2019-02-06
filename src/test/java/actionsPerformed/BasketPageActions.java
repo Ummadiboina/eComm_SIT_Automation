@@ -589,9 +589,10 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void verifyDevicesInBasket(String dev1, String dev2) throws IOException {
+	public static void verifyDevicesInBasket(String dev1, String dev2) throws IOException, InterruptedException {
 
 		// List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
+		Thread.sleep(3000);
 
 		List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
 		List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
@@ -610,15 +611,20 @@ public class BasketPageActions extends Environment {
 		log.debug("Tariffs size: " + MyTariffs.size());
 
 		if (MyNonConnDevices.size() != 0) {
-			for (int i = 0; i < MyNonConnDevices.size(); i++) {
+			int MyNonConnDevicesSize = MyNonConnDevices.size();
+			if(MyNonConnDevicesSize>2) {
+				MyNonConnDevicesSize = MyNonConnDevicesSize-1;
+			}
+
+			for (int i = 0; i < MyNonConnDevicesSize; i++) {
 				DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-				log.debug("Non Conn added: " + MyNonConnDevices.get(i).getText());
+				log.debug("Non Connected device added: " + MyNonConnDevices.get(i).getText());
 			}
 		}
 		if (MyConnDevices.size() != 0) {
 			for (int i = 0; i < MyConnDevices.size(); i++) {
 				DisplayedDevices.add(MyConnDevices.get(i).getText());
-				log.debug("Conn dev added: " + MyConnDevices.get(i).getText());
+				log.debug("Connected device added: " + MyConnDevices.get(i).getText());
 			}
 		}
 		if (MyTariffs.size() != 0) {

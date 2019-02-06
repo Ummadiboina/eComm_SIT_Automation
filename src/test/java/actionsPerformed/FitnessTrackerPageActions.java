@@ -15,6 +15,9 @@ import java.util.concurrent.TimeUnit;
 
 public class FitnessTrackerPageActions extends Environment {
     final static Logger log = Logger.getLogger("FitnessTrackerPageActions");
+    public static String fitnessTarckerName="";
+    static int UserSpecifiedFitnessTrackerLimit = 0;
+    static int count = 0;
 
     public static void Elementdisplayvalidation(String Tabname) throws IOException {
         log.debug(" ");
@@ -81,9 +84,10 @@ public class FitnessTrackerPageActions extends Environment {
             Thread.sleep(5000);
             //pageobjects.FitnessTrackerPage.RandomFitnesstracker.click();
             WebElement element = pageobjects.FitnessTrackerPage.RandomFitnesstracker;
+            fitnessTarckerName = pageobjects.FitnessTrackerPage.RandomFitnesstracker.getText();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", element);
-            //Thread.sleep(5000);
+            Thread.sleep(5000);
             // Assert.assertEquals(elementName,"Galaxy S7 is not found");
             log.debug("Random Fitness tracker Device Selected");
         }
@@ -131,56 +135,62 @@ public class FitnessTrackerPageActions extends Environment {
 
     public static void AddtoBasketFitnessTracker() throws InterruptedException, IOException {
         // TODO Auto-generated method stub
-        try {
-            // Below will give status like in stock / out of stock etc
-            Thread.sleep(5000);
+        {
+            // TODO Auto-generated method stub
+            try {
+                // Below will give status like in stock / out of stock etc
+                Thread.sleep(6000);
+                UserSpecifiedFitnessTrackerLimit = Integer.parseInt("1");
+                String status = driver.findElement(By.className("status-info")).getText();
+                log.debug(status);
 
-            String status = driver.findElement(By.className("status-info")).getText();
-            log.debug(status);
+                if (status.contains("In Stock")) {
 
-            if (status.contains("In Stock")) {
+                    WebElement element = driver
+                            .findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
+                    JavascriptExecutor js = (JavascriptExecutor) driver;
+                    js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
+                    new Select(element).selectByValue("1");
 
-                WebElement element = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
-                JavascriptExecutor js = (JavascriptExecutor) driver;
-                js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-                new Select(element).selectByValue("1");
+                    Thread.sleep(3000);
 
-                Thread.sleep(3000);
+                    WebElement DeviceDetailsQuantity = driver.findElement(
+                            By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span"));
+                    String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+                    log.debug("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
+                    count = count + Integer.parseInt("1");
+                    Thread.sleep(2000);
+                    driver.findElement(By.xpath("//button[@id='deviceDetailsSubmit']")).click();
 
-                //WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
-                WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span"));
+                    Thread.sleep(3000);
+
+                } else {
+                    driver.navigate().back();
+                    Thread.sleep(3000);
+                    FitnessTrackerPageActions.DeviceSelect("Random Device");
+                    Screenshots.captureScreenshot();
+                }
+                Screenshots.captureScreenshot();
+
+            } catch (Exception e) {
+                WebElement DeviceDetailsQuantity = driver.findElement(
+                        By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
                 String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
-                log.debug("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
+                log.debug(DeviceDetailsQuantityValue);
+                Assert.assertEquals("1", DeviceDetailsQuantityValue);
 
                 driver.findElement(By.id("deviceDetailsSubmit")).click();
 
                 Thread.sleep(3000);
+                WebElement BasketQuantity = driver.findElement(By.id("accessory-quantitySelectBoxIt"));
+                String BasketQuantityvalue = BasketQuantity.getText();
+
+                Assert.assertEquals("1", BasketQuantityvalue);
                 Screenshots.captureScreenshot();
 
-            } else {
-                driver.navigate().back();
-                FitnessTrackerPageActions.DeviceSelect("Random Device");
-                Screenshots.captureScreenshot();
             }
-            Screenshots.captureScreenshot();
-
-        } catch (Exception e) {
-            WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
-            String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
-            log.debug(DeviceDetailsQuantityValue);
-            Assert.assertEquals("3", DeviceDetailsQuantityValue);
-
-            driver.findElement(By.id("deviceDetailsSubmit")).click();
-
-            Thread.sleep(3000);
-            WebElement BasketQuantity = driver.findElement(By.id("accessory-quantitySelectBoxIt"));
-            String BasketQuantityvalue = BasketQuantity.getText();
-
-            Assert.assertEquals("3", BasketQuantityvalue);
-            Screenshots.captureScreenshot();
 
         }
-
     }
 
 }

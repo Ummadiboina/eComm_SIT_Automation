@@ -1,4 +1,4 @@
-Feature: 23_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUser_PreTicked_To_MP_B3
+Feature: 23_Existing_customer_PAYM_Tablet_GDPR_Enabled_Refresh_Homedelivery_EndUser_PreTicked_To_MP_B3
 
   This Scenario ensures that when the upgrade customer with complaint consent status selects 'PAYM Phone' and lands on
   delivery page then customer should not be displayed with end user question instead the customer should see GDPR consent
@@ -6,7 +6,7 @@ Feature: 23_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUs
 
   @Web
 
-  Scenario Outline: 23_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUser_PreTicked_To_MP_Optin_B3
+  Scenario Outline: 23_Existing_customer_PAYM_Tablet_GDPR_Enabled_Refresh_Homedelivery_EndUser_PreTicked_To_MP_Optin_B3
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And navigate to PAYM Phones page
@@ -26,5 +26,5 @@ Feature: 23_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUs
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset  | BSCstatus | BillCap   | CapAmount | username               | password | Username     | B1  | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone X | Enabled   | CapMyBill | £60       | in0183b9_561635@o2.com | test123  | TEST ACCEPTA | Not | Not | Select | Not | Enabled    | Connected  | Yes         | No       |
+      | handset            | BSCstatus | BillCap   | CapAmount | username                      | password | Username     | B1  | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | iPad Pro 10.5 inch | Enabled   | CapMyBill | £60       | acce09271344@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Not | Not | Select | Not | Enabled    | Connected  | Yes         | No       |

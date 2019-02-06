@@ -30,6 +30,7 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     #Then Click on 'Accept and continue to upgrade'
     And answer the questionnaire and click on 'Accept and continue to upgrade' button
     #And Verify that in 'Your package' summary Buyout is displayed with Recycle
+    And verify if the buyout offer is displayed in UpGradeOptionsPage
     And I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey
     And verify if the buyout offer is displayed in Basket page
     And click on "go to checkout" button
@@ -49,6 +50,6 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset  | Delivery | Payment | filtername | sortoption                 | username               | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone X | Delivery | Payment | low        | Monthly data (Low to High) | in05261q_663227@o2.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
+      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset       | Delivery | Payment | filtername | sortoption                 | username                      | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone Xs Max | Delivery | Payment | low        | Monthly data (Low to High) | 05de96144941@stf.ref.o2.co.uk | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
 

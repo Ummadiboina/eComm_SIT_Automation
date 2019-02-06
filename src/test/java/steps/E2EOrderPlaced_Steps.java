@@ -843,6 +843,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
             PageFactory.initElements(driver, SmartwatchesPage.class);
+            Thread.sleep(5000);
             SmartwatchesPageActions.AddtoBasketSmartwatchTracker();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -4185,6 +4186,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, FitnessTrackerPage.class);
             FitnessTrackerPageActions.DeviceSelect(elementName);
+            Thread.sleep(7000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to select FitnessTracker");
@@ -4327,7 +4329,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
-            BasketPageActions.verifyDevicesInBasket(AccessoryPageActions.accessoryName, dev2);
+            BasketPageActions.verifyDevicesInBasket(AccessoryPageActions.accessoryName, FitnessTrackerPageActions.fitnessTarckerName);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -6217,8 +6219,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(4000);
             DeliveryPageActions.select_BringTradeInDevice_CheckBox();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             //DeliveryPageActions.ClickContinue();
             //log.debug("Clicked on continue button");
         } catch (Exception e) {
@@ -7072,6 +7075,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             int tmpBuyOutValue = 0;
+            Thread.sleep(3000);
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             tmpBuyOutValue = UpgradeCustomerPageActions.verifyBuyOutDisplayedInUpGradeOptionsPage();
             BuyOutValue = tmpBuyOutValue;
@@ -8410,6 +8414,21 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Thread.sleep(4000);
             Agent_DealBuilderPageActions.clickAndCollectNowStore();
+
+        } catch (Exception e) {
+            log.debug("unable to select store for click and collect now order");
+            Assert.fail("unable to select store for click and collect now order");
+        }
+    }
+
+    @And("^Validating Click and Collect Now details in checkout pages")
+    public void checkOutDetailsFor_clickandCollectNow() {
+        try {
+
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(4000);
+            Agent_DealBuilderPageActions.clickAndCollectNowStoreDetailsAtCheckout();
 
         } catch (Exception e) {
             log.debug("unable to select store for click and collect now order");
@@ -11070,11 +11089,16 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            Thread.sleep(5000);
+            Thread.sleep(3000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-400)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
             PAYMandPAYGTariffAndExtrasPageActions.validateBSCEditLink();
             Thread.sleep(5000);
             PAYMandPAYGTariffAndExtrasPageActions.clickBSCEditLink();
             Thread.sleep(5000);
+            Screenshots.captureScreenshot();
             PAYMandPAYGTariffAndExtrasPageActions.statusAfterBSCEditClicked(BillCap, CapAmount);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -11159,9 +11183,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             log.debug("Currently we are at page: " + driver.getTitle());
-            Thread.sleep(5000);
+            Thread.sleep(8000);
             DeliveryPageActions.ValidateAppliedBillSpendCap(BillCap, CapAmount, BSCstatus);
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to validate your bill cap in basket page");

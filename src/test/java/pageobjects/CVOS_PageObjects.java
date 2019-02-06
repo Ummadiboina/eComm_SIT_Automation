@@ -53,7 +53,7 @@ public class CVOS_PageObjects extends Environment {
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'1AMFI32')]/preceding::span[contains(text(),'Online')]")
 	public static WebElement onlineStockpot;
 
-	@FindBy(how = How.XPATH, using = " //span[contains(text(),'1AMFI32')]/preceding::span[contains(text(),'All Shops')]")
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'1AMFI32')]/preceding::span[contains(text(),'All Shops')]")
 	public static WebElement allShopStockpot;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='modelSearchInput']")

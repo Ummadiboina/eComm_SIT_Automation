@@ -227,13 +227,17 @@ public class PaymentPageActions extends Environment {
     }
 
 
-    public static void SelectAddrerss() throws InterruptedException {
-        Thread.sleep(5000);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scrollBy(0,400)", "");
+    public static void SelectAddrerss() throws InterruptedException, IOException {
         Thread.sleep(3000);
-        PaymentPage.Selectadd.click();
-        log.debug("Address Selected");
+        if(driver.findElements(By.xpath("(//p[@id='customerAddress']//following-sibling::button)[1]")).size()>0) {
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,400)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            Thread.sleep(2000);
+            PaymentPage.Selectadd.click();
+            log.debug("Address Selected");
+        }
     }
 
 

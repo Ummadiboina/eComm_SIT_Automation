@@ -17,9 +17,10 @@ Feature: 128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Pa
     And I Land on the basket page by clicking on Add to Basket button
     And Validate Basket Page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button
-    And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    #And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Select existing account and begin fast checkout
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
+    And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And land on the payment page and input <Username> and other details for existing customer
@@ -34,5 +35,5 @@ Feature: 128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Pa
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | password | tabletname         | houseNumber | PostCode | BillCap   | CapAmount | NewBillCap | NewCapAmount      | BSCstatus | Username     | Action    | tariff                   | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 05ap14239632@stf.ref.o2.co.uk | test123  | iPad Pro 10.5 inch | 11          | SL11ER   | CapMyBill | £5        | CapMyBill  | DontCapMyBillLink | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Somone   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username         | password | tabletname            | houseNumber | PostCode | BillCap   | CapAmount | NewBillCap | NewCapAmount      | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2     | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | a000000155@a.com | test123  | Galaxy Tab A 2016 7.0 | 11          | SL11ER   | CapMyBill | £5        | CapMyBill  | DontCapMyBillLink | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Somone   | Select | Select | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
