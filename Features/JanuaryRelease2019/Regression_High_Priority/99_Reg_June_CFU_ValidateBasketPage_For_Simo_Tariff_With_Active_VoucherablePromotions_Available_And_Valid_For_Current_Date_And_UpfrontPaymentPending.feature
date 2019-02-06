@@ -7,8 +7,8 @@ Feature: 99_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Vouche
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    #And I click on 'Sim only Tariff' tab
     And Click on 'Get Started' CTA
+    And I click on 'Sim only Tariff' tab
     And click on the 'MBB' button
     #And click on the 'Tablets' button
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
@@ -29,5 +29,5 @@ Feature: 99_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Vouche
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username               | tariffAmt | dataValue | promoCode | password | BSCstatus | BillCap   | CapAmount | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | in056936_403469@o2.com | £25       | 30GB       | SIMOOFF   | test123  | Enabled   | CapMyBill | £15       | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username                     | tariffAmt | dataValue | promoCode | password | BSCstatus | BillCap   | CapAmount | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | ins_jun7361@stf.ref.o2.co.uk | £25       | 30GB      | SIMOOFF   | test123  | Enabled   | CapMyBill | £15       | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

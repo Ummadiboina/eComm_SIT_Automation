@@ -692,6 +692,19 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     }
 
+    public static void clickAndCollectNowStoreDetailsAtCheckout() throws InterruptedException {
+
+        String cNc_collectionDetails = driver.findElement(By.xpath("//table[@class='lineItemTable collectfrom']")).getText();
+        Thread.sleep(2000);
+        if(cNc_collectionDetails.contains("Available Today")){
+            log.debug("Order Summary section contains status for collection today ie:"+cNc_collectionDetails+"\n");
+        }else{
+            log.debug("Failed, order summary section dooesn't contains collection today details\n");
+            Assert.fail("Failed, order summary section dooesn't contains collection today details\n");
+        }
+
+    }
+
     public static void clickAndCollectNowStore() throws InterruptedException, IOException {
 
         // Selecting an Extra
@@ -717,27 +730,46 @@ public class Agent_DealBuilderPageActions extends Environment {
                 Thread.sleep(8000);
                 Screenshots.captureScreenshot();
 
-                String collectionDetails = Agent_DealBuilderPage.collectionDetails.getText();
-                Thread.sleep(2000);
+                List<WebElement> collectionDetails = driver.findElements(By.xpath("//table[@id='storeResultsTable']/tbody/tr"));
+                int cnt = 0;
+                //String collectionDetails = Agent_DealBuilderPage.collectionDetails.getText();
 
-                if (collectionDetails.contains("Today")) {
-                    log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDetails + "\n");
-                } else {
-                    log.debug("Device is not available for click and collect now in provided store, status is:: " + collectionDetails + "\n");
-                    Assert.fail("Device is not available for click and collect now in provided store, status is:: " + collectionDetails + "\n");
+                for(int i=1;i<=collectionDetails.size();i++){
+                    String collectionDate = driver.findElement(By.xpath("//table[@id='storeResultsTable']/tbody/tr["+i+"]/td[2]")).getText();
+                    Thread.sleep(3000);
+                    log.debug("Collection Date: "+collectionDate);
+                    if (collectionDate.equalsIgnoreCase("Today")) {
+                        log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDate + "\n");
+                        driver.findElement(By.xpath("//table[@id='storeResultsTable']/tbody/tr["+i+"]/td[3]/input")).click();
+                        log.debug("Store selected for collection Today\n");
+                        cnt++;
+                        break;
+                    }
                 }
 
-                /*JavascriptExecutor jse = (JavascriptExecutor) driver;
-                jse.executeScript("window.scrollBy(0,200)", "");*/
-                JavascriptExecutor executor = (JavascriptExecutor) driver;
-                executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.selectStore);
-                Thread.sleep(3000);
+                 if(cnt==0) {
+                    log.debug("Device is not available for click and collect now in provided store\n");
+                    Assert.fail("Device is not available for click and collect now in provided store\n");
+                }
+                Thread.sleep(2000);
+
             }
         }
         Thread.sleep(5000);
         driver.switchTo().window(Mainwindow);
-        Thread.sleep(3000);
-        log.debug("Selected store for click and collect now is:: " + Agent_DealBuilderPage.Storedetails.getText());
+        Screenshots.captureScreenshot();
+
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,100)", "");
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        String storeDetails = Agent_DealBuilderPage.Storedetails.getText();
+        Thread.sleep(2000);
+        log.debug("Selected store for click and collect now is:: " + storeDetails);
+
+        if(storeDetails.contains("Basket currently Available Today")){
+            log.debug("Click and collect now details contains :: Basket currently Available Today");
+        }
 
     }
 

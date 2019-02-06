@@ -53,7 +53,10 @@ public class SimsPageActions extends Environment {
 
     public static void clickonTabletsButton() {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            Thread.sleep(3000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-300)", "");
+            Screenshots.captureScreenshot();
             if (driver.findElements(By.xpath("//input[@value='Tablets']")).size() > 0) {
                 if (driver.findElement(By.xpath("//input[@value='Tablets']")).isDisplayed()) {
                     driver.findElement(By.xpath("//input[@value='Tablets']")).click();

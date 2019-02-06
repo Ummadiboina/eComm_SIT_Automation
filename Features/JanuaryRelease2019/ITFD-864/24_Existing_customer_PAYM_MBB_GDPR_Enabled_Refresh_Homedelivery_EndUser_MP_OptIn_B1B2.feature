@@ -1,4 +1,4 @@
-Feature: 24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B2
+Feature: 24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B3
 
   This Scenario ensures that when the upgrade customer with complaint consent status selects 'PAYM MBB' and lands on
   delivery page then customer should not be displayed with end user question instead the customer should see GDPR consent
@@ -6,7 +6,7 @@ Feature: 24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser
 
   @Web
 
-  Scenario Outline: 24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B2
+  Scenario Outline: 24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B3
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to PayM MBB page
@@ -26,5 +26,5 @@ Feature: 24_Existing_customer_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Device_Name   | BSCstatus | BillCap   | CapAmount | username                      | password | Username     | B1  | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | Random Device | Enabled   | CapMyBill | £30       | dont36182576@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Not | Not | Select | Not | Enabled    | Connected  | No          | No       |
+      | Device_Name   | BSCstatus | BillCap   | CapAmount | username         | password | Username     | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | Random Device | Enabled   | CapMyBill | £30       | cr7086e1@usr.com | test123  | TEST ACCEPTA | Select | Not | Select | Not | Enabled    | Connected  | No          | No       |

@@ -248,7 +248,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	public static WebElement BillCapStatusInfo;
 
 
-	@FindBy(how = How.XPATH, using = "//div[@class='largeTitle']/a | //div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link']")
+	@FindBy(how = How.XPATH, using = "//div[@class='largeTitle']/a | //div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link'] | //div[@class='edit-link']/../div/h2[contains(text(),'Spend Cap')]/../../div[2]/a | //a[@class='edit-bsc']")
 	public static WebElement BillCapEditLink;
 
 	@FindBy(how = How.XPATH, using = "//a[normalize-space()='Change tariff'] | //div[@class='spentstariff']/div[2]/a | //a[@class='edit-your-plan']")

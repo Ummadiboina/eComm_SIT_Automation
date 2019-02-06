@@ -1684,7 +1684,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.BillCapEditLink);
 			Screenshots.captureScreenshot();
 
-			if (driver.findElements(By.xpath("//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link']")).size() > 0) {
+			if (driver.findElements(By.xpath("//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link'] | //div[@class='edit-link']/../div/h2[contains(text(),'Spend Cap')]/../../div[2]/a | //a[@class='edit-bsc']")).size() > 0) {
 				log.debug("BSC Edit option is displayed at Bill Spend Cap section: " + pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapEditLink.getText());
 
 			} else {
@@ -1726,7 +1726,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-			if (driver.findElements(By.xpath("//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link']")).size() > 0) {
+			if (driver.findElements(By.xpath("//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link'] | //div[@class='edit-link']/../div/h2[contains(text(),'Spend Cap')]/../../div[2]/a | //a[@class='edit-bsc']")).size() > 0) {
 				JavascriptExecutor jse = (JavascriptExecutor) driver;
 				jse.executeScript("window.scrollBy(0,-200)", "");
 				Thread.sleep(2000);

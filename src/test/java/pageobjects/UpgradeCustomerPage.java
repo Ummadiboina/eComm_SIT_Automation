@@ -136,7 +136,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//input[@id='applyVoucher']//following-sibling::p")
 	public static WebElement promoCodeStatus;
 
-	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Airtime Discount offer')]")
+	@FindBy(how = How.XPATH, using = "//div/h3[contains(text(),'SIMOOFF')]")
 	public static WebElement AppliedPromoCodeValidation;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='recaptcha-anchor']")

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 
 import GlobalActions.Screenshots;
@@ -13,7 +14,7 @@ public class CVOSstockpotPageActions extends Environment {
 
 	final static Logger log = Logger.getLogger("CVOSstockpotPageActions");
 
-	public static void CVOSSupplyChainAct(String SKUID) throws InterruptedException, IOException {
+	public static void CVOSSupplyChainAct(String SKUID) throws IOException {
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
@@ -56,13 +57,14 @@ public class CVOSstockpotPageActions extends Environment {
 
 	public static void CVOSSupplyChainSearch() throws InterruptedException, IOException {
 
+		Thread.sleep(5000);
 		pageobjects.CVOS_PageObjects.searchButton.click();
 		log.debug("The search button is clicked");
 		log.debug("The search button is clicked");
 		Screenshots.captureScreenshot();
 	}
 
-	public static void CVOSSupplyChainStockPot() throws InterruptedException, IOException {
+	public static void CVOSSupplyChainStockPot() throws IOException {
 		log.debug("pageobjects.CVOS_PageObjects.onlineStockpot.getText()");
 		if (pageobjects.CVOS_PageObjects.onlineStockpot.isDisplayed()) {
 			log.debug(
@@ -155,10 +157,13 @@ public class CVOSstockpotPageActions extends Environment {
 		log.debug("The Device link for all shops is clicked");
 		log.debug("The Device link for all shops is clicked");
 		Screenshots.captureScreenshot();
-
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,100)", "");
+		Thread.sleep(6000);
+		Screenshots.captureScreenshot();
 	}
 
-	public static void CVOSTradingAdminPreOrderVerf(String SKUID) throws InterruptedException, IOException {
+	public static void CVOSTradingAdminPreOrderVerf(String SKUID) throws IOException {
 
 		if (pageobjects.CVOS_PageObjects.skuDescriptionDropDown.isDisplayed()) {
 			log.debug(
@@ -198,7 +203,7 @@ public class CVOSstockpotPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void CVOSTradingAdminDDVerf(String SKUID) throws InterruptedException, IOException {
+	public static void CVOSTradingAdminDDVerf(String SKUID) throws IOException {
 
 		if (pageobjects.CVOS_PageObjects.skuDescriptionDropDown.isDisplayed()) {
 			log.debug(
