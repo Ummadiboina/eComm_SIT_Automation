@@ -6160,7 +6160,6 @@ public class E2EOrderPlaced_Steps {
             log.debug("Assertion Failed: Expected Message: " + ExpectedPacCodeInfoMessage
                     + " is not present in the page");
         }
-
     }
 
     @Then("^Verify that in the recycle value is displayed in the Recycle panel$")
@@ -9972,9 +9971,9 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.enterHouseNumAndPostalCode_DeliverySection(houseNum, pcode);
-            Thread.sleep(3000);
+            //Thread.sleep(3000);
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,600)", "");
+            jse.executeScript("window.scrollBy(0,200)", "");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
         } catch (Exception e) {
@@ -11473,5 +11472,67 @@ public class E2EOrderPlaced_Steps {
             log.debug("Unable to validate GDPR consent in delivery page");
             Assert.fail("Unable to validate GDPR consent in delivery page");
         }
+    }
+
+    //ITFD-845, March Release new changes Validation by Jamal Khan
+    @And("^input ([^\"]*) ([^\"]*) ([^\"]*) and ([^\"]*) and other valid details in Delivery page$")
+    public void DeliveryPage_Inputs(String postcode, String HouseNumber, String Firstname, String Surname) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.SetPostCodeForDelivery(postcode, HouseNumber);
+            Thread.sleep(4000);
+            if(DeliveryPageActions.postalcodeStatus.equalsIgnoreCase("Valid")) {
+                DeliveryPageActions.AboutYou(Firstname, Surname);
+            }
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+    }
+
+    @And("^enter ([^\"]*) and ([^\"]*) in Delivery section to set different delivery address$")
+    public void enterHouseNumAndPostCode(String houseNum, String pcode) {
+        try {
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(3000);
+            DeliveryPageActions.SetPostCodeForDelivery(pcode, houseNum);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,600)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(e.getStackTrace());
+        }
+    }
+
+    @And("^Enter delivery details ([^\"]*) ([^\"]*) in Delivery Page and info ([^\"]*) and ([^\"]*) for GDPR ([^\"]*)$")
+    public void setDeliveryAddress_and_ACCEPTA_new(String houseNumber, String PostCode, String Firstname, String Surname, String CheckBox) {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.SetPostCodeForDelivery(PostCode, houseNumber);
+            Thread.sleep(3000);
+            FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname, Surname);
+            Thread.sleep(3000);
+            FreeSimDeliveryPageActions.marketingMessageCheckBox(CheckBox);
+            Thread.sleep(3000);
+            FreeSimDeliveryPageActions.ClickSendMeMySim();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+
     }
 }

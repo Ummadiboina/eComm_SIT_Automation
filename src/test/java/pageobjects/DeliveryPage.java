@@ -12,6 +12,9 @@ public class DeliveryPage {
     @FindBy(how = How.ID, using = "housenumber")
     public static WebElement Housenumber;
 
+    @FindBy(how = How.XPATH, using = "//label[@for='housenumber']")
+    public static WebElement HouseNumberLabel;
+
     @FindBy(how = How.XPATH, using = "//input[@name='houseNum']")
     public static WebElement HouseNum;
 
@@ -26,6 +29,15 @@ public class DeliveryPage {
 
     @FindBy(how = How.ID, using = "postcode")
     public static WebElement Postcode;
+
+    @FindBy(how = How.XPATH, using = "//label[@for='postcode']")
+    public static WebElement PostcodeLabel;
+
+    @FindBy(how = How.XPATH, using = "//label[@id='housenumber-error']")
+    public static WebElement houseNumberNameError;
+
+    @FindBy(how = How.XPATH, using = "//label[@id='postcode-error']")
+    public static WebElement postCodeError;
 
     @FindBy(how = How.XPATH, using = "//*[@name='postcode']")
     public static WebElement Post;
@@ -50,6 +62,8 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[@id='delivery-address-selection' or @id='address-selection']/li[1]")
     public static WebElement SelectAddress1;
 
+    @FindBy(how = How.XPATH, using = "//ul[@id='selectedAddressItem']/li")
+    public static WebElement autoSelectedAddress;
 
     @FindBy(how = How.XPATH, using = "(//*[@class='selectAddrBtn'])[1]")
     public static WebElement SelectAdd1;
@@ -128,7 +142,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//span[@class='terms' or contains(text(),'I agree to the')]")
     public static WebElement IagreeTermsCondition;
 
-    @FindBy(how = How.XPATH, using = "//p[contains(text(),'If you check this box, we’ll send you information about your order, but no marketing')]")
+    @FindBy(how = How.XPATH, using = "//p[@class='longMsg']")
     public static WebElement NoMarkettingMessage;
 
     @FindBy(how = How.XPATH, using = "//a[normalize-space()='Privacy Policy']")
@@ -200,7 +214,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Promotions']/following-sibling::p")
     public static WebElement promotionVAlue_yourOrdre;
 
-    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Use a different delivery address']")
+    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Use a different delivery address'] | //a[normalize-space()='Use a different address']")
     public static WebElement DeliveryPageUseDiffAddressLink;
 
 
@@ -217,7 +231,7 @@ public class DeliveryPage {
     public static WebElement houseNumErrorMsg;
 
     //postal code error
-    @FindBy(how = How.ID, using = "address-postcode-error")
+    @FindBy(how = How.XPATH, using = "//*[@id='address-postcode-error'] | //*[@id='no-address-match-error']")
     public static WebElement postalCodeErrorMsgEnterManualSection;
 
 //newly added for GDPR

@@ -69,7 +69,7 @@ public class PhonesListingPage {
 	// Below are for PAYG device
 
 	//@FindBy(how = How.XPATH, using = "//*[@class='device-tile__top'][2]")
-	@FindBy(how = How.XPATH, using = "(//img[@class='device-image'])[2] | (//img[@class='device-image lazyload'])[2] | (//img[@class='device-image lazy'])[2]")
+	@FindBy(how = How.XPATH, using = "(//img[@class='device-image'])[2] | (//img[@class='device-image lazyload'])[2] | (//img[@class='device-image lazyPD'])[2]")
 	public static WebElement RandomDevice;
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/moto/g5/#contractType=payasyougo')]")
