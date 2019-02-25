@@ -10,10 +10,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
 import pageobjects.DeliveryPage;
+import org.openqa.selenium.*;
+import org.openqa.selenium.Point;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -27,30 +30,63 @@ public class DeliveryPageActions extends Environment {
     public List<HashMap<String, String>> datamap;
     final static Logger log = Logger.getLogger("DeliveryPageActions");
     static JavascriptExecutor js = (JavascriptExecutor) driver;
+    public static String postalcodeStatus = "";
 
     public static void SetDelivery() throws InterruptedException {
         Thread.sleep(8000);
         try {
 
             if (DeliveryPage.Housenumber.isDisplayed()) {
-                DeliveryPage.Housenumber.sendKeys("12");
+                DeliveryPage.Housenumber.sendKeys("100");
                 log.debug("Entered House number");
                 Thread.sleep(2000);
-                pageobjects.DeliveryPage.Postcode.sendKeys("B15 2LG");
+                pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
                 log.debug("Entered Post code");
                 Thread.sleep(2000);
                 pageobjects.DeliveryPage.Find_Address.click();
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(5000);
             }
+
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,100)", "");
             Thread.sleep(3000);
-            if (driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li[1]")).size() > 0) {
+            Screenshots.captureScreenshot();
+            /*if (driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li[1]")).size() > 0) {
                 pageobjects.DeliveryPage.SelectAddress1.click();
                 log.debug("Selected an address");
             }
             Thread.sleep(3000);
-            Screenshots.captureScreenshot();
+            Screenshots.captureScreenshot();*/
 
+            if(driver.findElement(By.xpath("//div[@id='deliveryAddresses']")).isDisplayed()) {
+                if (driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li")).size() > 0) {
+                    List<WebElement> addresses = driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li"));
+                    log.debug("The size of matching address: " + addresses.size());
+
+                    if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer']")).size() > 0) {
+                        driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer']")).click();
+                        Thread.sleep(3000);
+                        Screenshots.captureScreenshot();
+
+                        WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1]"));
+                        String selectedAddress = addressElement.getText();
+
+                        Thread.sleep(3000);
+                        Point coordinates = addressElement.getLocation();
+                        Robot robot = new Robot();
+                        robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                        Thread.sleep(2000);
+                        log.debug("Moving Mouse address dropdown");
+
+                        Actions action = new Actions(driver);
+                        action.moveToElement(addressElement).click().build().perform();
+                        log.debug("Address selected from dropdown list: " + selectedAddress);
+                        Thread.sleep(3000);
+                        Screenshots.captureScreenshot();
+                    }
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -639,15 +675,16 @@ public class DeliveryPageActions extends Environment {
                 pageobjects.DeliveryPage.Housenumber.sendKeys("12");
                 log.debug("Entered House number");
 
-                pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
+                pageobjects.DeliveryPage.Postcode.sendKeys(postCode);
                 log.debug("Entered Post code");
                 pageobjects.DeliveryPage.Find_Address.click();
                 log.debug("Clicked on the Find address button");
 
-                pageobjects.DeliveryPage.SelectAddress1.click();
-                log.debug("Clicked on the select address button");
-                Screenshots.captureScreenshot();
-
+                if(driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li[1]")).size()>0) {
+                    pageobjects.DeliveryPage.SelectAddress1.click();
+                    log.debug("Clicked on the select address button");
+                    Screenshots.captureScreenshot();
+                }
             } else {
                 log.debug(" Failed to  Entered the houseNumber and postcCode");
 
@@ -660,14 +697,15 @@ public class DeliveryPageActions extends Environment {
 
     public static void enteredCommercialAddress_AddressLookUp(String postCode) {
         try {
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
+            //driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
+            //Thread.sleep(4000);
             if (DeliveryPage.commercialAddressErrorMsgAdressLookUp.isDisplayed()) {
                 String invalidMsg = DeliveryPage.commercialAddressErrorMsgAdressLookUp.getText();
                 if (invalidMsg.contains(postCode)) {
-                    log.debug(" Entered commercial address during address lookup & displayed error message as ::  (" + invalidMsg + ")");
+                    log.debug("Entered commercial address during address lookup & displayed error message as ::  (" + invalidMsg + ")");
 
                 } else {
-                    log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup ");
+                    log.debug("Failed to  Display the Respective Error message, When we entered commercial address during address lookup ");
 
                 }
                 scrollToAnElement.scrollToElement(DeliveryPage.commercialAddressErrorMsgAdressLookUp);
@@ -705,7 +743,7 @@ public class DeliveryPageActions extends Environment {
             if (DeliveryPage.postalCodeErrorMsgEnterManualSection.isDisplayed()) {
                 String invalidMsg = DeliveryPage.postalCodeErrorMsgEnterManualSection.getText();
                 if (invalidMsg.contains(postCode)) {
-                    log.debug(" Entered invalid PostCode in Enter manually section & displayed error message as ::  (" + invalidMsg + ")");
+                    log.debug(" Entered invalid Post Code in Enter manually section & displayed error message as ::  (" + invalidMsg + ")");
 
                 } else {
                     log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode in Enter manually section ");
@@ -798,14 +836,18 @@ public class DeliveryPageActions extends Environment {
     }
 
 
-    public static void ClickOnUseDifferentAddress() throws InterruptedException {
-        List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//a[normalize-space()='Use a different delivery address']"));
+    public static void ClickOnUseDifferentAddress() throws InterruptedException, IOException {
+        List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//a[normalize-space()='Use a different delivery address'] | //a[normalize-space()='Use a different address']"));
         if (DiffAddressLink.size() > 0) {
+
+            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//h2[normalize-space()='Home address']")));
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
             WebElement element = pageobjects.DeliveryPage.DeliveryPageUseDiffAddressLink;
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", element);
-
             Thread.sleep(3000);
+            Screenshots.captureScreenshot();
 
            /* log.debug("Entering the address");
             pageobjects.DeliveryPage.Housenumber.sendKeys("12");
@@ -1386,6 +1428,197 @@ public class DeliveryPageActions extends Environment {
                     log.debug("Clicked on the Review Confirm CTA at Delivery page\n");
                 }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //ITFD-845, March 2019 Release by Jamal Khan
+    public static void findDeliveryAddress(String HouseNumber, String PostCode) {
+
+        try {
+                DeliveryPage.Housenumber.sendKeys(HouseNumber);
+                log.debug("Entered House number: "+HouseNumber+"\n");
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.Postcode.sendKeys(PostCode);
+                log.debug("Entered Post code: "+PostCode+"\n");
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.Find_Address.click();
+                log.debug("Clicked on the Find address button\n");
+                Thread.sleep(5000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void verifyDeliveryAddress(String exceptionMessage, String postcode) {
+
+        try {
+                if(driver.findElements(By.xpath("//*[@id='address-postcode-error'] | //*[@id='no-address-match-error']")).size()>0) {
+                    if (DeliveryPage.postalCodeErrorMsgEnterManualSection.isDisplayed()) {
+                        String invalidMsg = DeliveryPage.postalCodeErrorMsgEnterManualSection.getText();
+                        Thread.sleep(2000);
+                        if (invalidMsg.contains("Enter a valid UK postcode") || invalidMsg.contains("We can't find an address for this postcode")) {
+                            log.debug("Entered invalid Postal Code so, error message is displayed as ::  (" + invalidMsg + ")\n");
+                        }
+                    }
+                    postalcodeStatus = "Invalid";
+                }else if(driver.findElements(By.xpath("//*[@id='no-residential-address-match-error']")).size()>0) {
+                    if (DeliveryPage.commercialAddressErrorMsgAdressLookUp.isDisplayed()) {
+                        String invalidMsg = DeliveryPage.commercialAddressErrorMsgAdressLookUp.getText();
+                        Thread.sleep(2000);
+                        if (invalidMsg.contains("Looking for a business address? Unfortunately we can't deliver to your work. Use your home address, or click and collect from your local store")) {
+                            log.debug("Entered commercial address during address lookup & displayed error message as ::  (" + invalidMsg + ")\n");
+                        }
+                    }
+                    postalcodeStatus = "Commercial";
+               } else {
+                   if (driver.findElements(By.xpath("//ul[@id='selectedAddressItem']")).size() > 0) {
+                       List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='selectedAddressItem']"));
+                       log.debug("The size of matching address: " + addresses.size());
+                       if (addresses.size() == 1) {
+                           log.debug("Only one address is matching to the corresponding entered post code\n");
+                           String address = pageobjects.DeliveryPage.autoSelectedAddress.getText();
+                           Thread.sleep(2000);
+                           log.debug("Address is auto selected as only one address is matching and listed ie: " + address);
+                       }
+                       postalcodeStatus = "Valid";
+                   } else {
+
+                       if (driver.findElement(By.xpath("//div[@id='deliveryAddresses']")).isDisplayed()) {
+                           if (driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li")).size() > 0) {
+                               List<WebElement> addresses = driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li"));
+                               log.debug("The size of matching address: " + addresses.size());
+                               postalcodeStatus = "Valid";
+
+                               if (addresses.size() >= 2 && addresses.size() <= 200) {
+
+                                   log.debug("More than one addresses are matching to the corresponding entered post code\n");
+                                   //pageobjects.DeliveryPage.SelectAddress1.click();
+
+                                   if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer']")).size() > 0) {
+                                       driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer']")).click();
+                                       Thread.sleep(3000);
+                                       Screenshots.captureScreenshot();
+
+                                       WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1]"));
+                                       String selectedAddress = addressElement.getText();
+
+                                       Thread.sleep(3000);
+                                       Point coordinates = addressElement.getLocation();
+                                       Robot robot = new Robot();
+                                       robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                                       Thread.sleep(2000);
+                                       log.debug("Moving Mouse address dropdown");
+
+                                       Actions action = new Actions(driver);
+                                       action.moveToElement(addressElement).click().build().perform();
+                                       log.debug("Address selected from dropdown list: " + selectedAddress);
+                                       Thread.sleep(3000);
+                                       Screenshots.captureScreenshot();
+                                   }
+                               } else if (addresses.size() > 200) {
+
+                                   String tooManyAddException = driver.findElement(By.xpath("//div[contains(normalize-space(),'too many results'])")).getText();
+                                   Thread.sleep(2000);
+
+                                   if (tooManyAddException.contains(exceptionMessage)) {
+                                       log.debug("Exception for too many addresses, is matching as expected ie: " + tooManyAddException + "\n");
+                                       log.debug("Providing house number and postal code to research\n");
+                                       findDeliveryAddress("10", postcode);
+                                   } else {
+                                       log.debug("Failed: Exception for too many addresses, is not matching as expected ie: " + tooManyAddException + "\n");
+                                       Assert.fail("Failed: Exception for too many addresses, is not matching as expected ie: " + tooManyAddException);
+                                   }
+                               }
+                           }
+                       }
+                   }
+               }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void SetPostCodeForDelivery(String postcode, String HouseNumber) throws InterruptedException {
+        Thread.sleep(5000);
+
+        try {
+            Screenshots.captureScreenshot();
+            if (DeliveryPage.Housenumber.isDisplayed() || DeliveryPage.HouseNumberLabel.isDisplayed()) {
+                String houseNumberOrName = DeliveryPage.HouseNumberLabel.getText();
+                Thread.sleep(2000);
+                if(houseNumberOrName.contains("*")){
+                    log.debug("Failed due to House Number or Name field contains *, which means field is not optional. This field should be optional\n");
+                    Assert.fail("Failed due to House Number or Name field contains *, which means field is not optional. This field should be optional\n");
+                }else{
+                    log.debug("House Number or Name field is not optional, ie Field Name is: "+houseNumberOrName+"\n");
+                }
+            }else{
+                log.debug("Failed due to House Number or Name label/input field not present \n");
+                Assert.fail("Failed due to House Number or Name label/input field not present \n");
+            }
+
+            if (DeliveryPage.Postcode.isDisplayed() || DeliveryPage.PostcodeLabel.isDisplayed()) {
+                String postcodeLabel = DeliveryPage.PostcodeLabel.getText();
+                Thread.sleep(2000);
+                if(postcodeLabel.contains("*")){
+                    log.debug("As expected, Post code field is not optional, ie Field Name is: "+postcodeLabel+"\n");
+                }else{
+                    log.debug("Failed due to Post code field is optional. This field should not be optional \n");
+                    Assert.fail("Failed due to Post code field is optional. This field should not be optional \n");
+                }
+            }else{
+                log.debug("Failed due to Post code label/input field not present \n");
+                Assert.fail("Failed due to Post code label/input field not present \n");
+            }
+
+            //Sending blank values and Validating error message exists or not for mandatory and non-mandatory fields
+            log.debug("Finding address without post code and without house number or name\n");
+            findDeliveryAddress("","");
+            String houseNumberOrNameException  = "";
+            String postCodeException = "";
+
+            //House number/name field validation
+            if(driver.findElements(By.xpath("//label[@id='housenumber-error']")).size()>0) {
+                houseNumberOrNameException = DeliveryPage.houseNumberNameError.getText();
+                Thread.sleep(1000);
+                log.debug("Failed due to House number/name field error is showing for blank/no values ie: "+houseNumberOrNameException+", It should be optional\n");
+                Assert.fail("Failed due to House number/name field error is showing for blank/no values ie: "+houseNumberOrNameException+", It should be optional\n");
+            }else{
+                log.debug("As expected, House number/name field error is not showing for blank/no values\n");
+            }
+
+            //post code field validation
+            if(driver.findElements(By.xpath("//label[@id='postcode-error']")).size()>0) {
+                postCodeException = DeliveryPage.postCodeError.getText();
+                Thread.sleep(1000);
+                log.debug("As expected, Postal code field error is displaying for blank/no values ie: "+postCodeException+"\n");
+            }else{
+                log.debug("Failed due to Postal code field error is not displaying for blank/no values \n");
+                Assert.fail("Failed due to Postal code field error is not displaying for blank/no values \n");
+            }
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+            if(!postcode.equals("") && HouseNumber.equals("")) {
+                log.debug("Finding address with post code and without house number or name\n");
+                findDeliveryAddress(HouseNumber, postcode);
+                Screenshots.captureScreenshot();
+
+                verifyDeliveryAddress("There are too many results for this postcode. Add your house number and try again", postcode);
+
+            }else if(!postcode.equals("") && !HouseNumber.equals("")){
+                log.debug("Finding address with post code and with house number or name\n");
+                findDeliveryAddress(HouseNumber,postcode);
+                Screenshots.captureScreenshot();
+
+                verifyDeliveryAddress("Unfortunately we can't deliver to this address. Try a different address, or click and collect from your nearest O2 store", postcode);
+            }
+
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

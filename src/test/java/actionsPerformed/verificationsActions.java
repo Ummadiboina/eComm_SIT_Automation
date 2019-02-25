@@ -41,10 +41,10 @@ public class verificationsActions extends Environment {
             PageFactory.initElements(driver, DeliveryPage.class);
             //Verifying if "*" present in Actual Text in housenumber and post code
             ExpectedText = "*";
-            ActualText = pageobjects.DeliveryPage.HouseNumberText.getText();
+            /*ActualText = pageobjects.DeliveryPage.HouseNumberText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            log.debug("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);*/
 
             //Below is for finding text in post code text field
             ActualText = pageobjects.DeliveryPage.PostcodeText.getText();
@@ -175,10 +175,11 @@ public class verificationsActions extends Environment {
             PageFactory.initElements(driver, DeliveryPage.class);
             //Verifying if "*" present in Actual Text in housenumber and post code
             ExpectedText = "*";
-            ActualText = pageobjects.DeliveryPage.HouseNumberText.getText();
+            /*ActualText = pageobjects.DeliveryPage.HouseNumberText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            log.debug("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);*/
+
             //Below is for finding text in post code text field
             ActualText = pageobjects.DeliveryPage.PostcodeText.getText();
             Assert.assertTrue(ActualText.contains("*"),
@@ -263,7 +264,7 @@ public class verificationsActions extends Environment {
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
             log.debug("Assertion Success: '*' is present in: " + ActualText);
 
-//Below will set bank details
+            //Below will set bank details
             Set_Bank_details();
 
             /*Assert.assertTrue(ActualText.contains("*"),

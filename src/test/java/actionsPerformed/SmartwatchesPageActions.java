@@ -1,16 +1,21 @@
 package actionsPerformed;
 
+import java.awt.*;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import pageobjects.NonConnectedDeviceDetailsPage;
 
 public class SmartwatchesPageActions extends Environment {
 
@@ -128,26 +133,64 @@ public class SmartwatchesPageActions extends Environment {
 			Thread.sleep(3000);
 			if (status.contains("In Stock")) {
 
+				if (driver.findElements(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).size() > 0) {
+					NonConnectedDeviceDetailsPage.QuantityDropdown.click();
+					Thread.sleep(3000);
+					Screenshots.captureScreenshot();
 
-				WebElement element = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-				Thread.sleep(3000);
-				new Select(element).selectByValue("1");
-				Thread.sleep(2000);
+					WebElement elementQuantity = null;
+					String quantityName = "";
+					List<WebElement> eleQuantity = driver.findElements(By.xpath("//ul[@id='accyQuantitySelectBoxItOptions']/li"));
 
-				//WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
-				WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span"));
-				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
-				Thread.sleep(2000);
-				log.debug("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
+					for (int i = 1; i <= eleQuantity.size(); i++) {
+						quantityName = driver.findElement(By.xpath("//ul[@id='accyQuantitySelectBoxItOptions']/li[" + i + "]")).getText();
+						Thread.sleep(2000);
+						if (quantityName.contains("1")) {
+							elementQuantity = driver.findElement(By.xpath("//ul[@id='accyQuantitySelectBoxItOptions']/li[" + i + "]"));
+							break;
+						}
+					}
 
+					Thread.sleep(3000);
+					Point coordinates = elementQuantity.getLocation();
+					Robot robot = new Robot();
+					robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+					Thread.sleep(2000);
+					log.debug("Moving Mouse Color dropdown");
 
-				driver.findElement(By.id("deviceDetailsSubmit")).click();
+					Actions action = new Actions(driver);
+					action.moveToElement(elementQuantity).click().build().perform();
+					log.debug("Selected quantity from quantity dropdown");
+					Thread.sleep(3000);
+					Screenshots.captureScreenshot();
+					Thread.sleep(2000);
+					log.debug("Adding item to basket\n");
+					driver.findElement(By.xpath("//button[@id='addToBasket-nonconnected-accessories']")).click();
+				}
 
-				Thread.sleep(3000);
+                    /*WebElement element = driver
+                            .findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
+                    JavascriptExecutor js = (JavascriptExecutor) driver;
+                    js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
+                    new Select(element).selectByValue("1");
+
+                    Thread.sleep(3000);
+
+                    WebElement DeviceDetailsQuantity = driver.findElement(
+                            By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span"));
+                    String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+                    log.debug("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
+                    count = count + Integer.parseInt("1");
+                    Thread.sleep(2000);
+                    driver.findElement(By.xpath("//button[@id='deviceDetailsSubmit']")).click();
+
+                    Thread.sleep(3000);*/
+
 			} else {
 				driver.navigate().back();
+				Thread.sleep(3000);
+				SmartwatchesPageActions.DeviceSelect("Random Device");
+				Screenshots.captureScreenshot();
 			}
 			Screenshots.captureScreenshot();
 		} catch (Exception e) {

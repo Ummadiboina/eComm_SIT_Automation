@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 
 import GlobalActions.*;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -25,7 +27,7 @@ public class FreeSimDeliveryPageActions extends Environment {
 	private static CharSequence Firstname;
 	private static CharSequence Surname;
 
-	public static void FreeSimAboutYou(String Firstname, String Surname) throws InterruptedException, IOException
+	public static void FreeSimAboutYou(String Firstname, String Surname) throws IOException
 
 	{
 
@@ -35,7 +37,7 @@ public class FreeSimDeliveryPageActions extends Environment {
 		log.debug("Email Id entered:: " +email);
 		DeliveryPage.Email_Address.sendKeys(email);
 		log.debug("Setting the About you options");
-		log.debug("Setting the About you options");
+
 		Select dropdown = new Select(DeliveryPage.Title);
 		dropdown.selectByIndex(2);
 		log.debug("Selected the dropdown Mrs");
@@ -45,23 +47,43 @@ public class FreeSimDeliveryPageActions extends Environment {
 		DeliveryPage.Last_Name.sendKeys(Surname);
 		log.debug("Entered first name and last name as " + Firstname + " " + Surname);
 		DeliveryPage.Contact_Number.sendKeys("07829483426");
-		scrollToAnElement.scrollToElement(DeliveryPage.Email_Address);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		//jse.executeScript("window.scrollBy(0,-200)", "");
+		//Thread.sleep(3000);
 		Screenshots.captureScreenshot();
-		Thread.sleep(4000);
+
 	}
 
-	public static void marketingMessageCheckBox(String CheckBox) throws InterruptedException, IOException {
+	public static void marketingMessageCheckBox(String CheckBox) throws IOException {
 		//Marketing Message validation
 
-		log.debug("Clicking on I agree check box");
-		Thread.sleep(3000);
+
+		//Thread.sleep(3000);
+
+		/*
+		log.debug("Validating marketing message check box exist or not \n");
+		if(driver.findElements(By.xpath("//input[@id='optin']")).size()>0) {
+			String NoMarkettingMessage = DeliveryPage.NoMarkettingMessage.getText();
+			log.debug("No Marketting Message :: " + NoMarkettingMessage);
+
+			if (NoMarkettingMessage.contains("If you check this box, we’ll send you information about your order, but no marketing")) {
+				log.debug("Marketting Message Successfully validated:: ");
+			}
+
+			Thread.sleep(2000);
+			if(CheckBox.equalsIgnoreCase("Yes")){
+
+				log.debug("Clicking on Marketing check box because customer should not be contacted for Marketing Preferences");
+				DeliveryPage.marketCheckBox.click();
+				log.debug("Clicked on Marketing check box because customer should not be contacted for Marketing Preferences");
+			}else{
+				log.debug("Not Clicked on Marketing check box because customer doesnt want to be contacted for Marketing Preferences");
+			}
+
+		}*/
 
 		String NoMarkettingMessage = DeliveryPage.NoMarkettingMessage.getText();
-		log.debug("No Marketting Message :: "+ NoMarkettingMessage);
-
-		if(NoMarkettingMessage.contains("If you check this box, we’ll send you information about your order, but no marketing")){
-			log.debug("Marketting Message Successfully validated:: ");
-		}
+		log.debug("Marketting Message :: " + NoMarkettingMessage+"\n");
 
 		/*log.debug("Clicking on Privacy Policy");
 		pageobjects.DeliveryPage.PrivacyPolicy.click();
@@ -100,15 +122,6 @@ public class FreeSimDeliveryPageActions extends Environment {
 		//driver.switchTo ().window (mainWindowHandle);
 
 		*/
-		Thread.sleep(10000);if(CheckBox.equalsIgnoreCase("Yes")){
-
-			log.debug("Clicking on Marketing check box because customer should not be contacted for Marketing Preferences");
-			DeliveryPage.marketCheckBox.click();
-			log.debug("Clicked on Marketing check box because customer should not be contacted for Marketing Preferences");
-		}else{
-			log.debug("Not Clicked on Marketing check box because customer doesnt want to be contacted for Marketing Preferences");
-		}
-
 
 		Screenshots.captureScreenshot();
 	}
@@ -116,15 +129,14 @@ public class FreeSimDeliveryPageActions extends Environment {
 
 	public static void ClickSendMeMySim() throws InterruptedException, IOException {
 
-		log.debug("Clicking on Send me  my Free Sim page");
-		Thread.sleep(3000);
+		log.debug("Clicking on I agree to the terms and condition check box\n");
+		//Thread.sleep(3000);
 		DeliveryPage.FreeSimTC.click();
+		Thread.sleep(2000);
 		Screenshots.captureScreenshot();
-		Thread.sleep(3000);
+		log.debug("Clicking on the Send me my Sim Button\n");
 		DeliveryPage.SendMeMySim.click();
-		log.debug("Clicking on the Send me my Sim Button");
-
-
+		log.debug("Clicked on the Send me my Sim Button\n");
 	}
 
 }
