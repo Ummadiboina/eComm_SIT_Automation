@@ -114,7 +114,7 @@ public class ConnectedDeviceDetailsPage {
     public static WebElement toggle_play_video;
 
     //pay-monthly TabName
-    @FindBy(how = How.XPATH, using = "//li[@data-tabname='pay-monthly']/a")
+    @FindBy(how = How.XPATH, using = "//li[@data-tabname='pay-monthly']/a | //li[@id='paym']/a")
     public static WebElement pay_monthly_TabName;
 
     //pay-monthly flexible refresh section
@@ -217,7 +217,7 @@ public class ConnectedDeviceDetailsPage {
     public static WebElement calc_msg;
 
     //Total price
-    @FindBy(how = How.XPATH, using = "//div[@class='fr-total-price value']")
+    @FindBy(how = How.XPATH, using = "//div[@class='fr-total-price value'] | //div[contains(@class,'fr-total-cost')]/div[1]")
     public static WebElement totalPrice;
 
     //total price over lay
