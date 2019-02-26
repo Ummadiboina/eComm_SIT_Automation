@@ -72,12 +72,12 @@ public class FreeSimPageActions extends Environment {
 		pageobjects.FreeSimPage.Postcode.sendKeys(Keys.TAB );
 		Thread.sleep(3000);
 		log.debug("Entered the Postcode");
-		scrollToAnElement.scrollToElement(pageobjects.FreeSimPage.Housename);
+		//scrollToAnElement.scrollToElement(pageobjects.FreeSimPage.Housename);
 		Screenshots.captureScreenshot();
 	}
 
 	public static void AboutYouSection(String Firstname, String Lastname, String Contact_number)
-			throws InterruptedException, IOException {
+			throws IOException {
 
 		pageobjects.FreeSimPage.Email_id.sendKeys(RandomEmailAddressCreation.RandomEmail());
 		log.debug("Entered the mail id");

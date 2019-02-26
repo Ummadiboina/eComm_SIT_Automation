@@ -24,5 +24,5 @@ Feature:13_CFA_MBB_SIMO_MoreThanOneAddressMatching_PostCode_Then_Customer_Should
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Contract  | postcode | HouseNumber | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | B1  | B2     | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | 12 Months | SL11ER   |             | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £60       | Not | Select | Not | Not | Enabled    | Connected  | No          | No       |
+      | Contract | postcode | HouseNumber | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | B1  | B2     | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | 30 Days  | SL11ER   |             | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £60       | Not | Select | Not | Not | Enabled    | Connected  | No          | No       |

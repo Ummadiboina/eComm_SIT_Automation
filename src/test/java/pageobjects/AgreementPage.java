@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 
 public class AgreementPage {
 
-    @FindBy(how = How.XPATH, using = "//*[@id='affordabilityInformationSection']//*[@id='affordability-terms-declaration']")
+    @FindBy(how = How.XPATH, using = "//*[@id='affordabilityInformationSection']//*[@id='affordability-terms-declaration1']")
     public static WebElement affordabilityCheck1;
 
     @FindBy(how = How.XPATH, using = "//*[@id='affordabilityInformationSection']//*[@id='affordability-terms-declaration2']")
