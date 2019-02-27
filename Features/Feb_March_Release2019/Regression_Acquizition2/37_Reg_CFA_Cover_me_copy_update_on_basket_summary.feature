@@ -55,4 +55,4 @@ Feature: 37_Reg_CFA_Cover_me_copy_update_on_basket_summary
     #And pdf content
     Examples:
       | tabletname         | color      | capacity | Status   | handset | BSCstatus | BillCap   | CapAmount | Firstname | Surname | Username     | consumer | B1  | B2     | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPad 9.7 inch 2018 | Space Grey | 32GB     | In Stock | Samsung | Enabled   | CapMyBill | £60       | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | iPad Pro 10.5 inch | Space Grey | 256GB    | In Stock | Samsung | Enabled   | CapMyBill | £60       | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

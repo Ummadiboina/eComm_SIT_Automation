@@ -15,4 +15,4 @@ Feature: 133_FR_UpFront_AFU_PAYM_Dongle_payByCard
 
     Examples:
       | user        | Device | Tariffs | upFront | term | data | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07568410342 | dongle | Refresh | max     | avg  | avg  | Enabled   | £100          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 07568418412 | dongle | Refresh | max     | avg  | avg  | Enabled   | £100          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

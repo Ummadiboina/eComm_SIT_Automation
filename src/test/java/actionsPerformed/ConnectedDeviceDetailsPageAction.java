@@ -738,7 +738,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                     String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, upfrentSize-3);
                     Thread.sleep(2000);
 
-                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
+                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")).size() <= 0) {
                         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_Upfrent);
                     }
 
@@ -769,13 +769,14 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                     String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, upfrentSize-3);
                     Thread.sleep(2000);
 
-                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
+                    //if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
+                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() <= 0) {
                         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_Upfrent);
                     }
 
                     //if (maxValUpfrnt.contains(upFrntVal) && ConnectedDeviceDetailsPage.maxIcon_Upfrent_disiabled.isDisplayed()) {
 
-                    if (maxValUpfrnt.contains(upFrntVal) && (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() >0)) {
+                    if (maxValUpfrnt.contains(upFrntVal) && (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() >0)) {
                         log.info("the Upfront cost is changes to maximum - " + ConnectedDeviceDetailsPage.maxVal_Upfrent.getText());
                         b = true;
                         break;
@@ -789,17 +790,17 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
 
             if (upFront.equalsIgnoreCase("avg")) {
-                if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() > 0) {
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")).size() > 0) {
                     // CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_Upfrent);
                     CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_Upfrent);
                 }
 
-                if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() > 0) {
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() > 0) {
                     // CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_Upfrent);
                     CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_Upfrent);
                 }
 
-                if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0 && driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'min-icon disable')]")).size() <= 0 && driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")).size() <= 0) {
                     log.info("the Upfront cost is changes to average  - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
                     log.info("the Upfront cost is changes to average - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
                 } else {
@@ -819,7 +820,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                     String str = st.nextToken();
                     String termValue = ConnectedDeviceDetailsPage.termVal.getText();
 
-                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
+                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")).size() <= 0) {
                         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_term);
                     }
                     if (termValue.equalsIgnoreCase(str) && ConnectedDeviceDetailsPage.minIcon_term_disable.isDisplayed()) {
@@ -845,7 +846,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                     String str = st.nextToken();
                     String termValue = ConnectedDeviceDetailsPage.termVal.getText();
 
-                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
+                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() <= 0) {
                         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_term);
                     }
                     if (termValue.equalsIgnoreCase(str) && ConnectedDeviceDetailsPage.maxIcon_term_Disable.isDisplayed()) {
@@ -861,14 +862,14 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             }
 
             if (term.equalsIgnoreCase("avg")) {
-                if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() > 0) {
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")).size() > 0) {
                     CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_term);
                 }
-                if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() > 0) {
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() > 0) {
                     CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_term);
                 }
 
-                if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0 && driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() <= 0 && driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")).size() <= 0) {
                     log.info("the term cost is changes to average  - " + ConnectedDeviceDetailsPage.minVal_term.getText());
                     log.info("the term cost is changes to average - " + ConnectedDeviceDetailsPage.maxVal_term.getText());
                 } else {
@@ -889,7 +890,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                 String sst = st.nextToken();
                 String dataValue = ConnectedDeviceDetailsPage.dataVal.getText();
 
-                if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")).size() <= 0) {
                     CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_data);
                 }
                 if (dataValue.equalsIgnoreCase(sst) && ConnectedDeviceDetailsPage.minIcon_data_disable.isDisplayed()) {
@@ -914,7 +915,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                 String sst1 = st.nextToken();
                 String dataValue = ConnectedDeviceDetailsPage.dataVal.getText();
 
-                if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() <= 0) {
                     CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_data);
                 }
                 if (dataValue.equalsIgnoreCase(sst1) && ConnectedDeviceDetailsPage.maxIcon_data_Disable.isDisplayed()) {
@@ -931,15 +932,15 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
 
         if (data.equalsIgnoreCase("avg")) {
-            if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() > 0) {
+            if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")).size() > 0) {
                 CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_data);
             }
 
-            if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() > 0) {
+            if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() > 0) {
                 CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_data);
             }
 
-            if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0 && driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
+            if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() <= 0 && driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'max-icon disable')]")).size() <= 0) {
                 log.info("the Dat cost is changes to average  - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
                 log.info("the Data cost is changes to average - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
             } else {

@@ -43,5 +43,5 @@ Feature: 66_Reg_CFU_PayMSimOnly
 
 
     Examples:
-      | Contract | GiftBlock  | username     | BSCstatus | BillCap   | CapAmount | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 30 Days  | Configured | 15ju24574562 | Enabled   | CapMyBill | £30       | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | Contract | GiftBlock  | username               | BSCstatus | BillCap   | CapAmount | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 30 Days  | Configured | inavl0wx_858797@o2.com | Enabled   | CapMyBill | £30       | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

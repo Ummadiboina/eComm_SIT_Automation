@@ -59,17 +59,17 @@ public class DeliveryPageActions extends Environment {
             Thread.sleep(3000);
             Screenshots.captureScreenshot();*/
 
-            if(driver.findElement(By.xpath("//div[@id='deliveryAddresses']")).isDisplayed()) {
-                if (driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li")).size() > 0) {
-                    List<WebElement> addresses = driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li"));
+            if(driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
+                    List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
                     log.debug("The size of matching address: " + addresses.size());
 
-                    if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer']")).size() > 0) {
-                        driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer']")).click();
+                    if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
+                        driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
                         Thread.sleep(3000);
                         Screenshots.captureScreenshot();
 
-                        WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1]"));
+                        WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
                         String selectedAddress = addressElement.getText();
 
                         Thread.sleep(3000);

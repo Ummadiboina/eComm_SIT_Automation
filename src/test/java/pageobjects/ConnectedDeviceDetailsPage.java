@@ -125,7 +125,7 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]")
     public static WebElement minIcon_Upfrent;
 
-    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")
     public static WebElement minIcon_Upfrent_disiabled;
 
     @FindAll({@FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]")})
@@ -159,7 +159,7 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]")
     public static WebElement minIcon_term;
 
-    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")
     public static WebElement minIcon_term_disable;
 
 
@@ -171,7 +171,7 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]")
     public static WebElement maxIcon_term;
 
-    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")
     public static WebElement maxIcon_term_Disable;
 
     //max - Value term
@@ -186,7 +186,7 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]")
     public static WebElement minIcon_data;
 
-    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")
     public static WebElement minIcon_data_disable;
 
     //min - Val of tariff
@@ -197,7 +197,7 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]")
     public static WebElement maxIcon_data;
 
-    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")
     public static WebElement maxIcon_data_Disable;
 
     //max - Value tariff
