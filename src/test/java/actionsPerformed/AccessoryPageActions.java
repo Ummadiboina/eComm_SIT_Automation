@@ -110,7 +110,7 @@ public class AccessoryPageActions extends Environment {
 
 	public static void SelectAnyAccessory(String elementName) throws IOException, InterruptedException {
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		if(driver.findElements(By.xpath("//p[contains(text(),'Explore our range of cases, screen protectors, headphones and more.')]/following-sibling::p")).size() > 0){
 			WebElement ele = driver.findElement(By.xpath("//p[contains(text(),'Explore our range of cases, screen protectors, headphones and more.')]/following-sibling::p/../.."));
 			JavascriptExecutor executor = (JavascriptExecutor) driver;

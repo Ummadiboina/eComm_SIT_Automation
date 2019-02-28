@@ -25,4 +25,4 @@ Feature:87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSumm
 
     Examples:
       | Device             | Firstname | Surname | Username     | BSCstatus | PaymentSectionName | AgreementSectionName | tariff        | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPad 9.7 inch 2018 | TEST      | ACCEPTA | TEST ACCEPTA | Disabled  | Payment Page       | Order Summary        | 1GB Preloaded | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | iPad Pro 10.5 inch | TEST      | ACCEPTA | TEST ACCEPTA | Disabled  | Payment Page       | Order Summary        | 1GB Preloaded | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

@@ -456,8 +456,8 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("Tariff has been selected");
         }else{
 
-            log.debug("Failed to select the Tariff in the Extras&Tariff page");
-            Assert.fail("Failed to select the Tariff in the Extras&Tariff page");
+            log.debug("Failed to select the Tariff in the Tariff&Extras page");
+            Assert.fail("Failed to select the Tariff in the Tariff&Extras page");
         }
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,100)", "");

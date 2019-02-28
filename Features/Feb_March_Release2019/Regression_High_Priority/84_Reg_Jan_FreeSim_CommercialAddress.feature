@@ -12,5 +12,5 @@ Feature: 84_Reg_Jan_FreeSim_CommercialAddress
     Then respective <error> message displayed in address look up section for using commercial address
 
     Examples:
-      | Surfer_Type  | sim_type | PostCode | houseNumber | error                                                                 |
-      | Light surfer | iPad     | SL1 1XW  | 10          | Looking for a business address? Please use your home address instead. |
+      | Surfer_Type  | sim_type | PostCode | houseNumber | error                                                                |
+      | Light surfer | iPad     | SL1 1XW  | 10          | Looking for a business address? Please use your home address instead |
