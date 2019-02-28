@@ -3279,8 +3279,8 @@ public class E2EOrderPlaced_Steps {
      * #########################################################################
      * #########
      */
-    @And("^Choose HomeDelivery delivery address and delivery time$")
-    public void HomeDelivery_Address() throws Throwable {
+    @And("^Choose ([^\"]*) delivery address and delivery time$")
+    public void HomeDelivery_Address(String add) throws Throwable {
         log.debug("Choosing available delivery address");
         Thread.sleep(5000);
     }
@@ -5826,11 +5826,11 @@ public class E2EOrderPlaced_Steps {
             Screenshots.captureScreenshot();
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
-            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
+            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[3]")));
             Screenshots.captureScreenshot();
             Thread.sleep(4000);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[3]")));
             Thread.sleep(10000);
 
         } catch (Exception e) {
@@ -7043,7 +7043,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             Thread.sleep(5000);
             UpgradeCustomerPageActions.selectTariffFromRecommendedSection();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

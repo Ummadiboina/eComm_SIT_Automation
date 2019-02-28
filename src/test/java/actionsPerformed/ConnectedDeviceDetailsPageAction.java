@@ -344,7 +344,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
     public static void colorSelectOfDeviceDropDown(String color) throws Exception {
         // TODO Auto-generated method stub
-        //Thread.sleep(5000);
+        Thread.sleep(5000);
 
         //ConnectedDeviceDetailsPage.ColorDropDown.click();
         //WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + color + "'])[1]"));

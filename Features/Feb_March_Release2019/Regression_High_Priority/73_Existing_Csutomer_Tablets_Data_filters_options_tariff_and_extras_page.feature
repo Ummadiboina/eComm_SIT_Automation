@@ -43,4 +43,4 @@ Feature: 73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_pag
 
     Examples:
       | tabletname         | color      | Capacity | filtername | BSCstatus | BillCap   | CapAmount | sortoption                 | username                      | password | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPad 9.7 inch 2018 | Space Grey | 512GB    | high       | Enabled   | CapMyBill | £60       | Monthly data (Low to High) | acce09271344@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | iPad Pro 10.5 inch | Space Grey | 512GB    | high       | Enabled   | CapMyBill | £60       | Monthly data (Low to High) | acce09271344@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

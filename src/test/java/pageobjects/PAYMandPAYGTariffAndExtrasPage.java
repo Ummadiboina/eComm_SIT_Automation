@@ -24,7 +24,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Below is for Selecting Any Tariff
 
-	@FindBy(how = How.XPATH, using = ("(//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1] | (//button[@class='btn buyNowBtn ng-pristine ng-valid'])[1]"))
 	public static WebElement SelectAnyTariff;
 
 	@FindBy(how = How.XPATH, using = ("(//button[@id='callToAction'])[1]"))
