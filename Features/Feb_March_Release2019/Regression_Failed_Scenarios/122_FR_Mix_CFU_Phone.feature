@@ -1,7 +1,7 @@
-Feature: 120_FR_Mix_CFU_Phone
+Feature: 122_FR_Mix_CFU_Phone
 
   @Web
-  Scenario Outline: 120_FR_Mix_CFU_Phone
+  Scenario Outline: 10_1_FR_Mix_CFU_Phone
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     #And Navigate to upgrade phone
@@ -11,7 +11,7 @@ Feature: 120_FR_Mix_CFU_Phone
     And I choose PayM <handset>
     And Build your plan with <upFront> <term> and <data>
     #And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
-    And I Land on the basket page by clicking on Add to Basket button
+    And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
@@ -24,5 +24,5 @@ Feature: 120_FR_Mix_CFU_Phone
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | password | Firstname | Surname | BSCstatus | Username     | Action    | handset      | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | upFront | term | data | PreSelected | KeyEvent |
-      | 01fe07134361@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | TEST ACCEPTA | enterCode | Galaxy Note9 | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | max     | max  | max  | No          | No       |
+      | username         | password | handset      | upFront | term | data | Action | Firstname | Surname | Username     | filtername | BSCstatus | sortoption                 | tabletname | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | cr7086e1@usr.com | test123  | Galaxy Note9 | avg     | avg  | avg  | skip   | TEST      | ACCEPTA | TEST ACCEPTA | low        | Disabled  | Monthly data (High to low) | A3 10      | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

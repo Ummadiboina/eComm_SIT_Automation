@@ -837,15 +837,19 @@ public class DeliveryPageActions extends Environment {
 
 
     public static void ClickOnUseDifferentAddress() throws InterruptedException, IOException {
+        Thread.sleep(4000);
         List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//a[normalize-space()='Use a different delivery address'] | //a[normalize-space()='Use a different address']"));
         if (DiffAddressLink.size() > 0) {
 
-            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//h2[normalize-space()='Home address']")));
-            Thread.sleep(2000);
+            //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//h2[normalize-space()='Home address']")));
+            //Thread.sleep(2000);
             Screenshots.captureScreenshot();
             WebElement element = pageobjects.DeliveryPage.DeliveryPageUseDiffAddressLink;
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", element);
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
+            executor.executeScript("window.scrollBy(0,150)", "");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
 
