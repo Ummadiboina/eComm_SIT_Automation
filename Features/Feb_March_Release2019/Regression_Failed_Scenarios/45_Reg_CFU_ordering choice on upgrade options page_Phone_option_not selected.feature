@@ -1,11 +1,7 @@
-Feature: 16_CFU_PAYM_Phone_OneAddressMatching_PostCode_And_matchingAddress_Should_AutoSelected
-
-  This Scenario ensures that when an upgrade  Customer selects 'PAYM Phones' and lands on 'Payment page' and clicks on
-  'Use a different address link' for billing address and enters a postal code, if only one address is matching
-  corresponding to entered postcode then it should be auto selected
+Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not selected
 
   @Web
-  Scenario Outline: 16_CFU_PAYM_Phone_OneAddressMatching_PostCode_And_matchingAddress_Should_AutoSelected
+  Scenario Outline: This test ensures that customer is given a choice not to take a sim when the customer is on a phones upgrade journey
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     #And Navigate to upgrade phone
@@ -32,16 +28,16 @@ Feature: 16_CFU_PAYM_Phone_OneAddressMatching_PostCode_And_matchingAddress_Shoul
     And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained
     And click on "go to checkout" button
     And perform <Action> in OTAC page
+    #And Click on the 'Continue button' in delivery page
+    #And Is this order for You or Someone else <consumer> when GDPR is <status>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
-    And Click on 'Use a different delivery address'link
-    And enter <HouseNumber> and <PostCode> in Delivery section to set different delivery address
-    #And Select the Home address
-    And Enter cardDetails in payment page input <Username> and click 'Continue on next step'
+    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | password | HouseNumber | PostCode | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | till27196233@stf.ref.o2.co.uk | test123  |             | SL33FP   | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Select | Select | Select | Not | Enabled    | Connected  | No          | No       |
+      | username                                                 | password | handset  | BSCstatus | BillCap       | CapAmount | Username     | Action | tariff                   | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | sittester-c7677de9-f3e8-441f-9929-98aa74c8a994@gmail.com | test123  | iPhone X | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

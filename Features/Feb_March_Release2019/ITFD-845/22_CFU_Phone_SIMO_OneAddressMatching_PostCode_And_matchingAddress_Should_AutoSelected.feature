@@ -18,7 +18,7 @@ Feature: 22_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Shoul
     And copy text SIM delivery required or not is displayed
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And Select 'I’ll keep my current sim' option
+    And Select 'I need a new sim' option
     And Click on 'Use a different delivery address'link
     And enter <HouseNumber> and <PostCode> in Delivery section to set different delivery address
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
@@ -29,4 +29,4 @@ Feature: 22_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Shoul
 
     Examples:
       | username     | BSCstatus | HouseNumber | PostCode | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | 15ju81666468 | Enabled   |             | SL33FP   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | No          | No       |
+      | 15ju81666468 | Enabled   |             | SL33FP   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |

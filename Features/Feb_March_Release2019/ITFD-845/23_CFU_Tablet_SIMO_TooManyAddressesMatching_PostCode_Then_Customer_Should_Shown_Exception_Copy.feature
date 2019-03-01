@@ -18,7 +18,7 @@ Feature: 23_CFU_Tablet_SIMO_TooManyAddressesMatching_PostCode_Then_Customer_Shou
     And copy text SIM delivery required or not is displayed
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And Select 'I’ll keep my current sim' option
+    And Select 'I need a new sim' option
     And Click on 'Use a different delivery address'link
     And enter <HouseNumber> and <PostCode> in Delivery section to set different delivery address
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page

@@ -650,7 +650,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 			log.debug("Free Insurance is autoselected");
 		} else {
-			//Assert.fail("Free Insurance not autoselected");
+			Assert.fail("Free Insurance not autoselected");
 			log.debug("Remove button is not present");
 		}
 		/*

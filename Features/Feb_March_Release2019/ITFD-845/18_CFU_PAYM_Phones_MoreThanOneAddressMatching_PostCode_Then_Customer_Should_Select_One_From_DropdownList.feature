@@ -44,4 +44,4 @@ Feature: 18_CFU_PAYM_Phones_MoreThanOneAddressMatching_PostCode_Then_Customer_Sh
 
     Examples:
       | username                      | password | HouseNumber | PostCode | handset  | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | till27196233@stf.ref.o2.co.uk | test123  |             | SL11ER   | iPhone X | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Select | Select | Select | Not | Enabled    | Connected  | No          | No       |
+      | till88406930@stf.ref.o2.co.uk | test123  |             | SL11ER   | iPhone X | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Select | Select | Select | Not | Enabled    | Connected  | No          | No       |
