@@ -358,7 +358,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             for (int i = 1; i <= eleColor.size(); i++) {
                 colorName = driver.findElement(By.xpath("//ul[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']/li[" + i + "]")).getText();
                 Thread.sleep(2000);
-                if (colorName.contains(color)) {
+                if (colorName.equals(color)) {
                     elementColor = driver.findElement(By.xpath("//ul[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']/li[" + i + "]"));
                     break;
                 }

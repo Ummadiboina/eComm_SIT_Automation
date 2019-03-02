@@ -635,6 +635,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void verifyFreeInsuranceAutoSelected() throws Exception {
 		log.debug("verifyFreeInsuranceAutoSelected");
 
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,-600)", "");
+		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
+
 		WebElement FirstInsurancePrice = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div/div[3]/p[@class='price'])[1]"));
 		if (FirstInsurancePrice.getText().contains("0.00")) {
 			log.debug("Free insurance is present");
@@ -688,6 +693,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		TempCheapInsurance = FirstInsurancePrice;
 		String ActualAddInsuranceText = null;
 
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,400)", "");
+		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
+
 		if (TempCheapInsurance.equals("£0.00")) {
 			ExpAddInsuranceText = "Add now";
 			ActualAddInsuranceText = driver.findElement(By.xpath("//input[@class='button secondary']"))
@@ -738,7 +748,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,600)", "");
+		jse.executeScript("window.scrollBy(0,700)", "");
+		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
 	}
 

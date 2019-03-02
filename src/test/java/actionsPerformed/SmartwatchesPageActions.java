@@ -126,15 +126,21 @@ public class SmartwatchesPageActions extends Environment {
 			// Below will give status like in stock / out of stock etc
 			Thread.sleep(5000);
 
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,100)", "");
+			Thread.sleep(3000);
+			Screenshots.captureScreenshot();
+
 			//String status = driver.findElement(By.className("status-info")).getText();
-			String status = driver.findElement(By.xpath("//p[@class='delivery-information']/span[1]")).getText();
+			String status = driver.findElement(By.xpath("//p[@class='delivery-information']/span[1] | //div[@class='stockStatus']")).getText();
 
 			log.debug("Delivery Information status:"+status);
 			Thread.sleep(3000);
 			if (status.contains("In Stock")) {
 
 				if (driver.findElements(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).size() > 0) {
-					NonConnectedDeviceDetailsPage.QuantityDropdown.click();
+					//NonConnectedDeviceDetailsPage.QuantityDropdown.click();
+					driver.findElement(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).click();
 					Thread.sleep(3000);
 					Screenshots.captureScreenshot();
 
