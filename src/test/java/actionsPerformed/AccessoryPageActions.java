@@ -320,17 +320,19 @@ public class AccessoryPageActions extends Environment {
 
 		try {
 			// Below will give status like in stock / out of stock etc
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 			UserSpecifiedAccessoryLimit = Integer.parseInt(Limit);
 			//String status = driver.findElement(By.xpath("//span[@class='status-info ng-binding confirm']")).getText();
 			String status = driver.findElement(By.xpath("//div[contains(@class,'stockStatus')]")).getText();
+
 			Thread.sleep(2000);
 			log.debug("The device stock status is :"+status);
 
 			if (status.contains("In Stock")) {
 
 				if (driver.findElements(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).size() > 0) {
-					NonConnectedDeviceDetailsPage.QuantityDropdown.click();
+					//NonConnectedDeviceDetailsPage.QuantityDropdown.click();
+					driver.findElement(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).click();
 					Thread.sleep(3000);
 					Screenshots.captureScreenshot();
 
@@ -832,7 +834,8 @@ public class AccessoryPageActions extends Environment {
 			if (status.contains("In Stock")) {
 
 				if (driver.findElements(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).size() > 0) {
-					NonConnectedDeviceDetailsPage.QuantityDropdown.click();
+					//NonConnectedDeviceDetailsPage.QuantityDropdown.click();
+					driver.findElement(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).click();
 					Thread.sleep(3000);
 					Screenshots.captureScreenshot();
 

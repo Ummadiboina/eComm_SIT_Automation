@@ -153,7 +153,8 @@ public class FitnessTrackerPageActions extends Environment {
                 if (status.contains("In Stock")) {
 
                     if (driver.findElements(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).size() > 0) {
-                        NonConnectedDeviceDetailsPage.QuantityDropdown.click();
+                        //NonConnectedDeviceDetailsPage.QuantityDropdown.click();
+                        driver.findElement(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).click();
                         Thread.sleep(3000);
                         Screenshots.captureScreenshot();
 

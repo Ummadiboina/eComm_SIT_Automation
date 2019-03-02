@@ -12,7 +12,6 @@ Feature: 35_Reg_CFA_Basket page cross sell insurance
     And Navigate to device details page for color selection
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
-   # And select a color
     And select <color> color of the connected device
     And Navigate to device details page
     And select a <tariff> which has free insurance
@@ -32,6 +31,7 @@ Feature: 35_Reg_CFA_Basket page cross sell insurance
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     When order confirmation is displayed
+    Then verify cover me is present in  pdf download
     #Then Choose <consumer> <GDPRstatus> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 

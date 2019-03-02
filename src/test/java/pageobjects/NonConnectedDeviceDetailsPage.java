@@ -15,7 +15,7 @@ public class NonConnectedDeviceDetailsPage {
 	// the element not found issue was mainly because not giving proper element
 	// idenfier, had declared ID in xpath defining format
 
-	@FindBy(how = How.XPATH, using = "//select[@class='accessory-option ng-pristine ng-valid'] | //span[@id='accyQuantitySelectBoxItArrowContainer']")
+	@FindBy(how = How.XPATH, using = "//span[@id='accyQuantitySelectBoxItArrowContainer']")
 	public static WebElement QuantityDropdown;
 
 	@FindBy(how = How.XPATH, using = "//a[@class='close-btn']")
