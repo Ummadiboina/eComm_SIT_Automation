@@ -44,4 +44,4 @@ Feature: 16_CFU_PAYM_Phone_OneAddressMatching_PostCode_And_matchingAddress_Shoul
 
     Examples:
       | username                      | password | HouseNumber | PostCode | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | till27196233@stf.ref.o2.co.uk | test123  |             | SL33FP   | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Select | Select | Select | Not | Enabled    | Connected  | Yes         | No       |
+      | till27196233@stf.ref.o2.co.uk | test123  |             | SL33FP   | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Select | Select | Select | Not | Enabled    | Connected  | No          | No       |

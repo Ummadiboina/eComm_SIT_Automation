@@ -441,7 +441,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void selectTariff(String Tariff) throws IOException, InterruptedException {
         log.debug("selecting Tariff");
-        Thread.sleep(4000);
+        Thread.sleep(10000);
         /*((JavascriptExecutor) driver).executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs_new);
         Thread.sleep(4000);*/
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
