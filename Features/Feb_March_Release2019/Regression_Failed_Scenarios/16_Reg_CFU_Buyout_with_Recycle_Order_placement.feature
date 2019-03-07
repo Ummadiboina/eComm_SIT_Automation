@@ -12,7 +12,7 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     #And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed
     And click on 'Take offer and upgrade'button
     And Click on 'Get Started' CTA
-    And Click on Tablet section in upgrade options page
+    #And Click on Tablet section in upgrade options page
     And Select a <handset> device from Recommended devices section
     And Click on device 'Confirm CTA'
     #Then Select a Tariff
@@ -50,6 +50,6 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset       | Delivery | Payment | filtername | sortoption                 | username                      | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone Xs Max | Delivery | Payment | low        | Monthly data (Low to High) | 12oc58958939@stf.ref.o2.co.uk | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
+      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset       | Delivery | Payment | filtername | sortoption                 | username           | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone Xs Max | Delivery | Payment | low        | Monthly data (Low to High) | dptest@yopmail.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
 

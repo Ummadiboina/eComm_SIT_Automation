@@ -456,9 +456,13 @@ public class DeliveryPageActions extends Environment {
 
             if(pageobjects.DeliveryPage.getNewNumberTab.isDisplayed()){
                 pageobjects.DeliveryPage.getNewNumberTab.click();
-                Thread.sleep(3000);
+                Thread.sleep(4000);
             }
         }
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,100)", "");
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
         Thread.sleep(3000);
         //pageobjects.DeliveryPage.SelectAcct.click();
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SelectAcct);

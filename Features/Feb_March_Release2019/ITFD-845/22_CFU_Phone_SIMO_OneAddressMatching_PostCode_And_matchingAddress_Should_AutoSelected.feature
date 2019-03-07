@@ -29,4 +29,4 @@ Feature: 22_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Shoul
 
     Examples:
       | username     | BSCstatus | HouseNumber | PostCode | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | 15ju81666468 | Enabled   |             | SL33FP   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |
+      | 14ju17712307 | Enabled   |             | SL33FP   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |

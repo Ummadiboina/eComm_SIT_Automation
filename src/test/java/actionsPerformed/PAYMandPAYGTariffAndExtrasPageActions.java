@@ -113,9 +113,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				Screenshots.captureScreenshot();
 				Thread.sleep(3000);
 
-				if (driver.findElements(By.xpath("//span[text()='" + tariffAmt + "']")).size() >= 1) {
+				if (driver.findElements(By.xpath("(//span[text()='" + tariffAmt + "'])[1]")).size() >= 1) {
 
-					String textStr1 = driver.findElement(By.xpath("//span[normalize-space()='" + tariffAmt + "']/../../../div/h3")).getText();
+					String textStr1 = driver.findElement(By.xpath("(//span[normalize-space()='" + tariffAmt + "']/../../../div/h3)[1]")).getText();
 
 					Thread.sleep(3000);
 					if (textStr1.contains(dataRolloverValue)) {
@@ -126,7 +126,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						log.debug("Data value " + dataRolloverValue + " for " + tariffAmt + " is not displayed");
 					}
 
-					String textStr2 = driver.findElement(By.xpath("//span[normalize-space()='" + tariffAmt + "']/../../../ul/li[1]/p")).getText();
+					String textStr2 = driver.findElement(By.xpath("(//span[normalize-space()='" + tariffAmt + "']/../../../ul/li[1]/p)[1]")).getText();
 					Thread.sleep(3000);
 					if (textStr2.contains("Includes data rollover")) {
 
@@ -136,16 +136,18 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						log.debug("Data Roll over copy text 'Includes data rollover' is not displayed");
 					}
 
-					String textStr3 = driver.findElement(By.xpath("//span[normalize-space()='" + tariffAmt + "']/../../../div[2]/div/p")).getText();
+					if(driver.findElements(By.xpath("(//span[normalize-space()='" + tariffAmt + "']/../../../div[2]/div/p)[1]")).size()>0) {
+						String textStr3 = driver.findElement(By.xpath("(//span[normalize-space()='" + tariffAmt + "']/../../../div[2]/div/p)[1]")).getText();
 
-					String expectedTxt = "Includes data rollover of up to " + dataRolloverValue;
-					Thread.sleep(3000);
-					if (textStr3.contains(expectedTxt)) {
+						String expectedTxt = "Includes data rollover of up to " + dataRolloverValue;
+						Thread.sleep(3000);
+						if (textStr3.contains(expectedTxt)) {
 
-						log.debug("Tariff tile included Data Roll over ribbon Includes data rollover of up to " + dataRolloverValue);
-					} else {
+							log.debug("Tariff tile included Data Roll over ribbon Includes data rollover of up to " + dataRolloverValue);
+						} else {
 
-						log.debug("Tariff tile included Data Roll over ribbon 'Includes data rollover of up to'");
+							log.debug("Tariff tile included Data Roll over ribbon 'Includes data rollover of up to'");
+						}
 					}
 
 					List<WebElement> plnList = driver.findElements(By.xpath("//span[text()='" + tariffAmt + "']/../../../ul/li"));

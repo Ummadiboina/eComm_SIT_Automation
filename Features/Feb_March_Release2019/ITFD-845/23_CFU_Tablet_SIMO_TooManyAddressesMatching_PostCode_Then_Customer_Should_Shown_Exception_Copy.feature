@@ -28,5 +28,5 @@ Feature: 23_CFU_Tablet_SIMO_TooManyAddressesMatching_PostCode_Then_Customer_Shou
 
 
     Examples:
-      | username     | BSCstatus | HouseNumber | PostCode | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | 15ju81666468 | Enabled   |             | LS12 1DF | CapMyBill | £60       | test123  | Select | Not | Select | Not | Enabled    | Connected  | No          | No       |
+      | username               | BSCstatus | HouseNumber | PostCode | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | inavl0ww_820736@o2.com | Enabled   |             | LS12 1DF | CapMyBill | £60       | test123  | Select | Not | Select | Not | Enabled    | Connected  | No          | No       |

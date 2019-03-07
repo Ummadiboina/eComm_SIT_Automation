@@ -40,4 +40,4 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
 
     Examples:
       | username                                                 | password | handset  | BSCstatus | BillCap       | CapAmount | Username     | Action | tariff                   | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | sittester-c7677de9-f3e8-441f-9929-98aa74c8a994@gmail.com | test123  | iPhone X | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | sittester-c7677de9-f3e8-441f-9929-98aa74c8a994@gmail.com | test123  | iPhone X | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

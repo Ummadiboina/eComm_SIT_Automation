@@ -9,6 +9,7 @@ Feature: 98_Reg_June_CFU_Validate_BasketPage_For_SimoTariff_With_Active_Vouchera
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
     #And I click on 'Sim only Tariff' tab
+    And click on the 'Tablets' button
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     #And Select ribboned tariff <tariff> in upgrade journey
     #And I Land on the Plan included basket page and choose home delivery option

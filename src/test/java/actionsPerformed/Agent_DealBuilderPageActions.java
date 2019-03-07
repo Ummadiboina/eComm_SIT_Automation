@@ -395,8 +395,9 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void checkout() throws InterruptedException, IOException {
         Thread.sleep(5000);
         log.debug("Clicking on Checkout CTA\n");
-        Agent_DealBuilderPage.Checkout.click();
-        log.debug("Clicked on Checkout ");
+        //Agent_DealBuilderPage.Checkout.click();
+        driver.findElement(By.xpath("//input[@id='startCheckoutFromPrivateBasketButton']")).click();
+        log.debug("Clicked on Checkout \n");
 
         Screenshots.captureScreenshot();
     }
@@ -770,7 +771,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         if(storeDetails.contains("Basket currently Available Today")){
             log.debug("Click and collect now details contains :: Basket currently Available Today");
         }
-
+        Thread.sleep(2000);
     }
 
     public static void HandsetTariffCombinationforPhones() {
