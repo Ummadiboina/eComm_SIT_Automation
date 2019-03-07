@@ -91,10 +91,10 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         int cnt = 0;
 
         for(int i=1;i<=collectionDetails.size();i++){
-            String collectionDate = driver.findElement(By.xpath("(//div[@class='collectFrom']["+i+"])/p")).getText();
+            String collectionDate = driver.findElement(By.xpath("(//div[@class='collectFrom'])["+i+"]/p")).getText();
             Thread.sleep(3000);
             log.debug("Collection Date: "+collectionDate);
-            if (collectionDate.equalsIgnoreCase("Today")) {
+            if (collectionDate.contains("Today")) {
                 log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDate + "\n");
                 driver.findElement(By.xpath("(//a[normalize-space()='Collect from this store'])["+i+"]")).click();
                 log.debug("Store selected for collection Today\n");
@@ -469,11 +469,11 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Thread.sleep(3000);
         log.debug("Stock status is :" + preoder);
         if (preoder.contains("Pre") || preoder.contains("Pre-order") || preoder.contains("Order by midnight")) {
-            log.debug("Device is Pre Order Device");
+            log.debug("Device is Pre Order Device, status is:"+preoder);
 
         } else {
-            log.debug("Device is not Pre Order Device");
-            Assert.fail("Device is not Pre Order Device");
+            log.debug("Device is not Pre Order Device:"+preoder);
+            Assert.fail("Device is not Pre Order Device:"+preoder);
         }
         Screenshots.captureScreenshot();
     }

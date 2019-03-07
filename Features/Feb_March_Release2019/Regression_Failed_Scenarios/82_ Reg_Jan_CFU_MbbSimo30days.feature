@@ -1,6 +1,6 @@
 Feature: 82_ Reg_Jan_CFU_MbbSimo30days
 
-  This scenario ensures that an upgrade customer is able to select a 12 months tablets tariff under the simo tab in upgrade options page
+  This scenario ensures that an upgrade customer is able to select a 30days tablets tariff under the simo tab in upgrade options page
 
   @Web
   Scenario Outline: CFU_MbbSimo30days
@@ -42,4 +42,4 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
 
     Examples:
       | Contract | username     | BSCstatus | BillCap       | CapAmount | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 30 Days  | 14ju00298639 | Enabled   | DontCapMyBill | Nill      | test123  | high       | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | 30 Days  | 14ju00298639 | Enabled   | DontCapMyBill | Nill      | test123  | high       | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

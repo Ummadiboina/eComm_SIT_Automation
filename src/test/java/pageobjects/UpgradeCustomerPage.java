@@ -76,13 +76,13 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='header-tool-signin']")
 	public static WebElement HeaderSignin;
 
-	@FindBy(how = How.XPATH, using = "//select[@class='recycle-make ng-pristine ng-valid']")
+	@FindBy(how = How.XPATH, using = "//select[contains(@class,'recycle-make ng-pristine ng-valid')]")
 	public static WebElement Make;
 
-	@FindBy(how = How.XPATH, using = "//select[@class='recycle-model ng-pristine ng-valid']")
+	@FindBy(how = How.XPATH, using = "//select[contains(@class,'recycle-model ng-pristine ng-valid')]")
 	public static WebElement Model;
 
-	@FindBy(how = How.XPATH, using = "//select[@class='recycle-network ng-scope ng-pristine ng-valid']")
+	@FindBy(how = How.XPATH, using = "//select[contains(@class,'recycle-network ng-scope ng-pristine ng-valid')]")
 	public static WebElement Network;
 
 	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Update device')]")

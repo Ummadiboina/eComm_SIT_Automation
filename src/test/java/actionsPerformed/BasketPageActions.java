@@ -174,6 +174,8 @@ public class BasketPageActions extends Environment {
 				//driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 			}
 			Thread.sleep(5000);
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,400)", "");
 			Screenshots.captureScreenshot();
 			log.debug("Queue page is not displayed");
 			WebElement element = pageobjects.BasketPage.checkoutbtn;
@@ -184,6 +186,7 @@ public class BasketPageActions extends Environment {
 			log.debug("Clicked on Checkout button");
 			Thread.sleep(4000);
 		}
+
 		Screenshots.captureScreenshot();
 
 	}

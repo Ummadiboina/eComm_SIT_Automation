@@ -35,7 +35,7 @@ import cucumber.api.CucumberOptions;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//Feb_March_Release2019//Regression_Failed_Scenarios" },
+		features = { "Features//Feb_March_Release2019//FinalRegressionTestCases" },
 		glue = { "steps" },
 		tags = {"@Web"})
 

@@ -111,7 +111,7 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("(//a[normalize-space()='Collect from this store'])[1]"))
 	public static WebElement Collectfromthisstore;
 
-	@FindBy(how = How.XPATH, using = ("(//div[@class='tileContent']/../div)[1]"))
+	@FindBy(how = How.XPATH, using = ("(//div[contains(@class,'tileContent')]/../div)[1]"))
 	public static WebElement firstStore;
 
 	@FindBy(how = How.XPATH, using = ("//div[@class='basket-header-xxl']"))

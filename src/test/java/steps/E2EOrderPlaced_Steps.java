@@ -3086,6 +3086,7 @@ public class E2EOrderPlaced_Steps {
                     Screenshots.captureScreenshot();
 
                     EmailId_CCAcontinue = pageobjects.DeliveryPage.EmailId_CCAcontinue.getAttribute("value");
+                    log.debug("Email id captured ie: "+EmailId_CCAcontinue);
                 }
             }
 
@@ -5826,11 +5827,11 @@ public class E2EOrderPlaced_Steps {
             Screenshots.captureScreenshot();
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
-            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[3]")));
+            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
             Screenshots.captureScreenshot();
             Thread.sleep(4000);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[3]")));
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
             Thread.sleep(10000);
 
         } catch (Exception e) {
