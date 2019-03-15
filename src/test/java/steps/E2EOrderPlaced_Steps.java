@@ -56,7 +56,8 @@ public class E2EOrderPlaced_Steps {
     public static Hashtable selectedElements = new Hashtable();
     static String expPlnList;
     static String EmailId_CCAcontinue="";
-
+    ArrayList<Integer> drupalOriginalDataTariffList = null;
+    ArrayList<Integer> drupalOriginalUpFrontTariffList = null;
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
@@ -11535,5 +11536,253 @@ public class E2EOrderPlaced_Steps {
 
         }
 
+    }
+
+
+    //ITFD-895, April Release new changes Validation by Jamal Khan
+    @And("^Validate OFCOM switching functionality in consumer channel when ofCom status is ([^\"]*) and ([^\"]*) selected$")
+    public void ofCom(String ofComStatus, String deviceMBB) {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ofComSwitching(ofComStatus,deviceMBB);
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM switching functionality in delivery page\n");
+            Assert.fail("Unable to validate OFCOM switching functionality in delivery page\n");
+
+        }
+    }
+
+    //ITFD-895, April Release new changes Validation by Jamal Khan
+    @And("^Validate ([^\"]*) ([^\"]*) and Enter input details ([^\"]*) ([^\"]*) for PAC and STAC code when ofcom status is ([^\"]*)$")
+    public void ofComPacStacCheckValidation(String PacStacCheck, String PacStackRetainCheck, String ofComMobileNum, String PacStacCode, String ofComStatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ofComPacStacCode(PacStacCheck, PacStackRetainCheck, ofComMobileNum, PacStacCode, ofComStatus);
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+            Assert.fail("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+        }
+    }
+
+    //ITFD-895, April Release new changes Validation by Jamal Khan
+    @And("^Validate OFCOM switching input ([^\"]*) and status in Order Confirmation page when Pac and Stac code ([^\"]*) selected when ofcom status is ([^\"]*)$")
+    public void ofComPacStacCheckOrderConfirmationPageValidation(String ofComMobileNum, String PacStacCheck, String ofComStatus) {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, DeliveryPage.class);
+                DeliveryPageActions.ofComOrderConfirmationPage(ofComMobileNum, PacStacCheck, ofComStatus);
+                Thread.sleep(3000);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                log.debug("Unable to validate OFCOM Pac and Stac Code in Order Confirmation page\n");
+                Assert.fail("Unable to validate OFCOM Pac and Stac Code in Order Confirmation page\n");
+            }
+        }
+
+        //Drupal Automation
+        @Given("^I am a Drupal Admin$")
+        public void drupal_Admin() throws Throwable {
+
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            String relativePath = System.getProperty("user.dir");
+            String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
+            String drupalURL = Filereadingutility.getPropertyValue(EnvPropFilePath, "DrupalURL");
+            driver.navigate().to(drupalURL);
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+        }
+
+    @And("^I Login with Drupal Admin Credential ([^\"]*) and ([^\"]*) and verify login page$")
+    public void login_with_DrupalAdmin_Credential(String username, String password) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, Drupal_PageObjects.class);
+
+        try {
+            log.debug("Entering the drupal login credentials\n");
+            Drupal_LandingPageActions.drupalLogin(username, password);
+            Thread.sleep(2000);
+            Drupal_LandingPageActions.verifyDrupalLoginPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to login Drupal Admin\n");
+            Assert.fail("Unable to login Drupal Admin\n");
+        }
+    }
+
+    @And("^Navigate to ([^\"]*) tab link and click it$")
+    public void navigateToDrupalTab(String drupalNavTab) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, Drupal_PageObjects.class);
+        try {
+            Drupal_LandingPageActions.drupalTabLink(drupalNavTab);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Navigate to Drupal Tab ie :"+drupalNavTab+"\n");
+            Assert.fail("Unable to Navigate to Drupal Tab ie :"+drupalNavTab+"\n");
+        }
+    }
+
+    @And("^Click on ([^\"]*) link under Configuration section$")
+    public void performO2Genearal(String configSubLink) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, DrupalConfigurationPageObjects.class);
+        try {
+            DrupalConfigurationPageActions.drupalConfigSubLinkAction(configSubLink);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform O2 General actions\n");
+            Assert.fail("Unable to perform O2 General actions\n");
+        }
+    }
+
+    @And("^Enable Decouple CFA and CFU Tariffs option and save the configuration$")
+    public void enableDecoupleCFACFUTariff() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, DrupalConfigurationPageObjects.class);
+        try {
+            DrupalConfigurationPageActions.enableDecoupleCFACFUTariff();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform O2 General actions\n");
+            Assert.fail("Unable to perform O2 General actions\n");
+        }
+    }
+
+    @And("^Click on ([^\"]*) link under Shop section$")
+    public void clickShopSubLink(String shopSubLink) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, DrupalShopPageObjects.class);
+        try {
+            DrupalShopPageActions.drupalShopSubLinkAction(shopSubLink);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform shop Tariff link actions\n");
+            Assert.fail("Unable to perform shop Tariff link actions\n");
+        }
+    }
+
+    @Then("^Select ([^\"]*) and ([^\"]*) and ([^\"]*) under tariff section$")
+    public void selectBrandModelVariant(String deviceBrand, String deviceModel, String deviceVariant) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, DrupalShopPageObjects.class);
+        try {
+            DrupalShopPageActions.select_BrandModelVariant(deviceBrand, deviceModel, deviceVariant);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select Brand, Model and Variant\n");
+            Assert.fail("Unable to select Brand, Model and Variant\n");
+        }
+    }
+
+    @Then("^Verify GetCFATariff and GetCFUTariff CTA and select ([^\"]*) when decouple status is ([^\"]*)$")
+    public void verifyAndSelectGetCfaCfuCTA(String GetTariffCTA, String decoupleStatus) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, DrupalShopPageObjects.class);
+        try {
+            Thread.sleep(4000);
+            DrupalShopPageActions.verifyGetCfaCfuCTA(GetTariffCTA, decoupleStatus);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to verify and select Tariff CTA\n");
+            Assert.fail("Unable to verify and select Tariff CTA\n");
+        }
+    }
+
+    @Then("^Verify the tariffs sort order for ([^\"]*) variant$")
+    public void verifyTariffsSortOrder(String TarifVariant) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, DrupalShopPageObjects.class);
+        try {
+            Thread.sleep(4000);
+            ArrayList<Integer> TempList1 = null;
+            ArrayList<Integer> TempList2 = null;
+            ArrayList<Integer> TempList3 = null;
+
+            if (TarifVariant.contains("Data")) {
+                Thread.sleep(3000);
+                log.debug("-------------------Original Data List-----------------\n");
+                drupalOriginalDataTariffList = DrupalShopPageActions.getCurrentSortOrderUsingMonthlyData();
+                Thread.sleep(3000);
+                TempList1 = drupalOriginalDataTariffList;
+                Thread.sleep(3000);
+                TempList2 = DrupalShopPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+                Thread.sleep(3000);
+                log.debug("Clicking on Data Tariff to sort in Ascending order\n");
+                driver.findElement(By.xpath("//table[@id='modelListTable']/tbody/tr/td[1]")).click();
+                log.debug("Clicked on Data Tariff to sort in Ascending order\n");
+                log.debug("-------------------Tariff List after applying sort option to Data Tariffs-----------------\n");
+                TempList3 = DrupalShopPageActions.getCurrentSortOrderUsingMonthlyData();
+                Thread.sleep(3000);
+                DrupalShopPageActions.verifyTariffSortedAsPerSortOption(TempList2, TempList3);
+            }
+
+            if (TarifVariant.contains("upFront")) {
+                Thread.sleep(3000);
+                drupalOriginalUpFrontTariffList = DrupalShopPageActions.getCurrentSortOrderUsingMonthlyCost();
+                Thread.sleep(3000);
+                TempList1 = drupalOriginalUpFrontTariffList;
+                Thread.sleep(3000);
+                TempList2 = DrupalShopPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+                Thread.sleep(3000);
+                log.debug("Clicking on Tariffs upFront cost to sort in Ascending order\n");
+                driver.findElement(By.xpath("//table[@id='modelListTable']/tbody/tr/td[4]")).click();
+                log.debug("Clicked on Tariff upFront cost to sort in Ascending order\n");
+                log.debug("-------------------Tariff List after applying sort option to upFront Cost-----------------\n");
+                TempList3 = DrupalShopPageActions.getCurrentSortOrderUsingMonthlyCost();
+                Thread.sleep(3000);
+                DrupalShopPageActions.verifyTariffSortedAsPerSortOption(TempList2, TempList3);
+            }
+            Thread.sleep(6000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to verify tariffs sort order\n");
+            Assert.fail("Unable to verify tariffs sort order\n");
+        }
+    }
+
+    @And("^Verify the available filterOptions below the result table$")
+    public void verifyTariffsFilterOptions() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DrupalShopPageObjects.class);
+            DrupalShopPageActions.verifyTariffsFilterOptions();
+        }catch(Exception e){
+            log.debug("Unable to verify tariffs filter options\n");
+        }
+    }
+
+    @And("^Select appropriate ([^\"]*) option and verify tariffs listing as per filter option$")
+    public void selectFilterOptions(String filter) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DrupalShopPageObjects.class);
+            DrupalShopPageActions.selectTariffsFilterOptions(filter);
+        }catch(Exception e){
+            log.debug("Unable to select tariffs "+filter+" options\n");
+        }
+    }
+
+    @And("^save the drupal tariffs$")
+    public void saveTariffs() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DrupalShopPageObjects.class);
+
+            log.debug("Clicking on Save Tariff CTA\n");
+            pageobjects.DrupalShopPageObjects.saveTariffCTA.click();
+            log.debug("Clicked on Save Tariff CTA\n");
+
+        }catch(Exception e){
+            log.debug("Unable to save tariffs \n");
+        }
     }
 }

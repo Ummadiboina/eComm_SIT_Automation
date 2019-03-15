@@ -12,8 +12,8 @@ Feature: 21_CFA_PAYG_Free_SIM_TooManyAddressesMatching_PostCode_Then_Customer_Sh
     And verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey
     And verify asterisk is displayed against mandatory fields of "PAYG Free sim"
     And Enter delivery details <HouseNumber> <PostCode> in Delivery Page and info <Firstname> and <Surname> for GDPR <CheckBox>
-    Then order confirmation is displayed
+    #Then order confirmation is displayed
 
     Examples:
       | Firstname | Surname | CheckBox | HouseNumber | PostCode |
-      | TEST      | ACCEPTA | No       |             | LS12 1DF |
+      | TEST      | ACCEPTA | No       |             | SL14DX   |

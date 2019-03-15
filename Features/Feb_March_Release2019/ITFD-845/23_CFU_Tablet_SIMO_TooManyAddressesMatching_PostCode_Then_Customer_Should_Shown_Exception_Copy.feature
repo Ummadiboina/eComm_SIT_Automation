@@ -21,12 +21,12 @@ Feature: 23_CFU_Tablet_SIMO_TooManyAddressesMatching_PostCode_Then_Customer_Shou
     And Select 'I need a new sim' option
     And Click on 'Use a different delivery address'link
     And enter <HouseNumber> and <PostCode> in Delivery section to set different delivery address
-    And Click on 'I agree to the terms and condition' checkbox in SIMO review page
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
-    Then order confirmation is displayed
-    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
+    #And Click on 'I agree to the terms and condition' checkbox in SIMO review page
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #Then order confirmation is displayed
+    #Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
 
     Examples:
       | username               | BSCstatus | HouseNumber | PostCode | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | inavl0ww_820736@o2.com | Enabled   |             | LS12 1DF | CapMyBill | £60       | test123  | Select | Not | Select | Not | Enabled    | Connected  | No          | No       |
+      | inavl0ww_820736@o2.com | Enabled   |             | SL14DX   | CapMyBill | £60       | test123  | Select | Not | Select | Not | Enabled    | Connected  | No          | No       |

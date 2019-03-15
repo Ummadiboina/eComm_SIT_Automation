@@ -17,6 +17,7 @@ import org.testng.Reporter;
 import pageobjects.DeliveryPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.Point;
+import pageobjects.OrderConfirmationPage;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -31,6 +32,7 @@ public class DeliveryPageActions extends Environment {
     final static Logger log = Logger.getLogger("DeliveryPageActions");
     static JavascriptExecutor js = (JavascriptExecutor) driver;
     public static String postalcodeStatus = "";
+    public static String pacStacCodeStatus = "";
 
     public static void SetDelivery() throws InterruptedException {
         Thread.sleep(8000);
@@ -1454,6 +1456,7 @@ public class DeliveryPageActions extends Environment {
                 pageobjects.DeliveryPage.Find_Address.click();
                 log.debug("Clicked on the Find address button\n");
                 Thread.sleep(5000);
+                Screenshots.captureScreenshot();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1493,50 +1496,54 @@ public class DeliveryPageActions extends Environment {
                        postalcodeStatus = "Valid";
                    } else {
 
-                       if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
-                           if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
-                               List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
-                               log.debug("The size of matching address: " + addresses.size());
-                               postalcodeStatus = "Valid";
+                       if(driver.findElement(By.xpath("//div[@id='address-form-error']")).isDisplayed()) {
+                           String tooManyAddMsg = driver.findElement(By.xpath("//div[@id='address-form-error']/div/ul/li")).getText();
 
-                               if (addresses.size() >= 2 && addresses.size() <= 200) {
+                           if (tooManyAddMsg.contains(exceptionMessage)) {
+                               log.debug("Exception for too many addresses, is matching as expected ie: " + tooManyAddMsg + "\n");
+                               log.debug("Providing house number and postal code to research\n");
+                               //pageobjects.DeliveryPage.Postcode.clear();
+                               //findDeliveryAddress("10", postcode);
+                               //Thread.sleep(6000);
+                               //verifyDeliveryAddress("Unfortunately we can't deliver to this address. Try a different address, or click and collect from your nearest O2 store", postcode);
+                           } else {
+                               log.debug("Failed: Exception for too many addresses, is not matching as expected ie: " + tooManyAddMsg + "\n");
+                               Assert.fail("Failed: Exception for too many addresses, is not matching as expected ie: " + tooManyAddMsg);
+                           }
+                       }else {
 
-                                   log.debug("More than one addresses are matching to the corresponding entered post code\n");
-                                   //pageobjects.DeliveryPage.SelectAddress1.click();
+                           if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                               if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
+                                   List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
+                                   log.debug("The size of matching address: " + addresses.size());
+                                   postalcodeStatus = "Valid";
 
-                                   if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
-                                       driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
-                                       Thread.sleep(3000);
-                                       Screenshots.captureScreenshot();
+                                   if (addresses.size() >= 2 && addresses.size() <= 200) {
 
-                                       WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
-                                       String selectedAddress = addressElement.getText();
+                                       log.debug("More than one addresses are matching to the corresponding entered post code\n");
+                                       //pageobjects.DeliveryPage.SelectAddress1.click();
 
-                                       Thread.sleep(3000);
-                                       Point coordinates = addressElement.getLocation();
-                                       Robot robot = new Robot();
-                                       robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
-                                       Thread.sleep(2000);
-                                       log.debug("Moving Mouse address dropdown");
+                                       if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
+                                           driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
+                                           Thread.sleep(3000);
+                                           Screenshots.captureScreenshot();
 
-                                       Actions action = new Actions(driver);
-                                       action.moveToElement(addressElement).click().build().perform();
-                                       log.debug("Address selected from dropdown list: " + selectedAddress);
-                                       Thread.sleep(3000);
-                                       Screenshots.captureScreenshot();
-                                   }
-                               } else if (addresses.size() > 200) {
+                                           WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
+                                           String selectedAddress = addressElement.getText();
 
-                                   String tooManyAddException = driver.findElement(By.xpath("//div[contains(normalize-space(),'too many results'])")).getText();
-                                   Thread.sleep(2000);
+                                           Thread.sleep(3000);
+                                           Point coordinates = addressElement.getLocation();
+                                           Robot robot = new Robot();
+                                           robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                                           Thread.sleep(2000);
+                                           log.debug("Moving Mouse address dropdown");
 
-                                   if (tooManyAddException.contains(exceptionMessage)) {
-                                       log.debug("Exception for too many addresses, is matching as expected ie: " + tooManyAddException + "\n");
-                                       log.debug("Providing house number and postal code to research\n");
-                                       findDeliveryAddress("10", postcode);
-                                   } else {
-                                       log.debug("Failed: Exception for too many addresses, is not matching as expected ie: " + tooManyAddException + "\n");
-                                       Assert.fail("Failed: Exception for too many addresses, is not matching as expected ie: " + tooManyAddException);
+                                           Actions action = new Actions(driver);
+                                           action.moveToElement(addressElement).click().build().perform();
+                                           log.debug("Address selected from dropdown list: " + selectedAddress);
+                                           Thread.sleep(3000);
+                                           Screenshots.captureScreenshot();
+                                       }
                                    }
                                }
                            }
@@ -1628,6 +1635,256 @@ public class DeliveryPageActions extends Environment {
             Screenshots.captureScreenshot();
 
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //ITFD-895, April Release new changes Validation by Jamal Khan
+    public static void ofComSwitching(String ofComStatus, String deviceMBB) {
+
+        try {
+            Screenshots.captureScreenshot();
+
+            //Device is MBB or not
+            if(deviceMBB.equalsIgnoreCase("No")){
+                log.debug("Device is not a MBB Device\n");
+
+                //ofCom Switching functionality is enabled or disabled
+                if(ofComStatus.equalsIgnoreCase("Enabled")){
+
+                    if(driver.findElements(By.xpath("ofCommDisable")).size()>0){
+                        log.debug("As expected, ofCom Switching is enabled\n");
+
+                        //Switching to O2 question validation
+                        if(DeliveryPage.switchingO2Question.isDisplayed()){
+                            log.debug("As expected, ofCom Switching to O2 question is displaying\n");
+
+                            String ofComQuestion = DeliveryPage.switchingO2Question.getText();
+                            Thread.sleep(2000);
+                            log.debug("OFCOM switching question is : "+ofComQuestion+"\n");
+                        }else{
+                            log.debug("Failed: ofCom Switching to O2 question is not displaying\n");
+                            Assert.fail("Failed: ofCom Switching to O2 question is not displaying\n");
+                        }
+
+                        //ofCom Intro text
+                        String ofComIntroText  = DeliveryPage.switchingO2Intro.getText();
+                        Thread.sleep(2000);
+                        if(ofComIntroText.contains("")){
+                            log.debug("OFCOM Switching to O2 Intro text is matching\n");
+                        }else{
+                            log.debug("Failed: ofCom Switching to O2 Intro text is not matching\n");
+                            Assert.fail("Failed: ofCom Switching to O2 Intro text is not matching\n");
+                        }
+
+                        //Switching to O2 PAC AND STAC code link validation
+                        if(driver.findElements(By.xpath("//a[normalize-space='What is a PAC and STAC code?']")).size()>0) {
+                            if (DeliveryPage.PACSTACLink.isDisplayed()) {
+                                log.debug("OFCOM Switching feature PAC and STAC link is displaying\n");
+
+                                String ofComPACSTACLink = DeliveryPage.PACSTACLink.getText();
+                                Thread.sleep(2000);
+                                log.debug("OFCOM PAC and STAC code link is : " + ofComPACSTACLink + "\n");
+
+                                //clicking on PAC and STAC code link
+                                log.debug("Clicking on PAC and STAC code link\n");
+                                DeliveryPage.PACSTACLink.click();
+                                Thread.sleep(2000);
+
+                                //PAC and STAC code Overlay validation
+                                String ofComPACSTACOverlayText = DeliveryPage.PACSTACOverlayText.getText();
+                                Thread.sleep(3000);
+                                log.debug("OFCOM PAC and STAC code overlay text is : " + ofComPACSTACOverlayText + "\n");
+                                Screenshots.captureScreenshot();
+
+                                //clicking on PAC and STAC overlay close
+                                log.debug("Clicking on PAC and STAC code overlay close button\n");
+                                DeliveryPage.PACSTACOverlayClose.click();
+                                log.debug("Clicked on PAC and STAC code overlay close button\n");
+                                Screenshots.captureScreenshot();
+
+                            } else {
+                                log.debug("Failed: OFCOM PAC and STAC code link is not displaying\n");
+                                Assert.fail("Failed: OFCOM PAC and STAC code link is not displaying\n");
+                            }
+                        }else{
+                            log.debug("Failed: ofCom Switching feature PAC and STAC link is not displaying\n");
+                            Assert.fail("Failed: ofCom Switching feature PAC and STAC link is not displaying\n");
+                        }
+
+                    }else{
+                        log.debug("Failed: ofCom Switching feature supposed to be Enabled but it is disabled\n");
+                        Assert.fail("Failed: ofCom Switching feature supposed to be Enabled but it is disabled\n");
+                    }
+                }else if(ofComStatus.equalsIgnoreCase("Disabled")){
+                    //Validating ofCom Switching feature is disabled or not
+                    if(driver.findElements(By.xpath("ofCommDisable")).size()==0){
+                        log.debug("As expected, ofCom Switching is disabled for disabled status\n");
+                    }else{
+                        log.debug("Failed: ofCom Switching feature is enabled for disabled status\n");
+                        Assert.fail("Failed: ofCom Switching feature is enabled for disabled status\n");
+                    }
+                }
+            }else{
+                //As device is MBB so ofCom should be disabled
+                if(driver.findElements(By.xpath("ofCommDisable")).size()==0){
+                    log.debug("As expected, ofCom Switching is disabled for MBB device\n");
+                }else{
+                    log.debug("Failed: ofCom Switching feature supposed to be disabled for MBB device\n");
+                    Assert.fail("Failed: ofCom Switching feature supposed to be disabled for MBB device\n");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //ITFD-895, April Release new changes Validation by Jamal Khan
+    public static void ofComPacStacCode(String PacStacCheck, String PacStackRetainCheck, String ofComMobileNum, String PacStacCode, String ofComStatus) {
+        try{
+
+            //ofCom Switching functionality is enabled or disabled
+            if(ofComStatus.equalsIgnoreCase("Enabled")) {
+                if(driver.findElements(By.xpath("ofCommDisable")).size()>0){
+                    log.debug("As expected, ofCom Switching is enabled\n");
+                    log.debug("Currently validating PAC and STAC code check box functionality\n");
+
+
+                    //PAC and Stac code checkbox Validation
+                    if(PacStacCheck.equalsIgnoreCase("Yes")) {
+                        //Status of PAC and STAC input fields validation before selecting
+                        if (DeliveryPage.PACSTACMobileNum.isDisplayed()) {
+                            log.debug("Failed due to Mobile Number field is displaying before selecting PAC/STAC code checkbox\n");
+                            Assert.fail("Failed due to Mobile Number field is displaying before selecting PAC/STAC code checkbox\n");
+                        } else {
+                            log.debug("As expected, Mobile number field is not displaying before selecting Pac and Stac code field checkbox\n");
+                        }
+
+                        if (DeliveryPage.PACSTACcode.isDisplayed()) {
+                            log.debug("Failed due to PAC/STAC code input field is displaying before selecting PAC/STAC code checkbox\n");
+                            Assert.fail("Failed due to PAC/STAC code input field is displaying before selecting PAC/STAC code checkbox\n");
+                        } else {
+                            log.debug("As expected, PAC/STAC code input field is not displaying before selecting PAC/STAC code checkbox\n");
+                        }
+
+                        if (DeliveryPage.PACSTACCheckBox.isSelected()) {
+                            log.debug("Failed due to PAC/STAC code checkbox is selected before checking PAC/STAC code checkbox\n");
+                            Assert.fail("Failed due to PAC/STAC code checkbox is selected before checking PAC/STAC code checkbox\n");
+                        } else {
+                            log.debug("As expected, PAC/STAC code checkbox is not selected before checking PAC/STAC code checkbox\n");
+                        }
+
+                        //clicking on PAC and STAC checkbox
+                        log.debug("Clicking on PAC and STAC code checkbox\n");
+                        DeliveryPage.PACSTACCheckBox.click();
+                        log.debug("Clicked on PAC and STAC code checkbox\n");
+                        pacStacCodeStatus = "Checked";
+                        Screenshots.captureScreenshot();
+
+                        //Status of PAC and STAC input fields validation after selecting
+                        if (DeliveryPage.PACSTACMobileNum.isDisplayed()) {
+                            log.debug("As expected, Mobile Number field is enabled/displyaing after selecting PAC/STAC code checkbox\n");
+                        } else {
+                            log.debug("Failed due to Mobile Number field is not enabled/displyaing after selecting PAC/STAC code checkbox\n");
+                            Assert.fail("Failed due to Mobile Number field is not enabled/displyaing after selecting PAC/STAC code checkbox\n");
+                        }
+
+                        if (DeliveryPage.PACSTACcode.isDisplayed()) {
+                            log.debug("PAC/STAC code input field is enabled/displyaing after selecting PAC/STAC code checkbox\n");
+                        } else {
+                            log.debug("Failed due to PAC/STAC code input field is not enabled/displyaing after selecting PAC/STAC code checkbox\n");
+                            Assert.fail("Failed due to PAC/STAC code input field is not enabled/displyaing after selecting PAC/STAC code checkbox\n");
+                        }
+
+                        //Entering inputs to Mobile Number and PACandStac Code fields
+                        DeliveryPage.PACSTACMobileNum.sendKeys(ofComMobileNum);
+                        log.debug("ofCom Switching mobile number is entered ie: "+ofComMobileNum+"\n");
+                        DeliveryPage.PACSTACcode.sendKeys(PacStacCode);
+                        log.debug("ofCom Switching PAC/STAC code is entered ie: "+PacStacCode+"\n");
+                        Thread.sleep(2000);
+                        Screenshots.captureScreenshot();
+
+                        if(ofComMobileNum.equals("")){
+                            String emptyMobileNumError = DeliveryPage.emptyMobileNumError.getText();
+                            Thread.sleep(2000);
+                            log.debug("As expected, error message is generated for empty mobile number ie: "+emptyMobileNumError+"\n");
+                        }
+
+                        if(PacStacCode.equals("")){
+                            String emptyPACSTACcodeError = DeliveryPage.emptyPACSTACcodeError.getText();
+                            Thread.sleep(2000);
+                            log.debug("As expected, error message is generated for empty PAC/STAC code ie: "+emptyPACSTACcodeError+"\n");
+                        }
+                    }
+
+                    if(PacStacCheck.equalsIgnoreCase("Yes") && PacStackRetainCheck.equalsIgnoreCase("Yes") && pacStacCodeStatus.equals("Checked")){
+                        //Validating PAC/STAC fields retained values or not
+
+                        log.debug("Clicking on PAC and STAC code checkbox to uncheck\n");
+                        DeliveryPage.PACSTACCheckBox.click();
+                        log.debug("PAC and STAC code checkbox is unchecked\n");
+                        Screenshots.captureScreenshot();
+
+                        //clicking on PAC and STAC checkbox again
+                        log.debug("Clicking on PAC and STAC code checkbox again to validate values entered are retained or not\n");
+                        DeliveryPage.PACSTACCheckBox.click();
+                        log.debug("Clicked on PAC and STAC code checkbox again\n");
+                        pacStacCodeStatus = "Checked";
+                        Thread.sleep(3000);
+                        Screenshots.captureScreenshot();
+
+                        //SPAC and STAC Mobile Number input fields retained values or not
+                        if (DeliveryPage.PACSTACMobileNum.getAttribute("Value").equals(ofComMobileNum)) {
+                            log.debug("As expected, Mobile Number field retained value ie: "+ofComMobileNum+"\n");
+                        } else {
+                            log.debug("Failed due to Mobile Number field not retained entered mobile number\n");
+                            Assert.fail("Failed due to Mobile Number field not retained entered mobile number\n");
+                        }
+
+                        //SPAC and STAC code input fields retained values or not
+                        if (DeliveryPage.PACSTACcode.getAttribute("Value").equals(PacStacCode)) {
+                            log.debug("As expected, PAC and STAC code field retained value ie: "+PacStacCode+"\n");
+                        } else {
+                            log.debug("Failed due to PAC and STAC code field not retained entered PAC and STAC code\n");
+                            Assert.fail("Failed due to PAC and STAC code field not retained entered PAC and STAC code\n");
+                        }
+                    }
+                }else{
+                    log.debug("Failed: ofCom Switching feature supposed to be Enabled but it is disabled\n");
+                    Assert.fail("Failed: ofCom Switching feature supposed to be Enabled but it is disabled\n");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //ITFD-895, April Release new changes Validation by Jamal Khan
+    public static void ofComOrderConfirmationPage(String ofComMobileNum, String PacStacCheck, String ofComStatus) {
+
+        try {
+            if(ofComStatus.equalsIgnoreCase("Enabled")) {
+                if (driver.findElements(By.xpath("ofCommStatusDisable")).size() > 0) {
+                    log.debug("As expected, ofCom Switching status is enabled\n");
+
+                    if(PacStacCheck.equalsIgnoreCase("Yes")){
+                        log.debug("Currently validating PAC and STAC code status is Order confirmation page\n");
+
+                        String selectedStatusMessage = OrderConfirmationPage.ofComStatusMsg.getText();
+
+                        if(selectedStatusMessage.contains(ofComMobileNum)){
+                            log.debug("OFCOM switching status contains switching mobile number ie: "+ofComMobileNum+"\n");
+                        }else{
+                            log.debug("Failed: OFCOM switching status does not contains switching mobile number ie: "+ofComMobileNum+"\n");
+                            Assert.fail("Failed: OFCOM switching status does not contains switching mobile number ie: "+ofComMobileNum+"\n");
+                        }
+                    }
+                }else{
+                    log.debug("Failed: ofCom Switching feature status supposed to be Enabled but it is disabled in Order Confirmation page\n");
+                    Assert.fail("Failed: ofCom Switching feature status supposed to be Enabled but it is disabled in Order Confirmation page\n");
+                }
+            }
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }
