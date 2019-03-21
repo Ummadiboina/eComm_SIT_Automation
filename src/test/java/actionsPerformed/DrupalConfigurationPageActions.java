@@ -44,33 +44,57 @@ public class DrupalConfigurationPageActions extends Environment {
         }
     }
 
-    public static void enableDecoupleCFACFUTariff() {
+    public static void enableOrDisableDecoupleCFACFUTariff(String decoupalCFACFUStatus) {
         try{
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         scrollToAnElement.scrollToElement(pageobjects.DrupalConfigurationPageObjects.ENABLEDISABLEFEATURES);
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
-        log.debug("Clicking on Decouple CFA/CFU Tariffs to enable\n");
-        pageobjects.DrupalConfigurationPageObjects.decoupleCFACFU.click();
-        log.debug("Clicked on Decouple CFA/CFU Tariffs and it is enabled now\n");
-        Screenshots.captureScreenshot();
+        if(decoupalCFACFUStatus.equalsIgnoreCase("Enable")) {
+
+            if(pageobjects.DrupalConfigurationPageObjects.decoupleCFACFU.isSelected()){
+                log.debug("Currently Decouple CFA/CFU Tariffs is in enabled state\n");
+                Screenshots.captureScreenshot();
+            }else {
+                log.debug("Clicking on Decouple CFA/CFU Tariffs checkbox to enable\n");
+                pageobjects.DrupalConfigurationPageObjects.decoupleCFACFU.click();
+                log.debug("Clicked on Decouple CFA/CFU Tariffs checkbox and it is enabled now\n");
+                Screenshots.captureScreenshot();
+            }
+        }else if(decoupalCFACFUStatus.equalsIgnoreCase("Disable")) {
+
+            if(pageobjects.DrupalConfigurationPageObjects.decoupleCFACFU.isSelected()){
+                log.debug("Clicking on Decouple CFA/CFU Tariffs checkbox to disable\n");
+                pageobjects.DrupalConfigurationPageObjects.decoupleCFACFU.click();
+                log.debug("Clicked on Decouple CFA/CFU Tariffs checkbox and it is disaled now\n");
+                Screenshots.captureScreenshot();
+            }else {
+                log.debug("Currently Decouple CFA/CFU Tariffs is in disabled state\n");
+                Screenshots.captureScreenshot();
+            }
+        }
 
         jse.executeScript("window.scrollTo(0,document.body.scrollHeight)", "");
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
-
-        log.debug("Clicking on Save Configuration CTA\n");
-        pageobjects.DrupalConfigurationPageObjects.saveConfigCTA.click();
-        log.debug("Clicked on Save Configuration CTA\n");
-
-        Thread.sleep(3000);
-        Screenshots.captureScreenshot();
-
-        //log.debug("Configuration Save message is disaplyed ie: "+pageobjects.DrupalConfigurationPageObjects.saveConfigMessage+"\n");
 
         }catch(Exception e){
             log.debug("Not able to perform enable Decouple CFA/CFU Tariff Action, Found exception ie :"+e);
         }
     }
 
+    public static void saveDecoupleCFACFUConfig() {
+        try {
+            log.debug("Clicking on Save Configuration CTA\n");
+            pageobjects.DrupalConfigurationPageObjects.saveConfigCTA.click();
+            log.debug("Clicked on Save Configuration CTA\n");
+
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+            //log.debug("Configuration Save message is disaplyed ie: "+pageobjects.DrupalConfigurationPageObjects.saveConfigMessage+"\n");
+        } catch (Exception e) {
+            log.debug("Not able to perform enable Decouple CFA/CFU Tariff Action, Found exception ie :" + e);
+        }
+    }
 }

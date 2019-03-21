@@ -11586,7 +11586,7 @@ public class E2EOrderPlaced_Steps {
             }
         }
 
-        //Drupal Automation
+        //Drupal ITFD-839 Automation by Jamal Khan, April Release 2019
         @Given("^I am a Drupal Admin$")
         public void drupal_Admin() throws Throwable {
 
@@ -11643,16 +11643,29 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Enable Decouple CFA and CFU Tariffs option and save the configuration$")
-    public void enableDecoupleCFACFUTariff() {
+    @And("^Enable or Disable ([^\"]*) Decouple CFA and CFU Tariffs option$")
+    public void enableDisableDecoupleCFACFUTariff(String decoupalCFACFUStatus) {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, DrupalConfigurationPageObjects.class);
         try {
-            DrupalConfigurationPageActions.enableDecoupleCFACFUTariff();
+            DrupalConfigurationPageActions.enableOrDisableDecoupleCFACFUTariff(decoupalCFACFUStatus);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            log.debug("Unable to perform O2 General actions\n");
-            Assert.fail("Unable to perform O2 General actions\n");
+            log.debug("Unable to enable/disable Decouple CFA and CFU Tariffs option\n");
+            Assert.fail("Unable to enable/disable Decouple CFA and CFU Tariffs option\n");
+        }
+    }
+
+    @And("^Save the Decouple CFA and CFU configuration$")
+    public void saveDecoupleCFACFUConfigTariff() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, DrupalConfigurationPageObjects.class);
+        try {
+            DrupalConfigurationPageActions.saveDecoupleCFACFUConfig();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to save enable/disable Decouple CFA and CFU Tariffs option\n");
+            Assert.fail("Unable to save enable/disable Decouple CFA and CFU Tariffs option\n");
         }
     }
 
@@ -11668,6 +11681,35 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to perform shop Tariff link actions\n");
         }
     }
+
+    @And("^Verify the existing campaigns$")
+    public void mapCapaignExistingTariff() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, DrupalShopPageObjects.class);
+        try {
+            log.debug("We are at page: "+driver.getTitle());
+            DrupalShopPageActions.verifyExistingCampaigns();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform campaigns tariffs actions\n");
+            Assert.fail("Unable to perform campaigns tariffs actions\n");
+        }
+    }
+
+    @And("^Click on campaign ([^\"]*) operations")
+    public void selectCampaignOperations(String campaignOption){
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, DrupalShopPageObjects.class);
+        try {
+            log.debug("We are at page: "+driver.getTitle());
+            DrupalShopPageActions.campaignsOperation(campaignOption);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to capaign operation option\n");
+            Assert.fail("Unable to capaign operation option\n");
+        }
+    }
+
 
     @Then("^Select ([^\"]*) and ([^\"]*) and ([^\"]*) under tariff section$")
     public void selectBrandModelVariant(String deviceBrand, String deviceModel, String deviceVariant) {
@@ -11707,7 +11749,7 @@ public class E2EOrderPlaced_Steps {
             ArrayList<Integer> TempList2 = null;
             ArrayList<Integer> TempList3 = null;
 
-            if (TarifVariant.contains("Data")) {
+            if (TarifVariant.contains("data")) {
                 Thread.sleep(3000);
                 log.debug("-------------------Original Data List-----------------\n");
                 drupalOriginalDataTariffList = DrupalShopPageActions.getCurrentSortOrderUsingMonthlyData();
@@ -11717,7 +11759,7 @@ public class E2EOrderPlaced_Steps {
                 TempList2 = DrupalShopPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
                 Thread.sleep(3000);
                 log.debug("Clicking on Data Tariff to sort in Ascending order\n");
-                driver.findElement(By.xpath("//table[@id='modelListTable']/tbody/tr/td[1]")).click();
+                driver.findElement(By.xpath("//table[@id='modelListTable']/thead/tr/th[1]")).click();
                 log.debug("Clicked on Data Tariff to sort in Ascending order\n");
                 log.debug("-------------------Tariff List after applying sort option to Data Tariffs-----------------\n");
                 TempList3 = DrupalShopPageActions.getCurrentSortOrderUsingMonthlyData();
@@ -11734,7 +11776,7 @@ public class E2EOrderPlaced_Steps {
                 TempList2 = DrupalShopPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
                 Thread.sleep(3000);
                 log.debug("Clicking on Tariffs upFront cost to sort in Ascending order\n");
-                driver.findElement(By.xpath("//table[@id='modelListTable']/tbody/tr/td[4]")).click();
+                driver.findElement(By.xpath("//table[@id='modelListTable']/thead/tr/th[4]")).click();
                 log.debug("Clicked on Tariff upFront cost to sort in Ascending order\n");
                 log.debug("-------------------Tariff List after applying sort option to upFront Cost-----------------\n");
                 TempList3 = DrupalShopPageActions.getCurrentSortOrderUsingMonthlyCost();
@@ -11771,6 +11813,19 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Configure ([^\"]*) tariff type$")
+    public void configureTariffType(String preferredType) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DrupalShopPageObjects.class);
+
+            DrupalShopPageActions.configTariffType(preferredType);
+
+        }catch(Exception e){
+            log.debug("Unable to save tariffs \n");
+        }
+    }
+
     @And("^save the drupal tariffs$")
     public void saveTariffs() {
         try {
@@ -11785,4 +11840,44 @@ public class E2EOrderPlaced_Steps {
             log.debug("Unable to save tariffs \n");
         }
     }
+
+    @And("^Select campaign ([^\"]*) and ([^\"]*) and get tariffs for mapping$")
+    public void selectCampaignBrandModelVariants(String campaignBrand, String campaignModel) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DrupalShopPageObjects.class);
+            log.debug("We are at page: "+driver.getTitle());
+            DrupalShopPageActions.campaignBrandModelVariants(campaignBrand, campaignModel);
+
+        }catch(Exception e){
+            log.debug("Unable to save tariffs \n");
+        }
+    }
+
+    @And("^Verify CFA and CFU Tariffs$")
+    public void campaignTariffsList() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DrupalShopPageObjects.class);
+            log.debug("We are at page: "+driver.getTitle());
+            DrupalShopPageActions.campaignTariffsList();
+
+        }catch(Exception e){
+            log.debug("Unable to save tariffs \n");
+        }
+    }
+
+    @And("^Verify Bulk update channels available and select ([^\"]*) and then save mapped tariffs$")
+    public void verifyAndSelectCampaignChannelAndSaveTariffs(String campaignChannel) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DrupalShopPageObjects.class);
+            log.debug("We are at page: "+driver.getTitle());
+            DrupalShopPageActions.verifyAndSelectCampaignChannelAndSave(campaignChannel);
+
+        }catch(Exception e){
+            log.debug("Unable to save tariffs \n");
+        }
+    }
+
 }

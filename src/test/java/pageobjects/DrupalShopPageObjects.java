@@ -39,4 +39,31 @@ public class DrupalShopPageObjects {
     @FindBy(how = How.XPATH, using = "(//table[@id='modelListTable']/tfoot/tr/td/select)[1]")
     public static WebElement tariffDataFilter;
 
+    @FindBy(how = How.XPATH, using = "(//table[@id='modelListTable']/tfoot/tr/td/select)[4]")
+    public static WebElement tariffUpFrontFilter;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='get-tariff-button']")
+    public static WebElement campaignGetTariffs;
+
+    @FindBy(how = How.XPATH, using = "//select[@id='edit-bulk-update-channel']")
+    public static WebElement campaignChannel;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='save-campaign-tariffs-mapped-button']")
+    public static WebElement saveMappedTariffs;
+
+    @FindBy(how = How.XPATH, using = "(//input[@class='recommended'])[1]")
+    public static WebElement recommendedTariff;
+
+    @FindBy(how = How.XPATH, using = "//input[@value='RECOMMENDED']")
+    public static WebElement preferredRecommendedTariff;
+
+    @FindBy(how = How.XPATH, using = "(//input[@class='ourpick'])[1]")
+    public static WebElement ourPick;
+
+    @FindBy(how = How.XPATH, using = "//input[@value='OURPICK']")
+    public static WebElement preferrredOurPicTariff;
+
+    @FindBy(how = How.XPATH, using = "//input[@value='MINIMUM']")
+    public static WebElement minimumTariff;
+
 }
