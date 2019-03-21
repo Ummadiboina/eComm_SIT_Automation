@@ -323,6 +323,36 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//h1[normalize-space()='Review your details']/../div[3]/button[text()='Confirm']")
     public static WebElement reviewConfirmCTA;
 
+    @FindBy(how = How.XPATH, using = "//*[normalize-space()='Are you switching to O2?']")
+    public static WebElement switchingO2Question;
+
+    @FindBy(how = How.XPATH, using = "//*[@class='switchingO2Intro']")
+    public static WebElement switchingO2Intro;
+
+    @FindBy(how = How.XPATH, using = "//a[normalize-space='What is a PAC and STAC code?']")
+    public static WebElement PACSTACLink;
+
+    @FindBy(how = How.XPATH, using = "//*[@class='PACSTACOverlayText']")
+    public static WebElement PACSTACOverlayText;
+
+    @FindBy(how = How.XPATH, using = "//*[@class='PACSTACOverlayClose']")
+    public static WebElement PACSTACOverlayClose;
+
+    @FindBy(how = How.XPATH, using = "//*[@class='PACSTACCheckBox']")
+    public static WebElement PACSTACCheckBox;
+
+    @FindBy(how = How.XPATH, using = "//*[@class='PACSTACMobileNum']")
+    public static WebElement PACSTACMobileNum;
+
+    @FindBy(how = How.XPATH, using = "//*[@class='PACSTACcode']")
+    public static WebElement PACSTACcode;
+
+    @FindBy(how = How.XPATH, using = "//*[@class='emptyMobileNumError']")
+    public static WebElement emptyMobileNumError;
+
+    @FindBy(how = How.XPATH, using = "//*[@class='emptyPACSTACcodeError']")
+    public static WebElement emptyPACSTACcodeError;
+
 }
 
 

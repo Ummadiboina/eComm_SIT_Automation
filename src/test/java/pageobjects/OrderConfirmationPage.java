@@ -123,4 +123,8 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Spend Cap')]")
 	public static WebElement AppliedBillCap;
 
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'ofComStatusMsg')]")
+	public static WebElement ofComStatusMsg;
+
+
 }

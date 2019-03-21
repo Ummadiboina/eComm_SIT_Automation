@@ -25,13 +25,13 @@ Feature: 17_CFU_PAYM_MBB_TooManyAddressesMatching_PostCode_Then_Customer_Should_
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And Click on 'Use a different delivery address'link
     And enter <houseNumber> and <PostCode> in Delivery section to set different delivery address
-    And land on the payment page and input <Username> and other details and click 'Continue on next step' for DD confirmation
-    And Continue to Agreements page and confirm all the agreement checks
-    And Continue to Review page and review the order
-    Then order confirmation is displayed
-    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
+    #And land on the payment page and input <Username> and other details and click 'Continue on next step' for DD confirmation
+    #And Continue to Agreements page and confirm all the agreement checks
+    #And Continue to Review page and review the order
+    #Then order confirmation is displayed
+    #Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
       | Device_Name   | Action    | houseNumber | PostCode | BSCstatus | BillCap   | CapAmount | Username     | username                                                | password | B1  | B2  | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | Random Device | enterCode |             | LS12 1DF | Enabled   | CapMyBill | £100      | TEST ACCEPTA | stester117f30bf0e-9fe6-4f26-88e5-c2ec2f260455@gmail.com | test123  | Not | Not | Not | Not | Enabled    | Connected  | No          | No       |
+      | Random Device | enterCode |             | SL14DX   | Enabled   | CapMyBill | £100      | TEST ACCEPTA | stester117f30bf0e-9fe6-4f26-88e5-c2ec2f260455@gmail.com | test123  | Not | Not | Not | Not | Enabled    | Connected  | No          | No       |
 

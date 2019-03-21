@@ -20,12 +20,12 @@ Feature: 04_CFA_PAYG_Phones_TooManyAddressesMatching_PostCode_Then_Customer_Shou
     And click on "go to checkout" button
     #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And input <postcode> <HouseNumber> <Firstname> and <Surname> and other valid details in Delivery page
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
-    And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step' for GDPR
-    And Continue to Review page and review the order
-    Then order confirmation is displayed
-    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step' for GDPR
+    #And Continue to Review page and review the order
+    #Then order confirmation is displayed
+    #Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
       | handset  | postcode | HouseNumber | color      | Firstname | tariff        | BSCstatus | Surname | Username     | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone X | LS12 1DF |             | Space Grey | TEST      | 1GB Preloaded | Disabled  | ACCEPTA | TEST ACCEPTA | Select | Select | Select | Not | Enabled    | Connected  | No          | No       |
+      | iPhone X | SL14DX   |             | Space Grey | TEST      | 1GB Preloaded | Disabled  | ACCEPTA | TEST ACCEPTA | Select | Select | Select | Not | Enabled    | Connected  | No          | No       |
