@@ -22,6 +22,10 @@ public class PAYMSimOPage {
 
 	@FindBy(how=How.XPATH,using=("//*[@id='id-30-days']/p/a"))
 	public static WebElement thirtydays;
+
+	@FindBy(how=How.XPATH,using=("//*[@id='id-30-days']/p/a"))
+	public static WebElement eighteenmonths;
+
 	
 	/*@FindBy(how=How.XPATH,using=("//div[@class='tariff P12M  promoted-tariff  ']/div[8]"))
 	public static WebElement BuyNowPromotedTariff;*/
@@ -221,5 +225,55 @@ public class PAYMSimOPage {
 	@FindBy(how = How.XPATH, using = ("//button/span[contains(text(),'Place your order')]"))
 	public static WebElement PlaceYourOrder;
 
+	@FindBy(how = How.XPATH, using = ("//*[@id='tablet']a"))
+	public static WebElement tablet_tab;
+
+	@FindBy(how = How.XPATH, using = ("//*[@id='mbb']/a"))
+	public static WebElement Mbb_tab;
+
+	@FindBy(how = How.XPATH, using = ("//*[@id=\"shopApp\"]/div[4]/div/div/div[1]/div[2]/ul/li[1]/section[1]/div[1]/p[5]"))
+	public static WebElement TE_page_months_contract;
+
+	@FindBy (how = How.XPATH, using = ("-//*[@id=\"shopApp\"]/div[4]/div/div/div[1]/div[2]/ul/li[1]/section[1]/div[1]/p[5]"))
+	public static WebElement basket_page_months_contract;
+
+	@FindBy (how =How.XPATH, using =   ("//*[@id=\"basket-plan\"]/td[1]/table/tbody/tr/td[2]/ul/li[1]"))
+	public static WebElement D_P_R_page;
+
+	@FindBy (how =How.XPATH, using = ("//*[@id=\"o2-page-wrapper\"]/div[2]/div[2]/div/div[1]/div/div[1]/div[1]/div[3]/div[2]/span[5]"))
+	public static WebElement confirm_page_months_contract;
+
+	@FindBy (how =How.XPATH, using= ("//*[@id=\"04b0ac2c-a1d5-4a3c-8964-e7df3c8c2020\"]/div[2]/ul/li[1]"))
+	public static WebElement Unlimited_data;
+
+	@FindBy (how =How.XPATH, using=(""))
+	public static WebElement Unlimited_data_TE;
+
+	@FindBy (how =How.XPATH, using=(""))
+	public static WebElement Unlimited_data_basket;
+
+	@FindBy (how =How.XPATH, using=(""))
+	public static  WebElement Unlimited_data_delivery;
+
+	@FindBy (how =How.XPATH, using=(""))
+	public static WebElement Unlimited_data_payment;
+
+	@FindBy (how =How.XPATH, using=(""))
+	public static WebElement Unlimited_data_review;
+
+    @FindBy (how =How.XPATH, using=(""))
+	public static WebElement Unlimited_data_confirmation;
+
+    @FindBy (how =How.XPATH, using=("//li[@id='id-18-months' ]"))
+	public static WebElement months_contract_18;
+
+    @FindBy (how =How.XPATH, using=(""))
+	public static WebElement Unlimited_data_review_confirm;
+
+    @FindBy (how =How.XPATH, using=("//li[@id='id-12-months']/preceding-sibling::li"))
+	public static WebElement first_18_months_contract;
+
+    @FindBy (how =How.XPATH, using=(""))
+	public static WebElement months_18_contract_review_confirm;
 
 }

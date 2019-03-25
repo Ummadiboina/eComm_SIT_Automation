@@ -31,8 +31,8 @@ public class CVOS_StockAllocationActions extends Environment {
 
 		Thread.sleep(4000);
 		pageobjects.CVOS_PageObjects.cfaAllocation.sendKeys("5");
-		log.debug("The 50 stock allocated to CFA stockpot");
-		log.debug("The 50 stock allocated to CFA stockpot");
+		log.debug("The 50 stock allocated to CFA_Device_Highlights_Display_When_Technical_Specification_Available_For_Device stockpot");
+		log.debug("The 50 stock allocated to CFA_Device_Highlights_Display_When_Technical_Specification_Available_For_Device stockpot");
 
 		Thread.sleep(4000);
 		pageobjects.CVOS_PageObjects.cfuAllocation.sendKeys("5");

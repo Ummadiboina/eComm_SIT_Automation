@@ -5,6 +5,7 @@ Feature: CFA_Refresh_Order_Basket_Review_Page_and_Confirmation_Page
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
+    And verficaion
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
@@ -19,5 +20,5 @@ Feature: CFA_Refresh_Order_Basket_Review_Page_and_Confirmation_Page
 
     #Close the browser
     Examples: 
-      | handset  | Firstname | Surname | Username     |
-      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset | Firstname | Surname | Username     |
+      | Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |

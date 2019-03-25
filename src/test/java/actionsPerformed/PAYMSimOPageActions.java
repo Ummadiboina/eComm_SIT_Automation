@@ -19,6 +19,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import pageobjects.PAYMSimOPage;
+
+import static pageobjects.PAYMSimOPage.*;
 
 public class PAYMSimOPageActions extends Environment {
 	final static Logger log = Logger.getLogger("PAYMSimOPageActions");
@@ -46,6 +49,14 @@ public class PAYMSimOPageActions extends Environment {
 			Thread.sleep(10000);
 			log.debug("Clicked on 12 Months contract tab");
 		}
+		if (elementName.contains("18 Months")) {
+
+			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.twelevemonths.getText());
+			Screenshots.captureScreenshot();
+			pageobjects.PAYMSimOPage.eighteenmonths.sendKeys(Keys.ENTER);
+			Thread.sleep(10000);
+			log.debug("Clicked on 18 Months contract tab");
+		}
 		Screenshots.captureScreenshot();
 	}
 
@@ -59,8 +70,8 @@ public class PAYMSimOPageActions extends Environment {
 			Thread.sleep(8000);
 			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.thirtydays);
 			Screenshots.captureScreenshot();
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
-			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months);
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months);
 			Thread.sleep(5000);
 			log.debug("Selected a thirty days Random Tariff");
 			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.thirtydays);
@@ -72,8 +83,8 @@ public class PAYMSimOPageActions extends Environment {
 			Thread.sleep(8000);
 			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.twelevemonths);
 			Screenshots.captureScreenshot();
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
-			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months);
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months);
 			Thread.sleep(5000);
 			log.debug("Selected a twelve months Random Tariff");
 			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.twelevemonths);
@@ -90,8 +101,8 @@ public class PAYMSimOPageActions extends Environment {
 
 			pageobjects.PAYMSimOPage.thirtydays.sendKeys(Keys.ENTER);
 			Thread.sleep(3000);
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
-			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowPromotedTariff30Days);
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowPromotedTariff30Days);
 			Thread.sleep(5000);
 			log.debug("Selected a Recommended Tariff under 30 Days tab");
 			log.debug("Clicked on a Recommended Tariff under 30 Days tab");
@@ -101,8 +112,8 @@ public class PAYMSimOPageActions extends Environment {
 
 			pageobjects.PAYMSimOPage.twelevemonths.sendKeys(Keys.ENTER);
 			Thread.sleep(4000);
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
-			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowPromotedTariff12Months);
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowPromotedTariff12Months);
 			Thread.sleep(5000);
 			log.debug("Selected a Recommended Tariff under 12 Months tab");
 			log.debug("Clicked on a Recommended Tariff under 12 Months tab");
@@ -322,9 +333,7 @@ public class PAYMSimOPageActions extends Environment {
 			// Thread.sleep(1000);
 
 			pageobjects.PAYMSimOPage.whychoosesimolink.click();
-		}
-
-		else
+		} else
 			log.debug("Why choose an O2 Pay Monthly sim?-link is not displayed");
 
 		if (pageobjects.PAYMSimOPage.whychoosesimowrap.getText()
@@ -617,9 +626,7 @@ public class PAYMSimOPageActions extends Environment {
 			log.debug("The Why choose simo wrap is displayed");
 
 			pageobjects.PAYMSimOPage.whychoosesimolink.click();
-		}
-
-		else {
+		} else {
 			log.debug("Why choose an O2 Pay Monthly sim?-link is not displayed");
 		}
 		Screenshots.captureScreenshot();
@@ -781,7 +788,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 		log.debug("clicking on Select to buy SIMO tariff");
 		WebElement element = pageobjects.PAYMSimOPage.SelectSIMOTariff;
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 		Thread.sleep(10000);
 		//pageobjects.PAYMSimOPage.SelectSIMOTariff.click();
@@ -813,12 +820,12 @@ public class PAYMSimOPageActions extends Environment {
 
 		}
 	}
-		///////////////////////////Upgrade Simo Page/////////////////////////////////////////////
+	///////////////////////////Upgrade Simo Page/////////////////////////////////////////////
 
 	public static void ClickonTabletsTabSimo() {
 
 		WebElement element = pageobjects.PAYMSimOPage.TabletsTabSimo;
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 
 	}
@@ -828,7 +835,7 @@ public class PAYMSimOPageActions extends Environment {
 		WebElement element = pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM;
 		//scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM);
 		Screenshots.captureScreenshot();
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 
 	}
@@ -839,7 +846,7 @@ public class PAYMSimOPageActions extends Environment {
 		WebElement element = pageobjects.PAYMSimOPage.INeedNewSIM;
 		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.INeedNewSIM);
 		Screenshots.captureScreenshot();
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 		log.debug("Clicked on I need a new sim option");
 
@@ -852,10 +859,10 @@ public class PAYMSimOPageActions extends Environment {
 
 		String confirmTxt = pageobjects.PAYMSimOPage.confirmText.getText();
 		Thread.sleep(2000);
-		log.debug("The confirmation text is:: "+confirmTxt);
+		log.debug("The confirmation text is:: " + confirmTxt);
 
 		WebElement element = pageobjects.PAYMSimOPage.TermsAndConditionsCheckbox_ReviewPage;
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -865,10 +872,294 @@ public class PAYMSimOPageActions extends Environment {
 	public static void clickOnPlaceYourOrderButton() throws InterruptedException {
 		Thread.sleep(6000);
 		WebElement element = pageobjects.PAYMSimOPage.PlaceYourOrder;
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 		Thread.sleep(2000);
 	}
 
+	public static void Verify_New_18months_Contract_Displayed() throws InterruptedException {
+        ///     Mobile
+		Thread.sleep(3000);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,350)");
 
+		if(months_contract_18.getText().contains("18 months")){
+			log.debug("18 Month contract option is displayed under Phone tab");
+		}else {
+			log.debug("Verification Fail and 18 Month contract option is not displayed under Phone Tab");
+			Assert.fail("Verification Fail and 18 Month contract option is not displayed under Phone Tab");
+		}
+		////Tablet
+		Thread.sleep(3000);
+		action = new Actions(driver);
+		action.moveToElement(tablet_tab).click().build().perform();
+
+		if(months_contract_18.getText().contains("18 months")){
+			log.debug("18 Month contract option is displayed under Tablet tab");
+		}else {
+			log.debug("Verification Fail and 18 Month contract option is not displayed under Tablet Tab");
+			Assert.fail("Verification Fail and 18 Month contract option is not displayed under Tablet Tab");
+		}
+		//////  MBB
+		Thread.sleep(3000);
+		action = new Actions(driver);
+		action.moveToElement(Mbb_tab).click().build().perform();
+
+		if(months_contract_18.getText().contains("18 months")){
+			log.debug("18 Month contract option is displayed under MBB tab");
+		}else {
+			log.debug("Verification Fail and 18 Month contract option is not displayed under MBB Tab");
+			Assert.fail("Verification Fail and 18 Month contract option is not displayed under MBB Tab");
+		}
+	}
+
+	public static void Verify_New_18months_Contract_Displayed_as_first_button() throws InterruptedException {
+		//////////Phone
+		Thread.sleep(3000);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,350)");
+			if(first_18_months_contract.getText().contains("18 months")){
+				log.debug("18 month contract option is First button under Phone Tab");
+			}else {
+
+				log.debug("Verification Fail and 18 month contract option is not First button under Phone Tab");
+				Assert.fail("Verification Fail and 18 month contract option is not First button under Phone Tab");
+			}
+		////////////Tablet
+		Thread.sleep(2000);
+		action = new Actions(driver);
+		action.moveToElement(tablet_tab).click().build().perform();
+		if(first_18_months_contract.getText().contains("18 months")){
+			log.debug("18 month contract option is First button under Tablet Tab");
+		}else {
+
+			log.debug("Verification Fail and 18 month contract option is not First button under Tablet Tab");
+			Assert.fail("Verification Fail and 18 month contract option is not First button under Tablet Tab");
+		}
+		/////////////////MBB
+		Thread.sleep(3000);
+		action = new Actions(driver);
+		action.moveToElement(Mbb_tab).click().build().perform();
+		if(first_18_months_contract.getText().contains("18 months")){
+			log.debug("18 month contract option is First button under MBB Tab");
+		}else {
+
+			log.debug("Verification Fail and 18 month contract option is not First button under MBB Tab");
+			Assert.fail("Verification Fail and 18 month contract option is not First button under MBB Tab");
+		}
+
+	}
+
+	public static void Verify_12_months_contract_selected_by_default() throws InterruptedException {
+
+		Thread.sleep(3000);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,350)");
+
+		//Phone - default contract 12 and its getting enable
+		try {
+			if(driver.findElements(By.xpath("//li[@id='id-12-months' and @class='active']")).size() > 0){
+				log.debug("Contract 12th  - selected by default under Phone Tab");
+			}else {
+				log.debug("Failed to display ::: Contract 12th  - selected by default under Phone Tab");
+				Assert.fail("Failed to display ::: Contract 12th  - selected by default under Phone Tab");
+			}
+		} catch (Exception e) {
+			log.debug("Catch block-Verification Fail, unable to validate 12 month contract option under Phone tab");
+		}
+
+		//Tablet - Contract length 12 displayed by default
+		Thread.sleep(2000);
+		action = new Actions(driver);
+		action.moveToElement(tablet_tab).click().build().perform();
+		try {
+			if(driver.findElements(By.xpath("//li[@id='id-12-months' and @class='active']")).size() > 0){
+				log.debug("Contract 12th  - selected by default under Phone Tab");
+			}else {
+				log.debug("Failed to display ::: Contract 12th  - selected by default under Tablet Tab");
+				Assert.fail("Failed to display ::: Contract 12th  - selected by default under Tablet Tab");
+			}
+		} catch (Exception e) {
+			log.debug("Catch block-Verification Fail, unable to validate 12 month contract option under Tablet tab");
+		}
+
+		//MBB - Contract length 12 displayed by default
+		Thread.sleep(2000);
+		action = new Actions(driver);
+		action.moveToElement(Mbb_tab).click().build().perform();
+
+		try {
+			if(driver.findElements(By.xpath("//li[@id='id-12-months' and @class='active']")).size() > 0){
+				log.debug("Contract 12th  - selected by default under MBB tab");
+			}else {
+				log.debug("Failed to display ::: Contract 12th  - selected by default under MBB tab");
+				Assert.fail("Failed to display ::: Contract 12th  - selected by default under MBB tab");
+			}
+		} catch (Exception e) {
+			log.debug("Catch block-Verification Fail, unable to validate 12 month contract option under MBB tab");
+		}
+	}
+
+
+	public static void verify_18_months_contract_text_displayed_in_TE_page() throws InterruptedException {
+
+		Thread.sleep(3000);
+
+			if(TE_page_months_contract.getText().contains("18 months contract")){
+				log.debug("18 months contract text is displayed in TE page"+ driver.getTitle());
+			}else {
+				log.debug("Verification Fail and 18 months contract text is not displayed in TE page"+ driver.getTitle());
+				Assert.fail("Verification Fail and 18 months contract text is not displayed in TE page"+ driver.getTitle());
+			}
+	}
+
+	public static void verify_18_months_contract_text_displayed_in_basket_page() throws InterruptedException {
+		Thread.sleep(2000);
+		js = (JavascriptExecutor) driver;
+
+			if (basket_page_months_contract.getText().contains("18 months contract")) {
+				log.debug("18 months contract text is displayed in basket page"+ driver.getTitle());
+			} else {
+				log.debug("Verification Fail and 18 months contract text is not displayed in basket page"+ driver.getTitle());
+				Assert.fail("Verification Fail and 18 months contract text is not displayed in basket pages"+ driver.getTitle());
+			}
+		}
+
+	public static void verify_18_months_contract_text_displayed_in_DPR_page() throws InterruptedException {
+		Thread.sleep(2000);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-100)");
+		if(D_P_R_page.getText().contains("18 months contract")){
+			log.debug("18 months contract text is displayed in DPR page" + driver.getTitle());
+		}else {
+			log.debug("Verification Fail and 18 months contract text is not displayed in DPR page"+ driver.getTitle());
+			Assert.fail("Verification Fail and 18 months contract text is not displayed in DPR page"+ driver.getTitle());
+		}
+
+	}
+	public static void verify_18_months_contract_text_displayed_in_confirmation_page() throws InterruptedException {
+		Thread.sleep(2000);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-100)");
+		if(confirm_page_months_contract.getText().contains("18 months contract")){
+			log.debug("18 months contract text is displayed in confirmation page"+ driver.getTitle());
+		}else {
+			log.debug("Verification Fail and 18 months contract text is not displayed in confirmation page"+ driver.getTitle());
+			Assert.fail("Verification Fail and 18 months contract text is not displayed in confirmation page"+ driver.getTitle());
+		}
+	}
+
+	public static void verify_unlimited_data_under_recommended_tariff() throws InterruptedException {
+		/////Recommended data sPhone
+		    Thread.sleep(3000);
+			if (Unlimited_data.getText().contains("Unlimited data (4G)")){
+				log.debug("Unlimited data value is displayed under recommended tariff under Phone tab");
+			} else {
+				log.debug("Verification Fail and Unlimited data is not displayed under recommended tariff from under Phone tab");
+				Assert.fail("Verification Fail and Unlimited data  is not displayed under recommended tariff from under Phone tab");
+			}
+			//////////Tablet
+		Thread.sleep(3000);
+		action = new Actions(driver);
+		action.moveToElement(tablet_tab).click().build().perform();
+		Thread.sleep(2000);
+		if (Unlimited_data.getText().contains("Unlimited data (4G)")) {
+			log.debug("Unlimited data value is displayed under recommended tariff from Tablet tab");
+		} else {
+			log.debug("Verification Fail and Unlimited data value is not displayed under recommended tariff from Tablet tab");
+			Assert.fail("Verification Fail and Unlimited data value is not displayed under recommended tariff from Tablet tab");
+		}
+		////////////MBB
+		Thread.sleep(3000);
+		action = new Actions(driver);
+		action.moveToElement(Mbb_tab).click().build().perform();
+		Thread.sleep(2000);
+		Thread.sleep(2000);
+		if (Unlimited_data.getText().contains("Unlimited data (4G)")) {
+			log.debug("Unlimited data value is displayed under recommended tariff from MBB tab");
+		} else {
+			log.debug("Verification Fail and Unlimited data value is not displayed under recommended tariff from MBB tab");
+			Assert.fail("Verification Fail and Unlimited data value is not displayed under recommended tariff from MBB tab");
+		}
+	}
+	public static void verify_Unlimited_data_in_review_and_confirmation_page() throws InterruptedException{
+		Thread.sleep(3000);
+		if (Unlimited_data_review_confirm.getText().contains("Unlimited data (4G)")) {
+			log.debug("Unlimited data text is displayed in review and confirmation page"+ driver.getTitle());
+		} else {
+			log.debug("Verification fail,Unlimited data text is not displayed in review and confirmation page"+ driver.getTitle());
+			Assert.fail("Verification fail,Unlimited data text is not displayed in review and confirmation page"+ driver.getTitle());
+		}
+	}
+	public static void verify_18_months_contract_text_in_review_and_confirmation_page() throws InterruptedException{
+		Thread.sleep(3000);
+		if (months_18_contract_review_confirm.getText().contains("Unlimited data (4G)")) {
+			log.debug("Unlimited data text is displayed in review and confirmation page"+ driver.getTitle());
+		} else {
+			log.debug("Verification fail,Unlimited data text is not displayed in review and confirmation page"+ driver.getTitle());
+			Assert.fail("Verification fail,Unlimited data text is not displayed in review and confirmation page"+ driver.getTitle());
+		}
+
+	}
+
+	public static void verify_Unlimited_data_in_TE_page() throws InterruptedException {
+		Thread.sleep(3000);
+		if (Unlimited_data_TE.getText().contains("Unlimited data (4G)")) {
+			log.debug("Unlimited data text is displayed in TE page"+ driver.getTitle());
+		} else {
+			log.debug("Verification fail,Unlimited data text is not displayed in TE page"+ driver.getTitle());
+			Assert.fail("Verification fail,Unlimited data text is not displayed in TE page"+ driver.getTitle());
+		}
+	}
+
+	public static void verify_unlimited_data_in_basket_page() throws InterruptedException {
+		Thread.sleep(3000);
+		if (Unlimited_data_basket.getText().contains("Unlimited data (4G)")) {
+			log.debug("Unlimited data(text) is displayed in basket page"+ driver.getTitle());
+		} else {
+			log.debug("Verification fail,Unlimited data text is not displayed in basket page"+ driver.getTitle());
+			Assert.fail("Verification fail,Unlimited data text is not displayed in basket page"+ driver.getTitle());
+		}
+	}
+
+	public static void verify_unlimited_data_delivery_page() throws InterruptedException {
+		Thread.sleep(3000);
+		if (Unlimited_data_delivery.getText().contains("Unlimited data (4G)")) {
+			log.debug("Unlimited data text is displayed in delivery page"+ driver.getTitle());
+		} else {
+			log.debug("Verification fail,Unlimited data text is not displayed in delivery page"+ driver.getTitle());
+			Assert.fail("Verification fail,Unlimited data text is not displayed in delivery page"+ driver.getTitle());
+		}
+	}
+
+	public static void verify_unlimited_data_payment_page() throws InterruptedException {
+		Thread.sleep(3000);
+		if (Unlimited_data_payment.getText().contains("Unlimited data (4G)")) {
+			log.debug("Unlimited data text is displayed in payment page"+ driver.getTitle());
+		} else {
+			log.debug("Verification fail,Unlimited data text is not displayed in payment page"+ driver.getTitle());
+			Assert.fail("Verification fail,Unlimited data text is not displayed in payment page"+ driver.getTitle());
+		}
+	}
+
+	public static void verify_unlimited_data_in_review_page() throws InterruptedException {
+		Thread.sleep(3000);
+		if (Unlimited_data_review.getText().contains("Unlimited data (4G)")) {
+			log.debug("Unlimited data text is displayed in review page"+ driver.getTitle());
+		} else {
+			log.debug("Verification fail,Unlimited data text is not displayed in review page"+ driver.getTitle());
+			Assert.fail("Verification fail,Unlimited data text is not displayed in review page"+ driver.getTitle());
+		}
+
+	}
+
+	public static void verify_unlimited_data_in_confirmation_page() throws InterruptedException {
+		Thread.sleep(3000);
+		if (Unlimited_data_confirmation.getText().contains("Unlimited data (4G)")) {
+			log.debug("Unlimited data text is displayed in confirmation page"+ driver.getTitle());
+		} else {
+			log.debug("Verification fail,Unlimited data(text) is not displayed in confirmation page"+ driver.getTitle());
+			Assert.fail("Verification fail,Unlimited data(text) is not displayed in confirmation page"+ driver.getTitle());
+		}
+	}
 }

@@ -16,7 +16,7 @@ public class AgentCCAEmailAddress extends Environment {
 
 		log.debug("Entering the CCA email for Acquisition customers");
 
-		log.debug("Going to update the CFA CCA email");
+		log.debug("Going to update the CFA_Device_Highlights_Display_When_Technical_Specification_Available_For_Device CCA email");
 		Thread.sleep(4000);
 		Agent_UpdateCCAEmailPage.CCAEmailID.clear();
 		Agent_UpdateCCAEmailPage.CCAEmailID.sendKeys(emailid);

@@ -1035,7 +1035,172 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
         Thread.sleep(6000);
     }
+    public static void add_four_device_highlights_below_product_image() throws InterruptedException {
 
-    //*[@id='colourSelectBoxItText']
+        String expectedvalue1="tagname";
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("window.scrollBy(0,600)");
+        Thread.sleep(2000);
+        try
+        {
+            WebElement ele1=driver.findElement(By.xpath(""));
+            System.out.println(ele1.getTagName());
+            String actualvalue1=ele1.getText();
+            //Assert.assertEquals(expectedvalue1, actualvalue1);
+            if(expectedvalue1.equals(actualvalue1)) {
+                System.out.println("Device Highlights section is displayed successfully");
+                log.debug("Device Highlights section is displayed Successfully");
+            }else
+            {
+                System.out.println("Verification Fail and Device Highlights is not displayed");
+                log.debug("Verification Fail and Device Highlights is not displayed");
+            }
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+            log.debug("Exception Occured, unable to validate Device Highlights in product details page");
+
+        }
+    }
+    public static void technical_specification_section_is_removed_in_product_details_image() throws InterruptedException {
+        String expectedvalue1 = null;
+        String expectedvalue2 = null;
+        String expectedvalue3 = null;
+        String expectedvalue4 = null;
+        String actualvalue1 = "Camera";
+        String actualvalue2 = "Battery life";
+        String actualvalue3 = "Weight";
+        String actualvalue4 = "Screen size";
+        Thread.sleep(3000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,14500)");
+        Thread.sleep(2000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"shopApp\"]/div[3]/div/div[1]/div[10]/div/ul[1]/li[1]/div/h33"));
+            System.out.println("Element Found, Verification Fail and Technical specification Camera section is not removed");
+            log.debug("Element Found, Verification Fail and Technical specification Camera section is not removed");
+        } catch (Exception a) {
+            if (!actualvalue1.equals(expectedvalue1)) {
+                System.out.println("Technical specification Camera section is removed successfully");
+                log.debug("Technical specification Camera section is removed successfully");
+            } else {
+                a.printStackTrace();
+                System.out.println("Verification Fail and Technical specification Camera section is not removed");
+                log.debug("Verification Fail and Technical specification Camera section is not removed");
+            }
+
+            try {
+                driver.findElement(By.xpath("//*[@id=\"shopApp\"]/div[3]/div/div[1]/div[10]/div/ul[1]/li[2]/div/h33"));
+                System.out.println("Element Found, Verification Fail and Technical specification Battery section is not removed");
+                log.debug("Element Found, Verification Fail and Technical specification Battery section is not removed");
+            } catch (Exception b) {
+                if (!actualvalue2.equals(expectedvalue2)) {
+                    System.out.println("Technical specification Battery section is removed successfully");
+                    log.debug("Technical specification Battery section is removed successfully");
+                } else {
+                    b.printStackTrace();
+                    System.out.println("Verification Fail and Technical specification Battery section is not removed");
+                    log.debug("Verification Fail and Technical specification Battery section is not removed");
+                }
+
+                try {
+                    driver.findElement(By.xpath("//*[@id=\"shopApp\"]/div[3]/div/div[1]/div[10]/div/ul[1]/li[3]/div/h33"));
+                    System.out.println("Element Found, Verification Fail and Technical specification Weight section is not removed");
+                    log.debug("Element Found, Verification Fail and Technical specification Weight section is not removed");
+                } catch (Exception c) {
+                    if (!actualvalue3.equals(expectedvalue3)) {
+                        System.out.println("Technical specification Weight section is removed successfully");
+                        log.debug("Technical specification Weight section is removed successfully");
+                    } else {
+                        c.printStackTrace();
+                        System.out.println("Verification Fail and Technical specification Weight section is not removed");
+                        log.debug("Verification Fail and Technical specification Weight section is not removed");
+                    }
+                    try {
+                        driver.findElement(By.xpath("//*[@id=\"shopApp\"]/div[3]/div/div[1]/div[10]/div/ul[1]/li[4]/div/h33"));
+                        System.out.println("Element Found, Verification Fail and Technical specification Screen size section is not removed");
+                        log.debug("Element Found, Verification Fail and Technical specification Screen size section is not removed");
+                    } catch (Exception d) {
+                        if (!actualvalue4.equals(expectedvalue4)) {
+                            System.out.println("Technical specification Screen size section is removed successfully");
+                            log.debug("Technical specification Screen size section is removed successfully");
+                        } else {
+                            d.printStackTrace();
+                            System.out.println("Verification Fail and Technical specification Screen size section is not removed");
+                            log.debug("Verification Fail and Technical specification Screen size section is not removed");
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    public static void change_calculator_state_values_like_upfront_tenure_datavalues() throws Exception {
+        driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("window.scrollBy(0,390)");
+        Thread.sleep(1000);
+        WebElement upfront=driver.findElement(By.xpath("//*[@id=\"deviceBackground\"]/div/div[2]/div/div[7]/div/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span"));
+        upfront.click();
+        upfront.click();
+        Thread.sleep(5000);
+        WebElement months=driver.findElement(By.xpath("//*[@id=\"deviceBackground\"]/div/div[2]/div/div[7]/div/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/span"));
+        months.click();
+        months.click();
+        Thread.sleep(5000);
+        WebElement data=driver.findElement(By.xpath("//*[@id=\"deviceBackground\"]/div/div[2]/div/div[7]/div/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/span"));
+        data.click();
+        data.click();
+    }
+    public static void calculator_state_values_remains_after_change_in_device_variant() {
+
+        driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+        String expectedvalue1="£40.00";
+        String expectedvalue2="34";
+        String expectedvalue3="25GB";
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        WebElement upfront_value=driver.findElement(By.xpath("//*[@id=\"deviceBackground\"]/div/div[2]/div/div[7]/div/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]"));
+        //System.out.println(upfront_value.getText());
+        String actualvalue1=upfront_value.getText();
+        WebElement months=driver.findElement(By.xpath("//*[@id=\"deviceBackground\"]/div/div[2]/div/div[7]/div/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]"));
+        //System.out.println(months.getText());
+        String actualvalue2=months.getText();
+        WebElement data=driver.findElement(By.xpath("//*[@id=\"deviceBackground\"]/div/div[2]/div/div[7]/div/div/div/div/div/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]"));
+        //System.out.println(data.getText());
+        String actualvalue3=data.getText();
+        try {
+            if(expectedvalue1.equals(actualvalue1)) {
+                log.debug("Upfront Values are remains same in calculator after change the Device change");
+                System.out.println("Upfront Values are remains same in calculator after change the Device change");
+            }else
+            {
+                log.debug("Verification Fail,upfront values are not remains same in calculator after change the Device change");
+                System.out.println("Verification Fail,upfront values are not remains same in calculator after change the Device change");
+            }
+            if(expectedvalue2.equals(actualvalue2)){
+                log.debug("Months are remains same in calcuator after change the device variant");
+                System.out.println("Months are remains same in calcuator after change the device variant");
+            }else
+            {
+                log.debug("Verification Fail,months are not remains same in calculator after change the device variant");
+                System.out.println("Verification Fail,months are not remains same in calculator after change the device variant");
+            }
+            if(expectedvalue3.equals(actualvalue3)) {
+                log.debug("Data Values are remains same in calculator after change the device variant");
+                System.out.println("Data Values are remains same in calculator after change the device variant");
+            }else
+            {
+                log.debug("Verification Fail,Data Values are not remains same in calculator after change the device variant");
+                System.out.println("Verification Fail,Data Values are not remains same in calculator after change the device variant");
+            }
+            Screenshots.captureScreenshot();
+        }catch(Exception e)
+        {
+            log.debug("Validation Fail,unable to validate calculator state values");
+            Assert.fail();
+        }
+    }
 
 }
