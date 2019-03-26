@@ -12242,4 +12242,251 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to go PD page");
         }
     }
+
+    //lokesh baskar
+    @And("Verify 18 Months contract is displayed under Phone Tablet MBB Tab")
+    public void verify_18_months_contract_is_displayed_under_Phone_Tablet_MBB_Tab(){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.Verify_New_18months_Contract_Displayed_from_Mobile_tab();
+            PAYMSimOPageActions.selectTabletsTab();
+            PAYMSimOPageActions.Verify_New_18months_Contract_Displayed_from_Tablet_tab();
+            PAYMSimOPageActions.selectMBBTab();
+            PAYMSimOPageActions.Verify_New_18months_Contract_Displayed_from_Mbb_tab();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate 18 month contract option from Main Block");
+            Assert.fail("Catch block-Verification Fail, unable to validate 18 month contract option from Main Block");
+
+        }
+    }
+    @And("Verify 18 Months contract option is displayed as first button under Phone Tablet MBB Tab")
+    public void Verify_18_Months_contract_option_is_displayed_as_first_button_under_Phone_Tablet_MBB_Tab(){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.Verify_New_18months_Contract_Displayed_as_first_button_from_Phone_tab();
+            PAYMSimOPageActions.selectTabletsTab();
+            PAYMSimOPageActions.Verify_New_18months_Contract_Displayed_as_first_button_from_Tablet_tab();
+            PAYMSimOPageActions.selectMBBTab();
+            PAYMSimOPageActions.Verify_New_18months_Contract_Displayed_as_first_button_from_MBB_tab();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate 18 month contract option from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate 18 month contract option from Main block");
+
+        }
+    }
+    @And("Verify 12 Months contract option is selected by default when lands on PayM_Sim_only")
+    public void verify_12_Months_contract_option_is_selected_by_default_when_lands_on_PayM_Sim_deal(){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.Verify_12_months_contract_selected_by_default();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate 12 month contract option from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate 12 month contract option from Main block");
+
+        }
+    }
+    @And("verify ([^\"]*) text is displayed in TE page")
+    public void verify_text_is_displayed_in_TE_page (){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_18_months_contract_text_displayed_in_TE_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate 18 month contract text in TE page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate 18 month contract text in TE page from Main block");
+
+        }
+
+    }
+    @And("verify ([^\"]*) text is displayed in basket page")
+    public void verify_text_is_displayed_in_basket_page (){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_18_months_contract_text_displayed_in_basket_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate 18 month contract text in basket page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate 18 month contract text in basket page from Main block");
+        }
+    }
+    @And("verify ([^\"]*) text is displayed in DPR page")
+    public void verify_text_is_displayed_in_DPR_page (){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_18_months_contract_text_displayed_in_DPR_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate 18 month contract text in DPR page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate 18 month contract text in DPR page from Main block");
+
+        }
+
+    }
+    @And("verify ([^\"]*) text is displayed in confirmation page")
+    public void verify_text_is_displayed_in_confirmation_page (){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_18_months_contract_text_displayed_in_confirmation_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate 18 month contract text in confirmation page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate 18 month contract text in confirmation page from Main block");
+
+        }
+
+    }
+    @And("Verify unlimited data is displayed under recommended tariff from ([^\"]*) option")
+    public void verify_unlimited_data_is_displayed_under_recommended_tariff_from_option(String Contract)
+    {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_unlimited_data_under_recommended_tariff();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate Unlimited data under recommended tariff from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate Unlimited data under recommended tariff from Main block");
+
+        }
+
+    }
+    @And("verify Unlimited data is displayed in Tariff and Extras page")
+    public void verify_Unlimited_data_is_displayed_in_Tariff_and_Extras_page()
+    {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_Unlimited_data_in_TE_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate Unlimited data in TE page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate Unlimited data in TE page from Main block");
+
+        }
+
+    }
+    @And ("verify Unlimited data is displayed in Review and confirm page")
+    public void verify_Unlimited_data_is_displayed_in_Review_and_confirm_page(){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_Unlimited_data_in_review_and_confirmation_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate Unlimited data in TE page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate Unlimited data in TE page from Main block");
+
+        }
+    }
+    @And ("verify ([^\"]*) text is displayed in Review and confirm page")
+    public void verify_text_displayed_review_confirm_page(){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_18_months_contract_text_in_review_and_confirmation_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate Unlimited data in review and confirmation page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate Unlimited data in review and confirmation page from Main block");
+        }
+    }
+    @And("verify Unlimited data is displayed in basket page")
+    public void verify_Unlimited_data_is_displayed_in_basket_page()
+    {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_unlimited_data_in_basket_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate Unlimited data in basket page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate Unlimited data in basket page from Main block");
+
+        }
+
+    }
+    @And("verify Unlimited data is displayed in delivery page")
+    public void verify_Unlimited_data_is_displayed_in_delivery_page()
+    {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_unlimited_data_delivery_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate Unlimited data in delivery page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate Unlimited data in delivery page from Main block");
+
+        }
+
+    }
+    @And("verify Unlimited data is displayed in Payment page")
+    public void verify_Unlimited_data_is_displayed_in_Payment_page()
+    {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_unlimited_data_payment_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate Unlimited data in payment page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate Unlimited data in payment page from Main block");
+
+        }
+
+    }
+    @And("verify Unlimited data is displayed in Review page")
+    public void verify_Unlimited_data_is_displayed_in_Review_page()
+    {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_unlimited_data_in_review_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to validate Unlimited data in Review page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to validate Unlimited data in Review page from Main block");
+
+        }
+
+    }
+    @And("verify Unlimited data is displayed in confirmation page")
+    public void verify_Unlimited_data_is_displayed_in_confirmation_page()
+    {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.verify_unlimited_data_in_confirmation_page();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Catch block-Verification Fail, unable to Unlimited data in confirmation page from Main block");
+            Assert.fail("Catch block-Verification Fail, unable to Unlimited data in confirmation page from Main block");
+
+        }
+
+    }
+
 }
