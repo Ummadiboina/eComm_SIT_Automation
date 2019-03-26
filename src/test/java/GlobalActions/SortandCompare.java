@@ -24,8 +24,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SortandCompare {
 
-	public static void main(String[] args) throws IOException, InterruptedException
-	{
+	public static void main(String[] args) {
 
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\subbaiv1\\regression2\\Browsers\\ChromeDriver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();

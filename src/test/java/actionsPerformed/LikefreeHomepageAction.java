@@ -10,7 +10,7 @@ import helpers.Environment;
 public class LikefreeHomepageAction extends Environment {
 	final static Logger log = Logger.getLogger("LikefreeHomepageAction");
 
-	public static void ElementClick(String elementName) throws IOException, InterruptedException {
+	public static void ElementClick(String elementName) throws IOException {
 
 		if (elementName.contains("simfree")) {
 			pageobjects.LikeFreePage.simfree1.click();

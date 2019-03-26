@@ -11,7 +11,7 @@ public class CVOS_SupplyChainloggedIn extends Environment {
 
 	final static Logger log = Logger.getLogger("CVOS_SupplyChainloggedIn");
 
-	public static void CVOSSupplyChainVal() throws InterruptedException, IOException {
+	public static void CVOSSupplyChainVal() throws IOException {
 		if (pageobjects.CVOS_PageObjects.stockpotTab.isDisplayed()) {
 			log.debug("The Stockpot tab is displayed : " + pageobjects.CVOS_PageObjects.stockpotTab.getText());
 			log.debug("The Stockpot tab is displayed : " + pageobjects.CVOS_PageObjects.stockpotTab.getText());

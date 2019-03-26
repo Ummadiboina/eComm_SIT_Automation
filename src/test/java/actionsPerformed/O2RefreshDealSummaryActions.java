@@ -76,7 +76,7 @@ public class O2RefreshDealSummaryActions extends Environment {
 
 	}
 
-	public static void SwitchFocusToNewTab() throws IOException, InterruptedException {
+	public static void SwitchFocusToNewTab() throws IOException {
 
 		for (String winHandle : driver.getWindowHandles()) {
 			driver.switchTo().window(winHandle);
