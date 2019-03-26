@@ -66,4 +66,8 @@ public class DrupalShopPageObjects {
     @FindBy(how = How.XPATH, using = "//input[@value='MINIMUM']")
     public static WebElement minimumTariff;
 
+    @FindBy(how = How.XPATH, using = "(//table[@id='modelListTable']/tfoot/tr/td/select)[2]")
+    public static WebElement tariffVariantFilter;
+
+
 }

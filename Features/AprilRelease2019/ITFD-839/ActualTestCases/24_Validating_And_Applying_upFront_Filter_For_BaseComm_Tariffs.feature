@@ -1,10 +1,10 @@
-Feature: 14_Validating_And_Applying_Data_Filter_For_CFU_Tariffs
+Feature: 24_Validating_And_Applying_upFront_Filter_For_BaseComm_Tariffs
 
   This scenario ensures that the dropdown with the unique value of particular column is present at the bottom of the
   result table and the values in table are filtered based on selected value in filter dropdown
 
   @Web
-  Scenario Outline:14_Validating_And_Applying_Data_Filter_For_CFU_Tariffs
+  Scenario Outline:24_Validating_And_Applying_upFront_Filter_For_BaseComm_Tariffs
 
     Given I am a Drupal Admin
     And I Login with Drupal Admin Credential <userName> and <password> and verify login page
@@ -18,5 +18,5 @@ Feature: 14_Validating_And_Applying_Data_Filter_For_CFU_Tariffs
     And save the drupal tariffs
 
     Examples:
-      | userName   | password   | drupalNavTab | deviceBrand | shopSubLink | deviceMdl          | deviceVariant                           | GetTariffCTA    | decoupleStatus | TarifVariant | filter     |
-      | DuraiArasi | DuraiArasi | Shop         | Apple       | Tariff      | iPad Pro 10.5 inch | iPad Pro 10.5 inch 64GB Silver (Active) | GETCFUTariffCTA | Enable         | data         | dataFilter |
+      | userName   | password   | drupalNavTab | deviceBrand | shopSubLink | deviceMdl          | deviceVariant                           | GetTariffCTA          | decoupleStatus | TarifVariant | filter        |
+      | DuraiArasi | DuraiArasi | Shop         | Apple       | Tariff      | iPad Pro 10.5 inch | iPad Pro 10.5 inch 64GB Silver (Active) | GETBaseCommsTariffCTA | Enable         | data         | upFrontFilter |
