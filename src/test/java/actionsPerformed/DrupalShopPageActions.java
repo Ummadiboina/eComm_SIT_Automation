@@ -20,6 +20,8 @@ import java.util.List;
 public class DrupalShopPageActions extends Environment {
 
     final static Logger log = Logger.getLogger("DrupalShopPageActions");
+    static String recommendedData = "";
+    static String recommendedUpFront = "";
 
     public static void drupalShopSubLinkAction(String shopSubLink) {
         try {
@@ -274,7 +276,7 @@ public class DrupalShopPageActions extends Environment {
                 String firstFilterOption = driver.findElement(By.xpath("(//table[@id='modelListTable']/tfoot/tr/td/select)[1]/option[2]")).getText();
                 Screenshots.captureScreenshot();
                 dropdownData.selectByVisibleText(firstFilterOption);
-                log.debug("First data filter option is applied\n");
+                log.debug("First data filter option is applied ie: "+firstFilterOption+"\n");
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();
                 log.debug("Verifying appropriate tariffs are listed or not as per the selected filter options\n");
@@ -332,7 +334,7 @@ public class DrupalShopPageActions extends Environment {
                 String firstFilterOption = driver.findElement(By.xpath("(//table[@id='modelListTable']/tfoot/tr/td/select)[4]/option[2]")).getText();
                 Screenshots.captureScreenshot();
                 dropdownData.selectByVisibleText(firstFilterOption);
-                log.debug("First upFront filter option is applied\n");
+                log.debug("First upFront filter option is applied ie: "+firstFilterOption+"\n");
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();
                 log.debug("Verifying appropriate tariffs are listed or not as per the selected filter options\n");
@@ -363,6 +365,49 @@ public class DrupalShopPageActions extends Environment {
                 }else{
                     log.debug("Failed:Tariffs are not filtered as per the applied data filter option\n");
                     Assert.fail("Failed:Tariffs are not filtered as per the applied data filter option\n");
+                }
+            }else{
+                if(filter.equalsIgnoreCase("Variant")){
+                    List<WebElement> variantsFilterOptions = driver.findElements(By.xpath("(//table[@id='modelListTable']/tfoot/tr/td/select)[2]/option"));
+
+                    log.debug("-----------Campaign variant Filter options are :-----------\n");
+                    for (int i = 1; i < variantsFilterOptions.size(); i++) {
+                        log.debug(variantsFilterOptions.get(i).getText() + "\n");
+                    }
+                    log.debug("-----------------------------------------------\n");
+
+                    log.debug("Applying first variant filter option to filter the campaigns\n");
+                    WebElement tariffVariantFilter = pageobjects.DrupalShopPageObjects.tariffVariantFilter;
+                    Select dropdownData = new Select(tariffVariantFilter);
+                    String firstFilterOption = driver.findElement(By.xpath("(//table[@id='modelListTable']/tfoot/tr/td/select)[2]/option[2]")).getText();
+                    Screenshots.captureScreenshot();
+                    dropdownData.selectByVisibleText(firstFilterOption);
+                    log.debug("First variant filter option is applied ie: "+firstFilterOption+"\n");
+                    Thread.sleep(3000);
+                    Screenshots.captureScreenshot();
+                    log.debug("Verifying appropriate campaigns are listed or not as per the selected variant filter options\n");
+
+
+                    log.debug("-------------------Campaigns list after applying first variant filter option-----------------\n");
+                    List<WebElement> campaignsVariantFilterOptions = driver.findElements(By.xpath("//table[@id='modelListTable']/tbody/tr/td[3]"));
+
+                    for(int i=0;i<campaignsVariantFilterOptions.size();i++){
+                        log.debug(campaignsVariantFilterOptions.get(i).getText()+"\n");
+                    }
+
+                    int match=0;
+                    for(int i=0;i<campaignsVariantFilterOptions.size();i++){
+                        if(!campaignsVariantFilterOptions.get(i).equals(firstFilterOption)){
+                            match++;
+                        }
+                    }
+
+                    if(match==0){
+                        log.debug("Campaigns are filtered as per the applied variant filter option\n");
+                    }else{
+                        log.debug("Failed:Campaigns are not filtered as per the applied variant filter option\n");
+                        Assert.fail("Failed:Campaigns are not filtered as per the applied variant filter option\n");
+                    }
                 }
             }
         } catch (Exception e) {
@@ -485,8 +530,8 @@ public class DrupalShopPageActions extends Environment {
                 }
             }
             if(modelCount==0){
-                log.debug("Failed: campaign brand not available\n");
-                Assert.fail("Failed: campaign brand not available\n");
+                log.debug("Failed: campaign model not available\n");
+                Assert.fail("Failed: campaign model not available\n");
             }
 
             //click on Get Tariffs
@@ -511,9 +556,12 @@ public class DrupalShopPageActions extends Environment {
 
             if(campaignTariff.size()>0) {
                 log.debug(campaignTariff.size()+" Capaigns tariffs are present and the list is:\n");
+                log.debug("\nModel:\t\t Variant:\t\t\t\t Channel:\t\t Status:\t Data:\t BaseComms:\t Pre to Post:\t Start date:\t End date:\t Campaign Channel:" + "\n");
+                log.debug("\n---------------------------------------------------------------------------------------------------------------------------------------\n");
                 for (int i = 0; i < campaignTariff.size(); i++) {
-                    log.debug(campaignTariff.get(i).getText() + "\n");
+                    log.debug("\n"+campaignTariff.get(i).getText() + "\n");
                 }
+                log.debug("\n-------------------------------------------------End of Campaign Tariffs list--------------------------------------------------------\n");
             }else{
                 log.debug("Failed: Campaign tariffs does not exists\n");
                 Assert.fail("Failed: Campaign tariffs does not exists\n");
@@ -522,12 +570,54 @@ public class DrupalShopPageActions extends Environment {
             jse.executeScript("window.scrollBy(0,400)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
+
+            jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
         }catch(Exception e){
             log.debug("Unable to verify campaign tariffs list, found exception, "+e+"\n");
             Assert.fail("Unable to verify campaign tariffs list, found exception, "+e+"\n");
         }
-
     }
+
+    public static void selectCampaignTariffsMapping(){
+        try{
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            //jse.executeScript("window.scrollBy(0,-1600)", "");
+            jse.executeScript("window.scrollTo(0, 0)");
+            Thread.sleep(3000);
+            jse.executeScript("window.scrollBy(0,1000)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
+            List<WebElement> campaignTariff = driver.findElements(By.xpath("//table[@id='modelListTable']/tbody/tr"));
+            Thread.sleep(2000);
+            if(campaignTariff.size()>0) {
+                log.debug("Selecting campaign tariffs for mapping\n");
+                if(driver.findElement(By.xpath("//table[@id='modelListTable']/tbody/tr[1]/td[1]/input")).isSelected()){
+                    log.debug("First tariff is already selected\n");
+                }else {
+                    driver.findElement(By.xpath("//table[@id='modelListTable']/tbody/tr[1]/td[1]/input")).click();
+                    log.debug("First tariff is selected for mapping\n");
+                }
+                Thread.sleep(2000);
+                if(driver.findElement(By.xpath("//table[@id='modelListTable']/tbody/tr[2]/td[1]/input")).isSelected()){
+                    log.debug("Second tariff is already selected\n");
+                }else {
+                    driver.findElement(By.xpath("//table[@id='modelListTable']/tbody/tr[2]/td[1]/input")).click();
+                    log.debug("Second tariff is selected for mapping\n");
+                }
+                log.debug("Selected campaign tariffs for mapping\n");
+            }else{
+                log.debug("Failed: Campaign tariffs does not exists\n");
+                Assert.fail("Failed: Campaign tariffs does not exists\n");
+            }
+        }catch(Exception e){
+            log.debug("Unable to select campaign tariffs for mapping, found exception, "+e+"\n");
+            Assert.fail("Unable to select campaign tariffs for mapping, found exception, "+e+"\n");
+        }
+    }
+
 
     public static void verifyAndSelectCampaignChannelAndSave(String campaignChannel){
         try{
@@ -584,10 +674,19 @@ public class DrupalShopPageActions extends Environment {
             Screenshots.captureScreenshot();
 
             if(preferredType.equalsIgnoreCase("Recommended")){
-                pageobjects.DrupalShopPageObjects.preferredRecommendedTariff.click();
+                if(pageobjects.DrupalShopPageObjects.preferredRecommendedTariff.isSelected()){
+                    log.debug("Recommended tariff is already selected by default so, no changes are applied\n");
+                }else {
+                    pageobjects.DrupalShopPageObjects.preferredRecommendedTariff.click();
+                    Thread.sleep(2000);
+                    pageobjects.DrupalShopPageObjects.recommendedTariff.click();
+                    log.debug("Selected recommended option to configure tariffs as recommended tariffs\n");
+                }
+                recommendedUpFront = driver.findElement(By.xpath("//table[@id='modelListTable']/tbody/tr[1]/td[4]")).getText();
+                recommendedData = driver.findElement(By.xpath("//table[@id='modelListTable']/tbody/tr[1]/td[1]")).getText();
                 Thread.sleep(2000);
-                pageobjects.DrupalShopPageObjects.recommendedTariff.click();
-                log.debug("Selected recommended option to configure tariffs as recommended tariffs\n");
+
+
             }else if(preferredType.equalsIgnoreCase("Our Pic")){
                 pageobjects.DrupalShopPageObjects.preferrredOurPicTariff.click();
                 Thread.sleep(2000);

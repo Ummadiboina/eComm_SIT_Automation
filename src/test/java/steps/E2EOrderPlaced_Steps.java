@@ -119,6 +119,23 @@ public class E2EOrderPlaced_Steps {
         log.debug("Successfully launched URL: https://www.ref.o2.co.uk/shop/phones");
     }
 
+    @And("^launch the shop page in new window$")
+    public void launch_the_shop_page() {
+
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("window.open()");
+
+        Set<String> handles = driver.getWindowHandles();
+        List<String> handlesList = new ArrayList<String>(handles);
+        String newWindow = handlesList.get(handlesList.size() - 1);
+        driver.switchTo().window(newWindow);
+        driver.navigate().to("https://www.ref.o2.co.uk/shop");
+        log.debug("Successfully launched URL: https://www.ref.o2.co.uk/shop");
+
+        //String getTheLaunchedURL = driver.getCurrentUrl();
+
+    }
+
     @And("^click on 'My O2' link$")
     public void click_on_MyO2Link() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -11863,7 +11880,20 @@ public class E2EOrderPlaced_Steps {
             DrupalShopPageActions.campaignTariffsList();
 
         }catch(Exception e){
-            log.debug("Unable to save tariffs \n");
+            log.debug("Unable to verify campaign tariffs \n");
+        }
+    }
+
+    @And("^Select campaign tariffs for mapping$")
+    public void selectCampaignTariffsForMapping() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DrupalShopPageObjects.class);
+            log.debug("We are at page: "+driver.getTitle());
+            DrupalShopPageActions.selectCampaignTariffsMapping();
+
+        }catch(Exception e){
+            log.debug("Unable to select campaign tariffs for mapping \n");
         }
     }
 
@@ -11880,4 +11910,23 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Select all campaigns filtered based on variants$")
+    public void selectAllCapmpaignsFilteredVariants(String campaignChannel) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DrupalShopPageObjects.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-100)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
+            driver.findElement(By.xpath("//table[@id='modelListTable']/thead/tr/th/input")).click();
+            log.debug("Selected all campaigns\n");
+            Screenshots.captureScreenshot();
+
+
+        }catch(Exception e){
+            log.debug("Unable to save tariffs \n");
+        }
+    }
 }

@@ -1,10 +1,10 @@
-Feature: Display_Two_Additional_Buttons_on_TariffConfig_When _Flag_Disabled
+Feature: 30_Display_Two_Additional_Buttons_on_TariffConfig_When _Flag_Disabled
 
   This scenario ensures that only two buttons  “Get Tariff“ and "Get Base Comms Tariff" are seen
   under tariff configuration page
 
   @Web
-  Scenario Outline:Display_Two_Additional_Buttons_on_TariffConfig_When _Flag_Disabled
+  Scenario Outline:30_Display_Two_Additional_Buttons_on_TariffConfig_When _Flag_Disabled
 
     Given I am a Drupal Admin
     And I Login with Drupal Admin Credential <userName> and <password> and verify login page
