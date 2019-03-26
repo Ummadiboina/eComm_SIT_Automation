@@ -44,6 +44,8 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void Login(String username, String password) throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        Thread.sleep(1000);
         pageobjects.UpgradeCustomerPage.username.sendKeys(username);
         pageobjects.UpgradeCustomerPage.password.sendKeys(password);
 
@@ -55,9 +57,9 @@ public class UpgradeCustomerPageActions extends Environment {
             pageobjects.UpgradeCustomerPage.signInButton.click();
             log.debug("Clicked on Signin button");
         }
-        Thread.sleep(12000);
+        Thread.sleep(5000);
 
-        log.debug("Title of the page is " + driver.getTitle());
+      //  log.debug("Title of the page is " + driver.getTitle());
         /*
          * if ((!driver.getTitle().
 		 * contains("O2 | Accounts | Please verify your email address") ||

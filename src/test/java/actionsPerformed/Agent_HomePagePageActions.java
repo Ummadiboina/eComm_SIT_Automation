@@ -44,9 +44,13 @@ public class Agent_HomePagePageActions extends Environment {
 	public static void FindUser(String msisdn) throws InterruptedException, IOException {
 
 		driver.manage().deleteAllCookies();
-		Agent_HomePage.MPN.sendKeys(msisdn);
-		log.debug("Entering Valid MPN");
-		log.debug("Entering Valid MPN");
+		if(msisdn.contains("07")) {
+			Agent_HomePage.MPN.sendKeys(msisdn);
+			log.debug("Entering Valid MPN");
+			log.debug("Entering Valid MPN");
+		}else{
+			driver.findElement(By.xpath("//input[@name='fun']")).sendKeys(msisdn);
+		}
 		Thread.sleep(3000);
 		Agent_HomePage.Search.click();
 		log.debug("Clicked on Search button");

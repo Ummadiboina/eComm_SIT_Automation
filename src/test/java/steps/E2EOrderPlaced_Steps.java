@@ -900,7 +900,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            Thread.sleep(4000);
+            Thread.sleep(3000);
             UpgradeCustomerPageActions.Login(username, password);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -3086,6 +3086,7 @@ public class E2EOrderPlaced_Steps {
                     Screenshots.captureScreenshot();
 
                     EmailId_CCAcontinue = pageobjects.DeliveryPage.EmailId_CCAcontinue.getAttribute("value");
+                    log.debug("Email id captured ie: "+EmailId_CCAcontinue);
                 }
             }
 
@@ -5826,11 +5827,11 @@ public class E2EOrderPlaced_Steps {
             Screenshots.captureScreenshot();
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
-            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[3]")));
+            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
             Screenshots.captureScreenshot();
             Thread.sleep(4000);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[3]")));
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
             Thread.sleep(10000);
 
         } catch (Exception e) {
@@ -11531,8 +11532,130 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
-
         }
-
     }
+
+    @And("^Adding a retention bolton and verify in Deal builder section ([^\"]*)$")
+    public void addRetentionBoltonAndVerifyDealBuilderSection(String isRetention) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.retentionBoltonValidationInDealBuilder(isRetention);
+           // Agent_DealBuilderPageActions.saveBasketValidation();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+    @And("^Verify that Copy to Basket is enabled after selecting bolton ([^\"]*)$")
+    public void verifyCopyToBasketEnabledafterSelectingBbolton(String isRetention) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.retentionBoltonValidationInDealBuilder(isRetention);
+            Agent_DealBuilderPageActions.copyToBasket4CustomerBasket();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+    @And("^Verify Deal builder and copy to customer basket then share email via email ([^\"]*)$")
+    public void verifyDeailBuilderAndCopyToCustomerBasketThenShareViaEmail(String isRetention) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.retentionBoltonValidationInDealBuilder(isRetention);
+            Agent_DealBuilderPageActions.copyToBasket4CustomerBasket();
+            Agent_DealBuilderPageActions.sendBasketEmailAddress();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to send eMail");
+            Assert.fail("Unable to send eMail");
+        }
+    }
+
+    @And("^Verify Saved basket after adding the retention items ([^\"]*)$")
+    public void verifyThatBelowValidationMessageShouldNotbeDisplayedEmailPopupWindow(String isRetention) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.retentionBoltonValidationInDealBuilder(isRetention);
+            Agent_DealBuilderPageActions.saveBasketValidation();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+
+    @And("^Verify Saved basket after adding the retention items for Standard tariff ([^\"]*)$")
+    public void verifyDealBuilderForStandardTariff(String isRetention) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.retentionBoltonValidationInDealBuilder(isRetention);
+            //Agent_DealBuilderPageActions.saveBasketValidation();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+    @And("^Add Second bolton after selecting one Retention bolton$")
+    public void addOneMoreBotonToDeailBuilder(String isRetention){
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+           driver.findElement(By.xpath("(//*[text()='Data Top-Up Bolt-Ons']/../../../..//img)[1]")).click();
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+    @And("^Enter the OTAC and click on continue to landed on the Basket page$")
+    public void  enterOTAC_ClickContinueToLandedOnBasket(){
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.copyLinkFromClipboardThenProceedToPlaceOrder();
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+    @And("^Verify that the Bolton section Display in Basket and SSC pages$")
+    public void  verify_Bolton_SectionDispay_In_Basket_And_SSCpages(){
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(1000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.verifyBoltonDisplayedInBasketAndSSC();
+            Thread.sleep(200);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+
+
 }

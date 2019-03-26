@@ -46,7 +46,7 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.ID, using = "deviceBackground")
     public static WebElement clickanywhere;
 
-    @FindBy(how = How.XPATH, using = "//p[@class='delivery-information']")
+    @FindBy(how = How.XPATH, using = "//p[@class='delivery-information'] | //p[@class='preorder']")
     public static WebElement PreDevStatusMsg;
 
     @FindBy(how = How.XPATH, using = "//p[@class='delivery-information']")

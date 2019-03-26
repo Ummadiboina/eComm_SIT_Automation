@@ -6,9 +6,257 @@
   <component name="ChangeListManager">
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
     <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/10_AFU_Tablet_Standard_RetentionBolton_Checkout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/11_AFU_MBB_Refresh_RetentionBolton_SharedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/13_AFU_MBB_Refresh_RetentionBolton_CopyToCustomerBuilder_EmailBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/14_AFU_MBB_Standard_RetentionBolton_Checkout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/15_AFU_SmiOnly_RetentionBolton_Shared basket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/16_AFU_SmiOnly_RetentionBolton_CopyToCustomerBuilder_EmailBasket .feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/17_AFU_SmiOnly_Standard_RetentionBolton_Checkout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/18_AFU_Phone_Refresh_Retention_Bolton_Accessory_SharedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/19_AFU_Tablet_Refresh_RetentionBolton_Accessory_SharedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/1_AFU_Phone_Refresh_Retention_Bolton_SharedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/20_AFU_Phone_Refresh_InCompatable_Bolton_SharedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/2_AFU_Phone_Refresh_RetentionBolton_Discount_SharedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/3_AFU_Phone_Refresh_RetentionBolton_AddOneMoreBoltonSharedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/4_AFU_Phone_Refresh_RetentionBolton_CopyToCustomerBuilder_EmailBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/5_AFU_Phone_Standard_RetentionBolton_Checkout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/6_AFU_Phone_Standard_RetentionBolton_Discount_Checkout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/7_AFU_Tablet_Refresh_RetentionBolton_SharedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/8_AFU_Tablet_Refresh_RetentionBolton_Discount_SharedBasket .feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/9_AFU_Tablet_Refresh_RetentionBolton_CopyToCustomerBuilder_emailBasket .feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/02_Reg_AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message_Do_Not_allow_to_place_order.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostrophe_SOA_validation_successful.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/04_Reg_AFA_SIMO_Credit_Check_Status_ReferWithSIMO_Show_Referral_Message_Order_Submission.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/06_Reg_CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/07_Reg_CFA_PayG_Freesim_To_Show_BigBundle_DataRollOver_In_DeliveryPage.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_Multiple_Colour_variant.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/100_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Promotions_Available_But_Not_Valid_For_Current_Date.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/101_FR_Upfront_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/103_FR_Upfront_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/104_FR_Term_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/105_FR_Term_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/106_FR_Term_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/107_FR_Tariff_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/108_FR_Tariff_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/109_FR_Tariff_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/10_Reg_CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Address_copy_update.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/110_FR_Upfront_CFA_PayMTablets_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/112_FR_Term_CFA_PayMTablets_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/113_FR_Term_CFA_PayMTablets_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/114_FR_Term_CFA_PayMTablets_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/115_FR_Data_CFA_PayMTablets_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/116_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/117_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/118_FR_All_CFA_PayMTablets_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/119_FR_All_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/120_FR_Mix_CFU_Phone.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/121_FR_Mix_CFU_Phone.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/122_FR_Mix_CFU_Phone.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/123_FR_Upfront_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/124_BSC_CFA_Tablet_Simo_Edit_and_Validate_BSC_Component_In_Tariff_Listing_and_Basket_Page.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/125_BSC_CFA_MBB_Simo_Select_Cap_My_Bill_and_Validate_BSC_Component_In_Tariff_Listing_and_Edit_BSC_From_Basket_Page_to_Cap_My_Bill.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Incomplete_Section_and_Edit_BSC_To_Cap_My_Bill.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Options_Page_and_Select_Cap_My_Bill.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Page_and_Select_Cap_My_Bill.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/129_BSC_CFA_MBB_Edit_BSC_Component_from_Basket_Page_and_Select_Don't_Cap_My_Bill_and_Validate_Values.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/130_FR_UpFront_AFA_Tablets_E2E.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/131_FR_UpFront_AFA_PAYM_Phones_Acquistion.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/132_FR_UpFront_AFA_PAYM_Phones_Acquistion.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/133_FR_UpFront_AFU_PAYM_Dongle_payByCard.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/134_FR_UpFront_AFU_PAYM_Tablet.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/135_FR_UpFront_AFU_PAYM_Phones.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/136_Reg_CFA_Phones_Click_And_Collect_Now.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/137_Reg_AFA_Phones_Click_And_Collect_Now.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement_IBM_confirmation.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/14_Reg_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/16_Reg_CFU_Buyout_with_Recycle_Order_placement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/19_Reg_MBB_Data filters.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/20_Reg_AFA_PayG_withoutAnyAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/21_Reg_AFA_PAYM_Acquistion.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/22_Reg_AFA_PayMSimO_withoutAnyAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/23_Reg_AFA_Tablet.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/25_Reg_AFU_PAYM_Dongle_payByCard.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/26_Reg_AFU_PAYM_Dongle_submitOrder.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/27_Reg_AFU_SavedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/29_Reg_Agent_Buyout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/30_Reg_Agent_DelayedDelivery.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/31_Reg_Agent_GenerateCCA.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/32_Reg_Agent_PreOrder.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/33_Reg_Agent_TradeIn.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/34_Reg_CFA_Accessories_Confirmation_Page_changes.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/35_Reg_CFA_Basket page cross sell insurance.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/36_Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/39_Reg_CFA_morethan12Tablet.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/40_Reg_CFA_PayG_FreeSim_Phones.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/41_Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/42_Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/47_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/48_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/51_Reg_Consumer_Buyout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/53_Reg_Consumer_PreOrder.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/54_Reg_Consumer_TradeIn.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/56_Reg_CS_CFA_MBBPayG.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/57_Reg_CS_CFU_SavedBasket.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/58_Reg_CS_FitnessTrackers.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/59_Reg_CS_Free_Sim_iPad.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/60_Reg_CS_Free_Sim_Tablet.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/61_Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/62_Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/63_Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/64_Reg_CS_PayMSimOnly.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/65_Reg_CS_PayMSimOnlyRecommendedTariff.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/66_Reg_CFU_PayMSimOnly.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/67_Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/68_Reg_CS_Recycle.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/69_Reg_CS_SmartWatch.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/71_CVOSDelayedDelivery.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/72_CVOSPreOrder.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_page.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/74_Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/75_Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/76_Reg_FNT_DifferentStoreAddressthanBillingAddres.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/77_Reg_FNT_MorethanMaxTransaction_Deny.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/79_Reg_FNT_PayMPhonesClickAndCollect.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/80_Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/82_ Reg_Jan_CFU_MbbSimo30days.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/84_Reg_Jan_FreeSim_CommercialAddress.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/85_Reg_Jan_FreeSim_InvalidPostCode_DeliverySection_AddressLookUp.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/86_Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/89_Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/91_Reg_CFA_Trustev_PayMPhonesHomeDeliveryWithAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/95_Reg_VOLTE_PayMPhonesClickAndCollect.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/98_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_No_Upfront_Payment_Pending.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/99_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_Upfront_Payment_Pending.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/02_Reg_AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message_Do_Not_allow_to_place_order.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostrophe_SOA_validation_successful.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_Multiple_Colour_variant.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/100_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Promotions_Available_But_Not_Valid_For_Current_Date.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/103_FR_Upfront_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/107_FR_Tariff_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/108_FR_Tariff_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/109_FR_Tariff_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/10_Reg_CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Address_copy_update.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/110_FR_Upfront_CFA_PayMTablets_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/117_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/118_FR_All_CFA_PayMTablets_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/120_FR_Mix_CFU_Phone.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/122_FR_Mix_CFU_Phone.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/132_FR_UpFront_AFA_PAYM_Phones_Acquistion.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement_IBM_confirmation.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/19_Reg_MBB_Data filters.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/22_Reg_AFA_PayMSimO_withoutAnyAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/23_Reg_AFA_Tablet.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/26_Reg_AFU_PAYM_Dongle_submitOrder.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/34_Reg_CFA_Accessories_Confirmation_Page_changes.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/35_Reg_CFA_Basket page cross sell insurance.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/36_Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/40_Reg_CFA_PayG_FreeSim_Phones.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/42_Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/48_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/56_Reg_CS_CFA_MBBPayG.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/58_Reg_CS_FitnessTrackers.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/59_Reg_CS_Free_Sim_iPad.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/62_Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/64_Reg_CS_PayMSimOnly.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/67_Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/69_Reg_CS_SmartWatch.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/71_CVOSDelayedDelivery.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_page.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/82_ Reg_Jan_CFU_MbbSimo30days.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/84_Reg_Jan_FreeSim_CommercialAddress.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/85_Reg_Jan_FreeSim_InvalidPostCode_DeliverySection_AddressLookUp.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/04_Reg_AFA_SIMO_Credit_Check_Status_ReferWithSIMO_Show_Referral_Message_Order_Submission.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/101_FR_Upfront_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/104_FR_Term_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/105_FR_Term_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/106_FR_Term_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/121_FR_Mix_CFU_Phone.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/123_FR_Upfront_CFA_Phones_Till_TnE.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/124_BSC_CFA_Tablet_Simo_Edit_and_Validate_BSC_Component_In_Tariff_Listing_and_Basket_Page.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/125_BSC_CFA_MBB_Simo_Select_Cap_My_Bill_and_Validate_BSC_Component_In_Tariff_Listing_and_Edit_BSC_From_Basket_Page_to_Cap_My_Bill.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Incomplete_Section_and_Edit_BSC_To_Cap_My_Bill.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Options_Page_and_Select_Cap_My_Bill.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Page_and_Select_Cap_My_Bill.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/129_BSC_CFA_MBB_Edit_BSC_Component_from_Basket_Page_and_Select_Don't_Cap_My_Bill_and_Validate_Values.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/131_FR_UpFront_AFA_PAYM_Phones_Acquistion.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/135_FR_UpFront_AFU_PAYM_Phones.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/136_Reg_CFA_Phones_Click_And_Collect_Now.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/137_Reg_AFA_Phones_Click_And_Collect_Now.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/16_Reg_CFU_Buyout_with_Recycle_Order_placement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/20_Reg_AFA_PayG_withoutAnyAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/21_Reg_AFA_PAYM_Acquistion.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/25_Reg_AFU_PAYM_Dongle_payByCard.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/29_Reg_Agent_Buyout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/30_Reg_Agent_DelayedDelivery.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/31_Reg_Agent_GenerateCCA.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/32_Reg_Agent_PreOrder.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/33_Reg_Agent_TradeIn.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/39_Reg_CFA_morethan12Tablet.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/41_Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/47_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/51_Reg_Consumer_Buyout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/53_Reg_Consumer_PreOrder.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/54_Reg_Consumer_TradeIn.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/61_Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/63_Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/65_Reg_CS_PayMSimOnlyRecommendedTariff.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/66_Reg_CFU_PayMSimOnly.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/68_Reg_CS_Recycle.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/72_CVOSPreOrder.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/74_Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/75_Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/76_Reg_FNT_DifferentStoreAddressthanBillingAddres.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/77_Reg_FNT_MorethanMaxTransaction_Deny.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/79_Reg_FNT_PayMPhonesClickAndCollect.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/80_Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/89_Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/91_Reg_CFA_Trustev_PayMPhonesHomeDeliveryWithAccessory.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Highest_Priority/95_Reg_VOLTE_PayMPhonesClickAndCollect.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Configurations/Properties/Run.Properties" beforeDir="false" afterPath="$PROJECT_DIR$/Configurations/Properties/Run.Properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GlobalActions/htmltoALM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GlobalActions/htmltoALM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_HomePagePageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_HomePagePageActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/BasketPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/BasketPageActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_DealBuilderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_DealBuilderPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/ConnectedDeviceDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/ConnectedDeviceDetailsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/UpgradeCustomerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/UpgradeCustomerPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,16 +287,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_Multiple_Colour_variant</find>
-      <find>I need</find>
-      <find>I need a new</find>
-      <find>And Select ribboned tariff &lt;tariff&gt; in upgrade journey</find>
-      <find>Click on 'plus' accordion at get promo code section and</find>
-      <find>selectTariffWithRibbonAndOverlayUpgradeJourney</find>
-      <find>And Select ribboned tariff</find>
-      <find>select tablet</find>
-      <find>driver.close()</find>
-      <find>send</find>
       <find>size</find>
       <find>Order</find>
       <find>pom</find>
@@ -69,11 +307,18 @@
       <find>getTe</find>
       <find>(//div[@ardbn='Status']//img)[2]</find>
       <find>ALM</find>
+      <find>extra</find>
+      <find>the Deal builder section value ::::</find>
+      <find>refera</find>
+      <find>REFERA</find>
+      <find>collect</find>
+      <find>sendBasketEmailAddress</find>
+      <find>incompat</find>
+      <find>Verify that below validation message should not be displayed in Email Popup window</find>
+      <find>3.6</find>
+      <find>incompatible</find>
     </findStrings>
     <dirStrings>
-      <dir>C:\Users\subbaiv1\IdeaProjects\regression1</dir>
-      <dir>C:\Users\subbaiv1\IdeaProjects\regression1\src\test\java\actionsPerformed</dir>
-      <dir>C:\Users\subbaiv1\IdeaProjects\regression1\Features\FebruaryRelease2018\Regression</dir>
       <dir>C:\Users\snarasi1\IdeaProjects\regression\src\test\java\actionsPerformed</dir>
       <dir>C:\Users\snarasi1\IdeaProjects\regression\src\test\java\GlobalActions</dir>
       <dir>C:\Users\snarasi1\IdeaProjects\regression\src\test\java\pageobjects</dir>
@@ -101,6 +346,9 @@
       <dir>C:\Users\subbaiv1\IdeaProjects\regression</dir>
       <dir>C:\Users\subbaiv1\IdeaProjects\regression\Features\JuneRelease2018\Regression</dir>
       <dir>C:\Users\subbaiv1\IdeaProjects\regression111</dir>
+      <dir>C:\Users\subbaiv1\IdeaProjects\regression111\Features\JanuaryRelease2019\Regression</dir>
+      <dir>C:\Users\subbaiv1\IdeaProjects\regression111\Features\April_Release2019\Functional\ITFD_1015</dir>
+      <dir>C:\Users\subbaiv1\IdeaProjects\regression111\Features\April_Release2019\Regression\Regression</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -131,57 +379,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" />
-        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" />
-        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_CS_Recycle.feature" />
-        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature" />
-        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature" />
-        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFU_Buyout_with_Recycle_Order_placement.feature" />
-        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message_Do_Not_allow_to_place_order.feature" />
-        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_Buyout.feature" />
-        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/TabletPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/helpers/BrowserHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/DeliveryPage.java" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/ITFD-421/CFU_Validate_Basket_Page_For_Simo_Tariff_With_No_Voucherable_Promotions_Available.feature" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/Regression/Reg_Jan_CFU_MbbSimo30days.feature" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/Regression/Reg_Jan_CFU_PhonesSimo30day.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMSimOPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/BasketPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/UpgradeCustomerPage.java" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/ITFD-421/CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_No_Upfront_Payment_Pending.feature" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/ITFD-421/CFU_Validate_Basket_Page_For_Simo_Tariff_With_No_Active_Vouchers_Available_For_Matching_Promotions_Valid_For_Current_Date.feature" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/ITFD-421/CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_Upfront_Payment_Pending.feature" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/Regression/Reg_Consumer_Buyout.feature" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/Regression/Reg_Agent_Buyout.feature" />
-        <option value="$PROJECT_DIR$/testRunner/RunnerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/RemidyLoginPage.java" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/Regression/02_Reg_AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message_Do_Not_allow_to_place_order.feature" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/ITFD-421/CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Promotions_Available_But_Not_Valid_For_Current_Date.feature" />
-        <option value="$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_No_Upfront_Payment_Pending.feature" />
-        <option value="$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/CFU_100_Buyout_offer_Refresh_Remove_Buyout_offer_in_Buyout_tile_Display_left_to_pay_tile_and_SIMO_tab.feature" />
-        <option value="$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/CFU_100_Buyout_offer_Refresh_Remove_offer_in_Buyout_tile_left_to_pay_tile_and_SIMO_tab_Hidden_UO_Page.feature" />
-        <option value="$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number.feature" />
-        <option value="$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostrophe_SOA_validation_successful.feature" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/Regression/05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages.feature" />
-        <option value="$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/4CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_Upfront_Payment_Pending.feature" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/ITFD-421/06_Reg_CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk.feature" />
-        <option value="$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/first.feature" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/CFU_100_Buyout_offer_Refresh_Remove_offer_in_Buyout_tile_left_to_pay_tile_and_SIMO_tab_Hidden_UO_Pg.feature" />
-        <option value="$PROJECT_DIR$/Features/JulyRelease2018/ITFD-236/Existing_Customer_Ensuring_that_the_Drupal-logout_message_is_merchandised_Desktop.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/helpers/DataReader.java" />
-        <option value="$PROJECT_DIR$/Features/JuneRelease2018/Regression/10_Reg_CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Address_copy_update.feature" />
-        <option value="$PROJECT_DIR$/Configurations/Properties/AppConfig.properties" />
-        <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
-        <option value="$PROJECT_DIR$/src/test/java/GlobalActions/CommonActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/RemedyLoginAction.java" />
-        <option value="$PROJECT_DIR$/Features/RemedyAutomation/LoginToRemedy.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/RemedyLoginPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/steps/Hooks.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/GlobalActions/htmltoALM.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_HomePagePageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/steps/Hooks.java" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_AllowRetentionBasketToCopyToSharedBasket.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_RetentionItemsShouldNotbBeThereInBaskePriorToSelectAnyRetentionBolton.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyThatBelowValidationMessageShouldNotBeDisplayedInEmailPopupWindow.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyWarningMessageShouldNotBeDisplayedInEmailPopupWindow.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_CopyToBasketShouldEnabledAfterAddBolton_CheckInMailBox_RetentionBoltShouldDisplay.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyBasketShouldAllowToShareRetentionBoltonWhenUserAddMoreThen1RretentionBoltons.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyBoltonIncompatableWithTariff.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/BasketPageActions.java" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyRetentionValidationMessageAfterAddingBolton_DealBuilder.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyCopyToBasketIsEnabledOnceAddedRetentionBoltonInDealBuilder.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/1_VerifyRetentionBoltonAddedToBasket_Phone_Refresh_RetentionboltonCombination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/3_VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retentionbolton_DeviceDiscount_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/4_VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retentionbolton_DeviceTariff_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/5_VerifyRetentionBoltonAddedToBasket_Phone_Refresh_DeviceTariff_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/6_VerifyRetentionBoltonAddedToBasket_Tablet_Standard_RetentionboltonCombination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/8_VerifyRetentionBoltonAddedToBasket_Tablet_Standard_Retentionbolton_TariffDiscount_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/9_VerifyRetentionBoltonAddedToBasket_Tablet_Standard_TariffDiscount_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/7_VerifyRetentionBoltonAddedToBasket_Tablet_Standard_Retentionbolton_DeviceDiscount_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/11_VerifyRetentionBoltonAddedToBasket_MBB_Standard_RetentionBolton_DeviceDiscount_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/12_VerifyRetentionBoltonAddedToBasket_MBB_Standard_RetentionBolton_TariffDiscount_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/13_VerifyRetentionBoltonAddedToBasket_MBB_Standard_TariffDiscount_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/14_VerifyRetentionBoltonAddedToBasket_SimOnly_RetentionBolton_TariffDiscount_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/15_VerifyRetentionBoltonAddedToBasket_SimOnly_RetentionBolton_Combination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyBasketShouldAllowToShareRetentionBoltonWhenUserAddMoreThen1RretentionBolton.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyURLinBasketPageWeatherSelectedRetentionBoltonIsDisplayd.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/2_VerifyRetentionBoltonAddedToBasket_Phone_Standard_RetentionboltonCombination.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/2_AFU_Phone_Refresh_RetentionBolton_Discount_SharedBasket.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/pageobjects/Agent_DealBuilderPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/4_AFU_Phone_Refresh_RetentionBolton_CopyToCustomerBuilder_EmailBasket.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/5_AFU_Phone_Standard_RetentionBolton_Checkout.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/6_AFU_Phone_Standard_RetentionBolton_Discount_Checkout.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/7_AFU_Tablet_Refresh_RetentionBolton_SharedBasket.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/8_AFU_Tablet_Refresh_RetentionBolton_Discount_SharedBasket .feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/3_AFU_Phone_Refresh_RetentionBolton_AddOneMoreBoltonSharedBasket.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/10_AFU_Tablet_Standard_RetentionBolton_Checkout.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/11_AFU_MBB_Refresh_RetentionBolton_SharedBasket.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/13_AFU_MBB_Refresh_RetentionBolton_CopyToCustomerBuilder_EmailBasket.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/14_AFU_MBB_Standard_RetentionBolton_Checkout.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/15_AFU_SmiOnly_RetentionBolton_Shared basket.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/16_AFU_SmiOnly_RetentionBolton_CopyToCustomerBuilder_EmailBasket .feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/9_AFU_Tablet_Refresh_RetentionBolton_CopyToCustomerBuilder_emailBasket .feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/17_AFU_SmiOnly_Standard_RetentionBolton_Checkout.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/20_AFU_Phone_Refresh_InCompatable_Bolton_SharedBasket.feature" />
+        <option value="$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/1_AFU_Phone_Refresh_Retention_Bolton_SharedBasket.feature" />
       </list>
     </option>
   </component>
@@ -194,19 +442,17 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="eCommAutomationSit" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="eCommAutomationSit" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="283" />
     <option name="width" value="1280" />
     <option name="height" value="728" />
   </component>
@@ -217,6 +463,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -233,13 +480,51 @@
               <item name="regression111" type="b2602c69:ProjectViewProjectNode" />
               <item name="regression111" type="462c0819:PsiDirectoryNode" />
               <item name="Features" type="462c0819:PsiDirectoryNode" />
-              <item name="Feb_March_Release2019" type="462c0819:PsiDirectoryNode" />
+              <item name="April_Release2019" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="regression111" type="b2602c69:ProjectViewProjectNode" />
+              <item name="regression111" type="462c0819:PsiDirectoryNode" />
+              <item name="Features" type="462c0819:PsiDirectoryNode" />
+              <item name="April_Release2019" type="462c0819:PsiDirectoryNode" />
+              <item name="Functional" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="regression111" type="b2602c69:ProjectViewProjectNode" />
+              <item name="regression111" type="462c0819:PsiDirectoryNode" />
+              <item name="Features" type="462c0819:PsiDirectoryNode" />
+              <item name="April_Release2019" type="462c0819:PsiDirectoryNode" />
+              <item name="Functional" type="462c0819:PsiDirectoryNode" />
+              <item name="ITFD_1015" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="regression111" type="b2602c69:ProjectViewProjectNode" />
+              <item name="regression111" type="462c0819:PsiDirectoryNode" />
+              <item name="Features" type="462c0819:PsiDirectoryNode" />
+              <item name="April_Release2019" type="462c0819:PsiDirectoryNode" />
+              <item name="Regression" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="regression111" type="b2602c69:ProjectViewProjectNode" />
+              <item name="regression111" type="462c0819:PsiDirectoryNode" />
+              <item name="Features" type="462c0819:PsiDirectoryNode" />
+              <item name="April_Release2019" type="462c0819:PsiDirectoryNode" />
+              <item name="Regression" type="462c0819:PsiDirectoryNode" />
+              <item name="Regression_High_Priority" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="regression111" type="b2602c69:ProjectViewProjectNode" />
+              <item name="regression111" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="regression111" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -261,20 +546,20 @@
     </force-push-targets>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Features\JulyRelease2018\ITFD-420" />
-      <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Features\JuneRelease2018\ITFD-421" />
-      <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Features\JuneRelease2018" />
-      <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Configurations\Properties" />
-      <recent name="C:\Users\khanj6\IdeaProjects\regression\Features\JuneRelease2018\ITFD-421" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="helpers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Features\JulyRelease2018" />
       <recent name="C:\Users\subbaiv1\IdeaProjects\regression_V3\Features\May#1Release2018\AFA_BatchRun" />
       <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Features" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="helpers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\subbaiv1\IdeaProjects\regression111\Features\April_Release2019\Functional\ITFD_1015" />
+      <recent name="C:\Users\subbaiv1\IdeaProjects\regression111\Features\April_Release2019\Functional" />
+      <recent name="C:\Users\subbaiv1\IdeaProjects\regression111\Features\April_Release2019\Regression" />
+      <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Features\JulyRelease2018\ITFD-420" />
+      <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Features\JuneRelease2018\ITFD-421" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -289,14 +574,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.RunnerTest">
+  <component name="RunManager" selected="Cucumber java.Scenario: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="Feature: LoginToRemedy (2)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="eCommAutomationSit" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket$&quot;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -304,10 +589,10 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="Scenario: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Successful completion of a PAY M dongle Acqusistion Journey (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="eCommAutomationSit" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage$&quot;" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^Successful completion of a PAY M dongle Acqusistion Journey$&quot;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -315,10 +600,10 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="Scenario: AgentToAcceptTenDigitsPhoneNumber" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Successful completion of a PAY M dongle Acqusistion Journey (2)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="eCommAutomationSit" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^AgentToAcceptTenDigitsPhoneNumber$&quot;" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^Successful completion of a PAY M dongle Acqusistion Journey$&quot;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -326,10 +611,10 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="Scenario: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Verify Retention Bolton AddedTo Basket Phone Refresh Retention bolton Combination" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="eCommAutomationSit" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement$&quot;" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^Verify Retention Bolton AddedTo Basket Phone Refresh Retention bolton Combination$&quot;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -337,34 +622,16 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="RunnerTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retention bolton Combination" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="eCommAutomationSit" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retention bolton Combination$&quot;" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testRunner.*" />
+          <option name="PATTERN" value="cucumber.api.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="testRunner" />
-      <option name="MAIN_CLASS_NAME" value="testRunner.RunnerTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -416,19 +683,19 @@
       <method />
     </configuration>
     <list>
-      <item itemvalue="Cucumber java.Feature: LoginToRemedy (2)" />
-      <item itemvalue="TestNG.RunnerTest" />
-      <item itemvalue="Cucumber java.Scenario: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage" />
-      <item itemvalue="Cucumber java.Scenario: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement" />
-      <item itemvalue="Cucumber java.Scenario: AgentToAcceptTenDigitsPhoneNumber" />
+      <item itemvalue="Cucumber java.Scenario: Successful completion of a PAY M dongle Acqusistion Journey (1)" />
+      <item itemvalue="Cucumber java.Scenario: Successful completion of a PAY M dongle Acqusistion Journey (2)" />
+      <item itemvalue="Cucumber java.Scenario: VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retention bolton Combination" />
+      <item itemvalue="Cucumber java.Scenario: Verify Retention Bolton AddedTo Basket Phone Refresh Retention bolton Combination" />
+      <item itemvalue="Cucumber java.Scenario: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.RunnerTest" />
-        <item itemvalue="Cucumber java.Scenario: AgentToAcceptTenDigitsPhoneNumber" />
-        <item itemvalue="Cucumber java.Scenario: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement" />
-        <item itemvalue="Cucumber java.Scenario: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage" />
-        <item itemvalue="Cucumber java.Feature: LoginToRemedy (2)" />
+        <item itemvalue="Cucumber java.Scenario: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket" />
+        <item itemvalue="Cucumber java.Scenario: Verify Retention Bolton AddedTo Basket Phone Refresh Retention bolton Combination" />
+        <item itemvalue="Cucumber java.Scenario: VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retention bolton Combination" />
+        <item itemvalue="Cucumber java.Scenario: Successful completion of a PAY M dongle Acqusistion Journey (2)" />
+        <item itemvalue="Cucumber java.Scenario: Successful completion of a PAY M dongle Acqusistion Journey (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -443,13 +710,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510763568253</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Merged venkta23012018_v1 into master">
-      <created>1518018372931</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1518018372931</updated>
     </task>
     <task id="LOCAL-00022" summary="Merged venkta23012018_v1 into master&#10;&#10;Signed-off-by: subbaiv1 &lt;hhhh&gt;">
       <created>1518191733185</created>
@@ -787,39 +1047,46 @@
       <option name="project" value="LOCAL" />
       <updated>1551997045476</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1552728969404</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1552728969404</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Scenario__LoginToRemedyTool_(2) - 2018.07.11 at 14h 05m 43s.xml">
-      <configuration name="Scenario: LoginToRemedyTool (2)" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retention_bolton_Combination - 2019.03.21 at 21h 13m 23s.xml">
+      <configuration name="Scenario: VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retention bolton Combination" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2019.02.27 at 21h 53m 43s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retention_bolton_Combination - 2019.03.21 at 21h 58m 44s.xml">
+      <configuration name="Scenario: VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retention bolton Combination" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2019.02.28 at 17h 29m 55s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retention_bolton_Combination - 2019.03.22 at 11h 09m 59s.xml">
+      <configuration name="Scenario: VerifyRetentionBoltonAddedToBasket_Phone_Refresh_Retention bolton Combination" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2019.03.01 at 07h 21m 51s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__Verify_Retention_Bolton_AddedTo_Basket_Phone_Refresh_Retention_bolton_Combination - 2019.03.22 at 17h 38m 58s.xml">
+      <configuration name="Scenario: Verify Retention Bolton AddedTo Basket Phone Refresh Retention bolton Combination" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Scenario__AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage - 2019.03.01 at 21h 18m 14s.xml">
-      <configuration name="Scenario: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Verify_Retention_Bolton_AddedTo_Basket_Phone_Refresh_Retention_bolton_Combination - 2019.03.24 at 08h 47m 27s.xml">
+      <configuration name="Scenario: Verify Retention Bolton AddedTo Basket Phone Refresh Retention bolton Combination" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Scenario__CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement - 2019.03.01 at 21h 29m 36s.xml">
-      <configuration name="Scenario: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Verify_Retention_Bolton_AddedTo_Basket_Phone_Refresh_Retention_bolton_Combination - 2019.03.24 at 09h 03m 31s.xml">
+      <configuration name="Scenario: Verify Retention Bolton AddedTo Basket Phone Refresh Retention bolton Combination" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Scenario__CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement - 2019.03.02 at 15h 52m 05s.xml">
-      <configuration name="Scenario: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Verify_Retention_Bolton_AddedTo_Basket_Phone_Refresh_Retention_bolton_Combination - 2019.03.24 at 09h 28m 06s.xml">
+      <configuration name="Scenario: Verify Retention Bolton AddedTo Basket Phone Refresh Retention bolton Combination" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Scenario__CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement - 2019.03.02 at 16h 02m 42s.xml">
-      <configuration name="Scenario: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Verify_Retention_Bolton_AddedTo_Basket_Phone_Refresh_Retention_bolton_Combination - 2019.03.24 at 11h 06m 27s.xml">
+      <configuration name="Scenario: Verify Retention Bolton AddedTo Basket Phone Refresh Retention bolton Combination" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Scenario__AgentToAcceptTenDigitsPhoneNumber - 2019.03.07 at 22h 21m 27s.xml">
-      <configuration name="Scenario: AgentToAcceptTenDigitsPhoneNumber" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket - 2019.03.25 at 17h 20m 25s.xml">
+      <configuration name="Scenario: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2019.03.08 at 04h 44m 18s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket - 2019.03.25 at 17h 31m 20s.xml">
+      <configuration name="Scenario: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TodoView" selected-index="3">
@@ -835,64 +1102,64 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.7019667" weight="0.3398693" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.65231365" weight="0.2997312" />
+      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.7019667" weight="0.17876343" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.6503856" weight="0.2997312" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.27313626" side_tool="true" visible="true" weight="0.3158602" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.31491002" side_tool="true" weight="0.37903225" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.0" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.72686374" weight="0.3158602" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7306003" weight="0.39895698" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7287918" visible="true" weight="0.37903225" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.7299546" weight="0.29986963" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26285347" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33419022" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49367756" weight="0.0" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24876848" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info id="UI Designer" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6859444" weight="0.34603176" />
-      <window_info anchor="right" id="Properties" order="5" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.68508995" weight="0.32258064" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.048440065" />
+      <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info id="Nl-Palette" order="2" />
+      <window_info anchor="right" id="Properties" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Properties" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.048440065" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.65231365" weight="0.2997312" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.71961933" weight="0.31681877" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7287918" visible="true" weight="0.37903225" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Captures" order="4" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26285347" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35732648" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24876848" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.7019667" weight="0.3398693" />
+      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.7019667" weight="0.17876343" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7306003" weight="0.39895698" />
       <window_info id="Image Layers" order="8" />
       <window_info id="Designer" order="5" />
-      <window_info anchor="right" id="Properties" order="5" />
+      <window_info id="Nl-Palette" order="2" />
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49367756" weight="0.0" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6859444" weight="0.34603176" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.68508995" weight="0.32258064" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.7299546" weight="0.29986963" />
-      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.2693997" side_tool="true" weight="0.103174604" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.31491002" side_tool="true" weight="0.37903225" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.72686374" weight="0.3158602" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info id="Nl-Palette" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="4" weight="0.0" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.6503856" weight="0.2997312" />
+      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.0" />
       <window_info id="Favorites" order="7" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -993,7 +1260,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5747</line>
+          <line>5749</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1001,7 +1268,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>6482</line>
+          <line>6483</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1009,7 +1276,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>6344</line>
+          <line>6345</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1017,7 +1284,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java</url>
-          <line>393</line>
+          <line>395</line>
           <properties class="actionsPerformed.UpgradeCustomerPageActions">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1025,7 +1292,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5148</line>
+          <line>5150</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1033,7 +1300,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5175</line>
+          <line>5177</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1041,7 +1308,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5253</line>
+          <line>5255</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1049,7 +1316,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5266</line>
+          <line>5268</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1057,7 +1324,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5074</line>
+          <line>5076</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1065,7 +1332,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5217</line>
+          <line>5219</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1097,7 +1364,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>7010</line>
+          <line>7011</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1106,7 +1373,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
           <line>1113</line>
-          <properties class="steps.E2EOrderPlaced_Steps">
+          <properties class="steps.E2EOrderPlaced_Steps" method="land_on_the_Tariffs_and_extra_page_validate_Data_Roll_Over">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="192" />
@@ -1125,7 +1392,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5161</line>
+          <line>5163</line>
           <properties />
           <option name="timeStamp" value="128" />
         </line-breakpoint>
@@ -1149,7 +1416,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>8222</line>
+          <line>8223</line>
           <properties />
           <option name="timeStamp" value="189" />
         </line-breakpoint>
@@ -1167,13 +1434,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>10133</line>
+          <line>10134</line>
           <properties />
           <option name="timeStamp" value="196" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>4084</line>
+          <line>4086</line>
           <properties />
           <option name="timeStamp" value="197" />
         </line-breakpoint>
@@ -1187,7 +1454,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="222" />
+      <option name="time" value="235" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1195,300 +1462,377 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/47_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selected.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="52" lean-forward="true" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not selected.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="52" lean-forward="true" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature">
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyRetentionValidationMessageAfterAddingBolton_DealBuilder.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="24" />
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature">
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015_Copy/AFU_VerifyBoltonIncompatableWithTariff.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="62" lean-forward="true" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/16_Reg_CFU_Buyout_with_Recycle_Order_placement.feature">
+    <entry file="file://$PROJECT_DIR$/Features/JanuaryRelease2019/Regression_High_Priority/100_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Promotions_Available_But_Not_Valid_For_Current_Date.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="37" column="66" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="66" />
+        <state relative-caret-position="383">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_HomePagePageActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="356" column="73" selection-start-line="356" selection-start-column="67" selection-end-line="356" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/70_Reg_Current_MBB_URL_no_change_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_page.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/CFA_to_CFU_SIMO_Basket_100_Buyout_offer_Upgrade_SIMO_basket_without_Buyout.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/64_Reg_CS_PayMSimOnly.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/59_Reg_CS_Free_Sim_iPad.feature">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/66_Reg_CFU_PayMSimOnly.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="41" column="238" lean-forward="true" selection-start-line="31" selection-start-column="3" selection-end-line="41" selection-end-column="238" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/CFA_to_CFU_100_Buyout_offer_Upgrade_Basket_Buyout_offer_automatically_applied.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="59" lean-forward="true" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/ITFD-421/06_Reg_CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GlobalActions/CommonFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="22" column="68" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/TestDataValidation.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/ReadData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/CFU_100_Buyout_offer_Refresh_Remove_offer_in_Buyout_tile_left_to_pay_tile_and_SIMO_tab_Hidden_UO_Pg.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="40" lean-forward="true" selection-start-column="40" selection-end-column="40" />
+        <state relative-caret-position="226">
+          <caret line="212" column="5" lean-forward="true" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="145" column="52" selection-end-line="272" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/CFU_100_Buyout_offer_Refresh_Remove_Buyout_offer_in_Buyout_tile_Display_left_to_pay_tile_and_SIMO_tab.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="120" selection-start-line="13" selection-start-column="113" selection-end-line="13" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-236/CFU_Customer_lands_on_Drupal_Global_nav_enabled_page_and_clicks_on_the_My_O2_link_Desktop.feature" />
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-236/CFA_When_a_customer_clicks_on_Forgotten_username_or_password_link_on_the_My_O2_overlay.feature" />
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-236/CFA_Customer_lands_on_Drupal_Global_nav_enabled_page_and_clicks_on_the_My_O2_link_Desktop.feature" />
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/CFU_100_Buyout_offer_Refresh_Horizontal_Journey_Upgrade_Basket_Buyout_offer_automatically_applied.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="37" column="39" lean-forward="true" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-236/CFA_SignIn_with_Valid_Credentials_When_an_overlay_to_sign_in_is_displayed_when_a_customer_is_not_signed_in_and_clicks_on_the_My_o2_link_on_the_Drupal_global_nav.feature" />
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-236/CFA_SignIn_with_InValid_Credentials_When_an_overlay_to_sign_in_is_displayed_when_a_customer_is_not_signed_in_and_clicks_on_the_My_o2_link_on_the_Drupal_global_nav.feature" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4423">
-          <caret line="1274" column="50" lean-forward="true" selection-start-line="1274" selection-start-column="50" selection-end-line="1274" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-420/CFU_100_Buyout_offer_Refresh_Remove_offer_in_Buyout_tile_left_to_pay_tile_and_SIMO_tab_Hidden_UO_Pg.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="79" lean-forward="true" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-236/CFA_When_a_customer_clicks_on_Register_link_on_the_My_O2_overlay.feature" />
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/ITFD-236/Existing_Customer_Ensuring_that_the_Drupal-logout_message_is_merchandised_Desktop.feature" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/helpers/DataReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JuneRelease2018/Regression/10_Reg_CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Address_copy_update.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5.jar!/cucumber/runtime/Utils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/Regression/16_Reg_CFU_Buyout_with_Recycle_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-310" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/JulyRelease2018/Regression/17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="14" column="69" lean-forward="true" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Configurations/Properties/AppConfig.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174964">
-          <caret line="10325" selection-start-line="10325" selection-end-line="10325" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/RemedyAutomation/LoginToRemedy.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/RemedyLoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GlobalActions/CommonActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5253">
-          <caret line="316" column="35" selection-start-line="316" selection-start-column="25" selection-end-line="316" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/RemedyLoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/Feb_March_Release2019/Regression_High_Priority/09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_Multiple_Colour_variant.feature" />
-    <entry file="file://$PROJECT_DIR$/Features/Feb_March_Release2019/Regression_Highest_Priority/04_Reg_AFA_SIMO_Credit_Check_Status_ReferWithSIMO_Show_Referral_Message_Order_Submission.feature" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="1257" column="16" selection-start-line="1257" selection-start-column="16" selection-end-line="1257" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/Feb_March_Release2019/Regression_Highest_Priority/41_Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-    <entry file="file://$PROJECT_DIR$/Features/Feb_March_Release2019/FinalRegressionTestCases/01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/Hooks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GlobalActions/htmltoALM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        <state relative-caret-position="204">
+          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="306">
+          <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#517#1142#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_Medium_Low_Priority/27_Reg_AFU_SavedBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.6.0/selenium-remote-driver-3.6.0-sources.jar!/org/openqa/selenium/remote/RemoteWebDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="310" selection-start-line="310" selection-end-line="310" />
+          <folding>
+            <element signature="e#11173#11174#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5-sources.jar!/cucumber/runtime/Timeout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5-sources.jar!/cucumber/runtime/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#1195#2077#0" expanded="true" />
+            <element signature="e#2076#2077#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-java/1.2.5/cucumber-java-1.2.5-sources.jar!/cucumber/runtime/java/JavaStepDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5-sources.jar!/cucumber/runtime/StepDefinitionMatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5-sources.jar!/cucumber/runtime/model/StepContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5-sources.jar!/cucumber/runtime/model/CucumberScenario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5-sources.jar!/cucumber/runtime/model/CucumberScenarioOutline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5-sources.jar!/cucumber/runtime/model/CucumberFeature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="168" selection-start-line="168" selection-end-line="168" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5-sources.jar!/cucumber/runtime/Runtime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5-sources.jar!/cucumber/api/cli/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyCopyToBasketIsEnabledOnceAddedRetentionBoltonInDealBuilder.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyBasketShouldAllowToShareRetentionBoltonWhenUserAddMoreThen1RretentionBolton.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyWarningMessageShouldNotBeDisplayedInEmailPopupWindow.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="16" column="53" lean-forward="true" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyBoltonIncompatableWithTariff.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="37" column="40" lean-forward="true" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/AFU_VerifyURLinBasketPageWeatherSelectedRetentionBoltonIsDisplayd.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="16" column="107" selection-start-line="16" selection-start-column="92" selection-end-line="16" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="32" column="129" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/Agent_DealBuilderPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="361" column="51" selection-start-line="361" selection-start-column="29" selection-end-line="361" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="1848" column="31" lean-forward="true" selection-start-line="1848" selection-start-column="31" selection-end-line="1848" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="1522" column="69" lean-forward="true" selection-start-line="1522" selection-start-column="69" selection-end-line="1522" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/BasketPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="148" column="49" lean-forward="true" selection-start-line="148" selection-start-column="49" selection-end-line="148" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Regression/Regression_High_Priority/26_Reg_AFU_PAYM_Dongle_submitOrder.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11596" column="5" lean-forward="true" selection-start-line="11596" selection-start-column="5" selection-end-line="11596" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/6_AFU_Phone_Standard_RetentionBolton_Discount_Checkout.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/7_AFU_Tablet_Refresh_RetentionBolton_SharedBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="73" lean-forward="true" selection-start-line="25" selection-start-column="73" selection-end-line="25" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/8_AFU_Tablet_Refresh_RetentionBolton_Discount_SharedBasket .feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/2_AFU_Phone_Refresh_RetentionBolton_Discount_SharedBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="53" selection-start-line="6" selection-end-line="32" selection-end-column="264" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/3_AFU_Phone_Refresh_RetentionBolton_AddOneMoreBoltonSharedBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="52" lean-forward="true" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/11_AFU_MBB_Refresh_RetentionBolton_SharedBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/5_AFU_Phone_Standard_RetentionBolton_Checkout.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/10_AFU_Tablet_Standard_RetentionBolton_Checkout.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="206" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="24" selection-end-column="206" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/15_AFU_SmiOnly_RetentionBolton_Shared basket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="85" lean-forward="true" selection-start-line="12" selection-start-column="85" selection-end-line="12" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/4_AFU_Phone_Refresh_RetentionBolton_CopyToCustomerBuilder_EmailBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="264" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="29" selection-end-column="264" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/13_AFU_MBB_Refresh_RetentionBolton_CopyToCustomerBuilder_EmailBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/16_AFU_SmiOnly_RetentionBolton_CopyToCustomerBuilder_EmailBasket .feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="73" lean-forward="true" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/17_AFU_SmiOnly_Standard_RetentionBolton_Checkout.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/9_AFU_Tablet_Refresh_RetentionBolton_CopyToCustomerBuilder_emailBasket .feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="59" lean-forward="true" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/14_AFU_MBB_Standard_RetentionBolton_Checkout.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/18_AFU_Phone_Refresh_Retention_Bolton_Accessory_SharedBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/19_AFU_Tablet_Refresh_RetentionBolton_Accessory_SharedBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Regression/Regression/13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement_IBM_confirmation.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="42" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/20_AFU_Phone_Refresh_InCompatable_Bolton_SharedBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/April_Release2019/Functional/ITFD_1015/1_AFU_Phone_Refresh_Retention_Bolton_SharedBasket.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
         </state>
       </provider>
     </entry>
