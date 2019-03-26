@@ -389,7 +389,7 @@ public class DrupalShopPageActions extends Environment {
 
 
                     log.debug("-------------------Campaigns list after applying first variant filter option-----------------\n");
-                    List<WebElement> campaignsVariantFilterOptions = driver.findElements(By.xpath("//table[@id='modelListTable']/tbody/tr"));
+                    List<WebElement> campaignsVariantFilterOptions = driver.findElements(By.xpath("//table[@id='modelListTable']/tbody/tr/td[3]"));
 
                     for(int i=0;i<campaignsVariantFilterOptions.size();i++){
                         log.debug(campaignsVariantFilterOptions.get(i).getText()+"\n");

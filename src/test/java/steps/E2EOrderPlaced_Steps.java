@@ -11910,4 +11910,23 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Select all campaigns filtered based on variants$")
+    public void selectAllCapmpaignsFilteredVariants(String campaignChannel) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DrupalShopPageObjects.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-100)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
+            driver.findElement(By.xpath("//table[@id='modelListTable']/thead/tr/th/input")).click();
+            log.debug("Selected all campaigns\n");
+            Screenshots.captureScreenshot();
+
+
+        }catch(Exception e){
+            log.debug("Unable to save tariffs \n");
+        }
+    }
 }

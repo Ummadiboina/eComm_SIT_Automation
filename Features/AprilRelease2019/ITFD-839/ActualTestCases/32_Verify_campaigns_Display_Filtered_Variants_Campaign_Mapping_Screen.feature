@@ -16,6 +16,7 @@ should be Checked
     Then Verify CFA and CFU Tariffs
     And Verify the available filterOptions below the result table
     And Select appropriate <filter> option and verify tariffs listing as per filter option
+    And Select all campaigns filtered based on variants
 
 
     Examples:
