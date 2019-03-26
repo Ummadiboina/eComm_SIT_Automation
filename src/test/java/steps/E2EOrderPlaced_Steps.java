@@ -1,38 +1,38 @@
 package steps;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.io.IOException;
-import java.util.*;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+        import java.awt.*;
+        import java.awt.event.KeyEvent;
+        import java.io.IOException;
+        import java.util.*;
+        import java.util.List;
+        import java.util.concurrent.TimeUnit;
 
-import GlobalActions.*;
-import actionsPerformed.*;
-import cucumber.api.DataTable;
-import javafx.stage.Screen;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
+        import GlobalActions.*;
+        import actionsPerformed.*;
+        import cucumber.api.DataTable;
+        import javafx.stage.Screen;
+        import org.apache.log4j.Logger;
+        import org.openqa.selenium.By;
+        import org.openqa.selenium.JavascriptExecutor;
+        import org.openqa.selenium.WebDriver;
+        import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.support.PageFactory;
 
-import GlobalActions.Autoredirection;
-import GlobalActions.CommonUtilities;
-import GlobalActions.JuneReleaseValidations;
-import GlobalActions.MouseHoverAction;
+        import GlobalActions.Autoredirection;
+        import GlobalActions.CommonUtilities;
+        import GlobalActions.JuneReleaseValidations;
+        import GlobalActions.MouseHoverAction;
 
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import helpers.Filereadingutility;
-import org.testng.Assert;
-import org.testng.asserts.Assertion;
-import pageobjects.*;
+        import cucumber.api.PendingException;
+        import cucumber.api.java.en.And;
+        import cucumber.api.java.en.Given;
+        import cucumber.api.java.en.Then;
+        import cucumber.api.java.en.When;
+        import helpers.Filereadingutility;
+        import org.testng.Assert;
+        import org.testng.asserts.Assertion;
+        import pageobjects.*;
 
 public class E2EOrderPlaced_Steps {
 
@@ -2528,7 +2528,7 @@ public class E2EOrderPlaced_Steps {
             //CommonFunctionscheckTitle("Confirmation Page");
             OrderConfirmationPageActions.gettitlepage();
             OrderConfirmationPageActions.MessageDisplayed();
-            } catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Error in order confirmation page , Please review the screenshots for failure");
             Assert.fail("Error in order confirmation page , Please review the screenshots for failure");
@@ -11591,31 +11591,31 @@ public class E2EOrderPlaced_Steps {
     //ITFD-895, April Release new changes Validation by Jamal Khan
     @And("^Validate OFCOM switching input ([^\"]*) and status in Order Confirmation page when Pac and Stac code ([^\"]*) selected when ofcom status is ([^\"]*)$")
     public void ofComPacStacCheckOrderConfirmationPageValidation(String ofComMobileNum, String PacStacCheck, String ofComStatus) {
-            try {
-                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                PageFactory.initElements(driver, DeliveryPage.class);
-                DeliveryPageActions.ofComOrderConfirmationPage(ofComMobileNum, PacStacCheck, ofComStatus);
-                Thread.sleep(3000);
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                log.debug("Unable to validate OFCOM Pac and Stac Code in Order Confirmation page\n");
-                Assert.fail("Unable to validate OFCOM Pac and Stac Code in Order Confirmation page\n");
-            }
-        }
-
-        //Drupal ITFD-839 Automation by Jamal Khan, April Release 2019
-        @Given("^I am a Drupal Admin$")
-        public void drupal_Admin() throws Throwable {
-
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            String relativePath = System.getProperty("user.dir");
-            String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
-            String drupalURL = Filereadingutility.getPropertyValue(EnvPropFilePath, "DrupalURL");
-            driver.navigate().to(drupalURL);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ofComOrderConfirmationPage(ofComMobileNum, PacStacCheck, ofComStatus);
             Thread.sleep(3000);
-            Screenshots.captureScreenshot();
-
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM Pac and Stac Code in Order Confirmation page\n");
+            Assert.fail("Unable to validate OFCOM Pac and Stac Code in Order Confirmation page\n");
         }
+    }
+
+    //Drupal ITFD-839 Automation by Jamal Khan, April Release 2019
+    @Given("^I am a Drupal Admin$")
+    public void drupal_Admin() throws Throwable {
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        String relativePath = System.getProperty("user.dir");
+        String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
+        String drupalURL = Filereadingutility.getPropertyValue(EnvPropFilePath, "DrupalURL");
+        driver.navigate().to(drupalURL);
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+
+    }
 
     @And("^I Login with Drupal Admin Credential ([^\"]*) and ([^\"]*) and verify login page$")
     public void login_with_DrupalAdmin_Credential(String username, String password) {
@@ -11930,7 +11930,128 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    //ITFD-1021 By Gitanjali, March 2019
+    @And("^Adding a retention bolton and verify in Deal builder section ([^\"]*)$")
+    public void addRetentionBoltonAndVerifyDealBuilderSection(String isRetention) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.retentionBoltonValidationInDealBuilder(isRetention);
+            // Agent_DealBuilderPageActions.saveBasketValidation();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+    @And("^Verify that Copy to Basket is enabled after selecting bolton ([^\"]*)$")
+    public void verifyCopyToBasketEnabledafterSelectingBbolton(String isRetention) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.retentionBoltonValidationInDealBuilder(isRetention);
+            Agent_DealBuilderPageActions.copyToBasket4CustomerBasket();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+    @And("^Verify Deal builder and copy to customer basket then share email via email ([^\"]*)$")
+    public void verifyDeailBuilderAndCopyToCustomerBasketThenShareViaEmail(String isRetention) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.retentionBoltonValidationInDealBuilder(isRetention);
+            Agent_DealBuilderPageActions.copyToBasket4CustomerBasket();
+            Agent_DealBuilderPageActions.sendBasketEmailAddress();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to send eMail");
+            Assert.fail("Unable to send eMail");
+        }
+    }
+
+    @And("^Verify Saved basket after adding the retention items ([^\"]*)$")
+    public void verifyThatBelowValidationMessageShouldNotbeDisplayedEmailPopupWindow(String isRetention) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.retentionBoltonValidationInDealBuilder(isRetention);
+            Agent_DealBuilderPageActions.saveBasketValidation();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+
+    @And("^Verify Saved basket after adding the retention items for Standard tariff ([^\"]*)$")
+    public void verifyDealBuilderForStandardTariff(String isRetention) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.retentionBoltonValidationInDealBuilder(isRetention);
+            //Agent_DealBuilderPageActions.saveBasketValidation();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+    @And("^Add Second bolton after selecting one Retention bolton$")
+    public void addOneMoreBotonToDeailBuilder(String isRetention){
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("(//*[text()='Data Top-Up Bolt-Ons']/../../../..//img)[1]")).click();
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+    @And("^Enter the OTAC and click on continue to landed on the Basket page$")
+    public void  enterOTAC_ClickContinueToLandedOnBasket(){
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.copyLinkFromClipboardThenProceedToPlaceOrder();
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+    @And("^Verify that the Bolton section Display in Basket and SSC pages$")
+    public void  verify_Bolton_SectionDispay_In_Basket_And_SSCpages(){
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(1000);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.verifyBoltonDisplayedInBasketAndSSC();
+            Thread.sleep(200);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+//ITFD-1021 By Gitanjali, March 2019
     @And("^choose and check valid store for click and collect Now")
     public void choose_and_checkStore_for_click_and_Collect_Now() {
         try {
