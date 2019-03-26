@@ -1844,6 +1844,208 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
         Thread.sleep(3000);
     }
+
+    public static void retentionBoltonValidationInDealBuilder(String isRetention) throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+        if (Agent_DealBuilderPage.ExtrasTab.isDisplayed()) {
+            Agent_DealBuilderPage.ExtrasTab.click();
+            Thread.sleep(2000);
+
+            /*if (isRetention.contains("yes")) {
+                if (driver.findElements(By.xpath("//table[@class='lineItemTable boltons']//img[@alt='remove']")).size() > 0) {
+                    int count = driver.findElements(By.xpath("//table[@class='lineItemTable boltons']//img[@alt='remove']")).size();
+                    for (int i = 1; i <= count; ) {
+                        driver.findElement(By.xpath("(//table[@class='lineItemTable boltons']//img[@alt='remove'])[1]")).click();
+                        Thread.sleep(1000);
+                        --i;
+                    }
+                }
+            }*/
+            // later on need to change the un comment this code to select the bolton
+         /*   if (Agent_DealBuilderPage.retentionSection.isDisplayed()) {
+                log.debug("retention Bolton section is displayed");
+                if (driver.findElements(By.xpath("(//table[@class='extrasTable']//*[contains(text(),'Retention')]/../../..//tr//img)[1]")).size() > 0) {
+                    log.debug("Able to select the retention bolton");
+                    Agent_DealBuilderPage.selectRetentionBolton.click();
+                    Screenshots.captureScreenshot();
+                } else {
+                    log.debug("Upgrade user not offered for the retention boltons");
+                    Assert.fail("Upgrade user not offered for the retention boltons");
+                }
+            }*/
+
+          /*  if (!Agent_DealBuilderPage.selectedBolton_DeailBuilder.getText().contains("retention item cannot be shared via email")) {
+                log.debug("Basket having retention item cannot be shared via email.");
+                // Assert.fail("Basket having retention item cannot be shared via email.");
+            }*/
+
+            if(isRetention.contains("Two")) {
+                if (driver.findElements(By.xpath("(//table[@class='extrasTable']//*[contains(text(),'Retention')]/../../..//tr//img)[2]")).size() > 0) {
+                    log.debug("able to select 2nd retention bolton");
+                    Agent_DealBuilderPage.selectRetentionBolton2.click();
+                    Screenshots.captureScreenshot();
+                }
+            }
+
+            log.debug("Basket having retention item can be shared via email.");
+
+            if (Agent_DealBuilderPage.copyToBasketButton.isDisplayed()) {
+                System.out.println("copy to basket button is enabled");
+            }else
+                log.info("Not enable the button Copy to save basket");
+
+                    /*Agent_DealBuilderPage.copyToBasketButton.click();
+                    Thread.sleep(2000);
+                    if (Agent_DealBuilderPage.customerBasketSection.isDisplayed()) {
+                        System.out.println("custmer section got enabled");
+                    }
+
+                    log.debug("Sucess: copy to Customer basket is displayed");
+                }*/
+        }
+        // System.out.println("the Deal builder section value :::: " + Agent_DealBuilderPage.selectedBolton_DeailBuilder);
+    }
+
+
+
+    public static void saveBasketValidation() throws InterruptedException, IOException {
+        String saveBasketLink;
+        Thread.sleep(3000);
+
+     /*   if(Agent_DealBuilderPage.copyToDealButton.isDisplayed()){
+            Agent_DealBuilderPage.copyToDealButton.click();
+            Thread.sleep(300);
+        }else{
+            Assert.fail("");
+        }*/
+        Screenshots.captureScreenshot();
+        if (Agent_DealBuilderPage.emailBasket.isDisplayed()) {
+            Agent_DealBuilderPage.emailBasket.click();
+            Thread.sleep(2000);
+        }
+
+        CommonActions.switchToWindow();
+
+        if (driver.findElements(By.xpath("//input[@type='checkbox' and @name='basket']")).size() > 0) {
+
+            String emailBasketInfoPg = Agent_DealBuilderPage.emailBasketInfo.getText();
+            if (emailBasketInfoPg.contains("Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer")) {
+                log.info("Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer");
+            } else {
+                Assert.fail("Fail to Dispaly :: Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer");
+            }
+
+            Agent_DealBuilderPage.checkBox_sharedBasket.click();
+            Thread.sleep(500);
+            Agent_DealBuilderPage.getBasketLink.click();
+            Thread.sleep(500);
+            saveBasketLink = Agent_DealBuilderPage.copyToClickBoard.getText();
+            driver.get(saveBasketLink);
+        }else {
+            Assert.fail("Failed :: Selected tariff is not Refresh pls try another tariff ");
+        }
+    }
+
+
+    public static void copyToBasket4CustomerBasket() {
+
+        if (driver.findElements(By.xpath("//input[@id='saveToBasketButton']")).size() > 0) {
+            System.out.println("Sve to basket button is enable");
+            log.info("//input[@id='saveToBasketButton']");
+        } else {
+            Assert.fail("Failed ::: Save to basket button is enable");
+        }
+
+        int noOfHeaderInCustomerBasket = driver.findElements(By.xpath("//div[@id='sharedBasketWrapper']//table//tr[@class='lineItemHeading']")).size();
+        for(int i=1;i<=noOfHeaderInCustomerBasket;i++){
+            String header = driver.findElement(By.xpath("(//div[@id='sharedBasketWrapper']//table//tr[@class='lineItemHeading'][+i+]")).getText();
+            String contentType = driver.findElement(By.xpath("(/div[@id='sharedBasketWrapper']//table//td[@class='lineItemDescription'][+i+]")).getText();
+            if(!header.contains(" ")  && !contentType.contains(" ")){
+                System.out.println(" lineItemHeading :: "+ header +"  && lineItemDescription " +contentType);
+                log.info(" lineItemHeading :: "+ header +"  && lineItemDescription " +contentType);
+            }else{
+                Assert.fail(" Failed to display customer basket content as Deal builder");
+            }
+        }
+    }
+
+
+    public static void sendBasketEmailAddress() throws InterruptedException, IOException {
+
+        Screenshots.captureScreenshot();
+        if (Agent_DealBuilderPage.emailBasket.isDisplayed()) {
+            Agent_DealBuilderPage.emailBasket.click();
+            Thread.sleep(2000);
+        }else{
+            Assert.fail(" Failed : Not able to find the Email basket link at top of Deal builder");
+        }
+
+        CommonActions.switchToWindow();
+
+        if (driver.findElements(By.xpath("//input[@type='checkbox' and @name='basket']")).size() > 0) {
+            String emailBasketInfoPg = Agent_DealBuilderPage.emailBasketInfo.getText();
+            if (emailBasketInfoPg.contains("Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer")) {
+                log.info("Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer");
+            } else {
+                Assert.fail("Fail to Dispaly :: Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer");
+            }
+
+            Agent_DealBuilderPage.checkBox_sharedBasket.click();
+            Thread.sleep(500);
+            Agent_DealBuilderPage.getBasketLink.click();
+            Thread.sleep(500);
+
+            if(Agent_DealBuilderPage.sendBasketEmailAddress.isDisplayed()){
+                Agent_DealBuilderPage.sendBasketEmailAddress.sendKeys("ecomm4team@gmail.com");
+                Agent_DealBuilderPage.sendEmailCTA.click();
+                Thread.sleep(2000);
+            }else{
+                Assert.fail("Failed ::: Not able to find the send basket email addres ");
+            }
+        }
+    }
+
+
+    public static void copyLinkFromClipboardThenProceedToPlaceOrder() throws InterruptedException {
+        Thread.sleep(3000);
+        if(driver.findElements(By.xpath("(//input[@name='otac'])[2]")).size() > 0){
+            Agent_DealBuilderPage.otac.sendKeys("999999");
+            Agent_DealBuilderPage.continue_redeemOTAC.click();
+            Thread.sleep(2000);
+        }
+
+        if(driver.findElements(By.xpath("//a[@name='normalCancel']")).size() > 0){
+            Agent_DealBuilderPage.continue_normalCancel.click();
+            Thread.sleep(2000);
+        }
+
+        if(driver.findElements(By.xpath("//p[@class='reminder']/a[text()='Continue']")).size() > 0){
+            Agent_DealBuilderPage.reminder_continue.click();
+            Thread.sleep(2000);
+        }
+        String basksetURL = driver.getCurrentUrl();
+        System.out.println("The Display bolton in the basket page :: " +basksetURL);
+      /*  if(basksetURL.contains("retentionBolton")){
+            log.info("Retention bolton is Displayed in the Basket page URL");
+        }else{
+            log.info(" Failed :::: Retention bolton is Displayed in the Basket page URL");
+            Assert.fail(" Failed :::: Retention bolton is Displayed in the Basket page URL");
+        }*/
+    }
+
+    public static void verifyBoltonDisplayedInBasketAndSSC(){
+        if(driver.findElements(By.xpath("//*[contains(text(),'Bolton')]")).size() > 0){
+            String boltSection = Agent_DealBuilderPage.boltonSection.getText();
+            log.info("Retention bolton is Displayed " + boltSection);
+        }else{
+            log.info(" Failed :::: Retention bolton is Displayed in the Basket page URL");
+            Assert.fail(" Failed :::: Retention bolton is Displayed in the Basket page URL");
+        }
+    }
+
+
+
 }
 
 

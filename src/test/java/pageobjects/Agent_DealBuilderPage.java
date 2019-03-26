@@ -352,4 +352,64 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "//span[@id='maxData']/../a[@class='nextData disableNext']")
     public static WebElement maxIcon_data_Disable;
 
+    @FindBy(how = How.XPATH, using = "//table[@class='extrasTable']//*[contains(text(),'Retention')]")
+    public static WebElement retentionSection;
+
+    @FindBy(how = How.XPATH, using = "(//table[@class='extrasTable']//*[contains(text(),'Retention')]/../../..//tr//img)[1]")
+    public static WebElement selectRetentionBolton;
+
+    @FindBy(how = How.XPATH, using = "(//table[@class='extrasTable']//*[contains(text(),'Retention')]/../../..//tr//img)[2]")
+    public static WebElement selectRetentionBolton2;
+
+    @FindBy(how = How.XPATH, using = "//table[@class='lineItemTable boltons']")
+    public static WebElement boltonsection_DealBuilder;
+
+    @FindBy(how = How.XPATH, using = "//*[contains(@class,'lineItemRow boltons')]")
+    public static WebElement selectedBolton_DeailBuilder;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='saveToBasketButton']")
+    public static WebElement copyToBasketButton;
+
+    @FindBy(how = How.XPATH, using = "(//div[@class='lineItemContainer'])[2]")
+    public static WebElement customerBasketSection;
+
+    @FindBy(how = How.XPATH, using = "//a[@class='emailBasket']")
+    public static WebElement emailBasket;
+
+    @FindBy(how = How.XPATH, using = "//input[@type='checkbox' and @name='basket']")
+    public static WebElement checkBox_sharedBasket;
+
+    @FindBy(how = How.XPATH, using = "//input[@value='Get Basket Link']")
+    public static WebElement getBasketLink;
+
+    @FindBy(how = How.XPATH, using = "//input[@value='Get Basket Link']/following-sibling::label")
+    public static WebElement copyToClickBoard;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='copyToDealButton']")
+    public static WebElement copyToDealButton;
+
+    @FindBy(how = How.XPATH, using = "//p[@class='emailBasketInfo']")
+    public static WebElement emailBasketInfo;
+
+    @FindBy(how = How.NAME, using = "sendEmail")
+    public static WebElement sendEmailCTA;
+
+    @FindBy(how = How.XPATH, using = "(//input[@name='otac'])[2]")
+    public static WebElement otac;
+
+    @FindBy(how = How.XPATH, using = "//input[@name='redeemOTAC']")
+    public static WebElement continue_redeemOTAC;
+
+    @FindBy(how = How.XPATH, using = "//a[@name='normalCancel']")
+    public static WebElement continue_normalCancel;
+
+    @FindBy(how = How.XPATH, using = "//p[@class='reminder']/a[text()='Continue']")
+    public static WebElement reminder_continue;
+
+    @FindBy(how = How.XPATH, using = "//*[contains(text(),'Bolton')]")
+    public static WebElement boltonSection;
+
+
+
+
 }
