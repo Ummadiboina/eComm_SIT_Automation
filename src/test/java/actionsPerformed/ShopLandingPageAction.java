@@ -22,7 +22,7 @@ public class ShopLandingPageAction extends Environment {
 	final static Logger log = Logger.getLogger("ShopLandingPageAction");
 	static JavascriptExecutor js = (JavascriptExecutor)driver;
 
-	public static void GetTitle_ref() throws IOException, InterruptedException {
+	public static void GetTitle_ref() {
 		//later on need to comment the code
 		try {
 			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -48,7 +48,7 @@ public class ShopLandingPageAction extends Environment {
 	}
 
 
-	public static void GetTitle() throws IOException, InterruptedException {
+	public static void GetTitle() throws IOException {
 		log.debug("Currently in Shop Home page");
 		String Ele1 = driver.getTitle();
 		log.debug("The Page title is " + Ele1);
@@ -58,7 +58,7 @@ public class ShopLandingPageAction extends Environment {
 
 	}
 
-	public static void clickSignIn() throws IOException, InterruptedException {
+	public static void clickSignIn() throws IOException {
 		log.debug("Clicking on Sign in button");
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", ShopLandingPage.SignInLink);
@@ -66,14 +66,14 @@ public class ShopLandingPageAction extends Environment {
 
 	}
 
-	public static void clickSignOut() throws IOException, InterruptedException {
+	public static void clickSignOut() throws IOException {
 		log.debug("Clicking on Sign out button");
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", ShopLandingPage.SignOutLink);
 		Screenshots.captureScreenshot();
 	}
 
-	public static void closePopUpIfDisplayed() throws IOException, InterruptedException {
+	public static void closePopUpIfDisplayed() throws IOException {
 		List<WebElement> PopUpClose = driver.findElements((By) pageobjects.ShopLandingPage.ClosePopUp);
 		if (PopUpClose.size() > 0) {
 			log.debug("Pop up is displayed - hence closing it");
@@ -84,7 +84,7 @@ public class ShopLandingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void CookiesPopUpDisplayed() throws IOException, InterruptedException {
+	public static void CookiesPopUpDisplayed() throws IOException {
 		List<WebElement> Cookies = driver.findElements(By.xpath("//*[@class='heading']"));
 		if (Cookies.size() > 0) {
 			log.debug("Cookies pop up is displayed and the cookie is dropped in the page");
@@ -106,7 +106,7 @@ public class ShopLandingPageAction extends Environment {
 	}
 /*Below added by vinu */
 
-	public static void cookiePolicySelect() throws IOException, InterruptedException {
+	public static void cookiePolicySelect() throws IOException {
 		//Below will click on the cookie policy
 		CommonUtilities.clickWebElement(ShopLandingPage.CookiesPolicyClick);
 		Screenshots.captureScreenshot();
@@ -131,7 +131,7 @@ public class ShopLandingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 
 	}
-	public static void clickManageCookies() throws IOException, InterruptedException {
+	public static void clickManageCookies() throws IOException {
 		//Below will click on the cookie policy
 		CommonUtilities.clickWebElement(ShopLandingPage.ManageCookiesClick);
 		Screenshots.captureScreenshot();
@@ -177,7 +177,7 @@ public class ShopLandingPageAction extends Environment {
 
 	}
 
-	public static void CookiepopupValidation() throws IOException, InterruptedException {
+	public static void CookiepopupValidation() throws IOException {
 		//Below will click on the cookie policy
 		CommonUtilities.VerifyElementExist_withoutAssert(ShopLandingPage.CookieSection);
 		log.debug("Cookie section validation is completed");

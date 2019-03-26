@@ -12,7 +12,7 @@ public class SimFreeExtrasPageActions extends Environment {
 
 	final static Logger log = Logger.getLogger("SimFreeExtrasPageActions");
 
-	public static void validateElements() throws IOException, InterruptedException {
+	public static void validateElements() throws IOException {
 		log.debug(" ");
 		log.debug("SIM_FREE_TARIFF_EXTRAS_PAGE_VALIDATION");
 
@@ -69,7 +69,7 @@ public class SimFreeExtrasPageActions extends Environment {
 
 	}
 
-	public static void tariff_select(String ElementName) throws IOException, InterruptedException {
+	public static void tariff_select(String ElementName) throws IOException {
 		if (ElementName.contains("tariff")) {
 			pageobjects.SimFreeExtrasPage.month12tarrif500mb.sendKeys(Keys.ENTER);
 		}
@@ -77,13 +77,13 @@ public class SimFreeExtrasPageActions extends Environment {
 
 	}
 
-	public static void basket_select() throws IOException, InterruptedException {
+	public static void basket_select() throws IOException {
 		pageobjects.SimFreeExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
 		Screenshots.captureScreenshot();
 
 	}
 
-	public static void Tab_Select(String elementName) throws IOException, InterruptedException {
+	public static void Tab_Select(String elementName) throws IOException {
 		if (elementName.equalsIgnoreCase("12months")) {
 			pageobjects.SimFreeExtrasPage.months12tab.sendKeys(Keys.ENTER);
 		}
@@ -95,7 +95,7 @@ public class SimFreeExtrasPageActions extends Environment {
 
 	}
 
-	public static void tariffvalidation(String ElementName) throws IOException, InterruptedException {
+	public static void tariffvalidation(String ElementName) throws IOException {
 		if (ElementName.equalsIgnoreCase(pageobjects.SimFreeExtrasPage.Tariffvaladity.getText())) {
 
 			log.debug("The Tariff detail is Present and the Text is :"
@@ -108,7 +108,7 @@ public class SimFreeExtrasPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void elementvisibility() throws IOException, InterruptedException {
+	public static void elementvisibility() throws IOException {
 		if (pageobjects.SimFreeExtrasPage.Contract_length.isDisplayed()) {
 			//log.debug();
 			log.debug("The Element" + '\u0022' + " Contract length is 12 months" + '\u0022'

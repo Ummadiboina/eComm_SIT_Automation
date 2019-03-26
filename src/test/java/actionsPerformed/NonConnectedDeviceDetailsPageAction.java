@@ -43,7 +43,7 @@ public class NonConnectedDeviceDetailsPageAction extends Environment {
 
 	// This method is used to select any 6 Valid accessory
 
-	public static void ClickonBasketIcon() throws IOException, InterruptedException {
+	public static void ClickonBasketIcon() throws IOException {
 		// TODO Auto-generated method stub
 
 		log.debug("Clicking on basket icon");
@@ -57,7 +57,7 @@ public class NonConnectedDeviceDetailsPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void clickCloseBtn() throws IOException, InterruptedException {
+	public static void clickCloseBtn() throws IOException {
 		log.debug("Closing small pop up");
 		executor.executeScript("arguments[0].click();", pageobjects.NonConnectedDeviceDetailsPage.CloseBtn);
 		Screenshots.captureScreenshot();

@@ -13,8 +13,7 @@ public class BatchFileExecution extends Environment  {
 
 	final static Logger log = Logger.getLogger("BatchFileExecution");
 
-		public static void BatchFileTermination() throws InterruptedException 
-		{
+		public static void BatchFileTermination() {
 	System.out.println("executing batch run");
 		     String filePath = "C:/batchfileForSelenium/QuitAllRemoveTemp.bat";
 	         try {

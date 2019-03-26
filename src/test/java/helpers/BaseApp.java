@@ -17,8 +17,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 public class BaseApp {
-    public static AndroidDriver<AndroidElement> capabilities() throws Exception
-    {
+    public static AndroidDriver<AndroidElement> capabilities() {
         AndroidDriver<AndroidElement> driver;
         String relativePath = System.getProperty("user.dir");
         System.out.println("The Relative path of the user.dir" + relativePath);

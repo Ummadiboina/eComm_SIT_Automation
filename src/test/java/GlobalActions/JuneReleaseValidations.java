@@ -18,7 +18,7 @@ public class JuneReleaseValidations extends Environment {
 	
 
 
-public static void QuantityValidationsBasket() throws InterruptedException, IOException{
+public static void QuantityValidationsBasket() throws IOException{
 		
 	WebElement BasketQuantity = driver.findElement(By.id("accessory-quantitySelectBoxIt"));
 	String BasketQuantityvalue = BasketQuantity.getText();
@@ -30,7 +30,7 @@ public static void QuantityValidationsBasket() throws InterruptedException, IOEx
 
 	}
 
-public static void QuantityValidationsDelivery() throws IOException, InterruptedException {
+public static void QuantityValidationsDelivery() throws IOException {
 	// TODO Auto-generated method stub
 	WebElement BasketQuantity = driver.findElement(By.className("basket-nonconnected"));
 	String BasketQuantityvalue = BasketQuantity.getText();
@@ -90,7 +90,7 @@ public static void QuantityValidationsBasket_Grouped() throws Exception{
 	Screenshots.captureScreenshot();
 }
 
-public static void QuantityValidationsDelivery_Grouped() throws IOException, InterruptedException {
+public static void QuantityValidationsDelivery_Grouped() throws IOException {
 	WebElement BasketQuantity = driver.findElement(By.className("basket-nonconnected"));
 	String BasketQuantityvalue = BasketQuantity.getText();
 	System.out.println("Your order contents is "+BasketQuantityvalue);
@@ -136,7 +136,7 @@ public static void ChangeQuantity() throws InterruptedException {
 		
 }
 
-public static void updatedQuantityValidationsDelivery() throws IOException, InterruptedException {
+public static void updatedQuantityValidationsDelivery() throws IOException {
 	// TODO Auto-generated method stub
 	WebElement BasketQuantity = driver.findElement(By.className("basket-nonconnected"));
 	String BasketQuantityvalue = BasketQuantity.getText();
