@@ -3496,6 +3496,24 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
+    public static void ClassicPayGTariff(String tariff) throws IOException, InterruptedException {
+        log.debug("selecting Tariff");
+        Thread.sleep(10000);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,100)", "");
+        Screenshots.captureScreenshot();
 
+        //PAYMandPAYGTariffAndExtrasPage.classicPAYGTariff.click();
+        // WebElement selectBtnElemt = PAYMandPAYGTariffAndExtrasPage.classicPAYGTariff;
+
+        if (PAYMandPAYGTariffAndExtrasPage.classicPAYGTariff.isDisplayed()) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.classicPAYGTariff);
+            log.debug("Tariff has been selected");
+        } else {
+
+            log.debug("Failed to select the Tariff in the Tariff&Extras page");
+            Assert.fail("Failed to select the Tariff in the Tariff&Extras page");
+        }
+    }
 
 }

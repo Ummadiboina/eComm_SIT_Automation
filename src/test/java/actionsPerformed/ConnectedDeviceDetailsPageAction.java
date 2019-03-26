@@ -1045,4 +1045,46 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
     //*[@id='colourSelectBoxItText']
 
+    public static void ClickAndCollectNowoption() throws IOException, InterruptedException {
+
+        log.debug("In click And Collect now function");
+        pageobjects.BasketPage.clickAndCollect.click();
+        Thread.sleep(6000);
+        Screenshots.captureScreenshot();
+        pageobjects.BasketPage.StorePostcode.sendKeys("g13hf");
+        log.debug("PostCode Entered for Search");
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        Thread.sleep(2000);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].click();", pageobjects.BasketPage.PostcodeSubmit);
+        //pageobjects.BasketPage.PostcodeSubmit.click();
+        Thread.sleep(8000);
+        log.debug("Postcode Submitted for Search");
+
+        scrollToAnElement.scrollToElement(BasketPage.firstStore);
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+
+        /*pageobjects.BasketPage.WhenToCollect.click();
+        Thread.sleep(6000);
+        Screenshots.captureScreenshot();*/
+
+        List<WebElement> collectionDetails = driver.findElements(By.xpath("//div[@class='collectFrom']"));
+        int cnt = 0;
+
+        for(int i=1;i<=collectionDetails.size();i++){
+            String collectionDate = driver.findElement(By.xpath("(//div[@class='collectFrom'])["+i+"]/p")).getText();
+            Thread.sleep(3000);
+            log.debug("Collection Date: "+collectionDate);
+            if (collectionDate.contains("Today")) {
+                log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDate + "\n");
+                driver.findElement(By.xpath("(//a[normalize-space()='Collect from this store'])["+i+"]")).click();
+                log.debug("Store selected for collection Today\n");
+                cnt++;
+                break;
+            }
+        }
+    }
+
 }

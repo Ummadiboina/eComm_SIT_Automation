@@ -353,6 +353,13 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[@class='emptyPACSTACcodeError']")
     public static WebElement emptyPACSTACcodeError;
 
+    @FindBy(how = How.XPATH, using = ("//div[@class='error-msg']"))
+    public static WebElement DeliveryErrorText;
+
+    @FindBy(how = How.XPATH, using = "//h2[text()='deliveryprefence']")
+    public static WebElement Deliveyprefence;
+
+
 }
 
 
