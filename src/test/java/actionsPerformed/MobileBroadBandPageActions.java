@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
@@ -66,7 +67,38 @@ public class MobileBroadBandPageActions extends Environment {
 			log.debug("Huawei 4G Dongle With Wifi Device Selected");
 
 		}else{
-			pageobjects.MobileBroadBandPage.RandomPayGDeviceSelect.click();
+			//pageobjects.MobileBroadBandPage.RandomPayGDeviceSelect.click();
+
+			try {
+				//WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
+				WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
+				serchBox.sendKeys(elementName);
+				Thread.sleep(10000);
+
+				if (driver.findElements(By.xpath("(//img[@class='device-image lazyPD']/..//*[normalize-space()='"+elementName+"'])[1]")).size() >= 1) {
+					WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazyPD']/..//*[normalize-space()='"+elementName+"'])[1]"));
+
+					Screenshots.captureScreenshot();
+
+					Thread.sleep(3000);
+					((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
+					log.debug("Selected Device from Phones as Required is : " + elementName);
+					Thread.sleep(3000);
+				} else{
+
+					WebElement element = driver.findElement(By.xpath("(//img[@class='device-image lazyPD'])[1]"));
+					((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+					String defaultSelDevice = driver.findElement(By.xpath("(//img[@class='device-image lazyPD'])[1]/../p/span[2]")).getText();
+					log.debug(" As Required Device is not Available, We have picked default device from available  :: " + defaultSelDevice);
+
+					Thread.sleep(3000);
+
+					Screenshots.captureScreenshot();
+				}
+
+           	} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		Screenshots.captureScreenshot();
 

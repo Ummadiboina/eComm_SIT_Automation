@@ -1,10 +1,10 @@
-Feature: Display_Two_Additional_Buttons_on_TariffConfig_When _Flag_Enabled
+Feature: 31_Display_Two_Additional_Buttons_on_TariffConfig_When _Flag_Enabled
 
   This scenario ensures that the additional two buttons  “Get CFA Tariff“ & “Get CFU Tariff“ and "Get Base Comms Tariff"
   are seen under tariff configuration page
 
   @Web
-  Scenario Outline:Display_Two_Additional_Buttons_on_TariffConfig_When _Flag_Enabled
+  Scenario Outline:31_Display_Two_Additional_Buttons_on_TariffConfig_When _Flag_Enabled
 
     Given I am a Drupal Admin
     And I Login with Drupal Admin Credential <userName> and <password> and verify login page

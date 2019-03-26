@@ -1,9 +1,10 @@
-Feature: 12_Validating_And_Applying_Data_Sort_Order_For_BaseComm_Tariffs
+Feature: 21_Validating_And_Applying_Data_Sort_Order_For_BaseComm_Tariffs
 
-  12_Validating_And_Applying_Data_Sort_Order_For_BaseComm_Tariffs
+  This scenario ensures that the sorting arrows are present in each column where text displays and on click of the
+  arrows the result in the table is sorted accordingly
 
   @Web
-  Scenario Outline:12_Validating_And_Applying_Data_Sort_Order_For_BaseComm_Tariffs
+  Scenario Outline:21_Validating_And_Applying_Data_Sort_Order_For_BaseComm_Tariffs
 
     Given I am a Drupal Admin
     And I Login with Drupal Admin Credential <userName> and <password> and verify login page
