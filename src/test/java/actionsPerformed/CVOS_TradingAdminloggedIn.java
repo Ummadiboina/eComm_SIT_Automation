@@ -11,7 +11,7 @@ public class CVOS_TradingAdminloggedIn extends Environment {
 
 	final static Logger log = Logger.getLogger("CVOS_TradingAdminloggedIn");
 
-	public static void CVOSTradingVal() throws InterruptedException, IOException {
+	public static void CVOSTradingVal() throws IOException {
 		if (pageobjects.CVOS_PageObjects.stockpotTab.isDisplayed()) {
 			log.debug("The Stockpot tab is displayed : " + pageobjects.CVOS_PageObjects.stockpotTab.getText());
 			log.debug("The Stockpot tab is displayed : " + pageobjects.CVOS_PageObjects.stockpotTab.getText());
@@ -38,7 +38,7 @@ public class CVOS_TradingAdminloggedIn extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void CVOSTradingStockpot() throws InterruptedException, IOException {
+	public static void CVOSTradingStockpot() throws IOException {
 
 		pageobjects.CVOS_PageObjects.stockpotTab.click();
 		log.debug("The Stockpot tab is clicked");

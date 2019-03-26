@@ -17,7 +17,7 @@ import pageobjects.SimFreeDevicePage;
 public class LikeNewSimFreeDevicePageActions extends Environment {
 	final static Logger log = Logger.getLogger("LikeNewSimFreeDevicePageActions");
 
-	public static void validatetile() throws IOException, InterruptedException {
+	public static void validatetile() throws IOException {
 		log.debug(" ");
 		log.debug("SIM_FREE_PHONE_PAGE_VALIDATION");
 		log.debug("Performing Sim Free Phones page validation");
@@ -65,7 +65,7 @@ public class LikeNewSimFreeDevicePageActions extends Environment {
 
 	}
 
-	public static void ElementClick(String elementName) throws IOException, InterruptedException {
+	public static void ElementClick(String elementName) throws IOException {
 
 		if (elementName.contains("Device_only_sim_free_Select")) {
 			pageobjects.SimFreeDevicePage.Device_only_sim_free_Select.sendKeys(Keys.ENTER);
@@ -82,7 +82,7 @@ public class LikeNewSimFreeDevicePageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void LikeNewColorDropDownOptions() throws IOException, InterruptedException {
+	public static void LikeNewColorDropDownOptions() {
 
 		if (SimFreeDevicePage.LikeNewColourDropdown.isDisplayed()) {
 
@@ -98,7 +98,7 @@ public class LikeNewSimFreeDevicePageActions extends Environment {
 
 	}
 
-	public static void LikeNewColorTariffSelect(String TariffType) throws IOException, InterruptedException {
+	public static void LikeNewColorTariffSelect(String TariffType) {
 
 		if(TariffType.contains("DeviceOnly")) {
 			SimFreeDevicePage.Device_only_sim_free_Select.click();

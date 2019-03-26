@@ -8,8 +8,7 @@ public class FirefoxProfileCreation extends Environment  {
 
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-		public static void openFirefoxProfile() throws InterruptedException 
-		{
+		public static void openFirefoxProfile() {
 	System.out.println("executing batch run");
 		     String filePath = "C:/batchfileForSelenium/openFirefoxProfile.bat";
 	         try {

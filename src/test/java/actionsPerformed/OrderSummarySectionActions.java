@@ -12,7 +12,7 @@ public class OrderSummarySectionActions extends Environment {
 
 	final static Logger log = Logger.getLogger("Agent_AdvisoryChecksActions");
 
-	public static void checkStockExtMessage(String product) throws IOException, InterruptedException {
+	public static void checkStockExtMessage(String product) throws IOException {
 
 		String ExpStockExtMsg = null;
 
@@ -36,7 +36,7 @@ public class OrderSummarySectionActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void checkStockExtMessageDelText() throws IOException, InterruptedException {
+	public static void checkStockExtMessageDelText() throws IOException {
 		String ExpStockExtMsgDelText = "We will deliver the rest of your order as soon as possible.";
 		if (pageobjects.OrderSummarySection.StockExtMessageDelText.getText().matches(ExpStockExtMsgDelText)) {
 			log.debug("Delivery Text in Order Summary is present");

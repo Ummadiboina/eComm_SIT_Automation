@@ -31,11 +31,10 @@ public class Agent_DeliveryPageActions extends Environment {
 	/*************************
 	 * Vinu Edited below
 	 *
-	 * @throws InterruptedException
 	 * @throws IOException
 	 ***********************/
 
-	public static void Set_Bank_details(String Username) throws IOException, InterruptedException {
+	public static void Set_Bank_details(String Username) throws IOException {
 
 		Agent_DeliveryDetailsPage.AccountName.sendKeys(Username);
 		log.debug("Entered name is " + Username);

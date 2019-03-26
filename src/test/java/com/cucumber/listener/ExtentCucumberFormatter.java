@@ -165,7 +165,7 @@ public class ExtentCucumberFormatter implements Reporter, Formatter {
 
     public void embedding(String s, byte[] bytes) {
         if (!scenarioOutlineTest) {
-            String extension = (String)MIME_TYPES_EXTENSIONS.get(s);
+            String extension = MIME_TYPES_EXTENSIONS.get(s);
             String fileName = "screenshot-" + System.currentTimeMillis() + "." + extension;
             this.writeBytesAndClose(bytes, this.reportFileOutputStream(fileName));
             scenarioTest.log(LogStatus.INFO, scenarioTest.addScreenCapture(fileName));

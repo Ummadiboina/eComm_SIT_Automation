@@ -10,7 +10,7 @@ import static GlobalActions.Screenshots.captureScreenshot;
 
 public class SimFreeLandingActions extends Environment {
 
-    public static void LikeNewOptions(String ElementName) throws IOException, InterruptedException {
+    public static void LikeNewOptions(String ElementName) throws IOException {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,500)", "");
 
