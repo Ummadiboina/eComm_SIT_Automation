@@ -1844,6 +1844,71 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
         Thread.sleep(3000);
     }
+
+    public static void clickAndCollectNowoption() throws InterruptedException, IOException {
+
+        // Selecting an Extra
+        Agent_DealBuilderPage.CheckStore.click();
+        log.debug("Clicked on Check store stock Tab");
+
+        Thread.sleep(6000);
+
+        String Mainwindow = driver.getWindowHandle();
+        // getting all the popup windows , hence using getwindowhandles instead of
+        // getwindowhandle
+        Set<String> s1 = driver.getWindowHandles();
+        Iterator<String> i1 = s1.iterator();
+        while (i1.hasNext()) {
+            String ChildWindow = i1.next();
+            if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
+                // Switching to Child window
+                driver.switchTo().window(ChildWindow);
+                Thread.sleep(3000);
+                Agent_DealBuilderPage.Postcode.sendKeys("g13hf");
+
+                Agent_DealBuilderPage.searchStore.click();
+                Thread.sleep(8000);
+                Screenshots.captureScreenshot();
+
+                List<WebElement> collectionDetails = driver.findElements(By.xpath("//table[@id='storeResultsTable']/tbody/tr"));
+                int cnt = 0;
+                //String collectionDetails = Agent_DealBuilderPage.collectionDetails.getText();
+
+                for (int i = 1; i <= collectionDetails.size(); i++) {
+                    String collectionDate = driver.findElement(By.xpath("//table[@id='storeResultsTable']/tbody/tr[" + i + "]/td[2]")).getText();
+                    Thread.sleep(3000);
+                    log.debug("Collection Date: " + collectionDate);
+                    if (collectionDate.equalsIgnoreCase("Today")) {
+                        log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDate + "\n");
+                        driver.findElement(By.xpath("//table[@id='storeResultsTable']/tbody/tr[" + i + "]/td[3]/input")).click();
+                        log.debug("Store selected for collection Today\n");
+                        cnt++;
+                        break;
+                    }
+                }
+
+            }
+        }
+    }
+
+    public static void verifyClassicPAYGError(String strError) throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        try {
+            String classicCNCErrorMsg = pageobjects.Agent_DealBuilderPage.ErrorText.getText();
+
+            if (classicCNCErrorMsg.contains("not applicable")) {
+                log.debug("As expected, the error message is matching\n");
+            } else {
+                log.debug("No warning message as plan is available for ClickNCollectNow");
+                Assert.fail("Failed :: No warning message as plan is available for ClickNCollectNow");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate Incompatible error message");
+        }
+        Screenshots.captureScreenshot();
+    }
+
 }
 
 

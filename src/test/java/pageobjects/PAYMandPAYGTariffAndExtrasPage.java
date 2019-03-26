@@ -261,4 +261,10 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//h3[normalize-space()='Spend Cap']")
 	public static WebElement BillSpendCapHeader_YourPackage;
 
+	@FindBy(how = How.XPATH, using = "//h2[normalize-space()='Classic Pay As You Go']/../ul/li/div/button[1]")
+	public static WebElement classicPAYGTariff;
+
+	@FindBy(how = How.XPATH, using = "//h2[text()='deliveryprefence']")
+	public static WebElement Deliveyprefence;
+
 }

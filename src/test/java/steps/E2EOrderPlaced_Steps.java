@@ -11929,4 +11929,196 @@ public class E2EOrderPlaced_Steps {
             log.debug("Unable to save tariffs \n");
         }
     }
+
+    //ITFD-1021 By Gitanjali, March 2019
+    @And("^choose and check valid store for click and collect Now")
+    public void choose_and_checkStore_for_click_and_Collect_Now() {
+        try {
+
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(4000);
+            Agent_DealBuilderPageActions.clickAndCollectNowoption();
+
+        } catch (Exception e) {
+            log.debug("unable to select store for click and collect now order");
+            Assert.fail("unable to select store for click and collect now order");
+        }
+    }
+
+    @And("^Verify that the error ([^\"]*) is displayed$")
+    public void verify_ErrorMsg_is_displayed(String str) {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.verifyClassicPAYGError(str);
+            Thread.sleep(4000);
+            log.debug("Successfully verified the error message ");
+        } catch (Exception e) {
+            log.debug("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Click on Empty above button in agent basket page$")
+    public void Click_on_Empty_above_button_in_agent_basket_page() {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.Emptyabove();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on Empty above, please see the failure screenshot");
+            Assert.fail("Unable to click on Empty above , please see the failure screenshot");
+        }
+    }
+
+    @And("^Select classic PayG tariff ([^\"]*)$")
+    public void selectclassicPayGTariffTariff(String tariff) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            //PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            UpgradeCustomerPageActions.ClassicPayGTariff(tariff);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to select PayG tariff");
+            Assert.fail("Unable to select PayG tariff"); }
+    }
+
+    @And("^Check the availability to collect from store now in Delivery page$")
+    public void Land_on_the_delivery_page_and_choose_collect_from_store_now() {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            Thread.sleep(5000);
+            ConnectedDeviceDetailsPageAction.ClickAndCollectNowoption();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on the product details page and choose to collect from store now");
+            Assert.fail("Unable to Land on the product details page and choose to collect from store now");
+        }
+    }
+
+    @Then("^Verify that the error ([^\"]*) is displayed in the deliverypage$")
+    public void verify_ErrorMsg_is_displayed_in_the_deliverypage(String str) {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.verifyError(str);
+            Thread.sleep(4000);
+            log.debug("Successfully verified the error message ");
+        } catch (Exception e) {
+            log.debug("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^click on Delivery prefrences link$")
+    public void click_on_DeliverypreferenceLinkINDeliveryPage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver,DeliveryPage.class);
+            DeliveryPageActions.Deliveryprefrencelink();
+            Thread.sleep(4000);
+            log.debug("Successfully go to PD page ");
+        } catch (Exception e) {
+            log.debug("Unable to go PD page");
+            Assert.fail("Unable to go PD page");
+        }
+    }
+
+    @And("^Choose the valid store availability for click and collect now$")
+    public void Choose_the_valid_store_availability_for_click_and_collect_now() {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            Thread.sleep(5000);
+            ConnectedDeviceDetailsPageAction.ClickAndCollectNow();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on the product details page and choose to collect from store now");
+            Assert.fail("Unable to Land on the product details page and choose to collect from store now");
+        }
+    }
+
+    @And("^Check the availability to collect from store now in Basket page$")
+    public void checkCCNAvailabilityInBasketPage() {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            Thread.sleep(5000);
+            ConnectedDeviceDetailsPageAction.ClickAndCollectNowoption();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on the product details page and choose to collect from store now");
+            Assert.fail("Unable to Land on the product details page and choose to collect from store now");
+        }
+    }
+
+    @Then("^Verify that the error ([^\"]*) is displayed in the basket$")
+    public void verify_ErrorMsg_is_displayed_in_the_baket(String str) {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            BasketPageActions.verifyError(str);
+            Thread.sleep(4000);
+            log.debug("Successfully verified the error message ");
+        } catch (Exception e) {
+            log.debug("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Click on Change tariff link$")
+    public void click_on_changetariff_link() {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            BasketPageActions.changetariff();
+            Thread.sleep(4000);
+            log.debug("Successfully verified the error message ");
+        } catch (Exception e) {
+            log.debug("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @Then("^Verify that the error ([^\"]*)is displayed in the TandEpage$")
+    public void verify_ErrorMsg_is_displayed_in_the_TandEpage (String str) {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PAYMandPAYGTariffAndExtrasPageActions.verifyPAYGError(str);
+            Thread.sleep(4000);
+            log.debug("Successfully verified the error message ");
+        } catch (Exception e) {
+            log.debug("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^click on Delivery prefrences link$")
+    public void click_on_Deliverypreference_link() {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PAYMandPAYGTariffAndExtrasPageActions.Deliveryprefrencelink();
+            Thread.sleep(4000);
+            log.debug("Successfully go to PD page ");
+        } catch (Exception e) {
+            log.debug("Unable to go PD page");
+            Assert.fail("Unable to go PD page");
+        }
+    }
 }

@@ -352,4 +352,7 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "//span[@id='maxData']/../a[@class='nextData disableNext']")
     public static WebElement maxIcon_data_Disable;
 
+    @FindBy(how = How.XPATH, using = ("//div[@class='basket-error']"))
+    public static WebElement ErrorText;
+
 }

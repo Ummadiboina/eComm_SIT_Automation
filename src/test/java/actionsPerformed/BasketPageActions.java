@@ -956,4 +956,35 @@ public class BasketPageActions extends Environment {
 		}
 	}
 
+	public static void verifyError(String strError) throws IOException, InterruptedException {
+		Thread.sleep(3000);
+		try {
+
+			String classicCNCErrorMsg = pageobjects.BasketPage.ErrorText.getText();
+
+			if (classicCNCErrorMsg.contains("not applicable")){
+				log.debug("As expected, the error message is matching\n");
+			} else {
+				log.debug("No warning message as plan is available for ClickNCollectNow");
+				Assert.fail("No warning message as plan is available for ClickNCollectNow");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.debug("Unable to validate Incompatible error message");
+		}
+		Screenshots.captureScreenshot();
+	}
+
+	public static void changetariff() throws IOException, InterruptedException {
+		Thread.sleep(3000);
+		if (driver.findElements(By.xpath("//a[text()='Change tariff']")).size() > 0) {
+
+			pageobjects.BasketPage.changetariff.click();
+
+		}else{
+			Assert.fail("Not able to find the Change tarff link in Basket page");
+		}
+
+		Screenshots.captureScreenshot();
+	}
 }

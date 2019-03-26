@@ -204,4 +204,10 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "//button[@class='close boxclose']")
 	public static WebElement BasketBSCOverlayCloseBtn;
 
+	@FindBy(how = How.XPATH, using = ("//div[@class='error_msg']"))
+	public static WebElement ErrorText;
+
+	@FindBy(how = How.XPATH, using = "//a[text()='Change tariff']")
+	public static WebElement changetariff;
+
 }

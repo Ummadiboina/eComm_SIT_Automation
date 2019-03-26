@@ -1888,4 +1888,34 @@ public class DeliveryPageActions extends Environment {
             e.printStackTrace();
         }
     }
+
+    public static void verifyError(String strError) throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        try {
+
+            String classicCNCErrorMsg = pageobjects.DeliveryPage.DeliveryErrorText.getText();
+
+            if (classicCNCErrorMsg.contains("not applicable")){
+                log.debug("As expected, the error message is matching\n");
+            } else {
+                log.debug("No warning message as plan is available for ClickNCollectNow");
+                Assert.fail("No warning message as plan is available for ClickNCollectNow");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate Incompatible error message");
+        }
+        Screenshots.captureScreenshot();
+    }
+
+    public static void Deliveryprefrencelink() throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        if (driver.findElements(By.xpath("//a[text()='delivery-preference']")).size() > 0) {
+
+            pageobjects.DeliveryPage.Deliveyprefence.click();
+
+        }else{
+            Assert.fail("Not able to GO PD page");
+        }Screenshots.captureScreenshot();
+    }
 }
