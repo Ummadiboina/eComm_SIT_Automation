@@ -409,6 +409,9 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "//*[contains(text(),'Bolton')]")
     public static WebElement boltonSection;
 
+    @FindBy(how = How.XPATH, using = ("//div[@class='basket-error']"))
+    public static WebElement ErrorText;
+
 
 
 
