@@ -12139,8 +12139,8 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^click on Delivery prefrences link$")
-    public void click_on_DeliverypreferenceLinkINDeliveryPage() {
+    @And("^click on Delivery prefrences link in delivery page$")
+    public void click_on_DeliverypreferenceLinkInDeliveryPage() {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver,DeliveryPage.class);
@@ -12229,12 +12229,12 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^click on Delivery prefrences link$")
+    @And("^click on Delivery prefrences link in PayMAndPayG Tariff page$")
     public void click_on_Deliverypreference_link() {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            PAYMandPAYGTariffAndExtrasPageActions.Deliveryprefrencelink();
+            PAYMandPAYGTariffAndExtrasPageActions.deliveryPrefrenceLink_PayMAndPayGTariff();
             Thread.sleep(4000);
             log.debug("Successfully go to PD page ");
         } catch (Exception e) {
@@ -12243,8 +12243,23 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^I land on PD page and choose to click and collect store$")
+    public void i_Land_on_PDpage_and_choose_clickncollect_from_store() {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            ConnectedDeviceDetailsPageAction.CollectionDelivery("clickAndCollect");
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on the basket page and choose to collect from store");
+            Assert.fail("Unable to Land on the basket page and choose to collect from store");
+        }
+    }
+
     //lokesh baskar
-    @And("Verify 18 Months contract is displayed under Phone Tablet MBB Tab")
+    @And("^Verify 18 Months contract is displayed under Phone Tablet MBB Tab$")
     public void verify_18_months_contract_is_displayed_under_Phone_Tablet_MBB_Tab(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -12261,7 +12276,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-    @And("Verify 18 Months contract option is displayed as first button under Phone Tablet MBB Tab")
+    @And("^Verify 18 Months contract option is displayed as first button under Phone Tablet MBB Tab$")
     public void Verify_18_Months_contract_option_is_displayed_as_first_button_under_Phone_Tablet_MBB_Tab(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -12278,7 +12293,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-    @And("Verify 12 Months contract option is selected by default when lands on PayM_Sim_only")
+    @And("^Verify 12 Months contract option is selected by default when lands on PayM_Sim_only$")
     public void verify_12_Months_contract_option_is_selected_by_default_when_lands_on_PayM_Sim_deal(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -12291,8 +12306,8 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-    @And("verify ([^\"]*) text is displayed in TE page")
-    public void verify_text_is_displayed_in_TE_page (){
+    @And("^verify ([^\"]*) text is displayed in TE page$")
+    public void verify_text_is_displayed_in_TE_page(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
@@ -12306,8 +12321,8 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("verify ([^\"]*) text is displayed in basket page")
-    public void verify_text_is_displayed_in_basket_page (){
+    @And("^verify ([^\"]*) text is displayed in basket page$")
+    public void verify_text_is_displayed_in_basket_page(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
@@ -12319,8 +12334,8 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Catch block-Verification Fail, unable to validate 18 month contract text in basket page from Main block");
         }
     }
-    @And("verify ([^\"]*) text is displayed in DPR page")
-    public void verify_text_is_displayed_in_DPR_page (){
+    @And("^verify ([^\"]*) text is displayed in DPR page$")
+    public void verify_text_is_displayed_in_DPR_page(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
@@ -12334,8 +12349,8 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("verify ([^\"]*) text is displayed in confirmation page")
-    public void verify_text_is_displayed_in_confirmation_page (){
+    @And("^verify ([^\"]*) text is displayed in confirmation page$")
+    public void verify_text_is_displayed_in_confirmation_page(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
@@ -12349,7 +12364,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("Verify unlimited data is displayed under recommended tariff from ([^\"]*) option")
+    @And("^Verify unlimited data is displayed under recommended tariff from ([^\"]*) option$")
     public void verify_unlimited_data_is_displayed_under_recommended_tariff_from_option(String Contract)
     {
         try {
@@ -12365,7 +12380,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("verify Unlimited data is displayed in Tariff and Extras page")
+    @And("^verify Unlimited data is displayed in Tariff and Extras page$")
     public void verify_Unlimited_data_is_displayed_in_Tariff_and_Extras_page()
     {
         try {
@@ -12381,7 +12396,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And ("verify Unlimited data is displayed in Review and confirm page")
+    @And ("^verify Unlimited data is displayed in Review and confirm page$")
     public void verify_Unlimited_data_is_displayed_in_Review_and_confirm_page(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -12395,7 +12410,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-    @And ("verify ([^\"]*) text is displayed in Review and confirm page")
+    @And ("^verify ([^\"]*) text is displayed in Review and confirm page$")
     public void verify_text_displayed_review_confirm_page(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -12408,7 +12423,7 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Catch block-Verification Fail, unable to validate Unlimited data in review and confirmation page from Main block");
         }
     }
-    @And("verify Unlimited data is displayed in basket page")
+    @And("^verify Unlimited data is displayed in basket page$")
     public void verify_Unlimited_data_is_displayed_in_basket_page()
     {
         try {
@@ -12424,7 +12439,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("verify Unlimited data is displayed in delivery page")
+    @And("^verify Unlimited data is displayed in delivery page$")
     public void verify_Unlimited_data_is_displayed_in_delivery_page()
     {
         try {
@@ -12440,7 +12455,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("verify Unlimited data is displayed in Payment page")
+    @And("^verify Unlimited data is displayed in Payment page$")
     public void verify_Unlimited_data_is_displayed_in_Payment_page()
     {
         try {
@@ -12456,7 +12471,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("verify Unlimited data is displayed in Review page")
+    @And("^verify Unlimited data is displayed in Review page$")
     public void verify_Unlimited_data_is_displayed_in_Review_page()
     {
         try {
@@ -12472,7 +12487,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("verify Unlimited data is displayed in confirmation page")
+    @And("^verify Unlimited data is displayed in confirmation page$")
     public void verify_Unlimited_data_is_displayed_in_confirmation_page()
     {
         try {
@@ -12484,9 +12499,6 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             log.debug("Catch block-Verification Fail, unable to Unlimited data in confirmation page from Main block");
             Assert.fail("Catch block-Verification Fail, unable to Unlimited data in confirmation page from Main block");
-
         }
-
     }
-
 }

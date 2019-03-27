@@ -1087,4 +1087,53 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         }
     }
 
+    public static void CollectionDelivery(String elementName) throws InterruptedException, IOException {
+        Thread.sleep(4000);
+        if (driver.findElements(By.xpath("//*[@id='homeDelivery']")).size() > 0) {
+            //if(!BasketPage.checkoutbtn.isDisplayed()){
+            if (elementName.contains("homeDelivery")) {
+                Thread.sleep(3000);
+                boolean b = driver.findElement(By.xpath("//*[@id='homeDelivery']")).isSelected();
+                if (!b) {
+                    pageobjects.ConnectedDeviceDetailsPage.HomeDeliverySelect.click();
+                    // Assert.assertEquals(elementName,"Galaxy S7 is not found");
+                    log.debug("HomeDelivery is Selected");
+                    Screenshots.captureScreenshot();
+                }
+            } else if (elementName.contains("clickAndCollect")) {
+                pageobjects.ConnectedDeviceDetailsPage.clickAndCollect.click();
+                // Assert.assertEquals(elementName,"Galaxy S7 is not found");
+                log.debug("click And Collect is Selected");
+                log.debug("clickAndCollect radio button is Selected");
+
+                pageobjects.ConnectedDeviceDetailsPage.StorePostcode.sendKeys("M4");
+                log.debug("PostCode Entered for Search");
+
+                Thread.sleep(4000);
+                Screenshots.captureScreenshot();
+                Thread.sleep(2000);
+                pageobjects.ConnectedDeviceDetailsPage.PostcodeSubmit.click();
+                Thread.sleep(5000);
+                // Assert.assertEquals(elementName,"Galaxy S7 is not found");
+                log.debug("Postcode Submitted for Search");
+
+                Thread.sleep(5000);
+                scrollToAnElement.scrollToElement(ConnectedDeviceDetailsPage.Collectfromthisstore);
+                Thread.sleep(3000);
+                //Screenshots.captureScreenshot();
+                pageobjects.ConnectedDeviceDetailsPage.Collectfromthisstore.click();
+                // Assert.assertEquals(elementName,"Galaxy S7 is not found");
+                log.debug("Store Selected for Colletion");
+
+                Thread.sleep(5000);
+
+                log.debug("Click on the Add To Basket");
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,600)", "");
+                Screenshots.captureScreenshot();
+            }
+            //}
+        }
+    }
+
 }

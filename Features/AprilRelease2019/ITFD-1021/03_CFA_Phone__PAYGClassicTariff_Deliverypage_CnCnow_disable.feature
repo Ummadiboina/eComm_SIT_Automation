@@ -18,7 +18,7 @@ Feature: 03_CFA_Phone_PAYGClassicTariff_Deliverypage_CNCnow_disable
     And click on "go to checkout" button
     And Check the availability to collect from store now in Delivery page
     Then Verify that the error <string> is displayed in the deliverypage
-    And click on Delivery prefrences link
+    And click on Delivery prefrences link in delivery page
     And Navigate to device details page
     And Select classic PayG tariff <tariff>
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
