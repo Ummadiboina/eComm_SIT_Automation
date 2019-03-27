@@ -1,19 +1,20 @@
 package actionsPerformed;
 
-import java.awt.AWTException;
+import java.awt.*;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.*;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import pageobjects.ConnectedDeviceDetailsPage;
 import pageobjects.PaymentPage;
 import org.openqa.selenium.support.ui.Select;
 
@@ -128,6 +129,106 @@ public class PaymentPageActions extends Environment {
 
     }
 
+
+
+    public static void affordabilityValidation(String employmentStatus, String annualIncome) throws IOException, InterruptedException, AWTException {
+
+        scrollToAnElement.scrollToElement(pageobjects.PaymentPage.affordabilityHeading);
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+
+        //Employment Status
+        if (driver.findElements(By.xpath("//span/i[@id='employment-statusSelectBoxItArrow']")).size() > 0) {
+            pageobjects.PaymentPage.employmentDropDown.click();
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+
+            WebElement empStatus = null;
+            String empStatusName = "";
+            List<WebElement> empStatusNames = driver.findElements(By.xpath("//ul[@id='employment-statusSelectBoxItOptions']/li"));
+
+            for (int i = 1; i <= empStatusNames.size(); i++) {
+                empStatusName = driver.findElement(By.xpath("//ul[@id='employment-statusSelectBoxItOptions']/li[" + i + "]")).getText();
+                Thread.sleep(2000);
+                if (empStatusName.contains(employmentStatus)) {
+                    empStatus = driver.findElement(By.xpath("//ul[@id='employment-statusSelectBoxItOptions']/li[" + i + "]"));
+                    break;
+                }
+            }
+
+            Thread.sleep(3000);
+            Point coordinates = empStatus.getLocation();
+            Robot robot = new Robot();
+            robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+            Thread.sleep(2000);
+            log.debug("Moving Mouse to employment status dropdown\n");
+
+            Actions action = new Actions(driver);
+            action.moveToElement(empStatus).click().build().perform();
+            log.debug("Selected " + employmentStatus + "from employment status dropdown\n");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+        }
+
+
+        //Annual Income
+        if (driver.findElements(By.xpath("//span/i[@id='annual-incomeSelectBoxItArrow']")).size() > 0) {
+            pageobjects.PaymentPage.annualIncomeDropDown.click();
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+
+            WebElement annualIncomeEle = null;
+            String income = "";
+            List<WebElement> annualIncomeList = driver.findElements(By.xpath("//ul[@id='annual-incomeSelectBoxItOptions']/li"));
+
+            for (int i = 1; i <= annualIncomeList.size(); i++) {
+                income = driver.findElement(By.xpath("//ul[@id='annual-incomeSelectBoxItOptions']/li[" + i + "]")).getText();
+                Thread.sleep(2000);
+                if (income.contains(annualIncome)) {
+                    annualIncomeEle = driver.findElement(By.xpath("//ul[@id='annual-incomeSelectBoxItOptions']/li[" + i + "]"));
+                    break;
+                }
+            }
+
+            Thread.sleep(3000);
+            Point coordinates = annualIncomeEle.getLocation();
+            Robot robot = new Robot();
+            robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+            Thread.sleep(2000);
+            log.debug("Moving Mouse to annual income dropdown\n");
+
+            Actions action = new Actions(driver);
+            action.moveToElement(annualIncomeEle).click().build().perform();
+            log.debug("Selected " + annualIncome + "from annual income dropdown\n");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+        }
+
+        pageobjects.PaymentPage.agreeFinancialCommitments.click();
+        log.debug("Selected agree Financial commitments check box\n");
+        pageobjects.PaymentPage.agreeMyCircumstances.click();
+        log.debug("Selected agree My Circumstances check box\n");
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+
+        pageobjects.PaymentPage.affordabilityDontAgreeLink.click();
+        log.debug("Clicked on affordability Dont Agree Link\n");
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,400)", "");
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+
+        if(driver.findElements(By.xpath("//input[@id='confirm-address']")).size()>0){
+            pageobjects.PaymentPage.affordabilityAgreeCreditCheck.click();
+            log.debug("Selected agree CreditCheck check box\n");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+        }
+
+    }
+
     public static void Time_At_Address() throws IOException, InterruptedException {
         Thread.sleep(5000);
         scrollToAnElement.scrollToElement(PaymentPage.Stay_Address_Years);
@@ -141,8 +242,8 @@ public class PaymentPageActions extends Environment {
 
         //executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.Confirm_Address_Checkbox);
 
-        pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
-        log.debug("Clicked on the Confirm Address checkbox");
+        /*pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
+        log.debug("Clicked on the Confirm Address checkbox");*/
         Screenshots.captureScreenshot();
     }
 
@@ -172,8 +273,8 @@ public class PaymentPageActions extends Environment {
         log.debug("Entered the stayed at months - 9");
 
         Thread.sleep(5000);
-        pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
-        log.debug("Clicked on the Confirm Address checkbox");
+        /*pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
+        log.debug("Clicked on the Confirm Address checkbox");*/
         Screenshots.captureScreenshot();
 
     }

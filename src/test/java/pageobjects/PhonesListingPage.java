@@ -10,7 +10,7 @@ public class PhonesListingPage {
 	@FindBy(how = How.XPATH, using = "(//a[contains(., 'View all products on one page')])[2]")
 	public static WebElement ViewAllPhones;
 
-	@FindBy(how = How.XPATH, using = "(//img[@class='device-image'])[1] | (//img[@class='device-image lazyload'])[1] | (//img[@class='device-image lazy'])[1]")
+	@FindBy(how = How.XPATH, using = "(//img[@class='device-image'])[1] | (//img[@class='device-image lazyload'])[1] | (//img[@class='device-image lazyList'])[1]")
 	public static WebElement choosedefaultDevice;
 
 	// Below Are list of all the phones in first page of the PayM phones landing
@@ -69,7 +69,7 @@ public class PhonesListingPage {
 	// Below are for PAYG device
 
 	//@FindBy(how = How.XPATH, using = "//*[@class='device-tile__top'][2]")
-	@FindBy(how = How.XPATH, using = "(//img[@class='device-image'])[2] | (//img[@class='device-image lazyload'])[2] | (//img[@class='device-image lazyPD'])[2]")
+	@FindBy(how = How.XPATH, using = "(//img[@class='device-image'])[2] | (//img[@class='device-image lazyload'])[2] | (//img[@class='device-image lazyList'])[2]")
 	public static WebElement RandomDevice;
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/moto/g5/#contractType=payasyougo')]")
