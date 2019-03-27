@@ -114,6 +114,8 @@ public class verificationsActions extends Environment {
             Thread.sleep(10000);
             Time_At_Address();
 
+            Thread.sleep(10000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
             //Below is iframe related
 
             driver.switchTo().frame("payment-iframe"); // switching the frame by ID

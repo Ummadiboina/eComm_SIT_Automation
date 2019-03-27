@@ -1922,10 +1922,13 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             PaymentPageActions.Time_At_Address();
             /*Thread.sleep(5000);
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(5000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
+
             Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
@@ -1955,6 +1958,8 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Time_At_Address();
             /*Thread.sleep(5000);
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(10000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
             Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(20000);
@@ -2062,9 +2067,11 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PaymentPage.class);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(30000);
+            Thread.sleep(10000);
             PaymentPageActions.Time_At_Address_CC();
             //PaymentPageActions.Time_At_Address();
+            Thread.sleep(10000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
             Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
@@ -2110,14 +2117,16 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Set_Bank_details(Username);
             Thread.sleep(10000);
             DeliveryPageActions.SetDelivery();
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             //PaymentPageActions.Time_At_Address_CC();
             PaymentPageActions.Time_At_Address();
             /*Thread.sleep(5000);
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
-            Thread.sleep(15000);
+            Thread.sleep(5000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(25000);
+            Thread.sleep(15000);
             PaymentPageActions.Card_Details_CCV();
             Thread.sleep(30000);
         } catch (Exception e) {
@@ -2285,8 +2294,10 @@ public class E2EOrderPlaced_Steps {
 
             AgreementPageActions.gettitlepage();
             //CommonFunctionscheckTitle("Agreement Page");
-            Thread.sleep(3000);
-            AgreementPageActions.Affordability();
+
+            //Thread.sleep(3000);
+            //AgreementPageActions.Affordability();
+
             Thread.sleep(5000);
             AgreementPageActions.KeyInformation();
             Thread.sleep(5000);
