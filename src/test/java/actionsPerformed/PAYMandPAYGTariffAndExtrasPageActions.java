@@ -1889,7 +1889,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void Deliveryprefrencelink() throws IOException, InterruptedException {
+	public static void deliveryPrefrenceLink_PayMAndPayGTariff() throws IOException, InterruptedException {
 		Thread.sleep(3000);
 		if (driver.findElements(By.xpath("//a[text()='delivery-preference']")).size() > 0) {
 

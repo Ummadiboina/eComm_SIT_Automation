@@ -290,22 +290,20 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "(//a[normalize-space()='View phone details'])[2]")
     public static WebElement clickLink4CFU;
 
+    @FindBy(how = How.ID, using = "homeDelivery")
+    public static WebElement HomeDeliverySelect;
 
+    @FindBy(how = How.XPATH, using = "//a[@id='checkStoreStock']")
+    public static WebElement clickAndCollect;
 
+    @FindBy(how = How.XPATH, using = "//input[@name='storePostcode']")
+    public static WebElement StorePostcode;
 
+    @FindBy(how = How.ID, using = "store-postcode-submit")
+    public static WebElement PostcodeSubmit;
 
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(how = How.XPATH, using = ("(//a[normalize-space()='Collect from this store'])[1]"))
+    public static WebElement Collectfromthisstore;
 
 
 }

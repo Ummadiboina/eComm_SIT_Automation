@@ -15,7 +15,7 @@ Feature: 07_CFA_Phone_PayG_ClassicTariff_disable_Click&collectnow_option
     #And Land on the 'Tariffs and extra' page
     And Select classic PayG tariff <tariff>
     Then Verify that the error <string> is displayed in the TandEpage
-    And click on Delivery prefrences link
+    And click on Delivery prefrences link in PayMAndPayG Tariff page
     And I land on PD page and choose to click and collect store
     And Navigate to device details page
     And Select classic PayG tariff <tariff>
