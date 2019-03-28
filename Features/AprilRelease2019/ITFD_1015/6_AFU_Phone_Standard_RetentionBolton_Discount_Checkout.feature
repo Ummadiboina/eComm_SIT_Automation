@@ -20,5 +20,5 @@ Feature: 6_AFU_Phone_Standard_RetentionBolton_Discount_Checkout
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton |
-      | 07521121757 | dongle | Random  | Enabled   | £5            | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          | yes             |
+      | user        | Device | Tariffs  | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton |
+      | 07521121757 | Samsung | Standard | Enabled   | £5            | Me       | Select | Not | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          | yes             |
