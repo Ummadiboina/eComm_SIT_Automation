@@ -2317,6 +2317,45 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @Given("^Continue to Agreements page and confirm all the agreement checks in Upgrade journey$")
+    public void AgreementsPageConfirmationInUpgrade() {
+
+        try {
+            // Write code here that turns the phrase above into concrete actions
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            log.debug("We are at agreement page\n");
+            Thread.sleep(50000);
+            PageFactory.initElements(driver, AgreementPage.class);
+            PageFactory.initElements(driver, ReviewPage.class);
+
+            AgreementPageActions.gettitlepage();
+            //CommonFunctionscheckTitle("Agreement Page");
+
+            //Thread.sleep(3000);
+            //AgreementPageActions.Affordability();
+
+            Thread.sleep(5000);
+            AgreementPageActions.affordabilityValidation("Self-employed", "£20,001-£30,000");
+
+            Thread.sleep(5000);
+            AgreementPageActions.KeyInformation();
+            Thread.sleep(5000);
+            AgreementPageActions.secciSection();
+            Thread.sleep(5000);
+            AgreementPageActions.PayMMobileAgreement();
+            Thread.sleep(5000);
+            AgreementPageActions.TermsDeclarationCheckbox();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.debug(
+                    "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+            Assert.fail(
+                    "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+
+        }
+    }
+
     @Given("^donot select the SECCI and CCA agreements in Agreement page$")
     public void AgreementsPageConfirmation_new() {
         try {
