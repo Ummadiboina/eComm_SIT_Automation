@@ -33,7 +33,7 @@ Feature: 51_Reg_Consumer_Buyout
     And verify if buyout offer is displayed under Order Summary section in <Payment> page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And verify if buyout offer is displayed under Order Summary section in <Agreement> page
-    And Continue to Agreements page and confirm all the agreement checks
+    And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
     And verify if buyout offer is displayed under Order Summary section in <Review> page
     And Continue to Review page and review the order
     Then order confirmation is displayed

@@ -27,4 +27,4 @@ Feature: 98_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Active_Voucherable_Pro
 
     Examples:
       | username               | tariffAmt | dataValue | promoCode | password | BSCstatus | BillCap       | CapAmount | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | inavl0ww_356240@o2.com | £15       | 6GB       | SIMOOFF   | test123  | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | inavl0ww_356240@o2.com | £45       | 100GB       | SIMOOFF   | test123  | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

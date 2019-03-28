@@ -206,19 +206,26 @@ public class PaymentPageActions extends Environment {
             Screenshots.captureScreenshot();
         }
 
-        pageobjects.PaymentPage.agreeFinancialCommitments.click();
-        log.debug("Selected agree Financial commitments check box\n");
-        pageobjects.PaymentPage.agreeMyCircumstances.click();
-        log.debug("Selected agree My Circumstances check box\n");
+        if(driver.findElements(By.xpath("//input[@id='affordability-terms-declaration1']")).size()>0) {
+            pageobjects.PaymentPage.agreeFinancialCommitments.click();
+            log.debug("Selected agree Financial commitments check box\n");
+        }
+
+        if(driver.findElements(By.xpath("//input[@id='affordability-terms-declaration2']")).size()>0) {
+            pageobjects.PaymentPage.agreeMyCircumstances.click();
+            log.debug("Selected agree My Circumstances check box\n");
+        }
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
 
-        pageobjects.PaymentPage.affordabilityDontAgreeLink.click();
-        log.debug("Clicked on affordability Dont Agree Link\n");
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scrollBy(0,400)", "");
-        Thread.sleep(3000);
-        Screenshots.captureScreenshot();
+        if(driver.findElements(By.xpath("//a[@class='affordability-section-dont-agree-link']")).size()>0) {
+            pageobjects.PaymentPage.affordabilityDontAgreeLink.click();
+            log.debug("Clicked on affordability Dont Agree Link\n");
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,400)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+        }
 
         if(driver.findElements(By.xpath("//input[@id='confirm-address']")).size()>0){
             pageobjects.PaymentPage.affordabilityAgreeCreditCheck.click();

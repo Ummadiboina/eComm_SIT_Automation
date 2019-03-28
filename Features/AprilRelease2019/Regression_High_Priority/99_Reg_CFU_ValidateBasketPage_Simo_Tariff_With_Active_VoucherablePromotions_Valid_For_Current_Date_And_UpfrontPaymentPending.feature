@@ -30,4 +30,4 @@ Feature: 99_Reg_CFU_ValidateBasketPage_Simo_Tariff_With_Active_VoucherablePromot
 
     Examples:
       | username          | tariffAmt | dataValue | promoCode | password | BSCstatus | BillCap   | CapAmount | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | q116@14031234.com | £25       | 30GB      | SIMOOFF   | test123  | Enabled   | CapMyBill | £15       | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | q116@14031234.com | £11       | 2GB       | SIMOOFF   | test123  | Enabled   | CapMyBill | £15       | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
