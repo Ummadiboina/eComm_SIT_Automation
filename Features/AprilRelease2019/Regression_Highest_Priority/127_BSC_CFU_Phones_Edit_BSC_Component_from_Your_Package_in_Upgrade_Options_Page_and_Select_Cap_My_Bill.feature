@@ -37,7 +37,7 @@ Feature: 127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Opti
     And Select the Home address
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Validate applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
-    And Continue to Agreements page and confirm all the agreement checks
+    And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
     And Validate applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Continue to Review page and review the order
     Then order confirmation is displayed
