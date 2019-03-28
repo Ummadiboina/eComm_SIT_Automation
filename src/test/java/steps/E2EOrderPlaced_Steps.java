@@ -12042,7 +12042,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("^Verify Saved basket after adding the retention items for Standard tariff ([^\"]*)$")
+    @And("^Verify Saved basket after adding the retention Bolton for Standard tariff ([^\"]*)$")
     public void verifyDealBuilderForStandardTariff(String isRetention) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
