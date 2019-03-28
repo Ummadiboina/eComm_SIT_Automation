@@ -15,7 +15,7 @@ public class SmartwatchesPage {
     @FindBy(how = How.XPATH, using = "//h2[contains(text(),'Sort')]")
     public static WebElement SmartwatchesSortTab;
 
-    @FindBy(how = How.XPATH, using = "(//*[@data-qa-device-contract-type='nonconnected'])[3] | (//img[@class='device-image lazyPD'])[3]")
+    @FindBy(how = How.XPATH, using = "(//*[@data-qa-device-contract-type='nonconnected'])[3] | (//img[@class='device-image lazyList'])[3]")
     public static WebElement RandomSmartWatch;
 
     @FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/smartwatches/samsung/gear-s2/#contractType=nonconnected')]")

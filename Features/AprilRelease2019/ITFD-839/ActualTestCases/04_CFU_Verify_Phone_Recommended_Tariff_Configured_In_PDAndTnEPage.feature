@@ -34,7 +34,7 @@ Feature: 04_CFU_Verify_Phone_Recommended_Tariff_Configured_In_PDAndTnEPage
     And perform <Action> in OTAC page
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
-    And Continue to Agreements page and confirm all the agreement checks
+    And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
     And Continue to Review page and review the order
     Then order confirmation is displayed
 

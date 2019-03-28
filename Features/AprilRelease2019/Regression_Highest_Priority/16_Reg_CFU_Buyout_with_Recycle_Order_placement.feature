@@ -43,7 +43,7 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     #And land on the payment page and input <Username> and other details and click 'Continue' on next step for otac
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     #And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
-    And Continue to Agreements page and confirm all the agreement checks
+    And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
     And Continue to Review page and review the order
     Then order confirmation is displayed
     #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>

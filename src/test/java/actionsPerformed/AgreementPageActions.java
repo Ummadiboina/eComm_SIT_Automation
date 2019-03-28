@@ -1,14 +1,19 @@
 package actionsPerformed;
 
+import java.awt.*;
 import java.io.IOException;
+import java.util.List;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class AgreementPageActions extends Environment {
 	final static Logger log = Logger.getLogger("AgreementPageActions");
@@ -106,6 +111,104 @@ public class AgreementPageActions extends Environment {
 		log.debug("Completed InsuranceSectionAgreementPage function");
 		log.debug("Completed InsuranceSectionAgreementPage function");
 		Screenshots.captureScreenshot();
+	}
+
+	public static void affordabilityValidation(String employmentStatus, String annualIncome) throws IOException, InterruptedException, AWTException {
+		Screenshots.captureScreenshot();
+		scrollToAnElement.scrollToElement(pageobjects.AgreementPage.affordabilityHeading);
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+
+		//Employment Status
+		if (driver.findElements(By.xpath("//span/i[@id='employment-statusSelectBoxItArrow']")).size() > 0) {
+			pageobjects.AgreementPage.employmentDropDown.click();
+			Thread.sleep(3000);
+			Screenshots.captureScreenshot();
+
+
+			WebElement empStatus = null;
+			String empStatusName = "";
+			java.util.List<WebElement> empStatusNames = driver.findElements(By.xpath("//ul[@id='employment-statusSelectBoxItOptions']/li"));
+
+			for (int i = 1; i <= empStatusNames.size(); i++) {
+				empStatusName = driver.findElement(By.xpath("//ul[@id='employment-statusSelectBoxItOptions']/li[" + i + "]")).getText();
+				Thread.sleep(2000);
+				if (empStatusName.contains(employmentStatus)) {
+					empStatus = driver.findElement(By.xpath("//ul[@id='employment-statusSelectBoxItOptions']/li[" + i + "]"));
+					break;
+				}
+			}
+
+			Thread.sleep(3000);
+			org.openqa.selenium.Point coordinates = empStatus.getLocation();
+			Robot robot = new Robot();
+			robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+			Thread.sleep(2000);
+			log.debug("Moving Mouse to employment status dropdown\n");
+
+			Actions action = new Actions(driver);
+			action.moveToElement(empStatus).click().build().perform();
+			log.debug("Selected " + employmentStatus + "from employment status dropdown\n");
+			Thread.sleep(3000);
+			Screenshots.captureScreenshot();
+		}
+
+
+		//Annual Income
+		if (driver.findElements(By.xpath("//span/i[@id='annual-incomeSelectBoxItArrow']")).size() > 0) {
+			pageobjects.AgreementPage.annualIncomeDropDown.click();
+			Thread.sleep(3000);
+			Screenshots.captureScreenshot();
+
+
+			WebElement annualIncomeEle = null;
+			String income = "";
+			List<WebElement> annualIncomeList = driver.findElements(By.xpath("//ul[@id='annual-incomeSelectBoxItOptions']/li"));
+
+			for (int i = 1; i <= annualIncomeList.size(); i++) {
+				income = driver.findElement(By.xpath("//ul[@id='annual-incomeSelectBoxItOptions']/li[" + i + "]")).getText();
+				Thread.sleep(2000);
+				if (income.contains(annualIncome)) {
+					annualIncomeEle = driver.findElement(By.xpath("//ul[@id='annual-incomeSelectBoxItOptions']/li[" + i + "]"));
+					break;
+				}
+			}
+
+			Thread.sleep(3000);
+			Point coordinates = annualIncomeEle.getLocation();
+			Robot robot = new Robot();
+			robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+			Thread.sleep(2000);
+			log.debug("Moving Mouse to annual income dropdown\n");
+
+			Actions action = new Actions(driver);
+			action.moveToElement(annualIncomeEle).click().build().perform();
+			log.debug("Selected " + annualIncome + "from annual income dropdown\n");
+			Thread.sleep(3000);
+			Screenshots.captureScreenshot();
+		}
+
+		pageobjects.AgreementPage.affordabilityDontAgreeLink.click();
+		log.debug("Clicked on affordability Dont Agree Link\n");
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
+
+		pageobjects.AgreementPage.agreeFinancialCommitments.click();
+		log.debug("Selected agree Financial commitments check box\n");
+		pageobjects.AgreementPage.agreeMyCircumstances.click();
+		log.debug("Selected agree My Circumstances check box\n");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+
+
+		pageobjects.AgreementPage.affordabilityButton.click();
+		log.debug("Clicked on Affordability CTA\n");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+
+
 	}
 
 }
