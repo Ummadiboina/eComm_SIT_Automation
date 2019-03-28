@@ -15,13 +15,13 @@ Feature: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket
     And Verify Saved basket after adding the retention items <RetentionBolton>
     And Signin using valid <username> and <password> credentials
     And Enter the OTAC and click on continue to landed on the Basket page
-    And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained
+    #And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained
     And Verify that the Bolton section Display in Basket and SSC pages
     And click on "go to checkout" button
     #And perform <Action> in OTAC page
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And Verify that the Bolton section Display in Basket and SSC pages
-    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
+    And land on the payment page and input <username> and other details and click 'Continue on next step' in upgrade journey
     And Verify that the Bolton section Display in Basket and SSC pages
     #And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
