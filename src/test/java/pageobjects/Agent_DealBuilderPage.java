@@ -412,7 +412,7 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = ("//div[@class='basket-error']"))
     public static WebElement ErrorText;
 
-
-
+    @FindBy(how = How.XPATH, using = ("//*[text()='Email sent successfully']"))
+    public static WebElement emailSuccessfullyMsg;
 
 }

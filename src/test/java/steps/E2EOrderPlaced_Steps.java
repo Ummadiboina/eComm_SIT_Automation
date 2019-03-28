@@ -11992,7 +11992,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("^Verify Saved basket after adding the retention items for Standard tariff ([^\"]*)$")
+    @And("^Verify Saved basket after adding the retention Bolton for Standard tariff ([^\"]*)$")
     public void verifyDealBuilderForStandardTariff(String isRetention) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -12229,7 +12229,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^click on Delivery prefrences link$")
+/*    @And("^click on Delivery prefrences link$")
     public void click_on_Deliverypreference_link() {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -12241,7 +12241,7 @@ public class E2EOrderPlaced_Steps {
             log.debug("Unable to go PD page");
             Assert.fail("Unable to go PD page");
         }
-    }
+    }*/
 
     //lokesh baskar
     @And("Verify 18 Months contract is displayed under Phone Tablet MBB Tab")

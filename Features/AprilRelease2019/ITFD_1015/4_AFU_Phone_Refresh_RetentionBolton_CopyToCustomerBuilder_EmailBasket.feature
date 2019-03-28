@@ -26,5 +26,5 @@ Feature: 4_AFU_Phone_Refresh_RetentionBolton_CopyToCustomerBuilder_EmailBasket
     #Then order confirmation is displayed
 
     Examples:
-      | user        | Device               | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton | username                      | password |
-      | 07568417407 | Apple iPhone XR 64GB | Refresh | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | yes             | 15se92529299@stf.ref.o2.co.uk | test123  |
+      | user        | Device         | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton | username                      | password |
+      | 07568417407 | iPhone 6s 32GB | Refresh | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | yes             | 15se92529299@stf.ref.o2.co.uk | test123  |
