@@ -38,7 +38,7 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     #And Click on the 'Continue button' in delivery page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' for DD confirmation
-    And Continue to Agreements page and confirm all the agreement checks
+    And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
     And Continue to Review page and review the order
     Then order confirmation is displayed
     Then Verify contents of order confirmation page for Phones containing <Status>

@@ -28,7 +28,7 @@ Feature: 18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compre
     And Select the Home address
     And Enter cardDetails in payment page input <Username> and click 'Continue on next step'
     #And land on the payment page and input and other details and click 'Continue' on next step for otac
-    And Continue to Agreements page and confirm all the agreement checks
+    And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
     And Continue to Review page and review the order
     #And Click on 'I agree to the terms and condition' checkbox
     Then order confirmation is displayed
