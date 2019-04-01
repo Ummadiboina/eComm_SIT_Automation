@@ -41,5 +41,5 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Contract | username     | BSCstatus | BillCap       | CapAmount | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 30 Days  | 14ju00298639 | Enabled   | DontCapMyBill | Nill      | test123  | high       | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | Contract | username                      | BSCstatus | BillCap       | CapAmount | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 30 Days  | 14ju00298639@stf.ref.o2.co.uk | Enabled   | DontCapMyBill | Nill      | test123  | high       | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

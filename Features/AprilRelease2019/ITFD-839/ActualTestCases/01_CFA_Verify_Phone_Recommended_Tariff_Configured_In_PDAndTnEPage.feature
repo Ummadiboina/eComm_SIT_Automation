@@ -24,7 +24,8 @@ Feature: 01_CFA_Verify_Phone_Recommended_Tariff_Configured_In_PDAndTnEPage
     And select <color> color of the connected device
     And select <Capacity> capacity of the connected device
     And Navigate to View tariff page
-    And Land on the 'Tariffs and extra' page
+    #And Land on the 'Tariffs and extra' page
+    And Validate drupal configured <preferredType> tariff and select
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option

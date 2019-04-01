@@ -21,12 +21,12 @@ Feature: 08_CFA_Phone_PAYG_ClassicTariff_Basketpage_CNC_eligible
     #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step' for GDPR
-    And Continue to Agreements page and confirm all the agreement checks
+    #And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
     #Then Choose <consumer> <GDPRstatus> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset  | color      | Firstname |tariff| BSCstatus | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone X | Space Grey | TEST    |        |Disabled  | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset  | color      | Firstname | tariff | BSCstatus | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | iPhone X | Space Grey | TEST      |        | Disabled  | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

@@ -46,11 +46,11 @@ public class Agent_HomePagePageActions extends Environment {
 		driver.manage().deleteAllCookies();
 		Agent_HomePage.MPN.sendKeys(msisdn);
 		log.debug("Entering Valid MPN");
-		log.debug("Entering Valid MPN");
+
 		Thread.sleep(3000);
 		Agent_HomePage.Search.click();
 		log.debug("Clicked on Search button");
-		log.debug("Clicked on Search button");
+
 		Thread.sleep(3000);
 		/*
 		 * if (Agent_HomePage.notfound.isDisplayed()) { System.out.

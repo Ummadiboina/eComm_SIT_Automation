@@ -12,7 +12,7 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     #And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed
     And click on 'Take offer and upgrade'button
     And Click on 'Get Started' CTA
-    And Click on Tablet section in upgrade options page
+    #And Click on Tablet section in upgrade options page
     And Select a <handset> device from Recommended devices section
     And Click on device 'Confirm CTA'
     #Then Select a Tariff

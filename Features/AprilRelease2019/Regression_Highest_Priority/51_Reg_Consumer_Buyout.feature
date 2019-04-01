@@ -44,4 +44,4 @@ Feature: 51_Reg_Consumer_Buyout
 
     Examples:
       | username       | BSCstatus | BillCap   | CapAmount | password | handset  | Action | Username     | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | hjkh@gmail.com | Enabled   | CapMyBill | £200      | test123  | iPhone 8 | skip   | TEST ACCEPTA | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | hjkh@gmail.com | Enabled   | CapMyBill | £200      | test123  | iPhone 8 | skip   | TEST ACCEPTA | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

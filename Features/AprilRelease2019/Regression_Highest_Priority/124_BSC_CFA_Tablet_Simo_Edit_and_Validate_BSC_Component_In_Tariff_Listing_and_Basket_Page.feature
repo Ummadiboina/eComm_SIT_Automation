@@ -32,5 +32,5 @@ Feature: 124_BSC_CFA_Tablet_Simo_Edit_and_Validate_BSC_Component_In_Tariff_Listi
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Contract | Firstname | Surname | Username     | BillCap       | CapAmount | NewBillCap | NewCapAmount | BSCstatus | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | DontCapMyBill | Nill      | CapMyBill  | £20          | Enabled   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
+      | Contract | Firstname | Surname | Username     | BillCap   | CapAmount | NewBillCap    | NewCapAmount | BSCstatus | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | CapMyBill | £20       | DontCapMyBill | Nill         | Enabled   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
