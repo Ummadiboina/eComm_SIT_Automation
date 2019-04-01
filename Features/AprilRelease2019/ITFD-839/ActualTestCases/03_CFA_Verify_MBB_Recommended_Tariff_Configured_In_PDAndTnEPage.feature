@@ -19,7 +19,7 @@ Feature: 03_CFA_Verify_MBB_Recommended_Tariff_Configured_In_PDAndTnEPage
     And Navigate to PayM MBB page
     And I choose MBB PayM <Device_Name>
     And Navigate to device details page
-    And Land on the 'Tariffs and extra' page
+    And Validate drupal configured <preferredType> tariff and select
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option

@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -370,6 +371,173 @@ public class Agent_CreditCheckPageActions extends Environment {
 		}
 		Screenshots.captureScreenshot();
 	}
+
+	public static void BankDetailsCCA(String Username) throws IOException {
+
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		Agent_CreditCheckDetailsPage.AccountName.sendKeys(Username);
+		log.debug("Entered Account name");
+		Agent_CreditCheckDetailsPage.SortCode.sendKeys("201596");
+		log.debug("Entered Sort code");
+		Agent_CreditCheckDetailsPage.AccountNumber.sendKeys("10207136");
+		log.debug("Entered Account Number");
+		Screenshots.captureScreenshot();
+
+	}
+
+
+	public static void cardCaptureAndCreditCheck(String Username) throws InterruptedException, IOException {
+
+		Thread.sleep(3000);
+
+		Agent_CreditCheckDetailsPage.CardCapture.click();
+		log.debug("Clicked on card capture");
+
+		Thread.sleep(5000);
+		String Mainwindow = driver.getWindowHandle();
+		// getting all the popup windows , hence using getwindowhandles instead of
+		// getwindowhandle
+		Set<String> s1 = driver.getWindowHandles();
+		Iterator<String> i1 = s1.iterator();
+		while (i1.hasNext()) {
+			String ChildWindow = i1.next();
+			if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
+				// Switching to Child window
+				driver.switchTo().window(ChildWindow);
+				System.out.println("Switched to child window");
+
+				//driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+				Thread.sleep(15000);
+
+				Agent_CreditCheckDetailsPage.CardHolderName.sendKeys(Username);
+				log.debug("Entered card holder name");
+
+				Select CardTypeDropDown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardType);
+				CardTypeDropDown.selectByIndex(3);
+				log.debug("Entered Card type");
+
+				Agent_CreditCheckDetailsPage.CardNumber.sendKeys("4539791001730106");
+				log.debug("Entered card number");
+				Thread.sleep(2000);
+
+				Select CardMonthDropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardMonth);
+				log.debug("Entered card month");
+				CardMonthDropdown.selectByIndex(12);
+				Thread.sleep(2000);
+
+				Select CardYearDropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardYear);
+				CardYearDropdown.selectByIndex(2);
+				log.debug("Entered card year");
+				Thread.sleep(2000);
+
+				Agent_CreditCheckDetailsPage.SecurityCode.sendKeys("123");
+				log.debug("Entered security code");
+				Thread.sleep(3000);
+
+				//Agent_CreditCheckDetailsPage.UsethisCard.click();
+				Screenshots.captureScreenshot();
+				WebElement element = pageobjects.Agent_CreditCheckDetailsPage.UsethisCard;
+				JavascriptExecutor executor = (JavascriptExecutor)driver;
+				executor.executeScript("arguments[0].click();", element);
+				log.debug("Clicked on use this card");
+
+
+			}
+		}
+		// Switching to Parent window i.e Main Window.
+		driver.switchTo().window(Mainwindow);
+		//driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
+		Thread.sleep(4000);
+
+		//*[@id="cardCaptureError"]/ul/li[4]/label[1]
+		int success = driver.findElements(By.xpath("//*[@id = 'cardCaptureStatus' and @class ='success']")).size();
+		if (success > 0) {
+			Agent_CreditCheckDetailsPage.AgreeCreditCheck.click();
+			Thread.sleep(4000);
+			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
+			Screenshots.captureScreenshot();
+			Thread.sleep(20000);
+		}
+		else
+		{
+			log.debug("Error is present in card capture screen, unable to capture card details, need to check once manually");
+		}
+		Screenshots.captureScreenshot();
+	}
+
+	public static void affordabilityValidation(String employmentStatus, String annualIncome) throws IOException, InterruptedException {
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,400)", "");
+		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
+
+		//Employment Status
+		if (driver.findElements(By.xpath("//*[@id='employementStatus']")).size() > 0) {
+			List<WebElement> employmentStatusList = driver.findElements(By.xpath("//*[@id='employementStatus']/option"));
+
+			Thread.sleep(3000);
+			int cnt=0;
+			String empStatus="";
+			log.debug("Selecting Employment Status:");
+			for (int i = 1; i <= employmentStatusList.size(); i++) {
+				empStatus = driver.findElement(By.xpath("(//*[@id='employementStatus']/option[" + i + "])")).getText();
+				Thread.sleep(2000);
+				if (empStatus.contains(employmentStatus)) {
+					driver.findElement(By.xpath("(//*[@id='employementStatus']/option[" + i + "])")).click();
+					log.debug("Your employment status is selected ie:: " + employmentStatus);
+					cnt++;
+					break;
+				}
+			}
+
+			if (cnt == 0) {
+				log.debug("Employment list does not contain specified status and status is not selected ie:: " + employmentStatusList);
+				Assert.fail("Employment list does not contain specified status and status is not selected ie:: " + employmentStatusList);
+			}
+			Screenshots.captureScreenshot();
+		}
+
+
+		//Annual Income
+		if (driver.findElements(By.xpath("//*[@id='annualIncome']")).size() > 0) {
+			List<WebElement> annualIncomeList = driver.findElements(By.xpath("//*[@id='annualIncome']/option"));
+
+			Thread.sleep(3000);
+			int cnt=0;
+			String income="";
+			log.debug("Selecting annual income:\n");
+			for (int i = 1; i <= annualIncomeList.size(); i++) {
+				income = driver.findElement(By.xpath("(//*[@id='annualIncome']/option[" + i + "])")).getText();
+				Thread.sleep(2000);
+				if (income.contains(annualIncome)) {
+					driver.findElement(By.xpath("(//*[@id='annualIncome']/option[" + i + "])")).click();
+					log.debug("Your annual income is selected ie:: " + employmentStatus);
+					cnt++;
+					break;
+				}
+			}
+
+			if (cnt == 0) {
+				log.debug("Annual Income list does not contain specified income and income is not selected ie:: " + annualIncome);
+				Assert.fail("Annual Income list does not contain specified income and income is not selected ie:: " + annualIncome);
+			}
+		}
+
+		if(driver.findElements(By.xpath("//input[@id='agreeToFinancialCommitments']")).size()>0) {
+			Agent_CreditCheckDetailsPage.agreeFinancialCommitments.click();
+			log.debug("Selected agree Financial commitments check box\n");
+		}
+
+		if(driver.findElements(By.xpath("//input[@id='agreeToCircumstances']")).size()>0) {
+			Agent_CreditCheckDetailsPage.agreeMyCircumstances.click();
+			log.debug("Selected agree My Circumstances check box\n");
+		}
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+
+	}
+
 
 	public static void BankDetails_apostropheValidation(String Username) throws InterruptedException, IOException {
 

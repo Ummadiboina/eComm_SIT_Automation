@@ -33,7 +33,7 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
     #And Enter details in Delivery page for Click and collect and Click on the 'Continue button'
     And Enter cardDetails in payment page input <Username> and click 'Continue on next step'
-    And Continue to Agreements page and confirm all the agreement checks
+    And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
     And Continue to Review page and review the order
     Then order confirmation is displayed
     #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>

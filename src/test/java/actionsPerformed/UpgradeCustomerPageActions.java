@@ -3471,7 +3471,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void clickOnDevice_ConfirmCTA() throws Exception {
-        Thread.sleep(6000);
+        Thread.sleep(10000);
         Screenshots.captureScreenshot();
         if (driver.findElements(By.xpath("//div[@class='choose-your-phone-container clear-row']/button[normalize-space()='Confirm']")).size()>0) {
             JavascriptExecutor jse = (JavascriptExecutor) driver;

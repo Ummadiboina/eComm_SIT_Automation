@@ -3165,7 +3165,7 @@ public class E2EOrderPlaced_Steps {
             if(driver.findElements(By.xpath("//div[@id='creditCheckContent']")).size()>0) {
                 if (pageobjects.DeliveryPage.crdeitCheckContent.isDisplayed()) {
                     DeliveryPageActions.SetDelivery_AFU();
-                    Thread.sleep(4000);
+                    Thread.sleep(2000);
                 }
             }
 
@@ -3233,6 +3233,28 @@ public class E2EOrderPlaced_Steps {
             Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
             log.debug("Completed Credit check");
             Agent_CreditCheckPageActions.BankDetails_apostropheValidation(Username);
+            log.debug("Completed Bank details");
+            Thread.sleep(8000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform credit checks , please see the failure screenshot");
+            Assert.fail("Unable to perform credit checks , please see the failure screenshot");
+
+        }
+
+    }
+
+    @Then("^perform the credit checks and validate affordability for CCA using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
+    public void CreditCheckAndAffordability(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) {
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
+            log.debug("Completed Credit check");
+            Agent_CreditCheckPageActions.BankDetailsCCA(Username);
+            Agent_CreditCheckPageActions.affordabilityValidation("Retired", "£10,001-£20,000");
+            Agent_CreditCheckPageActions.cardCaptureAndCreditCheck(Username);
             log.debug("Completed Bank details");
             Thread.sleep(8000);
 
@@ -5894,15 +5916,15 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            Thread.sleep(7000);
+            Thread.sleep(10000);
             Screenshots.captureScreenshot();
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
-            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
+            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
             Screenshots.captureScreenshot();
             Thread.sleep(4000);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
             Thread.sleep(10000);
 
         } catch (Exception e) {
@@ -11893,6 +11915,19 @@ public class E2EOrderPlaced_Steps {
 
         }catch(Exception e){
             log.debug("Unable to save tariffs \n");
+        }
+    }
+
+    @And("^Validate drupal configured ([^\"]*) tariff and select$")
+    public void validateDrupalConfiguredTariffAndSelect(String preferredType) {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.drupalConfiguredTariffAndSelect(preferredType, DrupalShopPageActions.recommendedUpFront, DrupalShopPageActions.recommendedData);
+            log.debug("Selected tariff in SIMO journey");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
         }
     }
 

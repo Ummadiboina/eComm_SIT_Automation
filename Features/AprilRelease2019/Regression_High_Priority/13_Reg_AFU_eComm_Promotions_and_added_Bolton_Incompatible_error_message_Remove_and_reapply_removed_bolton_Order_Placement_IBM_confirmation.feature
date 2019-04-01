@@ -38,5 +38,5 @@ Feature: 13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device                       | Button | Tariffs | BSCstatus | BillCapAmount | ErrorMsg                     | Bolton | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | 07568417941 | iPhone 7 Plus 32GB Rose Gold | Button | Refresh | Enabled   | £15           | incompatible with each other | Bolton | Someone  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |
+      | user        | Device                     | Button | Tariffs | BSCstatus | BillCapAmount | ErrorMsg                     | Bolton | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | 07568417941 | HONOR View20 Sapphire Blue | Button | Refresh | Enabled   | £15           | incompatible with each other | Bolton | Someone  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |

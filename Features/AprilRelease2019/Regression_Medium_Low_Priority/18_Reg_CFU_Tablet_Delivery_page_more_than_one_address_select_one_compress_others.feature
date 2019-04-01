@@ -37,6 +37,6 @@ Feature: 18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compre
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                    | password | Tablet             | BSCstatus | BillCap   | CapAmount | color | tariff                 | HouseNumber | PostCode | Username     | Action    | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | rbmuatlokesh_donotusee5889@stf.ref.o2.co.uk | test123  | iPad Pro 10.5 inch | Enabled   | CapMyBill | £60       | Gold  | 9.99upfront60.00amonth | 100         | SL11ER   | Test Accepta | enterCode | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
+      | username                                              | password | Tablet             | BSCstatus | BillCap   | CapAmount | color | tariff                 | HouseNumber | PostCode | Username     | Action    | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | stester5802bc19-1ce9-4259-8502-d4f1a5261e15@gmail.com | test123  | iPad Pro 10.5 inch | Enabled   | CapMyBill | £60       | Gold  | 9.99upfront60.00amonth | 100         | SL11ER   | Test Accepta | enterCode | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
 

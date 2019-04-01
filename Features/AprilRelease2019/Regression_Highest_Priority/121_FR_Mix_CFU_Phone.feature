@@ -24,7 +24,7 @@ Feature: 121_FR_Mix_CFU_Phone.feature
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                              | password | handset   | upFront | term | data | Action | Firstname | Surname | Username     | filtername | BSCstatus | sortoption                 | tabletname | consumer | B1     | B2     | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | stesterecc4cf43-84f7-4d75-ab86-43a757b4be68@gmail.com | test123  | Galaxy S9 | min     | min  | min  | skip   | TEST      | ACCEPTA | TEST ACCEPTA | low        | Disabled  | Monthly data (High to low) | A3 10      | Me       | Select | Select | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username                                                 | password | handset   | upFront | term | data | Action | Firstname | Surname | Username     | filtername | BSCstatus | sortoption                 | tabletname | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | sittester-3f111af8-a998-474b-9969-23ba2c311a0e@gmail.com | test123  | Galaxy S9 | min     | min  | min  | skip   | TEST      | ACCEPTA | TEST ACCEPTA | low        | Disabled  | Monthly data (High to low) | A3 10      | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
 
 
