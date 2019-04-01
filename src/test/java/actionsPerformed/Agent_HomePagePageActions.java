@@ -47,11 +47,11 @@ public class Agent_HomePagePageActions extends Environment {
 		Agent_HomePage.MPN.sendKeys(msisdn);
 		log.debug("Entering Valid MPN");
 		log.debug("Entering Valid MPN");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Agent_HomePage.Search.click();
 		log.debug("Clicked on Search button");
 		log.debug("Clicked on Search button");
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		/*
 		 * if (Agent_HomePage.notfound.isDisplayed()) { System.out.
 		 * println("MPN entered is wrong, please check back your test case");
@@ -68,12 +68,12 @@ public class Agent_HomePagePageActions extends Environment {
 		log.debug("Clicking on upgrade link");
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		Screenshots.captureScreenshot();
-		Thread.sleep(4000);
+		Thread.sleep(1000);
 
 		if(driver.findElements(By.xpath("//a[@id='abandonCheckout']")).size()>0)
 		{
 			driver.findElement(By.xpath("//a[@id='abandonCheckout']")).click();
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 			if(driver.findElements(By.className("tradeInMessage")).size()>0) {
 				String TradeInUpgradeOptions = driver.findElement(By.className("tradeInMessage")).getText();
 				log.debug("Displaying Trade-in Upgrade Options Message");

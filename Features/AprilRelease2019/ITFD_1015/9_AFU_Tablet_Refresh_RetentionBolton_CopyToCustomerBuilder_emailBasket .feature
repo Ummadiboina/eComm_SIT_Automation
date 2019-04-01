@@ -1,9 +1,9 @@
-Feature: 9_VerifyRetentionBoltonAddedToBasket_Tablet_Standard_TariffDiscount_Combination
+Feature: 9_AFU_Tablet_Refresh_RetentionBolton_CopyToCustomerBuilder_emailBasket
 
   Save basket :: Tablet + StandardTariff + Retention Bolton
 
   @Web
-  Scenario Outline: 9_VerifyRetentionBoltonAddedToBasket_Tablet_Standard_TariffDiscount_Combination
+  Scenario Outline: 9_AFU_Tablet_Refresh_RetentionBolton_CopyToCustomerBuilder_emailBasket
 
     Given I login to Agent shop
     And performs Upgrade for <user>
@@ -26,5 +26,5 @@ Feature: 9_VerifyRetentionBoltonAddedToBasket_Tablet_Standard_TariffDiscount_Com
     #Then order confirmation is displayed
 
     Examples:
-      | user        | Device               | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton | username                      | password |
-      | 07568417407 | Apple iPhone XR 64GB | Refresh | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | yes             | 15se92529299@stf.ref.o2.co.uk | test123  |
+      | user        | Device                    | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton | username                      | password |
+      | 07521116781 | Samsung Galaxy Tab A 10.5 | Refresh | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | yes             | 15se92529299@stf.ref.o2.co.uk | test123  |

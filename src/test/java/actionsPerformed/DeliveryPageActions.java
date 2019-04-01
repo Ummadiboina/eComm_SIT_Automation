@@ -1428,6 +1428,21 @@ public class DeliveryPageActions extends Environment {
 
     }
 
+//venkat
+    public static void deliveryPageValidations_RetentionBoltons() throws InterruptedException {
+        try {
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            if(driver.findElements(By.xpath("//span[@id='btn-continue-label']")).size()>0) {
+                driver.findElement(By.xpath("//span[@id='btn-continue-label']")).click();
+                log.debug("Clicked on the Review Confirm CTA at Delivery page\n");
+                }
+            } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+
     public static void ReviewConfirmCTA_DeliveryPage() {
 
         try {

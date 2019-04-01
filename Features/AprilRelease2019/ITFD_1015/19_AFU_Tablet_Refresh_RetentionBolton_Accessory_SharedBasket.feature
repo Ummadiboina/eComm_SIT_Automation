@@ -1,9 +1,9 @@
-Feature: 7_AFU_Tablet_Refresh_RetentionBolton_SharedBasket
+Feature: 19_AFU_Tablet_Refresh_RetentionBolton_Accessory_SharedBasket
 
   AFU	Tablet	Refresh	Retention Bolton Shared basket
 
   @Web
-  Scenario Outline: 7_AFU_Tablet_Refresh_RetentionBolton_SharedBasket
+  Scenario Outline: 19_AFU_Tablet_Refresh_RetentionBolton_Accessory_SharedBasket
 
     Given I login to Agent shop
     And performs Upgrade for <user>

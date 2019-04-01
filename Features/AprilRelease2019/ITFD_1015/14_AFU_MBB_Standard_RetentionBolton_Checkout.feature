@@ -21,5 +21,5 @@ Feature: 14_AFU_MBB_Standard_RetentionBolton_Checkout
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton |
-      | 07521121757 | dongle | Random  | Enabled   | £5            | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          | yes             |
+      | user        | Device              | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton |
+      | 07521121757 | 4G Dongle with wifi | standard | Enabled   | £5            | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          | yes             |
