@@ -5,91 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
-    <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/02_Reg_AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message_Do_Not_allow_to_place_order.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostrophe_SOA_validation_successful.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/04_Reg_AFA_SIMO_Credit_Check_Status_ReferWithSIMO_Show_Referral_Message_Order_Submission.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/130_FR_UpFront_AFA_Tablets_E2E.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/131_FR_UpFront_AFA_PAYM_Phones_Acquistion.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/132_FR_UpFront_AFA_PAYM_Phones_Acquistion.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/20_Reg_AFA_PayG_withoutAnyAccessory.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/21_Reg_AFA_PAYM_Acquistion.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/22_Reg_AFA_PayMSimO_withoutAnyAccessory.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/23_Reg_AFA_Tablet.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/30_Reg_Agent_DelayedDelivery.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/31_Reg_Agent_GenerateCCA.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/74_Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/75_Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/89_Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature" />
+    <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Configurations/Properties/Run.Properties" afterPath="$PROJECT_DIR$/Configurations/Properties/Run.Properties" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/03_CFA_Phone__PAYGClassicTariff_Deliverypage_CnCnow_disable.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/03_CFA_Phone__PAYGClassicTariff_Deliverypage_CnCnow_disable.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/05_CFA_Phone_PAYGClassicTariff_Basketpage_CNCnow_eligible.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/05_CFA_Phone_PAYGClassicTariff_Basketpage_CNCnow_eligible.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/06_CFA_Phone_PAYGClassicTariff_Deliverypage_CnCnow_eligible.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/06_CFA_Phone_PAYGClassicTariff_Deliverypage_CnCnow_eligible.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/07_CFA_Phone_PAYGClassicTariff_T&amp;Epage_CNCnow_disable_plan.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/07_CFA_Phone_PAYGClassicTariff_T&amp;Epage_CNCnow_disable_plan.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/08_CFA_Phone_ClassicTariff_Basketpage_CnC_eligible.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/08_CFA_Phone_ClassicTariff_Basketpage_CnC_eligible.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-839/ActualTestCases/01_CFA_Verify_Phone_Recommended_Tariff_Configured_In_PDAndTnEPage.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-839/ActualTestCases/01_CFA_Verify_Phone_Recommended_Tariff_Configured_In_PDAndTnEPage.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-839/ActualTestCases/02_CFA_Verify_Tablet_Recommended_Tariff_Configured_In_PDAndTnEPage.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-839/ActualTestCases/02_CFA_Verify_Tablet_Recommended_Tariff_Configured_In_PDAndTnEPage.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-839/ActualTestCases/03_CFA_Verify_MBB_Recommended_Tariff_Configured_In_PDAndTnEPage.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-839/ActualTestCases/03_CFA_Verify_MBB_Recommended_Tariff_Configured_In_PDAndTnEPage.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-839/ActualTestCases/04_CFU_Verify_Phone_Recommended_Tariff_Configured_In_PDAndTnEPage.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-839/ActualTestCases/04_CFU_Verify_Phone_Recommended_Tariff_Configured_In_PDAndTnEPage.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression/16_Reg_CFU_Buyout_with_Recycle_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression/16_Reg_CFU_Buyout_with_Recycle_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/120_FR_Mix_CFU_Phone.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/120_FR_Mix_CFU_Phone.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/122_FR_Mix_CFU_Phone.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/122_FR_Mix_CFU_Phone.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement_IBM_confirmation.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement_IBM_confirmation.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/140_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Should_AutoSelected.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/140_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Should_AutoSelected.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/26_Reg_AFU_PAYM_Dongle_submitOrder.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/26_Reg_AFU_PAYM_Dongle_submitOrder.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/48_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/48_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/67_Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/67_Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/82_ Reg_Jan_CFU_MbbSimo30days.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/82_ Reg_Jan_CFU_MbbSimo30days.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/98_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Active_Voucherable_Promotions_Valid_For_Current_Date_And_No_Upfront_Payment_Pending.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/98_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Active_Voucherable_Promotions_Valid_For_Current_Date_And_No_Upfront_Payment_Pending.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/99_Reg_CFU_ValidateBasketPage_Simo_Tariff_With_Active_VoucherablePromotions_Valid_For_Current_Date_And_UpfrontPaymentPending.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/99_Reg_CFU_ValidateBasketPage_Simo_Tariff_With_Active_VoucherablePromotions_Valid_For_Current_Date_And_UpfrontPaymentPending.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/121_FR_Mix_CFU_Phone.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/121_FR_Mix_CFU_Phone.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/124_BSC_CFA_Tablet_Simo_Edit_and_Validate_BSC_Component_In_Tariff_Listing_and_Basket_Page.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/124_BSC_CFA_Tablet_Simo_Edit_and_Validate_BSC_Component_In_Tariff_Listing_and_Basket_Page.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Incomplete_Section_and_Edit_BSC_To_Cap_My_Bill.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Incomplete_Section_and_Edit_BSC_To_Cap_My_Bill.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Options_Page_and_Select_Cap_My_Bill.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Options_Page_and_Select_Cap_My_Bill.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Page_and_Select_Cap_My_Bill.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Page_and_Select_Cap_My_Bill.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/135_FR_UpFront_AFU_PAYM_Phones.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/135_FR_UpFront_AFU_PAYM_Phones.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/136_Reg_CFA_Phones_Click_And_Collect_Now.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/136_Reg_CFA_Phones_Click_And_Collect_Now.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/16_Reg_CFU_Buyout_with_Recycle_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/16_Reg_CFU_Buyout_with_Recycle_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/21_Reg_AFA_PAYM_Acquistion.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/21_Reg_AFA_PAYM_Acquistion.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/25_Reg_AFU_PAYM_Dongle_payByCard.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/25_Reg_AFU_PAYM_Dongle_payByCard.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/30_Reg_Agent_DelayedDelivery.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/30_Reg_Agent_DelayedDelivery.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/47_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/47_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/51_Reg_Consumer_Buyout.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/51_Reg_Consumer_Buyout.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/54_Reg_Consumer_TradeIn.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/54_Reg_Consumer_TradeIn.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/66_Reg_CFU_PayMSimOnly.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/66_Reg_CFU_PayMSimOnly.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/68_Reg_CS_Recycle.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/68_Reg_CS_Recycle.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/77_Reg_FNT_MorethanMaxTransaction_Deny.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/77_Reg_FNT_MorethanMaxTransaction_Deny.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/89_Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/89_Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/115_FR_Data_CFA_PayMTablets_Till_TnE.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/115_FR_Data_CFA_PayMTablets_Till_TnE.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/130_FR_UpFront_AFA_Tablets_E2E.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/130_FR_UpFront_AFA_Tablets_E2E.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/133_FR_UpFront_AFU_PAYM_Dongle_payByCard.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/133_FR_UpFront_AFU_PAYM_Dongle_payByCard.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/27_Reg_AFU_SavedBasket.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/27_Reg_AFU_SavedBasket.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/AdditionalInformationPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/AdditionalInformationPageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_CreditCheckPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_CreditCheckPageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_HomePagePageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_HomePagePageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/DrupalShopPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/DrupalShopPageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMSimOPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMSimOPageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_CreditCheckDetailsPage.java" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_CreditCheckDetailsPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" afterPath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" afterPath="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" />
-      <change beforePath="$PROJECT_DIR$/testResult/cucumber-html-report/report.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/testResult/cucumber.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/testRunner/RunnerTest.java" afterPath="$PROJECT_DIR$/testRunner/RunnerTest.java" />
+      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/31_Reg_Agent_GenerateCCA.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/31_Reg_Agent_GenerateCCA.feature" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,11 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RunnerTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RunnerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
               <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="31_Reg_Agent_GenerateCCA.feature" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/31_Reg_Agent_GenerateCCA.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -215,7 +143,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Jamal_28_March_2019_V1" />
+        <entry key="$PROJECT_DIR$" value="Jamal_28_March_2019_V2" />
       </map>
     </option>
     <option name="SIGN_OFF_COMMIT" value="true" />
@@ -228,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/30_Reg_Agent_DelayedDelivery.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/89_Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/89_Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_CreditCheckPageActions.java" />
@@ -279,6 +206,7 @@
         <option value="$PROJECT_DIR$/testRunner/RunnerTest.java" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/08_CFA_Phone_ClassicTariff_Basketpage_CnC_eligible.feature" />
         <option value="$PROJECT_DIR$/src/test/java/steps/Hooks.java" />
+        <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/31_Reg_Agent_GenerateCCA.feature" />
       </list>
     </option>
   </component>
@@ -340,6 +268,13 @@
               <item name="regression_New" type="462c0819:PsiDirectoryNode" />
               <item name="Features" type="462c0819:PsiDirectoryNode" />
               <item name="AprilRelease2019" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="regression_New" type="b2602c69:ProjectViewProjectNode" />
+              <item name="regression_New" type="462c0819:PsiDirectoryNode" />
+              <item name="Features" type="462c0819:PsiDirectoryNode" />
+              <item name="AprilRelease2019" type="462c0819:PsiDirectoryNode" />
+              <item name="Regression_Highest_Priority" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -620,13 +555,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510763568253</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Merged venkta23012018_v1 into master&#10;&#10;Signed-off-by: subbaiv1 &lt;hhhh&gt;">
-      <created>1518515529730</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1518515529730</updated>
     </task>
     <task id="LOCAL-00025" summary="Merged venkta23012018_v1 into master&#10;&#10;Signed-off-by: subbaiv1 &lt;hhhh&gt;">
       <created>1518516424997</created>
@@ -964,7 +892,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553781803812</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1554141349513</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1554141349513</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1349,38 +1284,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/119_FR_All_CFA_Phones_Till_TnE.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/130_FR_UpFront_AFA_Tablets_E2E.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139">
-          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_HomePagePageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="112" column="20" lean-forward="true" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -1725,14 +1628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="2164" column="16" lean-forward="false" selection-start-line="2164" selection-start-column="16" selection-end-line="2164" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/08_CFA_Phone_ClassicTariff_Basketpage_CnC_eligible.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -1749,10 +1644,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Agent_Reg_Scenarios/31_Reg_Agent_GenerateCCA.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/ITFD-1021/03_CFA_Phone__PAYGClassicTariff_Deliverypage_CnCnow_disable.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="2164" column="16" lean-forward="false" selection-start-line="2164" selection-start-column="16" selection-end-line="2164" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/61_Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/31_Reg_Agent_GenerateCCA.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
           <folding />
         </state>
       </provider>
