@@ -20,8 +20,8 @@ import java.util.List;
 public class DrupalShopPageActions extends Environment {
 
     final static Logger log = Logger.getLogger("DrupalShopPageActions");
-    static String recommendedData = "";
-    static String recommendedUpFront = "";
+    public static String recommendedData = "";
+    public static String recommendedUpFront = "";
 
     public static void drupalShopSubLinkAction(String shopSubLink) {
         try {

@@ -9,7 +9,7 @@ Feature: 54_Reg_Consumer_TradeIn
     And Verify trade in message is displayed under 'Get your latest phone on us today' section
     And Answer appropriate questionaire in 'your device' section
     And Click on 'Get Started' CTA
-    And Click on Tablet section in upgrade options page
+    #And Click on Tablet section in upgrade options page
     And Select a <handset> device from Recommended devices section
     And Click on device 'Confirm CTA'
     And Select ribboned tariff <tariff> in upgrade journey
@@ -40,4 +40,4 @@ Feature: 54_Reg_Consumer_TradeIn
 
     Examples:
       | username                      | password | BSCstatus | BillCap   | CapAmount | handset  | tariff                     | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | dont94979828@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £15       | iPhone X | 39.99 upfront61.00 a month | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | dont21527695@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £15       | iPhone X | 39.99 upfront61.00 a month | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

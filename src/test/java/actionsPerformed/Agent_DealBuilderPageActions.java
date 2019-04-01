@@ -342,7 +342,15 @@ public class Agent_DealBuilderPageActions extends Environment {
             }
             Thread.sleep(3000);
 
-        } else {
+        } else if(Device.contains("Samsung S8 Plus Evo Wallet")){
+            log.debug("searching In Stock Accessory ie:"+Device);
+            Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys(Device);
+            log.debug("searched In Stock Accessory");
+            Thread.sleep(6000);
+            Agent_DealBuilderPage.SelectSearchedaccessory.click();
+            log.debug("Selected In stock accessory ie: "+Device);
+            Thread.sleep(3000);
+        }else {
             log.debug("searching In Stock Accessory");
             Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys("screen protector");
             log.debug("searched In Stock Accessory");

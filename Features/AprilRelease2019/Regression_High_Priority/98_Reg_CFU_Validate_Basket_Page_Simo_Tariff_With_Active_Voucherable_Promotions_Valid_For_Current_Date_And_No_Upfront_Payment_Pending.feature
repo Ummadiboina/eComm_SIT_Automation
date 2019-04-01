@@ -26,5 +26,5 @@ Feature: 98_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Active_Voucherable_Pro
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username               | tariffAmt | dataValue | promoCode | password | BSCstatus | BillCap       | CapAmount | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | inavl0ww_356240@o2.com | £45       | 100GB       | SIMOOFF   | test123  | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username               | tariffAmt | dataValue | promoCode          | password | BSCstatus | BillCap       | CapAmount | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | inavl0wx_858797@o2.com | £45       | 100GB     | 6GB3POUNDSOFFTHREE | test123  | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

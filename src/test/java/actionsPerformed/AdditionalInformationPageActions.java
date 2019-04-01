@@ -74,10 +74,13 @@ public class AdditionalInformationPageActions extends Environment {
 	}
 
 	public static void AdditionalCardCCV() throws InterruptedException, IOException {
-		Thread.sleep(15000);
+		Thread.sleep(25000);
+		Screenshots.captureScreenshot();
 		driver.switchTo().frame("deposit-iframe"); // switching the frame by ID
-
-
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
 		PaymentPage.SecurityCode.sendKeys("123");
 		log.debug("Entered CVV security code");
 		Thread.sleep(2000);

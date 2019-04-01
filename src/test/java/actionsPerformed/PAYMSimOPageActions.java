@@ -1263,4 +1263,46 @@ public class PAYMSimOPageActions extends Environment {
 		}
 	}
 
+	public static void drupalConfiguredTariffAndSelect(String preferredType, String tariffAmt, String dataValue) throws InterruptedException, IOException {
+
+		Screenshots.captureScreenshot();
+		if (preferredType.equalsIgnoreCase("Recommended")) {
+
+			String recommendedTariffPrice = driver.findElement(By.xpath("(//p[@class='recommonded']/../../div[2]/div[3]/div/div/p[2])[1]")).getText();
+			String recommendedTariffData = driver.findElement(By.xpath("//p[@class='recommonded']/../../div[2]/div/div[2]/div/span")).getText();
+
+			if (recommendedTariffPrice.contains(tariffAmt) && recommendedTariffData.contains(dataValue)) {
+				System.out.println("Actual tariff :: " + recommendedTariffPrice + ", " + recommendedTariffData + " And Actual :: " + recommendedTariffPrice + "," + recommendedTariffData + "===  are Verified ====");
+				log.info("Actual tariff :: " + recommendedTariffPrice + ", " + recommendedTariffData + " And Actual :: " + recommendedTariffPrice + "," + recommendedTariffData + "===  are Verified ====");
+				Thread.sleep(3000);
+				log.debug("Recommended tariff is configured as expected\n");
+				driver.findElement(By.xpath("//p[@class='recommonded']/../../div[2]/div[5]/button[@class='secondary selectButton tariff-select buyNowBtn']")).click();
+				Thread.sleep(3000);
+			}
+		} else {
+
+			List<WebElement> lstOfTariff = driver.findElements(By.xpath("//div[@name='P12M']/div/div/h2/span[@class='pound']"));
+			for (int i = 1; i <= lstOfTariff.size(); i++) {
+				System.out.println("The value of i is " + i);
+				String price = driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]")).getText();
+				Thread.sleep(2000);
+
+				if (driver.findElements(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[2]/ul/li[1]/h2[contains(text(),'GB')]")).size() > 0) {
+					String data = driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[2]/ul/li[1]/h2[contains(text(),'GB')]")).getText();
+					Thread.sleep(2000);
+					if (price.contains(tariffAmt) && data.contains(dataValue)) {
+						System.out.println("Actual tariff :: " + price + ", " + data + " And Actual :: " + price + "," + data + "===  are Verified ====");
+						log.info("Actual tariff :: " + price + ", " + data + " And Actual :: " + price + "," + data + "===  are Verified ====");
+						Thread.sleep(3000);
+						driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[8]/div/form/button")).click();
+						Thread.sleep(3000);
+						break;
+					}
+				} else {
+					continue;
+				}
+			}
+		}
+	}
+
 }

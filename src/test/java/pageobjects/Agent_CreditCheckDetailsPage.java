@@ -134,6 +134,10 @@ public class Agent_CreditCheckDetailsPage {
     @FindBy(how = How.XPATH, using = "//ul/li[@class='error']")
     public static WebElement CreditCheckAbandoneStatus;
 
+    @FindBy(how = How.XPATH, using = "//input[@id='agreeToFinancialCommitments']")
+    public static WebElement agreeFinancialCommitments;
 
+    @FindBy(how = How.XPATH, using = "//input[@id='agreeToCircumstances']")
+    public static WebElement agreeMyCircumstances;
 
 }
