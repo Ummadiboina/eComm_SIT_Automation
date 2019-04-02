@@ -45,68 +45,68 @@ public class Agent_DealBuilderPageActions extends Environment {
         Agent_DealBuilderPage.DevicesTab.click();
         log.debug("Clicked on Devices tab");
 
-        Thread.sleep(7000);
+        Thread.sleep(2000);
 
         if (Device.contains("Random")) {
-            Thread.sleep(6000);
+            Thread.sleep(1000);
             Agent_DealBuilderPage.firstAvailableDevice.click();
-            Thread.sleep(6000);
+            Thread.sleep(2000);
             log.debug("Selected device ");
         } else {
-            Thread.sleep(4000);
+            Thread.sleep(2000);
             Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Device);
             log.debug("Clicked on SearchTextBox to enter" + Device);
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             Screenshots.captureScreenshot();
             Agent_DealBuilderPage.SelectInStockPAYMDevice.click();
-            Thread.sleep(6000);
+            Thread.sleep(2000);
         }
         Screenshots.captureScreenshot();
     }
 
     public static void SelectTariff(String Tariff) throws InterruptedException, IOException {
         Agent_DealBuilderPage.TariffsTab.click();
-        Thread.sleep(8000);
+        Thread.sleep(2000);
         if (Tariff.contains("Random")) {
             // Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-            Thread.sleep(5000);
+            Thread.sleep(25000);
             log.debug("Selected Random Tariff ");
             Screenshots.captureScreenshot();
         } else if (Tariff.contains("Standard")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             log.debug("Selected Random Tariff ");
         } else if (Tariff.contains("Simo")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             //Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Simo");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             log.debug("Selected Random SimO Tariff ");
 
         } else if (Tariff.contains("Refresh")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Refresh");
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             log.debug("Selected Refresh Tariff ");
 
         } else if (Tariff.contains("Base")) {
             ////////////////////////////// Basecomms
             ////////////////////////////// Tariff//////////////////////////////////////
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Base");
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             log.debug("Selected Random Basecomms Tariff ");
 
         } else {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys(Tariff);
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             log.debug("Selected provided Tariff ");
         }
         Screenshots.captureScreenshot();
@@ -1854,13 +1854,13 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
     public static void retentionBoltonValidationInDealBuilder(String isRetention) throws InterruptedException, IOException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         Screenshots.captureScreenshot();
         if (Agent_DealBuilderPage.ExtrasTab.isDisplayed()) {
             Agent_DealBuilderPage.ExtrasTab.click();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
 
-            /*if (isRetention.contains("yes")) {
+       /*     if (isRetention.contains("yes")) {
                 if (driver.findElements(By.xpath("//table[@class='lineItemTable boltons']//img[@alt='remove']")).size() > 0) {
                     int count = driver.findElements(By.xpath("//table[@class='lineItemTable boltons']//img[@alt='remove']")).size();
                     for (int i = 1; i <= count; ) {
@@ -1871,7 +1871,17 @@ public class Agent_DealBuilderPageActions extends Environment {
                 }
             }*/
             // later on need to change the un comment this code to select the bolton
-         /*   if (Agent_DealBuilderPage.retentionSection.isDisplayed()) {
+
+            if(driver.findElements(By.xpath("(//*[text()='Data Top-Up Bolt-Ons']/../../../..//img)[1]")).size() > 0) {
+                driver.findElement(By.xpath("(//*[text()='Data Top-Up Bolt-Ons']/../../../..//img)[1]")).click();
+                Thread.sleep(3000);
+            }else{
+                if(driver.findElements(By.xpath("")). size()> 0){
+                    driver.findElement(By.xpath("(//*[text()='Data Top-Up Bolt-Ons']/../../../..//img)[1]")).click();
+                }
+            }
+
+          /*  if (Agent_DealBuilderPage.retentionSection.isDisplayed()) {
                 log.debug("retention Bolton section is displayed");
                 if (driver.findElements(By.xpath("(//table[@class='extrasTable']//*[contains(text(),'Retention')]/../../..//tr//img)[1]")).size() > 0) {
                     log.debug("Able to select the retention bolton");
@@ -1889,10 +1899,12 @@ public class Agent_DealBuilderPageActions extends Environment {
             }*/
 
             if(isRetention.contains("Two")) {
-                if (driver.findElements(By.xpath("(//table[@class='extrasTable']//*[contains(text(),'Retention')]/../../..//tr//img)[2]")).size() > 0) {
+                if(driver.findElements(By.xpath("(//table[@class='extrasTable']//*[contains(text(),'Data Top-Up Bolt-Ons')]/../../..//tr//img)[4]")).size() >0){
+                if (driver.findElements(By.xpath("(//table[@class='extrasTable']//*[contains(text(),'Data Top-Up Bolt-Ons')]/../../..//tr//img)[4]")).size() > 0) {
                     log.debug("able to select 2nd retention bolton");
                     Agent_DealBuilderPage.selectRetentionBolton2.click();
                     Screenshots.captureScreenshot();
+                }
                 }
             }
 
@@ -1919,7 +1931,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void saveBasketValidation() throws InterruptedException, IOException {
         String saveBasketLink;
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
      /*   if(Agent_DealBuilderPage.copyToDealButton.isDisplayed()){
             Agent_DealBuilderPage.copyToDealButton.click();
@@ -1929,27 +1941,35 @@ public class Agent_DealBuilderPageActions extends Environment {
         }*/
         Screenshots.captureScreenshot();
         if (Agent_DealBuilderPage.emailBasket.isDisplayed()) {
-            Agent_DealBuilderPage.emailBasket.click();
-            Thread.sleep(2000);
+           // Agent_DealBuilderPage.emailBasket.click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.emailBasket);
+            Thread.sleep(1000);
         }
 
         CommonActions.switchToWindow();
 
-        if (driver.findElements(By.xpath("//input[@type='checkbox' and @name='basket']")).size() > 0) {
 
-            String emailBasketInfoPg = Agent_DealBuilderPage.emailBasketInfo.getText();
+        if (driver.findElements(By.xpath("//input[@type='checkbox' and @name='basket']")).size() > 0) {
+            Thread.sleep(3000);
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.checkBox_sharedBasket);
+
+          /*  String emailBasketInfoPg = Agent_DealBuilderPage.emailBasketInfo.getText();
             if (emailBasketInfoPg.contains("Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer")) {
                 log.info("Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer");
             } else {
                 Assert.fail("Fail to Dispaly :: Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer");
-            }
+            }*/
 
-            Agent_DealBuilderPage.checkBox_sharedBasket.click();
+           // Agent_DealBuilderPage.checkBox_sharedBasket.click();
             Thread.sleep(500);
             Agent_DealBuilderPage.getBasketLink.click();
-            Thread.sleep(500);
+            Thread.sleep(1000);
             saveBasketLink = Agent_DealBuilderPage.copyToClickBoard.getText();
+            Thread.sleep(500);
             driver.get(saveBasketLink);
+            driver.manage().window().maximize();
             Thread.sleep(2000);
         }else {
             Assert.fail("Failed :: Selected tariff is not Refresh pls try another tariff ");
@@ -1975,41 +1995,36 @@ public class Agent_DealBuilderPageActions extends Environment {
 
                 System.out.println(" lineItemHeading :: "+ header +"  && lineItemDescription " +contentType);
                 log.info(" lineItemHeading :: "+ header +"  && lineItemDescription " +contentType);
-
         }
-
-        if(Agent_DealBuilderPage.emailSuccessfullyMsg.isDisplayed()){
+        /*if(Agent_DealBuilderPage.emailSuccessfullyMsg.isDisplayed()){
             System.out.println("Success :: "+ Agent_DealBuilderPage.emailSuccessfullyMsg.getText());
             log.info("Success :: "+ Agent_DealBuilderPage.emailSuccessfullyMsg.getText());
         }else{
             Assert.fail("Faild to display eMail success message once sent the mail basket");
-        }
+        }*/
     }
 
 
     public static void sendBasketEmailAddress() throws InterruptedException, IOException {
-
+        Thread.sleep(2000);
+        CommonActions.scrollToElement(Agent_DealBuilderPage.emailBasket);
+        Thread.sleep(2000);
         Screenshots.captureScreenshot();
         if (Agent_DealBuilderPage.emailBasket.isDisplayed()) {
-            Agent_DealBuilderPage.emailBasket.click();
-            Thread.sleep(2000);
-        }else{
-            Assert.fail(" Failed : Not able to find the Email basket link at top of Deal builder");
+            // Agent_DealBuilderPage.emailBasket.click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.emailBasket);
+            Thread.sleep(1000);
         }
 
         CommonActions.switchToWindow();
 
-        if (driver.findElements(By.xpath("//input[@type='checkbox' and @name='basket']")).size() > 0) {
-            String emailBasketInfoPg = Agent_DealBuilderPage.emailBasketInfo.getText();
-            if (emailBasketInfoPg.contains("Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer")) {
-                log.info("Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer");
-            } else {
-                Assert.fail("Fail to Dispaly :: Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer");
-            }
 
-            Agent_DealBuilderPage.checkBox_sharedBasket.click();
-            Thread.sleep(500);
-            Agent_DealBuilderPage.getBasketLink.click();
+        if (driver.findElements(By.xpath("//input[@type='checkbox' and @name='basket']")).size() > 0) {
+            Thread.sleep(3000);
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.checkBox_sharedBasket);
+
             Thread.sleep(500);
 
             if(Agent_DealBuilderPage.sendBasketEmailAddress.isDisplayed()){
@@ -2018,6 +2033,14 @@ public class Agent_DealBuilderPageActions extends Environment {
                 Thread.sleep(2000);
             }else{
                 Assert.fail("Failed ::: Not able to find the send basket email addres ");
+            }
+
+
+            if(Agent_DealBuilderPage.emailSuccessfullyMsg.isDisplayed()){
+                System.out.println("Success :: "+ Agent_DealBuilderPage.emailSuccessfullyMsg.getText());
+                log.info("Success :: "+ Agent_DealBuilderPage.emailSuccessfullyMsg.getText());
+            }else{
+                Assert.fail("Faild to display eMail success message once sent the mail basket");
             }
         }
     }
