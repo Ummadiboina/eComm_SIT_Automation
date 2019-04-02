@@ -10113,7 +10113,7 @@ public class E2EOrderPlaced_Steps {
     @And("^click on the 'MBB' button$")
     public void click_on_MBB_button() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(6000);
             SimsPageActions.clickOnMBB_Button();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -11422,7 +11422,7 @@ public class E2EOrderPlaced_Steps {
 
             //Recommendation is going live in Jan so commented
             UpgradeCustomerPageActions.clickOnConfigureOwnUpgrade();
-            Thread.sleep(5000);
+            Thread.sleep(8000);
 
             //UpgradeCustomerPageActions.clickOnGetStartedCTA();
 

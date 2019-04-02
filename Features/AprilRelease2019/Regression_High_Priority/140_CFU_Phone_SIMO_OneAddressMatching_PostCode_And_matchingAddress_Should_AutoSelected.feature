@@ -1,11 +1,11 @@
-Feature: 22_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Should_AutoSelected
+Feature: 140_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Should_AutoSelected
 
   This Scenario ensures that When a Phone Streamlined SIMO Upgrade(SSU)  customer lands on 'Review page' and opt for
   'I need a new sim' option and then clicks on 'Use a different address link' for billing address and enters a postal
   code, if only one address is matching corresponding to entered postcode then it should be auto selected
 
   @Web
-  Scenario Outline: 22_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Should_AutoSelected
+  Scenario Outline: 140_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Should_AutoSelected
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now

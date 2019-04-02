@@ -1,11 +1,11 @@
-Feature:13_CFA_MBB_SIMO_MoreThanOneAddressMatching_PostCode_Then_Customer_Should_Select_One_From_DropdownList
+Feature:139_CFA_MBB_SIMO_MoreThanOneAddressMatching_PostCode_Then_Customer_Should_Select_One_From_DropdownList
 
   This Scenario ensures that when the Customer in acquisition journey selects 'PAYM MBB SIMO' and lands on delivery page
   and enters a postal code, if more than one address is matching corresponding to entered postcode then customer should
   be able to select one from the dropdown list
 
   @Web
-  Scenario Outline: 13_CFA_MBB_SIMO_MoreThanOneAddressMatching_PostCode_Then_Customer_Should_Select_One_From_DropdownList
+  Scenario Outline: 139_CFA_MBB_SIMO_MoreThanOneAddressMatching_PostCode_Then_Customer_Should_Select_One_From_DropdownList
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM SIMO page
     And Select 'MBB' tab
