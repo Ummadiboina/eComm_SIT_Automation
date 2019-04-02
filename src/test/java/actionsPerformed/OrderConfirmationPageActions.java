@@ -31,8 +31,8 @@ public class OrderConfirmationPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void gettitlepage() throws IOException {
-
+	public static void gettitlepage() throws IOException, InterruptedException {
+		Thread.sleep(5000);
 		log.debug(driver.getTitle());
 		log.info("The Page Title is " + driver.getTitle());
 		Screenshots.captureScreenshot();
@@ -196,7 +196,8 @@ public class OrderConfirmationPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void FreeSimMessage() {
+	public static void FreeSimMessage() throws InterruptedException {
+		Thread.sleep(3000);
 		log.debug("This is order confirmation page and the message in this page is as below......");
 		log.info("This is order confirmation/information page and the message in this page is as above......");
 

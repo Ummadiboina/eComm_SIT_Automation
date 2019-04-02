@@ -359,6 +359,9 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//h2[text()='deliveryprefence']")
     public static WebElement Deliveyprefence;
 
+    @FindBy(how = How.XPATH, using = "//input[@id='existing-pay']")
+    public static WebElement existingPaymentOption;
+
 
 }
 

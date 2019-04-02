@@ -218,14 +218,14 @@ public class PaymentPageActions extends Environment {
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
 
-        if(driver.findElements(By.xpath("//a[@class='affordability-section-dont-agree-link']")).size()>0) {
+        /*if(driver.findElements(By.xpath("//a[@class='affordability-section-dont-agree-link']")).size()>0) {
             pageobjects.PaymentPage.affordabilityDontAgreeLink.click();
             log.debug("Clicked on affordability Dont Agree Link\n");
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,400)", "");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
-        }
+        }*/
 
         if(driver.findElements(By.xpath("//input[@id='confirm-address']")).size()>0){
             pageobjects.PaymentPage.affordabilityAgreeCreditCheck.click();

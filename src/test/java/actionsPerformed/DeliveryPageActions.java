@@ -448,7 +448,7 @@ public class DeliveryPageActions extends Environment {
     }
 
     public static void selectExistingAcctAndFastCheckOut() throws InterruptedException, IOException {
-        Thread.sleep(5000);
+        Thread.sleep(10000);
 
         log.debug("going to click on existing account");
 
@@ -465,7 +465,12 @@ public class DeliveryPageActions extends Environment {
         jse.executeScript("window.scrollBy(0,100)", "");
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
+        if(driver.findElements(By.xpath("//input[@id='existing-pay']")).size()>0){
+        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.existingPaymentOption);
+        log.debug("Selected existing account option\n");
+        }
+        Thread.sleep(2000);
         //pageobjects.DeliveryPage.SelectAcct.click();
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SelectAcct);
         log.debug("Selected existing account\n");

@@ -169,7 +169,7 @@ public class SimsPageActions extends Environment {
     public static void allTariffsUnderTwelveMonthsShouldDisplayed() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if (driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
+            if (driver.findElements(By.xpath("//li[@id='id-12-months' and @class='active']")).size() > 0) {
                 List<WebElement> lstOfDataPlans = UpgradeCustomerPage.DataTextElement_12Months;
                 for (int i = 0; i < lstOfDataPlans.size(); i++) {
 

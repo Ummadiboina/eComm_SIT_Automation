@@ -747,7 +747,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     String collectionDate = driver.findElement(By.xpath("//table[@id='storeResultsTable']/tbody/tr["+i+"]/td[2]")).getText();
                     Thread.sleep(3000);
                     log.debug("Collection Date: "+collectionDate);
-                    if (collectionDate.equalsIgnoreCase("Today")) {
+                    if (collectionDate.equalsIgnoreCase("Today") || collectionDate.equalsIgnoreCase("TODAY")) {
                         log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDate + "\n");
                         driver.findElement(By.xpath("//table[@id='storeResultsTable']/tbody/tr["+i+"]/td[3]/input")).click();
                         log.debug("Store selected for collection Today\n");
