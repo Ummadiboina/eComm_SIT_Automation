@@ -448,7 +448,7 @@ public class DeliveryPageActions extends Environment {
     }
 
     public static void selectExistingAcctAndFastCheckOut() throws InterruptedException, IOException {
-        Thread.sleep(10000);
+        Thread.sleep(15000);
 
         log.debug("going to click on existing account");
 
@@ -983,7 +983,7 @@ public class DeliveryPageActions extends Environment {
 
     //Validating your bill cap
     public static void ValidateAppliedBillSpendCap(String BillCap, String CapAmount, String BSCstatus) throws InterruptedException, IOException {
-        Thread.sleep(3000);
+        Thread.sleep(8000);
         String AppliedBillCap="";
         String pageTitle = driver.getTitle();
         Thread.sleep(2000);

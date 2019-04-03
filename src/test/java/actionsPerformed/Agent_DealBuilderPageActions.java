@@ -733,7 +733,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 // Switching to Child window
                 driver.switchTo().window(ChildWindow);
                 Thread.sleep(3000);
-                Agent_DealBuilderPage.Postcode.sendKeys("g13hf");
+                Agent_DealBuilderPage.Postcode.sendKeys("M4 2HU");
 
                 Agent_DealBuilderPage.searchStore.click();
                 Thread.sleep(8000);

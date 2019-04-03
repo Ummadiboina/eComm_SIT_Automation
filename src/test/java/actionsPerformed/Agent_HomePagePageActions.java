@@ -126,7 +126,7 @@ public class Agent_HomePagePageActions extends Environment {
 			Screenshots.captureScreenshot();
 		}
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		List<WebElement> PayAsYouGo = driver.findElements(By.id("emptyDealButton"));
 		if (PayAsYouGo.size() > 0) {
@@ -145,14 +145,16 @@ public class Agent_HomePagePageActions extends Environment {
 		} else {
 
 			log.debug("Need to choose an upgrade option");
-			String UpgradeOptionsAgent = Agent_HomePage.UpgradeOpsAgent.getText();
-			log.debug(UpgradeOptionsAgent);
-			if (UpgradeOptionsAgent.contains("Upgrade Options for MSISDN"))
-				if (Agent_HomePage.AgentSimoUpgradeOptions.isDisplayed()){
-					Agent_HomePage.AgentSimoUpgradeOptions.click();}
-				else{
-					Agent_HomePage.AgentHandsetUpgradeOptions.click();}
-
+			if(Agent_HomePage.UpgradeOpsAgent.isDisplayed()) {
+				String UpgradeOptionsAgent = Agent_HomePage.UpgradeOpsAgent.getText();
+				log.debug(UpgradeOptionsAgent);
+				if (UpgradeOptionsAgent.contains("Upgrade Options for MSISDN"))
+					if (Agent_HomePage.AgentSimoUpgradeOptions.isDisplayed()) {
+						Agent_HomePage.AgentSimoUpgradeOptions.click();
+					} else {
+						Agent_HomePage.AgentHandsetUpgradeOptions.click();
+					}
+			}
 		}
 		/*
 		 * } catch (Exception e) { // TODO Auto-generated catch block

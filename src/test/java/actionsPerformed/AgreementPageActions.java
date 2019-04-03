@@ -188,12 +188,12 @@ public class AgreementPageActions extends Environment {
 			Screenshots.captureScreenshot();
 		}
 
-		pageobjects.AgreementPage.affordabilityDontAgreeLink.click();
+		/*pageobjects.AgreementPage.affordabilityDontAgreeLink.click();
 		log.debug("Clicked on affordability Dont Agree Link\n");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,300)", "");
 		Thread.sleep(3000);
-		Screenshots.captureScreenshot();
+		Screenshots.captureScreenshot();*/
 
 		pageobjects.AgreementPage.agreeFinancialCommitments.click();
 		log.debug("Selected agree Financial commitments check box\n");
