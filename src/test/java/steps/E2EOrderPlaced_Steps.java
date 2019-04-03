@@ -2478,6 +2478,7 @@ public class E2EOrderPlaced_Steps {
             jse.executeScript("window.scrollBy(0,300)", "");
             ReviewPageActions.gettitlepage();
             Thread.sleep(3000);
+            Screenshots.captureScreenshot();
             ReviewPageActions.TermsCheckBox();
             Thread.sleep(3000);
             ReviewPageActions.PayNow();
@@ -2573,11 +2574,13 @@ public class E2EOrderPlaced_Steps {
     public void OrderConfirmationPage() {
         // Write code here that turns the phrase above into concrete actions
         try {
+            Screenshots.captureScreenshot();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
             //CommonFunctionscheckTitle("Confirmation Page");
             OrderConfirmationPageActions.gettitlepage();
             OrderConfirmationPageActions.MessageDisplayed();
+            Screenshots.captureScreenshot();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Error in order confirmation page , Please review the screenshots for failure");
@@ -2666,7 +2669,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Agent_DealBuilderPageActions.HandsetTariffCombination();
-            Thread.sleep(6000);
+            Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -2781,9 +2784,9 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, Agent_HomePage.class);
         Agent_HomePagePageActions.FindUser(msisdn);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         Agent_HomePagePageActions.upgradeUser();
-        Thread.sleep(7000);
+        Thread.sleep(1000);
         Screenshots.captureScreenshot();
         /*
          * } catch (Exception e) { // TODO Auto-generated catch block System.out.
@@ -2842,9 +2845,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Thread.sleep(7000);
+            Thread.sleep(2000);
             Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
-            Thread.sleep(4000);
+            Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to select Valid device, please see the failure screenshot");
@@ -3022,9 +3025,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Thread.sleep(7000);
+            Thread.sleep(2000);
             Agent_DealBuilderPageActions.SelectTariff(Tariff);
-            Thread.sleep(4000);
+            Thread.sleep(2000);
             // log.debug("Selecting a valid tariff");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -11368,9 +11371,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             log.debug("Currently we are at page: " + driver.getTitle());
-            Thread.sleep(4000);
+            Thread.sleep(2000);
             Agent_DealBuilderPageActions.addBillSpendCap_AgentDealBuilder(BillCapAmount, BSCstatus);
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to add your bill cap in Agent deal builder page");
@@ -12586,4 +12589,20 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Catch block-Verification Fail, unable to Unlimited data in confirmation page from Main block");
         }
     }
+
+    @And("^Retention bolton validations in Delivery page$")
+    public void retentionBoltonValidationsInDeliverPage(){
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.deliveryPageValidations_RetentionBoltons();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("delivery page - error ");
+            Assert.fail("delivery page - error");
+        }
+    }
+
+
 }

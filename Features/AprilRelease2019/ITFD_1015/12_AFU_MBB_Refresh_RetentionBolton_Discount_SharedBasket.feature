@@ -1,9 +1,9 @@
-Feature: 12_VerifyRetentionBoltonAddedToBasket_MBB_Standard_RetentionBolton_TariffDiscount_Combination
+Feature: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket
 
   Save basket :: MBB + StandardTariff + RetentionBolton + TariffDiscount
 
   @Web
-  Scenario Outline: 12_VerifyRetentionBoltonAddedToBasket_MBB_Standard_RetentionBolton_TariffDiscount_Combination
+  Scenario Outline: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket
 
     Given I login to Agent shop
     And performs Upgrade for <user>
@@ -26,4 +26,4 @@ Feature: 12_VerifyRetentionBoltonAddedToBasket_MBB_Standard_RetentionBolton_Tari
 
     Examples:
       | user                   | Device               | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton | username               | password |
-      | in05261q_798134@o2.com | Apple iPhone XR 64GB | Standard | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | yes             | in05261q_798134@o2.com | test123  |
+      | in05261q_798134@o2.com | Huawei 4g dongle 30 | 30d 19.00 | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | yes             | in05261q_798134@o2.com | test123  |
