@@ -30,5 +30,5 @@ Feature: 126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Inco
 
     Examples:
       | username                      | password | BillCap       | CapAmount | NewBillCap | NewCapAmount | BSCstatus | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 14ju81044020@stf.ref.o2.co.uk | test123  | DontCapMyBill | Nill      | CapMyBill  | £10          | Enabled   | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | 14ju81044020@stf.ref.o2.co.uk | test123  | DontCapMyBill | Nill      | CapMyBill  | £10          | Enabled   | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
 

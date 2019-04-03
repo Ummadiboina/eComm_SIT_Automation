@@ -68,7 +68,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         pageobjects.BasketPage.clickAndCollect.click();
         Thread.sleep(6000);
         Screenshots.captureScreenshot();
-        pageobjects.BasketPage.StorePostcode.sendKeys("g13hf");
+        pageobjects.BasketPage.StorePostcode.sendKeys("M4 2HU");
         log.debug("PostCode Entered for Search");
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
@@ -113,12 +113,12 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         String collectionDetailsPDpage = pageobjects.BasketPage.CollectionDetailsPDpage.getText();
         Thread.sleep(2000);
         log.debug("Delivery details - collection today/now:: is updated in PD page: " +collectionDetailsPDpage);
-        /*if(collectionDetailsPDpage.contains("Today")){
+        if(collectionDetailsPDpage.contains("Today")){
             log.debug("Delivery details - collection today/now:: is updated in PD page: " +collectionDetailsPDpage);
         }else{
             log.debug("Delivery details - collection today/now status is not matching in PD page: " +collectionDetailsPDpage);
             Assert.fail("Delivery details - collection today/now status is not matching in PD page: " +collectionDetailsPDpage);
-        }*/
+        }
     }
 
 

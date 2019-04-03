@@ -7,8 +7,8 @@ Feature: 100_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Promotions_Available_
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    #And I click on 'Sim only Tariff' tab
     And Click on 'Get Started' CTA
+    And I click on 'Sim only Tariff' tab
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     #And Select ribboned tariff <tariff> in upgrade journey
     And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
@@ -26,5 +26,5 @@ Feature: 100_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Promotions_Available_
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username     | tariffAmt | dataValue | promoCode       | password | Username     | BSCstatus | BillCap   | CapAmount | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 14ju10754913 | £13       | 3GB       | Onlineexclusive | test123  | TEST ACCEPTA | Enabled   | CapMyBill | £30       | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username                                                 | tariffAmt | dataValue | promoCode       | password | Username     | BSCstatus | BillCap   | CapAmount | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | sittester-d00ce50b-650b-4033-8174-1c91ee516ad9@gmail.com | £13       | 3GB       | Onlineexclusive | test123  | TEST ACCEPTA | Enabled   | CapMyBill | £30       | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

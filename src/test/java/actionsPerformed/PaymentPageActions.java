@@ -358,39 +358,41 @@ public class PaymentPageActions extends Environment {
             driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).click();
         }*/
         Thread.sleep(10000);
-        driver.switchTo().frame("payment-iframe"); // switching the frame by ID
+        if (driver.findElements(By.xpath("//iframe[@class='payment-iframe']")).size() > 0) {
+            driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
-        log.debug("********We are switch to the iframe*******");
-        log.debug("Entering the Payments section");
-        Thread.sleep(5000);
-        scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
-        //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@id='card-details-section']/div[2]/h2")));
+            log.debug("********We are switch to the iframe*******");
+            log.debug("Entering the Payments section");
+            Thread.sleep(5000);
+            scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
+            //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@id='card-details-section']/div[2]/h2")));
 
-        Thread.sleep(5000);
-        PaymentPage.CardHolderName.sendKeys(Username);
-        log.debug("Entering name of the card as " + Username);
+            Thread.sleep(5000);
+            PaymentPage.CardHolderName.sendKeys(Username);
+            log.debug("Entering name of the card as " + Username);
 
-        Thread.sleep(2000);
-        PaymentPage.CardNumber.sendKeys("4539791001730106");
-        log.debug("Entered Card number as 4539xxxxxxxxxx06");
-        Thread.sleep(2000);
-        PaymentPage.CardMonth.sendKeys("12");
-        log.debug("Entered Expiry Month");
-        Thread.sleep(2000);
-        PaymentPage.CardYear.sendKeys("2019");
-        log.debug("Entered Expiry Year");
-        Thread.sleep(2000);
-        PaymentPage.SecurityCode.sendKeys("123");
-        log.debug("Entered CVV security code");
-        Thread.sleep(2000);
-        Screenshots.captureScreenshot();
-        PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
-        log.debug("Clicking on continue to next step");
-        Thread.sleep(10000);
-        log.debug("*********We are done***************");
-        log.debug("Exiting the Payments section");
-        driver.switchTo().defaultContent();
-        // log.debug(driver.getTitle());
+            Thread.sleep(2000);
+            PaymentPage.CardNumber.sendKeys("4539791001730106");
+            log.debug("Entered Card number as 4539xxxxxxxxxx06");
+            Thread.sleep(2000);
+            PaymentPage.CardMonth.sendKeys("12");
+            log.debug("Entered Expiry Month");
+            Thread.sleep(2000);
+            PaymentPage.CardYear.sendKeys("2019");
+            log.debug("Entered Expiry Year");
+            Thread.sleep(2000);
+            PaymentPage.SecurityCode.sendKeys("123");
+            log.debug("Entered CVV security code");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
+            log.debug("Clicking on continue to next step");
+            Thread.sleep(10000);
+            log.debug("*********We are done***************");
+            log.debug("Exiting the Payments section");
+            driver.switchTo().defaultContent();
+            // log.debug(driver.getTitle());
+        }
 
 
     }
