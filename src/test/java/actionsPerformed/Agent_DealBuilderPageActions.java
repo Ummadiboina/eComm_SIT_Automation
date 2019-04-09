@@ -2146,6 +2146,32 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
         Screenshots.captureScreenshot();
     }
+    // Arizona starts here
+    public static void SelectPAYMCompanionDevice(String Device) throws InterruptedException, IOException {
+
+        // Reporter.log("Selected the dropdown Mrs");
+
+        Agent_DealBuilderPage.DevicesTab.click();
+        log.debug("Clicked on Devices tab");
+
+        Thread.sleep(7000);
+
+        if (Device.contains("Random")) {
+            Thread.sleep(6000);
+            Agent_DealBuilderPage.firstAvailableDevice.click();
+            Thread.sleep(6000);
+            log.debug("Selected device ");
+        } else {
+            Thread.sleep(4000);
+            Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Device);
+            log.debug("Clicked on SearchTextBox to enter" + Device);
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
+            Agent_DealBuilderPage.SelectInStockPAYMDevice.click();
+            Thread.sleep(6000);
+        }
+        Screenshots.captureScreenshot();
+    }
 
 
 }

@@ -1142,4 +1142,341 @@ public class PhonesListingPageAction extends Environment {
 		}
 		Screenshots.captureScreenshot();
 	}
+	//Arizona starts here
+	public static void PAYMCompanionDeviceSelect(String deviceName) throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+			//WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
+			WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
+			serchBox.sendKeys(deviceName);
+			Thread.sleep(10000);
+
+			WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazyPD']/..//*[normalize-space()='"+deviceName+"'])[1]"));
+			if(requestedDevice.isDisplayed()) {
+				//scrollToAnElement.scrollToElement(requestedDevice);
+				Screenshots.captureScreenshot();
+			}
+			if (driver.findElements(By.xpath("(//img[@class='device-image lazyPD']/..//*[normalize-space()='"+deviceName+"'])[1]")).size() >= 1) {
+				Thread.sleep(3000);
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
+				log.debug("Selected Device from Tablet as Required is : " + deviceName);
+
+				Thread.sleep(3000);
+			} else {
+				Thread.sleep(3000);
+				WebElement element = driver.findElement(By.xpath("(//img[@class='device-image lazyPD'])[1]"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+				String defaultSelDevice = driver.findElement(By.xpath("(//img[@class='device-image lazyPD'])[1]/../p/span[2]")).getText();
+				log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+
+				Thread.sleep(3000);
+
+				Screenshots.captureScreenshot();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void interstitialOverlay() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void clickContinue() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void existingCustomerCheckout() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void clickChooseAnIphone() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void iPhonesListingPage() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void PAYMIphoneSelect(String deviceName) throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+			//WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
+			WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
+			serchBox.sendKeys(deviceName);
+			Thread.sleep(10000);
+
+			WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazyPD']/..//*[normalize-space()='"+deviceName+"'])[1]"));
+			if(requestedDevice.isDisplayed()) {
+				//scrollToAnElement.scrollToElement(requestedDevice);
+				Screenshots.captureScreenshot();
+			}
+			if (driver.findElements(By.xpath("(//img[@class='device-image lazyPD']/..//*[normalize-space()='"+deviceName+"'])[1]")).size() >= 1) {
+				Thread.sleep(3000);
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
+				log.debug("Selected Device from Tablet as Required is : " + deviceName);
+
+				Thread.sleep(3000);
+			} else {
+				Thread.sleep(3000);
+				WebElement element = driver.findElement(By.xpath("(//img[@class='device-image lazyPD'])[1]"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+				String defaultSelDevice = driver.findElement(By.xpath("(//img[@class='device-image lazyPD'])[1]/../p/span[2]")).getText();
+				log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+
+				Thread.sleep(3000);
+
+				Screenshots.captureScreenshot();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void selectMSISDNFromDropdown() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void clickBeginFastCheckout() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void verifyBasketPage() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void verifyBasketPageBSC() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void errorMessageDisplay() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void selectCompanionDeviceFromNumberToUpgradeDropdown() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void selectNonCompanionDeviceFromNumberToUpgradeDropdown() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void selectDeviceMSISDNFromNumberToUpgradeDropdown() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void leadDevicePairingSectionDisplay() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void countOfMSISDN() throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		//Write script for selecting the MSISDN
+		try {
+
+
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

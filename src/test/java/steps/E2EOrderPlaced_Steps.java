@@ -12603,6 +12603,341 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("delivery page - error");
         }
     }
+    //Arizona functions
+
+    @And("^I am provided with the partner package options page url ([^\"]*)$")
+    public void I_am_provided_with_the_partner_package_options_page_url(String url) {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+
+    }
+
+    @And("^navigate to PAYM Companion device listing page$")
+    public void navigate_to_PAYM_Companion_device_listing_page() {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MouseHoverPage.class);
+            MouseHoverAction.PayMCompanionDeviceLandingPage();
+            Thread.sleep(4000);
+            Autoredirection.redirect();
+            Thread.sleep(8000);
+            //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.debug("unable to do mousehover to phones");
+            Assert.fail("unable to do mousehover to phones");
+        }
+    }
+    @And("^Select PayM Companion Device ([^\"]*)$")
+    public void Choose_PayMCompanionDevice(String Companion_device) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.PAYMCompanionDeviceSelect(Companion_device);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^Click 'See our plans' and verify the interstitial overlay$")
+    public void validateInterstitialOverlay() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.interstitialOverlay();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^Click on 'Continue' button on interstitial overlay$")
+    public void clickContinueOnInterstitialOverlay() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.clickContinue();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^Click on the 'Existing Customer checkout' CTA$")
+    public void clickExistingCustomerCheckout() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.existingCustomerCheckout();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^click 'Choose this plan' CTA and verify if the interstitial overlay is displayed$")
+    public void clickChooseThisPlanAndValidateInterstitialOverlay() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.interstitialOverlay();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^Click on 'Choose an iPhone' on the overlay$")
+    public void chooseAnIphone() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.clickChooseAnIphone();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^customer lands on iPhones listing page$")
+    public void customerLandsonIphoneListingPage() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.iPhonesListingPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^Select PayM iPhone ([^\"]*)$")
+    public void Choose_PayMIphone(String tablet) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.PAYMIphoneSelect(tablet);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^Verify if the customer lands on lead device pairing page with the MSISDN displayed in the dropdown$")
+    //Make the validations for multiple lead device-one eligible MSISDN and Multiple eligible MSISDN's
+    public void leadDevicePairingPageMSISDN() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.selectMSISDNFromDropdown();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^Click on 'Begin fast checkout'$")
+    public void beginFastCheckout() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.clickBeginFastCheckout();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^I am provided with the partner Basket page url ([^\"]*)$")
+    public void partnerBasketURL() {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            //write the code here itself
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^customer lands on basket page$")
+    public void landOnBasketPage() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.verifyBasketPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^Verify BSC section on Basket page$")
+    public void BSC_OnBasketPage() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.verifyBasketPageBSC();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @Then("^Verify if the error message is displayed on the lead device pairing page$")
+    public void errorOnLeadDevicePairingPage() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.errorMessageDisplay();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^select the companion device from the dropdown in UoP$")
+    public void selectCompanionDeviceFromDropdownOnUoP() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.selectCompanionDeviceFromNumberToUpgradeDropdown();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^select any companion device ([^\"]*) from UoP$")
+    public void selectCompanionDeviceFromUoP() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.selectCompanionDeviceFromNumberToUpgradeDropdown();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^select the non companion device from the dropdown in UoP$")
+    public void selectNonCompanionDeviceFromUoP() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.selectNonCompanionDeviceFromNumberToUpgradeDropdown();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^select the non companion device ([^\"]*) from shop$")
+    public void selectNonCompanionDeviceFromShop() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.selectCompanionDeviceFromNumberToUpgradeDropdown();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^select the device MSISDN from the dropdown in UoP$")
+    public void selectDeviceMSISDNFromDropdownOnUoP() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.selectDeviceMSISDNFromNumberToUpgradeDropdown();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^Select a valid companion device PayM $([^\"]*)")
+    public void SelectValid_CompanionDevice(String Device) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(7000);
+            Agent_DealBuilderPageActions.SelectPAYMCompanionDevice(Device);
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select Valid device, please see the failure screenshot");
+            Assert.fail("Unable to select Valid device, please see the failure screenshot");
+
+        }
+
+    }
+    @And("^Verify lead device pairing section is displayed$")
+    public void leadDevicePairingSection() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.leadDevicePairingSectionDisplay();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+    @And("^Verify number of MSISDN$")
+    public void verifyMSISDN() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.countOfMSISDN();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
 
 
 }
