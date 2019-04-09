@@ -1757,4 +1757,96 @@ public class MouseHoverAction extends Environment {
         }
 
     }
+    //Arizona starts here
+    public static void PayMCompanionDeviceLandingPage() throws Exception {
+        //driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
+        Thread.sleep(10000);
+        try {
+            /*********************************************************************
+             normal execution flow in ref Env....        ************************/
+            if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
+                log.debug("Performing PAYM Phones landing page navigations");
+
+                Thread.sleep(3000);
+
+                Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+                Thread.sleep(2000);
+                log.debug("Moving Mouse on the Shop Tab");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(3000);
+
+                Screenshots.captureScreenshot();
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).perform();
+                log.debug("Mouse over Shop---> Phones ");
+                log.debug("Moving Mouse on the Phones dropdown");
+                Thread.sleep(3000);
+
+                pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones.click();
+                log.debug("Mouse over Shop---> Phones--> Pay monthly phones ");
+                Thread.sleep(5000);
+                log.debug("Moving Mouse on the Paymonthly link");
+
+                Screenshots.captureScreenshot();
+
+                log.debug("Clicking on PayM Phones");
+
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Enabled");
+                log.debug("Drupal's are Enabled");
+            }
+
+            /*********************************************************************
+             Drupal navigation change           ************************/
+            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')] | //div[@class='navContainer']/div/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+
+                Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 100);
+                log.debug("Moving Mouse on the Shop Tab");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(4000);
+
+                Screenshots.captureScreenshot();
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(MouseHoverPage.MoveMouseOnPhones_Drupal).perform();
+                log.debug("Moving Mouse on the Browse Phones option");
+                Thread.sleep(2000);
+
+                // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
+                JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnPhones_Drupal);
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
+
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Disiabled");
+                log.debug("Drupal's are Disiabled");
+            }
+        } catch (ElementNotVisibleException e) {
+            log.debug("Failed to mouse over, &  Error as : " + e.getStackTrace());
+            Assert.fail("Failed to Navigate to the Shop mouse over");
+            Thread.sleep(2000);
+        }
+    }
 }
