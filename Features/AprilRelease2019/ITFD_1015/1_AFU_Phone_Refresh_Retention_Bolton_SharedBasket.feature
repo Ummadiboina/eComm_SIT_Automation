@@ -28,5 +28,5 @@ Feature: 1_AFU_Phone_Refresh_Retention_Bolton_SharedBasket
     Then order confirmation is displayed
 
     Examples:
-      | username_name | user        | Device                  | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton | username                      | password |
-      | test accepta  | 07568417407 | Galaxy S9 64GB Midnight | Refresh | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | yes             | 15se92529299@stf.ref.o2.co.uk | test123  |
+      | username_name | user        | Device   | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected | RetentionBolton | username                      | password |
+      | test accepta  | 07568417407 | Galaxy S | Refresh | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | yes             | 15se92529299@stf.ref.o2.co.uk | test123  |
