@@ -10519,7 +10519,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @When("^Click on any one of the recycle option then Click on  'Yes get an accurate quote'$")
+    @When("^Click on any one of the recycle option then Click on'Yes get an accurate quote'$")
     public void click_on_any_one_of_the_recycle_option_then_Click_on_Yes_get_an_accurate_quote() {
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
@@ -10558,6 +10558,8 @@ public class E2EOrderPlaced_Steps {
     @And("^Select a Device from the recommended section$")
     public void select_a_Device_from_the_recommended_section() {
         try {
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            UpgradeCustomerPageActions.selectDeviceFromRecommendedPannl();
             log.debug("Selected device from recomended diveice");
         } catch (Exception e) {
             log.debug("Unable to validate section");
@@ -12938,6 +12940,50 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to choose PayM phone");
         }
     }
+
+    @And("^Configure your own upgrade from recommended panel$")
+    public void configureYourOwnUpgradeFrom_RecommendedPanel() {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+             UpgradeCustomerPageActions.configureYourOwnUop();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+
+    @And("^Edit plan from recommended panel UoP$")
+    public void editPlan_recommendedPanelUoP() {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.editPlan_recommendedSection();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+
+    @And("^configure dynamic variable from Drupal ([^\"]*)$")
+    public void configure_dynamicVariable_from_Drupal(String pageName) {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.o2DriveConfiguration(pageName);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+
+
 
 
 }
