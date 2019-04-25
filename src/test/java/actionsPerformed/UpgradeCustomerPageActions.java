@@ -1774,9 +1774,9 @@ public class UpgradeCustomerPageActions extends Environment {
         boolean actualValue = UpgradeCustomerPage.NeedNewSimRadioButton.isSelected();
         boolean actualValue1 = UpgradeCustomerPage.DontNeedNewSimRadioButton.isSelected();
         if ((actualValue && actualValue1) != true) {
-            log.debug("Radio button is not selected by default");
+            log.debug("Radio button is not selected by default in sim section\n");
         } else {
-            log.debug("Radio button is selected by default");
+            log.debug("Radio button is selected by default in sim section\n");
         }
         Screenshots.captureScreenshot();
     }

@@ -9,6 +9,9 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.ID, using = "plansTab")
     public static WebElement TariffsTab;
 
+    @FindBy(how = How.XPATH, using = "//a[@id='smartTechDevicesTab']")
+    public static WebElement smartTechTab;
+
     @FindBy(how = How.XPATH, using = "//*[@id='incomaptibleError']")
     public static WebElement incomaptibleError;
 

@@ -614,7 +614,6 @@ public class MouseHoverAction extends Environment {
                 Thread.sleep(5000);
                 Screenshots.captureScreenshot();
 
-                log.debug("Clicking on PayG Tablets");
                 // Move mouse pointer away from location
                 Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
                 Robot robot2 = new Robot();
@@ -1127,13 +1126,13 @@ public class MouseHoverAction extends Environment {
                 Thread.sleep(5000);
                 Screenshots.captureScreenshot();
 
-                log.debug("Clicking on MBB");
+                log.debug("Clicked on MBB\n");
 
                driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
                 executor.executeScript("arguments[0].click();", MouseHoverPage.PayGMobileBroadband);
                 //pageobjects.MouseHoverPage.PayGMobileBroadband.click();
 
-                log.debug("Clicked on PayG MBB");
+                log.debug("Clicked on PayG MBB\n");
                 Thread.sleep(6000);
 
                 /*// Move mouse pointer away from location
@@ -1323,7 +1322,7 @@ public class MouseHoverAction extends Environment {
                 Thread.sleep(5000);
                 Screenshots.captureScreenshot();
 
-                log.debug("Clicking on MBB");
+                log.debug("Clicked on MBB");
                 // Move mouse pointer away from location
                 Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
                 Robot robot2 = new Robot();

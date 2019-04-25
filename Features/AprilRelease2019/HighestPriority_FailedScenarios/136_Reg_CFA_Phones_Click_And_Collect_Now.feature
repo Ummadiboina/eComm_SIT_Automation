@@ -27,5 +27,5 @@ Feature: 136_Reg_CFA_Phones_Click_And_Collect_Now
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset        | Username     | Firstname | Surname | color        | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | Huawei P20 Pro | TEST ACCEPTA | Test      | Accepta | Lilac Purple | Me       | Enabled   | CapMyBill | £0        | Select | Select | Not | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |
+      | handset | Username     | Firstname | Surname | color        | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 5T      | TEST ACCEPTA | Test      | Accepta | Lilac Purple | Me       | Enabled   | CapMyBill | £0        | Select | Select | Not | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |

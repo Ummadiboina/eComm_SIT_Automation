@@ -68,7 +68,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		if (driver.findElements(By.xpath("(//input[@type='button' and @value='Go to basket'])[1]")).size() >= 0) {
 
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			Thread.sleep(5000);
 
 			if (ElementName.equalsIgnoreCase("Randomtariff")) {
 				scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
