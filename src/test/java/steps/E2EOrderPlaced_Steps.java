@@ -3020,6 +3020,20 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @Given("^Select a valid smartTech devices ([^\"]*)")
+    public void Select_smartTechDevices(String Device) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.selectSmartTechDevice(Device);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select  basket, please see the failure screenshot");
+            Assert.fail("Unable to select accessory basket, please see the failure screenshot");
+        }
+    }
+
+
     @Given("^Select valid ([^\"]*) from tariffs tab$")
     public void SelectTariff(String Tariff) {
         try {
@@ -3225,6 +3239,22 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    @Then("^Input valid details in agent for registration ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
+    public void aboutYouInAgent(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) {
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in agent for registration , please see the failure screenshot");
+            Assert.fail("Unable to input details in agent for registration , please see the failure screenshot");
+
+        }
+
+    }
+
     @Then("^perform the credit checks using ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) for valid ([^\"]*) for apostrophe validation$")
     public void CreditCheck_apostropheValidation(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) {
         try {
@@ -3290,19 +3320,29 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
-            Agent_CreditCheckPageActions.BankDetails(Username);
+            Screenshots.captureScreenshot();
+            Agent_CreditCheckDetailsPage.YearsatAddress.sendKeys("09");
+            log.debug("Entered Number of Years at address");
+
+            Agent_CreditCheckDetailsPage.monthsatAddress.sendKeys("05");
+            log.debug("Entered Number of Months at address");
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,400)", "");
+            Screenshots.captureScreenshot();
+            Agent_CreditCheckPageActions.BankDetailsCCA(Username);
             log.debug("Completed Bank details");
             Thread.sleep(10000);
+            Agent_CreditCheckPageActions.affordabilityValidation("Retired", "£10,001-£20,000");
+            Agent_CreditCheckPageActions.cardCaptureAndCreditCheck(Username);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to perform credit checks , please see the failure screenshot");
             Assert.fail("Unable to perform credit checks , please see the failure screenshot");
-
         }
-
     }
 
+    
     /*
      * #########################################################################
      * #########
@@ -10872,6 +10912,50 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^In Agent Click on GDPR SaveMyPreference or Skip Preference CTA$")
+    public void clickOnGDPRPreferencesCTAInAgent() {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
+            if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
+                Agent_RegisterCustomerPage.SaveMyPreferences.click();
+            }
+            if (Agent_RegisterCustomerPage.SkipPreference.isEnabled()) {
+                Agent_RegisterCustomerPage.SkipPreference.click();
+            }
+            log.debug("Completed GDPR preference actions");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on SaveYourPreference or Skip your preferences CTA, please see the failure screenshot");
+            Assert.fail("Unable to click on SaveYourPreference or Skip your preferences CTA, please see the failure screenshot");
+        }
+    }
+
+    @And("^In Agent Click on GDPR SaveMyPreference or Skip Preference CTA$")
+    public void clickOnGDPRPreferencesCTAInAgent() {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
+            if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
+                Agent_RegisterCustomerPage.SaveMyPreferences.click();
+            }
+            if (Agent_RegisterCustomerPage.SkipPreference.isEnabled()) {
+                Agent_RegisterCustomerPage.SkipPreference.click();
+            }
+            log.debug("Completed GDPR preference actions");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on SaveYourPreference or Skip your preferences CTA, please see the failure screenshot");
+            Assert.fail("Unable to click on SaveYourPreference or Skip your preferences CTA, please see the failure screenshot");
+        }
+    }
+
     //GDPR preferences section for AFA  --- JamalKhan
     @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) ([^\"]*) for AFA journey$")
     public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status, String DeviceType, String Device_Module) {
@@ -11633,6 +11717,45 @@ public class E2EOrderPlaced_Steps {
     }
 
 
+    @And("^Input GDPR ([^\"]*) and submit for PayG SIMO journey$")
+    public void gdprMarketingInfoForPayGSIMO(String CheckBox) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            FreeSimDeliveryPageActions.marketingMessageCheckBox(CheckBox);
+            Thread.sleep(3000);
+            FreeSimDeliveryPageActions.ClickSendMeMySim();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+
+    }
+
+    @And("^Enter delivery details ([^\"]*) ([^\"]*) and about you info ([^\"]*) and ([^\"]*) for PayG SIMO journey$")
+    public void setDeliveryAddressAndAboutYouInfo(String houseNumber, String PostCode, String Firstname, String Surname) {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.SetPostCodeForDelivery(PostCode, houseNumber);
+            Thread.sleep(3000);
+            FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname, Surname);
+            Thread.sleep(3000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+
+    }
+
+
     //ITFD-895, April Release new changes Validation by Jamal Khan
     @And("^Validate OFCOM switching functionality in consumer channel when ofCom status is ([^\"]*) and performing ([^\"]*) journey$")
     public void consumerOfComValidation(String ofComStatus, String journey) {
@@ -11651,12 +11774,27 @@ public class E2EOrderPlaced_Steps {
     }
 
     //ITFD-895, April Release new changes Validation by Jamal Khan
-    @And("^Validate ([^\"]*) ([^\"]*) and Enter input details ([^\"]*) ([^\"]*) for PAC and STAC code when ofcom status is ([^\"]*)$")
-    public void ofComPacStacCheckValidation(String PacStacCheck, String PacStackRetainCheck, String ofComMobileNum, String PacStacCode, String ofComStatus) {
+    @And("^In Consumer Enter input details ([^\"]*) ([^\"]*) for ([^\"]*) code when ofcom status is ([^\"]*) and Validate ([^\"]*) functionality$")
+    public void ofComPacStacCheckValidation(String ofComMobileNum, String PacStacCode, String PacStacCheck, String ofComStatus, String PacStackRetainCheck) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-            DeliveryPageActions.ofComPacStacCode(PacStacCheck, PacStackRetainCheck, ofComMobileNum, PacStacCode, ofComStatus);
+            DeliveryPageActions.ofComPacStacCode(ofComMobileNum, PacStacCode, PacStacCheck,ofComStatus, PacStackRetainCheck);
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+            Assert.fail("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+        }
+    }
+
+    //ITFD-895, Apri Release, click on Continue CTA
+    @And("^Click on Continue CTA and validate error text for ([^\"]*) ([^\"]*) ([^\"]*) if exist$")
+    public void clickOnContinueCTA(String ofComMobileNum, String PacStacCode, String codeStatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.clickOnContinueCTAandValidateError(ofComMobileNum, PacStacCode, codeStatus);
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -11666,17 +11804,79 @@ public class E2EOrderPlaced_Steps {
     }
 
     //ITFD-895, April Release new changes Validation by Jamal Khan
-    @And("^Validate OFCOM switching input ([^\"]*) and status in Order Confirmation page when Pac and Stac code ([^\"]*) selected when ofcom status is ([^\"]*)$")
-    public void ofComPacStacCheckOrderConfirmationPageValidation(String ofComMobileNum, String PacStacCheck, String ofComStatus) {
+    @And("^Validate OFCOM switching input ([^\"]*) ([^\"]*) and status in Order Confirmation page in ([^\"]*) when ([^\"]*) Pac and Stac code ([^\"]*) selected when ofcom status is ([^\"]*)$")
+    public void ofComPacStacCheckOrderConfirmationPageValidation(String ofComMobileNum, String codeVariant, String journey, String codeStatus, String PacStacCheck, String ofComStatus) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, DeliveryPage.class);
-            DeliveryPageActions.ofComOrderConfirmationPage(ofComMobileNum, PacStacCheck, ofComStatus);
+            PageFactory.initElements(driver, OrderConfirmationPage.class);
+            OrderConfirmationPageActions.ofComOrderConfirmationPage(ofComMobileNum, codeVariant, journey, codeStatus, PacStacCheck, ofComStatus);
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to validate OFCOM Pac and Stac Code in Order Confirmation page\n");
             Assert.fail("Unable to validate OFCOM Pac and Stac Code in Order Confirmation page\n");
+        }
+    }
+
+    //ITFD-895, Agent new changes Validation by Jamal Khan
+    @And("^Validate Agent OFCOM switching functionality in consumer channel when ofCom status is ([^\"]*) and performing ([^\"]*) journey$")
+    public void agentOfComValidation(String ofComStatus, String journey) {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DeliveryDetailsPage.class);
+            Agent_DeliveryPageActions.ofComSwitching(ofComStatus,journey);
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM switching functionality in agent delivery page\n");
+            Assert.fail("Unable to validate OFCOM switching functionality in agent delivery page\n");
+
+        }
+    }
+
+    //ITFD-895, Agent new changes Validation by Jamal Khan
+    @And("^In Agent Channel Enter input details ([^\"]*) ([^\"]*) for ([^\"]*) code when ofcom status is ([^\"]*) and Validate ([^\"]*) functionality$")
+    public void agentOfComPacStacCheckValidation(String ofComMobileNum, String PacStacCode, String PacStacCheck, String ofComStatus, String PacStackRetainCheck) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DeliveryDetailsPage.class);
+            Agent_DeliveryPageActions.ofComPacStacCode(ofComMobileNum, PacStacCode, PacStacCheck, ofComStatus, PacStackRetainCheck);
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+            Assert.fail("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+        }
+    }
+
+    //ITFD-895, Agent new changes Validation by Jamal Khan
+    @And("^Validate Agent OFCOM switching input ([^\"]*) ([^\"]*) and status in Order Confirmation page in ([^\"]*) when ([^\"]*) Pac and Stac code ([^\"]*) selected when ofcom status is ([^\"]*)$")
+    public void agentOfComPacStacCheckOrderConfirmationPageValidation(String ofComMobileNum, String codeVariant, String journey, String codeStatus, String PacStacCheck, String ofComStatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_ConfirmationPage.class);
+            Agent_ConfirmationPageActions.ofComOrderConfirmationPage(ofComMobileNum, codeVariant, journey, codeStatus, PacStacCheck, ofComStatus);
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM Pac and Stac Code in Order Confirmation page\n");
+            Assert.fail("Unable to validate OFCOM Pac and Stac Code in Order Confirmation page\n");
+        }
+    }
+
+    //ITFD-895, Apri Release, click on Continue CTA
+    @And("^Validate ofCom error text for ([^\"]*) if exist in Agent channel$")
+    public void validateOfComErrorInAgent(String codeStatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_ConfirmationPage.class);
+            Agent_ConfirmationPageActions.validateOfComErrorInAgent(codeStatus);
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+            Assert.fail("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
         }
     }
 
