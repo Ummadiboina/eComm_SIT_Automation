@@ -323,34 +323,40 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//h1[normalize-space()='Review your details']/../div[3]/button[text()='Confirm']")
     public static WebElement reviewConfirmCTA;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space()='Are you switching to O2?']")
+    @FindBy(how = How.XPATH, using = "//h2[normalize-space()='Are you switching to O2?']")
     public static WebElement switchingO2Question;
 
-    @FindBy(how = How.XPATH, using = "//*[@class='switchingO2Intro']")
+    @FindBy(how = How.XPATH, using = "//div[@class='ofComTextToSwitch']/p")
     public static WebElement switchingO2Intro;
 
-    @FindBy(how = How.XPATH, using = "//a[normalize-space='What is a PAC and STAC code?']")
+    @FindBy(how = How.XPATH, using = "//a[contains(normalize-space(),'What is a PAC or STAC code?')]")
     public static WebElement PACSTACLink;
 
-    @FindBy(how = How.XPATH, using = "//*[@class='PACSTACOverlayText']")
+    @FindBy(how = How.XPATH, using = "//div[@id='PACnSTACOverlayDescription']/p")
     public static WebElement PACSTACOverlayText;
 
-    @FindBy(how = How.XPATH, using = "//*[@class='PACSTACOverlayClose']")
+    @FindBy(how = How.XPATH, using = "//div[@id='pacNpac-overlay']/div/a")
     public static WebElement PACSTACOverlayClose;
 
-    @FindBy(how = How.XPATH, using = "//*[@class='PACSTACCheckBox']")
+    @FindBy(how = How.XPATH, using = "//input[@id='pac-npac-checked']")
     public static WebElement PACSTACCheckBox;
 
-    @FindBy(how = How.XPATH, using = "//*[@class='PACSTACMobileNum']")
+    @FindBy(how = How.XPATH, using = "//div[@id='input-mnumber']/div/input")
     public static WebElement PACSTACMobileNum;
 
-    @FindBy(how = How.XPATH, using = "//*[@class='PACSTACcode']")
+    @FindBy(how = How.XPATH, using = "//div[@id='input-pacnpac']/div/input")
     public static WebElement PACSTACcode;
 
-    @FindBy(how = How.XPATH, using = "//*[@class='emptyMobileNumError']")
+    @FindBy(how = How.XPATH, using = "//div[@class='form-element-container switcho2']")
+    public static WebElement PACSTACContainerEnable;
+
+    @FindBy(how = How.XPATH, using = "//div[@class='form-element-container switcho2 hide']")
+    public static WebElement PACSTACContainerDisable;
+
+    @FindBy(how = How.XPATH, using = "//label[@id='mnumber-error']")
     public static WebElement emptyMobileNumError;
 
-    @FindBy(how = How.XPATH, using = "//*[@class='emptyPACSTACcodeError']")
+    @FindBy(how = How.XPATH, using = "//label[@id='pacnpac-error']")
     public static WebElement emptyPACSTACcodeError;
 
     @FindBy(how = How.XPATH, using = ("//div[@class='error-msg']"))
@@ -362,6 +368,49 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@id='existing-pay']")
     public static WebElement existingPaymentOption;
 
+    @FindBy(how = How.XPATH, using = "//input[@id='pac-npac-checked']/../label")
+    public static WebElement PACSTACCheckBoxTxt;
+
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'msgBox paypalUpfront successMsg')]")
+    public static WebElement confirmMessageFromPayPal;
+
+    @FindBy(how = How.XPATH, using = "//label[@id='pacnpac-validation-error']")
+    public static WebElement PACSTACcodeError;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='housenumber']/../../div")
+    public static WebElement HousenumberField;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='postcode']/../../div[1]")
+    public static WebElement PostcodeField;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='email']/../../div")
+    public static WebElement Email_Address_Field;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='first-name']/../../../div[1]")
+    public static WebElement First_Name_Field;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='last-name']/../../div")
+    public static WebElement Last_Name_Field;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='contact-number']/../.././div")
+    public static WebElement Contact_Number_Field;
+
+    @FindBy(how = How.XPATH, using = "//div[@id='input-password']")
+    public static WebElement Password_Field;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='security-answer']/../.././div")
+    public static WebElement Security_answer_Field;
+
+    @FindBy(how = How.XPATH, using = "//a[@id='deliver-to-store-tab']")
+    public static WebElement cncCollect;
+    @FindBy(how = How.XPATH, using = "//input[@name='storePostcode']")
+    public static WebElement StorePostcode;
+
+    @FindBy(how = How.ID, using = "store-postcode-submit")
+    public static WebElement PostcodeSubmit;
+
+    @FindBy(how = How.XPATH, using = ("(//div[contains(@class,'tileContent')]/../div)[1]"))
+    public static WebElement firstStore;
 
 }
 

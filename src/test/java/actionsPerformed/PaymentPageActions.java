@@ -226,8 +226,11 @@ public class PaymentPageActions extends Environment {
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
         }*/
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,250)", "");
+        Screenshots.captureScreenshot();
 
-        if(driver.findElements(By.xpath("//input[@id='confirm-address']")).size()>0){
+        if(driver.findElements(By.xpath("//span[@id='confirm-address-custom']")).size()>0){
             pageobjects.PaymentPage.affordabilityAgreeCreditCheck.click();
             log.debug("Selected agree CreditCheck check box\n");
             Thread.sleep(2000);
@@ -569,6 +572,53 @@ public class PaymentPageActions extends Environment {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    //ITFD-955
+
+    public static void Bank_details_Field(String Username) throws IOException, InterruptedException {
+
+        //scrollToAnElement.scrollToElement(PaymentPage.Name_On_Account);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,300)", "");
+
+        Thread.sleep(2000);
+        if(driver.findElements(By.xpath("//input[@id='accountName']")).size()>0) {
+
+
+            String beforeName_on_Account = pageobjects.PaymentPage.Name_On_Account_Field.getAttribute("class");
+            Assert.assertEquals(beforeName_on_Account, "float-container");
+            pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
+            String afterName_on_Account = pageobjects.PaymentPage.Name_On_Account_Field.getAttribute("class");
+            Assert.assertEquals(afterName_on_Account, "float-container active");
+            log.debug("Entered name is " + Username);
+            log.debug("Name_on_Account field text is shifted upper leffer corner\n");
+            Thread.sleep(2000);
+
+            String beforeAccount_Number = pageobjects.PaymentPage.Account_Number_Field.getAttribute("class");
+            Assert.assertEquals(beforeAccount_Number, "float-container");
+            pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
+            String afterAccount_Number = PaymentPage.Account_Number_Field.getAttribute("class");
+            Assert.assertEquals(afterAccount_Number, "float-container active");
+            log.debug("Entered Account number - 10207136");
+            log.debug("Account_Number field text is shifted upper leffer corner\n");
+            Thread.sleep(2000);
+
+            pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
+            log.debug("Entered sort code - 20");
+            Thread.sleep(2000);
+            pageobjects.PaymentPage.Sort_Code2.sendKeys("15");
+            log.debug("Entered sort code - 15");
+            Thread.sleep(2000);
+            pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
+            log.debug("Entered sort code - 96");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
+            log.debug("Clicked on the Accept Terms checkbox");
+        }
+        Screenshots.captureScreenshot();
+
     }
 
 }

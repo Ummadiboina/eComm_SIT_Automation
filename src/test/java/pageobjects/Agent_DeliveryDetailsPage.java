@@ -5,8 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class Agent_DeliveryDetailsPage {
-	
-	  
 			
 		@FindBy(how=How.ID,using="customerDetailsProceedButton")
 		public static WebElement AgreeAdvsioryCheck;
@@ -82,17 +80,45 @@ public class Agent_DeliveryDetailsPage {
 		
 		@FindBy(how=How.ID,using="btnPayNow")
 		public static WebElement UsethisCard;
-		
-		
-		
+
 		@FindBy(how=How.XPATH,using="//*[@id='creditCheckAndAgreementAndStatus']/input[3]")
 		public static WebElement PerformCreditCheck;
-		
-		
 
-	
-	
-		
+	@FindBy(how = How.XPATH, using = "//*[normalize-space()='Are you switching to O2?']")
+	public static WebElement switchingO2Question;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='switchingO2Intro']")
+	public static WebElement switchingO2Intro;
+
+	@FindBy(how = How.XPATH, using = "//a[normalize-space='What is a PAC and STAC code?']")
+	public static WebElement PACSTACLink;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='PACSTACOverlayText']")
+	public static WebElement PACSTACOverlayText;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='PACSTACOverlayClose']")
+	public static WebElement PACSTACOverlayClose;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='PACSTACCheckBox']")
+	public static WebElement PACSTACCheckBox;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='PACSTACMobileNum']")
+	public static WebElement PACSTACMobileNum;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='PACSTACcode']")
+	public static WebElement PACSTACcode;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='emptyMobileNumError']")
+	public static WebElement emptyMobileNumError;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='emptyPACSTACcodeError']")
+	public static WebElement emptyPACSTACcodeError;
+
+	@FindBy(how = How.XPATH, using = ("//div[@class='error-msg']"))
+	public static WebElement DeliveryErrorText;
+
+	@FindBy(how = How.XPATH, using = ("//div[@class='error-msg']"))
+	public static WebElement PACSTACCheckBoxTxt;
 		
 		
 }

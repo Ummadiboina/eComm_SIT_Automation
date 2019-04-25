@@ -19,7 +19,7 @@ Feature: 137_Reg_AFA_Phones_Click_And_Collect_Now
     And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer>  in delivery page
     And validate register status
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
-    And Choose <DeliveryType> delivery address and delivery time
+    #And Choose <DeliveryType> delivery address and delivery time
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
     And Validating Click and Collect Now details in checkout pages
@@ -27,5 +27,5 @@ Feature: 137_Reg_AFA_Phones_Click_And_Collect_Now
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples:
-      | Device               | Tariffs | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
-      | Huawei P20 Pro Black | Random  | HomeDelivery | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |
+      | Device                 | Tariffs | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
+      | OnePlus 5T 128GB Black | Refresh | HomeDelivery | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |

@@ -1,12 +1,12 @@
 package actionsPerformed;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import GlobalActions.scrollToAnElement;
+import helpers.getOperatingSystemAndBrowserDetails;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -25,6 +25,7 @@ import steps.Hooks;
 public class BasketPageActions extends Environment {
 
 	final static Logger log = Logger.getLogger("BasketPageActions");
+	public static String upFrontValue="";
 
 	public static void validatelabel() throws InterruptedException, IOException {
 		log.debug(" ");
@@ -163,13 +164,12 @@ public class BasketPageActions extends Environment {
 			checkOutButtonValidation.click();
 		} else {
 			Thread.sleep(4000);
-			if(!pageobjects.BasketPage.checkoutbtn.isEnabled())
-			{
+			if (!pageobjects.BasketPage.checkoutbtn.isEnabled()) {
 				//Thread.sleep(4000);
 				scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//input[@id='noNeedNewSim']")));
 				Screenshots.captureScreenshot();
 
-				JavascriptExecutor executor = (JavascriptExecutor)driver;
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
 				executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//input[@id='noNeedNewSim']")));
 				//driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 			}
@@ -179,7 +179,7 @@ public class BasketPageActions extends Environment {
 			Screenshots.captureScreenshot();
 			log.debug("Queue page is not displayed");
 			WebElement element = pageobjects.BasketPage.checkoutbtn;
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", element);
 
 			//pageobjects.BasketPage.checkoutbtn.click();
@@ -192,7 +192,7 @@ public class BasketPageActions extends Environment {
 	}
 
 	public static void ValidateBasketPageContents(String Element, String expValue) throws IOException, InterruptedException {
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		boolean fname = false;
 		log.debug("Shop basket pages validations" + driver.getTitle());
 
@@ -225,12 +225,12 @@ public class BasketPageActions extends Environment {
 
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 
-		if(driver.findElements(By.xpath("//div[@class='hasDelayedDeliveryItems']")).size()>0) {
+		if (driver.findElements(By.xpath("//div[@class='hasDelayedDeliveryItems']")).size() > 0) {
 			log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
 		}
 
 
-		if(Element.equalsIgnoreCase("DataRollOver")){
+		if (Element.equalsIgnoreCase("DataRollOver")) {
 
 			/*String actValue = "";
 
@@ -242,10 +242,9 @@ public class BasketPageActions extends Environment {
 
 			String actPlnListElmTxt = driver.findElement(By.xpath("//h3[@class='section-parent-header']//following-sibling::p")).getText();
 			Thread.sleep(2000);
-			if(actPlnListElmTxt.contains(expValue)){
+			if (actPlnListElmTxt.contains(expValue)) {
 				log.debug("Selected Data Roll over plan details is displayed in Basket page");
-			}
-			else{
+			} else {
 				log.debug("Selected Data Roll over plan details is not displayed in Basket page");
 			}
 		}
@@ -329,8 +328,8 @@ public class BasketPageActions extends Environment {
 	}
 
 	public static void CollectionorDelivery(String elementName) throws InterruptedException, IOException {
-		Thread.sleep(4000);
-		if(driver.findElements(By.xpath("//*[@id='homeDelivery']")).size()  >  0) {
+		Thread.sleep(6000);
+		if (driver.findElements(By.xpath("//*[@id='homeDelivery']")).size() > 0) {
 			//if(!BasketPage.checkoutbtn.isDisplayed()){
 			if (elementName.contains("homeDelivery")) {
 				Thread.sleep(3000);
@@ -380,45 +379,44 @@ public class BasketPageActions extends Environment {
 	public static void checkStoreStockForTradeIn(String elementName) throws InterruptedException, IOException {
 
 
+		if (elementName.contains("homeDelivery")) {
+			pageobjects.BasketPage.HomeDeliverySelect.click();
+			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("HomeDelivery is Selected");
+			log.debug("HomeDelivery is Selected");
+			Screenshots.captureScreenshot();
 
-			if (elementName.contains("homeDelivery")) {
-				pageobjects.BasketPage.HomeDeliverySelect.click();
-				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-				log.debug("HomeDelivery is Selected");
-				log.debug("HomeDelivery is Selected");
-				Screenshots.captureScreenshot();
-
-			}
-			if (elementName.contains("clickAndCollect")) {
-				pageobjects.BasketPage.checkSoteSotck_TradeIn.click();
-				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-				log.debug("click And Collect is Selected");
-				log.debug("clickAndCollect radio button is Selected");
-				Thread.sleep(4000);
-				pageobjects.BasketPage.StorePostcode.sendKeys("M4");
-				log.debug("PostCode Entered for Search");
-				Thread.sleep(3000);
-				Screenshots.captureScreenshot();
-				Thread.sleep(2000);
-				JavascriptExecutor jse = (JavascriptExecutor) driver;
-				jse.executeScript("arguments[0].click();", pageobjects.BasketPage.PostcodeSubmit);
-				//pageobjects.BasketPage.PostcodeSubmit.click();
-				Thread.sleep(5000);
-				log.debug("Postcode Submitted for Search");
-
-				scrollToAnElement.scrollToElement(BasketPage.firstStore);
-				Thread.sleep(2000);
-				Screenshots.captureScreenshot();
-
-				pageobjects.BasketPage.Collectfromthisstore.click();
-				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-				log.debug("Store Selected for Collection");
-
-				Screenshots.captureScreenshot();
-				Thread.sleep(7000);
-
-			}
 		}
+		if (elementName.contains("clickAndCollect")) {
+			pageobjects.BasketPage.checkSoteSotck_TradeIn.click();
+			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("click And Collect is Selected");
+			log.debug("clickAndCollect radio button is Selected");
+			Thread.sleep(4000);
+			pageobjects.BasketPage.StorePostcode.sendKeys("M4");
+			log.debug("PostCode Entered for Search");
+			Thread.sleep(3000);
+			Screenshots.captureScreenshot();
+			Thread.sleep(2000);
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("arguments[0].click();", pageobjects.BasketPage.PostcodeSubmit);
+			//pageobjects.BasketPage.PostcodeSubmit.click();
+			Thread.sleep(5000);
+			log.debug("Postcode Submitted for Search");
+
+			scrollToAnElement.scrollToElement(BasketPage.firstStore);
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+
+			pageobjects.BasketPage.Collectfromthisstore.click();
+			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Store Selected for Collection");
+
+			Screenshots.captureScreenshot();
+			Thread.sleep(7000);
+
+		}
+	}
 
 	public static void JuneReleaseBasketContent() throws IOException {
 
@@ -524,9 +522,7 @@ public class BasketPageActions extends Environment {
 
 			log.debug("successfully verified the basket section after phone selection");
 			Screenshots.captureScreenshot();
-		}
-
-		catch (AssertionError e) {
+		} catch (AssertionError e) {
 
 			log.debug(
 					"Assertion failed: Previously selected Non Connected device is present in the Basket section after phone selection"
@@ -615,8 +611,8 @@ public class BasketPageActions extends Environment {
 
 		if (MyNonConnDevices.size() != 0) {
 			int MyNonConnDevicesSize = MyNonConnDevices.size();
-			if(MyNonConnDevicesSize>2) {
-				MyNonConnDevicesSize = MyNonConnDevicesSize-1;
+			if (MyNonConnDevicesSize > 2) {
+				MyNonConnDevicesSize = MyNonConnDevicesSize - 1;
 			}
 
 			for (int i = 0; i < MyNonConnDevicesSize; i++) {
@@ -638,30 +634,29 @@ public class BasketPageActions extends Environment {
 		}
 
 		//DisplayedDevices.containsAll(SelectedDevices)
-		int cnt= 0;
+		int cnt = 0;
 
-		if (DisplayedDevices.size() != 0 ) {
-			String displayDeviceText="";
-			String selectedDeviceText="";
+		if (DisplayedDevices.size() != 0) {
+			String displayDeviceText = "";
+			String selectedDeviceText = "";
 			for (int i = 0; i < DisplayedDevices.size(); i++) {
-				displayDeviceText= DisplayedDevices.get(i);
+				displayDeviceText = DisplayedDevices.get(i);
 				for (int j = 0; j < SelectedDevices.size(); j++) {
-					selectedDeviceText= SelectedDevices.get(j);
-					if(displayDeviceText.contains(selectedDeviceText)){
-						log.debug("Devices in basket are matching with selected device :: Displayed device is- "+ displayDeviceText+" and Selected device is -"+selectedDeviceText);
+					selectedDeviceText = SelectedDevices.get(j);
+					if (displayDeviceText.contains(selectedDeviceText)) {
+						log.debug("Devices in basket are matching with selected device :: Displayed device is- " + displayDeviceText + " and Selected device is -" + selectedDeviceText);
 						cnt++;
 					}
 				}
 			}
 		}
 
-		log.debug("count -"+ cnt);
-		System.out.println("count -"+ cnt);
+		log.debug("count -" + cnt);
+		System.out.println("count -" + cnt);
 
-		if(cnt == SelectedDevices.size())
-		{
+		if (cnt == SelectedDevices.size()) {
 			log.debug("Devices in basket are matching with Selected device");
-		}else{
+		} else {
 			log.debug("Devices in basket are not matching with selected devices");
 			Assert.fail("Selected devices are not in basket");
 		}
@@ -818,7 +813,7 @@ public class BasketPageActions extends Environment {
 		pageobjects.UpgradeCustomerPage.promoCodeSubmit.click();
 		log.debug("Submited the promo code");
 		Thread.sleep(6000);
-		if(UpgradeCustomerPage.AppliedPromoCodeValidation.isDisplayed()){
+		if (UpgradeCustomerPage.AppliedPromoCodeValidation.isDisplayed()) {
 			System.out.println(UpgradeCustomerPage.AppliedPromoCodeValidation.getText());
 			log.info(UpgradeCustomerPage.AppliedPromoCodeValidation.getText());
 		}
@@ -860,12 +855,9 @@ public class BasketPageActions extends Environment {
 		String Expected = "You order is in progress";
 
 
-		if(ActualText.contains(Expected))
-		{
+		if (ActualText.contains(Expected)) {
 			Assert.fail("Order in progress page is displayed");
-		}
-		else
-		{
+		} else {
 			log.debug("Order in progress is not displayed");
 		}
 		Thread.sleep(5000);
@@ -876,21 +868,21 @@ public class BasketPageActions extends Environment {
 	//Validating your bill cap in Basket page
 	public static void ValidateAppliedBillSpendCapIn_BasketPage(String BillCap, String CapAmount, String BSCstatus) throws InterruptedException, IOException {
 		Thread.sleep(5000);
-		String AppliedBillCap="";
+		String AppliedBillCap = "";
 		String pageTitle = driver.getTitle();
 		scrollToAnElement.scrollToElement(BasketPage.YourOrder);
 		Thread.sleep(2000);
 		Screenshots.captureScreenshot();
 		try {
-			if(BSCstatus.equalsIgnoreCase("Enabled")) {
+			if (BSCstatus.equalsIgnoreCase("Enabled")) {
 				if (driver.findElements(By.xpath("//section[@id='billSpendCapSection']")).size() > 0) {
 
-					log.debug("Bill spend cap section is displayed at "+pageTitle+" page \n");
+					log.debug("Bill spend cap section is displayed at " + pageTitle + " page \n");
 					/*scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader);
 					Screenshots.captureScreenshot();*/
 					JavascriptExecutor jse = (JavascriptExecutor) driver;
 					jse.executeScript("window.scrollBy(0,200)", "");
-					log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.BasketPage.BillSpendCapHeader.getText());
+					log.debug("Bill Spend Cap header is displayed in " + pageTitle + " page ie :: " + pageobjects.BasketPage.BillSpendCapHeader.getText());
 
 					log.debug("Basket page Bill spend cap section overlay icon is displayed and clicking on it \n");
 					pageobjects.BasketPage.BasketBSCOverlay.click();
@@ -899,7 +891,7 @@ public class BasketPageActions extends Environment {
 
 					String basketBSCOverlayTxt = pageobjects.BasketPage.BasketBSCOverlayTxt.getText();
 					Thread.sleep(3000);
-					log.debug("Basket page BSC section overlay text:: \n"+basketBSCOverlayTxt);
+					log.debug("Basket page BSC section overlay text:: \n" + basketBSCOverlayTxt);
 					log.debug("Basket page BSC section overlay is closing");
 					pageobjects.BasketPage.BasketBSCOverlayCloseBtn.click();
 					log.debug("Basket page BSC section overlay is closed");
@@ -916,7 +908,7 @@ public class BasketPageActions extends Environment {
 								log.debug("Failed to validate 'Dont Cap My Bill' link option and cap text is::" + AppliedBillCap);
 								Assert.fail("Failed to validate 'Dont Cap My Bill' link option  and cap text is::" + AppliedBillCap);
 							}
-						}else{
+						} else {
 							if (AppliedBillCap.contains(CapAmount)) {
 								log.debug("Applied bill cap is validated successfully in " + pageTitle + " page ie :: " + AppliedBillCap);
 							} else {
@@ -937,20 +929,20 @@ public class BasketPageActions extends Environment {
 					log.debug("Bill cap section is not present under order summary section in " + pageTitle + " page");
 					Assert.fail("Bill cap section is not present under order summary section in " + pageTitle + " page");
 				}
-			}else if(BSCstatus.equalsIgnoreCase("Disabled")){
+			} else if (BSCstatus.equalsIgnoreCase("Disabled")) {
 				if (driver.findElements(By.xpath("//section[@id='billSpendCapSection']")).size() > 0) {
 					log.debug("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
 					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
-				}else{
+				} else {
 					log.debug("As expected, Bill spend cap section is disabled in " + pageTitle + " page");
 				}
-			}else {
+			} else {
 				System.out.println("Unable to validate bill spend cap section in " + pageTitle + " page\n");
 				log.debug("Unable to validate bill spend cap section in " + pageTitle + " page\n");
 				Assert.fail("Unable to validate bill spend cap section in " + pageTitle + " page\n");
 			}
 
-		}catch(Exception e){
+		} catch (Exception e) {
 			log.debug("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
 			Assert.fail("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
 		}
@@ -962,7 +954,7 @@ public class BasketPageActions extends Environment {
 
 			String classicCNCErrorMsg = pageobjects.BasketPage.ErrorText.getText();
 
-			if (classicCNCErrorMsg.contains("not applicable")){
+			if (classicCNCErrorMsg.contains("not applicable")) {
 				log.debug("As expected, the error message is matching\n");
 			} else {
 				log.debug("No warning message as plan is available for ClickNCollectNow");
@@ -981,10 +973,540 @@ public class BasketPageActions extends Environment {
 
 			pageobjects.BasketPage.changetariff.click();
 
-		}else{
+		} else {
 			Assert.fail("Not able to find the Change tarff link in Basket page");
 		}
 
 		Screenshots.captureScreenshot();
 	}
+
+	//ITFD-662, Digital payment validation By Jamal Khan, May release 2019
+	public static void validateDigitalPaymentInBasketPage(String journey, String DPFlag, String DPStatus) {
+		try {
+			String browserName = getOperatingSystemAndBrowserDetails.getBrowserName();
+			String OSName = getOperatingSystemAndBrowserDetails.getOperatingSystemName();
+
+			String paymentCTA = BasketPage.paymentCTA.getText();
+			String paymentCopyText = BasketPage.paymentCopyText.getText();
+			Screenshots.captureScreenshot();
+			scrollToAnElement.scrollToElement(BasketPage.YourOrder);
+			Screenshots.captureScreenshot();
+
+			String acceptedPaymentsCopy = BasketPage.acceptedPayments.getText();
+			Thread.sleep(1000);
+			if (acceptedPaymentsCopy.contains("Accepted payments")) {
+				log.debug("As expected, accepted payments heading is displaying\n");
+			} else {
+				log.debug("Failed, accepted payments heading is not displaying\n");
+				Assert.fail("Failed, accepted payments heading is not displaying\n");
+			}
+
+			if (OSName.contains("OS_WINDOWS") || OSName.contains("OS_LINUX") || OSName.contains("OS_SOLARIS")) {
+				log.debug("We are carrying our journey in Windows/Linux/Solaris system\n");
+
+				if (DPStatus.equalsIgnoreCase("Enabled")) {
+
+					if (driver.findElements(By.xpath("ApplePayDP")).size() > 0) {
+						log.debug("Failed: ApplePay digital payment method should be disabled as the journey is performing with Windows system\n");
+						Assert.fail("Failed: ApplePay digital payment method should be disabled as the journey is performing with Windows system\n");
+					}else{
+						log.debug("As expected, ApplePay digital payment method is not displayed in Windows system\n");
+					}
+
+					if (DPFlag.equalsIgnoreCase("PayPal") || DPFlag.equalsIgnoreCase("Both")) {
+						if (driver.findElements(By.xpath("(//div[@class='expCheckoutblock'])")).size() > 0) {
+							log.debug("As expected, PayPal payment method is enabled in Windows system\n");
+
+							//Fast checkout CTA
+							if (journey.equalsIgnoreCase("Existing")) {
+								if (paymentCTA.contains("Express checkout")) {
+									log.debug("As expected, Express checkout copy text is displayed for payment checkout CTA for PayPal option for existing customer journey ie:: "+paymentCTA+"\n");
+								} else {
+									log.debug("Failed, Express checkout copy text is not displayed for payment checkout CTA for PayPal option for existing customer journey ie:: "+paymentCTA+"\n");
+									Assert.fail("Failed, Express checkout copy text is not displayed for payment checkout CTA for PayPal option for existing customer journey ie:: "+paymentCTA+"\n");
+								}
+							} else {
+								if (paymentCTA.contains("Fast checkout")) {
+									log.debug("As expected, Fast checkout copy text is displayed for payment checkout CTA for PayPal option ie:: "+paymentCTA+"\n");
+								} else {
+									log.debug("Failed, Fast checkout copy text is not displayed for payment checkout CTA for PayPal option ie:: "+paymentCTA+"\n");
+									Assert.fail("Failed, Fast checkout copy text is not displayed for payment checkout CTA for PayPal option ie:: "+paymentCTA+"\n");
+								}
+							}
+
+							//Fast checkout copy text
+							if (paymentCopyText.contains("Check out faster with PayPal")) {
+								log.debug("As expected, Check out faster with PayPal copy is displayed for PayPal option ie:: "+paymentCopyText+"\n");
+							} else {
+								log.debug("Failed, Check out faster with PayPal copy is not displayed for PayPal option ie:: "+paymentCopyText+"\n");
+								Assert.fail("Failed, Check out faster with PayPal copy is not displayed for PayPal option ie:: "+paymentCopyText+"\n");
+							}
+
+							//Clicking on Fast checkout CTA for paypal validation
+							if (BasketPage.paymentCTA.isEnabled()) {
+								BasketPage.paymentCTA.click();
+								log.debug("Fast checkout CTA is clicked\n");
+								Thread.sleep(35000);
+								Screenshots.captureScreenshot();
+								//validating fast checkout overlay
+								if (BasketPage.fastCheckoutOverlay.isDisplayed()) {
+									log.debug("Fast Checkout Overlay header copy is: " + BasketPage.fastCheckoutOverlay.getText());
+									String fastCheckoutFirstLineCopy = BasketPage.fastCheckoutFirstLineCopy.getText();
+									String fastCheckoutSecondLineCopy = BasketPage.fastCheckoutSecondLineCopy.getText();
+									String fastCheckoutThirdLineCopy = BasketPage.fastCheckoutThirdLineCopy.getText();
+									String fastCheckoutFourthLineCopy = BasketPage.fastCheckoutFourthLineCopy.getText();
+									Thread.sleep(2000);
+									if (fastCheckoutFirstLineCopy.equalsIgnoreCase("New to O2? Check out faster by using PayPal for your upfront payment.")) {
+										log.debug("fastCheckoutFirstLineCopy is matching ie:: "+fastCheckoutFirstLineCopy+"\n");
+									} else {
+										log.debug("fastCheckoutFirstLineCopy is not matching ie:: "+fastCheckoutFirstLineCopy+"\n");
+										Assert.fail("fastCheckoutFirstLineCopy is not matching ie:: "+fastCheckoutFirstLineCopy+"\n");
+									}
+
+									if (fastCheckoutSecondLineCopy.equalsIgnoreCase("We’ll still need your bank details for your monthly payments.")) {
+										log.debug("fastCheckoutSecondLineCopy is matching ie:: "+fastCheckoutSecondLineCopy+"\n");
+									} else {
+										log.debug("fastCheckoutSecondLineCopy is not matching ie:: "+fastCheckoutSecondLineCopy+"\n");
+										Assert.fail("fastCheckoutSecondLineCopy is not matching ie:: "+fastCheckoutSecondLineCopy+"\n");
+									}
+
+									if (fastCheckoutThirdLineCopy.equalsIgnoreCase("For Existing Customers, use our Express Checkout.")) {
+										log.debug("fastCheckoutThirdLineCopy is matching ie:: "+fastCheckoutThirdLineCopy+"\n");
+									} else {
+										log.debug("fastCheckoutThirdLineCopy is not matching ie:: "+fastCheckoutThirdLineCopy+"\n");
+										Assert.fail("fastCheckoutThirdLineCopy is not matching ie:: "+fastCheckoutThirdLineCopy+"\n");
+									}
+
+									if (fastCheckoutFourthLineCopy.equalsIgnoreCase("(You may still use PayPal later to pay for any Upfront payment.)")) {
+										log.debug("fastCheckoutFourthLineCopy is matching ie:: "+fastCheckoutFourthLineCopy+"\n");
+									} else {
+										log.debug("fastCheckoutFourthLineCopy is not matching ie:: "+fastCheckoutFourthLineCopy+"\n");
+										Assert.fail("fastCheckoutFourthLineCopy is not matching ie:: "+fastCheckoutFourthLineCopy+"\n");
+									}
+
+									//closing Fast checkout Overlay
+									log.debug("Fast checkout overlay is closing now\n");
+									BasketPage.fastCheckoutOverlayClose.click();
+									log.debug("Fast checkout overlay is closed\n");
+
+								} else {
+									log.debug("Fast checkout overlay is not displayed\n");
+									Assert.fail("Fast checkout overlay is not displayed\n");
+								}
+
+							} else {
+								log.debug("Fast checkout CTA is disabled\n");
+								Assert.fail("Fast checkout CTA is disabled\n");
+							}
+						} else {
+							log.debug("Failed: PayPal digital payment method supposed to be enabled for enable status and when the journey is performing with Windows system\n");
+							Assert.fail("Failed: PayPal digital payment method supposed to be enabled for enable status and when the journey is performing with Windows system\n");
+						}
+					} else if (DPFlag.equalsIgnoreCase("ApplePay")) {
+						if (driver.findElements(By.xpath("ApplePayDP")).size() > 0) {
+							log.debug("Failed: ApplePay digital payment method should be disabled as the journey is performing with Windows system\n");
+							Assert.fail("Failed: ApplePay digital payment method should be disabled as the journey is performing with Windows system\n");
+						}
+					} else if (DPFlag.equalsIgnoreCase("Disabled")) {
+						if (driver.findElements(By.xpath("(//div[@class='expCheckoutblock'])")).size() > 0) {
+							log.debug("Failed: Both digital payment methods should be disabled for disabled status\n");
+							Assert.fail("Failed: Both digital payment methods should be disabled for disabled status\n");
+						}
+					}
+				} else if (DPStatus.equalsIgnoreCase("Disabled")) {
+					if (driver.findElements(By.xpath("(//div[@class='expCheckoutblock'])")).size() > 0) {
+						log.debug("Failed: digital payment method should be disabled for disabled status\n");
+						Assert.fail("Failed: digital payment method should be disabled for disabled status\n");
+					}
+				}
+			} else if (OSName.contains("OS_MAC_OS_X") && browserName.contains("safari")) {
+				log.debug("We are carrying our journey in MAC system\n");
+
+				if (DPStatus.equalsIgnoreCase("Enabled")) {
+
+					if (DPFlag.equalsIgnoreCase("Both")) {
+						if (driver.findElements(By.xpath("(//div[@class='expCheckoutblock'])")).size() > 0) {
+
+						} else {
+							log.debug("Failed: ApplePay digital payment method is disabled for enabled status\n");
+							Assert.fail("Failed: ApplePay digital payment method is disabled for enabled status\n");
+						}
+
+						if (driver.findElements(By.xpath("(//div[@class='expCheckoutblock'])")).size() > 0) {
+
+						} else {
+							log.debug("Failed: PayPal digital payment method supposed to be enabled for enable status\n");
+							Assert.fail("Failed: PayPal digital payment method supposed to be enabled for enable status\n");
+						}
+
+						if (journey.equalsIgnoreCase("Existing")) {
+							if (paymentCTA.contains("Express checkout")) {
+								log.debug("As expected, checkout CTA copy text is matching in existing customer journey in MAC system ie:: "+paymentCTA+"\n");
+							} else {
+								log.debug("Failed, checkout CTA copy text is not matching in existing customer journey in MAC system ie:: "+paymentCTA+"\n");
+								Assert.fail("Failed, checkout CTA copy text is not matching in existing customer journey in MAC system ie:: "+paymentCTA+"\n");
+							}
+						} else {
+							if (paymentCTA.contains("Fast checkout")) {
+								log.debug("As expected, checkout CTA copy text is matching when both options are enabled and when performing in MAC system ie :: "+paymentCTA+"\n");
+							} else {
+								log.debug("Failed, checkout CTA copy text is not matching when both options are enabled and when performing in MAC system ie:: "+paymentCTA+"\n");
+								Assert.fail("Failed, checkout CTA copy text is not matching when both options are enabled and when performing in MAC system ie:: "+paymentCTA+"\n");
+							}
+						}
+
+						if (paymentCopyText.contains("Check out faster with PayPal or Apple Pay")) {
+							log.debug("As expected, Check out faster with PayPal or Apple Pay copy is displayed when both options are enabled and when performing in MAC systemie ie:: "+paymentCopyText+"\n");
+						} else {
+							log.debug("Failed, Check out faster with PayPal or Apple Pay copy is not displayed when both options are enabled and when performing in MAC system ie:: "+paymentCopyText+"\n");
+							Assert.fail("Failed, Check out faster with PayPal or Apple Pay copy is not displayed when both options are enabled and when performing in MAC system ie:: "+paymentCopyText+"\n");
+						}
+
+						//Clicking on Fast checkout CTA for paypal validation
+						if (BasketPage.paymentCTA.isEnabled()) {
+							BasketPage.paymentCTA.click();
+							log.debug("Fast checkout CTA is clicked\n");
+							Thread.sleep(15000);
+							Screenshots.captureScreenshot();
+							//validating fast checkout overlay
+							if (BasketPage.fastCheckoutOverlay.isDisplayed()) {
+								log.debug("Fast Checkout Overlay header copy is: " + BasketPage.fastCheckoutOverlay.getText());
+								String fastCheckoutFirstLineCopy = BasketPage.fastCheckoutFirstLineCopy.getText();
+								String fastCheckoutSecondLineCopy = BasketPage.fastCheckoutSecondLineCopy.getText();
+								String fastCheckoutThirdLineCopy = BasketPage.fastCheckoutThirdLineCopy.getText();
+								String fastCheckoutFourthLineCopy = BasketPage.fastCheckoutFourthLineCopy.getText();
+
+								if (fastCheckoutFirstLineCopy.equalsIgnoreCase("New to O2? Check out faster by using PayPal or Apple Pay for your upfront payment.")) {
+									log.debug("fastCheckoutFirstLineCopy is matching ie:: "+fastCheckoutFirstLineCopy+"\n");
+								} else {
+									log.debug("fastCheckoutFirstLineCopy is not matching ie:: "+fastCheckoutFirstLineCopy+"\n");
+									Assert.fail("fastCheckoutFirstLineCopy is not matching ie:: "+fastCheckoutFirstLineCopy+"\n");
+								}
+
+								if (fastCheckoutSecondLineCopy.equalsIgnoreCase("We’ll still need your bank details for your monthly payments.")) {
+									log.debug("fastCheckoutSecondLineCopy is matching ie:: "+fastCheckoutSecondLineCopy+"\n");
+								} else {
+									log.debug("fastCheckoutSecondLineCopy is not matching ie:: "+fastCheckoutSecondLineCopy+"\n");
+									Assert.fail("fastCheckoutSecondLineCopy is not matching ie:: "+fastCheckoutSecondLineCopy+"\n");
+								}
+
+								if (fastCheckoutThirdLineCopy.equalsIgnoreCase("For Existing Customers, use our Express Checkout.")) {
+									log.debug("fastCheckoutThirdLineCopy is matching ie:: "+fastCheckoutThirdLineCopy+"\n");
+								} else {
+									log.debug("fastCheckoutThirdLineCopy is not matching ie:: "+fastCheckoutThirdLineCopy+"\n");
+									Assert.fail("fastCheckoutThirdLineCopy is not matching ie:: "+fastCheckoutThirdLineCopy+"\n");
+								}
+
+								if (fastCheckoutFourthLineCopy.equalsIgnoreCase("(You may still use PayPal later to pay for any Upfront payment.)")) {
+									log.debug("fastCheckoutFourthLineCopy is matching ie:: "+fastCheckoutFourthLineCopy+"\n");
+								} else {
+									log.debug("fastCheckoutFourthLineCopy is not matching ie:: "+fastCheckoutFourthLineCopy+"\n");
+									Assert.fail("fastCheckoutFourthLineCopy is not matching ie:: "+fastCheckoutFourthLineCopy+"\n");
+								}
+
+								//closing Fast checkout Overlay
+								log.debug("Fast checkout overlay is closing now\n");
+								BasketPage.fastCheckoutOverlayClose.click();
+								log.debug("Fast checkout overlay is closed\n");
+
+							} else {
+								log.debug("Fast checkout overlay is not displayed\n");
+								Assert.fail("Fast checkout overlay is not displayed\n");
+							}
+						} else {
+							log.debug("Fast checkout CTA is disabled\n");
+							Assert.fail("Fast checkout CTA is disabled\n");
+						}
+
+					} else if (DPFlag.equalsIgnoreCase("PayPal")) {
+						if (driver.findElements(By.xpath("(//div[@class='expCheckoutblock'])")).size() > 0) {
+
+							if (journey.equalsIgnoreCase("Existing")) {
+								if (paymentCTA.contains("Express checkout")) {
+									log.debug("As expected, checkout CTA copy text is matching in existing customer journey in MAC system ie:: "+paymentCTA+"\n");
+								} else {
+									log.debug("Failed, checkout CTA copy text is not matching in existing customer journey in MAC system ie:: "+paymentCTA+"\n");
+									Assert.fail("Failed, checkout CTA copy text is not matching in existing customer journey in MAC system ie:: "+paymentCTA+"\n");
+								}
+							} else {
+								if (paymentCTA.contains("Fast checkout")) {
+									log.debug("As expected, Fast checkout copy text is displayed for payment checkout CTA for PayPal option in MAC system ie:: "+paymentCTA+"\n");
+								} else {
+									log.debug("Failed, Fast checkout copy text is not displayed for payment checkout CTA for PayPal option in MAC system ie:: "+paymentCTA+"\n");
+									Assert.fail("Failed, Fast checkout copy text is not displayed for payment checkout CTA for PayPal option in MAC system ie:: "+paymentCTA+"\n");
+								}
+							}
+
+							if (paymentCopyText.contains("Check out faster with PayPal")) {
+								log.debug("As expected, Check out faster with PayPal copy is displayed for PayPal option in MAC system ie:: "+paymentCopyText+"\n");
+							} else {
+								log.debug("Failed, Check out faster with PayPal copy is not displayed for PayPal option in MAC system ie:: "+paymentCopyText+"\n");
+								Assert.fail("Failed, Check out faster with PayPal copy is not displayed for PayPal option in MAC system ie:: "+paymentCopyText+"\n");
+							}
+
+							//Clicking on Fast checkout CTA for paypal validation
+							if (BasketPage.paymentCTA.isEnabled()) {
+								BasketPage.paymentCTA.click();
+								log.debug("Fast checkout CTA is cliked\n");
+								Thread.sleep(15000);
+								Screenshots.captureScreenshot();
+								//validating fast checkout overlay
+								if (BasketPage.fastCheckoutOverlay.isDisplayed()) {
+									log.debug("Fast Checkout Overlay header copy is: " + BasketPage.fastCheckoutOverlay.getText());
+									String fastCheckoutFirstLineCopy = BasketPage.fastCheckoutFirstLineCopy.getText();
+									String fastCheckoutSecondLineCopy = BasketPage.fastCheckoutSecondLineCopy.getText();
+									String fastCheckoutThirdLineCopy = BasketPage.fastCheckoutThirdLineCopy.getText();
+									String fastCheckoutFourthLineCopy = BasketPage.fastCheckoutFourthLineCopy.getText();
+
+									if (fastCheckoutFirstLineCopy.equalsIgnoreCase("New to O2? Check out faster by using PayPal for your upfront payment.")) {
+										log.debug("fastCheckoutFirstLineCopy is matching ie:: "+fastCheckoutFirstLineCopy+"\n");
+									} else {
+										log.debug("fastCheckoutFirstLineCopy is not matching ie:: "+fastCheckoutFirstLineCopy+"\n");
+										Assert.fail("fastCheckoutFirstLineCopy is not matching ie:: "+fastCheckoutFirstLineCopy+"\n");
+									}
+
+									if (fastCheckoutSecondLineCopy.equalsIgnoreCase("We’ll still need your bank details for your monthly payments.")) {
+										log.debug("fastCheckoutSecondLineCopy is matching ie:: "+fastCheckoutSecondLineCopy+"\n");
+									} else {
+										log.debug("fastCheckoutSecondLineCopy is not matching ie:: "+fastCheckoutSecondLineCopy+"\n");
+										Assert.fail("fastCheckoutSecondLineCopy is not matching ie:: "+fastCheckoutSecondLineCopy+"\n");
+									}
+
+									if (fastCheckoutThirdLineCopy.equalsIgnoreCase("For Existing Customers, use our Express Checkout.")) {
+										log.debug("fastCheckoutThirdLineCopy is matching ie:: "+fastCheckoutThirdLineCopy+"\n");
+									} else {
+										log.debug("fastCheckoutThirdLineCopy is not matching ie:: "+fastCheckoutThirdLineCopy+"\n");
+										Assert.fail("fastCheckoutThirdLineCopy is not matching ie:: "+fastCheckoutThirdLineCopy+"\n");
+									}
+
+									if (fastCheckoutFourthLineCopy.equalsIgnoreCase("(You may still use PayPal later to pay for any Upfront payment.)")) {
+										log.debug("fastCheckoutFourthLineCopy is matching ie:: "+fastCheckoutFourthLineCopy+"\n");
+									} else {
+										log.debug("fastCheckoutFourthLineCopy is not matching ie:: "+fastCheckoutFourthLineCopy+"\n");
+										Assert.fail("fastCheckoutFourthLineCopy is not matching ie:: "+fastCheckoutFourthLineCopy+"\n");
+									}
+
+									//closing Fast checkout Overlay
+									log.debug("Fast checkout overlay is closing now\n");
+									BasketPage.fastCheckoutOverlayClose.click();
+									log.debug("Fast checkout overlay is closed\n");
+
+								} else {
+									log.debug("Fast checkout overlay is not displayed\n");
+									Assert.fail("Fast checkout overlay is not displayed\n");
+								}
+							} else {
+								log.debug("Fast checkout CTA is disabled\n");
+								Assert.fail("Fast checkout CTA is disabled\n");
+							}
+
+						} else {
+							log.debug("Failed: PayPal digital payment method supposed to be enabled for enable status\n");
+							Assert.fail("Failed: PayPal digital payment method supposed to be enabled for enable status\n");
+						}
+
+						if (driver.findElements(By.xpath("ApplePayDP")).size() > 0) {
+							log.debug("Failed: ApplePay digital payment method should be disabled for disable status\n");
+							Assert.fail("Failed: ApplePay digital payment method should be disabled for disable status\n");
+						}
+					} else if (DPFlag.equalsIgnoreCase("ApplePay")) {
+						if (driver.findElements(By.xpath("(//div[@class='expCheckoutblock'])")).size() > 0) {
+
+							if (journey.equalsIgnoreCase("Existing")) {
+								if (paymentCTA.contains("Express checkout")) {
+									log.debug("As expected, checkout CTA copy text is matching in existing customer journey in MAC system ie:: " + paymentCTA + "\n");
+								} else {
+									log.debug("Failed, checkout CTA copy text is not matching in existing customer journey in MAC system ie:: " + paymentCTA + "\n");
+									Assert.fail("Failed, checkout CTA copy text is not matching in existing customer journey in MAC system ie:: " + paymentCTA + "\n");
+								}
+							} else {
+								if (paymentCTA.contains("Fast checkout")) {
+									log.debug("As expected, Fast checkout copy text is displayed for payment checkout CTA for PayPal option in MAC system ie:: " + paymentCTA + "\n");
+								} else {
+									log.debug("Failed, Fast checkout copy text is not displayed for payment checkout CTA for PayPal option in MAC system ie:: " + paymentCTA + "\n");
+									Assert.fail("Failed, Fast checkout copy text is not displayed for payment checkout CTA for PayPal option in MAC system ie:: " + paymentCTA + "\n");
+								}
+							}
+
+							if (paymentCopyText.contains("Check out faster with Apple Pay")) {
+								log.debug("As expected, Check out faster with Apple Pay copy is displayed for PayPal option in MAC system ie:: " + paymentCopyText + "\n");
+							} else {
+								log.debug("Failed, Check out faster with Apple Pay copy is not displayed for PayPal option in MAC system ie:: " + paymentCopyText + "\n");
+								Assert.fail("Failed, Check out faster with Apple Pay copy is not displayed for PayPal option in MAC system ie:: " + paymentCopyText + "\n");
+							}
+
+							//Clicking on Fast checkout CTA for paypal validation
+							if (BasketPage.paymentCTA.isEnabled()) {
+								BasketPage.paymentCTA.click();
+								log.debug("Fast checkout CTA is clicked\n");
+								Thread.sleep(15000);
+								Screenshots.captureScreenshot();
+								//validating fast checkout overlay
+								if (BasketPage.fastCheckoutOverlay.isDisplayed()) {
+									log.debug("Fast Checkout Overlay header copy is: " + BasketPage.fastCheckoutOverlay.getText());
+									String fastCheckoutFirstLineCopy = BasketPage.fastCheckoutFirstLineCopy.getText();
+									String fastCheckoutSecondLineCopy = BasketPage.fastCheckoutSecondLineCopy.getText();
+									String fastCheckoutThirdLineCopy = BasketPage.fastCheckoutThirdLineCopy.getText();
+									String fastCheckoutFourthLineCopy = BasketPage.fastCheckoutFourthLineCopy.getText();
+
+									if (fastCheckoutFirstLineCopy.equalsIgnoreCase("New to O2? Check out faster by using Apple Pay for your upfront payment.")) {
+										log.debug("fastCheckoutFirstLineCopy is matching ie:: " + fastCheckoutFirstLineCopy + "\n");
+									} else {
+										log.debug("fastCheckoutFirstLineCopy is not matching ie:: " + fastCheckoutFirstLineCopy + "\n");
+										Assert.fail("fastCheckoutFirstLineCopy is not matching ie:: " + fastCheckoutFirstLineCopy + "\n");
+									}
+
+									if (fastCheckoutSecondLineCopy.equalsIgnoreCase("We’ll still need your bank details for your monthly payments.")) {
+										log.debug("fastCheckoutSecondLineCopy is matching ie:: " + fastCheckoutSecondLineCopy + "\n");
+									} else {
+										log.debug("fastCheckoutSecondLineCopy is not matching ie:: " + fastCheckoutSecondLineCopy + "\n");
+										Assert.fail("fastCheckoutSecondLineCopy is not matching ie:: " + fastCheckoutSecondLineCopy + "\n");
+									}
+
+									if (fastCheckoutThirdLineCopy.equalsIgnoreCase("For Existing Customers, use our Express Checkout.")) {
+										log.debug("fastCheckoutThirdLineCopy is matching ie:: " + fastCheckoutThirdLineCopy + "\n");
+									} else {
+										log.debug("fastCheckoutThirdLineCopy is not matching ie:: " + fastCheckoutThirdLineCopy + "\n");
+										Assert.fail("fastCheckoutThirdLineCopy is not matching ie:: " + fastCheckoutThirdLineCopy + "\n");
+									}
+
+									if (fastCheckoutFourthLineCopy.equalsIgnoreCase("(You may still use PayPal later to pay for any Upfront payment.)")) {
+										log.debug("fastCheckoutFourthLineCopy is matching ie:: " + fastCheckoutFourthLineCopy + "\n");
+									} else {
+										log.debug("fastCheckoutFourthLineCopy is not matching ie:: " + fastCheckoutFourthLineCopy + "\n");
+										Assert.fail("fastCheckoutFourthLineCopy is not matching ie:: " + fastCheckoutFourthLineCopy + "\n");
+									}
+
+									//closing Fast checkout Overlay
+									log.debug("Fast checkout overlay is closing now\n");
+									BasketPage.fastCheckoutOverlayClose.click();
+									log.debug("Fast checkout overlay is closed\n");
+
+								} else {
+									log.debug("Fast checkout overlay is not displayed\n");
+									Assert.fail("Fast checkout overlay is not displayed\n");
+								}
+							}
+						}else {
+								log.debug("Failed: ApplePay digital payment method should be enabled for enable status\n");
+								Assert.fail("Failed: ApplePay digital payment method should be enabled for enable status\n");
+						}
+						if (driver.findElements(By.xpath("PaypalDP")).size() > 0) {
+							log.debug("Failed: PayPal digital payment method disabled for disable status\n");
+							Assert.fail("Failed: PayPal digital payment method disabled for disable status\n");
+						}
+					} else if (DPFlag.equalsIgnoreCase("Disabled")) {
+						if (driver.findElements(By.xpath("DP")).size() > 0) {
+							log.debug("Failed: Both digital payment methods should be disabled for disabled status\n");
+							Assert.fail("Failed: Both digital payment methods should be disabled for disabled status\n");
+						}
+					}
+				} else if (DPStatus.equalsIgnoreCase("Disabled")) {
+					if (driver.findElements(By.xpath("(//div[@class='expCheckoutblock'])")).size() > 0) {
+						log.debug("Failed: digital payment method should be disabled for disabled status\n");
+						Assert.fail("Failed: digital payment method should be disabled for disabled status\n");
+					}
+				}
+			}
+		} catch (Exception e) {
+			log.debug("Exception found: "+e);
+		}
+	}
+
+	public static void makePaymentWithPayPalInBasketPage(String payPalUser, String payPalPassword) {
+		try{
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,-300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+
+			upFrontValue = BasketPage.upFrontValue.getText();
+			if (BasketPage.paymentCTA.isEnabled()) {
+				BasketPage.paymentCTA.click();
+				log.debug("Fast checkout CTA is clicked\n");
+				Thread.sleep(35000);
+				Screenshots.captureScreenshot();
+				//validating fast checkout overlay
+				if (BasketPage.fastCheckoutOverlay.isDisplayed()) {
+					log.debug("Fast checkout overlay is displayed\n");
+
+					log.debug("Clicking on PayPal CTA to login\n");
+					BasketPage.PayPalCTA.click();
+					Thread.sleep(20000);
+					Screenshots.captureScreenshot();
+
+					String Mainwindow = driver.getWindowHandle();
+					//getting all the popup windows , hence using getwindowhandles instead of
+
+					Set<String> s1 = driver.getWindowHandles();
+					Iterator<String> i1 = s1.iterator();
+					while (i1.hasNext()) {
+						String ChildWindow = i1.next();
+						if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
+							// Switching to Child window
+							driver.switchTo().window(ChildWindow);
+							log.debug("Switched to child window");
+
+							//validate login header
+							String loginHeader = BasketPage.PayPalLoginHeader.getText();
+
+							if(loginHeader.contains("Pay with PayPal")) {
+								log.debug("login header is matching ie:: "+loginHeader+"\n");
+							}else{
+								log.debug("login header is not matching ie:: "+loginHeader+"\n");
+								Assert.fail("login header is not matching ie:: "+loginHeader+"\n");
+							}
+
+							log.debug("Entering details to login\n");
+							BasketPage.payPalUserField.sendKeys(payPalUser);
+							log.debug("Entered user name ie: "+payPalUser+"\n");
+
+							BasketPage.payPalPasswordField.sendKeys(payPalPassword);
+							log.debug("Entered password ie: "+payPalPassword+"\n");
+							Screenshots.captureScreenshot();
+							log.debug("Clicking on Log in button\n");
+							BasketPage.payPalLogInCTA.click();
+							log.debug("Clicked on Log in button\n");
+							Thread.sleep(20000);
+							Screenshots.captureScreenshot();
+
+							String upFrontCostInPayPalWindow = BasketPage.upFrontCostInPayPalWindow.getText();
+							log.debug("Upfront value displayed in PayPal window is: "+upFrontCostInPayPalWindow+"\n");
+							Thread.sleep(2000);
+							if(upFrontCostInPayPalWindow.contains(BasketPageActions.upFrontValue)){
+								log.debug("PayPal UpFront value is matching as shown in Basket page\n");
+							}else{
+								log.debug("Failed: PayPal UpFront value is not matching as shown in Basket page\n");
+								Assert.fail("Failed: PayPal UpFront value is not matching as shown in Basket page\n");
+							}
+
+							log.debug("Selecting card option with ending number 106\n");
+							BasketPage.cardOption.click();
+							log.debug("Selected card option with ending number 106\n");
+							Thread.sleep(2000);
+							Screenshots.captureScreenshot();
+
+							jse.executeScript("window.scrollBy(0,300)", "");
+							Thread.sleep(2000);
+							Screenshots.captureScreenshot();
+
+							log.debug("Clicking on PayPal continue CTA\n");
+							BasketPage.continuePayPalCTA.click();
+							log.debug("Clicked on PayPal continue CTA\n");
+							Thread.sleep(3000);
+						}
+					}
+					// Switching to Parent window i.e Main Window.
+					driver.switchTo().window(Mainwindow);
+
+				}
+			}else{
+				log.debug("Fast Checkout CTA is not enabled\n");
+			}
+
+		}catch(Exception e){
+			log.debug("Exception found "+e);
+		}
+	}
 }
+

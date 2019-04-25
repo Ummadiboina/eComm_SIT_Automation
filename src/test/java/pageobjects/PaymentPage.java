@@ -164,8 +164,12 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//a[@class='affordability-section-dont-agree-link']")
     public static WebElement affordabilityDontAgreeLink;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='confirm-address']")
+    @FindBy(how = How.XPATH, using = "//span[@id='confirm-address-custom']")
     public static WebElement affordabilityAgreeCreditCheck;
 
+    @FindBy(how = How.XPATH, using = "//input[@id='accountName']/../../div")
+    public static WebElement Name_On_Account_Field;
 
+    @FindBy(how = How.XPATH, using = "//input[@id='accountNumber']/../../div")
+    public static WebElement Account_Number_Field;
 }

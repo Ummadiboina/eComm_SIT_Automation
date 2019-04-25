@@ -28,7 +28,7 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//li[@class='has-submenu']//a[normalize-space()='Phones']"))
 	public static WebElement MoveMouseOnPhones;
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[contains(text(),'Browse phones')]"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[contains(text(),'Phones')]"))
 	public static WebElement MoveMouseOnPhones_Drupal;
 
 	@FindBy(how = How.XPATH, using = ("//a[normalize-space()='Pay As You Go']"))
@@ -36,7 +36,7 @@ public class MouseHoverPage extends Environment {
 
 
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse sims']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Sim cards']"))
 	public static WebElement MoveMouseOnSimo_Drupal;
 
 	@FindBy(how = How.XPATH, using = ("//h3[normalize-space()='Pay Monthly sims']"))
@@ -67,7 +67,7 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pay Monthly sims']"))
 	public static WebElement MoveMouseOnSims_paym_Drupal;
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//a[normalize-space()='Pay As You Go sims' or normalize-space()='Browse sims']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Sim cards']"))
 	public static WebElement MoveMouseOnSims_Drupal;
 
 	// Below will click on the Sims -- > Ipad
@@ -104,7 +104,7 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Browse Tablets')]"))
 	public static WebElement MoveMouseOnBrowseTablets;
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse tablets']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pay Monthly tablets']"))
 	public static WebElement MoveMouseOnBrowseTablets_Drupal;
 
 	@FindBy(how = How.XPATH, using = ("//a[normalize-space()='Pay As You Go']"))
@@ -122,7 +122,7 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//ul[@name='Shop']//span[normalize-space()='Accessories and more']"))
 	public static WebElement MoveMouseOnAccessoriesAndMoreTab;
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//a[normalize-space()='Browse accessories']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//a[normalize-space()='Accessories']"))
 	public static WebElement MoveMouseOnAccessoriesAndMoreTab_Drupal;
 
 	@FindBy(how = How.XPATH, using = ("//a[normalize-space(.)='All accessories']"))
@@ -140,14 +140,14 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//h3[normalize-space()='More fitness trackers']/following-sibling::p[@class='product-cta']"))
 	public static WebElement moreSmrtWatches;
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse smart tech']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Smart tech']"))
 	public static WebElement MoveMouseOnSmarttechTab_gdpr;
 
 	// Below is the link on the Smartwatches
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Smartwatches')]"))
 	public static WebElement MoveMouseOnSmartwatches;
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//a[normalize-space()='Browse smart tech']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//a[normalize-space()='Smart tech']"))
 	public static WebElement MoveMouseOnSmarttechTab_Drupal;
 
 	@FindBy(how = How.XPATH, using = ("//h3[normalize-space()='Smartwatches']//following-sibling::p[normalize-space()='See the range']"))
@@ -172,7 +172,7 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//a[normalize-space()='Pay As You Go']"))
 	public static WebElement PayGMobileBroadband;
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse dongles']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pocket Hotspots/dongles']"))
 	public static WebElement MoveMouseOnMobileBroadband_Drupal;
 
 	// Below will click on the Pay as you Go Link under MobileBroadband tab
@@ -201,12 +201,12 @@ public class MouseHoverPage extends Environment {
 
 	// @FindBy(how = How.XPATH, using =
 	// ("//a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay & Go sims']"))
-	@FindBy(how = How.XPATH, using = ("//*[normalize-space()='Pay As You Go sims'] | //a[contains(text(), 'Pay As You Go sims')]"))
+	@FindBy(how = How.XPATH, using = ("//*[normalize-space()='Pay As You Go sims'] | //a[contains(text(), 'Pay As You Go sims')] | //*[normalize-space()='Pay As You Go sim deals']"))
 	public static WebElement MoveMouseOnPayGSims;
 
 
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pay As You Go sims'] | //li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse sims']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pay As You Go sims'] | //li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse sims'] | //li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Sim cards']"))
 	public static WebElement MoveMouseOnPayGSims_Drupal;
 
 	// @FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay As You Go

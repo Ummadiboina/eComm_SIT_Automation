@@ -306,6 +306,19 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
+    public static void selectSmartTechDevice(String Device) throws InterruptedException {
+
+        Agent_DealBuilderPage.smartTechTab.click();
+        Thread.sleep(5000);
+        log.debug("searching In Stock devices");
+        Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys(Device);
+        log.debug("searched In Stock devices ie: "+Device);
+        Thread.sleep(6000);
+        Agent_DealBuilderPage.SelectSearchedaccessory.click();
+        log.debug("Selected a random In stock device ie: "+Device);
+        Thread.sleep(3000);
+    }
+
     public static void SelectAccessoryDevice(String Device) throws InterruptedException, IOException {
 
         Agent_DealBuilderPage.AccessoriesTab.click();
@@ -2172,7 +2185,6 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
         Screenshots.captureScreenshot();
     }
-
 
 }
 

@@ -28,5 +28,12 @@ public class Agent_ConfirmationPage {
 		
 		@FindBy(how=How.XPATH,using=".//*[@id='placeOrderForm']/input[@class='placeOrder']")
 		public static WebElement SubmitOrder;
+
+		@FindBy(how = How.XPATH, using = "//div[contains(text(),'ofComStatusMsg')]")
+		public static WebElement ofComStatusMsg;
+
+	@FindBy(how = How.XPATH, using = "//label[@id='pacnpac-error']")
+	public static WebElement emptyPACSTACcodeError;
+
 					
 }

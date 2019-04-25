@@ -210,4 +210,59 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "//a[text()='Change tariff']")
 	public static WebElement changetariff;
 
+	@FindBy(how = How.XPATH, using = "//div[@class='basket-right-container']/aside/section[2]/h2")
+	public static WebElement acceptedPayments;
+
+	@FindBy(how = How.XPATH, using = "(//button[@id='fastCheckoutBtn'])[1]")
+	public static WebElement paymentCTA;
+
+	@FindBy(how = How.XPATH, using = "(//div[@class='expCheckout-txt'])[1]")
+	public static WebElement paymentCopyText;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box fatcheckoutPopUp']")
+	public static WebElement fastCheckoutOverlay;
+
+	@FindBy(how = How.XPATH, using = "//div[@id='checkoutpopup']/p[1]")
+	public static WebElement fastCheckoutFirstLineCopy;
+
+	@FindBy(how = How.XPATH, using = "//div[@id='checkoutpopup']/p[2]")
+	public static WebElement fastCheckoutSecondLineCopy;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='popuprow2']/p[1]")
+	public static WebElement fastCheckoutThirdLineCopy;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='popuprow2']/p[2]")
+	public static WebElement fastCheckoutFourthLineCopy;
+
+	@FindBy(how = How.XPATH, using = "//h3[@id='fastcheckout']/../a")
+	public static WebElement fastCheckoutOverlayClose;
+
+	@FindBy(how = How.XPATH, using = "//div[@id='paypal-button']/div/div")
+	public static WebElement PayPalCTA;
+
+	@FindBy(how = How.XPATH, using = "//section[@data-title='Log in to your PayPal account']//h1[contains(@class,'headerText')]")
+	public static WebElement PayPalLoginHeader;
+
+	@FindBy(how = How.XPATH, using = "//input[@id='email']")
+	public static WebElement payPalUserField;
+
+	@FindBy(how = How.XPATH, using = "//input[@id='password']")
+	public static WebElement payPalPasswordField;
+
+	@FindBy(how = How.XPATH, using = "//button[@id='btnLogin']")
+	public static WebElement payPalLogInCTA;
+
+	@FindBy(how = How.XPATH, using = "//section[@class='product-details']/div[3]/div/p[1]")
+	public static WebElement upFrontValue;
+
+	@FindBy(how = How.XPATH, using = "//p[@class='bannerLine']")
+	public static WebElement upFrontCostInPayPalWindow;
+
+	@FindBy(how = How.XPATH, using = "//ul[@class='charges']/li[2]")
+	public static WebElement cardOption;
+
+	@FindBy(how = How.XPATH, using = "//input[@id='confirmButtonTop']")
+	public static WebElement continuePayPalCTA;
+
+
 }
