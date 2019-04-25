@@ -951,7 +951,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             Screenshots.captureScreenshot();
-            UpgradeCustomerPageActions.Login(E2EOrderPlaced_Steps.EmailId_CCAcontinue, password);
+            UpgradeCustomerPageActions.Login(username, password);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
