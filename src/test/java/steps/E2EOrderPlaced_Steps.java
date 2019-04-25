@@ -10934,28 +10934,6 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^In Agent Click on GDPR SaveMyPreference or Skip Preference CTA$")
-    public void clickOnGDPRPreferencesCTAInAgent() {
-        // Write code here that turns the phrase above into concrete actions
-        try {
-            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Thread.sleep(5000);
-            Screenshots.captureScreenshot();
-            if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
-                Agent_RegisterCustomerPage.SaveMyPreferences.click();
-            }
-            if (Agent_RegisterCustomerPage.SkipPreference.isEnabled()) {
-                Agent_RegisterCustomerPage.SkipPreference.click();
-            }
-            log.debug("Completed GDPR preference actions");
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            log.debug("Unable to click on SaveYourPreference or Skip your preferences CTA, please see the failure screenshot");
-            Assert.fail("Unable to click on SaveYourPreference or Skip your preferences CTA, please see the failure screenshot");
-        }
-    }
-
     //GDPR preferences section for AFA  --- JamalKhan
     @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) ([^\"]*) for AFA journey$")
     public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status, String DeviceType, String Device_Module) {
@@ -13182,8 +13160,4 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to choose PayM phone");
         }
     }
-
-
-
-
 }
