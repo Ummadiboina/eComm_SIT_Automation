@@ -1,35 +1,36 @@
 package actionsPerformed;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+        import java.io.IOException;
+        import java.util.ArrayList;
+        import java.util.List;
+        import java.util.concurrent.TimeUnit;
 
-import GlobalActions.CommonUtilities;
-import GlobalActions.scrollToAnElement;
-import junit.framework.AssertionFailedError;
-import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-import org.apache.commons.lang.StringUtils;
-import com.google.common.base.Function;
+        import GlobalActions.CommonActions;
+        import GlobalActions.CommonUtilities;
+        import GlobalActions.scrollToAnElement;
+        import junit.framework.AssertionFailedError;
+        import org.apache.commons.lang3.math.NumberUtils;
+        import org.apache.log4j.Logger;
+        import org.openqa.selenium.By;
+        import org.openqa.selenium.JavascriptExecutor;
+        import org.openqa.selenium.WebDriver;
+        import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.support.PageFactory;
+        import org.openqa.selenium.support.ui.FluentWait;
+        import org.openqa.selenium.support.ui.Select;
+        import org.testng.Assert;
+        import org.apache.commons.lang.StringUtils;
+        import com.google.common.base.Function;
 
-import GlobalActions.Screenshots;
-import helpers.Environment;
-import helpers.Filereadingutility;
-import helpers.setRuntimeProperty;
-import pageobjects.*;
-import steps.Hooks;
+        import GlobalActions.Screenshots;
+        import helpers.Environment;
+        import helpers.Filereadingutility;
+        import helpers.setRuntimeProperty;
+        import pageobjects.*;
+        import steps.Hooks;
 
-import static actionsPerformed.PaymentPageActions.Set_Bank_details;
-import static actionsPerformed.PaymentPageActions.Time_At_Address;
+        import static actionsPerformed.PaymentPageActions.Set_Bank_details;
+        import static actionsPerformed.PaymentPageActions.Time_At_Address;
 
 public class UpgradeCustomerPageActions extends Environment {
 
@@ -60,24 +61,24 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("Title of the page is " + driver.getTitle());
         /*
          * if ((!driver.getTitle().
-		 * contains("O2 | Accounts | Please verify your email address") ||
-		 * !driver.getTitle().contains("O2 | Accounts | Update username"))) {
-		 *
-		 * Assert.fail("Login failed");
-		 *
-		 * } else {
-		 *
-		 * log.debug("Logged in successfully"); }
-		 */
+         * contains("O2 | Accounts | Please verify your email address") ||
+         * !driver.getTitle().contains("O2 | Accounts | Update username"))) {
+         *
+         * Assert.fail("Login failed");
+         *
+         * } else {
+         *
+         * log.debug("Logged in successfully"); }
+         */
         /*
          * try { log.debug("Going to click on Continue link");
-		 * pageobjects.UpgradeCustomerPage.Continue.click();
-		 *
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * log.debug("Continue button is not there, it should be fine" );
-		 *
-		 * }
-		 */
+         * pageobjects.UpgradeCustomerPage.Continue.click();
+         *
+         * } catch (Exception e) { // TODO Auto-generated catch block
+         * log.debug("Continue button is not there, it should be fine" );
+         *
+         * }
+         */
 
 
     }
@@ -284,12 +285,12 @@ public class UpgradeCustomerPageActions extends Environment {
 
         log.debug(pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
 
-		/*
+        /*
          * Assert.assertEquals(pageobjects.UpgradeCustomerPage.
-		 * NotEligible_message.getText(), "You are not eligible to upgrade"); // bound
-		 * to change log.debug( "The error message is displayed as" +
-		 * pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
-		 */
+         * NotEligible_message.getText(), "You are not eligible to upgrade"); // bound
+         * to change log.debug( "The error message is displayed as" +
+         * pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
+         */
         Screenshots.captureScreenshot();
     }
 
@@ -507,28 +508,28 @@ public class UpgradeCustomerPageActions extends Environment {
         scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.SelectAnyPayGTariff);
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
-            if (selectBtnEle.isDisplayed()) {
-                Thread.sleep(3000);
-                if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')] | //h3[contains(text(),'preloaded')]")).size()>0) {
-                    tariffNameTxt = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')] | //h3[contains(text(),'preloaded')]")).getText();
-                    Thread.sleep(2000);
-                    log.debug("Tariff:"+tariffNameTxt);
-                }
-                if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')] | //h3[contains(text(),'preloaded')]")).size()>0) {
-                    marketingMessage = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]/../../ul/li/p | //h3[contains(text(),'preloaded')]/../../ul/li/p")).getText();
-                    Thread.sleep(2000);
-                    log.debug("Marketing Message:"+marketingMessage);
-                }
-                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
-                log.debug("Selected 'Device with 1GB preloaded data tariff'");
-                //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[contains(text(),'Your extras')]")));
-                Thread.sleep(3000);
-                Screenshots.captureScreenshot();
-                //log.debug("Selected 'Device with 1GB preloaded data sim'");
-            } else {
-                log.debug("Failed to select the PayG Tariff in the Extras&Tariff page");
-                Assert.fail("Failed to select the PayG Tariff in the Extras&Tariff page");
+        if (selectBtnEle.isDisplayed()) {
+            Thread.sleep(3000);
+            if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')] | //h3[contains(text(),'preloaded')]")).size()>0) {
+                tariffNameTxt = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')] | //h3[contains(text(),'preloaded')]")).getText();
+                Thread.sleep(2000);
+                log.debug("Tariff:"+tariffNameTxt);
             }
+            if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')] | //h3[contains(text(),'preloaded')]")).size()>0) {
+                marketingMessage = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]/../../ul/li/p | //h3[contains(text(),'preloaded')]/../../ul/li/p")).getText();
+                Thread.sleep(2000);
+                log.debug("Marketing Message:"+marketingMessage);
+            }
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
+            log.debug("Selected 'Device with 1GB preloaded data tariff'");
+            //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[contains(text(),'Your extras')]")));
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            //log.debug("Selected 'Device with 1GB preloaded data sim'");
+        } else {
+            log.debug("Failed to select the PayG Tariff in the Extras&Tariff page");
+            Assert.fail("Failed to select the PayG Tariff in the Extras&Tariff page");
+        }
 
         /*JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,100)", "");*/
@@ -814,7 +815,7 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug('\n' + "To Click On Overlay Icon TE page");
         log.debug("Tariff for verifying overlay icon is " + Tariff);
         if(driver.findElements(By.xpath("//div[@class='promotion-wrapper']//a[@alt='ribbon information']")).size() >= 1){
-        WebElement overlayIcon = driver.findElement(By.xpath("//div[@class='promotion-wrapper']//a[@alt='ribbon information']"));
+            WebElement overlayIcon = driver.findElement(By.xpath("//div[@class='promotion-wrapper']//a[@alt='ribbon information']"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", overlayIcon);
             log.debug("Clicked on the Overlay Icon");
 
@@ -861,11 +862,11 @@ public class UpgradeCustomerPageActions extends Environment {
                 }
                 Thread.sleep(5000);
 				*//*
-				 * log.debug("Text inside the primary overlay is :" + '\n' +
-				 * driver.findElement(By
-				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-				 * )) .getText());
-				 *//*
+         * log.debug("Text inside the primary overlay is :" + '\n' +
+         * driver.findElement(By
+         * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+         * )) .getText());
+         *//*
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Primary Overlay Icon not present");
@@ -890,11 +891,11 @@ public class UpgradeCustomerPageActions extends Environment {
                     log.debug("Inside the overlay for the selected tariff");
                 }
 				*//*
-				 * log.debug("Text inside the secondary overlay is :" + '\n' +
-				 * driver.findElement(By
-				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-				 * )) .getText());
-				 *//*
+         * log.debug("Text inside the secondary overlay is :" + '\n' +
+         * driver.findElement(By
+         * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+         * )) .getText());
+         *//*
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Secondary Overlay Icon not present");
@@ -936,12 +937,12 @@ public class UpgradeCustomerPageActions extends Environment {
                     log.debug("Inside the overlay for the selected tariff");
                 }
                 Thread.sleep(5000);
-				/*
-				 * log.debug("Text inside the primary overlay is :" + '\n' +
-				 * driver.findElement(By
-				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-				 * )) .getText());
-				 */
+                /*
+                 * log.debug("Text inside the primary overlay is :" + '\n' +
+                 * driver.findElement(By
+                 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+                 * )) .getText());
+                 */
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Primary Overlay Icon not present");
@@ -964,12 +965,12 @@ public class UpgradeCustomerPageActions extends Environment {
                     log.debug("Inside the overlay for the selected tariff");
 
                 }
-				/*
-				 * log.debug("Text inside the secondary overlay is :" + '\n' +
-				 * driver.findElement(By
-				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-				 * )) .getText());
-				 */
+                /*
+                 * log.debug("Text inside the secondary overlay is :" + '\n' +
+                 * driver.findElement(By
+                 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+                 * )) .getText());
+                 */
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Secondary Overlay Icon not present");
@@ -1649,10 +1650,10 @@ public class UpgradeCustomerPageActions extends Environment {
         pageobjects.UpgradeCustomerPage.RefundableOptionbyCredit.click();
         Thread.sleep(4000);
         log.debug("Selected refundable by credit option");
-		/*
-		 * pageobjects.UpgradeCustomerPage.ContinuetoUpgrade.click();
-		 * log.debug("Selected continue to upgrade button");
-		 */
+        /*
+         * pageobjects.UpgradeCustomerPage.ContinuetoUpgrade.click();
+         * log.debug("Selected continue to upgrade button");
+         */
         log.debug("Completed refundableOptionSelect function");
         Screenshots.captureScreenshot();
 
@@ -1893,7 +1894,7 @@ public class UpgradeCustomerPageActions extends Environment {
             Thread.sleep(2000);
         }
         Screenshots.captureScreenshot();
-       // Screenshots.captureScreenshot(Hooks.directoryName);
+        // Screenshots.captureScreenshot(Hooks.directoryName);
     }
 
 
@@ -1918,7 +1919,7 @@ public class UpgradeCustomerPageActions extends Environment {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,150)", "");
         Screenshots.captureScreenshot();
-       // Screenshots.captureScreenshot(Hooks.directoryName);
+        // Screenshots.captureScreenshot(Hooks.directoryName);
     }
 
     public static void ClickIdontneedAsim() throws Exception {
@@ -3284,9 +3285,9 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
         return tariffListUsingMonthlyCost;
     }
-    
-    
-     public static void validateMSISDN(String MSISDN){
+
+
+    public static void validateMSISDN(String MSISDN){
         try {
 
             if(UpgradeCustomerPage.upgrade_options_msisdn.isDisplayed()){
@@ -3370,11 +3371,11 @@ public class UpgradeCustomerPageActions extends Environment {
             }
         }
         catch(Exception e){
-                System.out.println("Failed to a find left to pay text" + e.getMessage());
-                log.info("Failed to a find left to pay text" + e.getMessage());
-                Assert.fail("Failed to a find left to pay text" + e.getMessage());
-            }
+            System.out.println("Failed to a find left to pay text" + e.getMessage());
+            log.info("Failed to a find left to pay text" + e.getMessage());
+            Assert.fail("Failed to a find left to pay text" + e.getMessage());
         }
+    }
 
 
 
@@ -3393,29 +3394,29 @@ public class UpgradeCustomerPageActions extends Environment {
 
             if (status.contains("Yes")) {
                 if (UpgradeCustomerPage.simoTab.isDisplayed()) {
-                        System.out.println("Simo tab is Displayed");
-                        log.info("Simo tab is Displayed");
-                    } else {
-                        System.out.println("Failed to Simo tab is Displayed");
-                        log.info("Failed to Simo tab is Displayed");
-                    }
+                    System.out.println("Simo tab is Displayed");
+                    log.info("Simo tab is Displayed");
+                } else {
+                    System.out.println("Failed to Simo tab is Displayed");
+                    log.info("Failed to Simo tab is Displayed");
                 }
+            }
 
         }catch (Exception e){
             System.out.println("Failed validate the Simo Display"+ e.getMessage());
             log.info("Failed validate the Simo Display"+ e.getMessage());
             Assert.fail("Failed validate the Simo Display"+ e.getMessage());
         }
-        }
+    }
 
     public static void clickOnNoThanks_IllKeepMyDevice(){
         try {
-                if (driver.findElements(By.xpath("(//button[@id='NoThanksIllKeepMyDevice'])[1]")).size()>0) {
-                    UpgradeCustomerPage.NoThanksIllKeepMyDevice.click();
-                    log.info("'No Thanks, Ill Keep My Device' is clicked");
-                } else {
-                    log.info("'No Thanks, Ill Keep My Device' is not displayed");
-                }
+            if (driver.findElements(By.xpath("(//button[@id='NoThanksIllKeepMyDevice'])[1]")).size()>0) {
+                UpgradeCustomerPage.NoThanksIllKeepMyDevice.click();
+                log.info("'No Thanks, Ill Keep My Device' is clicked");
+            } else {
+                log.info("'No Thanks, Ill Keep My Device' is not displayed");
+            }
 
         }catch (Exception e){
             log.info("Failed click on 'No Thanks, Ill Keep My Device': "+ e.getMessage());
@@ -3423,7 +3424,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-     public static void clickOnGetStartedCTA(){
+    public static void clickOnGetStartedCTA(){
         try {
             Thread.sleep(3000);
             if(driver.findElements(By.xpath("//button[@class='btnblue'] | //button[@class='btnblue ng-binding']")).size()>0){
@@ -3515,5 +3516,109 @@ public class UpgradeCustomerPageActions extends Environment {
             Assert.fail("Failed to select the Tariff in the Tariff&Extras page");
         }
     }
+
+    public static void selectDeviceFromRecommendedPannl() throws InterruptedException, IOException {
+        log.debug("selecting Tariff");
+        Thread.sleep(1000);
+        if(driver.findElements(By.xpath("//button[normalize-space()='Add to basket']")).size() > 0) {
+            CommonActions.clickWebElement(UpgradeCustomerPage.addToBasket_recommendedSection);
+            Screenshots.captureScreenshot();
+        }else
+        {
+            Assert.fail("Not able to see the recommended Panel section in the Uop Customer page ");
+        }
+
+        Thread.sleep(3000);
+
+        if(driver.findElements(By.xpath("//div[@class='success-msg']")).size() > 0) {
+            CommonActions.getTheText(UpgradeCustomerPage.successMsg_PackageOptionspage);
+        }else
+        {
+            Assert.fail("Not able to landed on the Package Options page");
+        }
+    }
+
+
+    public static void configureYourOwnUop() throws InterruptedException, IOException {
+
+        log.debug("Configure your own upgrade");
+        Thread.sleep(1000);
+        if(driver.findElements(By.xpath("(//button[@class='recomm-btn btn-conf-pln'])[2]")).size() > 0) {
+            CommonActions.clickWebElement(UpgradeCustomerPage.configureYourOwnUop);
+            Screenshots.captureScreenshot();
+        }else
+        {
+            Assert.fail("Not able to see the recommended Panel section in the Uop Customer page ");
+        }
+
+        Thread.sleep(3000);
+
+        if(driver.findElements(By.xpath("(//h3[@class='desktop-only-variants ng-scope'])[2]")).size() > 0) {
+            CommonActions.getTheText(UpgradeCustomerPage.OurTopPics_Header_Uop);
+        }else
+        {
+            Assert.fail("Not able to landed on the Package Options page");
+        }
+    }
+
+
+    public static void editPlan_recommendedSection() throws InterruptedException, IOException {
+
+        log.debug("Configure your own upgrade");
+        Thread.sleep(1000);
+        if(driver.findElements(By.xpath("//button[normalize-space()='Edit this plan']")).size() > 0) {
+            CommonActions.clickWebElement(UpgradeCustomerPage.eidtPlan_RecommendedSection);
+            Screenshots.captureScreenshot();
+        }else
+        {
+            Assert.fail("Not able to eidt this plan under the recommended Panel section in the Uop Customer page ");
+        }
+
+        Thread.sleep(1000);
+
+        if(driver.findElements(By.xpath("//a[normalize-space()='Choose this plan']")).size() > 0) {
+            CommonActions.getTheText(UpgradeCustomerPage.chooseThisPlan_calc);
+        }else
+        {
+            Assert.fail("Not able to make the custom plan from FR Calc");
+        }
+    }
+
+    public static void o2DriveConfiguration(String pageName) throws InterruptedException {
+        String dynamicVariable = "";
+
+        if (pageName.contains(("O2"))) {
+            log.debug("Configure your own upgrade");
+            Thread.sleep(3000);
+            driver.get("https://www.o2.co.uk/shop/services/drive");
+            Thread.sleep(2000);
+
+            if (driver.findElements(By.xpath("//a[text()='Get a quote']")).size() > 0) {
+                dynamicVariable = dynamicVariable + driver.findElement(By.xpath("//a[text()='Get a quote']")).getAttribute("href");
+            }
+
+            String dynamicVarURL = driver.getCurrentUrl();
+
+            if (dynamicVariable.contains(dynamicVarURL)) {
+                System.out.println("successfully Updated");
+            } else {
+                Assert.fail("dynamic value not populated on the url");
+            }
+        }
+
+        if (pageName.contains(("PD"))) {
+            log.debug("Configure your own upgrade");
+            Thread.sleep(1000);
+            driver.get("https://www.ref.o2.co.uk/shop/huawei/p30-pro#contractType=paymonthly");
+            Thread.sleep(2000);
+
+            if (driver.findElements(By.xpath("//a[text()='Get a quote']")).size() <= 0) {
+                System.out.println("Yes - The Dynamic variable is not displayed in the PD page ");
+            } else {
+                Assert.fail("Dynamic variable is displayed is displayed on the PD page ");
+            }
+        }
+    }
+
 
 }

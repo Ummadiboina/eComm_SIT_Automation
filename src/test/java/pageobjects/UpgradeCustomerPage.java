@@ -418,6 +418,25 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//div[@id='extras-section']/button")
 	public static WebElement extraContinueCTA;
 
+// recommended panel locators
+
+	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Add to basket']")
+	public static WebElement addToBasket_recommendedSection;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='success-msg']")
+	public static WebElement successMsg_PackageOptionspage;
+
+	@FindBy(how = How.XPATH, using = "(//button[@class='recomm-btn btn-conf-pln'])[2]")
+	public static WebElement configureYourOwnUop;
+
+	@FindBy(how = How.XPATH, using = "(//h3[@class='desktop-only-variants ng-scope'])[2]")
+	public static WebElement OurTopPics_Header_Uop;
+
+	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Edit this plan']")
+	public static WebElement eidtPlan_RecommendedSection;
+
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='Choose this plan']")
+	public static WebElement chooseThisPlan_calc;
 
 }
 

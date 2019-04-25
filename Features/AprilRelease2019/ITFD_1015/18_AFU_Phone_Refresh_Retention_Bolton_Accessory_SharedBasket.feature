@@ -1,9 +1,9 @@
-Feature: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket
+Feature: 18_AFU_Phone_Refresh_Retention_Bolton_Accessory_SharedBasket
 
   AFU	MBB	Refresh	Retention Bolton	Device/Tariff Discount	Shared basket
 
   @Web
-  Scenario Outline: 12_AFU_MBB_Refresh_RetentionBolton_Discount_SharedBasket
+  Scenario Outline: 18_AFU_Phone_Refresh_Retention_Bolton_Accessory_SharedBasket
 
     Given I login to Agent shop
     And performs Upgrade for <user>

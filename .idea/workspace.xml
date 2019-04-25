@@ -5,10 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
-    <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="">
+    <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/01_CFA_New_companion_device_when_user_doesn't_want_to_buy_iPhone_clicking_see_our_plans_CTA_on_PD_page.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/02_CFA_New_companion_device_when_user_doesn't_want_to_buy_iPhone_clicking_choose_this_plan_CTA_on_PD_page.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/03_CFA_New_lead_device_New_companion_device_when_user_wants_to_buy_iPhone.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/04_CFA_partner_basket_url_spend_cap_display.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/05_CFA_partner_package_options_page_url_redirect.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/06_Existing_Customer_Valid_lead_device_New_companion_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/07_Existing_Customer_Upgrade_lead_device_New_companion_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/08_Existing_Customer_having_reached_max_connected_devices.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/09_Existing_customer_upgrading_companion_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/10_Existing_customer_upgrading_non_companion_device_to_a_non_companion_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/11_Existing_Customer_upgrading_non_companion_device_to_companion_device_with_no_valid_lead_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/12_Existing_Customer_upgrading_non_companion_device_to_companion_device_with_valid_lead_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/13_Existing_Customer_upgrading_lead_device_when_the_customer_already_has_companion_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/14_Existing_Customer_New_lead_device_New_companion_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/15_Existing_Customer_Single_eligible_MSISDN_user_upgrade_lead_device_to_an_ineligible_lead_device_and_upgrade_companion_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/16_Existing_Customer_Multiple_eligible_MSISDN_user_upgrade_one_eligible_lead_device_to_an_ineligible_lead_device_and_upgrade_companion_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/17_Agent_Existing_NewConnection_Valid_Lead_Device_New_Companion_Device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/18_Agent_Existing_NewConnection_Invalid_Lead_Device_ New_Companion_Device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/19_Agent_Existing_New_Connection_New_Lead_Device_New_Companion_Device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/20_Agent_Existing_Upgrade_Same_Lead_Device_Upgrade_Companion_device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/21_Agent_Existing_Upgrade_Lead_Device_Upgrade_Companion_Device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/22_Agent_Existing_Upgrade_Lead_device_Same_Companion_Device.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/23_Agent_AFU_Exceeds_5_Connected_Companion_Device_Not_Checkoutable_Error_Msg.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/24_Agent_Existing_NewConnection_Valid_Lead_Device_New_Companion_Device_Standard_Tariff.feature" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/25_Agent_Existing_Newconnection_One_Valid_MSISDN_Place_Companion_Device.feature" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/HighestPriority_FailedScenarios/137_Reg_AFA_Phones_Click_And_Collect_Now.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/HighestPriority_FailedScenarios/137_Reg_AFA_Phones_Click_And_Collect_Now.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2019/failedTestCases/137_Reg_AFA_Phones_Click_And_Collect_Now.feature" afterPath="$PROJECT_DIR$/Features/AprilRelease2019/failedTestCases/137_Reg_AFA_Phones_Click_And_Collect_Now.feature" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" afterPath="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -123,7 +150,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Jamal_02_April_2019_V1" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="SIGN_OFF_COMMIT" value="true" />
@@ -136,8 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" />
-        <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/27_Reg_AFU_SavedBasket.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/133_FR_UpFront_AFU_PAYM_Dongle_payByCard.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/134_FR_UpFront_AFU_PAYM_Tablet.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement_IBM_confirmation.feature" />
@@ -154,7 +179,6 @@
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_page.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/SimsPageActions.java" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/101_FR_Upfront_CFA_Phones_Till_TnE.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Options_Page_and_Select_Cap_My_Bill.feature" />
@@ -163,7 +187,6 @@
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/51_Reg_Consumer_Buyout.feature" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
         <option value="$PROJECT_DIR$/testRunner/RunnerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/137_Reg_AFA_Phones_Click_And_Collect_Now.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/HighPriority_FailedScenarios/99_Reg_CFU_ValidateBasketPage_Simo_Tariff_With_Active_VoucherablePromotions_Valid_For_Current_Date_And_UpfrontPaymentPending.feature" />
@@ -187,6 +210,10 @@
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/Regression_High_Priority/100_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Promotions_Available_But_Not_Valid_For_Current_Date.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/HighestPriority_FailedScenarios/137_Reg_AFA_Phones_Click_And_Collect_Now.feature" />
         <option value="$PROJECT_DIR$/Features/AprilRelease2019/failedTestCases/137_Reg_AFA_Phones_Click_And_Collect_Now.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
       </list>
     </option>
   </component>
@@ -230,32 +257,39 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="regression_New" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regression_New" type="462c0819:PsiDirectoryNode" />
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="regression_New" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regression_New" type="462c0819:PsiDirectoryNode" />
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="462c0819:PsiDirectoryNode" />
               <item name="Features" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="regression_New" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regression_New" type="462c0819:PsiDirectoryNode" />
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="462c0819:PsiDirectoryNode" />
               <item name="Features" type="462c0819:PsiDirectoryNode" />
-              <item name="AprilRelease2019" type="462c0819:PsiDirectoryNode" />
+              <item name="MayRelease2019" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="462c0819:PsiDirectoryNode" />
+              <item name="Features" type="462c0819:PsiDirectoryNode" />
+              <item name="MayRelease2019" type="462c0819:PsiDirectoryNode" />
+              <item name="ITFD-710 Arizona Day 1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,7 +297,7 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../regression2" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15128593" />
     <property name="project.structure.side.proportion" value="0.4556962" />
@@ -276,20 +310,20 @@
     </force-push-targets>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\khanj6\IdeaProjects\regression_New\Features\AprilRelease2019\failedTestCases" />
-      <recent name="C:\Users\khanj6\IdeaProjects\regression_New\Features\AprilRelease2019\HighPriority_FailedScenarios" />
-      <recent name="C:\Users\khanj6\IdeaProjects\regression_New\Features\AprilRelease2019\HighestPriority_FailedScenarios" />
-      <recent name="C:\Users\khanj6\IdeaProjects\regression_New\Features\AprilRelease2019\MediumFailedScenarios" />
-      <recent name="C:\Users\khanj6\IdeaProjects\regression_New\Features\AprilRelease2019\Agent_Reg_Scenarios" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="helpers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Features\JulyRelease2018" />
       <recent name="C:\Users\subbaiv1\IdeaProjects\regression_V3\Features\May#1Release2018\AFA_BatchRun" />
       <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Features" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="helpers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kanthes1\IdeaProjects\regression_09\04\2019\Features\MayRelease2019" />
+      <recent name="C:\Users\khanj6\IdeaProjects\regression_New\Features\AprilRelease2019\failedTestCases" />
+      <recent name="C:\Users\khanj6\IdeaProjects\regression_New\Features\AprilRelease2019\HighPriority_FailedScenarios" />
+      <recent name="C:\Users\khanj6\IdeaProjects\regression_New\Features\AprilRelease2019\HighestPriority_FailedScenarios" />
+      <recent name="C:\Users\khanj6\IdeaProjects\regression_New\Features\AprilRelease2019\MediumFailedScenarios" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -917,11 +951,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3398693" sideWeight="0.7019667" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30094787" sideWeight="0.6530015" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -932,8 +965,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30124223" sideWeight="0.7299546" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25027028" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49367756" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24876848" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -946,8 +978,10 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.048440065" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30094787" sideWeight="0.6530015" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49367756" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -1256,139 +1290,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Options_Page_and_Select_Cap_My_Bill.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/DeliveryPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="361" column="65" lean-forward="false" selection-start-line="361" selection-start-column="65" selection-end-line="361" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Page_and_Select_Cap_My_Bill.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/135_FR_UpFront_AFU_PAYM_Phones.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/51_Reg_Consumer_Buyout.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="2332" column="28" lean-forward="true" selection-start-line="2332" selection-start-column="28" selection-end-line="2332" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/54_Reg_Consumer_TradeIn.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/HighPriority_FailedScenarios/111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testRunner/RunnerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="37" column="81" lean-forward="false" selection-start-line="37" selection-start-column="81" selection-end-line="37" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/39_Reg_CFA_morethan12Tablet.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="114" column="42" lean-forward="true" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/136_Reg_CFA_Phones_Click_And_Collect_Now.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="11" column="48" lean-forward="true" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Medium_Low_Priority/57_Reg_CS_CFU_SavedBasket.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/HighestPriority_FailedScenarios/31_Reg_Agent_GenerateCCA.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/HighestPriority_FailedScenarios/126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Incomplete_Section_and_Edit_BSC_To_Cap_My_Bill.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="28" column="91" lean-forward="true" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Features/AprilRelease2019/Regression_Highest_Priority/126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Incomplete_Section_and_Edit_BSC_To_Cap_My_Bill.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
           <caret line="28" column="91" lean-forward="true" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1396,7 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1404,7 +1308,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1671">
           <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1412,7 +1315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,7 +1322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1428,7 +1329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1436,7 +1336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1444,7 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
           <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1452,7 +1350,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1460,7 +1357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1476,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1484,7 +1379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1025">
           <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1492,7 +1386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1500,7 +1393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="17" column="65" lean-forward="true" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1516,7 +1408,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1532,7 +1423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1540,7 +1430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1556,7 +1445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1564,7 +1452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1572,7 +1459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1580,7 +1466,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
           <caret line="28" column="21" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1588,7 +1473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1596,7 +1480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1604,7 +1487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="636">
           <caret line="29" column="64" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1612,7 +1494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1620,7 +1501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1628,23 +1508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="511">
           <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-331">
-          <caret line="716" column="23" lean-forward="false" selection-start-line="716" selection-start-column="23" selection-end-line="716" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8505" column="51" lean-forward="false" selection-start-line="8505" selection-start-column="51" selection-end-line="8505" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1652,7 +1515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1660,6 +1522,149 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-14">
           <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1374">
+          <caret line="1480" column="5" lean-forward="false" selection-start-line="1480" selection-start-column="5" selection-end-line="1480" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="2149" column="23" lean-forward="false" selection-start-line="2149" selection-start-column="23" selection-end-line="2149" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="1850" column="5" lean-forward="false" selection-start-line="1850" selection-start-column="5" selection-end-line="1850" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-704">
+          <caret line="12628" column="36" lean-forward="false" selection-start-line="12628" selection-start-column="36" selection-end-line="12628" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/02_CFA_New_companion_device_when_user_doesn't_want_to_buy_iPhone_clicking_choose_this_plan_CTA_on_PD_page.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/03_CFA_New_lead_device_New_companion_device_when_user_wants_to_buy_iPhone.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/01_CFA_New_companion_device_when_user_doesn't_want_to_buy_iPhone_clicking_see_our_plans_CTA_on_PD_page.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="53" lean-forward="false" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/04_CFA_partner_basket_url_spend_cap_display.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/05_CFA_partner_package_options_page_url_redirect.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/06_Existing_Customer_Valid_lead_device_New_companion_device.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/07_Existing_Customer_Upgrade_lead_device_New_companion_device.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/09_Existing_customer_upgrading_companion_device.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/10_Existing_customer_upgrading_non_companion_device_to_a_non_companion_device.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/11_Existing_Customer_upgrading_non_companion_device_to_companion_device_with_no_valid_lead_device.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/12_Existing_Customer_upgrading_non_companion_device_to_companion_device_with_valid_lead_device.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/13_Existing_Customer_upgrading_lead_device_when_the_customer_already_has_companion_device.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/14_Existing_Customer_New_lead_device_New_companion_device.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/MayRelease2019/ITFD-710 Arizona Day 1/08_Existing_Customer_having_reached_max_connected_devices.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
