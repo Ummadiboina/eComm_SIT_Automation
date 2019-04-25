@@ -1114,7 +1114,7 @@ public class E2EOrderPlaced_Steps {
     @Given("^Land on the 'Tariffs and extra' page$")
     public void land_on_the_Tariffs_and_extra_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
             PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
@@ -1507,7 +1507,7 @@ public class E2EOrderPlaced_Steps {
             jse.executeScript("window.scrollBy(0,300)", "");
             Screenshots.captureScreenshot();
             DeliveryPageActions.SetDelivery();
-            Thread.sleep(4000);
+            Thread.sleep(6000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
             // DeliveryPageActions.ClickContinue();
             //DeliveryPageActions.clickOnSubmitBtn();
@@ -2825,8 +2825,8 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out
-                    .println("Unable to perform Acquistion for user in Agent shop, please see the failure screenshot");
-            Assert.fail("Unable to perform Acquistion for user in Agent shop, please see the failure screenshot");
+                    .println("Unable to perform Acquisition for existing user in Agent shop, please see the failure screenshot");
+            Assert.fail("Unable to perform Acquisition for existing user in Agent shop, please see the failure screenshot");
 
         }
     }
@@ -11634,13 +11634,13 @@ public class E2EOrderPlaced_Steps {
 
 
     //ITFD-895, April Release new changes Validation by Jamal Khan
-    @And("^Validate OFCOM switching functionality in consumer channel when ofCom status is ([^\"]*) and ([^\"]*) selected$")
-    public void ofCom(String ofComStatus, String deviceMBB) {
+    @And("^Validate OFCOM switching functionality in consumer channel when ofCom status is ([^\"]*) and performing ([^\"]*) journey$")
+    public void consumerOfComValidation(String ofComStatus, String journey) {
 
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-            DeliveryPageActions.ofComSwitching(ofComStatus,deviceMBB);
+            DeliveryPageActions.ofComSwitching(ofComStatus,journey);
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
