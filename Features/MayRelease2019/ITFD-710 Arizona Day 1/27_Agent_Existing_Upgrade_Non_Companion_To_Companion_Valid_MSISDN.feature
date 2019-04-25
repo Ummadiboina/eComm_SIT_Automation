@@ -1,23 +1,24 @@
-Feature: 24_Agent_Existing_NewConnection_Valid_Lead_Device_New_Companion_Device_Standard_Tariff
+#Invalid scenario
+Feature: 27_Agent_Existing_Upgrade_Non_Companion_To_Companion_Valid_MSISDN
 
   #launch hooks and get browser
   @Web
-  Scenario Outline: 24_Agent_Existing_NewConnection_Valid_Lead_Device_New_Companion_Device_Standard_Tariff
+  Scenario Outline: Agent_Existing_Upgrade_Non_Companion_To_Companion_Valid_MSISDN
     Given I login to Agent shop
-    And performs Agent Existing customer journey for <user>
+    And performs Upgrade for <user>
     And Select a valid companion device PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    And select a valid Handset and Tariff combination
+    And select a valid Handset and Tariff combination_new
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
-    And Verify lead device pairing section is displayed
+    And Verify lead device pairing section is displayed when the user status is <user_status> and validate order summary section
     #And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey <PreSelected>
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
+    #And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
     And validate register status
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
-    And Choose <DeliveryType> delivery address and delivery time
+    #And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
+    #And Choose <DeliveryType> delivery address and delivery time
     #And Update Device Plan Link Email Address
     #And Accept O2 Refresh Deal Summary
     And Click on 'Generate CCA' button
@@ -32,7 +33,5 @@ Feature: 24_Agent_Existing_NewConnection_Valid_Lead_Device_New_Companion_Device_
     Then order confirmation is displayed
 
     Examples:
-      | user        | Device | Tariffs | BSCstatus | username | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | password | DeviceType | DeliveryType | status2  |
-      | 07568414065 |  | Standard | Disabled   |            | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Yes         |       |
-
-
+      | user        | Device | Tariffs | BSCstatus | username | consumer | Firstname     | Surname     | HouseNumber     | PostCode  | Username   | Email  | Phone | Post | status  | password | DeviceType | DeliveryType | status2  |
+      | 07568414065 |  | Refresh | Disabled   |            | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Yes         |       |

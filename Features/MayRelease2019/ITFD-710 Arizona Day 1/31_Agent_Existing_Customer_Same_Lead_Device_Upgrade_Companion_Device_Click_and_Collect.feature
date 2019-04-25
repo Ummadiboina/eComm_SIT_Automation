@@ -1,20 +1,25 @@
-Feature: Agent_Existing_Upgrade_Same_Lead_Device_Upgrade_Companion_device
+Feature: 31_Agent_Existing_Customer_Same_Lead_Device_Upgrade_Companion_Device_Click_and_Collect
 
-  Scenario Outline: Agent_Existing_Upgrade_Same_Lead_Device_Upgrade_Companion_device
+  #launch hooks and get browser
+  @Web
+  Scenario Outline: Agent_Existing_Customer_Same_Lead_Device_Upgrade_Companion_Device_Click_and_Collect
     Given I login to Agent shop
-    #And performs Acquisition for New user
-    And performs Upgrade for <user>
+    And performs Agent Existing customer journey for <user>
     And Select a valid companion device PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    And select a valid Handset and Tariff combination
+    And select a valid Handset and Tariff combination_new
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
+    And Choose a valid store for Click and Collect Now
     And Validate all the Basket content and checkout
-    And Verify lead device pairing section is displayed
+    Then Validate deal summary for applied Bill Spend Cap <BillCapAmount> when BSC is <BSCstatus>
+    #And Validating Click and Collect Now details in checkout pages
+    And Verify lead device pairing section is displayed when the user status is <user_status> and validate order summary section
+    #And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey <PreSelected>
     Then perform all the advisory checks
-    And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
+    And perform the credit checks for Agent Existing <string> by Bank details
+    #And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
     And validate register status
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
+    #And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
     And Choose <DeliveryType> delivery address and delivery time
     #And Update Device Plan Link Email Address
     #And Accept O2 Refresh Deal Summary
@@ -32,4 +37,3 @@ Feature: Agent_Existing_Upgrade_Same_Lead_Device_Upgrade_Companion_device
     Examples:
       | user        | Device | Tariffs | BSCstatus | username | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | password | DeviceType | DeliveryType | status2  |
       | 07568414065 |  | Refresh | Disabled   |            | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Yes         |       |
-

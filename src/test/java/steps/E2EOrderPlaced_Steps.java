@@ -13074,7 +13074,7 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to choose PayM phone");
         }
     }
-    @And("^Select a valid companion device PayM $([^\"]*)")
+    @And("^Select a valid companion device PayM ([^\"]*)$")
     public void SelectValid_CompanionDevice(String Device) {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
@@ -13090,13 +13090,13 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("^Verify lead device pairing section is displayed$")
-    public void leadDevicePairingSection() throws Throwable {
+    @And("^Verify lead device pairing section is displayed when the user status is ([^\"]*) and validate order summary section$")
+    public void leadDevicePairingSection(String userStatus) throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PhonesListingPage.class);
-            PhonesListingPageAction.leadDevicePairingSectionDisplay();
+            Agent_DealBuilderPageActions.leadDevicePairingSectionDisplay(userStatus);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

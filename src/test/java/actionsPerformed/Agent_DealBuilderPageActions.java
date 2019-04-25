@@ -2185,7 +2185,87 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
         Screenshots.captureScreenshot();
     }
+    public static void leadDevicePairingSectionDisplay(String userStatus) throws Throwable {
+
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Thread.sleep(6000);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,200)", "");
+        Screenshots.captureScreenshot();
+        Thread.sleep(3000);
+        try {
+            log.debug("Section Name: " + Agent_DealBuilderPage.leadDevicePairingSection_Heading.getText());
+            if (Agent_DealBuilderPage.leadDevicePairingSection_Heading.getText()
+                    .equals("Lead device pairing")) {
+                log.debug("Your are on lead device pairing section");
+                Thread.sleep(2000);
+
+                if(userStatus.equalsIgnoreCase("Valid")){
+
+                    List<WebElement> countOfMSISDN = driver.findElements(By.xpath("//*[@id='leadDeviceMsisdn']/option"));
+                    log.debug("The Number of eligible MSISDN is :" + countOfMSISDN.size());
+                    if(countOfMSISDN.size()>0){
+                        Select MSISDN_select = new Select(driver.findElement(By.id("leadDeviceMsisdn")));
+
+                        MSISDN_select.selectByIndex(0);
+                        log.debug("MSISDN Selected: " + MSISDN_select.getOptions().get(0).getText());
+                        Screenshots.captureScreenshot();
+                        Agent_DealBuilderPage.leadDevicePairingSection_Continue.click();
+                        Thread.sleep(4000);
+                        if(Agent_DealBuilderPage.leadDeviceMSISDNSection_ordersummary.isDisplayed()){
+                            log.debug("The MSISDN section is displayed in the order summary");
+                            if(Agent_DealBuilderPage.leadDeviceMSISDN_ordersummary.getText().contentEquals(MSISDN_select.getOptions().get(0).getText())){
+                                log.debug("The MSISDN " + Agent_DealBuilderPage.leadDeviceMSISDN_ordersummary.getText() + "is updated in the order summary");
+                            }
+                            else{
+                                log.debug("The Selected MSISDN is not updated in the order summary");
+                                Assert.fail("Failed :: The Selected MSISDN is not updated in the order summary.");
+                            }
+                        }
+                        else{
+                            log.debug("The MSISDN section is not displayed in the order summary");
+                            Assert.fail("Failed :: The MSISDN section is not displayed in the order summary.");
+                        }
+
+                    }
+                }
+                else if(userStatus.equalsIgnoreCase("Invalid")) {
+                    String ErrorMsg = pageobjects.Agent_DealBuilderPage.leadDevicePairingSection_Error.getText();
+                    if (ErrorMsg.contains("You don't have pay monthly account to connect your watch to.")) {
+                        log.debug("As expected, the error message is matching\n");
+                    } else {
+                        log.debug("Error Message is not as per the requirement.");
+                        Assert.fail("Failed :: Error Message is not as per the requirement.");
+                    }
+                }
+            } else {
+                log.debug("Lead device pairing section is not displayed");
+                Assert.fail("Failed :: Lead device pairing section is not displayed");
+
+                /*List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='priceSelection']/select/option"));
+                log.debug("The size of the table is :" + menuOuter.size());
+
+                for (int i = 0; i < menuOuter.size(); i++) {
+                    log.debug("Option " + i + " is: " + menuOuter.get(i).getText());
+                }
+                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).click();
+                log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).getText());
+
+                log.debug("Selected combination of handset and talk plan");
+                Thread.sleep(5000);*/
+            }
+            Screenshots.captureScreenshot();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Not able to proceed because of Lead pairing section");
+            Screenshots.captureScreenshot();
+        }
+    }
+
 
 }
+
+
+
 
 
