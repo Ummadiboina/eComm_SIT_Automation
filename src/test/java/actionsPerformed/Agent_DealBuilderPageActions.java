@@ -2186,6 +2186,63 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
+    public static void SelectSimoTariff(String Tariff) throws InterruptedException, IOException {
+        Agent_DealBuilderPage.SIMOTariffsTab.click();
+        Thread.sleep(2000);
+
+        if(Tariff.contains("Standard / Simo")) {
+            Agent_DealBuilderPage.SIMOTariffsInputField.sendKeys(Tariff);
+            Thread.sleep(1000);
+            Agent_DealBuilderPage.SelectingFirstAvailableSIMOTariff.click();
+            Thread.sleep(2000);
+            log.debug("Selected provided simo Tariff ");
+        }else if (Tariff.contains("Random")) {
+            // Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
+            Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+            Thread.sleep(25000);
+            log.debug("Selected Random Tariff ");
+            Screenshots.captureScreenshot();
+        } else if (Tariff.contains("Standard")) {
+            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
+            Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+            Thread.sleep(2000);
+            log.debug("Selected Random Tariff ");
+        } else if (Tariff.contains("Simo")) {
+            Agent_DealBuilderPage.SIMOTariffsInputField.sendKeys("- / Simo");
+            Thread.sleep(2000);
+            //Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Simo");
+            Agent_DealBuilderPage.SelectingFirstAvailableSIMOTariff.click();
+            Thread.sleep(2000);
+            log.debug("Selected Random SimO Tariff ");
+
+        } else if (Tariff.contains("Refresh")) {
+            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Refresh");
+            Thread.sleep(2000);
+            Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+            Thread.sleep(2000);
+            log.debug("Selected Refresh Tariff ");
+
+        } else if (Tariff.contains("Base")) {
+            ////////////////////////////// Basecomms
+            ////////////////////////////// Tariff//////////////////////////////////////
+            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Base");
+            Thread.sleep(1000);
+            Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+            Thread.sleep(1000);
+            log.debug("Selected Random Basecomms Tariff ");
+
+        } else {
+            Agent_DealBuilderPage.SIMOTariffsInputField.sendKeys(Tariff);
+            Thread.sleep(1000);
+            Agent_DealBuilderPage.SelectingFirstAvailableSIMOTariff.click();
+            Thread.sleep(2000);
+            log.debug("Selected provided simo Tariff ");
+        }
+
+        Screenshots.captureScreenshot();
+
+    }
+
 }
 
 

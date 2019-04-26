@@ -35,4 +35,4 @@ Feature: 9_CFU_Tablet_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
 
     Examples:
       | username                      | password | Tablet             | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | journey | ofComStatus | codeStatus | ofComMobileNum | pacStacCode |
-      | till51074963@stf.ref.o2.co.uk | test123  | iPad 9.7 inch 2018 | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | CFU     | Enabled     | Nill       | Nill           | Nill        |
+      | dono39675331@stf.ref.o2.co.uk | test123  | iPad 9.7 inch 2018 | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | CFU     | Enabled     | Nill       | Nill           | Nill        |

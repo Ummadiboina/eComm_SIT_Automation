@@ -16,9 +16,9 @@ Feature: 58_AFA_Phones_Validate_OFCOM_With_Archived_PAC_Code_When_OfCom_Enabled
     And Validate Agent OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey
     And In Agent Channel Enter input details <ofComMobileNum> <pacStacCode> for <pacStacCheck> code when ofcom status is <ofComStatus> and Validate <pacStackRetainCheck> functionality
     And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer>  in delivery page
-    And Validate ofCom error text for <codeStatus> if exist in Agent channel
+    And Validate OFCOM error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist in agent journey
 
 
     Examples:
       | Device                        | Tariffs | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | journey | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant | pacStacCode | pacStackRetainCheck |
-      | iPhone 8 Plus 64GB Space Grey | Refresh | Enabled   | £60           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | AFA     | Enabled     | Yes          | 07123456789    | Archived   | PAC         |             | Yes                 |
+      | iPhone 8 Plus 64GB Space Grey | Refresh | Enabled   | £60           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | AFA     | Enabled     | Yes          | 07441231111    | Archived   | PAC         | XCR716189   | Yes                 |

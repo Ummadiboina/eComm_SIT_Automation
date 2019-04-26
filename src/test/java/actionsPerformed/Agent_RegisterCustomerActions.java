@@ -1733,4 +1733,189 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Assert.fail("Register Status text message is not available");
 		}
 	}
+
+	public static void validationOfComErrorCopy(String ofComMobileNum, String PacStacCode, String codeStatus) {
+		try {
+
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,200)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+
+			//Null Values and Incomplete code error
+			if (codeStatus.equalsIgnoreCase("Null") || codeStatus.equalsIgnoreCase("InComplete")) {
+				if (driver.findElements(By.xpath("//label[contains(text(),'Enter your mobile number')]")).size() > 0) {
+					if (Agent_RegisterCustomerPage.emptyMobileNumError.isDisplayed()) {
+						String emptyMobileNumError = Agent_RegisterCustomerPage.emptyMobileNumError.getText();
+						Thread.sleep(2000);
+						Screenshots.captureScreenshot();
+						if (ofComMobileNum.equals("")) {
+							log.debug("As expected, error message is generated for empty mobile number ie: " + emptyMobileNumError + "\n");
+						} else if (emptyMobileNumError.equalsIgnoreCase("Enter a valid mobile number")) {
+							log.debug("As expected, error message is generated for incorrect mobile number ie: " + emptyMobileNumError + "\n");
+						}
+					}
+				}
+
+				if (driver.findElements(By.xpath("//label[contains(text(),'Enter your PAC or STAC code')]")).size() > 0) {
+					if (Agent_RegisterCustomerPage.emptyPACSTACcodeError.isDisplayed()) {
+						String emptyPACSTACCodeError = Agent_RegisterCustomerPage.emptyPACSTACcodeError.getText();
+						Thread.sleep(2000);
+						Screenshots.captureScreenshot();
+						if (PacStacCode.equals("")) {
+							log.debug("As expected, error message is generated for empty PAC/STAC code ie: " + emptyPACSTACCodeError + "\n");
+						} else if (emptyPACSTACCodeError.equalsIgnoreCase("Enter a valid PAC or N-PAC code")) {
+							log.debug("As expected, error message is generated for incorrect PAC/STAC code ie: " + emptyPACSTACCodeError + "\n");
+						}
+					}
+				}
+			}
+
+			if (codeStatus.equalsIgnoreCase("Expired")) {
+				String expiredErrorPACSTACCode = Agent_RegisterCustomerPage.PACSTACcodeError.getText();
+				Thread.sleep(2000);
+				Screenshots.captureScreenshot();
+				if (expiredErrorPACSTACCode.equals("This code has expired, but you can carry on and request another one later.")) {
+					log.debug("As expected, error message is generated for expired PAC/STAC code ie: " + expiredErrorPACSTACCode + "\n");
+				} else {
+					log.debug("Error message generated for expired PAC/STAC code is not matching ie: " + expiredErrorPACSTACCode + "\n");
+					Assert.fail("Error message generated for expired PAC/STAC code is not matching ie: " + expiredErrorPACSTACCode + "\n");
+				}
+			}
+
+			if (codeStatus.equalsIgnoreCase("Invalid")) {
+				String invalidErrorPACSTACCode = Agent_RegisterCustomerPage.PACSTACcodeError.getText();
+				Thread.sleep(2000);
+				Screenshots.captureScreenshot();
+				if (invalidErrorPACSTACCode.equals("This code doesn't seem to exist, but you can carry on and request another one later.")) {
+					log.debug("As expected, error message is generated for Invalid PAC/STAC code ie: " + invalidErrorPACSTACCode + "\n");
+				} else {
+					log.debug("Error message generated for Invalid PAC/STAC code is not matching ie: " + invalidErrorPACSTACCode + "\n");
+					Assert.fail("Error message generated for Invalid PAC/STAC code is not matching ie: " + invalidErrorPACSTACCode + "\n");
+				}
+			}
+
+			if (codeStatus.equalsIgnoreCase("Cancelled")) {
+				String cancelledErrorPACSTACCode = Agent_RegisterCustomerPage.PACSTACcodeError.getText();
+				Thread.sleep(2000);
+				Screenshots.captureScreenshot();
+				if (cancelledErrorPACSTACCode.equals("This code has been cancelled, but you can carry on and request another one later.")) {
+					log.debug("As expected, error message is generated for Cancelled PAC/STAC code ie: " + cancelledErrorPACSTACCode + "\n");
+				} else {
+					log.debug("Error message generated for Cancelled PAC/STAC code is not matching ie: " + cancelledErrorPACSTACCode + "\n");
+					Assert.fail("Error message generated for Cancelled PAC/STAC code is not matching ie: " + cancelledErrorPACSTACCode + "\n");
+				}
+			}
+
+			if (codeStatus.equalsIgnoreCase("Locked")) {
+				String lockedErrorPACSTACCode = Agent_RegisterCustomerPage.PACSTACcodeError.getText();
+				Thread.sleep(2000);
+				Screenshots.captureScreenshot();
+				if (lockedErrorPACSTACCode.equals("This code doesn't seem to exist, but you can carry on and request another one later.")) {
+					log.debug("As expected, error message is generated for Locked PAC/STAC code ie: " + lockedErrorPACSTACCode + "\n");
+				} else {
+					log.debug("Error message generated for Locked PAC/STAC code is not matching ie: " + lockedErrorPACSTACCode + "\n");
+					Assert.fail("Error message generated for Locked PAC/STAC code is not matching ie: " + lockedErrorPACSTACCode + "\n");
+				}
+			}
+
+			if (codeStatus.equalsIgnoreCase("Archived")) {
+				String archivedErrorPACSTACCode = Agent_RegisterCustomerPage.PACSTACcodeError.getText();
+				Thread.sleep(2000);
+				Screenshots.captureScreenshot();
+
+				if (archivedErrorPACSTACCode.contains("This code doesn't seem to exist, but you can carry on and request another one later.")) {
+					log.debug("As expected, error message is generated for Archived PAC/STAC code ie: " + archivedErrorPACSTACCode + "\n");
+				} else {
+					log.debug("Error message generated for Archived PAC/STAC code is not matching ie: " + archivedErrorPACSTACCode + "\n");
+					Assert.fail("Error message generated for Archived PAC/STAC code is not matching ie: " + archivedErrorPACSTACCode + "\n");
+				}
+			}
+		}catch(Exception e){
+			log.debug("Exception found: "+e);
+		}
+	}
+
+	public static void OFCOMPayGCustomerRegistration(String Firstname, String Surname, String HouseNumber, String PostCode)
+			throws InterruptedException, IOException {
+		Thread.sleep(5000);
+		try {
+			Screenshots.captureScreenshot();
+			Select dropdown = new Select(pageobjects.Agent_RegisterCustomerPage.Title);
+			dropdown.selectByIndex(1);
+			log.debug("Selected the dropdown Mr");
+			Reporter.log("Selected the dropdown Mr");
+			//Thread.sleep(5000);
+			Agent_RegisterCustomerPage.FirstName.sendKeys(Firstname);
+			log.debug("Entered First name");
+			Agent_RegisterCustomerPage.LastName.sendKeys(Surname);
+			log.debug("Entered Last name");
+
+			Agent_RegisterCustomerPage.Email.clear();
+			Agent_RegisterCustomerPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
+
+			Agent_RegisterCustomerPage.DOB.sendKeys("10-10-1981");
+			log.debug("Entered date of birth");
+			Thread.sleep(2000);
+			Agent_RegisterCustomerPage.ContactNumber.sendKeys("07888594958");
+			log.debug("Entered contact number");
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.getMessage();
+		}
+		Thread.sleep(2000);
+		Agent_RegisterCustomerPage.intialPassword.sendKeys("test123");
+		Agent_RegisterCustomerPage.confirmPassword.sendKeys("test123");
+		Thread.sleep(2000);
+
+		try {
+
+			Agent_RegisterCustomerPage.HouseNumber.sendKeys(HouseNumber);
+			//Thread.sleep(2000);
+			Agent_RegisterCustomerPage.Postcode.sendKeys(PostCode);
+			log.debug("Entered House Postcode  as: " + PostCode);
+
+			//Thread.sleep(2000);
+			pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
+			//Thread.sleep(3000);
+			log.debug("Clicked on the Find address button");
+			Thread.sleep(3000);
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", pageobjects.Agent_RegisterCustomerPage.Selectedaddress);
+			//pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
+			log.debug("Selected an address");
+
+		} catch (Exception e) {
+			e.getMessage();
+			log.debug("Try catch block exception in Agent register customer actions page, nothing to worry :)");
+		}
+
+		Thread.sleep(2000);
+		if(driver.findElements(By.id("marketingRequired")).size()>0) {
+
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", Agent_RegisterCustomerPage.Check_box);
+			//Agent_RegisterCustomerPage.Check_box.click();
+			log.debug("Selected the TC checkbox");
+			Thread.sleep(2000);
+		}
+
+		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
+		dropdown2.selectByIndex(2);
+		pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+	}
+
+	public static void clickRegisterCTAForOFCOMUSER() throws InterruptedException {
+		//Agent_RegisterCustomerPage.registerCustomer.click();
+		WebElement element = pageobjects.Agent_RegisterCustomerPage.registerCustomer;
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", element);
+
+		Thread.sleep(2000);
+		log.debug("Clicked on Register customer");
+	}
+
 }

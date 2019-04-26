@@ -10,8 +10,9 @@ Feature: 14_AFA_PayG_MBB_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
+    And Register the OFCOM PayG customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Validate Agent OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey
-    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Click on Register CTA to register OFCOM PayG Customer
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card

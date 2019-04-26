@@ -29,11 +29,14 @@ public class Agent_ConfirmationPage {
 		@FindBy(how=How.XPATH,using=".//*[@id='placeOrderForm']/input[@class='placeOrder']")
 		public static WebElement SubmitOrder;
 
-		@FindBy(how = How.XPATH, using = "//div[contains(text(),'ofComStatusMsg')]")
+		@FindBy(how = How.XPATH, using = "//div[@id='msisdn-confirmation-msg-id']/p[2]")
 		public static WebElement ofComStatusMsg;
 
-	@FindBy(how = How.XPATH, using = "//label[@id='pacnpac-error']")
-	public static WebElement emptyPACSTACcodeError;
+		@FindBy(how = How.XPATH, using = "//div[@id='msisdn-confirmation-msg-id']/p[1]")
+		public static WebElement ofComStatusMsgCustomerNewNum;
+
+		@FindBy(how = How.XPATH, using = "//label[@id='pacnpac-error']")
+		public static WebElement emptyPACSTACcodeError;
 
 					
 }

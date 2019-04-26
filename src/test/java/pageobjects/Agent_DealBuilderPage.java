@@ -63,7 +63,7 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "//*[@id='planTable']/tbody/tr[2]/td[1]")
     public static WebElement SelectingFirstAvailableTariff;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='prepayPlanTable']/tbody/tr[1]/td[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id='prepayPlanTable']/tbody/tr[2]/td[1]")
     public static WebElement SelectingFirstAvailablePrePayTariff;
 
     @FindBy(how = How.XPATH, using = "//table[@id='prepayDeviceTable']/tbody/tr/td/a/img")
@@ -417,5 +417,14 @@ public class Agent_DealBuilderPage {
 
     @FindBy(how = How.XPATH, using = ("//*[text()='Email sent successfully']"))
     public static WebElement emailSuccessfullyMsg;
+
+    @FindBy(how = How.XPATH, using = ("//a[@id='simoPlanTab']"))
+    public static WebElement SIMOTariffsTab;
+
+    @FindBy(how = How.XPATH, using = ("//div[@id='simoPlanTabContent']/div/div/label/input"))
+    public static WebElement SIMOTariffsInputField;
+
+    @FindBy(how = How.XPATH, using = ("//*[@id='simonlyPlanTable']/tbody/tr[1]/td[1]"))
+    public static WebElement SelectingFirstAvailableSIMOTariff;
 
 }

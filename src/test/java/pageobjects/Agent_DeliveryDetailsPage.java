@@ -84,10 +84,10 @@ public class Agent_DeliveryDetailsPage {
 		@FindBy(how=How.XPATH,using="//*[@id='creditCheckAndAgreementAndStatus']/input[3]")
 		public static WebElement PerformCreditCheck;
 
-	@FindBy(how = How.XPATH, using = "//*[normalize-space()='Are you switching to O2?']")
+	@FindBy(how = How.XPATH, using = "//li[normalize-space()='Are you switching to O2?']")
 	public static WebElement switchingO2Question;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='switchingO2Intro']")
+	@FindBy(how = How.XPATH, using = "//li[normalize-space()='Are you switching to O2?']/../p")
 	public static WebElement switchingO2Intro;
 
 	@FindBy(how = How.XPATH, using = "//a[normalize-space='What is a PAC and STAC code?']")
@@ -99,26 +99,28 @@ public class Agent_DeliveryDetailsPage {
 	@FindBy(how = How.XPATH, using = "//*[@class='PACSTACOverlayClose']")
 	public static WebElement PACSTACOverlayClose;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='PACSTACCheckBox']")
+	@FindBy(how = How.XPATH, using = "//input[@id='codeSectionCheckBox-id']")
 	public static WebElement PACSTACCheckBox;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='PACSTACMobileNum']")
+	@FindBy(how = How.XPATH, using = "//input[@id='regMobileNumber']")
 	public static WebElement PACSTACMobileNum;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='PACSTACcode']")
+	@FindBy(how = How.XPATH, using = "//input[@id='regPACNPACCode']")
 	public static WebElement PACSTACcode;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='emptyMobileNumError']")
+	@FindBy(how = How.XPATH, using = "//label[contains(text(),'Enter your mobile number')]")
 	public static WebElement emptyMobileNumError;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='emptyPACSTACcodeError']")
+	@FindBy(how = How.XPATH, using = "//label[contains(text(),'Enter your PAC or STAC code')]")
 	public static WebElement emptyPACSTACcodeError;
 
 	@FindBy(how = How.XPATH, using = ("//div[@class='error-msg']"))
 	public static WebElement DeliveryErrorText;
 
-	@FindBy(how = How.XPATH, using = ("//div[@class='error-msg']"))
+	@FindBy(how = How.XPATH, using = ("//input[@id='codeSectionCheckBox-id']/../label"))
 	public static WebElement PACSTACCheckBoxTxt;
-		
-		
+
+	@FindBy(how = How.XPATH, using = ("//div[@id='codeSection']"))
+	public static WebElement PACSTACSection;
+
 }

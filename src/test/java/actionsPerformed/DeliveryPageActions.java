@@ -1664,7 +1664,8 @@ public class DeliveryPageActions extends Environment {
 
         try {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@class='ofComTextToSwitch']")));
+            //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@class='ofComTextToSwitch']")));
+            jse.executeScript("window.scrollBy(0,100)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
 
@@ -1672,7 +1673,7 @@ public class DeliveryPageActions extends Environment {
             if(ofComStatus.equalsIgnoreCase("Enabled")) {
 
                 //Device is MBB or not
-                if (journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("CFU") || journey.equalsIgnoreCase("Accessory")) {
+                if (journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("CFU") || journey.equalsIgnoreCase("Accessory")) {
                     //As device is MBB so ofCom should be disabled
                     if (driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size() == 0) {
                         log.debug("As expected, ofCom Switching is disabled in MBB/CFU journey\n");
@@ -1681,7 +1682,7 @@ public class DeliveryPageActions extends Environment {
                         Assert.fail("Failed: ofCom Switching feature supposed to be disabled in MBB/CFU journey\n");
                     }
                 } else {
-                    log.debug("Journey is not a MBB/CFU journey\n");
+                    log.debug("Journey is not a Tablet/PayGsimo/MBB/CFU journey\n");
 
                     if (driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size() > 0) {
                         log.debug("As expected, ofCom Switching is enabled\n");
@@ -1940,7 +1941,7 @@ public class DeliveryPageActions extends Environment {
                 log.debug("We are back to delivery page as the info provided is incorrect\n");
 
                 //Null Values and Incomplete code error
-                if (codeStatus.equalsIgnoreCase("Nill") || codeStatus.equalsIgnoreCase("InComplete")) {
+                if (codeStatus.equalsIgnoreCase("Null") || codeStatus.equalsIgnoreCase("InComplete")) {
                     if (driver.findElements(By.xpath("//label[@id='mnumber-error']")).size() > 0) {
                         if (DeliveryPage.emptyMobileNumError.isDisplayed()) {
                             String emptyMobileNumError = DeliveryPage.emptyMobileNumError.getText();
@@ -1984,7 +1985,7 @@ public class DeliveryPageActions extends Environment {
                     String invalidErrorPACSTACCode = DeliveryPage.PACSTACcodeError.getText();
                     Thread.sleep(2000);
                     Screenshots.captureScreenshot();
-                    if (invalidErrorPACSTACCode.equals("This code doesn’t seem to exist, but you can carry on and request another one later.")) {
+                    if (invalidErrorPACSTACCode.equals("This code doesn't seem to exist, but you can carry on and request another one later.")) {
                         log.debug("As expected, error message is generated for Invalid PAC/STAC code ie: " + invalidErrorPACSTACCode + "\n");
                     } else {
                         log.debug("Error message generated for Invalid PAC/STAC code is not matching ie: " + invalidErrorPACSTACCode + "\n");
@@ -2008,7 +2009,7 @@ public class DeliveryPageActions extends Environment {
                     String lockedErrorPACSTACCode = DeliveryPage.PACSTACcodeError.getText();
                     Thread.sleep(2000);
                     Screenshots.captureScreenshot();
-                    if (lockedErrorPACSTACCode.equals("This code is locked. Request another one and try again.")) {
+                    if (lockedErrorPACSTACCode.equals("This code doesn't seem to exist, but you can carry on and request another one later.")) {
                         log.debug("As expected, error message is generated for Locked PAC/STAC code ie: " + lockedErrorPACSTACCode + "\n");
                     } else {
                         log.debug("Error message generated for Locked PAC/STAC code is not matching ie: " + lockedErrorPACSTACCode + "\n");
@@ -2021,7 +2022,7 @@ public class DeliveryPageActions extends Environment {
                     Thread.sleep(2000);
                     Screenshots.captureScreenshot();
 
-                    if (archivedErrorPACSTACCode.contains("This code is already been used, but you can carry on and request another one later.")) {
+                    if (archivedErrorPACSTACCode.contains("This code doesn't seem to exist, but you can carry on and request another one later.")) {
                         log.debug("As expected, error message is generated for Archived PAC/STAC code ie: " + archivedErrorPACSTACCode + "\n");
                     } else {
                         log.debug("Error message generated for Archived PAC/STAC code is not matching ie: " + archivedErrorPACSTACCode + "\n");
@@ -2209,19 +2210,19 @@ public class DeliveryPageActions extends Environment {
             log.debug("Selected the dropdown Mrs");
             Reporter.log("Selected the dropdown Mrs");
 
-            //String beforName = DeliveryPage.First_Name_Field.getAttribute("class");
-            // Assert.assertEquals(beforName, "clearfix float-container");
+            String beforName = DeliveryPage.First_Name_Field.getAttribute("class");
+            Assert.assertEquals(beforName, "firstNameParent float-container");
             DeliveryPage.First_Name.sendKeys(Firstname);
-            //String afterName = DeliveryPage.First_Name_Field.getAttribute("class");
-            //Assert.assertEquals(afterName, "clearfix float-container active");
+            String afterName = DeliveryPage.First_Name_Field.getAttribute("class");
+            Assert.assertEquals(afterName, "firstNameParent float-container active");
             log.debug("First Name field text is shifted upper lefter corner\n");
 
-            //String beforLast = DeliveryPage.Last_Name_Field.getAttribute("class");
-            //Assert.assertEquals(beforLast, "clearfix float-container");
+            String beforLast = DeliveryPage.Last_Name_Field.getAttribute("class");
+            Assert.assertEquals(beforLast, "lastNameParent float-container");
             DeliveryPage.Last_Name.sendKeys(Surname);
-            //String afterLast = DeliveryPage.Last_Name_Field.getAttribute("class");
-            // Assert.assertEquals(afterLast, "clearfix float-container active");
-            //log.debug("Last Name field text is shifted upper lefter corner\n");
+            String afterLast = DeliveryPage.Last_Name_Field.getAttribute("class");
+            Assert.assertEquals(afterLast, "lastNameParent float-container active");
+            log.debug("Last Name field text is shifted upper lefter corner\n");
 
             log.debug("Entered first name and last name as " + Firstname + " " + Surname);
 

@@ -1,12 +1,12 @@
-Feature: 41_CFA_CnC_Tablets_Validate_OFCOM_With_Locked_STAC_Code_When_OfCom_Enabled
+Feature: 39_CFA_Phones_Validate_OFCOM_With_Cancelled_STAC_Code_When_OfCom_Enabled
 
 
   @Web
-  Scenario Outline:41_CFA_CnC_Tablets_Validate_OFCOM_With_Locked_STAC_Code_When_OfCom_Enabled
+  Scenario Outline:39_CFA_Phones_Validate_OFCOM_With_Cancelled_STAC_Code_When_OfCom_Enabled
 
     Given I am an CFA user and Lands on shop page
-    And navigate to PAYM Tablets page
-    And Select PayM Tablet <tabletname>
+    And navigate to PAYM Phones page
+    And I choose PayM <handset>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -20,5 +20,5 @@ Feature: 41_CFA_CnC_Tablets_Validate_OFCOM_With_Locked_STAC_Code_When_OfCom_Enab
 
 
     Examples:
-      | tabletname         | Firstname | Surname | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | iPad Pro 10.5 inch | TEST      | ACCEPTA | Tablet  | Enabled     | Yes          | Locked     | STAC        | Yes                 | 07123456789    | XDF543253   | Enabled   | CapMyBill | £15       |
+      | handset   | Firstname | Surname | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
+      | Galaxy S9 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | Cancelled  | STAC        | Yes                 | 07412321761    | 101287XCR   | Enabled   | CapMyBill | £15       |

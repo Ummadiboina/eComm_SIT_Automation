@@ -19,5 +19,5 @@ Feature: 60_CFA_SmartWatches_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
     And Validate OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>
 
     Examples:
-      | Firstname | postcode | HouseNumber | Surname | Device        | ofComStatus | journey   | codeStatus | Username     | ofComMobileNum | codeVariant | pacStacCheck | pacStacCode
+      | Firstname | postcode | HouseNumber | Surname | Device        | ofComStatus | journey   | codeStatus | Username     | ofComMobileNum | codeVariant | pacStacCheck | pacStacCode |
       | TEST      | SL14DX   | 12          | ACCEPTA | Random Device | Enabled     | Accessory |            | TEST ACCEPTA |                |             |              |             |

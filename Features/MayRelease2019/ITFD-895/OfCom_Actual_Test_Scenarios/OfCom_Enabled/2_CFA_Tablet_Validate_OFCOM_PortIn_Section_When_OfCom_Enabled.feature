@@ -19,4 +19,4 @@ Feature: 2_CFA_Tablet_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
 
     Examples:
       | tabletname         | Firstname | Surname | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | ofComMobileNum | BSCstatus | BillCap   | CapAmount |
-      | iPad Pro 10.5 inch | TEST      | ACCEPTA | TEST ACCEPTA | CFA     | Enabled     | Not          | Nill       | Nill        | Nill           | Enabled   | CapMyBill | £15       |
+      | iPad Pro 10.5 inch | TEST      | ACCEPTA | TEST ACCEPTA | Tablet  | Enabled     | Not          | Nill       | Nill        | Nill           | Enabled   | CapMyBill | £15       |

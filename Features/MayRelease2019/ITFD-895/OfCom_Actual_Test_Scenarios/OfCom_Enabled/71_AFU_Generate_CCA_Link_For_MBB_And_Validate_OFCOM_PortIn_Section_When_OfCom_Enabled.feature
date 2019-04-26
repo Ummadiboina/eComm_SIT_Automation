@@ -28,4 +28,4 @@ Feature: 71_AFU_Generate_CCA_Link_For_MBB_And_Validate_OFCOM_PortIn_Section_When
 
     Examples:
       | User        | Device | Tariffs | BSCstatus | BillCapAmount | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected | ofComStatus | journey |
-      | 07568422379 | dongle | Refresh | Enabled   | £10           | dont56640665@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | Enabled     | MBB     |
+      | 07521139777 | dongle | Refresh | Enabled   | £10           | dont56640665@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | Enabled     | MBB     |

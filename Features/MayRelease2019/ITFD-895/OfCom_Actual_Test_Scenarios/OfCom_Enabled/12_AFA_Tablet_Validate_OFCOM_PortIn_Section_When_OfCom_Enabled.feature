@@ -14,9 +14,9 @@ Feature: 12_AFA_Tablet_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Validate Agent OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey
-    And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer>  in delivery page
+    #And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer>  in delivery page
 
 
     Examples:
       | Device                              | Tariffs | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | journey | ofComStatus |
-      | iPad Pro 10.5 inch 256GB Space Grey | Refresh | Enabled   | £60           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | AFA     | Enabled     |
+      | iPad Pro 10.5 inch 256GB Space Grey | Refresh | Enabled   | £60           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Tablet  | Enabled     |

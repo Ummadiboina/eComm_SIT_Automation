@@ -155,10 +155,10 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//span/i[@id='annual-incomeSelectBoxItArrow']")
     public static WebElement annualIncomeDropDown;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='affordability-terms-declaration1']")
+    @FindBy(how = How.XPATH, using = "(//span[@class='custom-checkbox'])[2]")
     public static WebElement agreeFinancialCommitments;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='affordability-terms-declaration2']")
+    @FindBy(how = How.XPATH, using = "(//span[@class='custom-checkbox'])[3]")
     public static WebElement agreeMyCircumstances;
 
     @FindBy(how = How.XPATH, using = "//a[@class='affordability-section-dont-agree-link']")
