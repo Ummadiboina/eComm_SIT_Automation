@@ -39,7 +39,7 @@ import java.util.List;
 @CucumberOptions(plugin = {"html:testResult/cucumber-html-report",
         "json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
         "usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml"},
-        features = {"Features//MayRelease2019//ITFD-895//FirstBatchRun"},
+        features = {"Features//AprilRelease2019//CFA_Reg_FailedScenarios"},
         glue = {"steps"},
         tags = {"@Web"})
 
