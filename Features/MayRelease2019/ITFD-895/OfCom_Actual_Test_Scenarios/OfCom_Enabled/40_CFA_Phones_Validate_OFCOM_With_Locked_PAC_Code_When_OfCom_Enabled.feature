@@ -21,4 +21,4 @@ Feature: 40_CFA_Phones_Validate_OFCOM_With_Locked_PAC_Code_When_OfCom_Enabled
 
     Examples:
       | handset   | Firstname | Surname | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | Galaxy S9 | TEST      | ACCEPTA | Phone   | Enabled     | Yes          | Locked     | PAC         | Yes                 | 07123456789    | XDF543253   | Enabled   | CapMyBill | £15       |
+      | Galaxy S9 | TEST      | ACCEPTA | Phone   | Enabled     | Yes          | Locked     | PAC         | Yes                 | 07412321616    | XCR010071   | Enabled   | CapMyBill | £15       |

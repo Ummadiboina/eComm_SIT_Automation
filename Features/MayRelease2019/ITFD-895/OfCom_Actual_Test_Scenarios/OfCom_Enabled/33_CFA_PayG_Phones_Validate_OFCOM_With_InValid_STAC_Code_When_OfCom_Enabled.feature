@@ -20,4 +20,4 @@ Feature: 33_CFA_PayG_Phones_Validate_OFCOM_With_InValid_STAC_Code_When_OfCom_Ena
 
     Examples:
       | handset   | Firstname | Surname | tariff | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus |
-      | Galaxy S9 | TEST      | ACCEPTA |        | Phone   | Enabled     | Yes          | Invalid    | STAC        | Yes                 | 07123456789    | 256407XCR   | Disabled  |
+      | Galaxy S9 | TEST      | ACCEPTA |        | Phone   | Enabled     | Yes          | Invalid    | STAC        | Yes                 | 07412321773    | 983824XCR   | Disabled  |

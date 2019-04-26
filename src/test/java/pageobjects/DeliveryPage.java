@@ -386,10 +386,10 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@id='email']/../../div")
     public static WebElement Email_Address_Field;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='first-name']/../../../div[1]")
+    @FindBy(how = How.XPATH, using = "//input[@id='first-name']/..")
     public static WebElement First_Name_Field;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='last-name']/../../div")
+    @FindBy(how = How.XPATH, using = "//input[@id='last-name']/..")
     public static WebElement Last_Name_Field;
 
     @FindBy(how = How.XPATH, using = "//input[@id='contact-number']/../.././div")

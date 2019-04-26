@@ -26,4 +26,4 @@ Feature: 10_CFU_MBB_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
 
     Examples:
       | username                      | password | Device_Name   | BSCstatus | BillCap       | CapAmount | Username     | Action    | journey | ofComStatus | codeStatus | ofComMobileNum | pacStacCode |
-      | till51074963@stf.ref.o2.co.uk | test123  | Random Device | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | CFU     | Enabled     | Nill       | Nill           | Nill        |
+      | dono97392353@stf.ref.o2.co.uk | test123  | Random Device | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | CFU     | Enabled     | Nill       | Nill           | Nill        |

@@ -2288,7 +2288,7 @@ public class E2EOrderPlaced_Steps {
             // Write code here that turns the phrase above into concrete actions
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             log.debug("We are at agreement page\n");
-            Thread.sleep(50000);
+            Thread.sleep(30000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
 
@@ -13158,6 +13158,169 @@ public class E2EOrderPlaced_Steps {
             e.printStackTrace();
             log.debug("Unable to choose PayM phone");
             Assert.fail("Unable to choose PayM phone");
+        }
+    }
+
+    //ITFD-955
+    @And("^land on the payment page and input ([^\"]*) and other details and verify checkout changes and click 'Continue on next step' for click and collect$")
+    public void CreditCheckPaymentPage_checkout_changes_cnc(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+
+            Thread.sleep(10000);
+            //CommonFunctionscheckTitle("Payment Page");
+            PaymentPageActions.Bank_details_Field(Username);
+            Thread.sleep(5000);
+            PaymentPageActions.Time_At_Address_CC();
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(10000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
+
+            Thread.sleep(12000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(12000);
+            PaymentPageActions.Card_Details_CCV();
+            //Thread.sleep(30000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
+    @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page to verify checkoutPages$")
+    public void DeliveryPage_checkoutpagesChanges(String Firstname, String Surname) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.SetDeliveryPage();
+            Thread.sleep(4000);
+            DeliveryPageActions.YourDetails(Firstname, Surname);
+            // DeliveryPageActions.ClickContinue();
+            //DeliveryPageActions.clickOnSubmitBtn();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+    }
+
+    @And("^Check and choose the availability to collect from store now delivery page$")
+    public void checkCCNAvailabilityIndeliveryPage() {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(5000);
+            DeliveryPageActions.CNCNowoption();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on the product details page and choose to collect from store now");
+            Assert.fail("Unable to Land on the product details page and choose to collect from store now");
+        }
+    }
+
+    @And("^land on the payment page and input ([^\"]*) and other details and verify checkout changes and click 'Continue on next step'$")
+    public void CreditCheckPaymentPage_checkout_changes(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+
+            Thread.sleep(10000);
+            //CommonFunctionscheckTitle("Payment Page");
+            PaymentPageActions.Bank_details_Field(Username);
+            Thread.sleep(5000);
+            PaymentPageActions.Time_At_Address();
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(10000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
+
+            Thread.sleep(12000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(12000);
+            PaymentPageActions.Card_Details_CCV();
+            //Thread.sleep(30000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
+    @And("^Validate OFCOM error text for ([^\"]*) ([^\"]*) ([^\"]*) if exist in agent journey$")
+    public void validateOfComErrorCopy(String ofComMobileNum, String PacStacCode, String codeStatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Agent_RegisterCustomerActions.validationOfComErrorCopy(ofComMobileNum, PacStacCode, codeStatus);
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+            Assert.fail("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+        }
+    }
+
+    @Given("^Select valid simo tariff ([^\"]*) from simo tariffs tab$")
+    public void selectSimoTariff(String Tariff) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(2000);
+            Agent_DealBuilderPageActions.SelectSimoTariff(Tariff);
+            Thread.sleep(2000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select valid simo tariff, please see the failure screenshot");
+            Assert.fail("Unable to select valid simo tariff, please see the failure screenshot");
+
+        }
+    }
+
+    @Then("^Register the OFCOM PayG customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
+    public void register_the_PayGcustomer(String Firstname, String Surname, String HouseNumber, String PostCode) {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+
+            Agent_RegisterCustomerActions.OFCOMPayGCustomerRegistration(Firstname, Surname, HouseNumber, PostCode);
+
+        } catch (Exception e) { // TODO Auto-generated catch block
+            log.debug("Unable to Register customer , please see the failure screenshot");
+            Assert.fail("Unable to Register customer , please see the failure screenshot");
+        }
+    }
+
+    @And("^Click on Register CTA to register OFCOM PayG Customer$")
+    public void clickRegisterCTAForOFCOM() {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+
+            Agent_RegisterCustomerActions.clickRegisterCTAForOFCOMUSER();
+
+        } catch (Exception e) { // TODO Auto-generated catch block
+            log.debug("Unable to Register customer , please see the failure screenshot");
+            Assert.fail("Unable to Register customer , please see the failure screenshot");
         }
     }
 }

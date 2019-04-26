@@ -1,15 +1,16 @@
-Feature: 43_CFA_PayG_Tablets_Validate_OFCOM_With_Archived_STAC_Code_When_OfCom_Enabled
+Feature: 41_CFA_Phones_Validate_OFCOM_With_Locked_STAC_Code_When_OfCom_Enabled
 
 
   @Web
-  Scenario Outline:43_CFA_PayG_Tablets_Validate_OFCOM_With_Archived_STAC_Code_When_OfCom_Enabled
+  Scenario Outline:41_CFA_Phones_Validate_OFCOM_With_Locked_STAC_Code_When_OfCom_Enabled
 
     Given I am an CFA user and Lands on shop page
-    And navigate to Pay as you Go Tablets page
-    And select any available <Device> Tablet
+    And navigate to PAYM Phones page
+    And I choose PayM <handset>
     And Navigate to device details page
-    And Select a PayG tariff <tariff>
+    And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -19,5 +20,5 @@ Feature: 43_CFA_PayG_Tablets_Validate_OFCOM_With_Archived_STAC_Code_When_OfCom_E
 
 
     Examples:
-      | Device             | tariff        | Firstname | Surname | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus |
-      | iPad Pro 10.5 inch | 1GB Preloaded | TEST      | ACCEPTA | Tablet  | Enabled     | Yes          | Archived   | STAC        | Yes                 | 07123456789    | 256407XCR   | Disabled  |
+      | handset   | Firstname | Surname | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
+      | Galaxy S9 | TEST      | ACCEPTA | Phone   | Enabled     | Yes          | Locked     | STAC        | Yes                 | 07412321668    | 381980XCR   | Enabled   | CapMyBill | £15       |

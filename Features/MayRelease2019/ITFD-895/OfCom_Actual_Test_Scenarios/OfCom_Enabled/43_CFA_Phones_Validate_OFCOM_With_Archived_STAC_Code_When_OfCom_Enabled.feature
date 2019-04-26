@@ -1,15 +1,16 @@
-Feature: 20_CFA_PayG_Tablets_Validate_OFCOM_ErrorMessage_For_InComplete_MobNum_When_OfCom_Enabled
+Feature: 43_CFA_Phones_Validate_OFCOM_With_Archived_STAC_Code_When_OfCom_Enabled
 
 
   @Web
-  Scenario Outline:20_CFA_PayG_Tablets_Validate_OFCOM_ErrorMessage_For_InComplete_MobNum_When_OfCom_Enabled
+  Scenario Outline:43_CFA_Phones_Validate_OFCOM_With_Archived_STAC_Code_When_OfCom_Enabled
 
     Given I am an CFA user and Lands on shop page
-    And navigate to Pay as you Go Tablets page
-    And select any available <Device> Tablet
+    And navigate to PAYM Phones page
+    And I choose PayM <handset>
     And Navigate to device details page
-    And Select a PayG tariff <tariff>
+    And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -17,6 +18,7 @@ Feature: 20_CFA_PayG_Tablets_Validate_OFCOM_ErrorMessage_For_InComplete_MobNum_W
     And In Consumer Enter input details <ofComMobileNum> <pacStacCode> for <pacStacCheck> code when ofcom status is <ofComStatus> and Validate <pacStackRetainCheck> functionality
     And Click on Continue CTA and validate error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist
 
+
     Examples:
-      | Device             | Firstname | Surname | tariff        | journey | ofComStatus | pacStacCheck | pacStacCode | ofComMobileNum | pacStackRetainCheck | codeStatus | BSCstatus |
-      | iPad Pro 10.5 inch | TEST      | ACCEPTA | 1GB Preloaded | CFA     | Enabled     | Yes          | XCR661826   | 074123216      |                     | InComplete | Disabled  |
+      | handset   | Firstname | Surname | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
+      | Galaxy S9 | TEST      | ACCEPTA | Phone   | Enabled     | Yes          | Archived   | STAC        | Yes                 | 07412321652    | 406176XCR   | Enabled   | CapMyBill | £15       |

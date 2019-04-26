@@ -1,8 +1,8 @@
-Feature: 48_AFA_PayG_Phones_Validate_OFCOM_With_InValid_PAC_Code_When_OfCom_Enabled
+Feature: 53_AFA_PayG_Phones_Validate_OFCOM_With_Expired_STAC_Code_When_OfCom_Enabled
 
   #launch hooks and get browser
   @Web
-  Scenario Outline: 48_AFA_PayG_Phones_Validate_OFCOM_With_InValid_PAC_Code_When_OfCom_Enabled
+  Scenario Outline: 53_AFA_PayG_Phones_Validate_OFCOM_With_Expired_STAC_Code_When_OfCom_Enabled
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select a valid PAYG <Device>
@@ -18,5 +18,5 @@ Feature: 48_AFA_PayG_Phones_Validate_OFCOM_With_InValid_PAC_Code_When_OfCom_Enab
     And Validate OFCOM error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist in agent journey
 
     Examples:
-      | Device                | Tariffs | BSCstatus | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStacCode | pacStackRetainCheck | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | DeviceType | DeviceModule | codeVariant | DeliveryType | codeStatus |
-      | iPhone XR 128GB Coral | Random  | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | AFA     | Enabled     | Yes          | 07412321738    | XCR908261   | Yes                 | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | Connected  | Phones       | PAC         | HomeDelivery | Invalid    |
+      | Device                        | Tariffs | BSCstatus | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStacCode | pacStackRetainCheck | confirmPassword | Password | SecurityAnswer | codeStatus | codeVariant |
+      | iPhone 8 Plus 64GB Space Grey | Random  | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Phones  | Enabled     | Yes          | 07441231146    | 927949XCR   | Yes                 | test1234        | test1234 | vinudeep       | Expired    | STAC        |

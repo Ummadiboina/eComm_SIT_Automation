@@ -338,4 +338,13 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='PartnersContacting_OverlayText']")
     public static WebElement PartnersContacting_OverlayText;
 
+    @FindBy(how = How.XPATH, using = "//label[contains(text(),'Enter your mobile number')]")
+    public static WebElement emptyMobileNumError;
+
+    @FindBy(how = How.XPATH, using = "//label[contains(text(),'Enter your PAC or STAC code')]")
+    public static WebElement emptyPACSTACcodeError;
+
+    @FindBy(how = How.XPATH, using = "//label[@id='portInCodeValidationError']")
+    public static WebElement PACSTACcodeError;
+
 }

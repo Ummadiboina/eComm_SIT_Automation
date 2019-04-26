@@ -20,4 +20,4 @@ Feature: 16_AFU_Phones_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
 
     Examples:
       | user        | Device                        | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | DeviceType | PreSelected | ofComStatus | journey | pacStacCheck | codeStatus | codeVariant | ofComMobileNum |
-      | 07521116879 | iPhone 8 Plus 64GB Space Grey | Refresh | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | Connected  | No          | Enabled     | AFU     | Nill         | Nill       | Nill        | Nill           |
+      | 07521139911 | iPhone 8 Plus 64GB Space Grey | Refresh | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | Connected  | No          | Enabled     | AFU     | Nill         | Nill       | Nill        | Nill           |

@@ -22,4 +22,4 @@ Feature: 5_CFA_PayM_Tablet_SIMO_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
 
     Examples:
       | Contract  | postcode | HouseNumber | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | journey | ofComStatus | pacStacCode | pacStacCheck | codeStatus | codeVariant | ofComMobileNum |
-      | 12 Months | SL33FP   |             | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £0        | SIMO    | Enabled     | Nill        | Not          | Nill       | Nill        | Nill           |
+      | 12 Months | SL33FP   |             | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £0        | Tablet  | Enabled     | Nill        | Not          | Nill       | Nill        | Nill           |

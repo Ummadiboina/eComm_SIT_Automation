@@ -1,8 +1,8 @@
-Feature: 76_AFA_Existing_customer_Tablets_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enabled
+Feature: 76_AFA_Existing_customer_Phones_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enabled
 
   #launch hooks and get browser
   @Web
-  Scenario Outline: 76_AFA_Existing_customer_Tablets_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enabled
+  Scenario Outline: 76_AFA_Existing_customer_Phones_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enabled
     Given I login to Agent shop
     Given performs Agent Existing customer journey for <User>
     And Select a valid PayM <Device>
@@ -22,5 +22,5 @@ Feature: 76_AFA_Existing_customer_Tablets_Validate_OFCOM_With_Valid_STAC_Code_Wh
     And Validate Agent OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>
 
     Examples:
-      | User        | Device             | Tariffs | BSCstatus | BillCapAmount | Username     | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | journey | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant | pacStacCode | pacStackRetainCheck |
-      | 07568422379 | iPad Pro 10.5 inch | Refresh | Enabled   | £100          | TEST ACCEPTA | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | AFA     | Connected  | Phone        | Enabled     | Yes          | 07123456789    | valid      | STAC        |             | Yes                 |
+      | User        | Device                        | Tariffs | BSCstatus | BillCapAmount | Username     | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | journey | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant | pacStacCode | pacStackRetainCheck |
+      | 07568422379 | iPhone 8 Plus 64GB Space Grey | Refresh | Enabled   | £100          | TEST ACCEPTA | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | Phones  | Connected  | Phone        | Enabled     | Yes          | 07123456789    | valid      | STAC        |             | Yes                 |

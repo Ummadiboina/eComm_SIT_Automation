@@ -30,8 +30,8 @@ Feature: 8_CFU_Phones_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-
+    And Validate OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>
 
     Examples:
-      | username                      | password | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | journey | ofComStatus | codeStatus | ofComMobileNum | pacStacCode |
-      | till51074963@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | CFU     | Enabled     | Nill       | Nill           | Nill        |
+      | username                      | password | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | journey | ofComStatus | codeStatus | ofComMobileNum | pacStacCode | codeVariant | pacStacCheck |
+      | dono27170022@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | CFU     | Enabled     | Nill       | Nill           | Nill        | Nill        | Not          |

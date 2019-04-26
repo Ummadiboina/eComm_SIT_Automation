@@ -5,7 +5,7 @@ Feature: 22_Reg_AFA_PayMSimO_withoutAnyAccessory
   Scenario Outline: Successful completion of a PAY M SIMO acquisition Journey without an accessory
     Given I login to Agent shop
     And performs Acquisition for New user
-    And Select valid <Tariff> from tariffs tab
+    And Select valid simo tariff <Tariff> from simo tariffs tab
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And Validate all the Basket content and checkout

@@ -21,4 +21,4 @@ Feature: 38_CFA_CnC_Phones_Validate_OFCOM_With_Cancelled_PAC_Code_When_OfCom_Ena
 
     Examples:
       | handset   | Firstname | Surname | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | Galaxy S9 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | Cancelled  | PAC         | Yes                 | 07123456789    | XDF543253   | Enabled   | CapMyBill | £15       |
+      | Galaxy S9 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | Cancelled  | PAC         | Yes                 | 07412321728    | XCR713907   | Enabled   | CapMyBill | £15       |

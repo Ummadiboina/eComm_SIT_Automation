@@ -12,5 +12,5 @@ Feature: 7_CFA_PayG_SIMO_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
     Then order confirmation is displayed
 
     Examples:
-      | Firstname | Surname | CheckBox | HouseNumber | PostCode | journey | ofComStatus |
-      | TEST      | ACCEPTA | No       |             | SL11ER   | SIMO    | Enabled     |
+      | Firstname | Surname | CheckBox | HouseNumber | PostCode | journey  | ofComStatus |
+      | TEST      | ACCEPTA | No       |             | SL11ER   | PayGsimo | Enabled     |

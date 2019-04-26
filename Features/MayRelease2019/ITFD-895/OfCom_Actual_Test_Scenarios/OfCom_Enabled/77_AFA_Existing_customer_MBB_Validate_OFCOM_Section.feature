@@ -1,8 +1,8 @@
-Feature: 77_AFA_Existing_customer_MBB_Validate_OFCOM_With_Valid_PAC_Code_When_OfCom_Enabled
+Feature: 77_AFA_Existing_customer_MBB_Validate_OFCOM_Section
 
   #launch hooks and get browser
   @Web
-  Scenario Outline: 77_AFA_Existing_customer_MBB_Validate_OFCOM_With_Valid_PAC_Code_When_OfCom_Enabled
+  Scenario Outline: 77_AFA_Existing_customer_MBB_Validate_OFCOM_Section
     Given I login to Agent shop
     Given performs Agent Existing customer journey for <User>
     And Select a valid PayM <Device>

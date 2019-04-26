@@ -944,27 +944,30 @@ public class OrderConfirmationPageActions extends Environment {
 	}
 
 	//ITFD-895, April Release new changes Validation by Jamal Khan
-	public static void ofComOrderConfirmationPage(String ofComMobileNum, String codeVariant, String journey, String codeStatus, String PacStacCheck, String ofComStatus) {
-
+	public static void ofComOrderConfirmationPage(String ofComMobileNum, String codeVariant, String journey, String codeStatus, String PacStacCheck, String ofComStatus) throws InterruptedException {
+		Thread.sleep(3000);
 		try {
 			if(ofComStatus.equalsIgnoreCase("Enabled")) {
 				//Device is MBB or not
-				if (journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("CFU") || journey.equalsIgnoreCase("Accessory")) {
+				if (journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("CFU") || journey.equalsIgnoreCase("Accessory")) {
 					//As device is MBB so ofCom should be disabled
-					if (driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size() == 0) {
+					if (driver.findElements(By.xpath("//div[@class='alloc-msisdn']")).size() == 0) {
 						log.debug("As expected, ofCom Switching is disabled in MBB/CFU journey\n");
 					} else {
 						log.debug("Failed: ofCom Switching feature supposed to be disabled in MBB/CFU journey\n");
 						Assert.fail("Failed: ofCom Switching feature supposed to be disabled in MBB/CFU journey\n");
 					}
 				}else {
-					if (driver.findElements(By.xpath("//div[contains(text(),'ofComStatusMsg')]")).size() > 0) {
+					if (driver.findElements(By.xpath("//div[@class='alloc-msisdn']")).size() > 0) {
 						log.debug("As expected, ofCom Switching status is enabled\n");
+
+						String selectedStatusMessage = OrderConfirmationPage.ofComStatusMsg.getText();
+						/*String ofComStatusMsgCustomerNewNum = OrderConfirmationPage.ofComStatusMsgCustomerNewNum.getText();
+						Thread.sleep(1000);
+						log.debug("Customer new number: "+ofComStatusMsgCustomerNewNum+"\n");*/
 
 						if (PacStacCheck.equalsIgnoreCase("Yes")) {
 							log.debug("Currently validating PAC and STAC code status in Order confirmation page\n");
-
-							String selectedStatusMessage = OrderConfirmationPage.ofComStatusMsg.getText();
 
 							if (codeVariant.equalsIgnoreCase("PAC")) {
 
@@ -974,20 +977,11 @@ public class OrderConfirmationPageActions extends Environment {
 									String expectedStatusMessage3 = "To get the phone number for your new device, call us on 202 from an O2 mobile or 0344 809 0202";
 									Thread.sleep(3000);
 									if (selectedStatusMessage.contains(expectedStatusMessage1)) {
-										log.debug("OFCOM switching status is matching ie: " + selectedStatusMessage + "\n");
+										log.debug("OFCOM switching status is matching for valid PAC code ie: " + selectedStatusMessage + "\n");
 									} else if (selectedStatusMessage.contains(expectedStatusMessage2)) {
 										log.debug("allocatedMsisdn in the orderResponse is not allocated, OFCOM switching status is: " + selectedStatusMessage + "\n");
 									} else if (selectedStatusMessage.contains(expectedStatusMessage3)) {
 										log.debug("allocate msisdn call during OrderSubmission failed to allocate msisdn, OFCOM switching status is: " + selectedStatusMessage + "\n");
-									} else {
-										log.debug("Failed: OFCOM switching status is not matching ie: " + selectedStatusMessage + "\n");
-										Assert.fail("Failed: OFCOM switching status is not matching ie: " + selectedStatusMessage + "\n");
-									}
-								} else if (codeStatus.equalsIgnoreCase("Invalid")) {
-									String expectedStatusMessage = "If you want to keep your existing number and haven’t already given us your PAC code, you can go to our";
-									Thread.sleep(3000);
-									if (selectedStatusMessage.contains(expectedStatusMessage)) {
-										log.debug("OFCOM switching status is matching ie: " + selectedStatusMessage + "\n");
 									} else {
 										log.debug("Failed: OFCOM switching status is not matching ie: " + selectedStatusMessage + "\n");
 										Assert.fail("Failed: OFCOM switching status is not matching ie: " + selectedStatusMessage + "\n");
@@ -1004,20 +998,24 @@ public class OrderConfirmationPageActions extends Environment {
 								}
 							}
 						} else {
-							if (driver.findElements(By.xpath("//div[contains(text(),'ofComStatusMsg')]")).size() == 0) {
-								log.debug("As expected, OfCom Status is not shown because customer not opted for PortIn\n");
-							} else {
-								log.debug("Failed due to OfCom Status is showing even customer not opted for PortIn\n");
-								Assert.fail("Failed due to OfCom Status is showing even customer not opted for PortIn\n");
+							 if (PacStacCheck.equalsIgnoreCase("Not")) {
+								String expectedStatusMessage = "If you want to keep your existing number and haven't already given us your PAC code, you can go to our";
+								Thread.sleep(3000);
+								if (selectedStatusMessage.contains(expectedStatusMessage)) {
+									log.debug("OFCOM switching status is matching when portIn option not opted ie: " + selectedStatusMessage + "\n");
+								} else {
+									log.debug("Failed: OFCOM switching status is not matching when portIn option not opted ie: " + selectedStatusMessage + "\n");
+									Assert.fail("Failed: OFCOM switching status is not matching  when portIn option not opted ie: " + selectedStatusMessage + "\n");
+								}
 							}
 						}
 					} else {
 						log.debug("Failed: ofCom Switching feature status supposed to be Enabled but it is disabled in Order Confirmation page\n");
-						org.testng.Assert.fail("Failed: ofCom Switching feature status supposed to be Enabled but it is disabled in Order Confirmation page\n");
+						Assert.fail("Failed: ofCom Switching feature status supposed to be Enabled but it is disabled in Order Confirmation page\n");
 					}
 				}
 			}else if(ofComStatus.equalsIgnoreCase("Disabled")){
-				if (driver.findElements(By.xpath("//div[contains(text(),'ofComStatusMsg')]")).size() > 0) {
+				if (driver.findElements(By.xpath("//div[@class='alloc-msisdn']")).size() > 0) {
 					log.debug("Failed:: ofCom Switching status is enabled, it should be disable when Feature is disabled\n");
 					Assert.fail("Failed:: ofCom Switching status is enabled, it should be disable when Feature is disabled\n");
 				}else{

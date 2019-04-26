@@ -67,9 +67,9 @@ public class Agent_DeliveryPageActions extends Environment {
             if (ofComStatus.equalsIgnoreCase("Enabled")) {
 
                 //Device is MBB or not
-                if (journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("AFU") || journey.equalsIgnoreCase("Accessory")) {
+                if (journey.equalsIgnoreCase("CCA") || journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("AFU") || journey.equalsIgnoreCase("Accessory")) {
                     //As journey is MBB/AFU so ofCom should be disabled
-                    if (driver.findElements(By.xpath("ofCommDisable")).size() == 0) {
+                    if (driver.findElements(By.xpath("//li[normalize-space()='Are you switching to O2?']")).size() == 0) {
                         log.debug("As expected, ofCom Switching is disabled for MBB/AFU journey\n");
                     } else {
                         log.debug("Failed: ofCom Switching feature supposed to be disabled for MBB/AFU journey\n");
@@ -77,9 +77,9 @@ public class Agent_DeliveryPageActions extends Environment {
                     }
                 } else {
 
-                    log.debug("Journey is not a MBB/AFU/CFU journey\n");
+                    log.debug("Journey is not a Tablet/PayGsimo/MBB/AFU/CFU journey\n");
 
-                    if (driver.findElements(By.xpath("ofCommEnable")).size() > 0) {
+                    if (driver.findElements(By.xpath("//li[normalize-space()='Are you switching to O2?']")).size() > 0) {
                         log.debug("As expected, ofCom Switching is enabled\n");
 
                         //Switching to O2 question validation
@@ -96,25 +96,25 @@ public class Agent_DeliveryPageActions extends Environment {
                         //ofCom Intro text
                         String ofComIntroText = Agent_DeliveryDetailsPage.switchingO2Intro.getText();
                         Thread.sleep(2000);
-                        if (ofComIntroText.contains("just give us your PAC or N-PAC")) {
+                        if (ofComIntroText.contains("If you already have your PAC or STAC code handy, we can start porting your number, or arrange a new one")) {
                             log.debug("OFCOM Switching to O2 Intro text is matching ie:: " + ofComIntroText + "\n");
                         } else {
                             log.debug("Failed: ofCom Switching to O2 Intro text is not matching ie:: " + ofComIntroText + "\n");
                             Assert.fail("Failed: ofCom Switching to O2 Intro text is not matching ie:: " + ofComIntroText + "\n");
                         }
 
-                        //Switching to O2 PAC AND STAC code link validation
+                        /*//Switching to O2 PAC AND STAC code link validation
                         if (driver.findElements(By.xpath("//a[normalize-space='What is a PAC and STAC code?']")).size() > 0) {
                             log.debug("Failed: OFCOM Switching feature PAC and STAC link is displaying\n");
                             Assert.fail("Failed: ofCom Switching feature PAC and STAC link is displaying\n");
                         } else {
                             log.debug("ofCom Switching feature PAC and STAC link is not displaying\n");
-                        }
+                        }*/
                         log.debug("Now validating PAC and STAC code check box functionality\n");
 
                         String checkBox = Agent_DeliveryDetailsPage.PACSTACCheckBoxTxt.getText();
                         Thread.sleep(1000);
-                        if (checkBox.contains("got my code")) {
+                        if (checkBox.contains("got my PAC or STAC code")) {
                             log.debug("Failed: PAC/STAC code checkbox text is matching ie: " + checkBox + "\n");
                         } else {
                             log.debug("Failed: PAC/STAC code checkbox text is not matching: " + checkBox + "\n");
@@ -122,7 +122,7 @@ public class Agent_DeliveryPageActions extends Environment {
                         }
 
                         //Status of PAC and STAC input fields validation before selecting
-                        if (driver.findElements(By.xpath("//div[@class='form-element-container switcho2 hide']")).size() == 0) {
+                        if (Agent_DeliveryDetailsPage.PACSTACSection.isDisplayed()) {
                             log.debug("Failed due to PAC/STAC code input fields are displaying before selecting the PAC/STAC code checkbox\n");
                             Assert.fail("Failed due to PAC/STAC code input fields are displaying before selecting the PAC/STAC code checkbox\n");
                         } else {
@@ -141,9 +141,10 @@ public class Agent_DeliveryPageActions extends Environment {
                         Agent_DeliveryDetailsPage.PACSTACCheckBox.click();
                         log.debug("Clicked on PAC and STAC code checkbox\n");
                         pacStacCodeStatus = "Checked";
+                        Thread.sleep(4000);
                         Screenshots.captureScreenshot();
 
-                        if (driver.findElements(By.xpath("//div[@class='form-element-container switcho2 hide']")).size() == 0) {
+                        if (Agent_DeliveryDetailsPage.PACSTACSection.isDisplayed()) {
                             log.debug("PAC/STAC code input fields are enabled/displaying after selecting PAC/STAC code checkbox\n");
                         } else {
                             log.debug("Failed due to PAC/STAC code input fields are not enabled/displaying after selecting PAC/STAC code checkbox\n");
@@ -155,7 +156,7 @@ public class Agent_DeliveryPageActions extends Environment {
                         Agent_DeliveryDetailsPage.PACSTACCheckBox.click();
 
                         //Status of PAC and STAC input fields validation afte un-checking
-                        if (driver.findElements(By.xpath("//div[@class='form-element-container switcho2 hide']")).size() == 0) {
+                        if (Agent_DeliveryDetailsPage.PACSTACSection.isDisplayed()) {
                             log.debug("Failed due to PAC/STAC code input fields are displaying even after un-checking the PAC/STAC code checkbox\n");
                             Assert.fail("Failed due to PAC/STAC code input fields are displaying even after un-checking the PAC/STAC code checkbox\n");
                         } else {
@@ -171,7 +172,7 @@ public class Agent_DeliveryPageActions extends Environment {
                 }
             } else if (ofComStatus.equalsIgnoreCase("Disabled")) {
                 //Validating ofCom Switching feature is disabled or not
-                if (driver.findElements(By.xpath("ofCommDisable")).size() == 0) {
+                if (driver.findElements(By.xpath("//li[normalize-space()='Are you switching to O2?']")).size() == 0) {
                     log.debug("As expected, ofCom Switching is disabled for disabled status\n");
                 } else {
                     log.debug("Failed: ofCom Switching feature is enabled for disabled status\n");
@@ -189,7 +190,7 @@ public class Agent_DeliveryPageActions extends Environment {
 
             //ofCom Switching functionality is enabled or disabled
             if (ofComStatus.equalsIgnoreCase("Enabled")) {
-                if (driver.findElements(By.xpath("ofCommDisable")).size() > 0) {
+                if (driver.findElements(By.xpath("//li[normalize-space()='Are you switching to O2?']")).size() > 0) {
                     log.debug("As expected, ofCom Switching is enabled\n");
                     log.debug("Currently validating PAC and STAC code check box functionality\n");
 
@@ -211,25 +212,6 @@ public class Agent_DeliveryPageActions extends Environment {
                         Thread.sleep(2000);
                         Screenshots.captureScreenshot();
 
-                        if (Agent_DeliveryDetailsPage.emptyMobileNumError.isDisplayed()) {
-                            String mobileNumError = Agent_DeliveryDetailsPage.emptyMobileNumError.getText();
-                            Thread.sleep(2000);
-                            if (ofComMobileNum.equals("")) {
-                                log.debug("As expected, error message is generated for empty mobile number ie: " + mobileNumError + "\n");
-                            } else if (mobileNumError.equalsIgnoreCase("Enter a valid mobile number")) {
-                                log.debug("As expected, error message is generated for invalid mobile number ie: " + mobileNumError + "\n");
-                            }
-                        }
-
-                        if (Agent_DeliveryDetailsPage.emptyPACSTACcodeError.isDisplayed()) {
-                            String errorPACSTACCode = Agent_DeliveryDetailsPage.emptyPACSTACcodeError.getText();
-                            Thread.sleep(2000);
-                            if (PacStacCode.equals("")) {
-                                log.debug("As expected, error message is generated for empty PAC/STAC code ie: " + errorPACSTACCode + "\n");
-                            } else if (errorPACSTACCode.equalsIgnoreCase("Enter a valid PAC or N-PAC code")) {
-                                log.debug("As expected, error message is generated for invalid PAC/STAC code ie: " + errorPACSTACCode + "\n");
-                            }
-                        }
                     }
 
                     if (PacStacCheck.equalsIgnoreCase("Yes") && PacStackRetainCheck.equalsIgnoreCase("Yes") && pacStacCodeStatus.equals("Checked")) {

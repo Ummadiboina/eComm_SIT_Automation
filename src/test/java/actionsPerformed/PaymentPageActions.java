@@ -206,12 +206,12 @@ public class PaymentPageActions extends Environment {
             Screenshots.captureScreenshot();
         }
 
-        if(driver.findElements(By.xpath("//input[@id='affordability-terms-declaration1']")).size()>0) {
+        if(driver.findElements(By.xpath("(//span[@class='custom-checkbox'])[2]")).size()>0) {
             pageobjects.PaymentPage.agreeFinancialCommitments.click();
             log.debug("Selected agree Financial commitments check box\n");
         }
 
-        if(driver.findElements(By.xpath("//input[@id='affordability-terms-declaration2']")).size()>0) {
+        if(driver.findElements(By.xpath("(//span[@class='custom-checkbox'])[3]")).size()>0) {
             pageobjects.PaymentPage.agreeMyCircumstances.click();
             log.debug("Selected agree My Circumstances check box\n");
         }

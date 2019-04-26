@@ -24,7 +24,7 @@ Feature: 01_CFA_Click_and_Collect_Checkout_pages_changes
     #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     #And land on the payment page and input <Username> and other details and click 'Continue on next step'
-    And land on the payment page and input <Username> and other details and verify checkout changes and click 'Continue on next step'
+    And land on the payment page and input <Username> and other details and verify checkout changes and click 'Continue on next step' for click and collect
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
