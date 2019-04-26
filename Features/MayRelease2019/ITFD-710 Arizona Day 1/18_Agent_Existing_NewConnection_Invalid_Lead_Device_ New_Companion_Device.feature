@@ -10,9 +10,10 @@ Feature: 18_Agent_Existing_NewConnection_Invalid_Lead_Device_ New_Companion_Devi
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
-    And Verify lead device pairing section is displayed
+    #code for below along with error scenarios
+    And Verify lead device pairing section is displayed when the user status is <user_status> and validate order summary section
 
 
     Examples:
-      | user        | Device | Tariffs | BSCstatus |
-      | 07568414065 |        | Refresh | Disabled   |
+      | user        | Device                           | Tariffs | BSCstatus | user_status  |
+      | 07568414065 | Galaxy Watch Active Silver       | Refresh | Disabled   |     Invalid        |

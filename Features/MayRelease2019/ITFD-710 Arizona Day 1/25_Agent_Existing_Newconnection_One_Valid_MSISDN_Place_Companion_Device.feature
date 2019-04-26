@@ -1,3 +1,5 @@
+#######################################Not Required######################################
+
 Feature: 25_Agent_Existing_Newconnection_One_Valid_MSISDN_Place_Companion_Device
 
   #launch hooks and get browser
@@ -11,17 +13,14 @@ Feature: 25_Agent_Existing_Newconnection_One_Valid_MSISDN_Place_Companion_Device
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
     And Verify lead device pairing section is displayed
+    #Write code for selecting the MSISDN in this
     And Verify number of MSISDN
     Then perform all the advisory checks
-    And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
-    And validate register status
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
+    And perform the credit checks for Agent Existing <username> by Bank details
+    #And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Choose <DeliveryType> delivery address and delivery time
-    #And Update Device Plan Link Email Address
     #And Accept O2 Refresh Deal Summary
     And Click on 'Generate CCA' button
-    #Then CCALink Should be generated
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials for New User
     And Click on 'Continue' button on upgrade page

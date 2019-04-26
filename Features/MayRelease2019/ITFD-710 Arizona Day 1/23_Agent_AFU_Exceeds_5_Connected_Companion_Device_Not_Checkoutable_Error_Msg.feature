@@ -10,7 +10,8 @@ Feature: 23_Agent_AFU_Exceeds_5_Connected_Companion_Device_Not_Checkoutable_Erro
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
-    And Verify lead device pairing section is displayed
+    #code for error message scenario
+    And Verify lead device pairing section is displayed when the user status is <user_status> and validate order summary section
 
     Examples:
     | user  |   Device    |   Tariffs   |   BSCstatus   |
