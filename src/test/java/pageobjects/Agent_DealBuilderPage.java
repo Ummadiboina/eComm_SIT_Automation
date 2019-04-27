@@ -427,4 +427,25 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = ("//*[@id='simonlyPlanTable']/tbody/tr[1]/td[1]"))
     public static WebElement SelectingFirstAvailableSIMOTariff;
 
+    @FindBy(how = How.XPATH, using = ("devicePairingContinue"))
+    public static WebElement leadDevicePairingSection_Continue;
+
+    @FindBy(how = How.XPATH, using = ("//*[@id='noEligibleMsisdn']"))
+    public static WebElement leadDevicePairingSection_Error;
+
+    @FindBy(how = How.XPATH, using = ("//*[@id='leadDevicePairing']/h2"))
+    public static WebElement leadDevicePairingSection_Heading;
+
+    @FindBy(how = How.XPATH, using = ("//*[@id='leadDeviceMsisdn']"))
+    public static WebElement leadDevicePairingSection_dropdown;
+
+    @FindBy(how = How.XPATH, using = ("//*[@id='leadDevicePairingLabel']"))
+    public static WebElement leadDevicePairingSection_label;
+
+    @FindBy(how = How.XPATH, using = ("//*[@id='sharedBasketContents']/div/div[2]/table[4]"))
+    public static WebElement leadDeviceMSISDNSection_ordersummary;
+
+    @FindBy(how = How.XPATH, using = ("(//*[@id='_']/td[1]/p[1])[4]"))
+    public static WebElement leadDeviceMSISDN_ordersummary;
+
 }
