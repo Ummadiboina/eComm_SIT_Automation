@@ -20,4 +20,4 @@ Feature: 60_CFA_SmartWatches_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
 
     Examples:
       | Firstname | postcode | HouseNumber | Surname | Device        | ofComStatus | journey   | codeStatus | Username     | ofComMobileNum | codeVariant | pacStacCheck | pacStacCode |
-      | TEST      | SL14DX   | 12          | ACCEPTA | Random Device | Enabled     | Accessory |            | TEST ACCEPTA |                |             |              |             |
+      | TEST      | SL33FP   |             | ACCEPTA | Random Device | Enabled     | Accessory |            | TEST ACCEPTA |                |             |              |             |

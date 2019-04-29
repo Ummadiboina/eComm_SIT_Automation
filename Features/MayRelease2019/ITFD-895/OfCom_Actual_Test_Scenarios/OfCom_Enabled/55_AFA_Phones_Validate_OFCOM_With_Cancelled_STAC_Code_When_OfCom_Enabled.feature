@@ -4,6 +4,7 @@ Feature: 55_AFA_Phones_Validate_OFCOM_With_Cancelled_STAC_Code_When_OfCom_Enable
   @Web
   Scenario Outline: 55_AFA_Phones_Validate_OFCOM_With_Cancelled_STAC_Code_When_OfCom_Enabled
     Given I login to Agent shop
+    And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
@@ -18,5 +19,5 @@ Feature: 55_AFA_Phones_Validate_OFCOM_With_Cancelled_STAC_Code_When_OfCom_Enable
     And Validate OFCOM error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist in agent journey
 
     Examples:
-      | Device                              | Tariffs | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStacCode | pacStackRetainCheck | confirmPassword | Password | SecurityAnswer | codeStatus | codeVariant |
-      | iPad Pro 10.5 inch 256GB Space Grey | Refresh | Enabled   | £20           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Phones  | Enabled     | Yes          | 07412321761    | 101287XCR   | Yes                 | test1234        | test1234 | vinudeep       | Cancelled  | STAC        |
+      | Device                  | Tariffs | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStacCode | pacStackRetainCheck | confirmPassword | Password | SecurityAnswer | codeStatus | codeVariant |
+      | Huawei P20 Pro Twilight | Refresh | Enabled   | £20           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Phones  | Enabled     | Yes          | 07412321761    | 101287XCR   | Yes                 | test1234        | test1234 | vinudeep       | Cancelled  | STAC        |

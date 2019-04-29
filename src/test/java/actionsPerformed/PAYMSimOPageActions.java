@@ -1305,4 +1305,36 @@ public class PAYMSimOPageActions extends Environment {
 		}
 	}
 
+	public static void SelectDataTariff(String elementName)
+			throws InterruptedException, IOException {
+		// Assert.assertTrue(driver.getTitle().contains("30 Days");
+
+		if (elementName.contains("30 Days")) {
+			log.debug("Selecting a Random Tariff under 30 days tab");
+			pageobjects.PAYMSimOPage.thirtydays.sendKeys(Keys.ENTER);
+			Thread.sleep(8000);
+			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.thirtydays);
+			Screenshots.captureScreenshot();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomDataTariff30Months);
+			Thread.sleep(5000);
+			log.debug("Selected a thirty days Random Data Tariff");
+			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.thirtydays);
+			Screenshots.captureScreenshot();
+		}
+		if (elementName.contains("12 Months")) {
+			log.debug("Selecting a Random Data Tariff under 12 Months tab");
+			pageobjects.PAYMSimOPage.twelevemonths.sendKeys(Keys.ENTER);
+			Thread.sleep(8000);
+			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.twelevemonths);
+			Screenshots.captureScreenshot();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomDataTariff12Months);
+			Thread.sleep(5000);
+			log.debug("Selected a twelve months Random Data Tariff");
+			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.twelevemonths);
+			Screenshots.captureScreenshot();
+		}
+	}
+
 }

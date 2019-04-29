@@ -273,4 +273,10 @@ public class PAYMSimOPage {
 	@FindBy (how =How.XPATH, using=("//button/span[contains(text(),'Place your order')]"))
 	public static WebElement PlaceYourOrder;
 
+	@FindBy(how=How.XPATH,using=("(//div[@class='tariffs-container data-tariffs']//*[@name='P12M']//button[normalize-space()='Select'])[1]"))
+	public static WebElement BuyNowRandomDataTariff12Months;
+
+	@FindBy(how=How.XPATH,using=("(//div[@class='tariffs-container data-tariffs']//*[@name='P30D']//button[normalize-space()='Select'])[1]"))
+	public static WebElement BuyNowRandomDataTariff30Months;
+
 }

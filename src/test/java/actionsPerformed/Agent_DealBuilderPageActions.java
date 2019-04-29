@@ -309,12 +309,12 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void selectSmartTechDevice(String Device) throws InterruptedException {
 
         Agent_DealBuilderPage.smartTechTab.click();
-        Thread.sleep(5000);
+        Thread.sleep(12000);
         log.debug("searching In Stock devices");
-        Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys(Device);
+        Agent_DealBuilderPage.SearchTextBox_SamrtTech.sendKeys(Device);
         log.debug("searched In Stock devices ie: "+Device);
         Thread.sleep(6000);
-        Agent_DealBuilderPage.SelectSearchedaccessory.click();
+        Agent_DealBuilderPage.SelectSearchedSmartTechDevice.click();
         log.debug("Selected a random In stock device ie: "+Device);
         Thread.sleep(3000);
     }
@@ -377,14 +377,18 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void SelectPayGTariff(String Tariff) throws InterruptedException, IOException {
 
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         Agent_DealBuilderPage.prepayPlansTab.click();
         log.debug("Clicked on prepayPlansTab ");
-
+        Thread.sleep(7000);
         if (Tariff.contains("Random")) {
 
             // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
-            Agent_DealBuilderPage.SelectingFirstAvailablePrePayTariff.click();
+            if(driver.findElements(By.xpath("//*[@id='prepayPlanTable']/tbody/tr")).size()>1) {
+                Agent_DealBuilderPage.SelectingFirstAvailablePrePayTariff.click();
+            }else{
+                driver.findElement(By.xpath("//*[@id='prepayPlanTable']/tbody/tr[1]/td[1]")).click();
+            }
             Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
             log.debug("Selected Random Tariff ");

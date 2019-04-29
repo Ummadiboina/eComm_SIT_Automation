@@ -27,7 +27,7 @@ public class AgreementPage {
     @FindBy(how = How.XPATH, using = "//*[@id='payMonthlySection']/div[1]/div/button")
     public static WebElement PayMMobileAgreement;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='terms-declaration']")
+    @FindBy(how = How.XPATH, using = "//*[@id='terms-declaration-custom']")
     public static WebElement TermsDeclarationCheckbox;
     ////*[@id='ccaSection']/div[1]/div/button
     //

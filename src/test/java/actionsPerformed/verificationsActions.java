@@ -64,10 +64,21 @@ public class verificationsActions extends Environment {
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
             log.debug("Assertion Success: '*' is present in: " + ActualText);
-            ActualText = pageobjects.DeliveryPage.nameText.getText();
+            /*ActualText = pageobjects.DeliveryPage.nameText.getText();
+            Assert.assertTrue(ActualText.contains("*"),
+                    "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
+            log.debug("Assertion Success: '*' is present in: " + ActualText);*/
+
+            ActualText = pageobjects.DeliveryPage.firstNameText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
             log.debug("Assertion Success: '*' is present in: " + ActualText);
+
+            ActualText = pageobjects.DeliveryPage.lastNameText.getText();
+            Assert.assertTrue(ActualText.contains("*"),
+                    "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
+
             ActualText = pageobjects.DeliveryPage.ContactNumberText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");

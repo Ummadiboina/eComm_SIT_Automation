@@ -448,4 +448,9 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = ("(//*[@id='_']/td[1]/p[1])[4]"))
     public static WebElement leadDeviceMSISDN_ordersummary;
 
+    @FindBy(how = How.XPATH, using = "//*[@id='smartTechDeviceTable_filter']/label/input")
+    public static WebElement SearchTextBox_SamrtTech;
+
+
+
 }

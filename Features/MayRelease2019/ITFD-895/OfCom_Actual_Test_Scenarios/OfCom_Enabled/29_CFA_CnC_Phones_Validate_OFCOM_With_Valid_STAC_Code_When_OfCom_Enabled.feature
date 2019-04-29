@@ -17,7 +17,7 @@ Feature: 29_CFA_CnC_Phones_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enable
     And Validate OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey
     And In Consumer Enter input details <ofComMobileNum> <pacStacCode> for <pacStacCheck> code when ofcom status is <ofComStatus> and Validate <pacStackRetainCheck> functionality
     And Click on Continue CTA and validate error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
+    And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
@@ -25,4 +25,4 @@ Feature: 29_CFA_CnC_Phones_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enable
 
     Examples:
       | handset   | Firstname | Surname | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | Galaxy S9 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | STAC        | Yes                 | 07123456789    | 256407XCR   | Enabled   | CapMyBill | £15       |
+      | Galaxy S9 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | STAC        | Yes                 | 07412321771    | 205692XCR   | Enabled   | CapMyBill | £15       |

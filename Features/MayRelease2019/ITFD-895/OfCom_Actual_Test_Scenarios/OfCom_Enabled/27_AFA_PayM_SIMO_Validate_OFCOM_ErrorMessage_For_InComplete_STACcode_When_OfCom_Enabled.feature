@@ -18,4 +18,4 @@ Feature: 27_AFA_PayM_SIMO_Validate_OFCOM_ErrorMessage_For_InComplete_STACcode_Wh
 
     Examples:
       | Tariffs         | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStackRetainCheck | pacStacCode | Password | confirmPassword | SecurityAnswer | codeStatus |
-      | Standard / Simo | Enabled   | £60           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | SIMO    | Enabled     | Yes          | 07412321781    |                     | 446139XC    | test1234 | test1234        | vinudeep       | InComplete |
+      | Standard / Simo | Enabled   | £60           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | SIMO    | Enabled     | Yes          | 07412321781    | Yes                 | 446139XC    | test1234 | test1234        | vinudeep       | InComplete |

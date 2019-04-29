@@ -5,8 +5,8 @@ Feature: 30_Reg_Agent_DelayedDelivery
   Scenario Outline: Successful completion of a PAY M Acquistion journey
     Given I login to Agent shop
     And performs Acquisition for New user
-    #And Search for <Status> device
-    And Select a valid PayM <Device>
+    And Search for <Status> device
+    #And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Select valid <Extras> from extras tab

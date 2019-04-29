@@ -21,4 +21,4 @@ Feature: 21_CFA_Phones_Validate_OFCOM_ErrorMessage_For_InComplete_PACcode_When_O
 
     Examples:
       | handset  | Firstname | Surname | journey | ofComStatus | pacStacCheck | pacStacCode | ofComMobileNum | pacStackRetainCheck | codeStatus | BSCstatus | BillCap   | CapAmount |
-      | iPhone X | TEST      | ACCEPTA | CFA     | Enabled     | Yes          | XCR18627    | 07412321717    |                     | InComplete | Enabled   | CapMyBill | £15       |
+      | iPhone X | TEST      | ACCEPTA | CFA     | Enabled     | Yes          | XCR18627    | 07412321717    | Yes                 | InComplete | Enabled   | CapMyBill | £15       |

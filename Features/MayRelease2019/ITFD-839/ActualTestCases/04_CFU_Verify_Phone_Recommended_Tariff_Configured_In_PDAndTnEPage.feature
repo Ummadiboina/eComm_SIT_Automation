@@ -27,16 +27,16 @@ Feature: 04_CFU_Verify_Phone_Recommended_Tariff_Configured_In_PDAndTnEPage
     And select <Capacity> capacity of the connected device
     And Navigate to device details page
     And Validate drupal configured <preferredType> tariff and select
-    And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And I Land on the basket page by clicking on Add to Basket button
-    And click on "go to checkout" button
-    And perform <Action> in OTAC page
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
-    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
-    And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
-    And Continue to Review page and review the order
-    Then order confirmation is displayed
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    #And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    #And I Land on the basket page by clicking on Add to Basket button
+    #And click on "go to checkout" button
+    #And perform <Action> in OTAC page
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
+    #And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
+    #And Continue to Review page and review the order
+    #Then order confirmation is displayed
 
     Examples:
       | userName   | password   | decoupleCFACFUStatus | drupalNavTabShop | preferredType | deviceBrand | shopSubLink | deviceMdl | deviceVariant                     | GetTariffCTA    | username                 | Password | BSCstatus | BillCap   | CapAmount         | Username     | Action | color      | B1  | B2  | B3  | GDPRstatus | DeviceType | PreSelected | KeyEvent | Capacity |

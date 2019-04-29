@@ -19,4 +19,4 @@ Feature: 26_AFA_PayG_Phones_Validate_OFCOM_ErrorMessage_For_InComplete_PACcode_W
 
     Examples:
       | Device                      | Tariffs | BSCstatus | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStacCode | pacStackRetainCheck | Password | confirmPassword | SecurityAnswer | codeStatus |
-      | Galaxy S9 64GB LILAC PURPLE | Random  | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | AFA     | Enabled     | Yes          | 07412321718    | XCR07438    |                     | test1234 | test1234        | vinudeep       | InComplete |
+      | Galaxy S9 64GB LILAC PURPLE | Random  | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | AFA     | Enabled     | Yes          | 07412321718    | XCR07438    | Yes                 | test1234 | test1234        | vinudeep       | InComplete |

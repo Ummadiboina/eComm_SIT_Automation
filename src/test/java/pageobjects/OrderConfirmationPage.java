@@ -123,7 +123,7 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Spend Cap')]")
 	public static WebElement AppliedBillCap;
 
-	@FindBy(how = How.XPATH, using = "//div[@class='alloc-msisdn']")
+	@FindBy(how = How.XPATH, using = "//div[@class='switch-msisdn']")
 	public static WebElement ofComStatusMsg;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='alloc-msisdn']")

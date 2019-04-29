@@ -19,5 +19,5 @@ Feature: 18_AFU_MBB_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
     And Validate Agent OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>
 
     Examples:
-      | user        | Device | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | DeviceType | PreSelected | ofComStatus | journey | pacStacCheck | codeStatus | codeVariant | ofComMobileNum |
-      | 07521139844 | dongle | Random  | Enabled   | £100          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | Connected  | No          | Enabled     | MBB     | Nill         | Nill       | Nill        | Nill           |
+      | user        | Device | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | DeviceType | PreSelected | ofComStatus | journey | pacStacCheck | codeStatus | codeVariant | ofComMobileNum |
+      | 07521139844 | dongle | Refresh | Enabled   | £100          | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled | Connected  | Yes         | Enabled     | MBB     | Nill         | Nill       | Nill        | Nill           |

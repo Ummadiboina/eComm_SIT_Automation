@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
 public class ReviewPage {
 	
 	  
-	@FindBy(how=How.ID,using="terms")
+	@FindBy(how=How.ID,using="terms-custom")
 	public static WebElement TermsCheckBox;
 
 	@FindBy(how=How.XPATH,using="//input[@id='insurance-terms']")

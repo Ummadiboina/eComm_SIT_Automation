@@ -2288,7 +2288,7 @@ public class E2EOrderPlaced_Steps {
             // Write code here that turns the phrase above into concrete actions
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             log.debug("We are at agreement page\n");
-            Thread.sleep(30000);
+            Thread.sleep(40000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
 
@@ -2473,7 +2473,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewPage.class);
-            Thread.sleep(10000);
+            Thread.sleep(12000);
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,300)", "");
             ReviewPageActions.gettitlepage();
@@ -3242,7 +3242,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^Input valid details in agent for registration ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void aboutYouInAgent(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) {
         try {
-            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
 
@@ -10941,7 +10941,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Thread.sleep(5000);
+            Thread.sleep(8000);
             Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status, DeviceType, Device_Module);
             log.debug("Completed preference actions");
         } catch (Exception e) {
@@ -13321,6 +13321,25 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) { // TODO Auto-generated catch block
             log.debug("Unable to Register customer , please see the failure screenshot");
             Assert.fail("Unable to Register customer , please see the failure screenshot");
+        }
+    }
+
+    @Given("^Select any Random Data Tariff in the displayed list of Tariffs under different ([^\"]*) tab$")
+    public void select_any_Random_TabletDataTariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String Contract) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,250)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            PAYMSimOPageActions.SelectDataTariff(Contract);
+            log.debug("Completed Selecting Random Tariff");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select Random Tariff ");
+            Assert.fail("Unable to select Random Tariff ");
+
         }
     }
 }

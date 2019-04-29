@@ -131,14 +131,14 @@ public class PaymentPageActions extends Environment {
 
 
 
-    public static void affordabilityValidation(String employmentStatus, String annualIncome) throws IOException, InterruptedException, AWTException {
+    public static void affordabilityValidation(String employmentStatus, String annualIncome) throws IOException, InterruptedException {
 
         scrollToAnElement.scrollToElement(pageobjects.PaymentPage.affordabilityHeading);
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
 
         //Employment Status
-        if (driver.findElements(By.xpath("//span/i[@id='employment-statusSelectBoxItArrow']")).size() > 0) {
+        /*if (driver.findElements(By.xpath("//span/i[@id='employment-statusSelectBoxItArrow']")).size() > 0) {
             pageobjects.PaymentPage.employmentDropDown.click();
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
@@ -204,7 +204,31 @@ public class PaymentPageActions extends Environment {
             log.debug("Selected " + annualIncome + "from annual income dropdown\n");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
+        }*/
+
+        List<WebElement> empStatusNames = driver.findElements(By.xpath("//select[@id='employment-status']/option"));
+
+        log.debug("The list of employment status is: \n");
+        for(int i=1;i<empStatusNames.size();i++){
+            log.debug("Status "+i+" is: "+empStatusNames.get(i)+"\n");
         }
+        WebElement empStatusDropdown = driver.findElement(By.xpath("//select[@id='employment-status']"));
+        Select select = new Select(empStatusDropdown);
+        select.selectByVisibleText(employmentStatus);
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+
+        List<WebElement> annualIncomeList = driver.findElements(By.xpath("//select[@id='annual-income']/option"));
+
+        log.debug("The list of Income status is: \n");
+        for(int i=1;i<annualIncomeList.size();i++){
+            log.debug("Income "+i+" is: "+annualIncomeList.get(i)+"\n");
+        }
+        WebElement annualIncomDropdown = driver.findElement(By.xpath("//select[@id='annual-income']"));
+        Select select2 = new Select(annualIncomDropdown);
+        select2.selectByVisibleText(annualIncome);
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
 
         if(driver.findElements(By.xpath("(//span[@class='custom-checkbox'])[2]")).size()>0) {
             pageobjects.PaymentPage.agreeFinancialCommitments.click();

@@ -6,6 +6,7 @@ Feature: 10_CFU_MBB_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
+    And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
     And Click on MBB section in upgrade options page
     And I choose MBB PayM <Device_Name>
