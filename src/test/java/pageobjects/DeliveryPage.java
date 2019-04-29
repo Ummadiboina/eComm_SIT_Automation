@@ -185,7 +185,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@id='input-email']/div/label")
     public static WebElement emailAddressText;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@class='form-element selector']/div/label")
+    @FindBy(how = How.XPATH, using = "//select[@id='title']/../label")
     public static WebElement titleText;
 
     @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@id='input-name']/fieldset/legend")
@@ -338,7 +338,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//div[@id='pacNpac-overlay']/div/a")
     public static WebElement PACSTACOverlayClose;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='pac-npac-checked']")
+    @FindBy(how = How.XPATH, using = "//div[@id='pac-npac-checked-container']//fieldset/div/label")
     public static WebElement PACSTACCheckBox;
 
     @FindBy(how = How.XPATH, using = "//div[@id='input-mnumber']/div/input")
@@ -368,7 +368,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@id='existing-pay']")
     public static WebElement existingPaymentOption;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='pac-npac-checked']/../label")
+    @FindBy(how = How.XPATH, using = "//div[@id='pac-npac-checked-container']//fieldset/div/label")
     public static WebElement PACSTACCheckBoxTxt;
 
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'msgBox paypalUpfront successMsg')]")
@@ -411,6 +411,12 @@ public class DeliveryPage {
 
     @FindBy(how = How.XPATH, using = ("(//div[contains(@class,'tileContent')]/../div)[1]"))
     public static WebElement firstStore;
+
+    @FindBy(how = How.XPATH, using = ("//input[@id='first-name']/../label"))
+    public static WebElement firstNameText;
+
+    @FindBy(how = How.XPATH, using = ("//input[@id='last-name']/../label"))
+    public static WebElement lastNameText;
 
 }
 

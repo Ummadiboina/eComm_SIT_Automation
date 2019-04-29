@@ -951,14 +951,14 @@ public class OrderConfirmationPageActions extends Environment {
 				//Device is MBB or not
 				if (journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("CFU") || journey.equalsIgnoreCase("Accessory")) {
 					//As device is MBB so ofCom should be disabled
-					if (driver.findElements(By.xpath("//div[@class='alloc-msisdn']")).size() == 0) {
+					if (driver.findElements(By.xpath("//div[@class='switch-msisdn']")).size() == 0) {
 						log.debug("As expected, ofCom Switching is disabled in MBB/CFU journey\n");
 					} else {
 						log.debug("Failed: ofCom Switching feature supposed to be disabled in MBB/CFU journey\n");
 						Assert.fail("Failed: ofCom Switching feature supposed to be disabled in MBB/CFU journey\n");
 					}
 				}else {
-					if (driver.findElements(By.xpath("//div[@class='alloc-msisdn']")).size() > 0) {
+					if (driver.findElements(By.xpath("//div[@class='switch-msisdn']")).size() > 0) {
 						log.debug("As expected, ofCom Switching status is enabled\n");
 
 						String selectedStatusMessage = OrderConfirmationPage.ofComStatusMsg.getText();
@@ -1015,7 +1015,7 @@ public class OrderConfirmationPageActions extends Environment {
 					}
 				}
 			}else if(ofComStatus.equalsIgnoreCase("Disabled")){
-				if (driver.findElements(By.xpath("//div[@class='alloc-msisdn']")).size() > 0) {
+				if (driver.findElements(By.xpath("//div[@class='switch-msisdn']")).size() > 0) {
 					log.debug("Failed:: ofCom Switching status is enabled, it should be disable when Feature is disabled\n");
 					Assert.fail("Failed:: ofCom Switching status is enabled, it should be disable when Feature is disabled\n");
 				}else{

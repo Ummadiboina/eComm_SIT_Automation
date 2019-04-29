@@ -20,4 +20,4 @@ Feature: 22_CFA_PayM_SIMO_Validate_OFCOM_ErrorMessage_For_InComplete_STACcode_Wh
 
     Examples:
       | Contract  | postcode | HouseNumber | Firstname | Surname | BSCstatus | BillCap   | CapAmount | journey | ofComStatus | pacStacCheck | codeStatus | ofComMobileNum | pacStacCode | pacStackRetainCheck |
-      | 12 Months | SL33FP   |             | TEST      | ACCEPTA | Enabled   | CapMyBill | £0        | SIMO    | Enabled     | Yes          | InComplete | 07412321780    | 826957XC    |                     |
+      | 12 Months | SL33FP   |             | TEST      | ACCEPTA | Enabled   | CapMyBill | £0        | SIMO    | Enabled     | Yes          | InComplete | 07412321780    | 826957XC    | Yes                 |

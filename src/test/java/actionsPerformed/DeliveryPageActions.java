@@ -1746,7 +1746,7 @@ public class DeliveryPageActions extends Environment {
                         Thread.sleep(1000);
 
                         if (checkBox.contains("got my PAC or STAC code")) {
-                            log.debug("Failed: PAC/STAC code checkbox text is matching ie: " + checkBox + "\n");
+                            log.debug("PAC/STAC code checkbox text is matching ie: " + checkBox + "\n");
                         } else {
                             log.debug("Failed: PAC/STAC code checkbox text is not matching ie: " + checkBox + "\n");
                             Assert.fail("Failed: PAC/STAC code checkbox text is not matching ie: " + checkBox + "\n");

@@ -39,7 +39,7 @@ import java.util.List;
 @CucumberOptions(plugin = {"html:testResult/cucumber-html-report",
         "json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
         "usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml"},
-        features = {"Features//AprilRelease2019//CFA_Reg_FailedScenarios"},
+        features = {"Features//MayRelease2019//ITFD-895//OfCom_Actual_Test_Scenarios//OfCom_Enabled//29_CFA_CnC_Phones_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enabled.feature"},
         glue = {"steps"},
         tags = {"@Web"})
 

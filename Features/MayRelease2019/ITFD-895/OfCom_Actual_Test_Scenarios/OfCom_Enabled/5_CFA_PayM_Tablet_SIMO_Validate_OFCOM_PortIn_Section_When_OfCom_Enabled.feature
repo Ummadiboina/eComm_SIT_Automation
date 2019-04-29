@@ -7,7 +7,7 @@ Feature: 5_CFA_PayM_Tablet_SIMO_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
     And navigate to PAYM SIMO page
     And Select 'Tablets' tab
     And Click on different <Contract>  Months Tariff in Tab
-    And Select any Random Tariff in the displayed list of Tariffs under different <Contract> tab
+    And Select any Random Data Tariff in the displayed list of Tariffs under different <Contract> tab
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the Plan included basket page and choose home delivery option

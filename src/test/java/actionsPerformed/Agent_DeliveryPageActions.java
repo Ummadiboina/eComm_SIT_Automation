@@ -231,7 +231,7 @@ public class Agent_DeliveryPageActions extends Environment {
                         Screenshots.captureScreenshot();
 
                         //SPAC and STAC Mobile Number input fields retained values or not
-                        if (Agent_DeliveryDetailsPage.PACSTACMobileNum.getAttribute("Value").equals(ofComMobileNum)) {
+                        if (Agent_DeliveryDetailsPage.PACSTACMobileNum.getAttribute("value").equals(ofComMobileNum)) {
                             log.debug("As expected, Mobile Number field retained value ie: " + ofComMobileNum + "\n");
                         } else {
                             log.debug("Failed due to Mobile Number field not retained entered mobile number\n");
@@ -239,7 +239,7 @@ public class Agent_DeliveryPageActions extends Environment {
                         }
 
                         //SPAC and STAC code input fields retained values or not
-                        if (Agent_DeliveryDetailsPage.PACSTACcode.getAttribute("Value").equals(PacStacCode)) {
+                        if (Agent_DeliveryDetailsPage.PACSTACcode.getAttribute("value").equals(PacStacCode)) {
                             log.debug("As expected, PAC and STAC code field retained value ie: " + PacStacCode + "\n");
                         } else {
                             log.debug("Failed due to PAC and STAC code field not retained entered PAC and STAC code\n");

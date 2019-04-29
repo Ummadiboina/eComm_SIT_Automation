@@ -4,6 +4,7 @@ Feature: 59_AFA_Phones_Validate_OFCOM_With_Archived_STAC_Code_When_OfCom_Enabled
   @Web
   Scenario Outline: 59_AFA_Phones_Validate_OFCOM_With_Archived_STAC_Code_When_OfCom_Enabled
     Given I login to Agent shop
+    And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination

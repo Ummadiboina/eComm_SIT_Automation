@@ -26,16 +26,16 @@ Feature: 01_CFA_Verify_Phone_Recommended_Tariff_Configured_In_PDAndTnEPage
     And Navigate to View tariff page
     #And Land on the 'Tariffs and extra' page
     And Validate drupal configured <preferredType> tariff and select
-    And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And I Land on the basket page and choose home delivery option
-    And click on "go to checkout" button
-    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
-    And Continue to Agreements page and confirm all the agreement checks
-    And Continue to Review page and review the order
-    Then order confirmation is displayed
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    #And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    #And I Land on the basket page and choose home delivery option
+    #And click on "go to checkout" button
+    #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And land on the payment page and input <Username> and other details and click 'Continue on next step'
+    #And Continue to Agreements page and confirm all the agreement checks
+    #And Continue to Review page and review the order
+    #Then order confirmation is displayed
 
     Examples:
       | userName   | password   | decoupleCFACFUStatus | drupalNavTabShop | preferredType | deviceBrand | shopSubLink | deviceMdl | deviceVariant                     | GetTariffCTA    | color      | BSCstatus | BillCap   | CapAmount | Firstname | Surname | B1     | B2     | B3  | KeyEvent | DeviceType | GDPRstatus | PreSelected | Username     | Capacity |
