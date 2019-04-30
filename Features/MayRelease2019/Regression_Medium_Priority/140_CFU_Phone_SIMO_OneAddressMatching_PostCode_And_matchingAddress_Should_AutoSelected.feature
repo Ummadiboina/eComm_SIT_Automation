@@ -22,7 +22,8 @@ Feature: 140_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Shou
     And Click on 'Use a different delivery address'link
     And enter <HouseNumber> and <PostCode> in Delivery section to set different delivery address
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Click on GDPR Continue CTA
     Then order confirmation is displayed
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 

@@ -13342,4 +13342,18 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    @And("^Click on GDPR Continue CTA$")
+    public void clickOnGDPRContinueCTA() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.clickOnGDPRContinueCTAandValidateError();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+            Assert.fail("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+        }
+    }
 }

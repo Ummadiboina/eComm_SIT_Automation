@@ -39,7 +39,8 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Click on GDPR Continue CTA
     #And Click on the 'Continue button' in delivery page
     #And land on the payment page and input <Username> and other details and click 'Continue' on next step for otac
     And land on the payment page and input <Username> and other details and click 'Continue on next step' for DD confirmation
@@ -50,5 +51,5 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username               | password | handset  | BSCstatus | BillCap   | CapAmount | color      | filtername | Action | sortoption                 | Username     | Make  | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | in01808o_211509@o2.com | test123  | iPhone X | Enabled   | CapMyBill | £0        | Space Grey | low        | skip   | Monthly data (High to low) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username                      | password | handset  | BSCstatus | BillCap   | CapAmount | color      | filtername | Action | sortoption                 | Username     | Make  | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | acce09271344@stf.ref.o2.co.uk | test123  | iPhone X | Enabled   | CapMyBill | £0        | Space Grey | low        | skip   | Monthly data (High to low) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

@@ -15,7 +15,8 @@ Feature: 122_FR_Mix_CFU_Phone
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Click on GDPR Continue CTA
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
     And Continue to Review page and review the order
@@ -24,5 +25,5 @@ Feature: 122_FR_Mix_CFU_Phone
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username         | password | handset      | upFront | term | data | Action | Firstname | Surname | Username     | filtername | BSCstatus | sortoption                 | tabletname | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | standup@flex.com | test123  | Galaxy Note9 | avg     | avg  | avg  | skip   | TEST      | ACCEPTA | TEST ACCEPTA | low        | Disabled  | Monthly data (High to low) | A3 10      | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username               | password | handset      | upFront | term | data | Action | Firstname | Surname | Username     | filtername | BSCstatus | sortoption                 | tabletname | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | gby9cpdd_518390@o2.com | test123  | Galaxy Note9 | avg     | avg  | avg  | skip   | TEST      | ACCEPTA | TEST ACCEPTA | low        | Disabled  | Monthly data (High to low) | A3 10      | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

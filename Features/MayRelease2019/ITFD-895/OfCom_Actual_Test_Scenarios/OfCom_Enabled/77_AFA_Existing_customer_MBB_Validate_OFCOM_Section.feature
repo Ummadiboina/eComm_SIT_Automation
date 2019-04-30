@@ -11,7 +11,8 @@ Feature: 77_AFA_Existing_customer_MBB_Validate_OFCOM_Section
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
+    #And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
+    And In Agent Click on GDPR SaveMyPreference or Skip Preference CTA
     Then perform all the advisory checks
     And perform the credit checks for Agent Existing <Username> by Bank details
     And Validate Agent OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey

@@ -29,7 +29,8 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Enter details in Delivery page for Click and collect
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Click on GDPR Continue CTA
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
     #And Enter details in Delivery page for Click and collect and Click on the 'Continue button'
     And Enter cardDetails in payment page input <Username> and click 'Continue on next step'
@@ -40,5 +41,5 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                                | password | Firstname | Surname | BSCstatus | BillCap   | CapAmount | Tablet             | color | Capacity | Username     | Action    | tariff | consumer | B1  | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | stester117a099195-cf27-44b4-819d-30306c4f580a@gmail.com | test123  | Test      | Accepta | Enabled   | CapMyBill | £30       | iPad Pro 10.5 inch | Gold  | 256GB    | TEST ACCEPTA | enterCode |        | Me       | Not | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username                                                 | password | Firstname | Surname | BSCstatus | BillCap   | CapAmount | Tablet             | color | Capacity | Username     | Action    | tariff | consumer | B1  | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | sittester-c7677de9-f3e8-441f-9929-98aa74c8a994@gmail.com | test123  | Test      | Accepta | Enabled   | CapMyBill | £30       | iPad Pro 10.5 inch | Gold  | 256GB    | TEST ACCEPTA | enterCode |        | Me       | Not | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

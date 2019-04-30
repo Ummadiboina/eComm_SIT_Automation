@@ -136,7 +136,7 @@ public class SmartwatchesPageActions extends Environment {
 
 			log.debug("Delivery Information status:"+status);
 			Thread.sleep(3000);
-			if (status.contains("In Stock")) {
+			if (status.contains("In Stock") || status.contains("Home delivery in")) {
 
 				if (driver.findElements(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).size() > 0) {
 					//NonConnectedDeviceDetailsPage.QuantityDropdown.click();

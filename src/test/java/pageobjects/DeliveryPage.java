@@ -293,13 +293,13 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B3')]/div[1]/a")
     public static WebElement OffersFromO2Partner_OverlayCloseButton;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/input")
+    @FindBy(how = How.XPATH, using = "//div[@id='B1-custom']")
     public static WebElement O2Products;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/input | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/input")
+    @FindBy(how = How.XPATH, using = "//div[@id='B2-custom']")
     public static WebElement O2PerksAndExtras;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][3]/div/div/div/label/input")
+    @FindBy(how = How.XPATH, using = "//div[@id='B3-custom']")
     public static WebElement OffersFromO2Partner;
 
     @FindBy(how = How.XPATH, using = "//input[@id='consent-no']")

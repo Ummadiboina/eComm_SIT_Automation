@@ -25,7 +25,8 @@ Feature: 18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compre
     #And enter a <HouseNumber> and an <PostCode> in Delivery section
     And enter <HouseNumber> and <PostCode> in Delivery section to set different delivery address
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Click on GDPR Continue CTA
     And Select the Home address
     And Enter cardDetails in payment page input <Username> and click 'Continue on next step'
     #And land on the payment page and input and other details and click 'Continue' on next step for otac

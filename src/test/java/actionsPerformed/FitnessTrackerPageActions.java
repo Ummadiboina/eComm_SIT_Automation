@@ -147,10 +147,12 @@ public class FitnessTrackerPageActions extends Environment {
                 // Below will give status like in stock / out of stock etc
                 Thread.sleep(6000);
                 UserSpecifiedFitnessTrackerLimit = Integer.parseInt("1");
-                String status = driver.findElement(By.className("status-info")).getText();
+                //String status = driver.findElement(By.className("status-info")).getText();
+                String status = driver.findElement(By.xpath("//p[@class='delivery-information']/span[1] | //div[@class='stockStatus']")).getText();
+                Thread.sleep(3000);
                 log.debug(status);
 
-                if (status.contains("In Stock")) {
+                if (status.contains("In Stock") || status.contains("Home delivery in")) {
 
                     if (driver.findElements(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).size() > 0) {
                         //NonConnectedDeviceDetailsPage.QuantityDropdown.click();

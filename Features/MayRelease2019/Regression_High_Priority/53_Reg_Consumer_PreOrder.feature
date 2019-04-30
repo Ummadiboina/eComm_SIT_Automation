@@ -8,7 +8,6 @@ Feature: 53_Reg_Consumer_PreOrder
     And I choose PayM <handset>
     #And click on the color dropdown
     #And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    #And select a color
     #And select <color> color of the connected device
     #And select <Capacity> capacity of the connected device
     And check the status <Status> of the device
@@ -31,5 +30,5 @@ Feature: 53_Reg_Consumer_PreOrder
 
       #Close the browser
     Examples:
-      | handset       | Firstname | BSCstatus | BillCap   | CapAmount | color      | Capacity | Surname | Username     | Status    | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone Xs Max | TEST      | Enabled   | CapMyBill | £200      | Space Grey | 32GB     | ACCEPTA | TEST ACCEPTA | Pre Order | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset   | Firstname | BSCstatus | BillCap   | CapAmount | color      | Capacity | Surname | Username     | Status    | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Galaxy S9 | TEST      | Enabled   | CapMyBill | £200      | Space Grey | 32GB     | ACCEPTA | TEST ACCEPTA | Pre Order | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

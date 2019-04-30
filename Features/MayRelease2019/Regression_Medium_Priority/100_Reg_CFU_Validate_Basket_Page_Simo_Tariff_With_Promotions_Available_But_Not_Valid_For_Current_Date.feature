@@ -19,7 +19,8 @@ Feature: 100_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Promotions_Available_
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Click on GDPR Continue CTA
     #And Click on 'Place your order' CTA
     Then order confirmation is displayed
     #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>

@@ -296,7 +296,8 @@ public class PaymentPageActions extends Environment {
         Thread.sleep(6000);
         pageobjects.PaymentPage.Selectaddress.click();*/
 
-        DeliveryPageActions.SetDelivery();
+        //DeliveryPageActions.SetDelivery();
+        DeliveryPageActions.SetDeliveryPaymentPage();
 
         log.debug("Home Address Selected");
         Thread.sleep(5000);
