@@ -30,7 +30,8 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
     And perform <Action> in OTAC page
     #And Click on the 'Continue button' in delivery page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Click on GDPR Continue CTA
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
     And Continue to Review page and review the order
@@ -39,5 +40,5 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                                 | password | handset  | BSCstatus | BillCap       | CapAmount | Username     | Action | tariff                   | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | sittester-c7677de9-f3e8-441f-9929-98aa74c8a994@gmail.com | test123  | iPhone X | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username         | password | handset  | BSCstatus | BillCap       | CapAmount | Username     | Action | tariff                   | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | standup@flex.com | test123  | iPhone X | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

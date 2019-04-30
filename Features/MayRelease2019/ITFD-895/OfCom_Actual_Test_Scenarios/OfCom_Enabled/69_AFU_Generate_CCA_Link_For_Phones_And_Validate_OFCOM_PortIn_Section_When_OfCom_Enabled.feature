@@ -11,7 +11,6 @@ Feature: 69_AFU_Generate_CCA_Link_For_Phones_And_Validate_OFCOM_PortIn_Section_W
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
-    Then Validate deal summary for applied Bill Spend Cap <BillCapAmount> when BSC is <BSCstatus>
     And Validate Agent OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey <PreSelected>
     Then perform all the advisory checks_new
@@ -28,4 +27,4 @@ Feature: 69_AFU_Generate_CCA_Link_For_Phones_And_Validate_OFCOM_PortIn_Section_W
 
     Examples:
       | User        | Device                        | Tariffs | BSCstatus | BillCapAmount | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected | ofComStatus | journey |
-      | 07521139865 | iPhone 6s plus 32GB Rose Gold | Refresh | Enabled   | £200          | dont56640665@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | Enabled     | AFU     |
+      | 07521139865 | iPhone 6s plus 32GB Rose Gold | Refresh | Enabled   | £200          | dono40443969@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          | Enabled     | AFU     |

@@ -21,7 +21,7 @@ public class Agent_AdvisoryChecksActions extends Environment {
 	public static void AgreeAdvsioryCheck() throws InterruptedException, IOException {
 
 		log.debug("Going to Click on Advisory checks");
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 
 		//Agent_AdvisoryPage.AgreeAdvsioryCheckYes.click();
 		WebElement element = pageobjects.Agent_AdvisoryPage.AgreeAdvsioryCheckYes;

@@ -22,7 +22,8 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     #And Select existing account and begin fast checkout
     And scroll to an element in DeliveryPage for taking screenshots
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Click on GDPR Continue CTA
     #And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
     And land on the existing customer payment page and input <Username> and other details for Click and collect order
     #And Continue to Agreements page and confirm all the agreement checks

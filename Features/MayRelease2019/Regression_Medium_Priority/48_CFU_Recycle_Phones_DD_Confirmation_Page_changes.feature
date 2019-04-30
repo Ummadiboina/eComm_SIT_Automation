@@ -35,7 +35,8 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Click on GDPR Continue CTA
     #And Click on the 'Continue button' in delivery page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' for DD confirmation
     And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
@@ -46,5 +47,5 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                    | password | BSCstatus | BillCap   | CapAmount | handset        | tariff                  | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | rbmuatlokesh_donotusee5889@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £5        | iPhone 6s Plus | 29.99upfront60.34amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username                                                 | password | BSCstatus | BillCap   | CapAmount | handset        | tariff                  | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | sittester-e3c36c74-4ca5-4819-b18b-366bf93a1798@gmail.com | test123  | Enabled   | CapMyBill | £5        | iPhone 6s Plus | 29.99upfront60.34amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

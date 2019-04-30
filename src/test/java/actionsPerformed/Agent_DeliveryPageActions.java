@@ -61,6 +61,7 @@ public class Agent_DeliveryPageActions extends Environment {
     public static void ofComSwitching(String ofComStatus, String journey) {
 
         try {
+            Thread.sleep(5000);
             Screenshots.captureScreenshot();
 
             //ofCom Switching functionality is enabled or disabled
@@ -84,7 +85,7 @@ public class Agent_DeliveryPageActions extends Environment {
 
                         //Switching to O2 question validation
                         String ofComQuestion = Agent_DeliveryDetailsPage.switchingO2Question.getText();
-                        Thread.sleep(2000);
+                        Thread.sleep(3000);
                         if (ofComQuestion.contains("Are you switching to O2?")) {
                             log.debug("As expected, ofCom Switching to O2 question is displaying\n");
                             log.debug("OFCOM switching question is : " + ofComQuestion + "\n");

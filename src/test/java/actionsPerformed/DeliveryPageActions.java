@@ -2316,4 +2316,68 @@ public class DeliveryPageActions extends Environment {
         }
     }
 
+    public static void SetDeliveryPaymentPage() throws InterruptedException {
+        Thread.sleep(8000);
+        try {
+
+            if (DeliveryPage.Housenumber.isDisplayed()) {
+                DeliveryPage.Housenumber.sendKeys("100");
+                log.debug("Entered House number");
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
+                log.debug("Entered Post code");
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.Find_Address.click();
+                log.debug("Clicked on the Find address button");
+                Thread.sleep(5000);
+            }
+
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,100)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+
+            if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                if (driver.findElements(By.xpath("//select[@id='address-selector']/option")).size() > 0) {
+
+                    List<WebElement> AdressStatusNames = driver.findElements(By.xpath("//select[@id='address-selector']/option"));
+
+                    log.debug("The list of address status is: \n");
+                    for (int i = 1; i < AdressStatusNames.size(); i++) {
+                        log.debug("Status " + i + " is: " + AdressStatusNames.get(i) + "\n");
+                    }
+                    WebElement AdreessStatusDropdown = driver.findElement(By.xpath("//select[@id='address-selector']"));
+                    Select select = new Select(AdreessStatusDropdown);
+                    select.selectByIndex(3);
+                    Thread.sleep(2000);
+                    Screenshots.captureScreenshot();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void clickOnGDPRContinueCTAandValidateError() {
+        try {
+
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,200)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            log.debug("Clicking on Continue button\n");
+            if (DeliveryPage.continueBtn.isDisplayed()) {
+                DeliveryPage.continueBtn.click();
+            } else {
+                driver.findElement(By.xpath("(//button/span[@id='btn-continue-label'])[2]")).click();
+            }
+            log.debug("Clicked on Continue button\n");
+            Thread.sleep(5000);
+
+        }catch(Exception e){
+            log.debug("Exception found: "+e);
+        }
+    }
+
 }

@@ -11,12 +11,12 @@ Feature: 78_AFA_Existing_Customer_CCA_Link_Phones_And_Validate_OFCOM_With_Valid_
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
+    #And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
+    And In Agent Click on GDPR SaveMyPreference or Skip Preference CTA
     Then perform all the advisory checks
     And perform the credit checks for Agent Existing <Username> by Bank details
     And Validate Agent OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey2> journey
     And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer>  in delivery page
-    #And In Agent Click on GDPR SaveMyPreference or Skip Preference CTA
     And Choose <DeliveryType> delivery address and delivery time
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
@@ -33,4 +33,4 @@ Feature: 78_AFA_Existing_Customer_CCA_Link_Phones_And_Validate_OFCOM_With_Valid_
 
     Examples:
       | User        | Device                        | Tariffs | DeliveryType | BSCstatus | BillCapAmount | username                     | password | Username     | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | GDPRstatus2 | KeyEvent | PreSelected | journey | journey2 | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant | pacStacCode | pacStackRetainCheck |
-      | 07568422379 | iPhone 8 Plus 64GB Space Grey | Refresh | HomeDelivery | Enabled   | £30           | ink_jun8829@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | Disabled    | No       | No          | CFA     | CCA      | Connected  | Phone        | Enabled     | Yes          | 07123456789    | valid      | PAC         |             | Yes                 |
+      | 07521136596 | iPhone 8 Plus 64GB Space Grey | Refresh | HomeDelivery | Enabled   | £30           | ink_jun8829@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | Disabled    | No       | No          | CFA     | CCA      | Connected  | Phone        | Enabled     | Yes          | 07412321714    | valid      | PAC         | XCR995752   | Yes                 |
