@@ -60,7 +60,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	public static WebElement PayYourdDeviceInFullContainer;
 
 	// Below is for Selecting Any Tariff
-	@FindBy(how = How.XPATH, using = ("(//div[@class='dataAllowance clearfix tariff no-promotion-exists']/div/div/div/div[7]/div[2]/button)[1]"))
+	@FindBy(how = How.XPATH, using = ("(//div[@class='dataAllowance clearfix tariff yes-promotion-exists']/div/div[3]/div/div[5]/button)[1]"))
 	public static WebElement RandomfullTariff1;
 
 	// Below is for Selecting Any Tariff
