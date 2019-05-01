@@ -328,7 +328,7 @@ public class AccessoryPageActions extends Environment {
 			Thread.sleep(2000);
 			log.debug("The device stock status is :"+status);
 
-			if (status.contains("In Stock")) {
+			if (status.contains("In Stock") || status.contains("Home delivery in")) {
 
 				if (driver.findElements(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).size() > 0) {
 					//NonConnectedDeviceDetailsPage.QuantityDropdown.click();
@@ -831,7 +831,7 @@ public class AccessoryPageActions extends Environment {
 			String status = driver.findElement(By.className("status-info")).getText();
 			log.debug(status);
 
-			if (status.contains("In Stock")) {
+			if (status.contains("In Stock") || status.contains("Home delivery in")) {
 
 				if (driver.findElements(By.xpath("//span[@id='accyQuantitySelectBoxItArrowContainer']")).size() > 0) {
 					//NonConnectedDeviceDetailsPage.QuantityDropdown.click();

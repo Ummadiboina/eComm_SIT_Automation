@@ -65,7 +65,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static String TariffSelect(String ElementName) throws IOException, InterruptedException {
 
-
+		Thread.sleep(5000);
 		if (driver.findElements(By.xpath("(//input[@type='button' and @value='Go to basket'])[1]")).size() >= 0) {
 
 			Thread.sleep(5000);
@@ -84,8 +84,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			} else if (ElementName.contains("fullpaymenttariff1")) {
 
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
-				executor.executeScript("window.scrollBy(0,-200)", "");
-				Thread.sleep(2000);
+				scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink);
+				Thread.sleep(3000);
 				Screenshots.captureScreenshot();
 				//pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink.click();
 
@@ -639,7 +639,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,-600)", "");
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		Screenshots.captureScreenshot();
 
 		WebElement FirstInsurancePrice = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div/div[3]/p[@class='price'])[1]"));

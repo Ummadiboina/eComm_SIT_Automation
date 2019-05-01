@@ -253,6 +253,7 @@ public class PaymentPageActions extends Environment {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,250)", "");
         Screenshots.captureScreenshot();
+        Thread.sleep(3000);
 
         if(driver.findElements(By.xpath("//span[@id='confirm-address-custom']")).size()>0){
             pageobjects.PaymentPage.affordabilityAgreeCreditCheck.click();

@@ -1116,7 +1116,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            Thread.sleep(5000);
+            Thread.sleep(8000);
             PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
             Thread.sleep(6000);
             //PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
