@@ -404,11 +404,11 @@ public class DeliveryPageActions extends Environment {
         Screenshots.captureScreenshot();
 
 
-        Boolean isPresent = driver.findElements(By.xpath("//*[@id='trade-in-confirmation-required']")).size() > 0;
+        Boolean isPresent = driver.findElements(By.xpath("//span[@id='trade-in-confirmation-required-custom']")).size() > 0;
         if (isPresent) {
             log.debug("checkbox is present, so going to click on that");
             Thread.sleep(3000);
-            js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='trade-in-confirmation-required']")));
+            js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[@id='trade-in-confirmation-required-custom']")));
             log.debug("checkbox Selected");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
@@ -2379,5 +2379,49 @@ public class DeliveryPageActions extends Environment {
             log.debug("Exception found: "+e);
         }
     }
+
+    public static void SetDeliveryDeliveryPage() throws InterruptedException {
+        Thread.sleep(8000);
+        try {
+
+            if (DeliveryPage.Housenumber.isDisplayed()) {
+                DeliveryPage.Housenumber.sendKeys("100");
+                log.debug("Entered House number");
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
+                log.debug("Entered Post code");
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.Find_Address.click();
+                log.debug("Clicked on the Find address button");
+                Thread.sleep(5000);
+            }
+
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,100)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+
+            if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                if (driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option")).size() > 0) {
+
+                    List<WebElement> AdressStatusNames = driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option"));
+
+                    log.debug("The list of address status is: \n");
+                    for (int i = 1; i < AdressStatusNames.size(); i++) {
+                        log.debug("Status " + i + " is: " + AdressStatusNames.get(i) + "\n");
+                    }
+                    WebElement AdreessStatusDropdown = driver.findElement(By.xpath("//select[@id='delivery-address-selector']"));
+                    Select select = new Select(AdreessStatusDropdown);
+                    select.selectByIndex(2);
+                    Thread.sleep(2000);
+                    Screenshots.captureScreenshot();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
