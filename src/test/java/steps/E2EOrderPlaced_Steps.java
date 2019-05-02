@@ -1430,7 +1430,8 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, DeliveryPage.class);
             Thread.sleep(5000);
             //CommonFunctionscheckTitle("Delivery Page");
-            DeliveryPageActions.SetDelivery();
+            //DeliveryPageActions.SetDelivery();
+            DeliveryPageActions.SetDeliveryDeliveryPage();
             Thread.sleep(2000);
             DeliveryPageActions.AboutYouTen(Firstname, Surname);
             Thread.sleep(2000);
@@ -1506,7 +1507,8 @@ public class E2EOrderPlaced_Steps {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,300)", "");
             Screenshots.captureScreenshot();
-            DeliveryPageActions.SetDelivery();
+            //DeliveryPageActions.SetDelivery();
+            DeliveryPageActions.SetDeliveryDeliveryPage();
             Thread.sleep(6000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
             // DeliveryPageActions.ClickContinue();
@@ -2118,8 +2120,8 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
             DeliveryPageActions.SetDelivery();
             Thread.sleep(5000);
-            //PaymentPageActions.Time_At_Address_CC();
-            PaymentPageActions.Time_At_Address();
+            PaymentPageActions.Time_At_Address_CC();
+            //PaymentPageActions.Time_At_Address();
             /*Thread.sleep(5000);
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
             Thread.sleep(5000);
