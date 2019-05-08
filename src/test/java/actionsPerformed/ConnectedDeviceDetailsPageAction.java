@@ -483,8 +483,8 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         // TODO Auto-generated method stub
         String deliveryMg = pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText();
         Thread.sleep(3000);
-        if (deliveryMg.contains("Home delivery") || deliveryMg.contains("Order by midnight")) {
-            log.debug("Device is Delayed Delivery Device: " + deliveryMg);
+        if (deliveryMg.contains("Home delivery in up to") || deliveryMg.contains("weeks")) {
+            log.debug("Device is Delayed Delivery Device: " + deliveryMg+"\n");
 
         } else {
             log.debug("Device is not Delayed Delivery Device");

@@ -29,7 +29,7 @@ public class Agent_ConfirmationPage {
 		@FindBy(how=How.XPATH,using=".//*[@id='placeOrderForm']/input[@class='placeOrder']")
 		public static WebElement SubmitOrder;
 
-		@FindBy(how = How.XPATH, using = "//div[@id='msisdn-confirmation-msg-id']/p[2]")
+		@FindBy(how = How.XPATH, using = "//div[@id='msisdn-confirmation-msg-id']")
 		public static WebElement ofComStatusMsg;
 
 		@FindBy(how = How.XPATH, using = "//div[@id='msisdn-confirmation-msg-id']/p[1]")

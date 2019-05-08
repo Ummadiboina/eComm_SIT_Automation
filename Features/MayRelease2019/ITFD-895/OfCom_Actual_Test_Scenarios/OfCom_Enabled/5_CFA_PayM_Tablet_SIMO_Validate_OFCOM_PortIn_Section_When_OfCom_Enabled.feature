@@ -15,7 +15,8 @@ Feature: 5_CFA_PayM_Tablet_SIMO_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
     And input <postcode> <HouseNumber> <Firstname> and <Surname> and other valid details in Delivery page
     And Validate OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey
     And Click on Continue CTA and validate error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist
-    And land on the payment page and input <Username> and other details and click 'Continue on next step' for SimOnly
+    #And land on the payment page and input <Username> and other details and click 'Continue on next step' for SimOnly
+    And For SiMO land on the payment page and input <Username> and other details and click 'Continue on next step' for SimOnly
     And Continue to Review page and review the order
     Then order confirmation is displayed
     And Validate OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>

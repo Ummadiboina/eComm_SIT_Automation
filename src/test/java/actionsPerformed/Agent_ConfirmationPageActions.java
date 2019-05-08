@@ -95,11 +95,21 @@ public class Agent_ConfirmationPageActions extends Environment {
 				//Device is MBB or not
 				if (journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("AFU") || journey.equalsIgnoreCase("Accessory")) {
 					//As device is MBB so ofCom should be disabled
-					if (driver.findElements(By.xpath("//div[@id='msisdn-confirmation-msg-id']")).size() == 0) {
-						log.debug("As expected, ofCom Switching is disabled in MBB/CFU journey\n");
+					if (driver.findElements(By.xpath("//div[@id='msisdn-confirmation-msg-id']/p[2]")).size() == 0) {
+						log.debug("As expected, ofCom Switching is disabled in Tablet/MBB/CFU/Accessory journey\n");
 					} else {
-						log.debug("Failed: ofCom Switching feature supposed to be disabled in MBB/CFU journey\n");
-						Assert.fail("Failed: ofCom Switching feature supposed to be disabled in MBB/CFU journey\n");
+
+						String selectedStatusMessage = Agent_ConfirmationPage.ofComStatusMsg.getText();
+						String expectedStatusMessage1 = "Until this has been ported, your temporary number will be";
+						String expectedStatusMessage2 = "When your order arrives you’ll need to activate your new O2 sim. Then we can start porting your number to O2 (it usually happens within one working day). In the meantime, the sim we send you will have a temporary number.";
+						String expectedStatusMessage = "You've chosen not to keep your existing number. When your order arrives, you'll just need to activate your new O2 sim and your new number will be ready to go.";
+						Thread.sleep(3000);
+						if (selectedStatusMessage.contains(expectedStatusMessage1) || selectedStatusMessage.contains(expectedStatusMessage2) || selectedStatusMessage.contains(expectedStatusMessage)) {
+							log.debug("Failed, OFCOM switching status message is displayed for Tablet/MBB/CFU/Accessory journey ie: " + selectedStatusMessage + "\n");
+							Assert.fail("Failed, OFCOM switching status message is displayed for Tablet/MBB/CFU/Accessory journey ie: " + selectedStatusMessage + "\n");
+						} else{
+							log.debug("OFCOM switching status message is not displayed for Tablet/MBB/CFU/Accessory journey ie: " + selectedStatusMessage + "\n");
+						}
 					}
 				}else {
 					if (driver.findElements(By.xpath("//div[@id='msisdn-confirmation-msg-id']")).size() > 0) {
@@ -116,8 +126,8 @@ public class Agent_ConfirmationPageActions extends Environment {
 							if (codeVariant.equalsIgnoreCase("PAC")) {
 
 								if (codeStatus.equalsIgnoreCase("valid")) {
-									String expectedStatusMessage1 = "You’ve chosen to keep your number " + ofComMobileNum + ". Until your number has been ported, your temporary number will be";
-									String expectedStatusMessage2 = "You’ve chosen to keep your number: " + ofComMobileNum + ". When your order arrives you’ll need to activate your new O2 sim. Then we can start porting your number to O2 (it usually happens within one working day). In the meantime, the sim we send you will have a temporary number.";
+									String expectedStatusMessage1 = "Until this has been ported, your temporary number will be";
+									String expectedStatusMessage2 = "When your order arrives you'll need to activate your new O2 sim. Then we can start porting your number to O2 (it usually happens within one working day). In the meantime, the sim we send you will have a temporary number.";
 									Thread.sleep(2000);
 									if (selectedStatusMessage.contains(expectedStatusMessage1)) {
 										log.debug("OFCOM switching status is matching ie: " + selectedStatusMessage + "\n");
@@ -129,7 +139,7 @@ public class Agent_ConfirmationPageActions extends Environment {
 									}
 								}
 							} else if (codeVariant.equalsIgnoreCase("STAC")) {
-								String expectedStatusMessage = "You’ve chosen not to keep your existing number. When your order arrives, you’ll just need to activate your new O2 sim and your new number will be ready to go.";
+								String expectedStatusMessage = "You've chosen not to keep your existing number. When your order arrives, you'll just need to activate your new O2 sim and your new number will be ready to go.";
 								Thread.sleep(3000);
 								if (selectedStatusMessage.contains(expectedStatusMessage)) {
 									log.debug("OFCOM switching status is matching for STAC code ie: " + selectedStatusMessage + "\n");
@@ -155,8 +165,18 @@ public class Agent_ConfirmationPageActions extends Environment {
 				}
 			}else if(ofComStatus.equalsIgnoreCase("Disabled")){
 				if (driver.findElements(By.xpath("//div[@id='msisdn-confirmation-msg-id']")).size() > 0) {
-					log.debug("Failed:: ofCom Switching status is enabled, it should be disable when Feature is disabled\n");
-					Assert.fail("Failed:: ofCom Switching status is enabled, it should be disable when Feature is disabled\n");
+
+					String selectedStatusMessage = Agent_ConfirmationPage.ofComStatusMsg.getText();
+					String expectedStatusMessage1 = "Until this has been ported, your temporary number will be";
+					String expectedStatusMessage2 = "When your order arrives you’ll need to activate your new O2 sim. Then we can start porting your number to O2 (it usually happens within one working day). In the meantime, the sim we send you will have a temporary number.";
+					String expectedStatusMessage = "You've chosen not to keep your existing number. When your order arrives, you'll just need to activate your new O2 sim and your new number will be ready to go.";
+					Thread.sleep(3000);
+					if (selectedStatusMessage.contains(expectedStatusMessage1) || selectedStatusMessage.contains(expectedStatusMessage2) || selectedStatusMessage.contains(expectedStatusMessage)) {
+						log.debug("Failed:: ofCom Switching status is enabled, it should be disable when Feature is disabled\n");
+						Assert.fail("Failed:: ofCom Switching status is enabled, it should be disable when Feature is disabled\n");
+					} else{
+						log.debug("As expected, ofCom Switching status is disabled\n");
+					}
 				}else{
 					log.debug("As expected, ofCom Switching status is disabled\n");
 				}

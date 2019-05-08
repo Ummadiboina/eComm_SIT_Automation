@@ -21,4 +21,4 @@ Feature: 14_AFA_PayG_MBB_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
 
     Examples:
       | Device | Tariffs | DeliveryType | BSCstatus | Firstname | Surname | HouseNumber | PostCode | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | journey | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant |
-      | dongle | Refresh | HomeDelivery | Disabled  | TEST      | ACCEPTA | 14          | SL11UP   | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | MBB     | Connected  | MBB          | Enabled     | Not          | Nill           | Nill       | Nill        |
+      | dongle | Random  | HomeDelivery | Disabled  | TEST      | ACCEPTA | 14          | SL11UP   | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | MBB     | Connected  | MBB          | Enabled     | Not          | Nill           | Nill       | Nill        |

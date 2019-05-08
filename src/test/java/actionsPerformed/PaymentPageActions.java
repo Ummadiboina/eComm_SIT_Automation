@@ -230,12 +230,12 @@ public class PaymentPageActions extends Environment {
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
 
-        if(driver.findElements(By.xpath("(//span[@class='custom-checkbox'])[2]")).size()>0) {
+        if(driver.findElements(By.xpath("(//span[@id='affordability-terms-declaration1-custom'])")).size()>0) {
             pageobjects.PaymentPage.agreeFinancialCommitments.click();
             log.debug("Selected agree Financial commitments check box\n");
         }
 
-        if(driver.findElements(By.xpath("(//span[@class='custom-checkbox'])[3]")).size()>0) {
+        if(driver.findElements(By.xpath("(//span[@id='affordability-terms-declaration2-custom'])")).size()>0) {
             pageobjects.PaymentPage.agreeMyCircumstances.click();
             log.debug("Selected agree My Circumstances check box\n");
         }
@@ -261,7 +261,6 @@ public class PaymentPageActions extends Environment {
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
         }
-
     }
 
     public static void Time_At_Address() throws IOException, InterruptedException {
@@ -645,6 +644,24 @@ public class PaymentPageActions extends Environment {
         }
         Screenshots.captureScreenshot();
 
+    }
+
+    public static void SIMO_Time_At_Address() throws IOException, InterruptedException {
+        Thread.sleep(5000);
+        scrollToAnElement.scrollToElement(PaymentPage.Stay_Address_Years);
+
+        pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
+        log.debug("Entered the stayed at address - 9");
+        Thread.sleep(2000);
+        pageobjects.PaymentPage.Stay_Address_months.sendKeys("9");
+        log.debug("Entered the stayed at months - 9");
+        Thread.sleep(2000);
+
+        executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.SIMOConfirm_Address_Checkbox);
+
+        /*pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
+        log.debug("Clicked on the Confirm Address checkbox");*/
+        Screenshots.captureScreenshot();
     }
 
 }

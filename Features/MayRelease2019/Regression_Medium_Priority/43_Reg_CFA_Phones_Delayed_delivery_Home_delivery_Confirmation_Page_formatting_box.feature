@@ -12,6 +12,7 @@ Feature: 43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_form
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
     And select <Capacity> capacity of the connected device
+    And Navigate to device details page, check if the selected device is Delayed Delivery
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -34,5 +35,5 @@ Feature: 43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_form
     #Step 12 and Step 13 of ALM clubbed together
     #Close the browser
     Examples:
-      | handset        | Capacity | Firstname | Surname | Username     | Status           | BSCstatus | BillCap   | CapAmount | color  | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone 6s Plus | 128GB    | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | CapMyBill | £10       | Silver | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset  | Capacity | Firstname | Surname | Username     | Status           | BSCstatus | BillCap   | CapAmount | color | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | iPhone 7 | 128GB    | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | CapMyBill | £10       | Black | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

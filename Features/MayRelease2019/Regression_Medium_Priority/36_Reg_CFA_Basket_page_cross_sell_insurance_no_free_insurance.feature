@@ -18,5 +18,5 @@ Feature: 36_Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance
     And click on the 'Add now' button and verify Insurance gets added successfully
 
     Examples:
-      | handset  | BSCstatus | BillCap   | CapAmount |
-      | iPhone X | Enabled   | CapMyBill | £30       |
+      | handset       | BSCstatus | BillCap   | CapAmount |
+      | iPhone 8 Plus | Enabled   | CapMyBill | £30       |

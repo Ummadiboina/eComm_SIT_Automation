@@ -19,6 +19,7 @@ Feature: 71_AFU_Generate_CCA_Link_For_MBB_And_Validate_OFCOM_PortIn_Section_When
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials for upgrade CCA User
     And Click on 'Continue' button on upgrade page
+    And Scroll to bottom of the page
     And Click on the 'Continue button' in delivery page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks for SECCI and CCA not accepted

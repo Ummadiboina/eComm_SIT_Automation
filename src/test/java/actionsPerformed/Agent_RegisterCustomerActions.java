@@ -184,9 +184,13 @@ public class Agent_RegisterCustomerActions extends Environment {
 			log.debug("Pay by card button is enabled ");
 			//Thread.sleep(4000);
 			scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//h3[normalize-space()='Order Summary']")));
-			Screenshots.captureScreenshot();
 			Thread.sleep(3000);
-			Agent_RegisterCustomerPage.PayByCard.click();
+			Screenshots.captureScreenshot();
+			Thread.sleep(2000);
+			WebElement element = pageobjects.Agent_RegisterCustomerPage.PayByCard;
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", element);
+			//Agent_RegisterCustomerPage.PayByCard.click();
 			Thread.sleep(5000);
 			log.debug("Clicked on pay by card ");
 		}
@@ -240,10 +244,14 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.UsethisCard.click();
+			Screenshots.captureScreenshot();
+			Thread.sleep(2000);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", Agent_RegisterCustomerPage.UsethisCard);
+			//Agent_RegisterCustomerPage.UsethisCard.click();
 			Screenshots.captureScreenshot();
 			log.debug("completed  Mypay bit");
-			Thread.sleep(6000);
+			Thread.sleep(8000);
 		}
 
 	}
@@ -1876,15 +1884,19 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.Postcode.sendKeys(PostCode);
 			log.debug("Entered House Postcode  as: " + PostCode);
 
-			//Thread.sleep(2000);
-			pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
-			//Thread.sleep(3000);
+			Thread.sleep(2000);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", pageobjects.Agent_RegisterCustomerPage.FindAddress);
+			//pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
+			Thread.sleep(3000);
+			Screenshots.captureScreenshot();
 			log.debug("Clicked on the Find address button");
 			Thread.sleep(3000);
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", pageobjects.Agent_RegisterCustomerPage.Selectedaddress);
 			//pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
 			log.debug("Selected an address");
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			e.getMessage();

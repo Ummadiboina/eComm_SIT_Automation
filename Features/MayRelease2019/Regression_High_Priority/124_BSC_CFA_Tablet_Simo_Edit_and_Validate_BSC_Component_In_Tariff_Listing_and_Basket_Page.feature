@@ -7,7 +7,8 @@ Feature: 124_BSC_CFA_Tablet_Simo_Edit_and_Validate_BSC_Component_In_Tariff_Listi
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM SIMO page
     And Select 'Tablets' tab
-    And Select any Random Tariff in the displayed list of Tariffs under different <Contract> tab
+    #And Select any Random Tariff in the displayed list of Tariffs under different <Contract> tab
+    And Select any Random Data Tariff in the displayed list of Tariffs under different <Contract> tab
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And Validate BSC 'Edit' link
@@ -23,7 +24,8 @@ Feature: 124_BSC_CFA_Tablet_Simo_Edit_and_Validate_BSC_Component_In_Tariff_Listi
     #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
-    And land on the payment page and input <Username> and other details and click 'Continue on next step' for SimOnly
+    #And land on the payment page and input <Username> and other details and click 'Continue on next step' for SimOnly
+    And For SiMO land on the payment page and input <Username> and other details and click 'Continue on next step' for SimOnly
     And Continue to Review page and review the order
     Then order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
