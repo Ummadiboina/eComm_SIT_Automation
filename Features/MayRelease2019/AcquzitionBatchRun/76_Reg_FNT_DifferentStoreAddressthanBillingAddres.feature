@@ -20,8 +20,7 @@ Feature: 76_Reg_FNT_DifferentStoreAddressthanBillingAddres
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
-    #And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step' for payments
-    And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
+    And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step' for payments
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
