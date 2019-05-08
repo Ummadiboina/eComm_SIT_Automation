@@ -21,12 +21,11 @@ Feature: 77_Reg_FNT_MorethanMaxTransaction_Deny
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
-    #And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step' for payments
-    And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
+    And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step' for payments
     Then Order Decline page should be displayed
     #Then Choose <consumer> <GDPRstatus> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
 
     Examples:
-      | handset  | color      | Capacity | Firstname | Surname | Username  | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | KeyEvent | PreSelected |
-      | iPhone X | Space Grey | 256GB    | TEST      | NINE    | TEST NINE | Me       | Enabled   | CapMyBill | £15       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No       | No          |
+      | handset       | color      | Capacity | Firstname | Surname | Username  | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | KeyEvent | PreSelected |
+      | iPhone 8 Plus | Space Grey | 256GB    | TEST      | NINE    | TEST NINE | Me       | Enabled   | CapMyBill | £15       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No       | No          |

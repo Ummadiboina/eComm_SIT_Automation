@@ -27,5 +27,5 @@ Feature: 03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostro
       # And Update Device Plan Link Email Address
       # Then CCALink Should be generated
     Examples:
-      | Device                             | Tariffs | Extras | BSCstatus | BillCapAmount | DeliveryType | Firstname | Surname  | Username     | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | Galaxy S8 Plus 64GB Midnight Black | Refresh | Base   | Enabled   | £10           | HomeDelivery | test'     | accepta' | test accepta | 14          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Someone  | Enabled | No        | Connected  | Phone        |
+      | Device                              | Tariffs | Extras | BSCstatus | BillCapAmount | DeliveryType | Firstname | Surname  | Username     | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
+      | Galaxy S9 Plus 128GB Midnight Black | Refresh | Base   | Enabled   | £10           | HomeDelivery | test'     | accepta' | test accepta | 14          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Someone  | Enabled | No        | Connected  | Phone        |

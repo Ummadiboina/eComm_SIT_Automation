@@ -24,5 +24,5 @@ Feature: 80_Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect
     #Then Choose <consumer> <GDPRstatus> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset  | color      | Firstname | Surname  | Username      | BSCstatus | BillCap   | CapAmount | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | KeyEvent | PreSelected |
-      | iPhone X | Space Grey | TEST      | DECLINEA | TEST DECLINEA | Enabled   | CapMyBill | £200      | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No       | No          |
+      | handset       | color      | Firstname | Surname  | Username      | BSCstatus | BillCap   | CapAmount | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | KeyEvent | PreSelected |
+      | iPhone 8 Plus | Space Grey | TEST      | DECLINEA | TEST DECLINEA | Enabled   | CapMyBill | £200      | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No       | No          |

@@ -102,10 +102,10 @@ public class Agent_DeliveryDetailsPage {
 	@FindBy(how = How.XPATH, using = "//input[@id='codeSectionCheckBox-id']")
 	public static WebElement PACSTACCheckBox;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='regMobileNumber']")
+	@FindBy(how = How.XPATH, using = "//input[@id='regMobileNumber' or @id='advMobileNumber']")
 	public static WebElement PACSTACMobileNum;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='regPACNPACCode']")
+	@FindBy(how = How.XPATH, using = "//input[@id='regPACNPACCode' or @id='advPACNPACCode']")
 	public static WebElement PACSTACcode;
 
 	@FindBy(how = How.XPATH, using = "//label[contains(text(),'Enter your mobile number')]")

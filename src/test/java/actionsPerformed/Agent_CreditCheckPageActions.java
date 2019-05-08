@@ -293,7 +293,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.CardCapture.click();
 		log.debug("Clicked on card capture");
 
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		String Mainwindow = driver.getWindowHandle();
 		// getting all the popup windows , hence using getwindowhandles instead of
 		// getwindowhandle
@@ -354,7 +354,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 		// Switching to Parent window i.e Main Window.
 		driver.switchTo().window(Mainwindow);
 		//driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
-		Thread.sleep(4000);
+		Thread.sleep(7000);
 
 		//*[@id="cardCaptureError"]/ul/li[4]/label[1]
 		int success = driver.findElements(By.xpath("//*[@id = 'cardCaptureStatus' and @class ='success']")).size();
@@ -363,7 +363,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 			Thread.sleep(4000);
 			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
 			Screenshots.captureScreenshot();
-			Thread.sleep(20000);
+			Thread.sleep(45000);
 		}
 		else
 		{

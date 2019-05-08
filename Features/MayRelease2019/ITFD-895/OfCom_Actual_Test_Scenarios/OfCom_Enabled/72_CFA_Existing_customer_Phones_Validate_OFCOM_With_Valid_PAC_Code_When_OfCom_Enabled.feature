@@ -25,5 +25,5 @@ Feature: 72_CFA_Existing_customer_Phones_Validate_OFCOM_With_Valid_PAC_Code_When
     And Validate OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>
 
     Examples:
-      | handset   | color      | Capacity | BSCstatus | BillCap   | CapAmount | username                      | password | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode |
-      | Galaxy S9 | Space Grey | 512GB    | Enabled   | CapMyBill | £60       | acce09271344@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | PAC         | Yes                 | 07123456789    | XDF543253   |
+      | handset  | color      | Capacity | BSCstatus | BillCap   | CapAmount | username                      | password | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode |
+      | iPhone X | Space Grey | 512GB    | Enabled   | CapMyBill | £60       | dono73655651@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | PAC         | Yes                 | 07412321717    | XCR186279   |

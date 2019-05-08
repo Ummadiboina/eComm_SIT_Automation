@@ -27,6 +27,9 @@ public class ReviewPageActions extends Environment {
 		if (pageobjects.ReviewPage.TermsCheckBox.isSelected()) {
 
 		} else {
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+
 			scrollToAnElement.scrollToElement(pageobjects.ReviewPage.TermsCheckBox);
 			Screenshots.captureScreenshot();
 			WebElement element = pageobjects.ReviewPage.TermsCheckBox;

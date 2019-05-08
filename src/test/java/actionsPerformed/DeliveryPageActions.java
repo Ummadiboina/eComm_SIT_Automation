@@ -1686,7 +1686,7 @@ public class DeliveryPageActions extends Environment {
 
                     if (driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size() > 0) {
                         log.debug("As expected, ofCom Switching is enabled\n");
-
+                        Thread.sleep(2000);
                         //Switching to O2 question validation
                         String ofComQuestion = DeliveryPage.switchingO2Question.getText();
                         Thread.sleep(2000);
@@ -1933,7 +1933,7 @@ public class DeliveryPageActions extends Environment {
                 driver.findElement(By.xpath("(//button/span[@id='btn-continue-label'])[2]")).click();
             }
             log.debug("Clicked on Continue button\n");
-            Thread.sleep(5000);
+            Thread.sleep(8000);
             Screenshots.captureScreenshot();
             String currentURL = driver.getCurrentUrl();
             Thread.sleep(2000);
@@ -1962,7 +1962,7 @@ public class DeliveryPageActions extends Environment {
                             Screenshots.captureScreenshot();
                             if (PacStacCode.equals("")) {
                                 log.debug("As expected, error message is generated for empty PAC/STAC code ie: " + emptyPACSTACCodeError + "\n");
-                            } else if (emptyPACSTACCodeError.equalsIgnoreCase("Enter a valid PAC or N-PAC code")) {
+                            } else if (emptyPACSTACCodeError.equalsIgnoreCase("Enter a valid PAC or STAC code")) {
                                 log.debug("As expected, error message is generated for incorrect PAC/STAC code ie: " + emptyPACSTACCodeError + "\n");
                             }
                         }
@@ -2329,7 +2329,7 @@ public class DeliveryPageActions extends Environment {
                 Thread.sleep(2000);
                 pageobjects.DeliveryPage.Find_Address.click();
                 log.debug("Clicked on the Find address button");
-                Thread.sleep(5000);
+                Thread.sleep(8000);
             }
 
             JavascriptExecutor jse = (JavascriptExecutor) driver;

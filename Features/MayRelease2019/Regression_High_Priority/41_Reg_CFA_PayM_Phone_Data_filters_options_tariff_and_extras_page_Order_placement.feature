@@ -40,6 +40,6 @@ Feature: 41_Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset  | color      | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | filtername | sortoption                 | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone X | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £200      | low        | Monthly data (High to low) | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset       | color      | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | filtername | sortoption                 | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £200      | low        | Monthly data (High to low) | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
 

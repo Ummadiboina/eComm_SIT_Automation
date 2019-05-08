@@ -42,10 +42,10 @@ public class Agent_AdvisoryChecksActions extends Environment {
 		if (Agent_AdvisoryPage.ccaEmail.isDisplayed()) {
 			//Agent_AdvisoryPage.ccaEmail.sendKeys(Keys.CLEAR);
 			Thread.sleep(2000);
-			Agent_AdvisoryPage.ccaEmail.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
-			Thread.sleep(2000);
-			Agent_AdvisoryPage.ccaEmail.sendKeys("ramjkljldklld@gmail.com");
-			log.debug("Entered email is at Advisory checks page");
+			//Agent_AdvisoryPage.ccaEmail.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
+			//Thread.sleep(2000);
+			//Agent_AdvisoryPage.ccaEmail.sendKeys("ramjkljldklld@gmail.com");
+			//log.debug("Entered email is at Advisory checks page");
 			Agent_AdvisoryPage.houseNum.sendKeys("4");
 			log.debug("Entered house number at Advisory checks");
 			Agent_AdvisoryPage.postalCode.sendKeys("sl11er");

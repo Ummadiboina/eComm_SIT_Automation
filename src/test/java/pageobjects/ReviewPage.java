@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
 public class ReviewPage {
 	
 	  
-	@FindBy(how=How.ID,using="terms-custom")
+	@FindBy(how=How.XPATH,using="//span[@id='terms-custom']")
 	public static WebElement TermsCheckBox;
 
 	@FindBy(how=How.XPATH,using="//input[@id='insurance-terms']")
@@ -17,7 +17,7 @@ public class ReviewPage {
 	@FindBy(how=How.XPATH,using="//label[@id='insurance-terms-label']/span")
 	public static WebElement TermsInsumranceTxt;
 
-	  @FindBy(how=How.ID,using="order-review-continue") 
+	  @FindBy(how=How.XPATH,using="//button[@id='order-review-continue']")
 	  public static WebElement PayNow;
 	  
 

@@ -61,7 +61,7 @@ public class Agent_DeliveryPageActions extends Environment {
     public static void ofComSwitching(String ofComStatus, String journey) {
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(6000);
             Screenshots.captureScreenshot();
 
             //ofCom Switching functionality is enabled or disabled
@@ -71,7 +71,7 @@ public class Agent_DeliveryPageActions extends Environment {
                 if (journey.equalsIgnoreCase("CCA") || journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("AFU") || journey.equalsIgnoreCase("Accessory")) {
                     //As journey is MBB/AFU so ofCom should be disabled
                     if (driver.findElements(By.xpath("//li[normalize-space()='Are you switching to O2?']")).size() == 0) {
-                        log.debug("As expected, ofCom Switching is disabled for MBB/AFU journey\n");
+                        log.debug("As expected, ofCom Switching is disabled for MBB/AFU/CCA Link journey\n");
                     } else {
                         log.debug("Failed: ofCom Switching feature supposed to be disabled for MBB/AFU journey\n");
                         Assert.fail("Failed: ofCom Switching feature supposed to be disabled for MBB/AFU journey\n");
@@ -204,6 +204,7 @@ public class Agent_DeliveryPageActions extends Environment {
                         log.debug("Clicked on PAC and STAC code checkbox\n");
                         pacStacCodeStatus = "Checked";
                         Screenshots.captureScreenshot();
+                        Thread.sleep(2000);
 
                         //Entering inputs to Mobile Number and PACandStac Code fields
                         Agent_DeliveryDetailsPage.PACSTACMobileNum.sendKeys(ofComMobileNum);

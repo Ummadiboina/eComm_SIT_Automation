@@ -49,7 +49,7 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//p[@class='delivery-information'] | //p[@class='preorder']")
     public static WebElement PreDevStatusMsg;
 
-    @FindBy(how = How.XPATH, using = "//p[@class='delivery-information']")
+    @FindBy(how = How.XPATH, using = "//div[@class='homeDelivery']/p")
     public static WebElement DevStatusMsg;
     // have to change the below xpath after getting the environment
 

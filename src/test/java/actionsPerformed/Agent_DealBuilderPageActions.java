@@ -299,8 +299,8 @@ public class Agent_DealBuilderPageActions extends Environment {
 
             Thread.sleep(6000);
             Agent_DealBuilderPage.SelectInStockPAYGDevice.click();
-            log.debug("searched iPhone 6s 32GB Gold");
-            log.debug("Clicked on SearchTextBox to enter" + Device);
+            log.debug("searched specified device\n");
+
             Thread.sleep(3000);
         }
         Screenshots.captureScreenshot();
@@ -391,8 +391,6 @@ public class Agent_DealBuilderPageActions extends Environment {
             }
             Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
-            log.debug("Selected Random Tariff ");
-
         }
         Screenshots.captureScreenshot();
     }

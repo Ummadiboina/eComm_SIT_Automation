@@ -20,4 +20,4 @@ Feature: 36_CFA_PayG_Phones_Validate_OFCOM_With_Expired_PAC_Code_When_OfCom_Enab
 
     Examples:
       | handset   | Firstname | Surname | tariff | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus |
-      | Galaxy S9 | TEST      | ACCEPTA |        | Phone   | Enabled     | Yes          | Expired    | PAC         | Yes                 | 07412321141    | XCR075336   | Disabled  |
+      | Galaxy S9 | TEST      | ACCEPTA |        | Phone   | Enabled     | Yes          | Expired    | PAC         | Yes                 | 07707001150    | XBA479488   | Disabled  |

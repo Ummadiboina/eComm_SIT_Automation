@@ -1976,7 +1976,6 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-
     @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step' for DD confirmation$")
     public void CreditCheckPaymentPage_HomeDelivery_forDD(String Username) {
         // Write code here that turns the phrase above into concrete actions
@@ -3161,7 +3160,7 @@ public class E2EOrderPlaced_Steps {
     public void advisory_checks() {
         try {
             //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            Thread.sleep(12000);
+            Thread.sleep(6000);
             PageFactory.initElements(driver, Agent_AdvisoryPage.class);
             PageFactory.initElements(driver, DeliveryPage.class);
 
@@ -3334,7 +3333,7 @@ public class E2EOrderPlaced_Steps {
             Agent_CreditCheckPageActions.BankDetailsCCA(Username);
             log.debug("Completed Bank details");
             Thread.sleep(10000);
-            Agent_CreditCheckPageActions.affordabilityValidation("Retired", "£10,001-£20,000");
+            //Agent_CreditCheckPageActions.affordabilityValidation("Retired", "£10,001-£20,000");
             Agent_CreditCheckPageActions.cardCaptureAndCreditCheck(Username);
 
         } catch (Exception e) {
@@ -4056,6 +4055,10 @@ public class E2EOrderPlaced_Steps {
             //Thread.sleep(12000);
             /*Thread.sleep(5000);
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(5000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
+
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -10925,10 +10928,14 @@ public class E2EOrderPlaced_Steps {
             if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
                 Agent_RegisterCustomerPage.SaveMyPreferences.click();
             }
-            if (Agent_RegisterCustomerPage.SkipPreference.isEnabled()) {
+            if (Agent_RegisterCustomerPage.SkipPreference.isEnabled() && Agent_RegisterCustomerPage.SkipPreference.isDisplayed()) {
                 Agent_RegisterCustomerPage.SkipPreference.click();
             }
             log.debug("Completed GDPR preference actions");
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,800)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to click on SaveYourPreference or Skip your preferences CTA, please see the failure screenshot");
@@ -13356,6 +13363,97 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
             Assert.fail("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+        }
+    }
+
+    @And("^For SiMO land on the payment page and input ([^\"]*) and other details and click 'Continue on next step' for SimOnly$")
+    public void SIMOCreditCheckPaymentPage_HomeDelivery_SimOnly(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+
+            Thread.sleep(10000);
+            //CommonFunctionscheckTitle("Payment Page");
+            PaymentPageActions.Set_Bank_details(Username);
+            Thread.sleep(12000);
+            PaymentPageActions.SIMO_Time_At_Address();
+
+            Thread.sleep(12000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(20000);
+            //PaymentPageActions.Card_Details_CCV();
+
+        } catch (Exception e) {
+            //TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
+    @And("^Scroll to bottom of the page$")
+    public void scroll_to_bottomPage() {
+        try {
+
+            Thread.sleep(3000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,1200)", "");
+            Thread.sleep(2000);
+            log.debug("Scroll down to the page\n");
+            Screenshots.captureScreenshot();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail(
+                    "Unable to Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section");
+        }
+    }
+
+    @And("^perform the credit checks by Bank details for Agent Existing CCA customer ([^\"]*)$")
+    public void existingCCACustomerCreditCheck(String Username) {
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-400)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            Agent_CreditCheckDetailsPage.YearsatAddress.sendKeys("09");
+            log.debug("Entered Number of Years at address");
+
+            Agent_CreditCheckDetailsPage.monthsatAddress.sendKeys("05");
+            log.debug("Entered Number of Months at address");
+
+            jse.executeScript("window.scrollBy(0,400)", "");
+            Screenshots.captureScreenshot();
+            Agent_CreditCheckPageActions.BankDetailsCCA(Username);
+            log.debug("Completed Bank details");
+            Thread.sleep(6000);
+            Agent_CreditCheckPageActions.affordabilityValidation("Retired", "£10,001-£20,000");
+            Agent_CreditCheckPageActions.cardCaptureAndCreditCheck(Username);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform credit checks for agent existing CCA customer, please see the failure screenshot");
+            Assert.fail("Unable to perform credit checks for agent existing CCA customer, please see the failure screenshot");
+        }
+    }
+
+    @Given("^Navigate to device details page, check if the selected device is Delayed Delivery$")
+    public void delayedDeliveryDeviceValidation() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            ConnectedDeviceDetailsPageAction.GetTitle();
+
+            Thread.sleep(3000);
+            ConnectedDeviceDetailsPageAction.checkDevStatusAsDelayedDelivery();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            Assert.fail("Unable to Navigate to device details page, check if the selected device is Delayed Delivery ");
         }
     }
 }

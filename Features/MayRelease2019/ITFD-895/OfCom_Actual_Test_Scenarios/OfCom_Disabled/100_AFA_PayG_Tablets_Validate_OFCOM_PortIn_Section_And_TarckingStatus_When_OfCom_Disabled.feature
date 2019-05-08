@@ -19,5 +19,5 @@ Feature: 100_AFA_PayG_Tablets_Validate_OFCOM_PortIn_Section_And_TarckingStatus_W
     And Validate Agent OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>
 
     Examples:
-      | Device | Tariffs | DeliveryType | BSCstatus | Firstname | Surname | HouseNumber | PostCode | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | journey | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant |
-      | dongle | Refresh | HomeDelivery | Disabled  | TEST      | ACCEPTA | 14          | SL11UP   | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | MBB     | Connected  | Phone        | Disabled    | Not          | Nill           | Nill       | Nill        |
+      | Device                              | Tariffs | DeliveryType | BSCstatus | Firstname | Surname | HouseNumber | PostCode | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | journey | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant |
+      | iPad Pro 10.5 inch 256GB Space Grey | Random  | HomeDelivery | Disabled  | TEST      | ACCEPTA | 14          | SL11UP   | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | Tablet  | Connected  | Tablet       | Disabled    | Not          | Nill           | Nill       | Nill        |

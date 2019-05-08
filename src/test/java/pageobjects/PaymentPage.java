@@ -37,6 +37,9 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//input[@id='confirm-address' or @id='confirm-address']")
     public static WebElement Confirm_Address_Checkbox;
 
+    @FindBy(how = How.XPATH, using = "//span[@id='confirm-address-custom']")
+    public static WebElement SIMOConfirm_Address_Checkbox;
+
     @FindBy(how = How.XPATH, using = "//h2[normalize-space()='Affordability']")
     public static WebElement affordabilityHeading;
 
@@ -155,10 +158,10 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//span/i[@id='annual-incomeSelectBoxItArrow']")
     public static WebElement annualIncomeDropDown;
 
-    @FindBy(how = How.XPATH, using = "(//span[@class='custom-checkbox'])[2]")
+    @FindBy(how = How.XPATH, using = "(//span[@id='affordability-terms-declaration1-custom'])")
     public static WebElement agreeFinancialCommitments;
 
-    @FindBy(how = How.XPATH, using = "(//span[@class='custom-checkbox'])[3]")
+    @FindBy(how = How.XPATH, using = "(//span[@id='affordability-terms-declaration2-custom'])")
     public static WebElement agreeMyCircumstances;
 
     @FindBy(how = How.XPATH, using = "//a[@class='affordability-section-dont-agree-link']")
