@@ -51,6 +51,6 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset       | Delivery | Payment | filtername | sortoption                 | username            | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone 8 Plus | Delivery | Payment | low        | Monthly data (Low to High) | blinbbing@gmail.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
+      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset       | Delivery | Payment | filtername | sortoption                 | username                                                | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone 8 Plus | Delivery | Payment | low        | Monthly data (Low to High) | stester11d9de1681-f7cc-4511-8b4d-0b6c9c368c56@gmail.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
 

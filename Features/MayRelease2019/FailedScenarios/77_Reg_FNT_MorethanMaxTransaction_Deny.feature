@@ -27,5 +27,5 @@ Feature: 77_Reg_FNT_MorethanMaxTransaction_Deny
 
 
     Examples:
-      | handset  | color      | Capacity | Firstname | Surname | Username  | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | KeyEvent | PreSelected |
-      | iPhone X | Space Grey | 256GB    | TEST      | NINE    | TEST NINE | Me       | Enabled   | CapMyBill | £15       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No       | No          |
+      | handset       | color      | Capacity | Firstname | Surname | Username  | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | KeyEvent | PreSelected |
+      | iPhone 8 Plus | Space Grey | 256GB    | TEST      | NINE    | TEST NINE | Me       | Enabled   | CapMyBill | £15       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No       | No          |
