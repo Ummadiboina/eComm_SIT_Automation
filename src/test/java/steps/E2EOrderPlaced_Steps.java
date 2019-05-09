@@ -8594,9 +8594,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Thread.sleep(4000);
+            Thread.sleep(10000);
             Agent_RegisterCustomerActions.RegisterStatus();
-            Thread.sleep(4000);
+            Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -13382,7 +13382,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(20000);
-            //PaymentPageActions.Card_Details_CCV();
+            PaymentPageActions.Card_Details_CCV();
 
         } catch (Exception e) {
             //TODO Auto-generated catch block
