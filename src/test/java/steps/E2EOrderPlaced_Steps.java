@@ -13456,4 +13456,140 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to Navigate to device details page, check if the selected device is Delayed Delivery ");
         }
     }
+
+    //ITFD-662, Digital payment validation by Jamal Khan
+    @And("^Validate DP checkout CTA and copy text in Basket page in ([^\"]*) journey when ([^\"]*) payment mode enabled and DP status is ([^\"]*)$")
+    public void validateDigitalPaymentInBasketPage(String journey, String DPFlag, String DPStatus) {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            BasketPageActions.validateDigitalPaymentInBasketPage(journey, DPFlag, DPStatus);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to validate Digital Payment section in Basket Page: "+e+"\n");
+            Assert.fail("Unable to validate Digital Payment section in Basket Page: "+e+"\n");
+        }
+    }
+
+    @And("^input details ([^\"]*) ([^\"]*) and perform transaction with PayPal payment method from Basket page$")
+    public void makePaymentWithPayPalInBasketPage(String payPalUser, String payPalPassword) {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            BasketPageActions.makePaymentWithPayPalInBasketPage(payPalUser, payPalPassword);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to make transaction with PayPal payment option in Basket Page: "+e+"\n");
+            Assert.fail("Unable to make transaction with PayPal payment option in Basket Page: "+e+"\n");
+        }
+    }
+
+    @And("^validate deductable upFront amount confirmation message from PayPal Account in delivery page when ([^\"]*) and ([^\"]*)$")
+    public void validateUpFrontDeductedFromPayPalAccount(String DPStatus, String DPFlag) {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.validateUpFrontDeductedFromPayPalAccount(DPStatus, DPFlag);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to Verify deducted amount from Paypal in Delivery page: "+e+"\n");
+            Assert.fail("Unable to Verify deducted amount from Paypal in Delivery page: "+e+"\n");
+        }
+    }
+
+    @And("^Input details for About you section for PayPal users in Delivery page$")
+    public void AboutYouDetailsForPayPalUsers() {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.AboutYouDetailsForPayPalUsers();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to Verify about you section details in Delivery page: "+e+"\n");
+            Assert.fail("Unable to Verify about you section details in Delivery page: "+e+"\n");
+        }
+    }
+
+    @And("^launch the OTAC page in new window$")
+    public void launch_the_OTAC_page() {
+
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("window.open()");
+
+        Set<String> handles = driver.getWindowHandles();
+        List<String> handlesList = new ArrayList<String>(handles);
+        String newWindow = handlesList.get(handlesList.size() - 1);
+        driver.switchTo().window(newWindow);
+        driver.navigate().to("https://www.ref.o2.co.uk/OTAC");
+        log.debug("Successfully launched URL: https://www.ref.o2.co.uk/OTAC");
+
+        //String getTheLaunchedURL = driver.getCurrentUrl();
+    }
+
+    @And("^I Login with OTAC Credential ([^\"]*) and ([^\"]*) and verify login page$")
+    public void login_with_OTAC_Credential(String OTACMSISDN, String securityCode) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, OTAC_PageObjects.class);
+
+        try {
+            log.debug("Entering the OTAC login credentials\n");
+            OTAC_LandingPageActions.otacLogin(OTACMSISDN, securityCode);
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to complete OTAC\n");
+            Assert.fail("Unable to complete OTAC\n");
+        }
+    }
+
+    @And("^Verify the STAC Form elements and mandatory fields and OTAC ([^\"]*) MSISDN displayed$")
+    public void verifySTACFormElementsAndOTACmsisdn(String OTACMSISDN) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, OTAC_PageObjects.class);
+        try {
+            log.debug("Verifying STAC Form Elements\n");
+            OTAC_LandingPageActions.verifyPageURL();
+            Thread.sleep(2000);
+            OTAC_LandingPageActions.verifySTACFormElementsAndOTACmsisdn(OTACMSISDN);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate STAC Form elements\n");
+            Assert.fail("Unable to validate STAC Form elements\n");
+        }
+    }
+
+    @And("^Input the details ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) in STAC Form and submit$")
+    public void inputStacFormDetails(String NonO2Number,String StacCode,String Tariff,String AlternativeNumber,String FirstName,String LastName,String EmailId) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, OTAC_PageObjects.class);
+        try {
+
+            OTAC_LandingPageActions.inputDetailsInStacForm(NonO2Number, StacCode, Tariff, AlternativeNumber, FirstName, LastName, EmailId);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate STAC Form elements\n");
+            Assert.fail("Unable to validate STAC Form elements\n");
+        }
+    }
+
+    @Then("^Click on Submit and validate the STAC Form success and error message for ([^\"]*)$")
+    public void submitAndValidateSTACFOrmResponse(String StacCodeVariant) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, OTAC_PageObjects.class);
+        try {
+
+            OTAC_LandingPageActions.submitAndValidateStacFormReponse(StacCodeVariant);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate STAC Form Response\n");
+            Assert.fail("Unable to validate STAC Form Response\n");
+        }
+    }
 }

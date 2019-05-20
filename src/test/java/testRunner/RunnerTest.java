@@ -40,7 +40,7 @@ import java.util.List;
 @CucumberOptions(plugin = {"html:testResult/cucumber-html-report",
         "json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
         "usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml"},
-        features = {"Features//MayRelease2019//FailedScenarios"},
+        features = {"Features//MayRelease2019//Regression_Low_Priority//15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature"},
         glue = {"steps"},
         tags = {"@Web"})
 

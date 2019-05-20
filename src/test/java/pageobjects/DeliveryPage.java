@@ -52,7 +52,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[@class='findAddressBtn']")
     public static WebElement FindAddress;
 
-    @FindBy(how = How.ID, using = "store-postcode-submit")
+    @FindBy(how = How.XPATH, using = "//button[@id='store-postcode-submit']")
     public static WebElement Find_Store;
 
     @FindBy(how = How.XPATH, using = "(//a[contains(normalize-space(),'Collect from this store')])[1]")

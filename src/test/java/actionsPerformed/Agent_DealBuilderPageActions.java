@@ -227,6 +227,15 @@ public class Agent_DealBuilderPageActions extends Environment {
 
             log.debug("No extras for Basecomms devices");
         }
+
+        if (Extras.contains("Insurance")) {
+
+            // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
+            Agent_DealBuilderPage.selectInsurance.click();
+            Thread.sleep(3000);
+            log.debug("Selected Random extra ");
+
+        }
         Screenshots.captureScreenshot();
 
     }
@@ -365,7 +374,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(3000);
         }else {
             log.debug("searching In Stock Accessory");
-            Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys("screen protector");
+            Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys("In Stock");
             log.debug("searched In Stock Accessory");
             Thread.sleep(6000);
             Agent_DealBuilderPage.SelectSearchedaccessory.click();
