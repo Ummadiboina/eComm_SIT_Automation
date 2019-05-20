@@ -1413,6 +1413,7 @@ public class BasketPageActions extends Environment {
 		}
 	}
 
+	//ITFD-662, PayPal payment from basket page
 	public static void makePaymentWithPayPalInBasketPage(String payPalUser, String payPalPassword) {
 		try{
 			JavascriptExecutor jse = (JavascriptExecutor) driver;

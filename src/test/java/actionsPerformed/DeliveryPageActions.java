@@ -129,16 +129,19 @@ public class DeliveryPageActions extends Environment {
             if (pageobjects.DeliveryPage.clickAndCollect.isDisplayed()) {
                 pageobjects.DeliveryPage.clickAndCollect.click();
                 log.debug("Click and collect tab Selected an address");
-                Thread.sleep(2000);
+                Thread.sleep(6000);
                 pageobjects.DeliveryPage.storePostcode.clear();
                 Thread.sleep(2000);
                 pageobjects.DeliveryPage.storePostcode.sendKeys("M4");
                 log.debug("Entered Post code");
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 Screenshots.captureScreenshot();
-                pageobjects.DeliveryPage.Find_Store.click();
+                //pageobjects.DeliveryPage.Find_Store.click();
+                WebElement element = pageobjects.DeliveryPage.Find_Store;
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", element);
                 log.debug("Clicked on the Find address button");
-                Thread.sleep(5000);
+                Thread.sleep(6000);
                 pageobjects.DeliveryPage.Select_Store.click();
                 log.debug("Clicked on the Find address button");
                 Screenshots.captureScreenshot();
@@ -2103,7 +2106,7 @@ public class DeliveryPageActions extends Environment {
             String phoneNum = RandomEmailAddressCreation.RandomPhoneNum();
             //DeliveryPage.Contact_Number.sendKeys("07829483426");
             DeliveryPage.Contact_Number.sendKeys(phoneNum);
-            log.debug("Enetered 10 digit contact number");
+            log.debug("Entered 10 digit contact number");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
 
