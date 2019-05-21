@@ -13515,7 +13515,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^launch the OTAC page in new window$")
-    public void launch_the_OTAC_page() {
+    public void launch_the_OTAC_page() throws InterruptedException, IOException {
 
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("window.open()");
@@ -13524,10 +13524,13 @@ public class E2EOrderPlaced_Steps {
         List<String> handlesList = new ArrayList<String>(handles);
         String newWindow = handlesList.get(handlesList.size() - 1);
         driver.switchTo().window(newWindow);
-        driver.navigate().to("https://www.ref.o2.co.uk/OTAC");
-        log.debug("Successfully launched URL: https://www.ref.o2.co.uk/OTAC");
+        driver.navigate().to("https://www.ref.o2.co.uk/stac-capture-form");
+        log.debug("Successfully launched URL: https://www.ref.o2.co.uk/stac-capture-form");
 
-        //String getTheLaunchedURL = driver.getCurrentUrl();
+        Thread.sleep(4000);
+        String getTheLaunchedURL = driver.getCurrentUrl();
+        Screenshots.captureScreenshot();
+        log.debug("Currently we are the OTAC login page ie: "+getTheLaunchedURL);
     }
 
     @And("^I Login with OTAC Credential ([^\"]*) and ([^\"]*) and verify login page$")
