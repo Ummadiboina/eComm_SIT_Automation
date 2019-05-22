@@ -40,4 +40,4 @@ Feature: 09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_M
 
     Examples:
       | handset       | Username     | Firstname | Surname | color  | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone 8 Plus | TEST ACCEPTA | Test      | Accepta | Silver | Me       | Enabled   | CapMyBill | £0        | Select | Select | Not | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |
+      | iPhone 7 Plus | TEST ACCEPTA | Test      | Accepta | Silver | Me       | Enabled   | CapMyBill | £0        | Select | Select | Not | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |

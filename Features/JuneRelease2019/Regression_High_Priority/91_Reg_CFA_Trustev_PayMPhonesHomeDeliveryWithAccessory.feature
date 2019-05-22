@@ -27,5 +27,5 @@ Feature: 91_Reg_CFA_Trustev_PayMPhonesHomeDeliveryWithAccessory
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset       | color      | Firstname | Surname | Username     | consumer | BSCstatus | BillCap   | CapAmount | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Enabled   | CapMyBill | £5        | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset   | color | Firstname | Surname | Username     | consumer | BSCstatus | BillCap   | CapAmount | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | iPhone XR | Black | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Enabled   | CapMyBill | £5        | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

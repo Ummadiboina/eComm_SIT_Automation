@@ -30,5 +30,5 @@ Feature: 78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Firstname | Surname | Username     | handset       | color      | BSCstatus | BillCap   | CapAmount | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | test      | acceptb | test acceptb | iPhone 8 Plus | Space Grey | Enabled   | CapMyBill | £200      | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | Firstname | Surname | Username     | handset   | color | BSCstatus | BillCap   | CapAmount | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | test      | acceptb | test acceptb | iPhone XR | Black | Enabled   | CapMyBill | £200      | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

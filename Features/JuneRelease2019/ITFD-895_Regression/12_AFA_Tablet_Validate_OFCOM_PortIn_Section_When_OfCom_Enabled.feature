@@ -18,5 +18,5 @@ Feature: 12_AFA_Tablet_Validate_OFCOM_PortIn_Section_When_OfCom_Enabled
 
 
     Examples:
-      | Device                              | Tariffs | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | journey | ofComStatus |
-      | iPad Pro 10.5 inch 256GB Space Grey | Refresh | Enabled   | £60           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Tablet  | Enabled     |
+      | Device                        | Tariffs | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | journey | ofComStatus |
+      | iPad Pro 11 2018 256GB Silver | Refresh | Enabled   | £60           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Tablet  | Enabled     |

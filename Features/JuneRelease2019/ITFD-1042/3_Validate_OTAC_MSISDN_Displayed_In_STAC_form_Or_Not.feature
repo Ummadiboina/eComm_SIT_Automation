@@ -12,4 +12,4 @@ Feature: 3_Validate_OTAC_MSISDN_Displayed_In_STAC_form_Or_Not
 
     Examples:
       | OTACMSISDN  | securityCode |
-      | 07123456789 | 999999       |
+      | 07521141405 | 999999       |

@@ -11,4 +11,4 @@ Feature: 1_Validate_OTAC_MSISDN_Page_And_Login_With_OTAC_MSISDN
 
     Examples:
       | OTACMSISDN  | securityCode |
-      | 07123456789 | 999999       |
+      | 07521136691 | 999999       |
