@@ -12,7 +12,7 @@ Feature: 44_AFA_CnC_Phones_Validate_OFCOM_With_Valid_PAC_Code_When_OfCom_Enabled
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
-    And select a valid store for Click and Collect
+    #And select a valid store for Click and Collect
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
@@ -27,4 +27,4 @@ Feature: 44_AFA_CnC_Phones_Validate_OFCOM_With_Valid_PAC_Code_When_OfCom_Enabled
 
     Examples:
       | Device                  | Tariffs | Accessory | Extras    | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | journey | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant | pacStacCode | pacStackRetainCheck |
-      | Huawei P20 Pro Twilight | Refresh | Random    | Insurance | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | AFA     | Connected  | Phone        | Enabled     | Yes          | 07412321740    | valid      | PAC         | XCR836039   | Yes                 |
+      | Huawei P20 Pro Twilight | Refresh | Random    | Insurance | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | AFA     | Connected  | Phone        | Enabled     | Yes          | 07707003219    | valid      | PAC         | XBA253464   | Yes                 |

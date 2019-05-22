@@ -14,4 +14,4 @@ Feature: 2_Validate_STAC_Form_Elements_And_Input_Details_Perform_field_Validatio
 
     Examples:
       | OTACMSISDN  | securityCode | NonO2Number | stacCode | Tariff | alternativeNumber | FirstName | LastName | EmailId | StacCodeVariant |
-      | 07123456789 | 999999       |             |          |        |                   |           |          |         | Blank           |
+      | 07521141546 | 999999       |             |          |        |                   |           |          |         | Blank           |

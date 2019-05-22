@@ -41,7 +41,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void SelectPAYMDevice(String Device) throws InterruptedException, IOException {
 
         // Reporter.log("Selected the dropdown Mrs");
-
+        Thread.sleep(5000);
         Agent_DealBuilderPage.DevicesTab.click();
         log.debug("Clicked on Devices tab");
 

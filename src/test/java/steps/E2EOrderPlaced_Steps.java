@@ -13571,7 +13571,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Input the details ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) in STAC Form and submit$")
+    @And("^Input the details ([^\"]*) ([^\"]*) and ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) in STAC Form and submit$")
     public void inputStacFormDetails(String NonO2Number,String StacCode,String Tariff,String AlternativeNumber,String FirstName,String LastName,String EmailId) {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, OTAC_PageObjects.class);

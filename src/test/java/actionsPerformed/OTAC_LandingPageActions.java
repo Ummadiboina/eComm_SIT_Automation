@@ -41,6 +41,14 @@ public class OTAC_LandingPageActions extends Environment {
             Thread.sleep(5000);
             Screenshots.captureScreenshot();
 
+            String postURL = driver.getCurrentUrl();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            if(postURL.contains("stac-capture-form")) {
+
+                log.debug("Currently we are at STAC Capture Form ie: "+postURL+"\n");
+            }
+
         }catch(Exception e){
             log.debug("Not able to complete OTAC, Found exception ie :"+e);
         }
@@ -150,14 +158,6 @@ public class OTAC_LandingPageActions extends Environment {
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
 
-            if(pageobjects.OTAC_PageObjects.submitCTA.isEnabled()){
-                log.debug("Submit button is enabled in STAC Form before entering the details\n");
-                //Assert.fail("Failed, Submit button is enabled in STAC Form before entering the details\n");
-            }else{
-                log.debug("Submit button is disabled in STAC Form before entering the details\n");
-            }
-
-
             jse.executeScript("window.scrollBy(0,-900)", "");
             Thread.sleep(2000);
             log.debug("Scroll to Top of the page\n");
@@ -172,18 +172,20 @@ public class OTAC_LandingPageActions extends Environment {
         try {
 
             log.debug("Entering the details in the STAC Form\n");
-
+            Thread.sleep(2000);
             pageobjects.OTAC_PageObjects.actualNonO2Num.sendKeys(NonO2Number);
-            log.debug("The Non O2 Number is entered ie, "+NonO2Number);
+            log.debug("The Non O2 Number is entered ie, "+NonO2Number+"\n");
+            Thread.sleep(1000);
 
             pageobjects.OTAC_PageObjects.actualSTACCode.sendKeys(StacCode);
-            log.debug("The Stac code is entered ie, "+StacCode);
+            log.debug("The Stac code is entered ie, "+StacCode+"\n");
+            Thread.sleep(1000);
 
             if(Tariff.equalsIgnoreCase("Business")){
                 WebElement actualTariffDropdown = pageobjects.OTAC_PageObjects.actualTariff;
                 Select select = new Select(actualTariffDropdown);
                 select.selectByVisibleText(Tariff);
-                log.debug("The Tariff is selected ie, " + Tariff);
+                log.debug("The Tariff is selected ie, " + Tariff+"\n");
                 Thread.sleep(3000);
 
                 String expectedText = "*";
@@ -193,13 +195,15 @@ public class OTAC_LandingPageActions extends Environment {
                 log.debug("Assertion Success: '*' is present in the text: " + actualBusinessDateFieldText);
 
                 pageobjects.OTAC_PageObjects.selectTerminationDate.sendKeys("31-05-2019");
-                log.debug("Termination date is entered ie: 31-05-2019");
+                log.debug("Termination date is entered ie: 31-05-2019\n");
 
-            }else {
+            }else if(Tariff.equalsIgnoreCase("")){
+                log.debug("The Tariff not selected as blank values has been passed\n");
+            } else{
                 WebElement actualTariffDropdown = pageobjects.OTAC_PageObjects.actualTariff;
                 Select select = new Select(actualTariffDropdown);
                 select.selectByVisibleText(Tariff);
-                log.debug("The Tariff is selected ie, " + Tariff);
+                log.debug("The Tariff is selected ie, " + Tariff+"\n");
             }
             Screenshots.captureScreenshot();
             JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -209,36 +213,32 @@ public class OTAC_LandingPageActions extends Environment {
             Screenshots.captureScreenshot();
 
             pageobjects.OTAC_PageObjects.alternateContactNum.sendKeys(AlternativeNumber);
-            log.debug("The alternate contact Number is entered ie, "+AlternativeNumber);
-
+            log.debug("The alternate contact Number is entered ie, "+AlternativeNumber+"\n");
+            Thread.sleep(1000);
             pageobjects.OTAC_PageObjects.actualFirstName.sendKeys(FirstName);
-            log.debug("The first name is entered ie, "+FirstName);
-
+            log.debug("The first name is entered ie, "+FirstName+"\n");
+            Thread.sleep(1000);
             pageobjects.OTAC_PageObjects.actualLastName.sendKeys(LastName);
-            log.debug("The last name is entered ie, "+LastName);
-
+            log.debug("The last name is entered ie, "+LastName+"\n");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            Thread.sleep(1000);
             if(EmailId.equalsIgnoreCase("Random")) {
                 String email = RandomEmailAddressCreation.RandomEmail();
 
                 pageobjects.OTAC_PageObjects.actualEmail.sendKeys(email);
-                log.debug("The emailId is entered ie, " + email);
+                log.debug("The emailId is entered ie, " + email+"\n");
 
                 pageobjects.OTAC_PageObjects.actualConfirmEmail.sendKeys(email);
-                log.debug("The confirm email Id is entered ie, " + email);
+                log.debug("The confirm email Id is entered ie, " + email+"\n");
             }else{
                 pageobjects.OTAC_PageObjects.actualEmail.sendKeys(EmailId);
-                log.debug("The emailId is entered ie, " + EmailId);
+                log.debug("The emailId is entered ie, " + EmailId+"\n");
             }
 
             jse.executeScript("window.scrollBy(0,400)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            if(pageobjects.OTAC_PageObjects.submitCTA.isEnabled()){
-                log.debug("As expected, Submit button is enabled in STAC Form after entering the details\n");
-            }else{
-                log.debug("Failed, Submit button is disabled in STAC Form after entering the details\n");
-                Assert.fail("Failed, Submit button is disabled in STAC Form after entering the details\n");
-            }
 
         }catch(Exception e){
             log.debug("Unable to input details in STAC Form, Found exception ie :"+e);
@@ -251,20 +251,29 @@ public class OTAC_LandingPageActions extends Environment {
           pageobjects.OTAC_PageObjects.submitCTA.click();
           log.debug("Submit button is clicked\n");
 
-          Thread.sleep(5000);
+          Thread.sleep(8000);
+          Screenshots.captureScreenshot();
           if(StacCodeVariant.equalsIgnoreCase("Valid")){
               String postURL = driver.getCurrentUrl();
               if(postURL.contains("stac-form-post-success-page")) {
                   log.debug("Customer submitted STAC Form successfully\n");
                   log.debug("Currently we are at STAC Form post success page ie: "+postURL+"\n");
+              }else{
+                  log.debug("Failed, Submitted STAC form throws error and we are Currently at page : "+postURL+"\n");
+                  Assert.fail("Failed, Submitted STAC form throws error  and we are Currently at page : "+postURL+"\n");
               }
-              Screenshots.captureScreenshot();
+
           }else{
               String postURL = driver.getCurrentUrl();
+              Thread.sleep(2000);
+              Screenshots.captureScreenshot();
               if(postURL.contains("stac-capture-form")) {
                   log.debug("Customer redirected to STAC Form because of "+StacCodeVariant+" input details\n");
                   log.debug("Currently we are at STAC Capture Form ie: "+postURL+"\n");
               }
+              JavascriptExecutor jse = (JavascriptExecutor) driver;
+              jse.executeScript("window.scrollBy(0,400)", "");
+              Thread.sleep(2000);
               Screenshots.captureScreenshot();
           }
         }catch(Exception e){
