@@ -22,6 +22,9 @@ public class PAYMSimOPage {
 
 	@FindBy(how=How.XPATH,using=("//*[@id='id-30-days']/p/a"))
 	public static WebElement thirtydays;
+
+	@FindBy(how=How.XPATH,using=("//*[@id='id-18-months']/p/a"))
+	public static WebElement Eighteenmonths;
 	
 	/*@FindBy(how=How.XPATH,using=("//div[@class='tariff P12M  promoted-tariff  ']/div[8]"))
 	public static WebElement BuyNowPromotedTariff;*/
@@ -30,10 +33,11 @@ public class PAYMSimOPage {
 	@FindBy(how=How.XPATH,using=("//*[@class='tariff P12M  promoted-tariff  ']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div[@class='btn-wrapper']/form/button | (//*[@name='P12M']//button[normalize-space()='Select'])[1]"))
 	public static WebElement BuyNowPromotedTariff12Months;
 
-
 	@FindBy(how=How.XPATH,using=("//*[@class='tariff P30D  promoted-tariff   no-promotion-exists ']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div[@class='btn-wrapper']/form/button | (//*[@name='P30D']//button[normalize-space()='Select'])[1]"))
 	public static WebElement BuyNowPromotedTariff30Days;
 
+	@FindBy(how=How.XPATH,using=("//*[@class='tariff P18M  promoted-tariff  ']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div[@class='btn-wrapper']/form/button | (//*[@name='P18M']//button[normalize-space()='Select'])[1]"))
+	public static WebElement BuyNowPromotedTariff18Months;
 
 	@FindBy(how=How.XPATH,using=("(//*[@name='P12M']//button[normalize-space()='Select'])[1]"))
 	public static WebElement BuyNowRandomTariff12Months;
@@ -225,16 +229,16 @@ public class PAYMSimOPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='mbb']/a"))
 	public static WebElement Mbb_tab;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id=\"shopApp\"]/div[4]/div/div/div[1]/div[2]/ul/li[1]/section[1]/div[1]/p[5]"))
+	@FindBy(how = How.XPATH, using = ("//*[@id=\'monthData\']"))
 	public static WebElement TE_page_months_contract;
 
-	@FindBy (how = How.XPATH, using = ("-//*[@id=\"shopApp\"]/div[4]/div/div/div[1]/div[2]/ul/li[1]/section[1]/div[1]/p[5]"))
+	@FindBy (how = How.XPATH, using = ("//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[1]/section[1]/div[1]/p[5]"))
 	public static WebElement basket_page_months_contract;
 
-	@FindBy (how =How.XPATH, using =   ("//*[@id=\"basket-plan\"]/td[1]/table/tbody/tr/td[2]/ul/li[1]"))
+	@FindBy (how =How.XPATH, using =   ("//*[@id='basket-plan']/td[1]/table/tbody/tr/td[2]/ul/li[1]"))
 	public static WebElement D_P_R_page;
 
-	@FindBy (how =How.XPATH, using = ("//*[@id=\"o2-page-wrapper\"]/div[2]/div[2]/div/div[1]/div/div[1]/div[1]/div[3]/div[2]/span[5]"))
+	@FindBy (how =How.XPATH, using = ("//*[@id='o2-page-wrapper']/div[2]/div[2]/div/div[1]/div/div[1]/div[1]/div[3]/div[2]/span[5]/text()"))
 	public static WebElement confirm_page_months_contract;
 
 	@FindBy (how =How.XPATH, using= ("//*[@id=\"04b0ac2c-a1d5-4a3c-8964-e7df3c8c2020\"]/div[2]/ul/li[1]"))
