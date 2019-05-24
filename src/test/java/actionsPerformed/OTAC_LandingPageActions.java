@@ -39,7 +39,7 @@ public class OTAC_LandingPageActions extends Environment {
                 log.debug("The OTAC customer clicks on Continue CTA\n");
             }
             Thread.sleep(5000);
-            Screenshots.captureScreenshot();
+            //Screenshots.captureScreenshot();
 
             String postURL = driver.getCurrentUrl();
             Thread.sleep(2000);

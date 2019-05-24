@@ -40,7 +40,7 @@ import java.util.List;
 @CucumberOptions(plugin = {"html:testResult/cucumber-html-report",
         "json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
         "usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml"},
-        features = {"Features//JuneRelease2019//ITFD-895_Regression"},
+        features = {"Features//JuneRelease2019//ITFD-895_FailedScenarios//73_CFA_Existing_customer_Phones_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enabled.feature"},
         glue = {"steps"},
         tags = {"@Web"})
 

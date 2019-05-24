@@ -451,7 +451,7 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "//*[@id='smartTechDeviceTable_filter']/label/input")
     public static WebElement SearchTextBox_SamrtTech;
 
-    @FindBy(how = How.XPATH, using = "(//span[@class='insuranceName'])[1]")
+    @FindBy(how = How.XPATH, using = "(//span[@class='insuranceName']/../a)[1]")
     public static WebElement selectInsurance;
 
 
