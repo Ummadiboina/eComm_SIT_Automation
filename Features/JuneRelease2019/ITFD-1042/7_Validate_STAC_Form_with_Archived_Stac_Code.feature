@@ -13,5 +13,5 @@ Feature: 7_Validate_STAC_Form_with_Archived_Stac_Code
     Then Click on Submit and validate the STAC Form success and error message for <StacCodeVariant>
 
     Examples:
-      | OTACMSISDN  | securityCode | nonO2Number | stacCode | tariff      | alternateNumber | firstName | lastName | emailId | StacCodeVariant |
-      | 07123456789 | 999999       |             |          | Pay Monthly |                 | Test      | Accepta  | Random  | Archived        |
+      | OTACMSISDN  | securityCode | nonO2Number | stacCode  | tariff      | alternateNumber | firstName | lastName | emailId | StacCodeVariant |
+      | 07521135209 | 999999       | 07707003152 | 526077XBA | Pay Monthly |                 | Test      | Accepta  | Random  | Archived        |

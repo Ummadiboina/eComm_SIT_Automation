@@ -3451,6 +3451,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Thread.sleep(15000);
             Agent_RegisterCustomerActions.PaybyCard();
             Thread.sleep(15000);
             Agent_RegisterCustomerActions.CardDetails_PayM();
@@ -4057,7 +4058,6 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
             Thread.sleep(5000);
             PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
-
             Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);

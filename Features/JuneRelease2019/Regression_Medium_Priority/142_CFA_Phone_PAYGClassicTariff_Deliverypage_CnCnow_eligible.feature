@@ -21,7 +21,7 @@ Feature: 142_CFA_Phone_PAYGClassicTariff_Deliverypage_CnCnow_eligible
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
-    And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step' for GDPR
+    And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Review page and review the order
     Then order confirmation is displayed
     #Then Choose <consumer> <GDPRstatus> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>

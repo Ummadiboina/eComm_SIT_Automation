@@ -188,6 +188,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Screenshots.captureScreenshot();
 			Thread.sleep(2000);
 			WebElement element = pageobjects.Agent_RegisterCustomerPage.PayByCard;
+			Thread.sleep(2000);
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", element);
 			//Agent_RegisterCustomerPage.PayByCard.click();
