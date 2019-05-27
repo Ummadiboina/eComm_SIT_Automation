@@ -48,5 +48,5 @@ Feature: 68_Reg_CS_Recycle
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                              | password | handset  | BSCstatus | BillCap   | CapAmount | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network | consumer | B1     | B2     | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | stester332bd891-dd8f-49f2-b245-01e17cbdb1e9@gmail.com | test123  | iPhone 7 | Enabled   | CapMyBill | £10       | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Select | Select | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username                     | password | handset  | BSCstatus | BillCap   | CapAmount | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network | consumer | B1     | B2     | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | ini_jan2912@stf.ref.o2.co.uk | test123  | iPhone 7 | Enabled   | CapMyBill | £10       | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Select | Select | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

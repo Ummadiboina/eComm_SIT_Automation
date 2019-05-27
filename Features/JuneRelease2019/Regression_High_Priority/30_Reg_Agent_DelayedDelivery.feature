@@ -5,8 +5,8 @@ Feature: 30_Reg_Agent_DelayedDelivery
   Scenario Outline: Successful completion of a PAY M Acquistion journey
     Given I login to Agent shop
     And performs Acquisition for New user
-    And Search for <Status> device
-    #And Select a valid PayM <Device>
+    #And Search for <Status> device
+    And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Select valid <Extras> from extras tab
@@ -26,5 +26,5 @@ Feature: 30_Reg_Agent_DelayedDelivery
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples:
-      | Status  | Device               | BSCstatus | BillCapAmount | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | Delayed | Galaxy J5 2017 Black | Enabled   | £20           | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |
+      | Status  | Device                    | BSCstatus | BillCapAmount | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
+      | Delayed | iPhone 7 Plus 128GB Black | Enabled   | £20           | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |

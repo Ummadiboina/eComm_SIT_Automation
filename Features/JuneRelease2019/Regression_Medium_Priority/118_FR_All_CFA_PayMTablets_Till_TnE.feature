@@ -24,6 +24,6 @@ Feature: 118_FR_Upfront_CFA_PayMTablets_Till_TnE.feature
 
     Examples:
       | Device             | tariffAmt | dataValue | color      | Firstname | Surname | consumer | BSCstatus | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | upFront | term | data | PreSelected | KeyEvent |
-      | iPad Pro 10.5 inch | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | avg     | max  | max  | No          | No       |
+      | iPad 9.7 inch 2018 | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | avg     | max  | max  | No          | No       |
 
 

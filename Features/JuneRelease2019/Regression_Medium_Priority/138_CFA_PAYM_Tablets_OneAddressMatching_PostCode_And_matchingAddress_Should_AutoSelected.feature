@@ -28,4 +28,4 @@ Feature: 138_CFA_PAYM_Tablets_OneAddressMatching_PostCode_And_matchingAddress_Sh
 
     Examples:
       | tabletname         | postcode | HouseNumber | Firstname | Surname | Username     | GDPRstatus | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | DeviceType | PreSelected | KeyEvent |
-      | iPad Pro 10.5 inch | SL33FP   |             | TEST      | ACCEPTA | TEST ACCEPTA | Enabled    | Enabled   | CapMyBill | £15       | Select | Not | Not | Not | Connected  | No          | No       |
+      | iPad 9.7 inch 2018 | SL33FP   |             | TEST      | ACCEPTA | TEST ACCEPTA | Enabled    | Enabled   | CapMyBill | £15       | Select | Not | Not | Not | Connected  | No          | No       |

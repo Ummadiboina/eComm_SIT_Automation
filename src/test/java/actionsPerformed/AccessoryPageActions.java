@@ -828,7 +828,7 @@ public class AccessoryPageActions extends Environment {
 			// Below will give status like in stock / out of stock etc
 			Thread.sleep(6000);
 			UserSpecifiedFitnessTrackerLimit = Integer.parseInt(Limit);
-			String status = driver.findElement(By.className("status-info")).getText();
+			String status = driver.findElement(By.xpath("//div[@class='stockStatus']")).getText();
 			log.debug(status);
 
 			if (status.contains("In Stock") || status.contains("Home delivery in")) {
