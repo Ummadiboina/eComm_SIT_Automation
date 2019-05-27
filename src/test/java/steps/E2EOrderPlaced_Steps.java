@@ -4504,7 +4504,7 @@ public class E2EOrderPlaced_Steps {
      * Assert.fail("not able to verify if phone tab is selected"); } }
      */
 
-    @And("^select ([^\"]*) tab$")
+    /*@And("^select ([^\"]*) tab$")
     public void select_tab(String tabname) {
 
         try {
@@ -4516,7 +4516,7 @@ public class E2EOrderPlaced_Steps {
             log.debug("Unable to select tab");
             Assert.fail("Unable to select tab");
         }
-    }
+    }*/
 
 
     @Then("^check if the selected connected device has more than 1 variant for both colour and capacity$")
@@ -12546,6 +12546,7 @@ public class E2EOrderPlaced_Steps {
             PAYMSimOPageActions.Verify_New_18months_Contract_Displayed_from_Tablet_tab();
             PAYMSimOPageActions.selectMBBTab();
             PAYMSimOPageActions.Verify_New_18months_Contract_Displayed_from_Mbb_tab();
+            PAYMSimOPageActions.selectPhoneTab();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Catch block-Verification Fail, unable to validate 18 month contract option from Main Block");
@@ -12563,6 +12564,7 @@ public class E2EOrderPlaced_Steps {
             PAYMSimOPageActions.Verify_New_18months_Contract_Displayed_as_first_button_from_Tablet_tab();
             PAYMSimOPageActions.selectMBBTab();
             PAYMSimOPageActions.Verify_New_18months_Contract_Displayed_as_first_button_from_MBB_tab();
+            PAYMSimOPageActions.selectPhoneTab();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Catch block-Verification Fail, unable to validate 18 month contract option from Main block");
@@ -12576,6 +12578,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
             PAYMSimOPageActions.Verify_12_months_contract_selected_by_default();
+            //PAYMSimOPageActions.Verify_12_months_contract_selected_by_default_Tablet();
+            //PAYMSimOPageActions.Verify_12_months_contract_selected_by_default_MBB();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Catch block-Verification Fail, unable to validate 12 month contract option from Main block");
@@ -12583,7 +12587,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-    @And("^verify ([^\"]*) text is displayed in TE page$")
+    @And("^verify 18 months contract text is displayed in TE page$")
     public void verify_text_is_displayed_in_TE_page(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -12598,7 +12602,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("^verify ([^\"]*) text is displayed in basket page$")
+    @And("^verify 18 months contract text is displayed in basket page$")
     public void verify_text_is_displayed_in_basket_page(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -12611,7 +12615,7 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Catch block-Verification Fail, unable to validate 18 month contract text in basket page from Main block");
         }
     }
-    @And("^verify ([^\"]*) text is displayed in DPR page$")
+    @And("^verify 18 months contract text is displayed in DPR page$")
     public void verify_text_is_displayed_in_DPR_page(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -12626,11 +12630,12 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    @And("^verify ([^\"]*) text is displayed in confirmation page$")
-    public void verify_text_is_displayed_in_confirmation_page(){
+    @And("^verify 18 months contract text is displayed in confirmation page$")
+    public void verify_text_is_displayed_in_confirmation_page() throws IOException {
         try {
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
+            log.debug("XXXX-We Came to Confirmation Page Finally-XXXX");
             PAYMSimOPageActions.verify_18_months_contract_text_displayed_in_confirmation_page();
 
         } catch (Exception e) {
@@ -12639,7 +12644,7 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Catch block-Verification Fail, unable to validate 18 month contract text in confirmation page from Main block");
 
         }
-
+        Screenshots.captureScreenshot();
     }
     @And("^Verify unlimited data is displayed under recommended tariff from ([^\"]*) option$")
     public void verify_unlimited_data_is_displayed_under_recommended_tariff_from_option(String Contract)
@@ -12687,7 +12692,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-    @And ("^verify ([^\"]*) text is displayed in Review and confirm page$")
+    @And ("^verify 18 months contract text is displayed in Review and confirm page$")
     public void verify_text_displayed_review_confirm_page(){
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
