@@ -30,4 +30,4 @@ Feature: 67_Reg_CS_PayMTabletsHomeDeliveryWithAccessory
 
     Examples:
       | Device             | color      | Capacity | BSCstatus | BillCap       | CapAmount | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPad Pro 10.5 inch | Space Grey | 256GB    | Enabled   | DontCapMyBill | Nill      | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | iPad 9.7 inch 2018 | Space Grey | 128GB    | Enabled   | DontCapMyBill | Nill      | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

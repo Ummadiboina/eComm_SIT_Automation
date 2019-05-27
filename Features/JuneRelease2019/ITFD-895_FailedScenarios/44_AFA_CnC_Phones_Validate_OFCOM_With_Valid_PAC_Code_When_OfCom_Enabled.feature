@@ -7,12 +7,12 @@ Feature: 44_AFA_CnC_Phones_Validate_OFCOM_With_Valid_PAC_Code_When_OfCom_Enabled
     And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    #And Select a valid Accessory <Accessory>
+    And Select a valid Accessory <Accessory>
     And Select valid <Extras> from extras tab
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
-    And select a valid store for Click and Collect
+    #And select a valid store for Click and Collect
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>

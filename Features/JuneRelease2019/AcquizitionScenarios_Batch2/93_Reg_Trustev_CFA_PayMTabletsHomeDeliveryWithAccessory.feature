@@ -29,4 +29,4 @@ Feature: 93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory
 
     Examples:
       | Device             | color      | Capacity | Firstname | Surname | Username     | consumer | BSCstatus | BillCap   | CapAmount | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPad Pro 10.5 inch | Space Grey | 256GB    | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Enabled   | CapMyBill | £15       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | iPad 9.7 inch 2018 | Space Grey | 256GB    | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Enabled   | CapMyBill | £15       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

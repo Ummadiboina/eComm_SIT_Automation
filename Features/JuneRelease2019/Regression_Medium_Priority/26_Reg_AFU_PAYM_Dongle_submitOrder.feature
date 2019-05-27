@@ -20,4 +20,4 @@ Feature: 26_Reg_AFU_PAYM_Dongle_submitOrder
 
     Examples:
       | user        | Device | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | 07521105421 | dongle | Refresh | Enabled   | £5            | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |
+      | 07568413216 | dongle | Refresh | Enabled   | £5            | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |

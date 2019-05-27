@@ -16,4 +16,4 @@ Feature: 27_Reg_AFU_SavedBasket
 
     Examples:
       | user        | Device                              | Tariffs | BSCstatus | BillCapAmount |
-      | 07521130515 | Galaxy S9 Plus 128GB Midnight Black | Refresh | Enabled   | No spend cap  |
+      | 07568411373 | Galaxy S9 Plus 128GB Midnight Black | Refresh | Enabled   | No spend cap  |

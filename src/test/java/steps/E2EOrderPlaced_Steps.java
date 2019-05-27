@@ -13600,4 +13600,35 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to validate STAC Form Response\n");
         }
     }
+
+    @And("^land on the pay in full payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
+    public void CreditCheckPayInFullPaymentPage_ClickAndCollect(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            //CommonFunctionscheckTitle("Payment Page");
+            PaymentPageActions.Set_Bank_details(Username);
+            Thread.sleep(10000);
+            PaymentPageActions.Time_At_Address_CC();
+            //PaymentPageActions.Time_At_Address();
+            Thread.sleep(5000);
+            if(driver.findElements(By.xpath("//span[@id='confirm-address-custom']")).size()>0){
+                pageobjects.PaymentPage.affordabilityAgreeCreditCheck.click();
+                log.debug("Selected agree CreditCheck check box\n");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+            }
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(10000);
+            PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(12000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
 }
