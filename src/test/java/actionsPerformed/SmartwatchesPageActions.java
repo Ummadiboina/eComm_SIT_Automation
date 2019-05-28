@@ -78,6 +78,11 @@ public class SmartwatchesPageActions extends Environment {
 	public static void DeviceSelect(String elementName) throws IOException {
 		try {
 
+			log.debug("Selecting Device only tab\n");
+			driver.findElement(By.xpath("//div[@class='contract-type-tabs']/ul/li[2]")).click();
+			log.debug("Device only tab selected\n");
+			Thread.sleep(6000);
+
 			if (elementName.contains("Random Device")) {
 				log.debug("Going to select Random Device");
 				Thread.sleep(2000);
