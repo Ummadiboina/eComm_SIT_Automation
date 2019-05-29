@@ -1535,7 +1535,7 @@ public class DeliveryPageActions extends Environment {
                            }
                        }else {
 
-                           if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                           /*if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                                if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
                                    List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
                                    log.debug("The size of matching address: " + addresses.size());
@@ -1565,6 +1565,35 @@ public class DeliveryPageActions extends Environment {
                                            action.moveToElement(addressElement).click().build().perform();
                                            log.debug("Address selected from dropdown list: " + selectedAddress);
                                            Thread.sleep(3000);
+                                           Screenshots.captureScreenshot();
+                                       }
+                                   }
+                               }
+                           }*/
+
+                           if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                               if (driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option")).size() > 0) {
+                                   List<WebElement> addresses = driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option"));
+                                   log.debug("The size of matching address: " + addresses.size());
+                                   postalcodeStatus = "Valid";
+
+                                   if (addresses.size() >= 2 && addresses.size() <= 200) {
+
+                                       log.debug("More than one addresses are matching to the corresponding entered post code\n");
+                                       //pageobjects.DeliveryPage.SelectAddress1.click();
+
+                                       if (driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option")).size() > 0) {
+
+                                           List<WebElement> AdressStatusNames = driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option"));
+
+                                           log.debug("The list of address status is: \n");
+                                           for (int i = 1; i < AdressStatusNames.size(); i++) {
+                                               log.debug("Status " + i + " is: " + AdressStatusNames.get(i) + "\n");
+                                           }
+                                           WebElement AdreessStatusDropdown = driver.findElement(By.xpath("//select[@id='delivery-address-selector']"));
+                                           Select select = new Select(AdreessStatusDropdown);
+                                           select.selectByIndex(2);
+                                           Thread.sleep(2000);
                                            Screenshots.captureScreenshot();
                                        }
                                    }
@@ -2390,7 +2419,7 @@ public class DeliveryPageActions extends Environment {
         try {
 
             if (DeliveryPage.Housenumber.isDisplayed()) {
-                DeliveryPage.Housenumber.sendKeys("100");
+                DeliveryPage.Housenumber.sendKeys("102");
                 log.debug("Entered House number");
                 Thread.sleep(2000);
                 pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
