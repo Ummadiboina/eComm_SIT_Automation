@@ -1137,4 +1137,42 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         }
     }
 
+    public static void selectConditionOfDeviceDropDown(String condition) throws Exception {
+        // TODO Auto-generated method stub
+        Thread.sleep(5000);
+
+        if (driver.findElements(By.xpath("//span/i[@id='conditionSelectBoxItArrow']")).size() > 0) {
+            ConnectedDeviceDetailsPage.conditionDropDown.click();
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+            WebElement elementCapacity = null;
+            String colorName = "";
+            List<WebElement> eleCapacity = driver.findElements(By.xpath("//ul[@id='conditionSelectBoxItOptions']/li"));
+
+            for (int i = 1; i <= eleCapacity.size(); i++) {
+                colorName = driver.findElement(By.xpath("//ul[@id='conditionSelectBoxItOptions']/li[" + i + "]")).getText();
+                Thread.sleep(2000);
+                if (colorName.contains(condition)) {
+                    elementCapacity = driver.findElement(By.xpath("//ul[@id='conditionSelectBoxItOptions']/li[" + i + "]"));
+                    break;
+                }
+            }
+
+            Thread.sleep(3000);
+            Point coordinates = elementCapacity.getLocation();
+            Robot robot = new Robot();
+            robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+            Thread.sleep(2000);
+            log.debug("Moving Mouse condition dropdown");
+
+            Actions action = new Actions(driver);
+            action.moveToElement(elementCapacity).click().build().perform();
+            log.debug("Selected " + condition + "from condition dropdown");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+        }
+
+    }
+
 }

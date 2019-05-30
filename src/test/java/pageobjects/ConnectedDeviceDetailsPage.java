@@ -305,5 +305,6 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = ("(//a[normalize-space()='Collect from this store'])[1]"))
     public static WebElement Collectfromthisstore;
 
-
+    @FindBy(how = How.XPATH, using = "//span/i[@id='conditionSelectBoxItArrow']")
+    public static WebElement conditionDropDown;
 }

@@ -13631,4 +13631,19 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    @And("^select ([^\"]*) condition of the connected device$")
+    public void select_condition_of_the_device(String condition) {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            ConnectedDeviceDetailsPageAction.selectConditionOfDeviceDropDown(condition);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.debug("selected capacity" + condition);
+            Assert.fail("not able to select  capacity" + condition);
+        }
+    }
 }
