@@ -20,7 +20,7 @@ public class checkStoreStockForPayG {
 		public static WebElement findStoreSearchBtn;
 	
 	//select the store address
-	@FindBy(how = How.XPATH, using = ("(//input[@value='Select Store'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//input[@value='Select Store'])[2]"))
 	public static WebElement selectStoreAddress;
 	
 }

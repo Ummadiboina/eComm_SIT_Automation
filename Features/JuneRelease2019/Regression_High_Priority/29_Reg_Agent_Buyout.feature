@@ -19,13 +19,13 @@ Feature: 29_Reg_Agent_Buyout
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials
-    #And Click on 'Continue' button on upgrade page
-    #And CiPhone 6s plus 128GB Rose Goldlick on the 'Continue button' in delivery page
-    #And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
-    #And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks
-    #And Continue to Review page, check order contract text and review the order
-    #Then order confirmation is displayed
+    And Click on 'Continue' button on upgrade page
+    And Click on the 'Continue button' in delivery page
+    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
+    And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks
+    And Continue to Review page, check order contract text and review the order
+    Then order confirmation is displayed
 
     Examples:
-      | User        | Device                        | BSCstatus | BillCapAmount | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | 07521131805 | iPhone 6s Plus 32GB Rose Gold | Enabled   | £15           | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Yes          |
+      | User        | Device                        | BSCstatus | BillCapAmount | Tariffs | username                      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | 07521131391 | iPhone 6s Plus 32GB Rose Gold | Enabled   | £15           | Refresh | smit79169567@stf.ref.o2.co.uk | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Yes         |

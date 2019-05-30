@@ -28,5 +28,5 @@ Feature: 76_Reg_FNT_DifferentStoreAddressthanBillingAddres
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset      | color          | Capacity | Firstname | BSCstatus | BillCap       | CapAmount | Surname | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | Galaxy Note9 | Midnight Black | 128GB    | TEST      | Enabled   | DontCapMyBill | Nill      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Not   | Not   | Select | Enabled    | No        | Connected  | No          | No       |
+      | handset      | color      | Capacity | Firstname | BSCstatus | BillCap       | CapAmount | Surname | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Galaxy Note9 | Ocean Blue | 128GB    | TEST      | Enabled   | DontCapMyBill | Nill      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Not   | Not   | Select | Enabled    | No        | Connected  | No          | No       |

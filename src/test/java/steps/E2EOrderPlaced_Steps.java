@@ -2150,7 +2150,7 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
             Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(12000);
+            Thread.sleep(15000);
             PaymentPageActions.Card_Details_CCV();
             Thread.sleep(12000);
         } catch (Exception e) {
@@ -5965,11 +5965,11 @@ public class E2EOrderPlaced_Steps {
             Screenshots.captureScreenshot();
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
-            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
+            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
             Screenshots.captureScreenshot();
             Thread.sleep(4000);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
             Thread.sleep(10000);
 
         } catch (Exception e) {
@@ -7560,7 +7560,7 @@ public class E2EOrderPlaced_Steps {
             datalistbefore = PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
             Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
-            Thread.sleep(8000);
+            Thread.sleep(3000);
             FilterDataOption = range;
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -8101,12 +8101,12 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            Thread.sleep(4000);
+            Thread.sleep(2000);
             String Filteroption = FilterDataOption;
             log.debug(Filteroption);
-            Thread.sleep(4000);
+            Thread.sleep(2000);
             PAYMandPAYGTariffAndExtrasPageActions.SelectedState(Filteroption);
-            Thread.sleep(4000);
+            Thread.sleep(2000);
         } catch (Exception e) {
             e.printStackTrace();
             log.debug("Not able to verify if in Selected State");
@@ -8406,9 +8406,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PayG_DevicesPage.class);
             PayG_DevicesPage.payGdeviceTab.click();
-            Thread.sleep(1000);
+            Thread.sleep(5000);
             PayG_DevicesPage.payG_CustomerCost_SortOption.click();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
+            PayG_DevicesPage.payG_CustomerCost_SortOption.click();
 
             List<WebElement> stockSize = driver.findElements(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr/td[4]"));
             for (int i = 1; i < stockSize.size(); i++) {
@@ -8484,11 +8485,11 @@ public class E2EOrderPlaced_Steps {
             CommonUtilities.driverWait(driver, 3000);
             log.debug("before selectiong the store");
             checkStoreStockForPayG.selectStoreAddress.click();
-            log.debug("after selectiong the store");
+            log.debug("after selecting the store");
             CommonUtilities.driverWait(driver, 3000);
             log.debug("before navigation back");
             CommonUtilities.switchToWindow(driver);
-            log.debug("Successfylly selected store");
+            log.debug("Successfully selected store");
         } catch (Exception e) {
             log.debug("Failed to select store" + e.getMessage());
             Assert.fail("Failed to select store");

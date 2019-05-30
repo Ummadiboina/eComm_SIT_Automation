@@ -804,6 +804,9 @@ public class BasketPageActions extends Environment {
 	public static void EnterValidPromoCodeDetails(String promoCode) throws IOException, InterruptedException {
 		Thread.sleep(5000);
 		Screenshots.captureScreenshot();
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Screenshots.captureScreenshot();
 		pageobjects.UpgradeCustomerPage.plusAccordion.click();
 		Thread.sleep(4000);
 		pageobjects.UpgradeCustomerPage.promoCodeDetails.sendKeys(promoCode);
@@ -812,7 +815,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 		pageobjects.UpgradeCustomerPage.promoCodeSubmit.click();
 		log.debug("Submited the promo code");
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		if (UpgradeCustomerPage.AppliedPromoCodeValidation.isDisplayed()) {
 			System.out.println(UpgradeCustomerPage.AppliedPromoCodeValidation.getText());
 			log.info(UpgradeCustomerPage.AppliedPromoCodeValidation.getText());
