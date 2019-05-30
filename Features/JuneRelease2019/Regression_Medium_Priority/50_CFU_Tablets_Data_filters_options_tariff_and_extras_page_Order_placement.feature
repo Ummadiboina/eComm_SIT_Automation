@@ -8,17 +8,17 @@ Feature: 50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placem
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
-    And Click on Tablet section in upgrade options page
-    And Click on View all Tablets link in upgrade options page
-    And Select PayM Tablet <Tablet>
+    #And Click on Tablet section in upgrade options page
+    #And Click on View all Tablets link in upgrade options page
+    #And Select PayM Tablet <Tablet>
     #And click on the color dropdown
     #And verify the name of the colour is next to the colour tile in CFAPhoneColour
     #And select <color> color of the connected device
     #And select <Capacity> capacity of the connected device
-    And Navigate to device details page
-    #And Select a <Tablet> device from Recommended devices section
-    #And Click on device 'Confirm CTA'
-    #And Click on View all Tariffs link in upgrade options page
+    #And Navigate to device details page
+    And Select a <Tablet> device from Recommended devices section
+    And Click on device 'Confirm CTA'
+    And Click on View all Tariffs link in upgrade options page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
       #Verification point - A - More than 2 should be displayed
     When I click on respective <filtername> data filter
