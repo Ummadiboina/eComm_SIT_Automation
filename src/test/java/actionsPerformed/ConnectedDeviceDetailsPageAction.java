@@ -68,7 +68,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         pageobjects.BasketPage.clickAndCollect.click();
         Thread.sleep(6000);
         Screenshots.captureScreenshot();
-        pageobjects.BasketPage.StorePostcode.sendKeys("M4 2HU");
+        pageobjects.BasketPage.StorePostcode.sendKeys("G13HF");
         log.debug("PostCode Entered for Search");
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
@@ -90,20 +90,20 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         List<WebElement> collectionDetails = driver.findElements(By.xpath("//div[@class='collectFrom']"));
         int cnt = 0;
 
-        for(int i=1;i<=collectionDetails.size();i++){
-            String collectionDate = driver.findElement(By.xpath("(//div[@class='collectFrom'])["+i+"]/p")).getText();
+        for (int i = 1; i <= collectionDetails.size(); i++) {
+            String collectionDate = driver.findElement(By.xpath("(//div[@class='collectFrom'])[" + i + "]/p")).getText();
             Thread.sleep(3000);
-            log.debug("Collection Date: "+collectionDate);
+            log.debug("Collection Date: " + collectionDate);
             if (collectionDate.contains("TODAY") || collectionDate.contains("Today")) {
                 log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDate + "\n");
-                driver.findElement(By.xpath("(//a[normalize-space()='Collect from this store'])["+i+"]")).click();
+                driver.findElement(By.xpath("(//a[normalize-space()='Collect from this store'])[" + i + "]")).click();
                 log.debug("Store selected for collection Today\n");
                 cnt++;
                 break;
             }
         }
 
-        if(cnt==0) {
+        if (cnt == 0) {
             log.debug("Device is not available for click and collect now in provided store\n");
             Assert.fail("Device is not available for click and collect now in provided store\n");
         }
@@ -112,12 +112,12 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
         String collectionDetailsPDpage = pageobjects.BasketPage.CollectionDetailsPDpage.getText();
         Thread.sleep(2000);
-        log.debug("Delivery details - collection today/now:: is updated in PD page: " +collectionDetailsPDpage);
-        if(collectionDetailsPDpage.contains("Today")){
-            log.debug("Delivery details - collection today/now:: is updated in PD page: " +collectionDetailsPDpage);
-        }else{
-            log.debug("Delivery details - collection today/now status is not matching in PD page: " +collectionDetailsPDpage);
-            Assert.fail("Delivery details - collection today/now status is not matching in PD page: " +collectionDetailsPDpage);
+        log.debug("Delivery details - collection today/now:: is updated in PD page: " + collectionDetailsPDpage);
+        if (collectionDetailsPDpage.contains("Today")) {
+            log.debug("Delivery details - collection today/now:: is updated in PD page: " + collectionDetailsPDpage);
+        } else {
+            log.debug("Delivery details - collection today/now status is not matching in PD page: " + collectionDetailsPDpage);
+            Assert.fail("Delivery details - collection today/now status is not matching in PD page: " + collectionDetailsPDpage);
         }
     }
 
@@ -470,11 +470,11 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Thread.sleep(3000);
         log.debug("Stock status is :" + preoder);
         if (preoder.contains("Pre") || preoder.contains("Pre-order") || preoder.contains("Order by midnight")) {
-            log.debug("Device is Pre Order Device, status is:"+preoder);
+            log.debug("Device is Pre Order Device, status is:" + preoder);
 
         } else {
-            log.debug("Device is not Pre Order Device:"+preoder);
-            Assert.fail("Device is not Pre Order Device:"+preoder);
+            log.debug("Device is not Pre Order Device:" + preoder);
+            Assert.fail("Device is not Pre Order Device:" + preoder);
         }
         Screenshots.captureScreenshot();
     }
@@ -484,7 +484,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         String deliveryMg = pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText();
         Thread.sleep(3000);
         if (deliveryMg.contains("Home delivery in up to") || deliveryMg.contains("weeks")) {
-            log.debug("Device is Delayed Delivery Device: " + deliveryMg+"\n");
+            log.debug("Device is Delayed Delivery Device: " + deliveryMg + "\n");
 
         } else {
             log.debug("Device is not Delayed Delivery Device");
@@ -736,7 +736,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                     Thread.sleep(2000);
 
                     int upfrentSize = ConnectedDeviceDetailsPage.upfrentVal.getText().length();
-                    String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, upfrentSize-3);
+                    String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, upfrentSize - 3);
                     Thread.sleep(2000);
 
                     if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon disable')]")).size() <= 0) {
@@ -767,7 +767,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                     Thread.sleep(2000);
 
                     int upfrentSize = ConnectedDeviceDetailsPage.upfrentVal.getText().length();
-                    String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, upfrentSize-3);
+                    String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, upfrentSize - 3);
                     Thread.sleep(2000);
 
                     //if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
@@ -777,7 +777,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
                     //if (maxValUpfrnt.contains(upFrntVal) && ConnectedDeviceDetailsPage.maxIcon_Upfrent_disiabled.isDisplayed()) {
 
-                    if (maxValUpfrnt.contains(upFrntVal) && (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() >0)) {
+                    if (maxValUpfrnt.contains(upFrntVal) && (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon disable')]")).size() > 0)) {
                         log.info("the Upfront cost is changes to maximum - " + ConnectedDeviceDetailsPage.maxVal_Upfrent.getText());
                         b = true;
                         break;
@@ -983,13 +983,13 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
 
-       //Bill Spend Cap section
-       WebElement dontCapMyBill = driver.findElement(By.xpath("//button[@id='dontcap']"));
+        //Bill Spend Cap section
+        WebElement dontCapMyBill = driver.findElement(By.xpath("//button[@id='dontcap']"));
 
-       if(dontCapMyBill.isDisplayed()){
-           CommonActions.clickWebElement(dontCapMyBill);
-           log.debug("Dont Cap My Bill CTA is clicked\n");
-       }
+        if (dontCapMyBill.isDisplayed()) {
+            CommonActions.clickWebElement(dontCapMyBill);
+            log.debug("Dont Cap My Bill CTA is clicked\n");
+        }
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
 
@@ -1074,13 +1074,13 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         List<WebElement> collectionDetails = driver.findElements(By.xpath("//div[@class='collectFrom']"));
         int cnt = 0;
 
-        for(int i=1;i<=collectionDetails.size();i++){
-            String collectionDate = driver.findElement(By.xpath("(//div[@class='collectFrom'])["+i+"]/p")).getText();
+        for (int i = 1; i <= collectionDetails.size(); i++) {
+            String collectionDate = driver.findElement(By.xpath("(//div[@class='collectFrom'])[" + i + "]/p")).getText();
             Thread.sleep(3000);
-            log.debug("Collection Date: "+collectionDate);
+            log.debug("Collection Date: " + collectionDate);
             if (collectionDate.contains("Today")) {
                 log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDate + "\n");
-                driver.findElement(By.xpath("(//a[normalize-space()='Collect from this store'])["+i+"]")).click();
+                driver.findElement(By.xpath("(//a[normalize-space()='Collect from this store'])[" + i + "]")).click();
                 log.debug("Store selected for collection Today\n");
                 cnt++;
                 break;

@@ -765,9 +765,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			log.debug("Filter label is displayed");
 			Thread.sleep(4000);
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("window.scrollBy(0,100)", "");
+			jse.executeScript("window.scrollBy(0,200)", "");
 			Screenshots.captureScreenshot();
-			jse.executeScript("window.scrollBy(0,-200)", "");
+			//jse.executeScript("window.scrollBy(0,-200)", "");
 			String text1 = pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.getText();
 
 			log.debug("Validating Tariff is : " + text1);
@@ -800,6 +800,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		if (range.equals("low")) {
 			jse.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.lowfilter);
 			log.debug("Clicked on low range filter");
+			Thread.sleep(1000);
 			/*JavascriptExecutor jse = (JavascriptExecutor) driver;
 			jse.executeScript("window.scrollBy(0,200)", "");*/
 			Screenshots.captureScreenshot();
@@ -820,10 +821,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			//jse.executeScript("window.scrollBy(0,100)", "");
 			Screenshots.captureScreenshot();
 		}
-		jse.executeScript("window.scrollBy(0,120)", "");
+		jse.executeScript("window.scrollBy(0,100)", "");
 		Thread.sleep(2000);
 		Screenshots.captureScreenshot();
-		jse.executeScript("window.scrollBy(0,-200)", "");
+		jse.executeScript("window.scrollBy(0,-100)", "");
 	}
 
 	public static ArrayList<Integer> getDataListBeforeSelectingFilter() throws IOException, InterruptedException {
@@ -1077,7 +1078,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		jse.executeScript("window.scrollBy(0,120)", "");
 		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
-		jse.executeScript("window.scrollBy(0,-200)", "");
+		jse.executeScript("window.scrollBy(0,-120)", "");
 
 		Thread.sleep(5000);
 	}
@@ -1150,10 +1151,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		String DatafilterText = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.getText();
 		log.debug("DatafilterText " + DatafilterText);
 
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,120)", "");
 		Screenshots.captureScreenshot();
-		Thread.sleep(2000);
+		Thread.sleep(2000);*/
 
 
 		List<WebElement> filtersCount = driver.findElements(By.xpath("//div[@class='filter-options']/button | //div[@class='filter-options tariff-page']/button"));
@@ -1197,8 +1198,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 			log.debug("Data Filter not Selected");
 		}
-		Screenshots.captureScreenshot();
-		jse.executeScript("window.scrollBy(0,-200)", "");
+		/*Screenshots.captureScreenshot();
+		jse.executeScript("window.scrollBy(0,-200)", "");*/
 
 	}
 
@@ -1216,7 +1217,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		jse.executeScript("window.scrollBy(0,120)", "");
 		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
-		jse.executeScript("window.scrollBy(0,-200)", "");
+		jse.executeScript("window.scrollBy(0,-120)", "");
 
 	}
 
@@ -1228,7 +1229,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		jse.executeScript("window.scrollBy(0,200)", "");
 		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
-		jse.executeScript("window.scrollBy(0,-250)", "");
+		jse.executeScript("window.scrollBy(0,-200)", "");
 		ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
 		String data = null, tempdata = null;
 		int a = 0;
@@ -1323,8 +1324,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Collections.sort(ListBeforeApplyingSort);
 		log.debug("-List arranged in ascending Order-\n");
 		log.debug(ListBeforeApplyingSort);
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,-200)", "");
+		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,-200)", "");*/
 		Thread.sleep(4000);
 		Screenshots.captureScreenshot();
 		return ListBeforeApplyingSort;

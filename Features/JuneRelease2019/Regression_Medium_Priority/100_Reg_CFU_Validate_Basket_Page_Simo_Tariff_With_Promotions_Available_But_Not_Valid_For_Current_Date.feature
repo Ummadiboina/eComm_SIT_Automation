@@ -12,7 +12,7 @@ Feature: 100_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Promotions_Available_
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     #And Select ribboned tariff <tariff> in upgrade journey
     And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
-    #And Remove promocode to continue
+    #And Remove promo code to continue
     And Select 'I need a new sim' option
     And click on "go to checkout" button
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -27,5 +27,5 @@ Feature: 100_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Promotions_Available_
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | tariffAmt | dataValue | promoCode  | password | Username     | BSCstatus | BillCap   | CapAmount | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 22ma39583352@stf.ref.o2.co.uk | £20       | 20GB      | 1SIMOoffer | test123  | TEST ACCEPTA | Enabled   | CapMyBill | £30       | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username                      | tariffAmt | dataValue | promoCode        | password | Username     | BSCstatus | BillCap   | CapAmount | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 05ap72757382@stf.ref.o2.co.uk | £13       | 3GB       | expiredpromotion | test123  | TEST ACCEPTA | Enabled   | CapMyBill | £30       | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

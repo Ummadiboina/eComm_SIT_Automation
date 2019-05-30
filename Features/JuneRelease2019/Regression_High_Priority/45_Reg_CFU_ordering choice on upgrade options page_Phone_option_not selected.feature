@@ -41,4 +41,4 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
 
     Examples:
       | username                      | password | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action | tariff                   | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | acce50260782@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | acce64591521@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

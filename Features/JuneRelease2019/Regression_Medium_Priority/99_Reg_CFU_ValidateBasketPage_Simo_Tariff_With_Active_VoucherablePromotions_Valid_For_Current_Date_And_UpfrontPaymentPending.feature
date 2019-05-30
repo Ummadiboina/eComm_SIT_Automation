@@ -9,7 +9,7 @@ Feature: 99_Reg_CFU_ValidateBasketPage_Simo_Tariff_With_Active_VoucherablePromot
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
     And I click on 'Sim only Tariff' tab
-    And click on the 'MBB' button
+    #And click on the 'MBB' button
     #And click on the 'Tablets' button
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     #And Select ribboned tariff <tariff> in upgrade journey
@@ -30,5 +30,5 @@ Feature: 99_Reg_CFU_ValidateBasketPage_Simo_Tariff_With_Active_VoucherablePromot
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | tariffAmt | dataValue | promoCode     | password | BSCstatus | BillCap   | CapAmount | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 22ma84097762@stf.ref.o2.co.uk | £12       | 2GB       | 6GB3POUNDSOFF | test123  | Enabled   | CapMyBill | £15       | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username                      | tariffAmt | dataValue | promoCode   | password | BSCstatus | BillCap   | CapAmount | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 19fe62647828@stf.ref.o2.co.uk | £13       | 3GB       | vouchertrue | test123  | Enabled   | CapMyBill | £15       | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

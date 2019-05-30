@@ -321,10 +321,10 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(12000);
         log.debug("searching In Stock devices");
         Agent_DealBuilderPage.SearchTextBox_SamrtTech.sendKeys(Device);
-        log.debug("searched In Stock devices ie: "+Device);
+        log.debug("searched In Stock devices ie: " + Device);
         Thread.sleep(6000);
         Agent_DealBuilderPage.SelectSearchedSmartTechDevice.click();
-        log.debug("Selected a random In stock device ie: "+Device);
+        log.debug("Selected a random In stock device ie: " + Device);
         Thread.sleep(3000);
     }
 
@@ -364,15 +364,15 @@ public class Agent_DealBuilderPageActions extends Environment {
             }
             Thread.sleep(3000);
 
-        } else if(Device.contains("Samsung S8 Plus Evo Wallet")){
-            log.debug("searching In Stock Accessory ie:"+Device);
+        } else if (Device.contains("Samsung S8 Plus Evo Wallet")) {
+            log.debug("searching In Stock Accessory ie:" + Device);
             Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys(Device);
             log.debug("searched In Stock Accessory");
             Thread.sleep(6000);
             Agent_DealBuilderPage.SelectSearchedaccessory.click();
-            log.debug("Selected In stock accessory ie: "+Device);
+            log.debug("Selected In stock accessory ie: " + Device);
             Thread.sleep(3000);
-        }else {
+        } else {
             log.debug("searching In Stock Accessory");
             Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys("In Stock");
             log.debug("searched In Stock Accessory");
@@ -393,9 +393,9 @@ public class Agent_DealBuilderPageActions extends Environment {
         if (Tariff.contains("Random")) {
 
             // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
-            if(driver.findElements(By.xpath("//*[@id='prepayPlanTable']/tbody/tr")).size()>1) {
+            if (driver.findElements(By.xpath("//*[@id='prepayPlanTable']/tbody/tr")).size() > 1) {
                 Agent_DealBuilderPage.SelectingFirstAvailablePrePayTariff.click();
-            }else{
+            } else {
                 driver.findElement(By.xpath("//*[@id='prepayPlanTable']/tbody/tr[1]/td[1]")).click();
             }
             Thread.sleep(5000);
@@ -729,9 +729,9 @@ public class Agent_DealBuilderPageActions extends Environment {
 
         String cNc_collectionDetails = driver.findElement(By.xpath("//table[@class='lineItemTable collectfrom']")).getText();
         Thread.sleep(2000);
-        if(cNc_collectionDetails.contains("Available Today")){
-            log.debug("Order Summary section contains status for collection today ie:"+cNc_collectionDetails+"\n");
-        }else{
+        if (cNc_collectionDetails.contains("Available Today")) {
+            log.debug("Order Summary section contains status for collection today ie:" + cNc_collectionDetails + "\n");
+        } else {
             log.debug("Failed, order summary section dooesn't contains collection today details\n");
             Assert.fail("Failed, order summary section dooesn't contains collection today details\n");
         }
@@ -757,7 +757,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 // Switching to Child window
                 driver.switchTo().window(ChildWindow);
                 Thread.sleep(3000);
-                Agent_DealBuilderPage.Postcode.sendKeys("M4 2HU");
+                Agent_DealBuilderPage.Postcode.sendKeys("G13HF");
 
                 Agent_DealBuilderPage.searchStore.click();
                 Thread.sleep(8000);
@@ -767,20 +767,20 @@ public class Agent_DealBuilderPageActions extends Environment {
                 int cnt = 0;
                 //String collectionDetails = Agent_DealBuilderPage.collectionDetails.getText();
 
-                for(int i=1;i<=collectionDetails.size();i++){
-                    String collectionDate = driver.findElement(By.xpath("//table[@id='storeResultsTable']/tbody/tr["+i+"]/td[2]")).getText();
+                for (int i = 1; i <= collectionDetails.size(); i++) {
+                    String collectionDate = driver.findElement(By.xpath("//table[@id='storeResultsTable']/tbody/tr[" + i + "]/td[2]")).getText();
                     Thread.sleep(3000);
-                    log.debug("Collection Date: "+collectionDate);
+                    log.debug("Collection Date: " + collectionDate);
                     if (collectionDate.equalsIgnoreCase("Today") || collectionDate.equalsIgnoreCase("TODAY")) {
                         log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDate + "\n");
-                        driver.findElement(By.xpath("//table[@id='storeResultsTable']/tbody/tr["+i+"]/td[3]/input")).click();
+                        driver.findElement(By.xpath("//table[@id='storeResultsTable']/tbody/tr[" + i + "]/td[3]/input")).click();
                         log.debug("Store selected for collection Today\n");
                         cnt++;
                         break;
                     }
                 }
 
-                 if(cnt==0) {
+                if (cnt == 0) {
                     log.debug("Device is not available for click and collect now in provided store\n");
                     Assert.fail("Device is not available for click and collect now in provided store\n");
                 }
@@ -800,7 +800,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(2000);
         log.debug("Selected store for click and collect now is:: " + storeDetails);
 
-        if(storeDetails.contains("Basket currently Available Today")){
+        if (storeDetails.contains("Basket currently Available Today")) {
             log.debug("Click and collect now details contains :: Basket currently Available Today");
         }
         Thread.sleep(2000);
@@ -1896,11 +1896,11 @@ public class Agent_DealBuilderPageActions extends Environment {
             }*/
             // later on need to change the un comment this code to select the bolton
 
-            if(driver.findElements(By.xpath("(//*[text()='Data Top-Up Bolt-Ons']/../../../..//img)[1]")).size() > 0) {
+            if (driver.findElements(By.xpath("(//*[text()='Data Top-Up Bolt-Ons']/../../../..//img)[1]")).size() > 0) {
                 driver.findElement(By.xpath("(//*[text()='Data Top-Up Bolt-Ons']/../../../..//img)[1]")).click();
                 Thread.sleep(3000);
-            }else{
-                if(driver.findElements(By.xpath("")). size()> 0){
+            } else {
+                if (driver.findElements(By.xpath("")).size() > 0) {
                     driver.findElement(By.xpath("(//*[text()='Data Top-Up Bolt-Ons']/../../../..//img)[1]")).click();
                 }
             }
@@ -1922,13 +1922,13 @@ public class Agent_DealBuilderPageActions extends Environment {
                 // Assert.fail("Basket having retention item cannot be shared via email.");
             }*/
 
-            if(isRetention.contains("Two")) {
-                if(driver.findElements(By.xpath("(//table[@class='extrasTable']//*[contains(text(),'Data Top-Up Bolt-Ons')]/../../..//tr//img)[4]")).size() >0){
+            if (isRetention.contains("Two")) {
                 if (driver.findElements(By.xpath("(//table[@class='extrasTable']//*[contains(text(),'Data Top-Up Bolt-Ons')]/../../..//tr//img)[4]")).size() > 0) {
-                    log.debug("able to select 2nd retention bolton");
-                    Agent_DealBuilderPage.selectRetentionBolton2.click();
-                    Screenshots.captureScreenshot();
-                }
+                    if (driver.findElements(By.xpath("(//table[@class='extrasTable']//*[contains(text(),'Data Top-Up Bolt-Ons')]/../../..//tr//img)[4]")).size() > 0) {
+                        log.debug("able to select 2nd retention bolton");
+                        Agent_DealBuilderPage.selectRetentionBolton2.click();
+                        Screenshots.captureScreenshot();
+                    }
                 }
             }
 
@@ -1936,7 +1936,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
             if (Agent_DealBuilderPage.copyToBasketButton.isDisplayed()) {
                 System.out.println("copy to basket button is enabled");
-            }else
+            } else
                 log.info("Not enable the button Copy to save basket");
 
                     /*Agent_DealBuilderPage.copyToBasketButton.click();
@@ -1952,7 +1952,6 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
 
-
     public static void saveBasketValidation() throws InterruptedException, IOException {
         String saveBasketLink;
         Thread.sleep(1000);
@@ -1965,7 +1964,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         }*/
         Screenshots.captureScreenshot();
         if (Agent_DealBuilderPage.emailBasket.isDisplayed()) {
-           // Agent_DealBuilderPage.emailBasket.click();
+            // Agent_DealBuilderPage.emailBasket.click();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.emailBasket);
             Thread.sleep(1000);
@@ -1986,7 +1985,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 Assert.fail("Fail to Dispaly :: Basket with retention items or products only eligible to be sold in agent channel cannot be shared with customer");
             }*/
 
-           // Agent_DealBuilderPage.checkBox_sharedBasket.click();
+            // Agent_DealBuilderPage.checkBox_sharedBasket.click();
             Thread.sleep(500);
             Agent_DealBuilderPage.getBasketLink.click();
             Thread.sleep(1000);
@@ -1995,7 +1994,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             driver.get(saveBasketLink);
             driver.manage().window().maximize();
             Thread.sleep(2000);
-        }else {
+        } else {
             Assert.fail("Failed :: Selected tariff is not Refresh pls try another tariff ");
         }
     }
@@ -2013,12 +2012,12 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
 
         int noOfHeaderInCustomerBasket = driver.findElements(By.xpath("//div[@id='sharedBasketWrapper']//table//tr[@class='lineItemHeading']")).size();
-        for(int i=1;i<=noOfHeaderInCustomerBasket;i++){
-            String header = driver.findElement(By.xpath("(//div[@id='sharedBasketWrapper']//table//tr[@class='lineItemHeading'])["+i+"]")).getText();
-            String contentType = driver.findElement(By.xpath("(//div[@id='sharedBasketWrapper']//table//tr[@class='lineItemHeading']/following-sibling::tr)["+i+"]")).getText();
+        for (int i = 1; i <= noOfHeaderInCustomerBasket; i++) {
+            String header = driver.findElement(By.xpath("(//div[@id='sharedBasketWrapper']//table//tr[@class='lineItemHeading'])[" + i + "]")).getText();
+            String contentType = driver.findElement(By.xpath("(//div[@id='sharedBasketWrapper']//table//tr[@class='lineItemHeading']/following-sibling::tr)[" + i + "]")).getText();
 
-                System.out.println(" lineItemHeading :: "+ header +"  && lineItemDescription " +contentType);
-                log.info(" lineItemHeading :: "+ header +"  && lineItemDescription " +contentType);
+            System.out.println(" lineItemHeading :: " + header + "  && lineItemDescription " + contentType);
+            log.info(" lineItemHeading :: " + header + "  && lineItemDescription " + contentType);
         }
         /*if(Agent_DealBuilderPage.emailSuccessfullyMsg.isDisplayed()){
             System.out.println("Success :: "+ Agent_DealBuilderPage.emailSuccessfullyMsg.getText());
@@ -2051,19 +2050,19 @@ public class Agent_DealBuilderPageActions extends Environment {
 
             Thread.sleep(500);
 
-            if(Agent_DealBuilderPage.sendBasketEmailAddress.isDisplayed()){
+            if (Agent_DealBuilderPage.sendBasketEmailAddress.isDisplayed()) {
                 Agent_DealBuilderPage.sendBasketEmailAddress.sendKeys("ecomm4team@gmail.com");
                 Agent_DealBuilderPage.sendEmailCTA.click();
                 Thread.sleep(2000);
-            }else{
+            } else {
                 Assert.fail("Failed ::: Not able to find the send basket email addres ");
             }
 
 
-            if(Agent_DealBuilderPage.emailSuccessfullyMsg.isDisplayed()){
-                System.out.println("Success :: "+ Agent_DealBuilderPage.emailSuccessfullyMsg.getText());
-                log.info("Success :: "+ Agent_DealBuilderPage.emailSuccessfullyMsg.getText());
-            }else{
+            if (Agent_DealBuilderPage.emailSuccessfullyMsg.isDisplayed()) {
+                System.out.println("Success :: " + Agent_DealBuilderPage.emailSuccessfullyMsg.getText());
+                log.info("Success :: " + Agent_DealBuilderPage.emailSuccessfullyMsg.getText());
+            } else {
                 Assert.fail("Faild to display eMail success message once sent the mail basket");
             }
         }
@@ -2072,23 +2071,23 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void copyLinkFromClipboardThenProceedToPlaceOrder() throws InterruptedException {
         Thread.sleep(3000);
-        if(driver.findElements(By.xpath("(//input[@name='otac'])[2]")).size() > 0){
+        if (driver.findElements(By.xpath("(//input[@name='otac'])[2]")).size() > 0) {
             Agent_DealBuilderPage.otac.sendKeys("999999");
             Agent_DealBuilderPage.continue_redeemOTAC.click();
             Thread.sleep(2000);
         }
 
-        if(driver.findElements(By.xpath("//a[@name='normalCancel']")).size() > 0){
+        if (driver.findElements(By.xpath("//a[@name='normalCancel']")).size() > 0) {
             Agent_DealBuilderPage.continue_normalCancel.click();
             Thread.sleep(2000);
         }
 
-        if(driver.findElements(By.xpath("//p[@class='reminder']/a[text()='Continue']")).size() > 0){
+        if (driver.findElements(By.xpath("//p[@class='reminder']/a[text()='Continue']")).size() > 0) {
             Agent_DealBuilderPage.reminder_continue.click();
             Thread.sleep(2000);
         }
         String basksetURL = driver.getCurrentUrl();
-        System.out.println("The Display bolton in the basket page :: " +basksetURL);
+        System.out.println("The Display bolton in the basket page :: " + basksetURL);
       /*  if(basksetURL.contains("retentionBolton")){
             log.info("Retention bolton is Displayed in the Basket page URL");
         }else{
@@ -2097,17 +2096,17 @@ public class Agent_DealBuilderPageActions extends Environment {
         }*/
     }
 
-    public static void verifyBoltonDisplayedInBasketAndSSC(){
-        if(driver.findElements(By.xpath("//*[contains(text(),'Bolton')]")).size() > 0){
+    public static void verifyBoltonDisplayedInBasketAndSSC() {
+        if (driver.findElements(By.xpath("//*[contains(text(),'Bolton')]")).size() > 0) {
             String boltSection = Agent_DealBuilderPage.boltonSection.getText();
             log.info("Retention bolton is Displayed " + boltSection);
-        }else{
+        } else {
             log.info(" Failed :::: Retention bolton is Displayed in the Basket page URL");
-           // Assert.fail(" Failed :::: Retention bolton is Displayed in the Basket page URL");
+            // Assert.fail(" Failed :::: Retention bolton is Displayed in the Basket page URL");
         }
     }
 
- public static void clickAndCollectNowoption() throws InterruptedException, IOException {
+    public static void clickAndCollectNowoption() throws InterruptedException, IOException {
 
         // Selecting an Extra
         Agent_DealBuilderPage.CheckStore.click();
@@ -2170,6 +2169,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
         Screenshots.captureScreenshot();
     }
+
     // Arizona starts here
     public static void SelectPAYMCompanionDevice(String Device) throws InterruptedException, IOException {
 
@@ -2196,6 +2196,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
         Screenshots.captureScreenshot();
     }
+
     public static void leadDevicePairingSectionDisplay(String userStatus) throws Throwable {
 
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -2211,11 +2212,11 @@ public class Agent_DealBuilderPageActions extends Environment {
                 log.debug("Your are on lead device pairing section");
                 Thread.sleep(2000);
 
-                if(userStatus.equalsIgnoreCase("Valid")){
+                if (userStatus.equalsIgnoreCase("Valid")) {
 
                     List<WebElement> countOfMSISDN = driver.findElements(By.xpath("//*[@id='leadDeviceMsisdn']/option"));
                     log.debug("The Number of eligible MSISDN is :" + countOfMSISDN.size());
-                    if(countOfMSISDN.size()>0){
+                    if (countOfMSISDN.size() > 0) {
                         Select MSISDN_select = new Select(driver.findElement(By.id("leadDeviceMsisdn")));
 
                         MSISDN_select.selectByIndex(0);
@@ -2223,24 +2224,21 @@ public class Agent_DealBuilderPageActions extends Environment {
                         Screenshots.captureScreenshot();
                         Agent_DealBuilderPage.leadDevicePairingSection_Continue.click();
                         Thread.sleep(4000);
-                        if(Agent_DealBuilderPage.leadDeviceMSISDNSection_ordersummary.isDisplayed()){
+                        if (Agent_DealBuilderPage.leadDeviceMSISDNSection_ordersummary.isDisplayed()) {
                             log.debug("The MSISDN section is displayed in the order summary");
-                            if(Agent_DealBuilderPage.leadDeviceMSISDN_ordersummary.getText().contentEquals(MSISDN_select.getOptions().get(0).getText())){
+                            if (Agent_DealBuilderPage.leadDeviceMSISDN_ordersummary.getText().contentEquals(MSISDN_select.getOptions().get(0).getText())) {
                                 log.debug("The MSISDN " + Agent_DealBuilderPage.leadDeviceMSISDN_ordersummary.getText() + "is updated in the order summary");
-                            }
-                            else{
+                            } else {
                                 log.debug("The Selected MSISDN is not updated in the order summary");
                                 Assert.fail("Failed :: The Selected MSISDN is not updated in the order summary.");
                             }
-                        }
-                        else{
+                        } else {
                             log.debug("The MSISDN section is not displayed in the order summary");
                             Assert.fail("Failed :: The MSISDN section is not displayed in the order summary.");
                         }
 
                     }
-                }
-                else if(userStatus.equalsIgnoreCase("Invalid")) {
+                } else if (userStatus.equalsIgnoreCase("Invalid")) {
                     String ErrorMsg = pageobjects.Agent_DealBuilderPage.leadDevicePairingSection_Error.getText();
                     if (ErrorMsg.contains("You don't have pay monthly account to connect your watch to.")) {
                         log.debug("As expected, the error message is matching\n");
@@ -2278,13 +2276,13 @@ public class Agent_DealBuilderPageActions extends Environment {
         Agent_DealBuilderPage.SIMOTariffsTab.click();
         Thread.sleep(2000);
 
-        if(Tariff.contains("Standard / Simo")) {
+        if (Tariff.contains("Standard / Simo")) {
             Agent_DealBuilderPage.SIMOTariffsInputField.sendKeys(Tariff);
             Thread.sleep(1000);
             Agent_DealBuilderPage.SelectingFirstAvailableSIMOTariff.click();
             Thread.sleep(2000);
             log.debug("Selected provided simo Tariff ");
-        }else if (Tariff.contains("Random")) {
+        } else if (Tariff.contains("Random")) {
             // Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(25000);
