@@ -1059,28 +1059,28 @@ public class BasketPageActions extends Environment {
 									String fastCheckoutThirdLineCopy = BasketPage.fastCheckoutThirdLineCopy.getText();
 									String fastCheckoutFourthLineCopy = BasketPage.fastCheckoutFourthLineCopy.getText();
 									Thread.sleep(2000);
-									if (fastCheckoutFirstLineCopy.equalsIgnoreCase("New to O2? Check out faster by using PayPal for your upfront payment.")) {
+									if (fastCheckoutFirstLineCopy.equalsIgnoreCase("New to O2? Check out faster by using PayPal for today’s payment.")) {
 										log.debug("fastCheckoutFirstLineCopy is matching ie:: "+fastCheckoutFirstLineCopy+"\n");
 									} else {
 										log.debug("fastCheckoutFirstLineCopy is not matching ie:: "+fastCheckoutFirstLineCopy+"\n");
 										Assert.fail("fastCheckoutFirstLineCopy is not matching ie:: "+fastCheckoutFirstLineCopy+"\n");
 									}
 
-									if (fastCheckoutSecondLineCopy.equalsIgnoreCase("We’ll still need your bank details for your monthly payments.")) {
+									if (fastCheckoutSecondLineCopy.equalsIgnoreCase("If your order includes monthly payments, we’ll still need your bank details.")) {
 										log.debug("fastCheckoutSecondLineCopy is matching ie:: "+fastCheckoutSecondLineCopy+"\n");
 									} else {
 										log.debug("fastCheckoutSecondLineCopy is not matching ie:: "+fastCheckoutSecondLineCopy+"\n");
 										Assert.fail("fastCheckoutSecondLineCopy is not matching ie:: "+fastCheckoutSecondLineCopy+"\n");
 									}
 
-									if (fastCheckoutThirdLineCopy.equalsIgnoreCase("For Existing Customers, use our Express Checkout.")) {
+									if (fastCheckoutThirdLineCopy.equalsIgnoreCase("Already on O2? Sign in to complete checkout.")) {
 										log.debug("fastCheckoutThirdLineCopy is matching ie:: "+fastCheckoutThirdLineCopy+"\n");
 									} else {
 										log.debug("fastCheckoutThirdLineCopy is not matching ie:: "+fastCheckoutThirdLineCopy+"\n");
 										Assert.fail("fastCheckoutThirdLineCopy is not matching ie:: "+fastCheckoutThirdLineCopy+"\n");
 									}
 
-									if (fastCheckoutFourthLineCopy.equalsIgnoreCase("(You may still use PayPal later to pay for any Upfront payment.)")) {
+									if (fastCheckoutFourthLineCopy.equalsIgnoreCase("You can still use PayPal for today’s payment.")) {
 										log.debug("fastCheckoutFourthLineCopy is matching ie:: "+fastCheckoutFourthLineCopy+"\n");
 									} else {
 										log.debug("fastCheckoutFourthLineCopy is not matching ie:: "+fastCheckoutFourthLineCopy+"\n");
@@ -1464,6 +1464,11 @@ public class BasketPageActions extends Environment {
 							log.debug("Entering details to login\n");
 							BasketPage.payPalUserField.sendKeys(payPalUser);
 							log.debug("Entered user name ie: "+payPalUser+"\n");
+
+							log.debug("Clicking on Next button\n");
+							BasketPage.payPalCTANext.click();
+							log.debug("Clicked on Next button\n");
+							Thread.sleep(5000);
 
 							BasketPage.payPalPasswordField.sendKeys(payPalPassword);
 							log.debug("Entered password ie: "+payPalPassword+"\n");
