@@ -219,7 +219,7 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "(//div[@class='expCheckout-txt'])[1]")
 	public static WebElement paymentCopyText;
 
-	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box fatcheckoutPopUp']")
+	@FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box fatcheckoutPopUp')]")
 	public static WebElement fastCheckoutOverlay;
 
 	@FindBy(how = How.XPATH, using = "//div[@id='checkoutpopup']/p[1]")
@@ -263,6 +263,10 @@ public class BasketPage {
 
 	@FindBy(how = How.XPATH, using = "//input[@id='confirmButtonTop']")
 	public static WebElement continuePayPalCTA;
+
+	@FindBy(how = How.XPATH, using = "//button[@id='btnNext']")
+	public static WebElement payPalCTANext;
+
 
 
 }
