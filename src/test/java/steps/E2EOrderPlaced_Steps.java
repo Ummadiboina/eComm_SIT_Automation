@@ -13294,6 +13294,40 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+    @And("^Verify simo only tariff under simo tariffs tab$")
+    public void Verifysimonlytariff (){
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(2000);
+            Agent_DealBuilderPageActions.VerifySimoTariff_simotab();
+            Thread.sleep(2000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to verify simo tariff under simo tab, please see the failure screenshot");
+            Assert.fail("Unable to verify simo tariff under simo tab, please see the failure screenshot");
+
+        }
+    }
+    @And("^Verify No simo tariff under tariffs tab$")
+    public void VerifyNosimotariff(){
+        try {
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+        Thread.sleep(2000);
+        Agent_DealBuilderPageActions.VerifySimoTariff_tarifftab();
+        Thread.sleep(2000);
+
+    } catch (Exception e) {
+        // TODO Auto-generated catch block
+        log.debug("Unable to verify non simo tariff under tariff tab, please see the failure screenshot");
+        Assert.fail("Unable to verify non simo tariff under tariff tab, please see the failure screenshot");
+
+    }
+    }
+
     @Given("^Select valid simo tariff ([^\"]*) from simo tariffs tab$")
     public void selectSimoTariff(String Tariff) {
         try {
