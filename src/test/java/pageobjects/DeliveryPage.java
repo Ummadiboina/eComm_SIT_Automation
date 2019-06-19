@@ -305,7 +305,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@id='consent-no']")
     public static WebElement someoneElse_radioBtn;
 
-    @FindBy(how = How.XPATH, using = "//button[@id='btn-continue' or @id='change-delivery-confirm' or @id='change-delivery-confirm-label' or @id='btn-continue-label']")
+    @FindBy(how = How.XPATH, using = "//button[@id='btn-continue' or @id='change-delivery-confirm' or @id='change-delivery-confirm-label' or @id='btn-continue-label'] | //button[@class=' button main-continue-btn primary redesign-button ']")
     public static WebElement continueBtn;
 
     @FindBy(how = How.XPATH, using = "//*[normalize-space(@class)='on']")
@@ -417,6 +417,19 @@ public class DeliveryPage {
 
     @FindBy(how = How.XPATH, using = ("//input[@id='last-name']/../label"))
     public static WebElement lastNameText;
+
+    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[1]")
+    public static WebElement ContinueDelivery;
+
+    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[2]")
+    public static WebElement ContinueAboutU;
+
+    @FindBy(how = How.XPATH, using = "//button[normalize-space()='Go to Payments']")
+    public static WebElement ContinuePaymentPage;
+
+    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[3]")
+    public static WebElement ofComContinueCTA;
+
 
 }
 

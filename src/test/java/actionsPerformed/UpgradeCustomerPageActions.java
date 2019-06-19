@@ -3455,7 +3455,7 @@ public class UpgradeCustomerPageActions extends Environment {
                 /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
                 Screenshots.captureScreenshot();*/
                 JavascriptExecutor jse = (JavascriptExecutor) driver;
-                jse.executeScript("window.scrollBy(0,300)", "");
+                jse.executeScript("window.scrollBy(0,400)", "");
 
                 Thread.sleep(2000);
                 Screenshots.captureScreenshot();
@@ -3620,5 +3620,165 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
+    public static void phonesTabSelectedByDefault() {
+        try {
+            if (driver.findElements(By.xpath("//div/input[@class='secondary phones-btn active']")).size() > 0) {
+                if (driver.findElement(By.xpath("//div/input[@class='secondary phones-btn active']")).isDisplayed()) {
+                    log.debug("The 'Phones' Tab is selected by default");
+                } else {
+                    log.debug(" Failed, The 'Phones' Tab is not selected by default");
+                    Assert.fail(" Failed, The 'Phones' button is not selected by default");
+                }
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(" Failed to The 'Phones' Tab is not selected by default" + e.getStackTrace());
+            Assert.fail(" Failed to The 'Phones' Tab is not selected by default");
+        }
+    }
+
+    public static void verticalPhonesUpgradeJourneyRemovedOrNot(){
+        try{
+
+            //1."Our top picks" title should not present
+            if(UpgradeCustomerPage.ourTopPicks.isDisplayed()){
+                log.debug("Failed due to Our Top Pic title is displaying\n");
+                Assert.fail("Failed due to Our Top Pic title is displaying\n");
+            }else{
+                log.debug("As expected, Our Top Pic title is not displaying\n");
+            }
+
+            //2.The accordions and move the tabs up should not show
+            if(driver.findElements(By.xpath("//button[normalize-space()='Select']")).size()>0){
+                log.debug("Failed due to Device accordions is displaying\n");
+                Assert.fail("Failed due to Device accordions is displaying\n");
+            }else{
+                log.debug("As expected, Device accordions is not displaying\n");
+            }
+
+            /*3). Under phone tab the customer should see below two elements
+            a) "See all phones" link  -Label text should be 'Ready for a new phone? Find the one that’s right for you.' and link name to be "See all phones" link
+            b) Search Box - Label text should be 'Already know what you want? Search for the phone you’re after.' and search box title to be "Phone name"*/
+
+            String seeAllPhoneLinkLabel = UpgradeCustomerPage.seeAllPhoneLinkLabel.getText();
+            Thread.sleep(2000);
+            if(seeAllPhoneLinkLabel.equalsIgnoreCase("Ready for a new phone? Find the one that's right for you.")){
+                log.debug("As expected, See All Phones Link label is displaying, ie: "+seeAllPhoneLinkLabel+"\n");
+            }else{
+                log.debug("Failed:: See All Phones Link label text is not matching\n");
+                Assert.fail("Failed:: See All Phones Link label text is not matching\n");
+            }
+
+            if(UpgradeCustomerPage.ViewAllPhones.isDisplayed()){
+                log.debug("As expected, See All Phones link is displaying\n");
+            }else{
+                log.debug("Failed:: See All Phones link is not displaying\n");
+                Assert.fail("Failed:: See All Phones link is not displaying\n");
+            }
+
+            String searchBoxLabel = UpgradeCustomerPage.searchBoxLabel.getText();
+            Thread.sleep(2000);
+            if(searchBoxLabel.equalsIgnoreCase("Already know what you want? Search for the phone you're after.")){
+                log.debug("As expected, Phones search box label is displaying, ie: "+searchBoxLabel+"\n");
+            }else{
+                log.debug("Failed:: Phones search box label text is not matching\n");
+                Assert.fail("Failed:: Phones search box label text is not matching\n");
+            }
+
+            log.debug("As expected, See All Phones search box name is displaying ie: "+UpgradeCustomerPage.phonesSearchBoxName.getText()+"\n");
+
+            if(UpgradeCustomerPage.phonesSearchBox.isDisplayed()){
+                log.debug("As expected, See All Phones search box is displaying\n");
+            }else{
+                log.debug("Failed:: See All Phones search box is not displaying\n");
+                Assert.fail("Failed:: See All Phones search box is not displaying\n");
+            }
+
+        }catch(Exception e){
+            log.debug("Unable to validate vertical journey removed or not in upgrade option page for Phones" + e.getStackTrace());
+            Assert.fail("Unable to validate vertical journey removed or not in upgrade option page for Phones");
+        }
+    }
+
+    public static void verticalTabletsUpgradeJourneyRemovedOrNot(){
+        try{
+
+            //1."Our top picks" title should not present
+            if(UpgradeCustomerPage.ourTopPicks.isDisplayed()){
+                log.debug("Failed due to Our Top Pic title is displaying\n");
+                Assert.fail("Failed due to Our Top Pic title is displaying\n");
+            }else{
+                log.debug("As expected, Our Top Pic title is not displaying\n");
+            }
+
+            //2.The accordions and move the tabs up should not show
+            if(driver.findElements(By.xpath("//img[@class='device-image lazyList']")).size()>0){
+                log.debug("Failed due to Device accordions is displaying\n");
+                Assert.fail("Failed due to Device accordions is displaying\n");
+            }else{
+                log.debug("As expected, Device accordions is not displaying\n");
+            }
+
+            /*3). Under Tablets tab the customer should see below two elements
+                a) Label text is 'Upgrade to a tablet and you’ll switch to a data only tariff. This means that once you’ve completed your upgrade, your phone will stop being able to send and receive calls and texts over the network.' and link name to be "See all tablets" and "See all mobile broadband devices"
+                b) Search Box - Label text copy to be "Already know what you want? Search for the device you’re after." and search box title to be "Device name"*/
+
+            String seeAllTabletLinkLabel = UpgradeCustomerPage.seeAllTabletLinkLabel.getText();
+            Thread.sleep(2000);
+            if(seeAllTabletLinkLabel.equalsIgnoreCase("Upgrade to a tablet and you'll switch to a data only tariff. This means that once you've completed your upgrade, your phone will stop being able to send and receive calls and texts over the network.")){
+                log.debug("As expected, See All Tablets Link label is displaying, ie: "+seeAllTabletLinkLabel+"\n");
+            }else{
+                log.debug("Failed:: See All Tablets Link label text is not matching\n");
+                Assert.fail("Failed:: See All Tablets Link label text is not matching\n");
+            }
+
+            if(UpgradeCustomerPage.ViewAllTablets.isDisplayed()){
+                log.debug("As expected, See All Tablets link is displaying\n");
+            }else{
+                log.debug("Failed:: See All Tablets link is not displaying\n");
+                Assert.fail("Failed:: See All Tablets link is not displaying\n");
+            }
+
+            if(UpgradeCustomerPage.ViewAllMobileBroadband.isDisplayed()){
+                log.debug("As expected, View All Mobile Broadband link is displaying\n");
+            }else{
+                log.debug("Failed:: View All Mobile Broadband link is not displaying\n");
+                Assert.fail("Failed:: View All Mobile Broadband link is not displaying\n");
+            }
+
+            String searchBoxLabel = UpgradeCustomerPage.tabletSearchBoxLabel.getText();
+            Thread.sleep(2000);
+            if(searchBoxLabel.contains("Already know what you want? Search for the phone you're after.")){
+                log.debug("As expected, Phones search box label is displaying, ie: "+searchBoxLabel+"\n");
+            }else{
+                log.debug("Failed:: Phones search box label text is not matching\n");
+                Assert.fail("Failed:: Phones search box label text is not matching\n");
+            }
+
+            log.debug("As expected, See All Tablets search box name is displaying ie: "+UpgradeCustomerPage.tabletsSearchBoxName.getText()+"\n");
+
+            if(UpgradeCustomerPage.tabletsSearchBox.isDisplayed()){
+                log.debug("As expected, See All Tablets search box is displaying\n");
+            }else{
+                log.debug("Failed:: See All Tablets search box is not displaying\n");
+                Assert.fail("Failed:: See All Tablets search box is not displaying\n");
+            }
+
+        }catch(Exception e){
+            log.debug("Unable to validate vertical journey removed or not in upgrade option page for Tablets" + e.getStackTrace());
+            Assert.fail("Unable to validate vertical journey removed or not in upgrade option page for Tablets");
+        }
+    }
+
+    public static void clickOnViewAllMobileBroadbandLink() throws InterruptedException, IOException {
+
+        Thread.sleep(5000);
+
+        Screenshots.captureScreenshot();
+        Thread.sleep(2000);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+                pageobjects.UpgradeCustomerPage.ViewAllMobileBroadband);
+        Screenshots.captureScreenshot();
+    }
 
 }

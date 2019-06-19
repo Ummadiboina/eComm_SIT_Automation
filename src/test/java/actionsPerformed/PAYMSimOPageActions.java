@@ -48,6 +48,14 @@ public class PAYMSimOPageActions extends Environment {
 			Thread.sleep(10000);
 			log.debug("Clicked on 12 Months contract tab");
 		}
+		if (elementName.contains("18 Months")) {
+
+			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.months_contract_18.getText());
+			Screenshots.captureScreenshot();
+			pageobjects.PAYMSimOPage.months_contract_18.sendKeys(Keys.ENTER);
+			Thread.sleep(10000);
+			log.debug("Clicked on 18 Months contract tab");
+		}
 		Screenshots.captureScreenshot();
 	}
 
