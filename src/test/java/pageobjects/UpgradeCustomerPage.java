@@ -438,5 +438,36 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//a[normalize-space()='Choose this plan']")
 	public static WebElement chooseThisPlan_calc;
 
+	@FindBy(how = How.XPATH, using = "(//h3[normalize-space()='Our top picks'])[2]")
+	public static WebElement ourTopPicks;
+
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='seeAllPhoneLinkLabel']")
+	public static WebElement seeAllPhoneLinkLabel;
+
+	@FindBy(how = How.XPATH, using = "//input[@class='search-input ng-pristine ng-valid']/../../../../h3")
+	public static WebElement searchBoxLabel;
+
+	@FindBy(how = How.XPATH, using = "//input[@class='search-input ng-pristine ng-valid']")
+	public static WebElement phonesSearchBox;
+
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='phonesSearchBoxName']")
+	public static WebElement phonesSearchBoxName;
+
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='seeAllTabletLinkLabel']")
+	public static WebElement seeAllTabletLinkLabel;
+
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='View all Mobile Broadband']")
+	public static WebElement ViewAllMobileBroadband;
+
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='tabletsSearchBoxName']")
+	public static WebElement tabletsSearchBoxName;
+
+	@FindBy(how = How.XPATH, using = "//input[@class='search-input ng-pristine ng-valid']")
+	public static WebElement tabletsSearchBox;
+
+	@FindBy(how = How.XPATH, using = "//input[@class='search-input ng-pristine ng-valid']/../../../../div")
+	public static WebElement tabletSearchBoxLabel;
+
+
 }
 

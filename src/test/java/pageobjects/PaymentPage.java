@@ -175,4 +175,8 @@ public class PaymentPage {
 
     @FindBy(how = How.XPATH, using = "//input[@id='accountNumber']/../../div")
     public static WebElement Account_Number_Field;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='payment-method-continue-btn']/span")
+    public static WebElement payment_method_continueCTA;
+
 }

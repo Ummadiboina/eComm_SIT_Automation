@@ -100,6 +100,25 @@ public class ReviewAndConfirmPageActions extends Environment {
         else
             log.debug("The About you section is not displayed");
     }
+
+    public static void validateBSCEditLinkInReviewPage() {
+        try {
+            Screenshots.captureScreenshot();
+
+            if (driver.findElements(By.xpath("//div[@class='largeTitle']/a | //div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link'] | //div[@class='edit-link']/../div/h2[contains(text(),'Spend Cap')]/../../div[2]/a | //a[@class='edit-bsc']")).size() > 0) {
+                log.debug("BSC Edit option is displayed at Bill Spend Cap section in Review Page: " + pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapEditLink.getText());
+                Assert.fail("BSC Edit option is displayed at Bill Spend Cap section in Review Page: ");
+            } else {
+                log.debug("As expected, BSC Edit option is not displayed in Bill Spend Cap section in Review Page\n");
+            }
+            Thread.sleep(2000);
+
+        } catch (Exception e) {
+            log.debug("Unable to validate BSC edit link in Review page:: " + e);
+            Assert.fail("Unable to validate BSC edit link in Review page:: " + e);
+        }
+
+    }
 }
 
 

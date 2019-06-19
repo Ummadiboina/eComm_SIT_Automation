@@ -211,4 +211,13 @@ public class AgreementPageActions extends Environment {
 
 	}
 
+	public static void go_to_review_cta() throws IOException {
+		log.debug("Click on Go to Review CTA");
+		WebElement element = pageobjects.AgreementPage.Go_To_Review;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+		//pageobjects.AgreementPage.PayMMobileAgreement.click();
+		log.debug("Clicked on Go to Review CTA");
+		Screenshots.captureScreenshot();
+	}
 }

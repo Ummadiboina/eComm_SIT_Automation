@@ -1433,8 +1433,17 @@ public class E2EOrderPlaced_Steps {
             //DeliveryPageActions.SetDelivery();
             DeliveryPageActions.SetDeliveryDeliveryPage();
             Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,100)", "");
+            Screenshots.captureScreenshot();
+            Thread.sleep(2000);
             DeliveryPageActions.AboutYouTen(Firstname, Surname);
             Thread.sleep(2000);
+            //DeliveryPageActions.ContinueAboutU();
+            //Thread.sleep(2000);
             //DeliveryPageActions.ClickContinue();
             //Thread.sleep(5000);
         } catch (Exception e) {
@@ -1509,8 +1518,16 @@ public class E2EOrderPlaced_Steps {
             Screenshots.captureScreenshot();
             //DeliveryPageActions.SetDelivery();
             DeliveryPageActions.SetDeliveryDeliveryPage();
-            Thread.sleep(6000);
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,100)", "");
+            Screenshots.captureScreenshot();
             DeliveryPageActions.AboutYou(Firstname, Surname);
+            //DeliveryPageActions.ContinueAboutU();
+            //Thread.sleep(2000);
             // DeliveryPageActions.ClickContinue();
             //DeliveryPageActions.clickOnSubmitBtn();
 
@@ -1546,7 +1563,14 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(7000);
             DeliveryPageActions.ClickAndCollect();
             Thread.sleep(5000);
+            DeliveryPageActions.ContinueDelivery();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,100)", "");
+            Screenshots.captureScreenshot();
             DeliveryPageActions.AboutYou(Firstname, Surname);
+            Thread.sleep(2000);
+            //DeliveryPageActions.ContinueAboutU();
             // DeliveryPageActions.ClickContinue();
             //DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
@@ -2307,6 +2331,8 @@ public class E2EOrderPlaced_Steps {
             AgreementPageActions.PayMMobileAgreement();
             Thread.sleep(5000);
             AgreementPageActions.TermsDeclarationCheckbox();
+            Thread.sleep(5000);
+            AgreementPageActions.go_to_review_cta();
             Thread.sleep(5000);
         } catch (Exception e) {
             e.printStackTrace();
@@ -9969,6 +9995,7 @@ public class E2EOrderPlaced_Steps {
     public void i_click_on_simOnlyTariff_tab() {
         try {
             SimsPageActions.clickOn_simOnlyTariffTab();
+            Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug(e.getStackTrace());
@@ -11223,6 +11250,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
+            log.debug("Validating Bill Spend Cap Section\n");
             log.debug("Currently we are at page: " + driver.getTitle());
             PAYMandPAYGTariffAndExtrasPageActions.Validate_BillSpendCap(BSCstatus);
 
@@ -11350,7 +11378,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             log.debug("Currently we are at page: " + driver.getTitle());
-            Thread.sleep(8000);
+            Thread.sleep(4000);
             DeliveryPageActions.ValidateAppliedBillSpendCap(BillCap, CapAmount, BSCstatus);
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -11633,7 +11661,18 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.GDPRvalidation(BP1, BP2, BP3, keyEvent, DeviceType, GDPRstatus, PreSelected);
-            Thread.sleep(3000);
+            Thread.sleep(5000);
+            DeliveryPageActions.ContinueAboutU();
+            Thread.sleep(5000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,160)", "");
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ofComContinueCTA();
+            Thread.sleep(2000);
+            jse.executeScript("window.scrollBy(0,-120)", "");
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinuePaymentPage();
+            Thread.sleep(2000);
             //DeliveryPageActions.ReviewConfirmCTA_DeliveryPage();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -13679,6 +13718,146 @@ public class E2EOrderPlaced_Steps {
             e.printStackTrace();
             log.debug("selected capacity" + condition);
             Assert.fail("not able to select  capacity" + condition);
+        }
+    }
+
+
+    //ITFD-1228, July Release feature 2019
+    @And("^Click on pic sim link$")
+    public void click_on_pickSimLink() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimsPage.class);
+            SimsPageActions.clickOn_pickSimLink();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on pick sim link :"+e.getStackTrace());
+        }
+    }
+
+    @Then("^Verify customer landed on simo listing page$")
+    public void verifyCustomerLandedOnSimoListingPage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimsPage.class);
+            SimsPageActions.VerifyCustomerLandedOnSimoListingPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to land on simo listing page: "+e.getStackTrace());
+        }
+    }
+
+    @And("^Click on Add to basket CTA in Simo Listing Page$")
+    public void clickOnAddToBasketCTAInSimoListingPage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimsPage.class);
+            SimsPageActions.VerifyCustomerLandedOnSimoListingPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to land on simo listing page: "+e.getStackTrace());
+        }
+    }
+
+    @And("^Validate BSC 'Edit' link should not display in Review Page$")
+    public void validateEditLinkInReviewPage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            Thread.sleep(5000);
+            ReviewAndConfirmPageActions.validateBSCEditLinkInReviewPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate edit link");
+            Assert.fail("Unable to validate edit link");
+        }
+    }
+
+    @And("^Verify phones tab selected by default$")
+    public void phonesTabSelectedByDefault() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            UpgradeCustomerPageActions.phonesTabSelectedByDefault();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(e.getStackTrace());
+        }
+    }
+
+    @And("^Verify phones vertical upgrade journey is removed or not$")
+    public void phonesVerticalUpgradeJourneyRemovedOrNot() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(3000);
+            UpgradeCustomerPageActions.verticalPhonesUpgradeJourneyRemovedOrNot();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate vertical journey removed or not in upgrade option page for Phones: "+e.getStackTrace());
+        }
+    }
+
+    @And("^Verify tablets vertical upgrade journey is removed or not$")
+    public void tabletsVerticalUpgradeJourneyRemovedOrNot() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(3000);
+            UpgradeCustomerPageActions.verticalTabletsUpgradeJourneyRemovedOrNot();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate vertical journey removed or not in upgrade option page for Tablets: "+e.getStackTrace());
+        }
+    }
+
+    @And("^Verify Simo vertical upgrade journey is removed or not$")
+    public void simoVerticalUpgradeJourneyRemovedOrNot() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimsPage.class);
+            SimsPageActions.verticalSimoUpgradeJourneyRemovedOrNot();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate vertical journey removed or not in upgrade option page for Sim only Tariff: "+e.getStackTrace());
+        }
+    }
+
+    @And("^Click on View all Mobile Broadband link in upgrade options page$")
+    public void click_on_View_all_MobileBroadbandLink() {
+        try {
+
+            //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(5000);
+            // Screenshots.captureScreenshot();
+            UpgradeCustomerPageActions.clickOnViewAllMobileBroadbandLink();
+            Thread.sleep(5000);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.debug("Not able to select view all mobile broadband link");
+            Assert.fail("Not able to select view all mobile broadband link");
+        }
+    }
+
+    @And("^Validate BSC retained value ([^\"]*) ([^\"]*) after clicking on BSC edit link$")
+    public void validatedRetainedBSCValueAfterEdit(String BillCap, String CapAmount) {
+        try {
+
+            //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
+            PAYMandPAYGTariffAndExtrasPageActions.statusAfterBSCEditClicked(BillCap, CapAmount);
+            Thread.sleep(5000);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.debug("Not able to select view all mobile broadband link");
+            Assert.fail("Not able to select view all mobile broadband link");
         }
     }
 }

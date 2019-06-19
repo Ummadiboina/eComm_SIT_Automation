@@ -1489,7 +1489,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 						Thread.sleep(3000);
 						JavascriptExecutor jse = (JavascriptExecutor) driver;
-						jse.executeScript("window.scrollBy(0,300)", "");
+						jse.executeScript("window.scrollBy(0,100)", "");
 						Screenshots.captureScreenshot();
 						if (pageobjects.PAYMandPAYGTariffAndExtrasPage.capProsTop.isDisplayed()) {
 							log.debug("Info text of cap pros-cons is displayed after clicking on your bill cap CTA : \n");
@@ -1528,6 +1528,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						//Cap My bill Continue button under Bill spend cap section Before selecting cap amount
 						if ((pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && driver.findElements(By.xpath("//div[@class='caps-holder']/div/a[@class='capButton selected']")).size()>0)) {
 							log.debug("Cap My Bill button is Enabled as it already selected cap amount and trying to change BSC cap option by clicking edit link");
+							Assert.fail("Cap My Bill button is Enabled as it already selected cap amount and trying to change BSC cap option by clicking edit link");
 						} else if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && driver.findElements(By.xpath("//div[@class='caps-holder']/div/a[@class='capButton selected']")).size()==0) {
 							log.debug("Cap My Bill button is Enabled before selecting cap amount");
 							Assert.fail("Cap My Bill button is Enabled before selecting cap amount");
@@ -1567,6 +1568,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 							}
 
 						} else {
+							jse.executeScript("window.scrollBy(0,100)", "");
+							Screenshots.captureScreenshot();
 							//Selecting specified cap amount
 							JavascriptExecutor executor = (JavascriptExecutor) driver;
 							log.debug("Specified Cap amount is selecting");
@@ -1827,7 +1830,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						BSCRetainedFlag = true;
 					} else {
 						log.debug("Status message for CapMyBill option has been removed after clicking on BSC Edit link \n");
-						//Assert.fail("Status message for CapMyBill option has been removed after clicking on BSC Edit link \n");
+						Assert.fail("Status message for CapMyBill option has been removed after clicking on BSC Edit link \n");
 					}
 				}
 			} else if (BillCap.equalsIgnoreCase("DontCapMyBill")) {
@@ -1869,6 +1872,14 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("We are at :"+driver.getTitle()+" Page \n");
 		Thread.sleep(2000);
 		log.debug("The current URL is: "+driver.getCurrentUrl());
+
+		//Removing package options page
+		if(driver.getCurrentUrl().contains("package-options")){
+			log.debug("Failed:: Redirected to package options page\n");
+			Assert.fail("Failed:: Redirected to package options page\n");
+		}else{
+			log.debug("As expected, Redirected to TnE page\n");
+		}
 
 	}
 

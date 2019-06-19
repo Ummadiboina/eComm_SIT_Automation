@@ -88,7 +88,7 @@ public class SimsPageActions extends Environment {
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", element);
                 log.debug(" Clicked on the 'MBB' button");
-
+                Screenshots.captureScreenshot();
             } else {
                 log.debug(" Failed to  Clicked on the 'MBB' button");
                 Assert.fail(" Failed to  Clicked on the 'MBB' button");
@@ -101,12 +101,12 @@ public class SimsPageActions extends Environment {
     }
 
     public static void clickOn_simOnlyTariffTab() throws Exception {
+        log.debug("We are at page :"+driver.getCurrentUrl()+"\n");
         WebElement simOnlyTarirr = driver.findElement(By.xpath("//a[@id='tab-keep-your-phone']"));
         scrollToAnElement.scrollToElement(simOnlyTarirr);
         Thread.sleep(4000);
         Screenshots.captureScreenshot();
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("//a[@id='tab-keep-your-phone']")).size() >= 1) {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", simOnlyTarirr);
                 //simOnlyTarirr.click();
@@ -251,6 +251,89 @@ public class SimsPageActions extends Environment {
             // TODO Auto-generated catch block
             log.debug(" Configured Gift block/banner is not displayed");
 
+        }
+    }
+
+    public static void clickOn_pickSimLink() throws Exception {
+
+        Screenshots.captureScreenshot();
+        try {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.SimsPage.pickSimLink);
+            log.debug("Clicked on Pick Sim link\n");
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Failed to click on Pick Sim link" + e.getStackTrace());
+            Assert.fail("Failed to click on Pick Sim link");
+        }
+    }
+
+    public static void VerifyCustomerLandedOnSimoListingPage() {
+        try {
+            Thread.sleep(8000);
+            String currentUrl = driver.getCurrentUrl();
+            Screenshots.captureScreenshot();
+            log.debug("Current URL is :  " + currentUrl);
+            if (currentUrl.contains("simo")) {
+                log.debug(" verified that the url has simo at the end\n");
+            } else {
+                log.debug(" Failed to  verify that the url has simo at the end");
+                Assert.fail(" Failed to  verify that the url has simo at the end");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(" Failed to verify that the url has simo at the end" + e.getStackTrace());
+            Assert.fail(" Failed to verify that the url has simo at the end");
+        }
+    }
+
+    public static void clickOnAddToBasketCTAInSimoListingPage() throws Exception {
+
+        Screenshots.captureScreenshot();
+        try {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.SimsPage.addToBasketCTA);
+            log.debug("Clicked on Add to basket in Simo listing page\n");
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Failed to click on Add to Basket CTA in Simo listing page" + e.getStackTrace());
+            Assert.fail("Failed to click on Add to Basket CTA in Simo listing page");
+        }
+    }
+
+    public static void verticalSimoUpgradeJourneyRemovedOrNot(){
+        try{
+
+            //Simo Phones/Tablets/MBB tariff buttons should not display
+            if (driver.findElements(By.xpath("//div/input[@class='secondary phones-btn active']")).size() > 0 || driver.findElements(By.xpath("//input[@value='Tablets']")).size() > 0 || driver.findElements(By.xpath("//input[@value='Mobile broadband']")).size() > 0){
+                log.debug("Failed:: Simo Phones/Tablet/Mobile Broadband buttons displaying\n");
+                Assert.fail("Failed:: Simo Phones/Tablet/Mobile Broadband buttons displaying\n");
+            }else{
+                log.debug("As expected, Simo Phones/Tablet/Mobile Broadband buttons are not displaying\n");
+            }
+
+            /*Under simo tab show link text as 'upgrade simo' and navigate to  listing page
+              verify that Text copy to be "Choose a sim only plan with all the data you need." and Link name to be "Pick a sim"*/
+
+            String pickSimLinkLabel = pageobjects.SimsPage.pickSimLinkLabel.getText();
+            Thread.sleep(2000);
+            if(pickSimLinkLabel.equalsIgnoreCase("Choose a sim only plan with all the data you need.")){
+                log.debug("As expected, Pick Sim Link label is displaying, ie: "+pickSimLinkLabel+"\n");
+            }else{
+                log.debug("Failed:: Pick Sim Link label text is not matching\n");
+                Assert.fail("Failed:: Pick Sim Link label text is not matching\n");
+            }
+
+            if(pageobjects.SimsPage.pickSimLink.isDisplayed()){
+                log.debug("As expected, pick sim link is displaying\n");
+            }else{
+                log.debug("Failed:: pick sim link is not displaying\n");
+                Assert.fail("Failed:: pick sim link is not displaying\n");
+            }
+
+        }catch(Exception e){
+            log.debug("Unable to validate vertical journey removed or not in upgrade option page for Sim only Tariff" + e.getStackTrace());
+            Assert.fail("Unable to validate vertical journey removed or not in upgrade option page for Sim only Tariff");
         }
     }
 

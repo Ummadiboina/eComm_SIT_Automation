@@ -164,10 +164,35 @@ public class DeliveryPageActions extends Environment {
             DeliveryPage.Email_Address.sendKeys(str);
             log.debug("Setting the About you options");
 
-            Select dropdown = new Select(pageobjects.DeliveryPage.Title);
-            dropdown.selectByIndex(2);
-            log.debug("Selected the dropdown Mrs");
-            Reporter.log("Selected the dropdown Mrs");
+            /*Select dropdown = new Select(pageobjects.DeliveryPage.Title);
+            dropdown.selectByIndex(2);*/
+
+            if (driver.findElements(By.xpath("//span[@id='titleSelectBoxItArrowContainer']")).size() > 0) {
+                driver.findElement(By.xpath("//span[@id='titleSelectBoxItArrowContainer']")).click();
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
+
+                WebElement addressElement = driver.findElement(By.xpath("//ul[@id='titleSelectBoxItOptions']/li[2]"));
+                String selectedAddress = addressElement.getText();
+
+                Thread.sleep(3000);
+                Point coordinates = addressElement.getLocation();
+                Robot robotClass = new Robot();
+                robotClass.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                Thread.sleep(2000);
+                log.debug("Moving Mouse address dropdown");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(addressElement).click().build().perform();
+                log.debug("Address selected from dropdown list: " + selectedAddress);
+            }
+
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+
+            log.debug("Selected the dropdown Mr");
+            Reporter.log("Selected the dropdown Mr");
+
             DeliveryPage.First_Name.sendKeys(Firstname);
             // DeliveryPage.First_Name.sendKeys(map.get(0).get("FirstName"));
             DeliveryPage.Last_Name.sendKeys(Surname);
@@ -209,7 +234,6 @@ public class DeliveryPageActions extends Environment {
         }
 
     }
-
 
     public static void AboutYouTen(String Firstname, String Surname) throws IOException, InterruptedException {
         log.debug("Entering an Random email id");
@@ -999,7 +1023,7 @@ public class DeliveryPageActions extends Environment {
 					/*JavascriptExecutor jse = (JavascriptExecutor) driver;
                     jse.executeScript("window.scrollBy(0,100)", "");*/
                     log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.DeliveryPage.BillSpendCapHeader.getText());
-
+                    log.debug("Validating applied Bill Spend Cap\n");
                     Thread.sleep(2000);
 
                     AppliedBillCap = pageobjects.DeliveryPage.AppliedBillCap.getText();
@@ -1426,13 +1450,13 @@ public class DeliveryPageActions extends Environment {
 
         Screenshots.captureScreenshot();
 
-        log.debug("Clicking on Continue button\n");
+        /*log.debug("Clicking on Continue button\n");
         if(DeliveryPage.continueBtn.isDisplayed()) {
             DeliveryPage.continueBtn.click();
         }else{
             driver.findElement(By.xpath("(//button/span[@id='btn-continue-label'])[2]")).click();
         }
-        log.debug("Clicked on Continue button\n");
+        log.debug("Clicked on Continue button\n");*/
 
     }
 
@@ -2419,7 +2443,7 @@ public class DeliveryPageActions extends Environment {
         try {
 
             if (DeliveryPage.Housenumber.isDisplayed()) {
-                DeliveryPage.Housenumber.sendKeys("102");
+                DeliveryPage.Housenumber.sendKeys("100");
                 log.debug("Entered House number");
                 Thread.sleep(2000);
                 pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
@@ -2435,8 +2459,43 @@ public class DeliveryPageActions extends Environment {
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
 
-
             if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
+                    List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
+                    log.debug("The size of matching address: " + addresses.size());
+                    postalcodeStatus = "Valid";
+
+                    if (addresses.size() >= 2 && addresses.size() <= 200) {
+
+                        log.debug("More than one addresses are matching to the corresponding entered post code\n");
+                        //pageobjects.DeliveryPage.SelectAddress1.click();
+
+                        if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
+                            driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
+                            Thread.sleep(3000);
+                            Screenshots.captureScreenshot();
+
+                            WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
+                            String selectedAddress = addressElement.getText();
+
+                            Thread.sleep(3000);
+                            Point coordinates = addressElement.getLocation();
+                            Robot robot = new Robot();
+                            robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                            Thread.sleep(2000);
+                            log.debug("Moving Mouse address dropdown");
+
+                            Actions action = new Actions(driver);
+                            action.moveToElement(addressElement).click().build().perform();
+                            log.debug("Address selected from dropdown list: " + selectedAddress);
+                            Thread.sleep(3000);
+                            Screenshots.captureScreenshot();
+                        }
+                    }
+                }
+            }
+
+            /*if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                 if (driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option")).size() > 0) {
 
                     List<WebElement> AdressStatusNames = driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option"));
@@ -2451,11 +2510,49 @@ public class DeliveryPageActions extends Environment {
                     Thread.sleep(2000);
                     Screenshots.captureScreenshot();
                 }
-            }
+            }*/
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    public static void ContinueDelivery() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        log.debug("in click continue function");
+        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinueDelivery);
+        log.debug("Continue button is selected\n");
+
+        Screenshots.captureScreenshot();
+
+    }
+
+    public static void ContinueAboutU() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        log.debug("in click of About you continue function");
+        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinueAboutU);
+        log.debug("About you Continue button is selected\n");
+
+        Screenshots.captureScreenshot();
+
+    }
+
+    public static void ofComContinueCTA() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        log.debug("in click continue function");
+        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ofComContinueCTA);
+        log.debug("Continue button is selected\n");
+
+        Screenshots.captureScreenshot();
+
+    }
+
+    public static void ContinuePaymentPage() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        log.debug("in click continue function");
+        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinuePaymentPage);
+        log.debug("Continue button is selected\n");
+
+        Screenshots.captureScreenshot();
+    }
 
 }

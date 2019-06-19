@@ -55,5 +55,7 @@ public class AgreementPage {
     @FindBy(how = How.XPATH, using = "//h2[normalize-space()='Affordability']")
     public static WebElement affordabilityHeading;
 
+    @FindBy(how = How.XPATH, using = "//*[@id='agreement-continue-form']/button | //button[@class='button primary main-continue-btn']")
+    public static WebElement Go_To_Review;
 
 }
