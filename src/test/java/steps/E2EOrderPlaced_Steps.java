@@ -1431,11 +1431,13 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             //CommonFunctionscheckTitle("Delivery Page");
             //DeliveryPageActions.SetDelivery();
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Screenshots.captureScreenshot();
             DeliveryPageActions.SetDeliveryDeliveryPage();
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
             DeliveryPageActions.ContinueDelivery();
-            JavascriptExecutor jse = (JavascriptExecutor) driver;
             Screenshots.captureScreenshot();
             jse.executeScript("window.scrollBy(0,100)", "");
             Screenshots.captureScreenshot();
@@ -13821,4 +13823,37 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Not able to select view all mobile broadband link");
         }
     }
+
+    @And("^Verify phones, tablet and MBB simo tabs displayed$")
+    public void verifySimoTabs() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimsPage.class);
+            SimsPageActions.simoTabs();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on pick sim link :"+e.getStackTrace());
+        }
+    }
+
+    @And("^click on the 'Tablets' tab")
+    public void click_on_the_TabletsTab() {
+        try {
+            SimsPageActions.clickonTabletsTab();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(e.getStackTrace());
+        }
+    }
+
+    @And("^click on the 'MBB' tab")
+    public void click_on_the_MBBTab() {
+        try {
+            SimsPageActions.clickonMBBTab();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(e.getStackTrace());
+        }
+    }
+
 }

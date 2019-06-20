@@ -235,14 +235,37 @@ public class DeliveryPageActions extends Environment {
 
     }
 
-    public static void AboutYouTen(String Firstname, String Surname) throws IOException, InterruptedException {
+    public static void AboutYouTen(String Firstname, String Surname) throws IOException, InterruptedException, AWTException {
         log.debug("Entering an Random email id");
         DeliveryPage.Email_Address.sendKeys(RandomEmailAddressCreation.RandomEmail());
         log.debug("Setting the About you options");
-        Select dropdown = new Select(pageobjects.DeliveryPage.Title);
-        dropdown.selectByIndex(2);
-        log.debug("Selected the dropdown Mrs");
-        Reporter.log("Selected the dropdown Mrs");
+        /*Select dropdown = new Select(pageobjects.DeliveryPage.Title);
+        dropdown.selectByIndex(2);*/
+        if (driver.findElements(By.xpath("//span[@id='titleSelectBoxItArrowContainer']")).size() > 0) {
+            driver.findElement(By.xpath("//span[@id='titleSelectBoxItArrowContainer']")).click();
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+            WebElement addressElement = driver.findElement(By.xpath("//ul[@id='titleSelectBoxItOptions']/li[2]"));
+            String selectedAddress = addressElement.getText();
+
+            Thread.sleep(3000);
+            Point coordinates = addressElement.getLocation();
+            Robot robotClass = new Robot();
+            robotClass.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+            Thread.sleep(2000);
+            log.debug("Moving Mouse address dropdown");
+
+            Actions action = new Actions(driver);
+            action.moveToElement(addressElement).click().build().perform();
+            log.debug("Address selected from dropdown list: " + selectedAddress);
+        }
+
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+
+        log.debug("Selected the dropdown Mr");
+        Reporter.log("Selected the dropdown Mr");
         DeliveryPage.First_Name.sendKeys(Firstname);
         // DeliveryPage.First_Name.sendKeys(map.get(0).get("FirstName"));
         DeliveryPage.Last_Name.sendKeys(Surname);
@@ -2540,7 +2563,7 @@ public class DeliveryPageActions extends Environment {
         Thread.sleep(3000);
         log.debug("in click continue function");
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ofComContinueCTA);
-        log.debug("Continue button is selected\n");
+        log.debug("OFCOM Continue button is selected\n");
 
         Screenshots.captureScreenshot();
 
@@ -2550,7 +2573,7 @@ public class DeliveryPageActions extends Environment {
         Thread.sleep(3000);
         log.debug("in click continue function");
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinuePaymentPage);
-        log.debug("Continue button is selected\n");
+        log.debug("Go to Payments Continue button is selected\n");
 
         Screenshots.captureScreenshot();
     }

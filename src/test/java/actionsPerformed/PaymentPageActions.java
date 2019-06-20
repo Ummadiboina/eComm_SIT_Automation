@@ -45,9 +45,12 @@ public class PaymentPageActions extends Environment {
         Thread.sleep(2000);
         pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
         log.debug("Clicked on the Accept Terms checkbox");
-        pageobjects.PaymentPage.payment_method_continueCTA.click();
-        log.debug("Clicked on Payment method CONTINUE button");
+        Thread.sleep(5000);
         Screenshots.captureScreenshot();
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].click();", pageobjects.PaymentPage.payment_method_continueCTA);
+        //pageobjects.PaymentPage.payment_method_continue_cta.click();
+        log.debug("Clicked on Payment method continue button");
 
     }
 
@@ -82,9 +85,9 @@ public class PaymentPageActions extends Environment {
             log.debug("Clicked on the Accept Terms checkbox");
             Thread.sleep(5000);
             Screenshots.captureScreenshot();
-            js.executeScript("arguments[0].click();", pageobjects.PaymentPage.payment_method_continueCTA);
+            jse.executeScript("arguments[0].click();", pageobjects.PaymentPage.payment_method_continueCTA);
             //pageobjects.PaymentPage.payment_method_continue_cta.click();
-            log.debug("Clicked on Payment method CONTINUE button");
+            log.debug("Clicked on Payment method continue button");
         }
         Screenshots.captureScreenshot();
 
@@ -133,11 +136,15 @@ public class PaymentPageActions extends Environment {
         pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
         log.debug("Entered sort code - 96");
         Thread.sleep(2000);
+        Screenshots.captureScreenshot();
         pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
         log.debug("Clicked on the Accept Terms checkbox");
-        pageobjects.PaymentPage.payment_method_continueCTA.click();
-        log.debug("Clicked on Payment method CONTINUE button");
+        Thread.sleep(5000);
         Screenshots.captureScreenshot();
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].click();", pageobjects.PaymentPage.payment_method_continueCTA);
+        //pageobjects.PaymentPage.payment_method_continue_cta.click();
+        log.debug("Clicked on Payment method continue button");
 
     }
 
