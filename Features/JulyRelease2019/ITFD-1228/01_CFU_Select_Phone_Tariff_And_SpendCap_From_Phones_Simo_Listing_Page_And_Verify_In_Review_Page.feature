@@ -13,7 +13,8 @@ Feature: 01_CFU_Select_Phone_Tariff_And_SpendCap_From_Phones_Simo_Listing_Page_A
     And I click on 'Sim only Tariff' tab
     And Click on pic sim link
     Then Verify customer landed on simo listing page
-    Then the 'Phones' button should be selected by default
+    #Then the 'Phones' button should be selected by default
+    And Verify phones, tablet and MBB simo tabs displayed
     And the two contract lenght should be displayed
     And all the tariffs under twelve months should be displayed
     And the data filters is displayed
@@ -37,6 +38,6 @@ Feature: 01_CFU_Select_Phone_Tariff_And_SpendCap_From_Phones_Simo_Listing_Page_A
     Then verify cover me is present in  pdf download
 
     Examples:
-      | username               | password | BillCap       | CapAmount | NewBillCap | NewCapAmount | BSCstatus |
-      | in01808o_484951@o2.com | test123  | DontCapMyBill | Nill      | CapMyBill  | £10          | Enabled   |
+      | username               | password | BillCap   | CapAmount | NewBillCap    | NewCapAmount | BSCstatus |
+      | in01808o_484951@o2.com | test123  | CapMyBill | £10       | DontCapMyBill | Nill         | Enabled   |
 

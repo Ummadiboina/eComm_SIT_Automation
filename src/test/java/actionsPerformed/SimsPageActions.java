@@ -274,11 +274,11 @@ public class SimsPageActions extends Environment {
             String currentUrl = driver.getCurrentUrl();
             Screenshots.captureScreenshot();
             log.debug("Current URL is :  " + currentUrl);
-            if (currentUrl.contains("simo")) {
-                log.debug(" verified that the url has simo at the end\n");
+            if (currentUrl.contains("upgrade/sim-cards")) {
+                log.debug(" verified that the user landed on simo listing page\n");
             } else {
-                log.debug(" Failed to  verify that the url has simo at the end");
-                Assert.fail(" Failed to  verify that the url has simo at the end");
+                log.debug(" Failed due to user not landed on simo listing page");
+                Assert.fail(" Failed to user not landed on simo listing page");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -334,6 +334,80 @@ public class SimsPageActions extends Environment {
         }catch(Exception e){
             log.debug("Unable to validate vertical journey removed or not in upgrade option page for Sim only Tariff" + e.getStackTrace());
             Assert.fail("Unable to validate vertical journey removed or not in upgrade option page for Sim only Tariff");
+        }
+    }
+
+    public static void simoTabs() {
+
+
+        try {
+            if(driver.findElements(By.xpath("//li[@id='phone']")).size()>0){
+                log.debug("As expected, Phones simo tab is displaying");
+            }else{
+                log.debug("Failed, Phones simo tab is not displaying");
+                Assert.fail("Failed, Phones simo tab is not displaying");
+            }
+
+            if(driver.findElements(By.xpath("//li[@id='tablet']")).size()>0){
+                log.debug("As expected, Tablet simo tab is displaying");
+            }else{
+                log.debug("Failed, Tablet simo tab is not displaying");
+                Assert.fail("Failed, Tablet simo tab is not displaying");
+            }
+
+            if(driver.findElements(By.xpath("//li[@id='mbb']")).size()>0){
+                log.debug("As expected, MBB simo tab is displaying");
+            }else{
+                log.debug("Failed, MBB simo tab is not displaying");
+                Assert.fail("Failed, MBB simo tab is not displaying");
+            }
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Failed to click on Add to Basket CTA in Simo listing page" + e.getStackTrace());
+            Assert.fail("Failed to click on Add to Basket CTA in Simo listing page");
+        }
+    }
+
+    public static void clickonTabletsTab() {
+        try {
+            Thread.sleep(3000);
+
+            if (driver.findElements(By.xpath("//li[@id='tablet']")).size() > 0) {
+                if (driver.findElement(By.xpath("//li[@id='tablet']")).isDisplayed()) {
+                    driver.findElement(By.xpath("//li[@id='tablet']")).click();
+                    log.debug(" Clicked on the 'Tablets' tab");
+
+                } else {
+                    log.debug(" Failed to click on the 'Tablets' tab");
+                    Assert.fail(" Failed to click on the 'Tablets' tab");
+                }
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(" Failed to click on the 'Tablets' tab" + e.getStackTrace());
+            Assert.fail(" Failed to click on the 'Tablets' tab");
+        }
+    }
+
+    public static void clickonMBBTab() {
+        try {
+            Thread.sleep(3000);
+
+            if (driver.findElements(By.xpath("//li[@id='mbb']")).size() > 0) {
+                if (driver.findElement(By.xpath("//li[@id='mbb']")).isDisplayed()) {
+                    driver.findElement(By.xpath("//li[@id='mbb']")).click();
+                    log.debug(" Clicked on the 'MBB' tab");
+
+                } else {
+                    log.debug(" Failed to click on the 'MBB' tab");
+                    Assert.fail(" Failed to click on the 'MBB' tab");
+                }
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(" Failed to click on the 'MBB' tab" + e.getStackTrace());
+            Assert.fail(" Failed to click on the 'MBB' tab");
         }
     }
 

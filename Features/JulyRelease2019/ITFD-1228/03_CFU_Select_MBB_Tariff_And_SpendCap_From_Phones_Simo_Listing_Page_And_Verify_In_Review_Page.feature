@@ -13,8 +13,9 @@ Feature: 03_CFU_Select_MBB_Tariff_And_SpendCap_From_Phones_Simo_Listing_Page_And
     And I click on 'Sim only Tariff' tab
     And Click on pic sim link
     Then Verify customer landed on simo listing page
-    Then the 'Phones' button should be selected by default
-    And click on the 'MBB' button
+    #Then the 'Phones' button should be selected by default
+    And Verify phones, tablet and MBB simo tabs displayed
+    And click on the 'MBB' tab
     And the two contract lenght should be displayed
     And all the tariffs under twelve months should be displayed
     And the data filters is displayed
