@@ -9,20 +9,12 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    #Then Verify that in the recycle value is displayed in the Recycle panel
-    #And Select <Make>, <Model> and <Network>
-    #And perform update device
-    #Then Select any one recycle option and click on 'Continue to Upgrade'
     And Click on 'Get Started' CTA
-    #And Click on View all Phones link in upgrade options page
-    #And I choose PayM <handset>
-    #And click on the color dropdown
-    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    #And select <color> color of the connected device
-    #And Navigate to device details page
-    And Select a <handset> device from Recommended devices section
-    And Click on device 'Confirm CTA'
-    And Click on View all Tariffs link in upgrade options page
+    And Verify phones tab selected by default
+    And Verify phones vertical upgrade journey is removed or not
+    And Click on View all Phones link in upgrade options page
+    And I choose PayM <handset>
+    And Navigate to device details page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
     #Verification point - A - More than 2 should be displayed
     When I click on respective <filtername> data filter

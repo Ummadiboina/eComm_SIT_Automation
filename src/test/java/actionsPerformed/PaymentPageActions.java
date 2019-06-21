@@ -150,14 +150,14 @@ public class PaymentPageActions extends Environment {
 
 
 
-    public static void affordabilityValidation(String employmentStatus, String annualIncome) throws IOException, InterruptedException {
+    public static void affordabilityValidation(String employmentStatus, String annualIncome) throws IOException, InterruptedException, AWTException {
 
         scrollToAnElement.scrollToElement(pageobjects.PaymentPage.affordabilityHeading);
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
 
         //Employment Status
-        /*if (driver.findElements(By.xpath("//span/i[@id='employment-statusSelectBoxItArrow']")).size() > 0) {
+        if (driver.findElements(By.xpath("//span/i[@id='employment-statusSelectBoxItArrow']")).size() > 0) {
             pageobjects.PaymentPage.employmentDropDown.click();
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
@@ -223,9 +223,9 @@ public class PaymentPageActions extends Environment {
             log.debug("Selected " + annualIncome + "from annual income dropdown\n");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
-        }*/
+        }
 
-        List<WebElement> empStatusNames = driver.findElements(By.xpath("//select[@id='employment-status']/option"));
+        /*List<WebElement> empStatusNames = driver.findElements(By.xpath("//select[@id='employment-status']/option"));
 
         log.debug("The list of employment status is: \n");
         for(int i=1;i<empStatusNames.size();i++){
@@ -247,7 +247,7 @@ public class PaymentPageActions extends Environment {
         Select select2 = new Select(annualIncomDropdown);
         select2.selectByVisibleText(annualIncome);
         Thread.sleep(2000);
-        Screenshots.captureScreenshot();
+        Screenshots.captureScreenshot();*/
 
         if(driver.findElements(By.xpath("(//span[@id='affordability-terms-declaration1-custom'])")).size()>0) {
             pageobjects.PaymentPage.agreeFinancialCommitments.click();

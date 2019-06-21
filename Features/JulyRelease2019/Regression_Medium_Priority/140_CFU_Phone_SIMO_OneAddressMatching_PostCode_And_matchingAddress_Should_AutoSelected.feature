@@ -10,14 +10,19 @@ Feature: 140_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Shou
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
-    And verify that the url has simo at the end
-    Then the 'Phones' button should be selected by default
+    #And verify that the url has simo at the end
+    #Then the 'Phones' button should be selected by default
+    And I click on 'Sim only Tariff' tab
+    And Click on pic sim link
+    Then Verify customer landed on simo listing page
+    And Verify phones, tablet and MBB simo tabs displayed
     And the two contract lenght should be displayed
-    And all the tariffs under twelve months should be displayed
-    And Click on 'Select' CTA to buy a tariff
-    And copy text SIM delivery required or not is displayed
+    And the data filters is displayed
+    And Click on 'Select' CTA to buy a phone tariff with <contractLength> contract
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    And Click on Add to basket CTA in Simo Listing Page
+    And copy text SIM delivery required or not is displayed
     And Select 'I need a new sim' option
     And Click on 'Use a different delivery address'link
     And enter <HouseNumber> and <PostCode> in Delivery section to set different delivery address
@@ -29,5 +34,5 @@ Feature: 140_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Shou
 
 
     Examples:
-      | username                      | BSCstatus | HouseNumber | PostCode | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | 22ma47457519@stf.ref.o2.co.uk | Enabled   |             | SL33FP   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |
+      | contractLength | username                      | BSCstatus | HouseNumber | PostCode | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | 12 Months      | 22ma47457519@stf.ref.o2.co.uk | Enabled   |             | SL33FP   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |

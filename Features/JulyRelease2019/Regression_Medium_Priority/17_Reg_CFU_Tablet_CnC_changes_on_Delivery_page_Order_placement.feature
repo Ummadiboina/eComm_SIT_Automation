@@ -8,21 +8,15 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
+    And Verify phones tab selected by default
     And Click on Tablet section in upgrade options page
+    And Verify tablets vertical upgrade journey is removed or not
     And Click on View all Tablets link in upgrade options page
     And Select PayM Tablet <Tablet>
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
     And Navigate to device details page
-    #And Select a <Tablet> device from Recommended devices section
-    #And Click on device 'Confirm CTA'
-    #And Click on View all Tariffs link in upgrade options page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    #And I Land on the basket page and choose to collect from store
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
     And perform <Action> in OTAC page

@@ -9,9 +9,14 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
     #And I click on 'Sim only Tariff' tab
-    And verify that the url has simo at the end
-    Then the 'Phones' button should be selected by default
-    And click on the 'MBB' button
+    #And verify that the url has simo at the end
+    #Then the 'Phones' button should be selected by default
+    #And click on the 'MBB' button
+    And I click on 'Sim only Tariff' tab
+    And Click on pic sim link
+    Then Verify customer landed on simo listing page
+    And Verify phones, tablet and MBB simo tabs displayed
+    And click on the 'MBB' tab
     And the two contract lenght should be displayed
     And all the tariffs under twelve months should be displayed
     And the data filters is displayed
@@ -25,8 +30,10 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
     Then I should see tariffs relevant to the selected sort option <sortoption> & filter option <filtername> in Upgrade SIMO MBB/Tablet journey
     When I deselect filter button
     Then I should see appropriate tariffs based on the selected sort option in the Upgrade SIMO MBB/Tablet journey <sortoption>
-    And Click on different <Contract>  Months Tariff in Tab
-    And Click on 'Select' CTA to buy a tariff
+    #And Click on different <Contract>  Months Tariff in Tab
+    #And Click on 'Select' CTA to buy a tariff
+    And Select any Random Data Tariff in the displayed list of Tariffs under different <contractLength> tab
+    And Click on Add to basket CTA in Simo Listing Page
     #And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And copy text SIM delivery required or not is displayed
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>

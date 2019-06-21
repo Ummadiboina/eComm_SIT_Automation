@@ -11,18 +11,31 @@ Feature: 51_Reg_Consumer_Buyout
     #And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed
     And click on 'Take offer and upgrade'button
     And Click on 'Get Started' CTA
-    And Select a <handset> device from Recommended devices section
-    And Click on device 'Confirm CTA'
-    And select any random tariff from Recommended devices section
+
+    # //Vertical journey starts //
+    #And Select a <handset> device from Recommended devices section
+    #And Click on device 'Confirm CTA'
+    #And select any random tariff from Recommended devices section
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    #And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    #And Select a 'I need a sim'option
+    #And Verify that 'Confirm CTA' is displayed
+    #And Click on 'Confirm CTA'
+      #And verify if the buyout offer is displayed in My Package section
+    #And Click on 'Continue' button on upgrade page at extra section
+    #And verify if the buyout offer is displayed in UpGradeOptionsPage
+    #And I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey
+
+    # //Vertical journey ends //
+    And Verify phones tab selected by default
+    And Verify phones vertical upgrade journey is removed or not
+    And Click on View all Phones link in upgrade options page
+    And I choose PayM <handset>
+    And Navigate to device details page
+    And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And Select a 'I need a sim'option
-    And Verify that 'Confirm CTA' is displayed
-    And Click on 'Confirm CTA'
-    #And verify if the buyout offer is displayed in My Package section
-    And Click on 'Continue' button on upgrade page at extra section
-    And verify if the buyout offer is displayed in UpGradeOptionsPage
-    And I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey
+    And I Land on the basket page by clicking on Add to Basket button
     And verify if the buyout offer is displayed in Basket page
     And click on "go to checkout" button
     And verify if buyout offer is displayed under Order Summary section in <OTAC> page

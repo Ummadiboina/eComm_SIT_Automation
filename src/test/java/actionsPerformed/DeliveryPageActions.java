@@ -1582,7 +1582,7 @@ public class DeliveryPageActions extends Environment {
                            }
                        }else {
 
-                           /*if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                           if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                                if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
                                    List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
                                    log.debug("The size of matching address: " + addresses.size());
@@ -1616,9 +1616,9 @@ public class DeliveryPageActions extends Environment {
                                        }
                                    }
                                }
-                           }*/
+                           }
 
-                           if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                           /*if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                                if (driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option")).size() > 0) {
                                    List<WebElement> addresses = driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option"));
                                    log.debug("The size of matching address: " + addresses.size());
@@ -1645,7 +1645,7 @@ public class DeliveryPageActions extends Environment {
                                        }
                                    }
                                }
-                           }
+                           }*/
                        }
                    }
                }

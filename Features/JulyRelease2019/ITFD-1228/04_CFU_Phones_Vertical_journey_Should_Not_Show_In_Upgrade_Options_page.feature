@@ -30,4 +30,4 @@ Feature: 04_CFU_Phones_Vertical_journey_Should_Not_Show_In_Upgrade_Options_page
 
     Examples:
       | username                      | password | handset       | BSCstatus | BillCap   | CapAmount | Action | Username     | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 05ap64995324@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | CapMyBill | £0        | skip   | TEST ACCEPTA | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | 05ap04812823@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | CapMyBill | £0        | skip   | TEST ACCEPTA | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

@@ -4,9 +4,12 @@ Feature: 120_FR_Mix_CFU_Phone
   Scenario Outline: 120_FR_Mix_CFU_Phone
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
-    #And Navigate to upgrade phone
     And choose to upgrade any Phone in My upgrade page
     And Click on 'Get Started' CTA
+    #And Click on View all Phones link in upgrade options page
+    #And I choose PayM <handset>
+    And Verify phones tab selected by default
+    And Verify phones vertical upgrade journey is removed or not
     And Click on View all Phones link in upgrade options page
     And I choose PayM <handset>
     And Build your plan with <upFront> <term> and <data>

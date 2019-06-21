@@ -8,13 +8,17 @@ Feature: 18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compre
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
+    #And Click on Tablet section in upgrade options page
+    #And Click on View all Tablets link in upgrade options page
+    #And Select PayM Tablet <Tablet>
+    #And Navigate to device details page
+    #And Land on the 'Tariffs and extra' page
+    And Verify phones tab selected by default
     And Click on Tablet section in upgrade options page
+    And Verify tablets vertical upgrade journey is removed or not
     And Click on View all Tablets link in upgrade options page
     And Select PayM Tablet <Tablet>
     And Navigate to device details page
-    #And Select a <Tablet> device from Recommended devices section
-    #And Click on device 'Confirm CTA'
-    #And Click on View all Tariffs link in upgrade options page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
