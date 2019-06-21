@@ -8,10 +8,15 @@ Feature: 66_Reg_CFU_PayMSimOnly
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
     #And I click on 'Sim only Tariff' tab
-    And verify that the url has simo at the end
-    Then the 'Phones' button should be selected by default
+    #And verify that the url has simo at the end
+    #Then the 'Phones' button should be selected by default
+    #And the two contract lenght should be displayed
+    #And all the tariffs under twelve months should be displayed
+    And I click on 'Sim only Tariff' tab
+    And Click on pic sim link
+    Then Verify customer landed on simo listing page
+    And Verify phones, tablet and MBB simo tabs displayed
     And the two contract lenght should be displayed
-    And all the tariffs under twelve months should be displayed
     And if Timer is configured then it should be displayed
     And if <GiftBlock> is configured then display the banner
     And verify that 'Why choose an O2 Pay Monthly sim' is not displayed in upgrade options page
@@ -26,8 +31,9 @@ Feature: 66_Reg_CFU_PayMSimOnly
     Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
     When I deselect filter button
     Then I should see tariffs based on the selected sort option <sortoption>
-    And Click on different <Contract>  Months Tariff in Tab
-    And Click on 'Select' CTA to buy a tariff
+    #And Click on different <Contract>  Months Tariff in Tab
+    #And Click on 'Select' CTA to buy a tariff
+    And Click on 'Select' CTA to buy a phone tariff with <contractLength> contract
     #And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And copy text SIM delivery required or not is displayed
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -44,5 +50,5 @@ Feature: 66_Reg_CFU_PayMSimOnly
 
 
     Examples:
-      | Contract | GiftBlock  | username                      | BSCstatus | BillCap   | CapAmount | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 30 Days  | Configured | 14ju10754913@stf.ref.o2.co.uk | Enabled   | CapMyBill | £30       | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | contractLength | GiftBlock  | username                      | BSCstatus | BillCap   | CapAmount | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 30 Days        | Configured | 14ju10754913@stf.ref.o2.co.uk | Enabled   | CapMyBill | £30       | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

@@ -8,9 +8,13 @@ Feature: 100_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Promotions_Available_
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
+    #And I click on 'Sim only Tariff' tab
     And I click on 'Sim only Tariff' tab
+    And Click on pic sim link
+    Then Verify customer landed on simo listing page
+    And Verify phones, tablet and MBB simo tabs displayed
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
-    #And Select ribboned tariff <tariff> in upgrade journey
+    And Click on Add to basket CTA in Simo Listing Page
     And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
     #And Remove promo code to continue
     And Select 'I need a new sim' option

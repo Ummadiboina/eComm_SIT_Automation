@@ -2375,6 +2375,8 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             AgreementPageActions.TermsDeclarationCheckbox();
             Thread.sleep(5000);
+            AgreementPageActions.go_to_review_cta();
+            Thread.sleep(5000);
         } catch (Exception e) {
             e.printStackTrace();
             log.debug(
@@ -2508,6 +2510,10 @@ public class E2EOrderPlaced_Steps {
             ReviewPageActions.gettitlepage();
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
+            driver.findElement(By.xpath("//button[@class='review_accordion']")).click();
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
             ReviewPageActions.TermsCheckBox();
             Thread.sleep(3000);
             ReviewPageActions.PayNow();
@@ -13400,6 +13406,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.clickOnGDPRContinueCTAandValidateError();
+            Thread.sleep(2000);
+            DeliveryPageActions.ContinuePaymentPage();
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -13715,7 +13723,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, SimsPage.class);
-            SimsPageActions.VerifyCustomerLandedOnSimoListingPage();
+            SimsPageActions.clickOnAddToBasketCTAInSimoListingPage();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to land on simo listing page: "+e.getStackTrace());
@@ -13853,6 +13861,19 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug(e.getStackTrace());
+        }
+    }
+
+    @And("^Click on 'Select' CTA to buy a phone tariff with ([^\"]*) contract$")
+    public void buyPhoneSimoTariff(String contract) {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.buyPhoneSimoTariff(contract);
+            log.debug("Selected phone tariff in SIMO journey");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
         }
     }
 

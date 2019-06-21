@@ -3641,7 +3641,7 @@ public class UpgradeCustomerPageActions extends Environment {
         try{
 
             //1."Our top picks" title should not present
-            if(UpgradeCustomerPage.ourTopPicks.isDisplayed()){
+            if(driver.findElements(By.xpath("(//h3[normalize-space()='Our top picks'])[2]")).size()>0){
                 log.debug("Failed due to Our Top Pic title is displaying\n");
                 Assert.fail("Failed due to Our Top Pic title is displaying\n");
             }else{
@@ -3662,7 +3662,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
             String seeAllPhoneLinkLabel = UpgradeCustomerPage.seeAllPhoneLinkLabel.getText();
             Thread.sleep(2000);
-            if(seeAllPhoneLinkLabel.equalsIgnoreCase("Ready for a new phone? Find the one that's right for you.")){
+            if(seeAllPhoneLinkLabel.equalsIgnoreCase("Ready for a new phone? Find the one that’s right for you.")){
                 log.debug("As expected, See All Phones Link label is displaying, ie: "+seeAllPhoneLinkLabel+"\n");
             }else{
                 log.debug("Failed:: See All Phones Link label text is not matching\n");
@@ -3678,7 +3678,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
             String searchBoxLabel = UpgradeCustomerPage.searchBoxLabel.getText();
             Thread.sleep(2000);
-            if(searchBoxLabel.equalsIgnoreCase("Already know what you want? Search for the phone you're after.")){
+            if(searchBoxLabel.equalsIgnoreCase("Already know what you want? Search for the phone you’re after.")){
                 log.debug("As expected, Phones search box label is displaying, ie: "+searchBoxLabel+"\n");
             }else{
                 log.debug("Failed:: Phones search box label text is not matching\n");
@@ -3704,7 +3704,7 @@ public class UpgradeCustomerPageActions extends Environment {
         try{
 
             //1."Our top picks" title should not present
-            if(UpgradeCustomerPage.ourTopPicks.isDisplayed()){
+            if(driver.findElements(By.xpath("(//h3[normalize-space()='Our top picks'])[2]")).size()>0){
                 log.debug("Failed due to Our Top Pic title is displaying\n");
                 Assert.fail("Failed due to Our Top Pic title is displaying\n");
             }else{
@@ -3725,7 +3725,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
             String seeAllTabletLinkLabel = UpgradeCustomerPage.seeAllTabletLinkLabel.getText();
             Thread.sleep(2000);
-            if(seeAllTabletLinkLabel.equalsIgnoreCase("Upgrade to a tablet and you'll switch to a data only tariff. This means that once you've completed your upgrade, your phone will stop being able to send and receive calls and texts over the network.")){
+            if(seeAllTabletLinkLabel.equalsIgnoreCase("Upgrade to a tablet and you’ll switch to a data only tariff. This means that once you’ve completed your upgrade, your phone will stop being able to send and receive calls and texts over the network.")){
                 log.debug("As expected, See All Tablets Link label is displaying, ie: "+seeAllTabletLinkLabel+"\n");
             }else{
                 log.debug("Failed:: See All Tablets Link label text is not matching\n");
@@ -3748,7 +3748,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
             String searchBoxLabel = UpgradeCustomerPage.tabletSearchBoxLabel.getText();
             Thread.sleep(2000);
-            if(searchBoxLabel.contains("Already know what you want? Search for the phone you're after.")){
+            if(searchBoxLabel.contains("Already know what you want? Search for the device you’re after.")){
                 log.debug("As expected, Phones search box label is displaying, ie: "+searchBoxLabel+"\n");
             }else{
                 log.debug("Failed:: Phones search box label text is not matching\n");

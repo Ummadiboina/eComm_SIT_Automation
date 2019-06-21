@@ -17,10 +17,8 @@ Feature: 03_CFU_Select_MBB_Tariff_And_SpendCap_From_Phones_Simo_Listing_Page_And
     And Verify phones, tablet and MBB simo tabs displayed
     And click on the 'MBB' tab
     And the two contract lenght should be displayed
-    And all the tariffs under twelve months should be displayed
     And the data filters is displayed
-    And Click on different <Contract>  Months Tariff in Tab
-    And Click on 'Select' CTA to buy a tariff
+    And Select any Random Data Tariff in the displayed list of Tariffs under different <contractLength> tab
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And Validate and click on BSC 'Edit' link to change <BillCap> <CapAmount>
@@ -40,6 +38,6 @@ Feature: 03_CFU_Select_MBB_Tariff_And_SpendCap_From_Phones_Simo_Listing_Page_And
     Then verify cover me is present in  pdf download
 
     Examples:
-      | Contract  | username                      | password | BillCap   | CapAmount | NewBillCap | NewCapAmount | BSCstatus |
-      | 18 Months | 22ma73807935@stf.ref.o2.co.uk | test123  | CapMyBill | £30       | CapMyBill  | £200         | Enabled   |
+      | Contract  | username                      | password | BillCap   | CapAmount | NewBillCap | NewCapAmount | BSCstatus | contractLength |
+      | 18 Months | 22ma73807935@stf.ref.o2.co.uk | test123  | CapMyBill | £30       | CapMyBill  | £200         | Enabled   | 12 Months      |
 

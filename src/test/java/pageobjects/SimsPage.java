@@ -21,13 +21,13 @@ public class SimsPage {
 		
 		////h3[contains(text(),'1GB data - preloaded sim')] -- use it for 1GB sim
 
-	@FindBy(how=How.XPATH,using="//a[contains(text(),'pick sim')][1]")
+	@FindBy(how=How.XPATH,using="//a[contains(text(),'Pick a sim')][1]")
 	public static WebElement pickSimLink;
 
-	@FindBy(how=How.XPATH,using="//button[contains(text(),'Add To Basket')][1]")
+	@FindBy(how=How.XPATH,using="//button[@id='btnAddToBasket']")
 	public static WebElement addToBasketCTA;
 
-	@FindBy(how=How.XPATH,using="//p[contains(text(),'pickSimLinkLabel')][1]")
+	@FindBy(how=How.XPATH,using="//p[contains(text(),'Choose a sim only plan with all the data you need')]")
 	public static WebElement pickSimLinkLabel;
 
 		

@@ -22,7 +22,6 @@ Feature: 05_CFU_Tablets_Vertical_journey_Should_Not_Show_In_Upgrade_Options_page
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
     And perform <Action> in OTAC page
-    And Enter details in Delivery page for Click and collect
     #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And Click on GDPR Continue CTA
     And Enter cardDetails in payment page input <Username> and click 'Continue on next step'

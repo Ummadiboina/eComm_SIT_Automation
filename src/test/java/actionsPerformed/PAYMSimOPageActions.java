@@ -1346,4 +1346,28 @@ public class PAYMSimOPageActions extends Environment {
 		}
 	}
 
+	public static void buyPhoneSimoTariff(String contract) throws InterruptedException, IOException {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		if (contract.contains("30 Days")) {
+			log.debug("Selecting a Random simo phone tariff under 30 days tab");
+			pageobjects.PAYMSimOPage.days30tab.click();
+			Thread.sleep(3000);
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB30Days);
+
+		}
+		if (contract.contains("12 Months")) {
+			log.debug("Selecting a Random simo phone tariff under 12 Months tab");
+			pageobjects.PAYMSimOPage.months12tab.click();
+			Thread.sleep(3000);
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB12Months);
+		}
+		if (contract.contains("18 Months")) {
+			log.debug("Selecting a Random simo phone Tariff under 18 Months tab");
+			pageobjects.PAYMSimOPage.months_contract_18.click();
+			Thread.sleep(3000);
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomDataTariff18Months);
+
+		}
+		Screenshots.captureScreenshot();
+	}
 }

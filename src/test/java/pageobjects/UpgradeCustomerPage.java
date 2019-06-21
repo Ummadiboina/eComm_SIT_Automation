@@ -297,7 +297,7 @@ public class UpgradeCustomerPage {
 	public static WebElement SignoutLink;
 
 	//Clicking on View all Tablets
-	@FindBy(how = How.XPATH, using = "//a[@href='#tablets'] | //a[normalize-space()='View all Tablets']")
+	@FindBy(how = How.XPATH, using = "//a[@href='#tablets'] | //a[normalize-space()='View all Tablets'] | //a[normalize-space()='See all tablets']")
 	public static WebElement ViewAllTablets;
 
 	@FindBy(how = How.XPATH, using = "//a[normalize-space()='See all phones']")
@@ -357,7 +357,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//select[@id='dataFilterSelect']")
 	public static WebElement dataFilter;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container data-tariffs']/div[@name='P12M']/div/ul/li[1]/h2") })
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@name='P12M']/div/ul/li[1]/h2") })
 	public static List<WebElement> DataTextElement_12Months;
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container data-tariffs']/div[@name='P30D']/div/ul/li[1]/h2") })
@@ -441,33 +441,32 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "(//h3[normalize-space()='Our top picks'])[2]")
 	public static WebElement ourTopPicks;
 
-	@FindBy(how = How.XPATH, using = "//p[normalize-space()='seeAllPhoneLinkLabel']")
+	@FindBy(how = How.XPATH, using = "//p[contains(text(),'Ready for a new phone?')]")
 	public static WebElement seeAllPhoneLinkLabel;
 
-	@FindBy(how = How.XPATH, using = "//input[@class='search-input ng-pristine ng-valid']/../../../../h3")
+	@FindBy(how = How.XPATH, using = "//p[contains(text(),'Already know what you want?')]")
 	public static WebElement searchBoxLabel;
 
 	@FindBy(how = How.XPATH, using = "//input[@class='search-input ng-pristine ng-valid']")
 	public static WebElement phonesSearchBox;
 
-	@FindBy(how = How.XPATH, using = "//p[normalize-space()='phonesSearchBoxName']")
+	@FindBy(how = How.XPATH, using = "//h4[contains(text(),'Phone name')]")
 	public static WebElement phonesSearchBoxName;
 
-	@FindBy(how = How.XPATH, using = "//p[normalize-space()='seeAllTabletLinkLabel']")
+	@FindBy(how = How.XPATH, using = "//p[contains(text(),'Upgrade to a tablet and ')]")
 	public static WebElement seeAllTabletLinkLabel;
 
-	@FindBy(how = How.XPATH, using = "//a[normalize-space()='View all Mobile Broadband']")
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='See all mobile broadband devices']")
 	public static WebElement ViewAllMobileBroadband;
 
-	@FindBy(how = How.XPATH, using = "//a[normalize-space()='tabletsSearchBoxName']")
+	@FindBy(how = How.XPATH, using = "//h4[contains(text(),'Device name')]")
 	public static WebElement tabletsSearchBoxName;
 
 	@FindBy(how = How.XPATH, using = "//input[@class='search-input ng-pristine ng-valid']")
 	public static WebElement tabletsSearchBox;
 
-	@FindBy(how = How.XPATH, using = "//input[@class='search-input ng-pristine ng-valid']/../../../../div")
+	@FindBy(how = How.XPATH, using = "//p[contains(text(),'Already know what you want?')]")
 	public static WebElement tabletSearchBoxLabel;
-
 
 }
 
