@@ -703,8 +703,8 @@ public class MouseHoverAction extends Environment {
                 log.debug("Clicking on Browse sims");
 
                 driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
-                pageobjects.MouseHoverPage.Sims_paym_Drupal.click();
-                log.debug("Clicking on PayM Sims");
+                //pageobjects.MouseHoverPage.Sims_paym_Drupal.click();
+                //log.debug("Clicking on PayM Sims");
                 Screenshots.captureScreenshot();
 
 
@@ -1597,7 +1597,7 @@ public class MouseHoverAction extends Environment {
 
                 driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 
-                pageobjects.MouseHoverPage.MoveMouseOnPayGSims.click();
+                //pageobjects.MouseHoverPage.MoveMouseOnPayGSims.click();
                 log.debug("Clicking on Pay G Sims");
                 Screenshots.captureScreenshot();
 

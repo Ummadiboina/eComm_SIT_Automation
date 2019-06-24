@@ -120,8 +120,11 @@ public class AgreementPageActions extends Environment {
 		Screenshots.captureScreenshot();
 
 		//Employment Status
-		if (driver.findElements(By.xpath("//span/i[@id='employment-statusSelectBoxItArrow']")).size() > 0) {
-			pageobjects.AgreementPage.employmentDropDown.click();
+		if (driver.findElements(By.xpath("//span[@id='employment-statusSelectBoxIt']")).size() > 0) {
+			//pageobjects.AgreementPage.employmentDropDown.click();
+			WebElement element = pageobjects.AgreementPage.employmentDropDown;
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", element);
 			Thread.sleep(3000);
 			Screenshots.captureScreenshot();
 
@@ -155,8 +158,11 @@ public class AgreementPageActions extends Environment {
 
 
 		//Annual Income
-		if (driver.findElements(By.xpath("//span/i[@id='annual-incomeSelectBoxItArrow']")).size() > 0) {
-			pageobjects.AgreementPage.annualIncomeDropDown.click();
+		if (driver.findElements(By.xpath("//span[@id='annual-incomeSelectBoxIt']")).size() > 0) {
+			//pageobjects.AgreementPage.annualIncomeDropDown.click();
+			WebElement element1 = pageobjects.AgreementPage.annualIncomeDropDown;
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", element1);
 			Thread.sleep(3000);
 			Screenshots.captureScreenshot();
 

@@ -8442,8 +8442,9 @@ public class E2EOrderPlaced_Steps {
             PayG_DevicesPage.payGdeviceTab.click();
             Thread.sleep(5000);
             PayG_DevicesPage.payG_CustomerCost_SortOption.click();
-            Thread.sleep(2000);
+            Thread.sleep(6000);
             PayG_DevicesPage.payG_CustomerCost_SortOption.click();
+            Thread.sleep(6000);
 
             List<WebElement> stockSize = driver.findElements(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr/td[4]"));
             for (int i = 1; i < stockSize.size(); i++) {
@@ -11675,8 +11676,10 @@ public class E2EOrderPlaced_Steps {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,160)", "");
             Screenshots.captureScreenshot();
-            DeliveryPageActions.ofComContinueCTA();
-            Thread.sleep(2000);
+            if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[3]")).size()>0) {
+                DeliveryPageActions.ofComContinueCTA();
+                Thread.sleep(2000);
+            }
             jse.executeScript("window.scrollBy(0,-120)", "");
             Screenshots.captureScreenshot();
             DeliveryPageActions.ContinuePaymentPage();
@@ -13446,8 +13449,8 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.clickOnGDPRContinueCTAandValidateError();
             Thread.sleep(2000);
-            DeliveryPageActions.ContinuePaymentPage();
-            Thread.sleep(3000);
+            //DeliveryPageActions.ContinuePaymentPage();
+            //Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");

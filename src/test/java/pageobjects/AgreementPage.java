@@ -34,16 +34,16 @@ public class AgreementPage {
     @FindBy(how = How.XPATH, using = "(//span[normalize-space()='Accept, agree and continue'])[2]")
     public static WebElement ccaSection;
 
-    @FindBy(how = How.XPATH, using = "//span/i[@id='employment-statusSelectBoxItArrow']")
+    @FindBy(how = How.XPATH, using = "//span[@id='employment-statusSelectBoxIt']")
     public static WebElement employmentDropDown;
 
-    @FindBy(how = How.XPATH, using = "//span/i[@id='annual-incomeSelectBoxItArrow']")
+    @FindBy(how = How.XPATH, using = "//span[@id='annual-incomeSelectBoxIt']")
     public static WebElement annualIncomeDropDown;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='affordability-terms-declaration1']")
+    @FindBy(how = How.XPATH, using = "//span[@id='affordability-terms-declaration1-custom']")
     public static WebElement agreeFinancialCommitments;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='affordability-terms-declaration2']")
+    @FindBy(how = How.XPATH, using = "//span[@id='affordability-terms-declaration2-custom']")
     public static WebElement agreeMyCircumstances;
 
     @FindBy(how = How.XPATH, using = "//a[@class='affordability-section-dont-agree-link']")
