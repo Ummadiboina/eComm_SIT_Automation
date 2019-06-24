@@ -36,7 +36,7 @@ public class MouseHoverPage extends Environment {
 
 
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Sim cards']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pay Monthly sims']"))
 	public static WebElement MoveMouseOnSimo_Drupal;
 
 	@FindBy(how = How.XPATH, using = ("//h3[normalize-space()='Pay Monthly sims']"))
@@ -67,7 +67,7 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pay Monthly sims']"))
 	public static WebElement MoveMouseOnSims_paym_Drupal;
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Sim cards']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pay As You Go sims']"))
 	public static WebElement MoveMouseOnSims_Drupal;
 
 	// Below will click on the Sims -- > Ipad

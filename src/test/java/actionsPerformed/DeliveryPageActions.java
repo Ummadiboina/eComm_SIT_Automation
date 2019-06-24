@@ -2419,7 +2419,7 @@ public class DeliveryPageActions extends Environment {
             Screenshots.captureScreenshot();
 
 
-            if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+            /*if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                 if (driver.findElements(By.xpath("//select[@id='address-selector']/option")).size() > 0) {
 
                     List<WebElement> AdressStatusNames = driver.findElements(By.xpath("//select[@id='address-selector']/option"));
@@ -2433,6 +2433,42 @@ public class DeliveryPageActions extends Environment {
                     select.selectByIndex(3);
                     Thread.sleep(2000);
                     Screenshots.captureScreenshot();
+                }
+            }*/
+
+            if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
+                    List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
+                    log.debug("The size of matching address: " + addresses.size());
+                    postalcodeStatus = "Valid";
+
+                    if (addresses.size() >= 2 && addresses.size() <= 200) {
+
+                        log.debug("More than one addresses are matching to the corresponding entered post code\n");
+                        //pageobjects.DeliveryPage.SelectAddress1.click();
+
+                        if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
+                            driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
+                            Thread.sleep(3000);
+                            Screenshots.captureScreenshot();
+
+                            WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
+                            String selectedAddress = addressElement.getText();
+
+                            Thread.sleep(3000);
+                            Point coordinates = addressElement.getLocation();
+                            Robot robot = new Robot();
+                            robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                            Thread.sleep(2000);
+                            log.debug("Moving Mouse address dropdown");
+
+                            Actions action = new Actions(driver);
+                            action.moveToElement(addressElement).click().build().perform();
+                            log.debug("Address selected from dropdown list: " + selectedAddress);
+                            Thread.sleep(3000);
+                            Screenshots.captureScreenshot();
+                        }
+                    }
                 }
             }
         } catch (Exception e) {
