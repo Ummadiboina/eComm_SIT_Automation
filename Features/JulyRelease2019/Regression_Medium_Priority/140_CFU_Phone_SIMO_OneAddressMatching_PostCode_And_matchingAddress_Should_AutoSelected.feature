@@ -35,4 +35,4 @@ Feature: 140_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Shou
 
     Examples:
       | contractLength | username                      | BSCstatus | HouseNumber | PostCode | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | 12 Months      | 22ma47457519@stf.ref.o2.co.uk | Enabled   |             | SL33FP   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |
+      | 12 Months      | 10oc57974752@stf.ref.o2.co.uk | Enabled   |             | SL33FP   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |

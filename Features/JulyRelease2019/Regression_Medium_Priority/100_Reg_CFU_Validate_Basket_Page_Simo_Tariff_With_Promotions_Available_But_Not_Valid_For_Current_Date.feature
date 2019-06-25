@@ -32,4 +32,4 @@ Feature: 100_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Promotions_Available_
 
     Examples:
       | username                      | tariffAmt | dataValue | promoCode        | password | Username     | BSCstatus | BillCap   | CapAmount | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 05ap72757382@stf.ref.o2.co.uk | £13       | 3GB       | expiredpromotion | test123  | TEST ACCEPTA | Enabled   | CapMyBill | £30       | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | till05542449@stf.ref.o2.co.uk | £13       | 3GB       | expiredpromotion | test123  | TEST ACCEPTA | Enabled   | CapMyBill | £30       | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

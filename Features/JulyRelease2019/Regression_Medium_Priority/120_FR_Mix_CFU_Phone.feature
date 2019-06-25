@@ -29,4 +29,4 @@ Feature: 120_FR_Mix_CFU_Phone
 
     Examples:
       | username                      | password | Firstname | Surname | BSCstatus | Username     | Action | handset      | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | upFront | term | data | PreSelected | KeyEvent |
-      | 05ap94978452@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | TEST ACCEPTA | skip   | Galaxy Note9 | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | max     | max  | max  | No          | No       |
+      | till84965765@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | TEST ACCEPTA | skip   | Galaxy Note9 | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | max     | max  | max  | No          | No       |

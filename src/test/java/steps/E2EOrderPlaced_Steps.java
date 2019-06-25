@@ -13919,4 +13919,38 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Click on About You Continue CTA$")
+    public void aboutYouContinueCTAInDeliveryPage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ContinueAboutU();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on About You Continue CTA in delivery page");
+            Assert.fail("Unable to click on About You Continue CTA in delivery page");
+        }
+    }
+
+    @And("^Click on Go To Payment CTA in delivery page$")
+    public void goToPaymentCTAInDeliveryPage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ContinueAboutU();
+            Thread.sleep(5000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-120)", "");
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinuePaymentPage();
+            Thread.sleep(2000);
+            //DeliveryPageActions.ReviewConfirmCTA_DeliveryPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on Go To Payment CTA in delivery page");
+            Assert.fail("Unable to click on Go To Payment CTA in delivery page");
+        }
+    }
+
 }

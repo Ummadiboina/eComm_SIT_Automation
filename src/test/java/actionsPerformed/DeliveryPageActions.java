@@ -2006,12 +2006,16 @@ public class DeliveryPageActions extends Environment {
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
             log.debug("Clicking on Continue button\n");
-            if (DeliveryPage.continueBtn.isDisplayed()) {
+           /* if (DeliveryPage.continueBtn.isDisplayed()) {
                 DeliveryPage.continueBtn.click();
             } else {
                 driver.findElement(By.xpath("(//button/span[@id='btn-continue-label'])[2]")).click();
+            }*/
+            if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[3]")).size()>0) {
+                DeliveryPageActions.ofComContinueCTA();
+                Thread.sleep(2000);
+                log.debug("Clicked on Continue button\n");
             }
-            log.debug("Clicked on Continue button\n");
             Thread.sleep(8000);
             jse.executeScript("window.scrollBy(0,-200)", "");
             Thread.sleep(2000);
