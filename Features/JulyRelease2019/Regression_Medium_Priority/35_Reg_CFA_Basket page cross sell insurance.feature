@@ -14,6 +14,7 @@ Feature: 35_Reg_CFA_Basket page cross sell insurance
     #And verify the name of the colour is next to the colour tile in CFAPhoneColour
     #And select a color
     #And select <color> color of the connected device
+    And select <Capacity> capacity of the connected device
     And Navigate to device details page
     And select a <tariff> which has free insurance
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -36,5 +37,5 @@ Feature: 35_Reg_CFA_Basket page cross sell insurance
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset        | color          | tariff                 | BSCstatus | BillCap   | CapAmount | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | Firstname | Surname | Username     | PreSelected | KeyEvent |
-      | Galaxy S8 Plus | Midnight Black | 9.99upfront44.00amonth | Enabled   | CapMyBill | £20       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | TEST      | ACCEPTA | TEST ACCEPTA | No          | No       |
+      | handset | Capacity | color          | tariff                 | BSCstatus | BillCap   | CapAmount | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | Firstname | Surname | Username     | PreSelected | KeyEvent |
+      | 6T      | 256GB    | Midnight Black | 9.99upfront44.00amonth | Enabled   | CapMyBill | £20       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | TEST      | ACCEPTA | TEST ACCEPTA | No          | No       |

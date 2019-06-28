@@ -13,7 +13,7 @@ Feature: 141_CFA_Phone_PAYGClassicTariff_Basketpage_CNCnow_eligible
     #And select <color> color of the connected device
     And Navigate to device details page
     And Select classic PayG tariff <tariff>
-    And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And Choose the valid store availability for click and collect now
     And click on "go to checkout" button
@@ -28,5 +28,5 @@ Feature: 141_CFA_Phone_PAYGClassicTariff_Basketpage_CNCnow_eligible
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset  | color      | Firstname | tariff | BSCstatus | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone X | Space Grey | TEST      |        | Disabled  | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset    | color      | Firstname | tariff | BSCstatus | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Galaxy S10 | Space Grey | TEST      |        | Disabled  | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

@@ -5,9 +5,9 @@ Feature: 78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -31,4 +31,4 @@ Feature: 78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation
 
     Examples:
       | Firstname | Surname | Username     | handset   | color | BSCstatus | BillCap   | CapAmount | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | test      | acceptb | test acceptb | iPhone XR | White | Enabled   | CapMyBill | £200      | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | test      | acceptb | test acceptb | Galaxy S8 | White | Enabled   | CapMyBill | £200      | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

@@ -96,7 +96,7 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "//input[@name='storePostcode']")
 	public static WebElement StorePostcode;
 
-	@FindBy(how = How.ID, using = "store-postcode-submit")
+	@FindBy(how = How.XPATH, using = "//button[@id='store-postcode-submit']")
 	public static WebElement PostcodeSubmit;
 
 	@FindBy(how = How.XPATH, using = "(//a[normalize-space()='See when you can collect'])[1]")

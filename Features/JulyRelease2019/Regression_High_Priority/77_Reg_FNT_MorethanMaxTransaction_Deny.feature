@@ -8,7 +8,7 @@ Feature: 77_Reg_FNT_MorethanMaxTransaction_Deny
     #And click on the color dropdown
     #And verify the name of the colour is next to the colour tile in CFAPhoneColour
     #And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
+    #And select <Capacity> capacity of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page selecting pay device in full
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -28,5 +28,5 @@ Feature: 77_Reg_FNT_MorethanMaxTransaction_Deny
 
 
     Examples:
-      | handset  | color      | Capacity | Firstname | Surname | Username  | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | KeyEvent | PreSelected |
-      | iPhone X | Space Grey | 64GB     | TEST      | NINE    | TEST NINE | Me       | Enabled   | CapMyBill | £15       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No       | No          |
+      | handset   | color          | Capacity | Firstname | Surname | Username  | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | KeyEvent | PreSelected |
+      | Galaxy S8 | Midnight Black | 64GB     | TEST      | NINE    | TEST NINE | Me       | Enabled   | CapMyBill | £15       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No       | No          |

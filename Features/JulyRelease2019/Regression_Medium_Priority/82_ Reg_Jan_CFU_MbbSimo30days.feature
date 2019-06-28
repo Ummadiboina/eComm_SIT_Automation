@@ -12,7 +12,7 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
     #And verify that the url has simo at the end
     #Then the 'Phones' button should be selected by default
     #And click on the 'MBB' button
-    And I click on 'Sim only Tariff' tab
+    #And I click on 'Sim only Tariff' tab
     And Click on pic sim link
     Then Verify customer landed on simo listing page
     And Verify phones, tablet and MBB simo tabs displayed
