@@ -6,10 +6,10 @@ Feature: 136_Reg_CFA_Phones_Click_And_Collect_Now
     And navigate to PAYM Phones page
     And I choose PayM <handset>
     And Navigate to device details page for color selection
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
+    #And select <Capacity> capacity of the connected device
     And Check the availability to collect from store now in product details page
     And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
@@ -29,5 +29,5 @@ Feature: 136_Reg_CFA_Phones_Click_And_Collect_Now
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset       | Username     | Firstname | Surname | color     | Capacity | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone 7 Plus | TEST ACCEPTA | Test      | Accepta | Rose Gold | 128GB    | Me       | Enabled   | CapMyBill | £0        | Select | Select | Not | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |
+      | handset     | Username     | Firstname | Surname | color     | Capacity | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Mate 20 Pro | TEST ACCEPTA | Test      | Accepta | Rose Gold | 128GB    | Me       | Enabled   | CapMyBill | £0        | Select | Select | Not | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |

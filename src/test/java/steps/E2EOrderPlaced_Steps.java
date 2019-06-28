@@ -7361,6 +7361,7 @@ public class E2EOrderPlaced_Steps {
 
             UpgradeCustomerPageActions.verifyTradeInDisplayed_OrderSummarySection(TradeInValueFromMyPackageSection, pageName);
             Thread.sleep(2000);
+            DeliveryPageActions.ContinueDelivery();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -10268,6 +10269,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[1]")).click();
+            Thread.sleep(3000);
             DeliveryPageActions.ClickOnUseDifferentAddress();
             log.debug("Clicked on Use a different address link");
         } catch (Exception e) {
@@ -13447,10 +13451,10 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-            DeliveryPageActions.clickOnGDPRContinueCTAandValidateError();
+            //DeliveryPageActions.clickOnGDPRContinueCTAandValidateError();
             Thread.sleep(2000);
-            //DeliveryPageActions.ContinuePaymentPage();
-            //Thread.sleep(3000);
+            DeliveryPageActions.ContinuePaymentPage();
+            Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
