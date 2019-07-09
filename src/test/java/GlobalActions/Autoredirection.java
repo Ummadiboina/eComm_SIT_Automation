@@ -35,7 +35,7 @@ public class Autoredirection extends Environment {
 			log.debug("The new url is " + newUrl);
 
 			driver.get(newUrl);
-			Thread.sleep(2000);
+			Thread.sleep(6000);
 
 			log.debug("Did Auto Redirection Successfully");
 		}

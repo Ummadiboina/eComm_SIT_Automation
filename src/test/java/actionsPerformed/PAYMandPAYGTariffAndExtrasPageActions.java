@@ -68,7 +68,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Thread.sleep(5000);
 		if (driver.findElements(By.xpath("(//input[@type='button' and @value='Go to basket'])[1]")).size() >= 0) {
 
-			Thread.sleep(5000);
+			//Thread.sleep(5000);
 
 			if (ElementName.equalsIgnoreCase("Randomtariff")) {
 				scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
@@ -263,12 +263,20 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void addToBasketLive() throws InterruptedException, IOException {
 		Thread.sleep(4000);
+		Screenshots.captureScreenshot();
 		if (driver.findElements(By.xpath("(//input[@value='Go to basket'])[1]")).size() > 0) {
 			//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			Thread.sleep(4000);
+			//Thread.sleep(4000);
         	log.debug("Clicking on the Add To Basket/Go To Basket CTA");
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
 			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
 			Screenshots.captureScreenshot();
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive);
 			// pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
@@ -1388,10 +1396,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					Screenshots.captureScreenshot();
 
 					log.debug("Bill spend cap section is enabled ie:" + PAYMandPAYGTariffAndExtrasPage.SpendCapSection.getText());
-					Thread.sleep(4000);
+					Thread.sleep(2000);
 					//Spend cap header text validation
 					String sepenCapHeaderTxt = PAYMandPAYGTariffAndExtrasPage.SpendCapHeader.getText();
-					Thread.sleep(4000);
+					Thread.sleep(2000);
 					if (sepenCapHeaderTxt.contains("Would you like to add a Spend Cap")) {
 						System.out.println("Would you like to add a spend cap ? -header text is displayed");
 						log.debug("Would you like to add a spend cap ? - header text is displayed");
@@ -1476,7 +1484,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		String BillCapStatus = "";
 		int cnt = 0;
 		try {
-			Thread.sleep(6000);
+			//Thread.sleep(6000);
 			if (BSCstatus.equalsIgnoreCase("Enabled")) {
 				if (driver.findElements(By.xpath("//div[contains(text(),'Your Spend Cap')] | //div/p/span[contains(text(),'Your Spend Cap')] | (//div/h2[contains(normalize-space(),'Your Spend Cap')])[1]")).size() > 0) {
 					log.debug("Bill spend cap section is enabled");

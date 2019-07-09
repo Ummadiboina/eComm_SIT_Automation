@@ -395,7 +395,7 @@ public class PaymentPageActions extends Environment {
         Thread.sleep(3000);
         if(driver.findElements(By.xpath("(//p[@id='customerAddress']//following-sibling::button)[1]")).size()>0) {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,400)", "");
+            jse.executeScript("window.scrollBy(0,300)", "");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
             Thread.sleep(2000);
@@ -666,8 +666,12 @@ public class PaymentPageActions extends Environment {
             Screenshots.captureScreenshot();
             pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
             log.debug("Clicked on the Accept Terms checkbox");
-            pageobjects.PaymentPage.payment_method_continueCTA.click();
-            log.debug("Clicked on Payment method CONTINUE button");
+            //  pageobjects.PaymentPage.payment_method_continueCTA.click();
+            // log.debug("Clicked on Payment method CONTINUE button");
+            Screenshots.captureScreenshot();
+            jse.executeScript("arguments[0].click();", pageobjects.PaymentPage.payment_method_continueCTA);
+            //pageobjects.PaymentPage.payment_method_continue_cta.click();
+            log.debug("Clicked on Payment method continue button");
         }
         Screenshots.captureScreenshot();
 

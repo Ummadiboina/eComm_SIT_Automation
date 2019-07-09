@@ -61,7 +61,7 @@ public class DeliveryPageActions extends Environment {
             Thread.sleep(3000);
             Screenshots.captureScreenshot();*/
 
-            if(driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+            if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                 if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
                     List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
                     log.debug("The size of matching address: " + addresses.size());
@@ -99,15 +99,15 @@ public class DeliveryPageActions extends Environment {
         try {
 
 
-                pageobjects.DeliveryPage.HouseNum.sendKeys("12");
-                log.debug("Entered House number");
-                Thread.sleep(2000);
-                pageobjects.DeliveryPage.Post.sendKeys("B15 2LG");
-                log.debug("Entered Post code");
-                Thread.sleep(2000);
-                pageobjects.DeliveryPage.FindAddress.click();
-                log.debug("Clicked on the Find address button");
-                Thread.sleep(5000);
+            pageobjects.DeliveryPage.HouseNum.sendKeys("12");
+            log.debug("Entered House number");
+            Thread.sleep(2000);
+            pageobjects.DeliveryPage.Post.sendKeys("B15 2LG");
+            log.debug("Entered Post code");
+            Thread.sleep(2000);
+            pageobjects.DeliveryPage.FindAddress.click();
+            log.debug("Clicked on the Find address button");
+            Thread.sleep(5000);
 
 
             if (driver.findElements(By.xpath("(//*[@class='selectAddrBtn'])[1]")).size() > 0) {
@@ -125,16 +125,19 @@ public class DeliveryPageActions extends Environment {
     public static void ClickAndCollect() {
 
         try {
-            Thread.sleep(6000);
+            //Thread.sleep(6000);
+            Screenshots.captureScreenshot();
             if (pageobjects.DeliveryPage.clickAndCollect.isDisplayed()) {
                 pageobjects.DeliveryPage.clickAndCollect.click();
-                log.debug("Click and collect tab Selected an address");
-                Thread.sleep(6000);
+                log.debug("Click and collect tab Selected\n");
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                Screenshots.captureScreenshot();
+                Thread.sleep(7000);
                 pageobjects.DeliveryPage.storePostcode.clear();
                 Thread.sleep(2000);
                 pageobjects.DeliveryPage.storePostcode.sendKeys("M4");
                 log.debug("Entered Post code");
-                Thread.sleep(3000);
+                Thread.sleep(2000);
                 Screenshots.captureScreenshot();
                 //pageobjects.DeliveryPage.Find_Store.click();
                 WebElement element = pageobjects.DeliveryPage.Find_Store;
@@ -142,13 +145,15 @@ public class DeliveryPageActions extends Environment {
                 executor.executeScript("arguments[0].click();", element);
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(6000);
+                jse.executeScript("window.scrollBy(0,600)", "");
+                Screenshots.captureScreenshot();
                 pageobjects.DeliveryPage.Select_Store.click();
                 log.debug("Clicked on the Find address button");
+                Thread.sleep(3000);
                 Screenshots.captureScreenshot();
 
             }
-            Thread.sleep(3000);
-            Screenshots.captureScreenshot();
+
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -187,8 +192,8 @@ public class DeliveryPageActions extends Environment {
                 log.debug("Address selected from dropdown list: " + selectedAddress);
             }
 
-        Thread.sleep(3000);
-        Screenshots.captureScreenshot();
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
 
             log.debug("Selected the dropdown Mr");
             Reporter.log("Selected the dropdown Mr");
@@ -337,7 +342,7 @@ public class DeliveryPageActions extends Environment {
         Thread.sleep(3000);
 
         log.debug("in click Submit button  function");
-        if(status.equalsIgnoreCase("Enabled")) {
+        if (status.equalsIgnoreCase("Enabled")) {
             //code to new validate on GDPR
             int count1 = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
             //int checkBox = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
@@ -353,66 +358,66 @@ public class DeliveryPageActions extends Environment {
                 Assert.fail("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
             }
 
-        Thread.sleep(3000);
+            Thread.sleep(3000);
 
-        if(driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size()>0) {
-            String thisOrderHeader = DeliveryPage.thisOrderTxt.getText();
-            if (thisOrderHeader.contains("this order for you or someone else")) {
-                System.out.println("New Check box of 'Is this order for you or someone else?' is Displayed");
-                log.debug("New Check box of 'Is this order for you or someone else?' is Displayed");
-                Thread.sleep(3000);
-                DeliveryPage.thisOrderOverlay.click();
-                Thread.sleep(3000);
-                Screenshots.captureScreenshot();
-                String thisOrderOVerLayTxt = DeliveryPage.thisOrderOverlayTxt.getText();
-                Thread.sleep(3000);
-                if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
-                    if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
-                        System.out.println("Successfully validated the OverLay Icon Text ie : " + thisOrderOVerLayTxt);
-                        log.debug("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
-                        Thread.sleep(8000);
+            if (driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size() > 0) {
+                String thisOrderHeader = DeliveryPage.thisOrderTxt.getText();
+                if (thisOrderHeader.contains("this order for you or someone else")) {
+                    System.out.println("New Check box of 'Is this order for you or someone else?' is Displayed");
+                    log.debug("New Check box of 'Is this order for you or someone else?' is Displayed");
+                    Thread.sleep(3000);
+                    DeliveryPage.thisOrderOverlay.click();
+                    Thread.sleep(3000);
+                    Screenshots.captureScreenshot();
+                    String thisOrderOVerLayTxt = DeliveryPage.thisOrderOverlayTxt.getText();
+                    Thread.sleep(3000);
+                    if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
+                        if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
+                            System.out.println("Successfully validated the OverLay Icon Text ie : " + thisOrderOVerLayTxt);
+                            log.debug("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
+                            Thread.sleep(8000);
 
-                        JavascriptExecutor executor = (JavascriptExecutor)driver;
-                        executor.executeScript("arguments[0].click();", DeliveryPage.closeOveryPopup);
-                        //DeliveryPage.closeOveryPopup.click();
+                            JavascriptExecutor executor = (JavascriptExecutor) driver;
+                            executor.executeScript("arguments[0].click();", DeliveryPage.closeOveryPopup);
+                            //DeliveryPage.closeOveryPopup.click();
+                        } else {
+                            System.out.println("Failed to validate the Overlay icon Text");
+                            log.info("Failed to validate the Overlay icon Text");
+                        }
+                    }
+                } else {
+                    System.out.println("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
+                    log.debug("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
+                }
+
+                if (customer.contains("Me")) {
+                    boolean defaultSelect = DeliveryPage.Me_radioBtn.isSelected();
+                    if (defaultSelect) {
+                        System.out.println("Me is selected by Default");
+                        log.debug("Me is selected by Default");
                     } else {
-                        System.out.println("Failed to validate the Overlay icon Text");
-                        log.info("Failed to validate the Overlay icon Text");
+
+                        System.out.println("Me radio button is not selected by Default");
+                        log.debug("Me radio button is not selected by Default");
+                        Assert.fail("Me radio button is not selected by Default");
                     }
                 }
-            } else {
-                System.out.println("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
-                log.debug("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
-            }
 
-            if (customer.contains("Me")) {
-                boolean defaultSelect = DeliveryPage.Me_radioBtn.isSelected();
-                if (defaultSelect) {
-                    System.out.println("Me is selected by Default");
-                    log.debug("Me is selected by Default");
-                } else {
-
-                    System.out.println("Me radio button is not selected by Default");
-                    log.debug("Me radio button is not selected by Default");
-                    Assert.fail("Me radio button is not selected by Default");
+                if (customer.contains("Someone")) {
+                    boolean defaultSelect = DeliveryPage.someoneElse_radioBtn.isSelected();
+                    Thread.sleep(5000);
+                    if (!defaultSelect) {
+                        DeliveryPage.someoneElse_radioBtn.click();
+                        Thread.sleep(2000);
+                        System.out.println("order for this customer : Me was selected by Default, as Requirement we have clicked Someone else");
+                        log.debug("order for this customer : Me was selected by Default, as Requirement we have clicked Someone else");
+                    } else {
+                        System.out.println("Someone else radio button is selected by Default");
+                        log.debug("Someone else radio button is selected by Default");
+                    }
                 }
             }
-
-            if (customer.contains("Someone")) {
-                boolean defaultSelect = DeliveryPage.someoneElse_radioBtn.isSelected();
-                Thread.sleep(5000);
-                if (!defaultSelect) {
-                    DeliveryPage.someoneElse_radioBtn.click();
-                    Thread.sleep(2000);
-                    System.out.println("order for this customer : Me was selected by Default, as Requirement we have clicked Someone else");
-                    log.debug("order for this customer : Me was selected by Default, as Requirement we have clicked Someone else");
-                } else {
-                    System.out.println("Someone else radio button is selected by Default");
-                    log.debug("Someone else radio button is selected by Default");
-                }
-            }
-        }
-        }else if(status.equalsIgnoreCase("Disabled")) {
+        } else if (status.equalsIgnoreCase("Disabled")) {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,300)", "");
             Screenshots.captureScreenshot();
@@ -424,8 +429,8 @@ public class DeliveryPageActions extends Environment {
                 log.debug("GDPR is Disabled");
             } else {
                 Assert.fail("Failed to verify if GDPR is Disabled");
-        }
-        }else{
+            }
+        } else {
             Assert.fail("Failed to do GDPR validations");
         }
 
@@ -433,9 +438,9 @@ public class DeliveryPageActions extends Environment {
         Thread.sleep(5000);
         System.out.println("Clicking on Continue button");
         log.debug("Clicking on Continue button");
-        if(DeliveryPage.continueBtn.isDisplayed()) {
+        if (DeliveryPage.continueBtn.isDisplayed()) {
             DeliveryPage.continueBtn.click();
-        }else{
+        } else {
             driver.findElement(By.xpath("(//button/span[@id='btn-continue-label'])[2]")).click();
         }
         Screenshots.captureScreenshot();
@@ -445,18 +450,18 @@ public class DeliveryPageActions extends Environment {
 
 
     public static void select_BringTradeInDevice_CheckBox() throws InterruptedException, IOException {
-        Thread.sleep(10000);
+        Thread.sleep(4000);
         log.debug("Running select_Bring Trade In Device_CheckBox function");
-
+        Screenshots.captureScreenshot();
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//h2[normalize-space()='About you']")));
+        jse.executeScript("window.scrollBy(0,200)", "");
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
 
 
         Boolean isPresent = driver.findElements(By.xpath("//span[@id='trade-in-confirmation-required-custom']")).size() > 0;
         if (isPresent) {
-            log.debug("checkbox is present, so going to click on that");
+            log.debug("TradeIn checkbox is present, so going to click on that");
             Thread.sleep(3000);
             js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[@id='trade-in-confirmation-required-custom']")));
             log.debug("checkbox Selected");
@@ -504,9 +509,9 @@ public class DeliveryPageActions extends Environment {
 
         Screenshots.captureScreenshot();
 
-        if(driver.findElements(By.xpath("//p[normalize-space()='Get a new number']")).size()>0) {
+        if (driver.findElements(By.xpath("//p[normalize-space()='Get a new number']")).size() > 0) {
 
-            if(pageobjects.DeliveryPage.getNewNumberTab.isDisplayed()){
+            if (pageobjects.DeliveryPage.getNewNumberTab.isDisplayed()) {
                 pageobjects.DeliveryPage.getNewNumberTab.click();
                 Thread.sleep(4000);
             }
@@ -516,9 +521,9 @@ public class DeliveryPageActions extends Environment {
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
         Thread.sleep(5000);
-        if(driver.findElements(By.xpath("//input[@id='existing-pay']")).size()>0){
-        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.existingPaymentOption);
-        log.debug("Selected existing account option\n");
+        if (driver.findElements(By.xpath("//input[@id='existing-pay']")).size() > 0) {
+            js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.existingPaymentOption);
+            log.debug("Selected existing account option\n");
         }
         Thread.sleep(2000);
         //pageobjects.DeliveryPage.SelectAcct.click();
@@ -741,7 +746,7 @@ public class DeliveryPageActions extends Environment {
                 pageobjects.DeliveryPage.Find_Address.click();
                 log.debug("Clicked on the Find address button");
 
-                if(driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li[1]")).size()>0) {
+                if (driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li[1]")).size() > 0) {
                     pageobjects.DeliveryPage.SelectAddress1.click();
                     log.debug("Clicked on the select address button");
                     Screenshots.captureScreenshot();
@@ -898,32 +903,42 @@ public class DeliveryPageActions extends Environment {
 
 
     public static void ClickOnUseDifferentAddress() throws InterruptedException, IOException {
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//a[normalize-space()='Use a different delivery address'] | //a[normalize-space()='Use a different address']"));
         if (DiffAddressLink.size() > 0) {
 
             //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//h2[normalize-space()='Home address']")));
             //Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            WebElement element = pageobjects.DeliveryPage.DeliveryPageUseDiffAddressLink;
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", element);
-            Thread.sleep(5000);
+            executor.executeScript("window.scrollBy(0,250)", "");
+            Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            executor.executeScript("window.scrollBy(0,150)", "");
+            WebElement element = pageobjects.DeliveryPage.DeliveryPageUseDiffAddressLink;
+
+            executor.executeScript("arguments[0].click();", element);
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
+            log.debug("Clicked on use different delivery address link\n");
+            //DeliveryPageActions.SetPostCodeForDelivery("SL33FP", "");
 
-           /* log.debug("Entering the address");
-            pageobjects.DeliveryPage.Housenumber.sendKeys("12");
+            log.debug("Entering the address");
+            pageobjects.DeliveryPage.Housenumber.sendKeys("");
             log.debug("Entered House number");
 
-            pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
+            pageobjects.DeliveryPage.Postcode.sendKeys("SL33FP");
             log.debug("Entered Post code");
             pageobjects.DeliveryPage.Find_Address.click();
             log.debug("Clicked on the Find address button");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
 
-            pageobjects.DeliveryPage.SelectAddress1.click();
+            executor.executeScript("window.scrollBy(0,500)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
+
+            /*pageobjects.DeliveryPage.SelectAddress1.click();
             log.debug("Clicked on the select address button");*/
 
         } else
@@ -972,56 +987,53 @@ public class DeliveryPageActions extends Environment {
 
         String plan = "";
 
-        if(Element.equalsIgnoreCase("DataRollOver")){
+        if (Element.equalsIgnoreCase("DataRollOver")) {
 
             String actValue = "";
 
             String simType = driver.findElement(By.xpath("//p[@id='qa-item']")).getText();
             List<WebElement> actPlnList = driver.findElements(By.xpath("//h2[text()='Your Order ']/../div[@class='order-desc']//p[contains(@ng-if,'freeSimDelivery')]/span"));
 
-            if(simType.equalsIgnoreCase("Big Bundles sim")){
+            if (simType.equalsIgnoreCase("Big Bundles sim")) {
 
-                for (int i = 2;i<actPlnList.size();i++) {
+                for (int i = 2; i < actPlnList.size(); i++) {
                     plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
                 }
 
-                if(plan.contains(expValue)){
+                if (plan.contains(expValue)) {
                     log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
 
-                }
-                else{
+                } else {
                     log.debug("Selected Data Roll over plan details is not displayed in Your order section of Delivery page");
 
                 }
             }
 
-            if(simType.equalsIgnoreCase("Classic Pay As You Go sim")){
+            if (simType.equalsIgnoreCase("Classic Pay As You Go sim")) {
 
-                for (int i = 1;i<actPlnList.size();i++) {
+                for (int i = 1; i < actPlnList.size(); i++) {
                     plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
                 }
 
-                if(expValue.equals(actPlnList)){
+                if (expValue.equals(actPlnList)) {
                     log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
 
-                }
-                else{
+                } else {
                     log.debug("Selected Data Roll over plan details is not displayed in Your order section of Delivery page");
 
                 }
             }
 
-            if(simType.equalsIgnoreCase("International sim")){
+            if (simType.equalsIgnoreCase("International sim")) {
 
-                for (int i = 1;i<actPlnList.size();i++) {
+                for (int i = 1; i < actPlnList.size(); i++) {
                     plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
                 }
 
-                if(expValue.equals(actPlnList)){
+                if (expValue.equals(actPlnList)) {
                     log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
 
-                }
-                else{
+                } else {
                     log.debug("Selected Data Roll over plan details is not displayed in Your order section of Delivery page");
 
                 }
@@ -1034,18 +1046,18 @@ public class DeliveryPageActions extends Environment {
     //Validating your bill cap
     public static void ValidateAppliedBillSpendCap(String BillCap, String CapAmount, String BSCstatus) throws InterruptedException, IOException {
         Thread.sleep(8000);
-        String AppliedBillCap="";
+        String AppliedBillCap = "";
         String pageTitle = driver.getTitle();
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
         try {
-            if(BSCstatus.equalsIgnoreCase("Enabled")) {
+            if (BSCstatus.equalsIgnoreCase("Enabled")) {
                 if (driver.findElements(By.xpath("//h3[contains(text(),'Spend cap')] | //h3[contains(text(),'Spend Cap')]")).size() > 0) {
 
-                    log.debug("Bill spend cap section is displayed at "+pageTitle+" page \n");
+                    log.debug("Bill spend cap section is displayed at " + pageTitle + " page \n");
 					/*JavascriptExecutor jse = (JavascriptExecutor) driver;
                     jse.executeScript("window.scrollBy(0,100)", "");*/
-                    log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.DeliveryPage.BillSpendCapHeader.getText());
+                    log.debug("Bill Spend Cap header is displayed in " + pageTitle + " page ie :: " + pageobjects.DeliveryPage.BillSpendCapHeader.getText());
                     log.debug("Validating applied Bill Spend Cap\n");
                     Thread.sleep(2000);
 
@@ -1060,7 +1072,7 @@ public class DeliveryPageActions extends Environment {
                                 log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
                                 Assert.fail("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
                             }
-                        }else {
+                        } else {
                             if (AppliedBillCap.contains(CapAmount)) {
                                 log.debug("Applied bill cap is validated successfully in " + pageTitle + " page ie :: " + AppliedBillCap);
                             } else {
@@ -1080,20 +1092,20 @@ public class DeliveryPageActions extends Environment {
                     log.debug("Bill cap section is not present under order summary section in " + pageTitle + " page");
                     Assert.fail("Bill cap section is not present under order summary section in " + pageTitle + " page");
                 }
-            }else if(BSCstatus.equalsIgnoreCase("Disabled")){
+            } else if (BSCstatus.equalsIgnoreCase("Disabled")) {
                 if (driver.findElements(By.xpath("//h3[contains(text(),'Spend cap')]")).size() > 0) {
                     log.debug("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
                     Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
-                }else{
+                } else {
                     log.debug("As expected, Bill spend cap section is disabled in " + pageTitle + " page");
                 }
-            }else {
+            } else {
                 System.out.println("Unable to validate bill spend cap section in " + pageTitle + " page\n");
                 log.debug("Unable to validate bill spend cap section in " + pageTitle + " page\n");
                 Assert.fail("Unable to validate bill spend cap section in " + pageTitle + " page\n");
             }
 
-        }catch(Exception e){
+        } catch (Exception e) {
             log.debug("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
             Assert.fail("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
         }
@@ -1105,24 +1117,24 @@ public class DeliveryPageActions extends Environment {
         Thread.sleep(5000);
 
         String pageTitle = driver.getTitle();
-        log.debug("Currently we are at "+pageTitle+" page and in Consumer GDPR validation function\n");
+        log.debug("Currently we are at " + pageTitle + " page and in Consumer GDPR validation function\n");
 
         Screenshots.captureScreenshot();
 
-        if(GDPRstatus.equalsIgnoreCase("Enabled")) {
+        if (GDPRstatus.equalsIgnoreCase("Enabled")) {
 
             //gdpr end user question validation
-            if(driver.findElements(By.xpath("//*[contains(text(),'Is this order for you or someone else?')]")).size()>0){
-                if(DeliveryPage.Me_radioBtn.isDisplayed() || DeliveryPage.thisOrderTxt.isDisplayed() || DeliveryPage.someoneElse_radioBtn.isDisplayed()) {
+            if (driver.findElements(By.xpath("//*[contains(text(),'Is this order for you or someone else?')]")).size() > 0) {
+                if (DeliveryPage.Me_radioBtn.isDisplayed() || DeliveryPage.thisOrderTxt.isDisplayed() || DeliveryPage.someoneElse_radioBtn.isDisplayed()) {
                     log.debug("Failing because GDPR end user question(old requirement) with options are displaying\n");
                     Assert.fail("Failing because GDPR end user question(old requirement) with options are displaying");
                 }
-            }else{
+            } else {
                 log.debug("As expected, GDPR end user question with options are not displaying\n");
             }
 
             //gdpr consent validation
-            if(DeviceType.equalsIgnoreCase("Connected")) {
+            if (DeviceType.equalsIgnoreCase("Connected")) {
 
                 log.debug("Device type is connected device\n");
                 if (driver.findElements(By.xpath("//div[@class='GDPR-Content']")).size() > 0) {
@@ -1157,11 +1169,11 @@ public class DeliveryPageActions extends Environment {
                         log.debug("O2 Tile Content text is:: " + O2ProductsText + "\n");
 
                         //O2Products moreInfo Link
-                        if(keyEvent.equalsIgnoreCase("Yes")){
+                        if (keyEvent.equalsIgnoreCase("Yes")) {
                             log.debug("Clicking on the O2Products 'Learn more about' with keyboard keys\n");
                             DeliveryPage.O2Products_MoreInfoLink.sendKeys(Keys.ENTER);
                             log.debug("Clicked on the O2Products 'Learn more about' with keyboard keys\n");
-                        }else {
+                        } else {
                             DeliveryPage.O2Products_MoreInfoLink.click();
                             log.debug("Clicked on Learn more about O2 products\n");
                         }
@@ -1177,11 +1189,11 @@ public class DeliveryPageActions extends Environment {
 
                         //O2Products Overlay Close Button clicking
                         if (DeliveryPage.O2Products_OverlayCloseButton.isEnabled()) {
-                            if(keyEvent.equalsIgnoreCase("Yes")){
+                            if (keyEvent.equalsIgnoreCase("Yes")) {
                                 log.debug("Clicking on the O2Products 'O2Products Overlay Close icon' with keyboard keys\n");
                                 DeliveryPage.O2Products_OverlayCloseButton.sendKeys(Keys.ENTER);
                                 log.debug("Clicked on the O2Products 'O2Products Overlay Close icon' with keyboard keys\n");
-                            }else {
+                            } else {
                                 DeliveryPage.O2Products_OverlayCloseButton.click();
                                 log.debug("Clicked on O2 products overlay close button\n");
                             }
@@ -1202,11 +1214,11 @@ public class DeliveryPageActions extends Environment {
                         log.debug("O2 perks and extras Tile Content text is:: " + O2PerksAndExtrasText + "\n");
 
                         //O2 Perks And Extras more info Link clicking
-                        if(keyEvent.equalsIgnoreCase("Yes")){
+                        if (keyEvent.equalsIgnoreCase("Yes")) {
                             log.debug("Clicking on the O2 perks and extras 'Learn more about' link with keyboard keys\n");
                             DeliveryPage.O2PerksAndExtras_MoreInfoLink.sendKeys(Keys.ENTER);
                             log.debug("Clicked on the O2 perks and extras 'Learn more about' link with keyboard keys\n");
-                        }else {
+                        } else {
                             DeliveryPage.O2PerksAndExtras_MoreInfoLink.click();
                             log.debug("Clicked on Learn more about O2 perks and extras info link\n");
                         }
@@ -1222,11 +1234,11 @@ public class DeliveryPageActions extends Environment {
 
                         //O2 Perks And Extras overlay Close Button clicking
                         if (DeliveryPage.O2PerksAndExtras_OverlayCloseButton.isEnabled()) {
-                            if(keyEvent.equalsIgnoreCase("Yes")){
+                            if (keyEvent.equalsIgnoreCase("Yes")) {
                                 log.debug("Clicking on the O2 perks and extras 'O2PerksAndExtras Overlay Close icon' with keyboard keys\n");
                                 DeliveryPage.O2PerksAndExtras_OverlayCloseButton.sendKeys(Keys.ENTER);
                                 log.debug("Clicked on the O2 perks and extras 'O2PerksAndExtras Overlay Close icon' with keyboard keys\n");
-                            }else {
+                            } else {
                                 DeliveryPage.O2PerksAndExtras_OverlayCloseButton.click();
                                 log.debug("Clicked on O2 perks and extras overlay close button \n");
                             }
@@ -1247,11 +1259,11 @@ public class DeliveryPageActions extends Environment {
                         log.debug("Offers from o2 partners brands Tile Content text is:: " + OffersFromO2PartnerText + "\n");
 
                         //Offers From O2 Partner more info Link clicking
-                        if(keyEvent.equalsIgnoreCase("Yes")){
+                        if (keyEvent.equalsIgnoreCase("Yes")) {
                             log.debug("Clicking on the Offers From O2 Partner 'Learn more about' link with keyboard keys\n");
                             DeliveryPage.OffersFromO2Partner_MoreInfoLink.sendKeys(Keys.ENTER);
                             log.debug("Clicked on the Offers From O2 Partner 'Learn more about' link with keyboard keys\n");
-                        }else {
+                        } else {
                             DeliveryPage.OffersFromO2Partner_MoreInfoLink.click();
                             log.debug("Clicked on Learn more about partner offers");
                         }
@@ -1267,11 +1279,11 @@ public class DeliveryPageActions extends Environment {
 
                         //OffersFromO2Partner overlay CloseButton
                         if (DeliveryPage.OffersFromO2Partner_OverlayCloseButton.isEnabled()) {
-                            if(keyEvent.equalsIgnoreCase("Yes")){
+                            if (keyEvent.equalsIgnoreCase("Yes")) {
                                 log.debug("Clicking on the Offers From O2 Partner 'Overlay Close icon' with keyboard keys\n");
                                 DeliveryPage.OffersFromO2Partner_OverlayCloseButton.sendKeys(Keys.ENTER);
                                 log.debug("Clicked on the Offers From O2 Partner 'Overlay Close icon' with keyboard keys\n");
-                            }else {
+                            } else {
                                 DeliveryPage.OffersFromO2Partner_OverlayCloseButton.click();
                                 log.debug("Clicked on offers from partners and brands overlay close button");
                             }
@@ -1284,10 +1296,10 @@ public class DeliveryPageActions extends Environment {
                     //Privacy policy validation
                     String privacyPolicyTxt = driver.findElement(By.xpath("//div[@class='GDPR-Content']/div[2]/label | //div[@class='GDPR-Content']/p[@class='terms']")).getText();
                     Thread.sleep(2000);
-                    log.debug("GDPR privacy policy info text: "+privacyPolicyTxt);
+                    log.debug("GDPR privacy policy info text: " + privacyPolicyTxt);
 
                     //clicking on privacy policy link
-                    if(driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[2]/label/a | //div[@class='GDPR-Content']/p[@class='terms']/a")).size()>0) {
+                    if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[2]/label/a | //div[@class='GDPR-Content']/p[@class='terms']/a")).size() > 0) {
                         driver.findElement(By.xpath("//div[@class='GDPR-Content']/div[2]/label/a | //div[@class='GDPR-Content']/p[@class='terms']/a")).click();
                         Thread.sleep(5000);
                         for (String winHandle : driver.getWindowHandles()) {
@@ -1295,7 +1307,7 @@ public class DeliveryPageActions extends Environment {
                         }
 
                         String privacyPolicyURL = driver.getCurrentUrl();
-                        log.debug("The privacy policy URL is: " + privacyPolicyURL+"\n");
+                        log.debug("The privacy policy URL is: " + privacyPolicyURL + "\n");
 
                         if (privacyPolicyURL.contains("termsandconditions/privacy-policy")) {
                             log.debug("Privacy policy page is displayed\n");
@@ -1312,7 +1324,7 @@ public class DeliveryPageActions extends Environment {
                             driver.switchTo().window(winHandle);
                         }
                         Thread.sleep(2000);
-                        log.debug("We are back to delivery page from gdpr privacy policy page, current page url is :"+driver.getCurrentUrl()+"\n");
+                        log.debug("We are back to delivery page from gdpr privacy policy page, current page url is :" + driver.getCurrentUrl() + "\n");
                         Screenshots.captureScreenshot();
                     }
 
@@ -1337,11 +1349,11 @@ public class DeliveryPageActions extends Environment {
                                 log.debug("Failing due to - O2Products business preference is pre-selected in consumer acquisition journey\n");
                                 Assert.fail("Failing due to - O2Products business preference is pre-selected in consumer acquisition journey\n");
                             } else {
-                                if(keyEvent.equalsIgnoreCase("Yes")){
+                                if (keyEvent.equalsIgnoreCase("Yes")) {
                                     log.debug("Selecting the O2Products business preference checkBox with keyboard keys\n");
                                     DeliveryPage.O2Products.sendKeys(Keys.SPACE);
                                     log.debug("Selected option with keyboard keys\n");
-                                }else {
+                                } else {
                                     log.debug("Clicking on O2Products business preference\n");
                                     DeliveryPage.O2Products.click();
                                     log.debug("O2Products business preference selected\n");
@@ -1378,11 +1390,11 @@ public class DeliveryPageActions extends Environment {
                                 log.debug("Failing due to - O2 Perks And Extras business preference selected is pre-selected in consumer acquisition journey\n");
                                 Assert.fail("Failing due to - O2 Perks And Extras business preference selected is pre-selected in consumer acquisition journey\n");
                             } else {
-                                if(keyEvent.equalsIgnoreCase("Yes")){
+                                if (keyEvent.equalsIgnoreCase("Yes")) {
                                     log.debug("Selecting the O2 Perks And Extras business preference checkBox with keyboard keys\n");
                                     DeliveryPage.O2PerksAndExtras.sendKeys(Keys.SPACE);
                                     log.debug("Selected option with keyboard keys\n");
-                                }else {
+                                } else {
                                     log.debug("Clicking on O2 Perks And Extras business preference\n");
                                     DeliveryPage.O2PerksAndExtras.click();
                                     log.debug("O2 Perks And Extras business preference selected\n");
@@ -1419,11 +1431,11 @@ public class DeliveryPageActions extends Environment {
                                 log.debug("Failing due to - Offers From O2 Partner business preference is pre-selected in consumer acquisition journey\n");
                                 Assert.fail("Failing due to - Offers From O2 Partner business preference is pre-selected in consumer acquisition journey\n");
                             } else {
-                                if(keyEvent.equalsIgnoreCase("Yes")){
+                                if (keyEvent.equalsIgnoreCase("Yes")) {
                                     log.debug("Selecting the Offers From O2 Partner business preference checkBox with keyboard keys\n");
                                     DeliveryPage.OffersFromO2Partner.sendKeys(Keys.SPACE);
                                     log.debug("Selected option with keyboard keys\n");
-                                }else {
+                                } else {
                                     log.debug("Clicking on Offers From O2 Partner business preference\n");
                                     DeliveryPage.OffersFromO2Partner.click();
                                     log.debug("Offers From O2 Partner business preference selected\n");
@@ -1445,28 +1457,28 @@ public class DeliveryPageActions extends Environment {
                 }
             } else {
                 log.debug("Device type is non-connected device\n");
-                if(driver.findElements(By.xpath("//div[@class='GDPR-Content']/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")).size()>0) {
+                if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")).size() > 0) {
                     log.debug("Failed due to GDPR is in enabled mode for non-connected device \n");
                     Assert.fail("Failed due to GDPR is in enabled mode for non-connected device \n");
-                }else{
+                } else {
                     log.debug("As expected, GDPR is in disabled for non-connected device \n");
                 }
             }
-        }else if(GDPRstatus.equalsIgnoreCase("Disabled")) {
+        } else if (GDPRstatus.equalsIgnoreCase("Disabled")) {
 
             //gdpr end user question validation
-            if(driver.findElements(By.xpath("//label[contains(text(),'Is this order for you or someone else?')]")).size()>0){
-                if(DeliveryPage.Me_radioBtn.isDisplayed() || DeliveryPage.thisOrderTxt.isDisplayed() || DeliveryPage.someoneElse_radioBtn.isDisplayed()) {
+            if (driver.findElements(By.xpath("//label[contains(text(),'Is this order for you or someone else?')]")).size() > 0) {
+                if (DeliveryPage.Me_radioBtn.isDisplayed() || DeliveryPage.thisOrderTxt.isDisplayed() || DeliveryPage.someoneElse_radioBtn.isDisplayed()) {
                     log.debug("Failing because GDPR end user question(old requirement) with options are displaying\n");
                     Assert.fail("Failing because GDPR end user question(old requirement) with options are displaying");
                 }
             }
 
             //gdpr consent validation
-            if(driver.findElements(By.xpath("//div[@class='GDPR-Content']/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")).size()>0) {
+            if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")).size() > 0) {
                 log.debug("Failed due to GDPR is in enabled mode, it should be in disabled mode \n");
                 Assert.fail("Failed due to GDPR is in enabled mode, it should be in disabled mode \n");
-            }else{
+            } else {
                 log.debug("As expected, GDPR is in disabled mode for disabled state \n");
             }
         }
@@ -1483,16 +1495,16 @@ public class DeliveryPageActions extends Environment {
 
     }
 
-//venkat
+    //venkat
     public static void deliveryPageValidations_RetentionBoltons() throws InterruptedException {
         try {
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            if(driver.findElements(By.xpath("//span[@id='btn-continue-label']")).size()>0) {
+            if (driver.findElements(By.xpath("//span[@id='btn-continue-label']")).size() > 0) {
                 driver.findElement(By.xpath("//span[@id='btn-continue-label']")).click();
                 log.debug("Clicked on the Review Confirm CTA at Delivery page\n");
-                }
-            } catch (IOException e1) {
+            }
+        } catch (IOException e1) {
             e1.printStackTrace();
         }
     }
@@ -1502,7 +1514,7 @@ public class DeliveryPageActions extends Environment {
 
         try {
             Screenshots.captureScreenshot();
-            if(driver.findElements(By.xpath("//h1[normalize-space()='Review your details']/../div[3]/button[text()='Confirm']")).size()>0) {
+            if (driver.findElements(By.xpath("//h1[normalize-space()='Review your details']/../div[3]/button[text()='Confirm']")).size() > 0) {
                 if (DeliveryPage.reviewConfirmCTA.isDisplayed()) {
                     pageobjects.DeliveryPage.reviewConfirmCTA.click();
                     log.debug("Clicked on the Review Confirm CTA at Delivery page\n");
@@ -1517,16 +1529,16 @@ public class DeliveryPageActions extends Environment {
     public static void findDeliveryAddress(String HouseNumber, String PostCode) {
 
         try {
-                DeliveryPage.Housenumber.sendKeys(HouseNumber);
-                log.debug("Entered House number: "+HouseNumber+"\n");
-                Thread.sleep(2000);
-                pageobjects.DeliveryPage.Postcode.sendKeys(PostCode);
-                log.debug("Entered Post code: "+PostCode+"\n");
-                Thread.sleep(2000);
-                pageobjects.DeliveryPage.Find_Address.click();
-                log.debug("Clicked on the Find address button\n");
-                Thread.sleep(5000);
-                Screenshots.captureScreenshot();
+            DeliveryPage.Housenumber.sendKeys(HouseNumber);
+            log.debug("Entered House number: " + HouseNumber + "\n");
+            Thread.sleep(2000);
+            pageobjects.DeliveryPage.Postcode.sendKeys(PostCode);
+            log.debug("Entered Post code: " + PostCode + "\n");
+            Thread.sleep(2000);
+            pageobjects.DeliveryPage.Find_Address.click();
+            log.debug("Clicked on the Find address button\n");
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1535,88 +1547,88 @@ public class DeliveryPageActions extends Environment {
     public static void verifyDeliveryAddress(String exceptionMessage, String postcode) {
 
         try {
-                if(driver.findElements(By.xpath("//*[@id='address-postcode-error'] | //*[@id='no-address-match-error']")).size()>0) {
-                    if (DeliveryPage.postalCodeErrorMsgEnterManualSection.isDisplayed()) {
-                        String invalidMsg = DeliveryPage.postalCodeErrorMsgEnterManualSection.getText();
-                        Thread.sleep(2000);
-                        if (invalidMsg.contains("Enter a valid UK postcode") || invalidMsg.contains("We can't find an address for this postcode")) {
-                            log.debug("Entered invalid Postal Code so, error message is displayed as ::  (" + invalidMsg + ")\n");
-                        }
+            if (driver.findElements(By.xpath("//*[@id='address-postcode-error'] | //*[@id='no-address-match-error']")).size() > 0) {
+                if (DeliveryPage.postalCodeErrorMsgEnterManualSection.isDisplayed()) {
+                    String invalidMsg = DeliveryPage.postalCodeErrorMsgEnterManualSection.getText();
+                    Thread.sleep(2000);
+                    if (invalidMsg.contains("Enter a valid UK postcode") || invalidMsg.contains("We can't find an address for this postcode")) {
+                        log.debug("Entered invalid Postal Code so, error message is displayed as ::  (" + invalidMsg + ")\n");
                     }
-                    postalcodeStatus = "Invalid";
-                }else if(driver.findElements(By.xpath("//*[@id='no-residential-address-match-error']")).size()>0) {
-                    if (DeliveryPage.commercialAddressErrorMsgAdressLookUp.isDisplayed()) {
-                        String invalidMsg = DeliveryPage.commercialAddressErrorMsgAdressLookUp.getText();
-                        Thread.sleep(2000);
-                        if (invalidMsg.contains("Looking for a business address? Unfortunately we can't deliver to your work. Use your home address, or click and collect from your local store")) {
-                            log.debug("Entered commercial address during address lookup & displayed error message as ::  (" + invalidMsg + ")\n");
-                        }
+                }
+                postalcodeStatus = "Invalid";
+            } else if (driver.findElements(By.xpath("//*[@id='no-residential-address-match-error']")).size() > 0) {
+                if (DeliveryPage.commercialAddressErrorMsgAdressLookUp.isDisplayed()) {
+                    String invalidMsg = DeliveryPage.commercialAddressErrorMsgAdressLookUp.getText();
+                    Thread.sleep(2000);
+                    if (invalidMsg.contains("Looking for a business address? Unfortunately we can't deliver to your work. Use your home address, or click and collect from your local store")) {
+                        log.debug("Entered commercial address during address lookup & displayed error message as ::  (" + invalidMsg + ")\n");
                     }
-                    postalcodeStatus = "Commercial";
-               } else {
-                   if (driver.findElements(By.xpath("//ul[@id='selectedAddressItem']")).size() > 0) {
-                       List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='selectedAddressItem']"));
-                       log.debug("The size of matching address: " + addresses.size());
-                       if (addresses.size() == 1) {
-                           log.debug("Only one address is matching to the corresponding entered post code\n");
-                           String address = pageobjects.DeliveryPage.autoSelectedAddress.getText();
-                           Thread.sleep(2000);
-                           log.debug("Address is auto selected as only one address is matching and listed ie: " + address);
-                       }
-                       postalcodeStatus = "Valid";
-                   } else {
+                }
+                postalcodeStatus = "Commercial";
+            } else {
+                if (driver.findElements(By.xpath("//ul[@id='selectedAddressItem']")).size() > 0) {
+                    List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='selectedAddressItem']"));
+                    log.debug("The size of matching address: " + addresses.size());
+                    if (addresses.size() == 1) {
+                        log.debug("Only one address is matching to the corresponding entered post code\n");
+                        String address = pageobjects.DeliveryPage.autoSelectedAddress.getText();
+                        Thread.sleep(2000);
+                        log.debug("Address is auto selected as only one address is matching and listed ie: " + address);
+                    }
+                    postalcodeStatus = "Valid";
+                } else {
 
-                       if(driver.findElement(By.xpath("//div[@id='address-form-error']")).isDisplayed()) {
-                           String tooManyAddMsg = driver.findElement(By.xpath("//div[@id='address-form-error']/div/ul/li")).getText();
+                    if (driver.findElement(By.xpath("//div[@id='address-form-error']")).isDisplayed()) {
+                        String tooManyAddMsg = driver.findElement(By.xpath("//div[@id='address-form-error']/div/ul/li")).getText();
 
-                           if (tooManyAddMsg.contains(exceptionMessage)) {
-                               log.debug("Exception for too many addresses, is matching as expected ie: " + tooManyAddMsg + "\n");
-                               log.debug("Providing house number and postal code to research\n");
-                               //pageobjects.DeliveryPage.Postcode.clear();
-                               //findDeliveryAddress("10", postcode);
-                               //Thread.sleep(6000);
-                               //verifyDeliveryAddress("Unfortunately we can't deliver to this address. Try a different address, or click and collect from your nearest O2 store", postcode);
-                           } else {
-                               log.debug("Failed: Exception for too many addresses, is not matching as expected ie: " + tooManyAddMsg + "\n");
-                               Assert.fail("Failed: Exception for too many addresses, is not matching as expected ie: " + tooManyAddMsg);
-                           }
-                       }else {
+                        if (tooManyAddMsg.contains(exceptionMessage)) {
+                            log.debug("Exception for too many addresses, is matching as expected ie: " + tooManyAddMsg + "\n");
+                            log.debug("Providing house number and postal code to research\n");
+                            //pageobjects.DeliveryPage.Postcode.clear();
+                            //findDeliveryAddress("10", postcode);
+                            //Thread.sleep(6000);
+                            //verifyDeliveryAddress("Unfortunately we can't deliver to this address. Try a different address, or click and collect from your nearest O2 store", postcode);
+                        } else {
+                            log.debug("Failed: Exception for too many addresses, is not matching as expected ie: " + tooManyAddMsg + "\n");
+                            Assert.fail("Failed: Exception for too many addresses, is not matching as expected ie: " + tooManyAddMsg);
+                        }
+                    } else {
 
-                           if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
-                               if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
-                                   List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
-                                   log.debug("The size of matching address: " + addresses.size());
-                                   postalcodeStatus = "Valid";
+                        if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+                            if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
+                                List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
+                                log.debug("The size of matching address: " + addresses.size());
+                                postalcodeStatus = "Valid";
 
-                                   if (addresses.size() >= 2 && addresses.size() <= 200) {
+                                if (addresses.size() >= 2 && addresses.size() <= 200) {
 
-                                       log.debug("More than one addresses are matching to the corresponding entered post code\n");
-                                       //pageobjects.DeliveryPage.SelectAddress1.click();
+                                    log.debug("More than one addresses are matching to the corresponding entered post code\n");
+                                    //pageobjects.DeliveryPage.SelectAddress1.click();
 
-                                       if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
-                                           driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
-                                           Thread.sleep(3000);
-                                           Screenshots.captureScreenshot();
+                                    if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
+                                        driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
+                                        Thread.sleep(3000);
+                                        Screenshots.captureScreenshot();
 
-                                           WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
-                                           String selectedAddress = addressElement.getText();
+                                        WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
+                                        String selectedAddress = addressElement.getText();
 
-                                           Thread.sleep(3000);
-                                           Point coordinates = addressElement.getLocation();
-                                           Robot robot = new Robot();
-                                           robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
-                                           Thread.sleep(2000);
-                                           log.debug("Moving Mouse address dropdown");
+                                        Thread.sleep(3000);
+                                        Point coordinates = addressElement.getLocation();
+                                        Robot robot = new Robot();
+                                        robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                                        Thread.sleep(2000);
+                                        log.debug("Moving Mouse address dropdown");
 
-                                           Actions action = new Actions(driver);
-                                           action.moveToElement(addressElement).click().build().perform();
-                                           log.debug("Address selected from dropdown list: " + selectedAddress);
-                                           Thread.sleep(3000);
-                                           Screenshots.captureScreenshot();
-                                       }
-                                   }
-                               }
-                           }
+                                        Actions action = new Actions(driver);
+                                        action.moveToElement(addressElement).click().build().perform();
+                                        log.debug("Address selected from dropdown list: " + selectedAddress);
+                                        Thread.sleep(3000);
+                                        Screenshots.captureScreenshot();
+                                    }
+                                }
+                            }
+                        }
 
                            /*if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                                if (driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option")).size() > 0) {
@@ -1646,29 +1658,29 @@ public class DeliveryPageActions extends Environment {
                                    }
                                }
                            }*/
-                       }
-                   }
-               }
+                    }
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static void SetPostCodeForDelivery(String postcode, String HouseNumber) throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
         try {
             Screenshots.captureScreenshot();
             if (DeliveryPage.Housenumber.isDisplayed() || DeliveryPage.HouseNumberLabel.isDisplayed()) {
                 String houseNumberOrName = DeliveryPage.HouseNumberLabel.getText();
                 Thread.sleep(2000);
-                if(houseNumberOrName.contains("*")){
+                if (houseNumberOrName.contains("*")) {
                     log.debug("Failed due to House Number or Name field contains *, which means field is not optional. This field should be optional\n");
                     Assert.fail("Failed due to House Number or Name field contains *, which means field is not optional. This field should be optional\n");
-                }else{
-                    log.debug("House Number or Name field is not optional, ie Field Name is: "+houseNumberOrName+"\n");
+                } else {
+                    log.debug("House Number or Name field is not optional, ie Field Name is: " + houseNumberOrName + "\n");
                 }
-            }else{
+            } else {
                 log.debug("Failed due to House Number or Name label/input field not present \n");
                 Assert.fail("Failed due to House Number or Name label/input field not present \n");
             }
@@ -1676,55 +1688,55 @@ public class DeliveryPageActions extends Environment {
             if (DeliveryPage.Postcode.isDisplayed() || DeliveryPage.PostcodeLabel.isDisplayed()) {
                 String postcodeLabel = DeliveryPage.PostcodeLabel.getText();
                 Thread.sleep(2000);
-                if(postcodeLabel.contains("*")){
-                    log.debug("As expected, Post code field is not optional, ie Field Name is: "+postcodeLabel+"\n");
-                }else{
+                if (postcodeLabel.contains("*")) {
+                    log.debug("As expected, Post code field is not optional, ie Field Name is: " + postcodeLabel + "\n");
+                } else {
                     log.debug("Failed due to Post code field is optional. This field should not be optional \n");
                     Assert.fail("Failed due to Post code field is optional. This field should not be optional \n");
                 }
-            }else{
+            } else {
                 log.debug("Failed due to Post code label/input field not present \n");
                 Assert.fail("Failed due to Post code label/input field not present \n");
             }
 
             //Sending blank values and Validating error message exists or not for mandatory and non-mandatory fields
             log.debug("Finding address without post code and without house number or name\n");
-            findDeliveryAddress("","");
-            String houseNumberOrNameException  = "";
+            findDeliveryAddress("", "");
+            String houseNumberOrNameException = "";
             String postCodeException = "";
 
             //House number/name field validation
-            if(driver.findElements(By.xpath("//label[@id='housenumber-error']")).size()>0) {
+            if (driver.findElements(By.xpath("//label[@id='housenumber-error']")).size() > 0) {
                 houseNumberOrNameException = DeliveryPage.houseNumberNameError.getText();
                 Thread.sleep(1000);
-                log.debug("Failed due to House number/name field error is showing for blank/no values ie: "+houseNumberOrNameException+", It should be optional\n");
-                Assert.fail("Failed due to House number/name field error is showing for blank/no values ie: "+houseNumberOrNameException+", It should be optional\n");
-            }else{
+                log.debug("Failed due to House number/name field error is showing for blank/no values ie: " + houseNumberOrNameException + ", It should be optional\n");
+                Assert.fail("Failed due to House number/name field error is showing for blank/no values ie: " + houseNumberOrNameException + ", It should be optional\n");
+            } else {
                 log.debug("As expected, House number/name field error is not showing for blank/no values\n");
             }
 
             //post code field validation
-            if(driver.findElements(By.xpath("//label[@id='postcode-error']")).size()>0) {
+            if (driver.findElements(By.xpath("//label[@id='postcode-error']")).size() > 0) {
                 postCodeException = DeliveryPage.postCodeError.getText();
                 Thread.sleep(1000);
-                log.debug("As expected, Postal code field error is displaying for blank/no values ie: "+postCodeException+"\n");
-            }else{
+                log.debug("As expected, Postal code field error is displaying for blank/no values ie: " + postCodeException + "\n");
+            } else {
                 log.debug("Failed due to Postal code field error is not displaying for blank/no values \n");
                 Assert.fail("Failed due to Postal code field error is not displaying for blank/no values \n");
             }
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
 
-            if(!postcode.equals("") && HouseNumber.equals("")) {
+            if (!postcode.equals("") && HouseNumber.equals("")) {
                 log.debug("Finding address with post code and without house number or name\n");
                 findDeliveryAddress(HouseNumber, postcode);
                 Screenshots.captureScreenshot();
 
                 verifyDeliveryAddress("There are too many results for this postcode. Add your house number and try again", postcode);
 
-            }else if(!postcode.equals("") && !HouseNumber.equals("")){
+            } else if (!postcode.equals("") && !HouseNumber.equals("")) {
                 log.debug("Finding address with post code and with house number or name\n");
-                findDeliveryAddress(HouseNumber,postcode);
+                findDeliveryAddress(HouseNumber, postcode);
                 Screenshots.captureScreenshot();
 
                 verifyDeliveryAddress("Unfortunately we can't deliver to this address. Try a different address, or click and collect from your nearest O2 store", postcode);
@@ -1749,7 +1761,7 @@ public class DeliveryPageActions extends Environment {
             Screenshots.captureScreenshot();
 
             //ofCom Switching functionality is enabled or disabled
-            if(ofComStatus.equalsIgnoreCase("Enabled")) {
+            if (ofComStatus.equalsIgnoreCase("Enabled")) {
 
                 //Device is MBB or not
                 if (journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("CFU") || journey.equalsIgnoreCase("Accessory")) {
@@ -1875,20 +1887,20 @@ public class DeliveryPageActions extends Environment {
 
                         Screenshots.captureScreenshot();
 
-                    }else {
+                    } else {
                         log.debug("Failed: ofCom Switching feature supposed to be Enabled but it is disabled\n");
                         Assert.fail("Failed: ofCom Switching feature supposed to be Enabled but it is disabled\n");
                     }
                 }
-            }else if(ofComStatus.equalsIgnoreCase("Disabled")){
-                    //Validating ofCom Switching feature is disabled or not
-                    if(driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size()==0){
-                        log.debug("As expected, ofCom Switching is disabled for disabled status\n");
-                    }else{
-                        log.debug("Failed: ofCom Switching feature is enabled for disabled status\n");
-                        Assert.fail("Failed: ofCom Switching feature is enabled for disabled status\n");
-                    }
+            } else if (ofComStatus.equalsIgnoreCase("Disabled")) {
+                //Validating ofCom Switching feature is disabled or not
+                if (driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size() == 0) {
+                    log.debug("As expected, ofCom Switching is disabled for disabled status\n");
+                } else {
+                    log.debug("Failed: ofCom Switching feature is enabled for disabled status\n");
+                    Assert.fail("Failed: ofCom Switching feature is enabled for disabled status\n");
                 }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1896,16 +1908,16 @@ public class DeliveryPageActions extends Environment {
 
     //ITFD-895, April Release new changes Validation by Jamal Khan
     public static void ofComPacStacCode(String ofComMobileNum, String PacStacCode, String PacStacCheck, String ofComStatus, String PacStackRetainCheck) {
-        try{
+        try {
 
             //ofCom Switching functionality is enabled or disabled
-            if(ofComStatus.equalsIgnoreCase("Enabled")) {
-                if(driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size()>0){
+            if (ofComStatus.equalsIgnoreCase("Enabled")) {
+                if (driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size() > 0) {
                     log.debug("As expected, ofCom Switching is enabled\n");
                     log.debug("Currently validating PAC and STAC code check box functionality\n");
 
                     //PAC and Stac code checkbox Validation
-                    if(PacStacCheck.equalsIgnoreCase("Yes")) {
+                    if (PacStacCheck.equalsIgnoreCase("Yes")) {
 
                         //clicking on PAC and STAC checkbox
                         log.debug("Clicking on PAC and STAC code checkbox to enter the inputs for PAC/STAC fields\n");
@@ -1916,16 +1928,16 @@ public class DeliveryPageActions extends Environment {
 
                         //Entering inputs to Mobile Number and PACandStac Code fields
                         DeliveryPage.PACSTACMobileNum.sendKeys(ofComMobileNum);
-                        log.debug("ofCom Switching mobile number is entered ie: "+ofComMobileNum+"\n");
+                        log.debug("ofCom Switching mobile number is entered ie: " + ofComMobileNum + "\n");
                         DeliveryPage.PACSTACcode.sendKeys(PacStacCode);
-                        log.debug("ofCom Switching PAC/STAC code is entered ie: "+PacStacCode+"\n");
+                        log.debug("ofCom Switching PAC/STAC code is entered ie: " + PacStacCode + "\n");
                         Thread.sleep(2000);
                         Screenshots.captureScreenshot();
 
 
                     }
 
-                    if(PacStacCheck.equalsIgnoreCase("Yes") && PacStackRetainCheck.equalsIgnoreCase("Yes") && pacStacCodeStatus.equals("Checked")){
+                    if (PacStacCheck.equalsIgnoreCase("Yes") && PacStackRetainCheck.equalsIgnoreCase("Yes") && pacStacCodeStatus.equals("Checked")) {
                         //Validating PAC/STAC fields retained values or not
 
                         log.debug("Clicking on PAC and STAC code checkbox to uncheck\n");
@@ -1943,7 +1955,7 @@ public class DeliveryPageActions extends Environment {
 
                         //SPAC and STAC Mobile Number input fields retained values or not
                         if (DeliveryPage.PACSTACMobileNum.getAttribute("value").equals(ofComMobileNum)) {
-                            log.debug("As expected, Mobile Number field retained value ie: "+ofComMobileNum+"\n");
+                            log.debug("As expected, Mobile Number field retained value ie: " + ofComMobileNum + "\n");
                         } else {
                             log.debug("Failed due to Mobile Number field not retained entered mobile number\n");
                             Assert.fail("Failed due to Mobile Number field not retained entered mobile number\n");
@@ -1951,13 +1963,13 @@ public class DeliveryPageActions extends Environment {
 
                         //SPAC and STAC code input fields retained values or not
                         if (DeliveryPage.PACSTACcode.getAttribute("value").equals(PacStacCode)) {
-                            log.debug("As expected, PAC and STAC code field retained value ie: "+PacStacCode+"\n");
+                            log.debug("As expected, PAC and STAC code field retained value ie: " + PacStacCode + "\n");
                         } else {
                             log.debug("Failed due to PAC and STAC code field not retained entered PAC and STAC code\n");
                             Assert.fail("Failed due to PAC and STAC code field not retained entered PAC and STAC code\n");
                         }
                     }
-                }else{
+                } else {
                     log.debug("Failed: ofCom Switching feature supposed to be Enabled but it is disabled\n");
                     Assert.fail("Failed: ofCom Switching feature supposed to be Enabled but it is disabled\n");
                 }
@@ -1973,7 +1985,7 @@ public class DeliveryPageActions extends Environment {
 
             String classicCNCErrorMsg = pageobjects.DeliveryPage.DeliveryErrorText.getText();
 
-            if (classicCNCErrorMsg.contains("not applicable")){
+            if (classicCNCErrorMsg.contains("not applicable")) {
                 log.debug("As expected, the error message is matching\n");
             } else {
                 log.debug("No warning message as plan is available for ClickNCollectNow");
@@ -1992,9 +2004,10 @@ public class DeliveryPageActions extends Environment {
 
             pageobjects.DeliveryPage.Deliveyprefence.click();
 
-        }else{
+        } else {
             Assert.fail("Not able to GO PD page");
-        }Screenshots.captureScreenshot();
+        }
+        Screenshots.captureScreenshot();
     }
 
 
@@ -2011,7 +2024,7 @@ public class DeliveryPageActions extends Environment {
             } else {
                 driver.findElement(By.xpath("(//button/span[@id='btn-continue-label'])[2]")).click();
             }*/
-            if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[3]")).size()>0) {
+            if (driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[3]")).size() > 0) {
                 DeliveryPageActions.ofComContinueCTA();
                 Thread.sleep(2000);
                 log.debug("Clicked on Continue button\n");
@@ -2117,13 +2130,13 @@ public class DeliveryPageActions extends Environment {
             } else {
                 log.debug("We are in payment page\n");
             }
-        }catch(Exception e){
-            log.debug("Exception found: "+e);
+        } catch (Exception e) {
+            log.debug("Exception found: " + e);
         }
     }
 
     public static void validateUpFrontDeductedFromPayPalAccount(String DPStatus, String DPFlag) {
-        try{
+        try {
             Thread.sleep(5000);
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,-300)", "");
@@ -2132,13 +2145,13 @@ public class DeliveryPageActions extends Environment {
 
             if (DPStatus.equalsIgnoreCase("Enabled")) {
                 if (DPFlag.equalsIgnoreCase("PayPal") || DPFlag.equalsIgnoreCase("Both")) {
-                    if(driver.findElements(By.xpath("//div[contains(@class,'msgBox paypalUpfront successMsg')]")).size()>0) {
+                    if (driver.findElements(By.xpath("//div[contains(@class,'msgBox paypalUpfront successMsg')]")).size() > 0) {
                         log.debug("As expected PayPal is enabled in delivery page for enabled status\n");
 
                         String confirmMessageFromPayPal = DeliveryPage.confirmMessageFromPayPal.getText();
-                        String expectedConfirmationMessage = "you've chosen to pay through PayPal. We'll take your upfront payment of "+BasketPageActions.upFrontValue+" when you've completed checkout.";
+                        String expectedConfirmationMessage = "you've chosen to pay through PayPal. We'll take your upfront payment of " + BasketPageActions.upFrontValue + " when you've completed checkout.";
                         Thread.sleep(3000);
-                        log.debug("The confirmation message from PayPal is: "+confirmMessageFromPayPal);
+                        log.debug("The confirmation message from PayPal is: " + confirmMessageFromPayPal);
 
                         if (confirmMessageFromPayPal.equalsIgnoreCase(expectedConfirmationMessage)) {
                             log.debug("PayPal confirmation message is matching with expected result\n");
@@ -2147,21 +2160,21 @@ public class DeliveryPageActions extends Environment {
                             log.debug("Failed: PayPal confirmation message does not contains the upFront cost that it suppose to deduct from PayPal Account or message is not matching with expected\n");
                             Assert.fail("Failed: PayPal confirmation message does not contains the upFront cost that it suppose to deduct from PayPal Account or message is not matching with expected\n");
                         }
-                    }else{
+                    } else {
                         log.debug("Failed: PayPal is not enabled\n");
                         Assert.fail("Failed: PayPal is not enabled\n");
                     }
                 }
-            }else if(DPStatus.equalsIgnoreCase("Disabled") || DPFlag.equalsIgnoreCase("Disabled")){
-                if(driver.findElements(By.xpath("//div[contains(@class,'msgBox paypalUpfront successMsg')]")).size()>0) {
+            } else if (DPStatus.equalsIgnoreCase("Disabled") || DPFlag.equalsIgnoreCase("Disabled")) {
+                if (driver.findElements(By.xpath("//div[contains(@class,'msgBox paypalUpfront successMsg')]")).size() > 0) {
                     log.debug("Failed: PayPal is enabled in delivery page, it should be disabled for disabled status\n");
                     Assert.fail("Failed: PayPal is enabled in delivery page, it should be disabled for disabled status\n");
-                }else{
+                } else {
                     log.debug("As expected PayPal is disabled in delivery page for disabled status\n");
                 }
             }
-        }catch(Exception e){
-            log.debug("Exception found in Delivery page :"+e);
+        } catch (Exception e) {
+            log.debug("Exception found in Delivery page :" + e);
         }
     }
 
@@ -2171,7 +2184,7 @@ public class DeliveryPageActions extends Environment {
             // Thread.sleep(3000);
 
             String emailAdd = DeliveryPage.Email_Address.getAttribute("value");
-            log.debug("Email field is pre populated from PayPal account ie: "+emailAdd);
+            log.debug("Email field is pre populated from PayPal account ie: " + emailAdd);
 
             Select dropdown = new Select(pageobjects.DeliveryPage.Title);
             dropdown.selectByIndex(2);
@@ -2180,10 +2193,10 @@ public class DeliveryPageActions extends Environment {
 
 
             String firstName = DeliveryPage.First_Name.getAttribute("value");
-            log.debug("First Name field is pre populated from PayPal account ie: "+firstName);
+            log.debug("First Name field is pre populated from PayPal account ie: " + firstName);
 
             String secondName = DeliveryPage.Last_Name.getAttribute("value");
-            log.debug("Second Name field is pre populated from PayPal account ie: "+secondName);
+            log.debug("Second Name field is pre populated from PayPal account ie: " + secondName);
 
             String phoneNum = RandomEmailAddressCreation.RandomPhoneNum();
             //DeliveryPage.Contact_Number.sendKeys("07829483426");
@@ -2212,8 +2225,7 @@ public class DeliveryPageActions extends Environment {
         Thread.sleep(8000);
         try {
 
-            if (pageobjects.DeliveryPage.Housenumber.isDisplayed())
-            {
+            if (pageobjects.DeliveryPage.Housenumber.isDisplayed()) {
                 String beforeHousenumber = pageobjects.DeliveryPage.HousenumberField.getAttribute("class");
                 Assert.assertEquals(beforeHousenumber, "float-container");
                 pageobjects.DeliveryPage.Housenumber.sendKeys("100");
@@ -2241,31 +2253,38 @@ public class DeliveryPageActions extends Environment {
             jse.executeScript("window.scrollBy(0,100)", "");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
-            if(driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
+            if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                 if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
                     List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
                     log.debug("The size of matching address: " + addresses.size());
+                    postalcodeStatus = "Valid";
 
-                    if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
-                        driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
-                        Thread.sleep(3000);
-                        Screenshots.captureScreenshot();
+                    if (addresses.size() >= 2 && addresses.size() <= 200) {
 
-                        WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
-                        String selectedAddress = addressElement.getText();
+                        log.debug("More than one addresses are matching to the corresponding entered post code\n");
+                        //pageobjects.DeliveryPage.SelectAddress1.click();
 
-                        Thread.sleep(3000);
-                        Point coordinates = addressElement.getLocation();
-                        Robot robot = new Robot();
-                        robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
-                        Thread.sleep(2000);
-                        log.debug("Moving Mouse address dropdown");
+                        if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
+                            driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
+                            Thread.sleep(3000);
+                            Screenshots.captureScreenshot();
 
-                        Actions action = new Actions(driver);
-                        action.moveToElement(addressElement).click().build().perform();
-                        log.debug("Address selected from dropdown list: " + selectedAddress);
-                        Thread.sleep(3000);
-                        Screenshots.captureScreenshot();
+                            WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
+                            String selectedAddress = addressElement.getText();
+
+                            Thread.sleep(3000);
+                            Point coordinates = addressElement.getLocation();
+                            Robot robot = new Robot();
+                            robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                            Thread.sleep(2000);
+                            log.debug("Moving Mouse address dropdown");
+
+                            Actions action = new Actions(driver);
+                            action.moveToElement(addressElement).click().build().perform();
+                            log.debug("Address selected from dropdown list: " + selectedAddress);
+                            Thread.sleep(3000);
+                            Screenshots.captureScreenshot();
+                        }
                     }
                 }
             }
@@ -2289,21 +2308,42 @@ public class DeliveryPageActions extends Environment {
             log.debug("Email field text is shifted upper leffer corner\n");
 
             log.debug("Setting the About you options");
+            if (driver.findElements(By.xpath("//span[@id='titleSelectBoxItArrowContainer']")).size() > 0) {
+                driver.findElement(By.xpath("//span[@id='titleSelectBoxItArrowContainer']")).click();
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
 
-            Select dropdown = new Select(pageobjects.DeliveryPage.Title);
-            dropdown.selectByIndex(2);
-            log.debug("Selected the dropdown Mrs");
-            Reporter.log("Selected the dropdown Mrs");
+                WebElement addressElement = driver.findElement(By.xpath("//ul[@id='titleSelectBoxItOptions']/li[2]"));
+                String selectedAddress = addressElement.getText();
+
+                Thread.sleep(3000);
+                Point coordinates = addressElement.getLocation();
+                Robot robotClass = new Robot();
+                robotClass.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                Thread.sleep(2000);
+                log.debug("Moving Mouse address dropdown");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(addressElement).click().build().perform();
+                log.debug("Address selected from dropdown list: " + selectedAddress);
+            }
+
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+            log.debug("Selected the dropdown Mr");
+            Reporter.log("Selected the dropdown Mr");
+
 
             String beforName = DeliveryPage.First_Name_Field.getAttribute("class");
-            Assert.assertEquals(beforName, "firstNameParent float-container");
+            Assert.assertEquals(beforName, " firstNameParent float-container");
             DeliveryPage.First_Name.sendKeys(Firstname);
             String afterName = DeliveryPage.First_Name_Field.getAttribute("class");
             Assert.assertEquals(afterName, "firstNameParent float-container active");
             log.debug("First Name field text is shifted upper lefter corner\n");
 
             String beforLast = DeliveryPage.Last_Name_Field.getAttribute("class");
-            Assert.assertEquals(beforLast, "lastNameParent float-container");
+            Assert.assertEquals(beforLast, " lastNameParent float-container");
             DeliveryPage.Last_Name.sendKeys(Surname);
             String afterLast = DeliveryPage.Last_Name_Field.getAttribute("class");
             Assert.assertEquals(afterLast, "lastNameParent float-container active");
@@ -2326,10 +2366,10 @@ public class DeliveryPageActions extends Environment {
 
             String beforpassword = DeliveryPage.Password_Field.getAttribute("class");
             Thread.sleep(3000);
-            Assert.assertEquals(beforpassword, "form-element input-mask float-container ");
+            Assert.assertEquals(beforpassword, "form-element input-mask float-container  pageLevelError");
             DeliveryPage.Password.sendKeys("NTTDATA123");
             String afterpassword = DeliveryPage.Password_Field.getAttribute("class");
-            Assert.assertEquals(afterpassword, "form-element input-mask float-container active");
+            Assert.assertEquals(afterpassword, "form-element input-mask float-container pageLevelError active");
             log.debug("password field text is shifted upper lefter corner\n");
 
             String beforsecurity = DeliveryPage.Security_answer_Field.getAttribute("class");
@@ -2380,10 +2420,10 @@ public class DeliveryPageActions extends Environment {
         List<WebElement> collectionDetails = driver.findElements(By.xpath("//div[@class='collectFrom']"));
         int cnt = 0;
 
-        for(int i=1;i<=collectionDetails.size();i++){
-            String collectionDate = driver.findElement(By.xpath("(//div[@class='collectFrom'])["+i+"]/p")).getText();
+        for (int i = 1; i <= collectionDetails.size(); i++) {
+            String collectionDate = driver.findElement(By.xpath("(//div[@class='collectFrom'])[" + i + "]/p")).getText();
             Thread.sleep(3000);
-            log.debug("Collection Date: "+collectionDate);
+            log.debug("Collection Date: " + collectionDate);
             if (collectionDate.contains("Today") || collectionDate.contains("TODAY")) {
                 log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDate + "\n");
                 //driver.findElement(By.xpath("(//a[normalize-space()='Collect from this store'])["+i+"]")).click();
@@ -2393,7 +2433,7 @@ public class DeliveryPageActions extends Environment {
             }
         }
 
-        if(cnt==0){
+        if (cnt == 0) {
             driver.findElement(By.xpath("(//a[normalize-space()='Collect from this store'])[1]")).click();
             Thread.sleep(6000);
             Screenshots.captureScreenshot();
@@ -2484,7 +2524,7 @@ public class DeliveryPageActions extends Environment {
         try {
 
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,200)", "");
+            jse.executeScript("window.scrollBy(0,300)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
             log.debug("Clicking on Continue button\n");
@@ -2496,8 +2536,8 @@ public class DeliveryPageActions extends Environment {
             log.debug("Clicked on Continue button\n");
             Thread.sleep(5000);
 
-        }catch(Exception e){
-            log.debug("Exception found: "+e);
+        } catch (Exception e) {
+            log.debug("Exception found: " + e);
         }
     }
 
