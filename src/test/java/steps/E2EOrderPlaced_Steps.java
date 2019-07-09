@@ -51,13 +51,15 @@ public class E2EOrderPlaced_Steps {
     ArrayList<Integer> monthlycostlistafter = new ArrayList<Integer>();
     ArrayList<Integer> upfrontcostlistafter = new ArrayList<Integer>();
     final static Logger log = Logger.getLogger("E2EOrderPlaced_Steps");
-    static int BuyOutValue = 0;
+    public static int BuyOutValue = 0;
     static int TradeInValue = 0;
+    public static String totalUpfrontValue = "";
     public static Hashtable selectedElements = new Hashtable();
     static String expPlnList;
     static String EmailId_CCAcontinue="";
     ArrayList<Integer> drupalOriginalDataTariffList = null;
     ArrayList<Integer> drupalOriginalUpFrontTariffList = null;
+    public static int TradeInValueFromBasketPage = 0;
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
@@ -1116,9 +1118,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            Thread.sleep(8000);
+            Thread.sleep(5000);
             PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
-            Thread.sleep(6000);
+            Thread.sleep(1000);
             //PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1588,9 +1590,16 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-            Thread.sleep(4000);
+            Thread.sleep(5000);
             Screenshots.captureScreenshot();
+            driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[1]")).click();
+            Thread.sleep(6000);
             DeliveryPageActions.ClickAndCollect();
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,400)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2011,9 +2020,14 @@ public class E2EOrderPlaced_Steps {
             /*Thread.sleep(5000);
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
             Thread.sleep(15000);
-            PaymentPageActions.Card_Details(Username);
-            Thread.sleep(12000);
-            PaymentPageActions.Card_Details_CCV();
+            log.debug("Currently we are at: "+driver.getCurrentUrl()+"\n");
+            if(E2EOrderPlaced_Steps.totalUpfrontValue.equals(0)){
+                log.debug("Upfront value is 0\n");
+            }else {
+                PaymentPageActions.Card_Details(Username);
+                Thread.sleep(12000);
+                PaymentPageActions.Card_Details_CCV();
+            }
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -2056,11 +2070,15 @@ public class E2EOrderPlaced_Steps {
             //PaymentPageActions.Time_At_Address_CC();
             /*Thread.sleep(5000);
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
-            Thread.sleep(10000);
-            PaymentPageActions.Card_Details(Username);
-            Thread.sleep(10000);
-            PaymentPageActions.Card_Details_CCV();
-            Thread.sleep(12000);
+            Thread.sleep(15000);
+            log.debug("Currently we are at: "+driver.getCurrentUrl()+"\n");
+            if(E2EOrderPlaced_Steps.totalUpfrontValue.equals(0)){
+                log.debug("Upfront value is 0\n");
+            }else {
+                PaymentPageActions.Card_Details(Username);
+                Thread.sleep(12000);
+                PaymentPageActions.Card_Details_CCV();
+            }
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -2143,8 +2161,8 @@ public class E2EOrderPlaced_Steps {
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
             Thread.sleep(10000);
-            DeliveryPageActions.SetDelivery();
-            Thread.sleep(5000);
+            //DeliveryPageActions.SetDelivery();
+            //Thread.sleep(5000);
             PaymentPageActions.Time_At_Address_CC();
             //PaymentPageActions.Time_At_Address();
             /*Thread.sleep(5000);
@@ -6391,11 +6409,16 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-            Thread.sleep(4000);
+            Thread.sleep(5000);
             DeliveryPageActions.select_BringTradeInDevice_CheckBox();
             Thread.sleep(3000);
             //DeliveryPageActions.ClickContinue();
             //log.debug("Clicked on continue button");
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,250)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueAboutU();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to perform action -Bring TradeIn Device checkbox is not displayed");
@@ -7341,7 +7364,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             int BouOutValueFromMyPackageSection = BuyOutValue;
 
-            UpgradeCustomerPageActions.verifyBuyOutDisplayed_OrderSummarySection(BouOutValueFromMyPackageSection, pageName);
+            UpgradeCustomerPageActions.verifyBuyOutDisplayed_OrderSummarySection(E2EOrderPlaced_Steps.BuyOutValue, pageName);
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -7359,9 +7382,10 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(4000);
             int TradeInValueFromMyPackageSection = TradeInValue;
 
-            UpgradeCustomerPageActions.verifyTradeInDisplayed_OrderSummarySection(TradeInValueFromMyPackageSection, pageName);
+            //UpgradeCustomerPageActions.verifyTradeInDisplayed_OrderSummarySection(TradeInValueFromMyPackageSection, pageName);
+            UpgradeCustomerPageActions.verifyTradeInDisplayed_OrderSummarySection(TradeInValueFromBasketPage, pageName);
             Thread.sleep(2000);
-            DeliveryPageActions.ContinueDelivery();
+            //DeliveryPageActions.ContinueDelivery();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -8336,11 +8360,15 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PaymentPage.class);
             /*Thread.sleep(5000);
             PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
-            Thread.sleep(12000);
-            PaymentPageActions.Card_Details(Username);
-            Thread.sleep(12000);
-            PaymentPageActions.Card_Details_CCV();
-            Thread.sleep(10000);
+            Thread.sleep(15000);
+            log.debug("Currently we are at: "+driver.getCurrentUrl()+"\n");
+            if(E2EOrderPlaced_Steps.totalUpfrontValue.equals(0)){
+                log.debug("Upfront value is 0\n");
+            }else {
+                PaymentPageActions.Card_Details(Username);
+                Thread.sleep(12000);
+                PaymentPageActions.Card_Details_CCV();
+            }
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -8869,7 +8897,6 @@ public class E2EOrderPlaced_Steps {
             e.printStackTrace();
             log.debug("Unable to select the sim free link");
             Assert.fail("Unable to select the sim free link");
-
         }
     }
 
@@ -10269,7 +10296,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[1]")).click();
             Thread.sleep(3000);
             DeliveryPageActions.ClickOnUseDifferentAddress();
@@ -11540,7 +11567,7 @@ public class E2EOrderPlaced_Steps {
 
             //Recommendation is going live in Jan so commented
             UpgradeCustomerPageActions.clickOnConfigureOwnUpgrade();
-            Thread.sleep(8000);
+            Thread.sleep(3000);
 
             //UpgradeCustomerPageActions.clickOnGetStartedCTA();
 
@@ -11584,7 +11611,7 @@ public class E2EOrderPlaced_Steps {
 
             //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            Thread.sleep(5000);
+            //Thread.sleep(5000);
             // Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.clickOnViewAllTablets();
             Thread.sleep(5000);
@@ -11601,7 +11628,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            Thread.sleep(6000);
+            //Thread.sleep(6000);
             // Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.clickOnViewAllPhones();
             Thread.sleep(5000);
@@ -11726,7 +11753,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(3000);
             DeliveryPageActions.SetPostCodeForDelivery(pcode, houseNum);
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,600)", "");
+            jse.executeScript("window.scrollBy(0,400)", "");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
         } catch (Exception e) {
@@ -13273,6 +13300,12 @@ public class E2EOrderPlaced_Steps {
             Screenshots.captureScreenshot();
             DeliveryPageActions.SetDeliveryPage();
             Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,100)", "");
+            Screenshots.captureScreenshot();
             DeliveryPageActions.YourDetails(Firstname, Surname);
             // DeliveryPageActions.ClickContinue();
             //DeliveryPageActions.clickOnSubmitBtn();
@@ -13451,14 +13484,32 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(6000);
+            Screenshots.captureScreenshot();
+            driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[2]")).click();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
             //DeliveryPageActions.clickOnGDPRContinueCTAandValidateError();
             Thread.sleep(2000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueAboutU();
+            jse.executeScript("window.scrollBy(0,-200)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            //Thread.sleep(2000);
+            int upfrontSize = DeliveryPage.totalUpfront.getText().length();
+            totalUpfrontValue = DeliveryPage.totalUpfront.getText().substring(1, upfrontSize - 3);
+            Thread.sleep(2000);
+            log.debug("Total upFront cost has to pay is: "+totalUpfrontValue);
             DeliveryPageActions.ContinuePaymentPage();
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
-            Assert.fail("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+            log.debug("Unable to continue delivery page\n");
+            Assert.fail("Unable to continue delivery page\n");
         }
     }
 
@@ -13954,6 +14005,84 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             log.debug("Unable to click on Go To Payment CTA in delivery page");
             Assert.fail("Unable to click on Go To Payment CTA in delivery page");
+        }
+    }
+
+    @And("^Click on GDPR Continue CTA in Simo upgrade$")
+    public void clickOnGDPRContinueCTAInSimoUpgrade() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Screenshots.captureScreenshot();
+            Thread.sleep(2000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.clickOnGDPRContinueCTAandValidateError();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+            Assert.fail("Unable to validate OFCOM Pac and Stac Code in delivery page\n");
+        }
+    }
+
+    @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page for click and collect journey$")
+    public void DeliveryPageInputsClickAndCollect(String Firstname, String Surname) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Screenshots.captureScreenshot();
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,100)", "");
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.AboutYou(Firstname, Surname);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page for click and collect journey\n");
+            Assert.fail("Unable to input details in delivery page for click and collect journey\n");
+        }
+    }
+
+    @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page and validate Asterisk against mandatory fields$")
+    public void inputAndValidateAsteriskInDeliveryPage(String Firstname, String Surname) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Screenshots.captureScreenshot();
+            verificationsActions.verifyAsteriskMandatory("Delivery");
+            DeliveryPageActions.SetDeliveryDeliveryPage();
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,100)", "");
+            Screenshots.captureScreenshot();
+            verificationsActions.verifyAsteriskMandatory("Your Details");
+            DeliveryPageActions.AboutYou(Firstname, Surname);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
         }
     }
 

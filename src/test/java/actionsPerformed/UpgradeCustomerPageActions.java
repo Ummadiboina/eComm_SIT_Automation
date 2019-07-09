@@ -27,6 +27,7 @@ package actionsPerformed;
         import helpers.Filereadingutility;
         import helpers.setRuntimeProperty;
         import pageobjects.*;
+        import steps.E2EOrderPlaced_Steps;
         import steps.Hooks;
 
         import static actionsPerformed.PaymentPageActions.Set_Bank_details;
@@ -42,6 +43,7 @@ public class UpgradeCustomerPageActions extends Environment {
     static int PositionUpgrade = 0;
     public static String tariffNameTxt;
     public static String marketingMessage;
+
 
     public static void Login(String username, String password) throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
@@ -2179,6 +2181,7 @@ public class UpgradeCustomerPageActions extends Environment {
             Assert.fail("Buy out offer text is not displayed as expected");
         }
         if (a == b) {
+            E2EOrderPlaced_Steps.BuyOutValue = a;
             log.debug("Buy out values are matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
         } else {
             log.debug("Buy out values are not matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
@@ -2191,12 +2194,12 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("Buy Out Amount does not contain negative value: " + Actcost2);
             Assert.fail("Buy Out Amount does not contain negative value");
         }
-        if (b == BouOutValue_FromMyPackageSection) {
+        /*if (b == BouOutValue_FromMyPackageSection) {
             log.debug("Buy out value from Basket Page is matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from Basket Page: " + b);
         } else {
             log.debug("Buy out value from Basket Page is not matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from Basket Page: " + b);
             Assert.fail("Buy out values from MyPackage Section and Basket Page are not matching");
-        }
+        }*/
 
         Screenshots.captureScreenshot();
     }
@@ -2231,6 +2234,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
         if (a == b) {
             log.debug("TradeIn values are matching: " + ", Left To Pay: " + a + ", TradeIn Amount: " + b);
+            E2EOrderPlaced_Steps.TradeInValueFromBasketPage = a;
         } else {
             log.debug("TradeIn values are not matching: " + ", Left To Pay: " + a + ", TradeIn Amount: " + b);
             Assert.fail("TradeIn values are not matching");
@@ -2242,12 +2246,14 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("TradeIn Amount does not contain negative value: " + Actcost2);
             Assert.fail("TradeIn Amount does not contain negative value");
         }
-        if (b == TradeInValue_FromMyPackageSection) {
+
+        //package options page is no more available
+        /*if (b == TradeInValue_FromMyPackageSection) {
             log.debug("TradeIn value from Basket Page is matching with the TradeIn value from MyPackage Section: " + ", TradeIn Value from My Package Section: " + TradeInValue_FromMyPackageSection + ", TradeIn Amount from Basket Page: " + b);
         } else {
             log.debug("TradeIn value from Basket Page is not matching with the TradeIn value from MyPackage Section: " + ", TradeIn Value from My Package Section: " + TradeInValue_FromMyPackageSection + ", TradeIn Amount from Basket Page: " + b);
             Assert.fail("TradeIn values from MyPackage Section and Basket Page are not matching");
-        }
+        }*/
 
         Screenshots.captureScreenshot();
     }
@@ -2257,7 +2263,8 @@ public class UpgradeCustomerPageActions extends Environment {
 
         String AcText = null, Actcost1 = null, tmpcost1 = null, Title = null;
         int a = 0;
-        int BouOutValue_FromMyPackageSection = BouOutValueFromMyPackageSection;
+        //int BouOutValue_FromMyPackageSection = BouOutValueFromMyPackageSection;
+        int BouOutValue_FromMyBasketPage = BouOutValueFromMyPackageSection;
 
         AcText = UpgradeCustomerPage.BuyOutText_OrderSummarySection.getText();
         Actcost1 = UpgradeCustomerPage.BuyOutCost_OrderSummarySection.getText();
@@ -2281,11 +2288,18 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("Buy Out Amount does not contain negative value: " + Actcost1);
             Assert.fail("Buy Out Amount does not contain negative value");
         }
-        if (a == BouOutValue_FromMyPackageSection) {
+        /*if (a == BouOutValue_FromMyPackageSection) {
             log.debug("Buy out value from " + pageName + " Page is matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from " + pageName + " Page: " + a);
         } else {
             log.debug("Buy out value from " + pageName + " Page is not matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from " + pageName + " Page: " + a);
             Assert.fail("Buy out values from MyPackage Section and " + pageName + " Page are not matching");
+        }*/
+
+        if (a == BouOutValue_FromMyBasketPage) {
+            log.debug("Buy out value from " + pageName + " Page is matching with the BoyOut value from Basket Page: " + ", BuyOut Value from Basket page: " + BouOutValue_FromMyBasketPage + ", Buy Out Amount from " + pageName + " Page: " + a);
+        } else {
+            log.debug("Buy out value from " + pageName + " Page is not matching with the BoyOut value from BAsket page: " + ", Boy Out Value from Basket Page: " + BouOutValue_FromMyBasketPage + ", Buy Out Amount from " + pageName + " Page: " + a);
+            Assert.fail("Buy out values from Basket page and " + pageName + " Page are not matching");
         }
         Screenshots.captureScreenshot();
     }
@@ -2319,11 +2333,18 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("TradeIn Amount does not contain negative value: " + Actcost1);
             Assert.fail("TradeIn Amount does not contain negative value");
         }
-        if (a == TradeInValue_FromMyPackageSection) {
+        /*if (a == TradeInValue_FromMyPackageSection) {
             log.debug("TradeIn value from " + pageName + " Page is matching with the TradeIn value from MyPackage Section: " + ", TradeIn Value from My Package Section: " + TradeInValue_FromMyPackageSection + ", TradeIn Amount from " + pageName + " Page: " + a);
         } else {
             log.debug("TradeIn value from " + pageName + " Page is not matching with the TradeIn value from MyPackage Section: " + ", TradeIn Value from My Package Section: " + TradeInValue_FromMyPackageSection + ", TradeIn Amount from " + pageName + " Page: " + a);
             Assert.fail("TradeIn values from MyPackage Section and " + pageName + " Page are not matching");
+        }*/
+
+        if (a == E2EOrderPlaced_Steps.TradeInValueFromBasketPage) {
+            log.debug("TradeIn value from " + pageName + " Page is matching with the TradeIn value from Basket Page: " + ", TradeIn Value from My Basket Pages: " + E2EOrderPlaced_Steps.TradeInValueFromBasketPage + ", TradeIn Amount from " + pageName + " Page: " + a);
+        } else {
+            log.debug("TradeIn value from " + pageName + " Page is not matching with the TradeIn value from MyPackage Section: " + ", TradeIn Value from Basket page: " + E2EOrderPlaced_Steps.TradeInValueFromBasketPage + ", TradeIn Amount from " + pageName + " Page: " + a);
+            Assert.fail("TradeIn values from Basket page and " + pageName + " Page are not matching");
         }
         Screenshots.captureScreenshot();
     }
@@ -2331,7 +2352,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void VerifyTradeinMessage() throws IOException, InterruptedException {
         log.debug("in verify tradein message function");
         //driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         String text = driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer'] | (//div[@id='tradeInOfferTile']/div/p)[1]")).getText();
         Screenshots.captureScreenshot();
         Thread.sleep(3000);
@@ -2453,7 +2474,11 @@ public class UpgradeCustomerPageActions extends Environment {
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                     driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")));
 
-            Thread.sleep(5000);
+            Thread.sleep(2000);
+
+            jse.executeScript("window.scrollBy(0,-500)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
         }
     }
 
@@ -2567,7 +2592,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnViewAllPhones() throws InterruptedException, IOException {
 
-        Thread.sleep(6000);
+        Thread.sleep(2000);
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.ViewAllPhones);

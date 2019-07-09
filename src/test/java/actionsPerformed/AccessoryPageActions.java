@@ -119,22 +119,22 @@ public class AccessoryPageActions extends Environment {
 			executor.executeScript("arguments[0].click();", ele);
 		}
 
-		Thread.sleep(8000);
+		Thread.sleep(4000);
 		Autoredirection.redirect();
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		Thread.sleep(1000	);
+		Thread.sleep(2000	);
 		executor.executeScript("arguments[0].scrollIntoView(true);",pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
 		Thread.sleep(2000	);
 		executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
 
 		if (elementName.contains("Random")) {
 			log.debug("Selecting Any Accessory");
-			Thread.sleep(2000	);
+			Thread.sleep(3000	);
 			accessoryName = pageobjects.AccessoryPage.RandomAccessory.getText();
-			log.debug("Selected an accessory -  " + accessoryName);
 			Thread.sleep(3000);
-			pageobjects.AccessoryPage.RandomAccessory.click();
-
+			log.debug("Selected an accessory -  " + accessoryName);
+			//pageobjects.AccessoryPage.RandomAccessory.click();
+			executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.RandomAccessory);
 		}
 
 		if (elementName.contains("AirPods")) {

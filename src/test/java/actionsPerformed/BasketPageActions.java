@@ -767,12 +767,10 @@ public class BasketPageActions extends Environment {
 	////////////////////////////// Page///////////////////////////////////////////////
 
 	public static void UpgradeBasketPageYourSim() throws IOException {
-
-		if (pageobjects.BasketPage.EnabledCheckout.isDisplayed()) {
-			log.debug("The Checkout button is enabled");
-		} else if (pageobjects.BasketPage.DisabledCheckout.isDisplayed()) {
+		if (pageobjects.BasketPage.DisabledCheckout.isDisplayed()) {
 			log.debug("The checkout button is not enabled");
-
+		}else if (pageobjects.BasketPage.EnabledCheckout.isDisplayed()) {
+			log.debug("The Checkout button is enabled");
 		}
 		Screenshots.captureScreenshot();
 		//Screenshots.captureScreenshot(Hooks.directoryName);
