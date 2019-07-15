@@ -17,10 +17,12 @@ Feature: 15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-    #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR to click and collect
+    And Select the "New Connection" which you want to perform
+    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR to click and collect
     #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Choose click and collect store in delivery page
     #And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step' for payments
     And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks

@@ -55,7 +55,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//button[@id='store-postcode-submit']")
     public static WebElement Find_Store;
 
-    @FindBy(how = How.XPATH, using = "(//a[contains(normalize-space(),'Collect from this store')])[1]")
+    @FindBy(how = How.XPATH, using = "(//a[contains(normalize-space(),'Collect from this store')])[1] | (//button[contains(normalize-space(),'Choose store')])[1]")
     public static WebElement Select_Store;
 
 
@@ -200,9 +200,8 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@id='input-security-answer']/div/label")
     public static WebElement SecurityAnswerText;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@class='form-element input-microcopy-treble  ']/fieldset/legend")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[contains(@class,'form-element input-microcopy-treble  ')]/fieldset/legend")
     public static WebElement DateofBirthText;
-    
     
     
     // venkat
@@ -219,7 +218,7 @@ public class DeliveryPage {
 
 
     //Commercial Address error-Address LookUp
-    @FindBy(how = How.ID, using = "no-residential-address-match-error")
+    @FindBy(how = How.XPATH, using = "//label[@id='no-residential-address-match-error']")
     public static WebElement commercialAddressErrorMsgAdressLookUp;
 
     //postal code error
@@ -254,13 +253,13 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/h2 | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/h2")
     public static WebElement gdprHeaderTxt;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div/div/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")
     public static WebElement gdprHeaderDescription;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/span")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[2]/div[1]/div/div/div/label/span")
     public static WebElement O2Products_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/span/a")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[2]/div[1]/div/div/div/label/span/a")
     public static WebElement O2Products_MoreInfoLink;
 
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B1')]/div[2]")
@@ -269,10 +268,10 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B1')]/div[1]/a")
     public static WebElement O2Products_OverlayCloseButton;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/span | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/span")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[2]/div[2]/div/div/div/label/span | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/span")
     public static WebElement O2PerksAndExtras_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/span/a | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/span/a")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[2]/div[2]/div/div/div/label/span/a | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/span/a")
     public static WebElement O2PerksAndExtras_MoreInfoLink;
 
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B2')]/div[2]")
@@ -281,10 +280,10 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B2')]/div[1]/a")
     public static WebElement O2PerksAndExtras_OverlayCloseButton;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][3]/div/div/div/label/span")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[2]/div[contains(@class,'prefernces-box')][3]/div/div/div/label/span")
     public static WebElement OffersFromO2Partner_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][3]/div/div/div/label/span/a")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[2]/div[contains(@class,'prefernces-box')][3]/div/div/div/label/span/a")
     public static WebElement OffersFromO2Partner_MoreInfoLink;
 
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box B3')]/div[2]")
@@ -418,20 +417,29 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = ("//input[@id='last-name']/../label"))
     public static WebElement lastNameText;
 
-    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[1]")
+    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[2]")
     public static WebElement ContinueDelivery;
 
-    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[2]")
+    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[1]")
     public static WebElement ContinueAboutU;
 
     @FindBy(how = How.XPATH, using = "//button[normalize-space()='Go to Payments'] | //button[normalize-space()='Go To Agreement']")
     public static WebElement ContinuePaymentPage;
 
-    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[3]")
+    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[5]")
     public static WebElement ofComContinueCTA;
 
     @FindBy(how = How.XPATH, using = "//tr[@id='basket-total']/td[2]/h2")
     public static WebElement totalUpfront;
+
+    @FindBy(how = How.XPATH, using = "//a[@class='button primary redesign-button new-customer-btn']")
+    public static WebElement cusomerNewTab;
+
+    @FindBy(how = How.XPATH, using = "//a[@class='button primary redesign-button existing-customer-btn']")
+    public static WebElement cusomerExistingTab;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='date-dd-mm-yy']")
+    public static WebElement DOB;
 
 }
 

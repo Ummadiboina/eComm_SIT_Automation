@@ -19,6 +19,7 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     And I Land on the basket page and choose to collect from store
     And Validate all the Basket contents
     And click on "go to checkout" button
+    And Select the "Existing" which you want to perform
     #And Select existing account and begin fast checkout
     And scroll to an element in DeliveryPage for taking screenshots
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
