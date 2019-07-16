@@ -1583,7 +1583,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, DeliveryPage.class);
             Thread.sleep(5000);
             Screenshots.captureScreenshot();
-            driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[1]")).click();
+            driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[2]")).click();
             Thread.sleep(6000);
             DeliveryPageActions.ClickAndCollect();
             JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -2362,7 +2362,7 @@ public class E2EOrderPlaced_Steps {
             // Write code here that turns the phrase above into concrete actions
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             log.debug("We are at agreement page\n");
-            Thread.sleep(50000);
+            Thread.sleep(30000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
 
@@ -2519,7 +2519,7 @@ public class E2EOrderPlaced_Steps {
             ReviewPageActions.gettitlepage();
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
-            driver.findElement(By.xpath("//button[@class='review_accordion']")).click();
+            driver.findElement(By.xpath("//div[@class='review_acc_wrap']")).click();
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
             jse.executeScript("window.scrollBy(0,300)", "");
@@ -10288,7 +10288,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             Thread.sleep(5000);
-            driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[1]")).click();
+            driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[2]")).click();
             Thread.sleep(3000);
             DeliveryPageActions.ClickOnUseDifferentAddress();
             log.debug("Clicked on Use a different address link");
@@ -11724,12 +11724,21 @@ public class E2EOrderPlaced_Steps {
             jse.executeScript("window.scrollBy(0,300)", "");
             Screenshots.captureScreenshot();
             DeliveryPageActions.SetPostCodeForDelivery(postcode, HouseNumber);
-            Thread.sleep(5000);
-            Screenshots.captureScreenshot();
             DeliveryPageActions.ContinueDelivery();
-            if(DeliveryPageActions.postalcodeStatus.equalsIgnoreCase("Valid")) {
-                DeliveryPageActions.AboutYou(Firstname, Surname);
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).size()>0) {
+
+                jse.executeScript("window.scrollBy(0,-100)", "");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).click();
             }
+            /*JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-120)", "");*/
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinuePaymentPage();
+            Thread.sleep(2000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -13446,8 +13455,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             Thread.sleep(6000);
-            Screenshots.captureScreenshot();
-            driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[2]")).click();
+           /* Screenshots.captureScreenshot();
+            driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[1]")).click();
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
             //DeliveryPageActions.clickOnGDPRContinueCTAandValidateError();
@@ -13458,9 +13467,13 @@ public class E2EOrderPlaced_Steps {
             Screenshots.captureScreenshot();
             DeliveryPageActions.ContinueAboutU();
             jse.executeScript("window.scrollBy(0,-200)", "");
-            Thread.sleep(2000);
+            Thread.sleep(2000);*/
             Screenshots.captureScreenshot();
             //Thread.sleep(2000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,100)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
             int upfrontSize = DeliveryPage.totalUpfront.getText().length();
             totalUpfrontValue = DeliveryPage.totalUpfront.getText().substring(1, upfrontSize - 3);
             Thread.sleep(2000);
@@ -13954,14 +13967,11 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-            DeliveryPageActions.ContinueAboutU();
-            Thread.sleep(5000);
-            JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,-120)", "");
+
             Screenshots.captureScreenshot();
             DeliveryPageActions.ContinuePaymentPage();
             Thread.sleep(2000);
-            //DeliveryPageActions.ReviewConfirmCTA_DeliveryPage();
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to click on Go To Payment CTA in delivery page");
@@ -14090,6 +14100,10 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
             if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).size()>0) {
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,-100)", "");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
                 driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).click();
             }
             /*JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -14141,6 +14155,60 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             log.debug("Unable to input title details in delivery page");
             Assert.fail("Unable to input title details in delivery page");
+        }
+    }
+
+    @And("^Input about you details ([^\"]*) and ([^\"]*) and other delivery details in delivery page$")
+    public void inputAboutYouAndDeliveryDetails(String Firstname, String Surname) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            Screenshots.captureScreenshot();
+            Thread.sleep(2000);
+            DeliveryPageActions.AboutYou(Firstname, Surname);
+            Thread.sleep(2000);
+            DeliveryPageActions.ContinueAboutU();
+            DeliveryPageActions.SetDeliveryDeliveryPage();
+            DeliveryPageActions.ContinueDelivery();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+    }
+
+    @And("^Input about you details ([^\"]*) and ([^\"]*) and other delivery details in delivery page for click and collect$")
+    public void inputAboutYouAndDeliveryDetailsForCnC(String Firstname, String Surname) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            Screenshots.captureScreenshot();
+            Thread.sleep(2000);
+            DeliveryPageActions.AboutYou(Firstname, Surname);
+            Thread.sleep(2000);
+            DeliveryPageActions.ContinueAboutU();
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
         }
     }
 }

@@ -32,7 +32,7 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
     Then I should see appropriate tariffs based on the selected sort option in the Upgrade SIMO MBB/Tablet journey <sortoption>
     #And Click on different <Contract>  Months Tariff in Tab
     #And Click on 'Select' CTA to buy a tariff
-    And Select any Random Data Tariff in the displayed list of Tariffs under different <contractLength> tab
+    And Select any Random Data Tariff in the displayed list of Tariffs under different <Contract> tab
     And Click on Add to basket CTA in Simo Listing Page
     #And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And copy text SIM delivery required or not is displayed
