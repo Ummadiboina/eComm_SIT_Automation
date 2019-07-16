@@ -14,11 +14,13 @@ Feature: 11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asteris
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
+    And Select the "New Connection" which you want to perform
     And verify copy text You will need to give details for all fields marked with an asterisk is displayed
     #And verify asterisk is displayed against mandatory fields of "Delivery page"
     #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And input <Firstname> and <Surname> and other valid details in Delivery page and validate Asterisk against mandatory fields
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Verify asterisk in set delivery section and enter details for delivery section
     #And input the below details in Delivery page
       #| HouseNumber           | 5            |
       #| Post Code             | BS7 0NP      |

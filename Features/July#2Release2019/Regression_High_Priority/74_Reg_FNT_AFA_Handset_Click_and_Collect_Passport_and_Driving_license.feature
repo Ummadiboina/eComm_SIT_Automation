@@ -10,7 +10,7 @@ Feature: 74_Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
-    And Select a valid store using <postCode> for Click and Collect
+    #And Select a valid store using <postCode> for Click and Collect
     And Validate all the Basket content and checkout
     Then Validate deal summary for applied Bill Spend Cap <BillCapAmount> when BSC is <BSCstatus>
     Then perform all the advisory checks

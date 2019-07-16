@@ -27,10 +27,12 @@ Feature: 39_Reg_CFA_morethan12Tablet
     And Land on the basket page by clicking on Add to Basket button
     And the previously selected standalone non-connected items should be removed from my basket
     And click on "go to checkout" button
+    And Select the "New Connection" which you want to perform
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Enter delivery details in delivery page
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order

@@ -17,6 +17,7 @@ Feature: 128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Pa
     And I Land on the basket page by clicking on Add to Basket button
     And Validate Basket Page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button
+    And Select the "Existing" which you want to perform
     #And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Select existing account and begin fast checkout
     #And Is this order for You or Someone else <consumer> when GDPR is <status>

@@ -139,21 +139,26 @@ public class DeliveryPageActions extends Environment {
                 log.debug("Entered Post code");
                 Thread.sleep(2000);
                 Screenshots.captureScreenshot();
+                DeliveryPage.storePostcode.sendKeys(Keys.TAB);
+                Screenshots.captureScreenshot();
                 //pageobjects.DeliveryPage.Find_Store.click();
                 WebElement element = pageobjects.DeliveryPage.Find_Store;
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", element);
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(6000);
-                jse.executeScript("window.scrollBy(0,600)", "");
+                Screenshots.captureScreenshot();
+                jse.executeScript("window.scrollBy(0,300)", "");
+                Thread.sleep(1000);
+                Screenshots.captureScreenshot();
+                jse.executeScript("window.scrollBy(0,300)", "");
+                Thread.sleep(1000);
                 Screenshots.captureScreenshot();
                 pageobjects.DeliveryPage.Select_Store.click();
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();
-
             }
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -163,7 +168,7 @@ public class DeliveryPageActions extends Environment {
     public static void AboutYou(String Firstname, String Surname) {
         try {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            // Thread.sleep(3000);
+            Thread.sleep(3000);
             String str = RandomEmailAddressCreation.RandomEmail();
             log.debug("Entering an Random email id is " + str);
             DeliveryPage.Email_Address.sendKeys(str);
@@ -211,11 +216,16 @@ public class DeliveryPageActions extends Environment {
             Thread.sleep(3000);
             DeliveryPage.Password.sendKeys("NTTDATA123");
             DeliveryPage.security_answer.sendKeys("SitTester");
-            DeliveryPage.date.sendKeys("25");
+
+            /*DeliveryPage.date.sendKeys("25");
             DeliveryPage.Month.sendKeys("01");
             DeliveryPage.year.sendKeys("1957");
             DeliveryPage.year.sendKeys(Keys.TAB);
-            log.debug("Entered all the other relavant details");
+            */
+
+            DeliveryPage.DOB.sendKeys("1-09-1988");
+            DeliveryPage.DOB.sendKeys(Keys.TAB);
+            log.debug("Entered all the relavant details");
             Screenshots.captureScreenshot();
         } catch (Exception e) {
             log.debug("Failed to proceed on Delivey page : " + e.getMessage());
@@ -303,10 +313,12 @@ public class DeliveryPageActions extends Environment {
         Screenshots.captureScreenshot();
         DeliveryPage.Password.sendKeys("NTTDATA123");
         DeliveryPage.security_answer.sendKeys("SitTester");
-        DeliveryPage.date.sendKeys("25");
+       /* DeliveryPage.date.sendKeys("25");
         DeliveryPage.Month.sendKeys("01");
         DeliveryPage.year.sendKeys("1957");
-        DeliveryPage.year.sendKeys(Keys.TAB);
+        DeliveryPage.year.sendKeys(Keys.TAB);*/
+
+        DeliveryPage.DOB.sendKeys("1-09-1988");
         log.debug("Entered all the other relavant details");
         Screenshots.captureScreenshot();
 
@@ -738,7 +750,7 @@ public class DeliveryPageActions extends Environment {
 
             if (DeliveryPage.Housenumber.isDisplayed()) {
                 log.debug("Entering the address");
-                pageobjects.DeliveryPage.Housenumber.sendKeys("12");
+                pageobjects.DeliveryPage.Housenumber.sendKeys("");
                 log.debug("Entered House number");
 
                 pageobjects.DeliveryPage.Postcode.sendKeys(postCode);
@@ -746,11 +758,11 @@ public class DeliveryPageActions extends Environment {
                 pageobjects.DeliveryPage.Find_Address.click();
                 log.debug("Clicked on the Find address button");
 
-                if (driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li[1]")).size() > 0) {
+                /*if (driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li[1]")).size() > 0) {
                     pageobjects.DeliveryPage.SelectAddress1.click();
                     log.debug("Clicked on the select address button");
                     Screenshots.captureScreenshot();
-                }
+                }*/
             } else {
                 log.debug(" Failed to  Entered the houseNumber and postcCode");
 
@@ -761,21 +773,37 @@ public class DeliveryPageActions extends Environment {
         }
     }
 
-    public static void enteredCommercialAddress_AddressLookUp(String postCode) {
+    public static void enteredCommercialAddress_AddressLookUp(String postCodeError) {
         try {
             //driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
             //Thread.sleep(4000);
-            if (DeliveryPage.commercialAddressErrorMsgAdressLookUp.isDisplayed()) {
+            /*if (DeliveryPage.commercialAddressErrorMsgAdressLookUp.isDisplayed()) {
                 String invalidMsg = DeliveryPage.commercialAddressErrorMsgAdressLookUp.getText();
-                if (invalidMsg.contains(postCode)) {
+                Thread.sleep(2000);
+                if (invalidMsg.contains(postCodeError)) {
                     log.debug("Entered commercial address during address lookup & displayed error message as ::  (" + invalidMsg + ")");
 
                 } else {
                     log.debug("Failed to  Display the Respective Error message, When we entered commercial address during address lookup ");
 
-                }
-                scrollToAnElement.scrollToElement(DeliveryPage.commercialAddressErrorMsgAdressLookUp);
+                }*/
+
+            if (driver.findElements(By.xpath("//*[@id='no-residential-address-match-error']")).size() > 0) {
+
+                    String invalidMsg = DeliveryPage.commercialAddressErrorMsgAdressLookUp.getText();
+                    Thread.sleep(2000);
+                    if (invalidMsg.contains(postCodeError)) {
+                        log.debug("Commercial address error message is matching & displayed error message is as ::  (" + invalidMsg + ")\n");
+                    }else{
+                        log.debug("Failed:: Commercial error message is not matching\n");
+                        Assert.fail("Failed:: Commercial error message is not matching\n");
+                    }
+
+                //scrollToAnElement.scrollToElement(DeliveryPage.commercialAddressErrorMsgAdressLookUp);
                 Screenshots.captureScreenshot();
+            }else{
+                log.debug("Failed:: Commercial error message is not displaying\n");
+                Assert.fail("Failed:: Commercial error message is not displaying\n");
             }
         } catch (Exception e) {
             log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup " + e.getStackTrace());
@@ -1150,10 +1178,15 @@ public class DeliveryPageActions extends Environment {
                         Assert.fail("Failed due to header text is not matching with expected result, the actual header is :: " + headerTxt + "\n");
                     }
 
+                    if(driver.findElements(By.xpath("//div[@class='GDPR-Content']/div/div/img")).size()>0){
+                        driver.findElement(By.xpath("//div[@class='GDPR-Content']/div/div/img")).click();
+                        Screenshots.captureScreenshot();
+                    }
+                    Thread.sleep(2000);
                     //Header description validation
                     String headerDescription = DeliveryPage.gdprHeaderDescription.getText();
                     Thread.sleep(2000);
-                    if (headerDescription.contains("So we can keep you up to date with the things you're really interested in, let us know what you'd like to hear more about. We'll use information like your location, the services you use and how you access them. You can change your mind at any time. If you're not interested, we'll still send you service messages about your account or legal notices.")) {
+                    if (headerDescription.contains("still send you service messages about your account or legal notices")) {
                         log.debug("Header description is validated and it is matching with expected result, the actual header description is :: " + headerDescription + "\n");
                     } else {
                         log.debug("Failed due to header description is not matching with expected result, the actual header description is :: " + headerDescription + "\n");
@@ -1161,7 +1194,7 @@ public class DeliveryPageActions extends Environment {
                     }
 
                     //O2 Products
-                    if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/input")).size() > 0) {
+                    if (driver.findElements(By.xpath("//div[@id='B1-custom']")).size() > 0) {
 
                         //O2Products Tile Text
                         String O2ProductsText = DeliveryPage.O2Products_Text.getText();
@@ -1206,7 +1239,7 @@ public class DeliveryPageActions extends Environment {
                     Thread.sleep(1000);
 
                     //O2 Perks And Extras
-                    if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/input | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/input")).size() > 0) {
+                    if (driver.findElements(By.xpath("//div[@id='B2-custom'] | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/input")).size() > 0) {
 
                         //O2 Perks And Extras Tile Text
                         String O2PerksAndExtrasText = DeliveryPage.O2PerksAndExtras_Text.getText();
@@ -1251,7 +1284,7 @@ public class DeliveryPageActions extends Environment {
                     Thread.sleep(1000);
 
                     //Offers From O2 Partner Text
-                    if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][3]/div/div/div/label/input")).size() > 0) {
+                    if (driver.findElements(By.xpath("//div[@id='B3-custom']")).size() > 0) {
 
                         //Offers From O2 Partner Tile Text
                         String OffersFromO2PartnerText = DeliveryPage.OffersFromO2Partner_Text.getText();
@@ -1294,13 +1327,13 @@ public class DeliveryPageActions extends Environment {
                     }
 
                     //Privacy policy validation
-                    String privacyPolicyTxt = driver.findElement(By.xpath("//div[@class='GDPR-Content']/div[2]/label | //div[@class='GDPR-Content']/p[@class='terms']")).getText();
+                    String privacyPolicyTxt = driver.findElement(By.xpath("//div[contains(@class,'privacy-policy')]/label | //div[@class='GDPR-Content']/p[@class='terms']")).getText();
                     Thread.sleep(2000);
                     log.debug("GDPR privacy policy info text: " + privacyPolicyTxt);
 
                     //clicking on privacy policy link
-                    if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[2]/label/a | //div[@class='GDPR-Content']/p[@class='terms']/a")).size() > 0) {
-                        driver.findElement(By.xpath("//div[@class='GDPR-Content']/div[2]/label/a | //div[@class='GDPR-Content']/p[@class='terms']/a")).click();
+                    if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/p[@class='terms'] | //div[contains(@class,'privacy-policy')]/label/a")).size() > 0) {
+                        driver.findElement(By.xpath("//div[@class='GDPR-Content']/p[@class='terms'] | //div[contains(@class,'privacy-policy')]/label/a")).click();
                         Thread.sleep(5000);
                         for (String winHandle : driver.getWindowHandles()) {
                             driver.switchTo().window(winHandle);
@@ -1332,7 +1365,7 @@ public class DeliveryPageActions extends Environment {
                     //Selecting O2 Products Business preferences
                     if (BP1.equalsIgnoreCase("Select")) {
 
-                        if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/input")).size() <= 0) {
+                        if (driver.findElements(By.xpath("//div[@id='B1-custom']")).size() <= 0) {
                             log.debug("O2Products business preference checkBox is not displayed");
                             Assert.fail("O2Products business preference checkBox is not displayed");
                         }
@@ -1373,7 +1406,7 @@ public class DeliveryPageActions extends Environment {
                     //Selecting O2 Perks And Extras business preference
                     if (BP2.equalsIgnoreCase("Select")) {
 
-                        if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/input | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/input")).size() <= 0) {
+                        if (driver.findElements(By.xpath("//div[@id='B2-custom'] | //div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][2]/div/div/div/label/input")).size() <= 0) {
                             log.debug("O2 Perks And Extras business preference checkBox is not displayed");
                             Assert.fail("O2 Perks And Extras business preference checkBox is not displayed");
                         }
@@ -1414,7 +1447,7 @@ public class DeliveryPageActions extends Environment {
                     //Selecting Offers From O2 Partner business preference
                     if (BP3.equalsIgnoreCase("Select")) {
 
-                        if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[contains(@class,'prefernces-box')][3]/div/div/div/label/input")).size() <= 0) {
+                        if (driver.findElements(By.xpath("//div[@id='B3-custom']")).size() <= 0) {
                             log.debug("Offers From O2 Partner business preference checkBox is not displayed");
                             Assert.fail("Offers From O2 Partner business preference checkBox is not displayed");
                         }
@@ -1457,7 +1490,7 @@ public class DeliveryPageActions extends Environment {
                 }
             } else {
                 log.debug("Device type is non-connected device\n");
-                if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")).size() > 0) {
+                if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div/div/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")).size() > 0) {
                     log.debug("Failed due to GDPR is in enabled mode for non-connected device \n");
                     Assert.fail("Failed due to GDPR is in enabled mode for non-connected device \n");
                 } else {
@@ -1475,7 +1508,7 @@ public class DeliveryPageActions extends Environment {
             }
 
             //gdpr consent validation
-            if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")).size() > 0) {
+            if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div/div/p[contains(text(),'still send you service messages about your account or legal notices')] | //div[@class='GDPR-Content']/div[@class='preferences-box-container']/p")).size() > 0) {
                 log.debug("Failed due to GDPR is in enabled mode, it should be in disabled mode \n");
                 Assert.fail("Failed due to GDPR is in enabled mode, it should be in disabled mode \n");
             } else {
@@ -1764,13 +1797,13 @@ public class DeliveryPageActions extends Environment {
             if (ofComStatus.equalsIgnoreCase("Enabled")) {
 
                 //Device is MBB or not
-                if (journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("CFU") || journey.equalsIgnoreCase("Accessory")) {
+                if (journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("CFU") || journey.equalsIgnoreCase("Accessory") || journey.equalsIgnoreCase("PreOrder Phone") || journey.equalsIgnoreCase("DelayedDelivery Phone")) {
                     //As device is MBB so ofCom should be disabled
                     if (driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size() == 0) {
-                        log.debug("As expected, ofCom Switching is disabled in MBB/CFU journey\n");
+                        log.debug("As expected, ofCom Switching is disabled in "+journey+" journey\n");
                     } else {
-                        log.debug("Failed: ofCom Switching feature supposed to be disabled in MBB/CFU journey\n");
-                        Assert.fail("Failed: ofCom Switching feature supposed to be disabled in MBB/CFU journey\n");
+                        log.debug("Failed: ofCom Switching feature supposed to be disabled in "+journey+" journey\n");
+                        Assert.fail("Failed: ofCom Switching feature supposed to be disabled "+journey+" journey\n");
                     }
                 } else {
                     log.debug("Journey is not a Tablet/PayGsimo/MBB/CFU journey\n");
@@ -2445,7 +2478,7 @@ public class DeliveryPageActions extends Environment {
         Thread.sleep(8000);
         try {
 
-            if (DeliveryPage.Housenumber.isDisplayed()) {
+            /*if (DeliveryPage.Housenumber.isDisplayed()) {
                 DeliveryPage.Housenumber.sendKeys("100");
                 log.debug("Entered House number");
                 Thread.sleep(2000);
@@ -2455,7 +2488,14 @@ public class DeliveryPageActions extends Environment {
                 pageobjects.DeliveryPage.Find_Address.click();
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(8000);
-            }
+            }*/
+            Screenshots.captureScreenshot();
+            pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
+            log.debug("Entered Post code");
+            Thread.sleep(2000);
+            pageobjects.DeliveryPage.Find_Address.click();
+            log.debug("Clicked on the Find address button");
+            Thread.sleep(8000);
 
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,100)", "");
@@ -2545,7 +2585,7 @@ public class DeliveryPageActions extends Environment {
         Thread.sleep(8000);
         try {
 
-            if (DeliveryPage.Housenumber.isDisplayed()) {
+            /*if (DeliveryPage.Housenumber.isDisplayed()) {
                 DeliveryPage.Housenumber.sendKeys("100");
                 log.debug("Entered House number");
                 Thread.sleep(2000);
@@ -2555,7 +2595,14 @@ public class DeliveryPageActions extends Environment {
                 pageobjects.DeliveryPage.Find_Address.click();
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(5000);
-            }
+            }*/
+
+            pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
+            log.debug("Entered Post code");
+            Thread.sleep(2000);
+            pageobjects.DeliveryPage.Find_Address.click();
+            log.debug("Clicked on the Find address button");
+            Thread.sleep(5000);
 
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,100)", "");
@@ -2629,13 +2676,13 @@ public class DeliveryPageActions extends Environment {
 
     }
 
-    public static void ContinueAboutU() throws InterruptedException, IOException {
+    public static void ContinueAboutU() throws InterruptedException {
         Thread.sleep(3000);
         log.debug("in click of About you continue function");
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinueAboutU);
         log.debug("About you Continue button is selected\n");
 
-        Screenshots.captureScreenshot();
+        //Screenshots.captureScreenshot();
 
     }
 
@@ -2654,6 +2701,23 @@ public class DeliveryPageActions extends Environment {
         log.debug("in click continue function");
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinuePaymentPage);
         log.debug("Go to Payments Continue button is selected\n");
+
+        Screenshots.captureScreenshot();
+    }
+
+    public static void customerConnection(String journeyType) throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        if(journeyType.equalsIgnoreCase("New Connection")){
+            log.debug("Selecting New connection tab\n");
+            //pageobjects.DeliveryPage.cusomerNewTab.click();
+            js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.cusomerNewTab);
+            log.debug("Selected New connection tab\n");
+        }else if(journeyType.equalsIgnoreCase("Existing")){
+            log.debug("Selecting Existing connection tab\n");
+            //pageobjects.DeliveryPage.cusomerExistingTab.click();
+            js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.cusomerExistingTab);
+            log.debug("Selected Existing connection tab\n");
+        }
 
         Screenshots.captureScreenshot();
     }

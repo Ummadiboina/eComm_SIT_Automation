@@ -24,7 +24,7 @@ public class PaymentPage {
     @FindBy(how = How.ID, using = "sortCodePart3")
     public static WebElement Sort_Code3;
 
-    @FindBy(how = How.XPATH, using = "//div[@id='accept-terms' or @id='accept-terms-container']")
+    @FindBy(how = How.XPATH, using = "//div[@id='accept-terms' or @id='accept-terms-container' or @id='accept-terms-custom']")
     public static WebElement Accept_Terms_Checkbox;
 
     //@FindBy(how = How.ID, using = "years")
@@ -178,5 +178,8 @@ public class PaymentPage {
 
     @FindBy(how = How.XPATH, using = "//button[@id='payment-method-continue-btn']/span")
     public static WebElement payment_method_continueCTA;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='newSortCode']")
+    public static WebElement sortCode;
 
 }

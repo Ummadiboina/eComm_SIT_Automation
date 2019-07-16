@@ -8,7 +8,7 @@ Feature: 09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_M
     And Navigate to device details page for color selection
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
-   # And select a color
+    # And select a color
     And select <color> color of the connected device
     And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
@@ -16,11 +16,14 @@ Feature: 09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_M
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
+    And Select the "New Connection" which you want to perform
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Enter delivery details in delivery page
     #And input the below details in Delivery page
       #| HouseNumber           | 5            |
+      #| Post Code             | BS7 0NP      |
       #| Post Code             | BS7 0NP      |
       #| Title                 | Mr           |
       #| FirstName             | Test         |

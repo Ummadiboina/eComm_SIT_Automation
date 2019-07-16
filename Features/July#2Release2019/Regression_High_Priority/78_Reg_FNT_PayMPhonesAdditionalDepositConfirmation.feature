@@ -14,10 +14,12 @@ Feature: 78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose to collect from store
     And click on "go to checkout" button
-    #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    And input <Firstname> and <Surname>  and other valid details in Delivery page for click and collect journey
+    And Select the "New Connection" which you want to perform
+    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    #And input <Firstname> and <Surname>  and other valid details in Delivery page for click and collect journey
     #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And input <Firstname> and <Surname>  and other valid details in Delivery page for click and collect journey
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
     And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
@@ -31,5 +33,5 @@ Feature: 78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Firstname | Surname | Username     | handset   | color | BSCstatus | BillCap   | CapAmount | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | test      | acceptb | test acceptb | Galaxy S8 | White | Enabled   | CapMyBill | £200      | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | Firstname | Surname | Username     | handset      | color | BSCstatus | BillCap   | CapAmount | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | test      | acceptb | test acceptb | Galaxy Note9 | White | Enabled   | CapMyBill | £200      | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

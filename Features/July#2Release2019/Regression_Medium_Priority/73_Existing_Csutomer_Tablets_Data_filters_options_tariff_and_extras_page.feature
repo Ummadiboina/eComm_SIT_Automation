@@ -29,6 +29,7 @@ Feature: 73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_pag
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
+    And Select the "Existing" which you want to perform
     And Select existing account and begin fast checkout
     #And perform <Action> in OTAC page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>

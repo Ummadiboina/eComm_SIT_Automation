@@ -68,13 +68,13 @@ public class Agent_DeliveryPageActions extends Environment {
             if (ofComStatus.equalsIgnoreCase("Enabled")) {
 
                 //Device is MBB or not
-                if (journey.equalsIgnoreCase("CCA") || journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("AFU") || journey.equalsIgnoreCase("Accessory")) {
+                if (journey.equalsIgnoreCase("CCA") || journey.equalsIgnoreCase("PayGsimo") || journey.equalsIgnoreCase("Tablet") || journey.equalsIgnoreCase("MBB") || journey.equalsIgnoreCase("AFU") || journey.equalsIgnoreCase("Accessory") || journey.equalsIgnoreCase("PreOrder Phone") || journey.equalsIgnoreCase("DelayedDelivery Phone")) {
                     //As journey is MBB/AFU so ofCom should be disabled
                     if (driver.findElements(By.xpath("//li[normalize-space()='Are you switching to O2?']")).size() == 0) {
-                        log.debug("As expected, ofCom Switching is disabled for MBB/AFU/CCA Link journey\n");
+                        log.debug("As expected, ofCom Switching is disabled for "+journey+" journey\n");
                     } else {
-                        log.debug("Failed: ofCom Switching feature supposed to be disabled for MBB/AFU journey\n");
-                        Assert.fail("Failed: ofCom Switching feature supposed to be disabled for MBB/AFU journey\n");
+                        log.debug("Failed: ofCom Switching feature supposed to be disabled for  "+journey+"  journey\n");
+                        Assert.fail("Failed: ofCom Switching feature supposed to be disabled for  "+journey+"  journey\n");
                     }
                 } else {
 

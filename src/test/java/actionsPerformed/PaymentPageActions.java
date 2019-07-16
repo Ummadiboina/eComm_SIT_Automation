@@ -34,14 +34,17 @@ public class PaymentPageActions extends Environment {
         pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
         log.debug("Entered Account number - 10207136");
         Thread.sleep(2000);
-        pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
+        /*pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
         log.debug("Entered sort code - 20");
         Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code2.sendKeys("15");
         log.debug("Entered sort code - 15");
         Thread.sleep(2000);
-        pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
-        log.debug("Entered sort code - 96");
+        pageobjects.PaymentPage.Sort_Code3.sendKeys("96");*/
+
+
+        pageobjects.PaymentPage.sortCode.sendKeys("201596");
+        log.debug("Entered sort code : 201596");
         Thread.sleep(2000);
         pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
         log.debug("Clicked on the Accept Terms checkbox");
@@ -68,14 +71,18 @@ public class PaymentPageActions extends Environment {
             pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
             log.debug("Entered Account number - 10207136");
             Thread.sleep(2000);
-            pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
+
+           /* pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
             log.debug("Entered sort code - 20");
             Thread.sleep(2000);
             pageobjects.PaymentPage.Sort_Code2.sendKeys("15");
             log.debug("Entered sort code - 15");
             Thread.sleep(2000);
             pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
-            log.debug("Entered sort code - 96");
+            log.debug("Entered sort code - 96");*/
+
+            pageobjects.PaymentPage.sortCode.sendKeys("201596");
+            log.debug("Entered sort code : 201596");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
             jse.executeScript("window.scrollBy(0,220)", "");
@@ -127,14 +134,17 @@ public class PaymentPageActions extends Environment {
         pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
         log.debug("Entered Account number - 10207136");
         Thread.sleep(2000);
-        pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
+        /*pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
         log.debug("Entered sort code - 20");
         Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code2.sendKeys("15");
         log.debug("Entered sort code - 15");
         Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
-        log.debug("Entered sort code - 96");
+        log.debug("Entered sort code - 96");*/
+
+        pageobjects.PaymentPage.sortCode.sendKeys("201596");
+        log.debug("Entered sort code : 201596");
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
         pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
