@@ -39,7 +39,7 @@ Feature: 54_Reg_Consumer_TradeIn
     And I select check box to bring the trade in device and Continue to delivery page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
-    #And Click on GDPR Continue CTA
+    And Click on GDPR Continue CTA
     And verify if trade in offer is displayed under Order Summary section in <Payment> page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And verify if trade in offer is displayed under Order Summary section in <Agreement> page

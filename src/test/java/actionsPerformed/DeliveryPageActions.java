@@ -170,7 +170,7 @@ public class DeliveryPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             Thread.sleep(3000);
             String str = RandomEmailAddressCreation.RandomEmail();
-            log.debug("Entering an Random email id is " + str);
+            log.debug("Entering an Random email id is :" + str);
             DeliveryPage.Email_Address.sendKeys(str);
             log.debug("Setting the About you options");
 
@@ -197,7 +197,7 @@ public class DeliveryPageActions extends Environment {
                 log.debug("Address selected from dropdown list: " + selectedAddress);
             }
 
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             Screenshots.captureScreenshot();
 
             log.debug("Selected the dropdown Mr");
@@ -207,10 +207,12 @@ public class DeliveryPageActions extends Environment {
             // DeliveryPage.First_Name.sendKeys(map.get(0).get("FirstName"));
             DeliveryPage.Last_Name.sendKeys(Surname);
             log.debug("Entered first name and last name as " + Firstname + " " + Surname);
+            Thread.sleep(1000);
+            Screenshots.captureScreenshot();
             String phoneNum = RandomEmailAddressCreation.RandomPhoneNum();
             //DeliveryPage.Contact_Number.sendKeys("07829483426");
             DeliveryPage.Contact_Number.sendKeys(phoneNum);
-            log.debug("Enetered 10 digit contact number");
+            log.debug("Enetered 10 digit contact number ie: "+phoneNum);
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
             Thread.sleep(3000);
@@ -950,9 +952,9 @@ public class DeliveryPageActions extends Environment {
             log.debug("Clicked on use different delivery address link\n");
             //DeliveryPageActions.SetPostCodeForDelivery("SL33FP", "");
 
-            log.debug("Entering the address");
+            /*log.debug("Entering the address");
             pageobjects.DeliveryPage.Housenumber.sendKeys("");
-            log.debug("Entered House number");
+            log.debug("Entered House number");*/
 
             pageobjects.DeliveryPage.Postcode.sendKeys("SL33FP");
             log.debug("Entered Post code");
@@ -1789,9 +1791,10 @@ public class DeliveryPageActions extends Environment {
         try {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@class='ofComTextToSwitch']")));
-            jse.executeScript("window.scrollBy(0,100)", "");
+            //jse.executeScript("window.scrollBy(0,100)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
+
 
             //ofCom Switching functionality is enabled or disabled
             if (ofComStatus.equalsIgnoreCase("Enabled")) {
@@ -1811,7 +1814,7 @@ public class DeliveryPageActions extends Environment {
                     if (driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size() > 0) {
                         log.debug("As expected, ofCom Switching is enabled\n");
                         Thread.sleep(2000);
-                        //Switching to O2 question validation
+                        /*//Switching to O2 question validation
                         String ofComQuestion = DeliveryPage.switchingO2Question.getText();
                         Thread.sleep(2000);
                         if (ofComQuestion.contains("Are you switching to O2?")) {
@@ -1820,17 +1823,18 @@ public class DeliveryPageActions extends Environment {
                         } else {
                             log.debug("Failed: ofCom Switching to O2 question is not displaying/matching\n");
                             Assert.fail("Failed: ofCom Switching to O2 question is not displaying/matching\n");
-                        }
+                        }*/
 
                         //ofCom Intro text
                         String ofComIntroText = DeliveryPage.switchingO2Intro.getText();
                         Thread.sleep(2000);
-                        if (ofComIntroText.contains("If you already have your PAC or STAC code handy, we can start porting your number, or arrange a new one")) {
+                        log.debug("OFCOM Switching to O2 Intro text is :: " + ofComIntroText + "\n");
+                        /*if (ofComIntroText.contains("If you already have your PAC or STAC code handy, we can start porting your number, or arrange a new one")) {
                             log.debug("OFCOM Switching to O2 Intro text is matching ie:: " + ofComIntroText + "\n");
                         } else {
                             log.debug("Failed: ofCom Switching to O2 Intro text is not matching ie:: " + ofComIntroText + "\n");
                             Assert.fail("Failed: ofCom Switching to O2 Intro text is not matching ie:: " + ofComIntroText + "\n");
-                        }
+                        }*/
 
                         //Switching to O2 PAC AND STAC code link validation
                         if (driver.findElements(By.xpath("//a[contains(normalize-space(),'What is a PAC or STAC code?')]")).size() > 0) {
@@ -1865,7 +1869,7 @@ public class DeliveryPageActions extends Environment {
                             Assert.fail("Failed: ofCom Switching feature PAC and STAC link is not displaying\n");
                         }
 
-                        log.debug("Now validating PAC and STAC code check box functionality\n");
+                        /*log.debug("Now validating PAC and STAC code check box functionality\n");
                         String checkBox = DeliveryPage.PACSTACCheckBoxTxt.getText();
                         Thread.sleep(1000);
 
@@ -1881,24 +1885,34 @@ public class DeliveryPageActions extends Environment {
                             Assert.fail("Failed due to PAC/STAC code checkbox is selected before checking PAC/STAC code checkbox\n");
                         } else {
                             log.debug("As expected, PAC/STAC code checkbox is not selected before checking PAC/STAC code checkbox\n");
-                        }
+                        }*/
 
-                        //Status of PAC and STAC input fields validation before selecting
+
+                        log.debug("As expected, I have PAC/STAC code CTA is displaying ie:: "+DeliveryPage.havePACSTACCTA.getText()+" \n");
+                        log.debug("As expected, I don't have a PAC/STAC code CTA is displaying ie:: "+DeliveryPage.doNotHavePACSTACCTA.getText()+" \n");
+
+
+                        /*//Status of PAC and STAC input fields validation before selecting
                         if (driver.findElements(By.xpath("//div[@class='form-element-container switcho2 hide']")).size() == 0) {
                             log.debug("Failed due to PAC/STAC code input field is displaying before selecting PAC/STAC code checkbox\n");
                             Assert.fail("Failed due to PAC/STAC code input field is displaying before selecting PAC/STAC code checkbox\n");
                         } else {
                             log.debug("As expected, PAC/STAC code input field is not displaying before selecting PAC/STAC code checkbox\n");
-                        }
+                        }*/
 
-                        //clicking on PAC and STAC checkbox
+                        /*//clicking on PAC and STAC checkbox
                         log.debug("Clicking on PAC and STAC code checkbox\n");
                         DeliveryPage.PACSTACCheckBox.click();
-                        log.debug("Clicked on PAC and STAC code checkbox\n");
+                        log.debug("Clicked on PAC and STAC code checkbox\n");*/
 
+                        if(driver.findElements(By.xpath("//div[@class='pacnstac-button-container']/button[1]")).size()>0) {
+
+                            driver.findElement(By.xpath("//div[@class='pacnstac-button-container']/button[1]")).click();
+                        }
+                        Thread.sleep(2000);
                         Screenshots.captureScreenshot();
 
-                        //Status of PAC and STAC input fields validation after selecting checkbox
+                        /*//Status of PAC and STAC input fields validation after selecting checkbox
                         if (driver.findElements(By.xpath("//div[@class='form-element-container switcho2 hide']")).size() == 0) {
                             log.debug("PAC/STAC code input field is enabled/displaying after selecting PAC/STAC code checkbox\n");
                         } else {
@@ -1916,8 +1930,15 @@ public class DeliveryPageActions extends Environment {
                             Assert.fail("Failed due to PAC/STAC code input field is displaying even after un-checking the PAC/STAC code checkbox\n");
                         } else {
                             log.debug("As expected, PAC/STAC code input field is not displaying after un-checking the PAC/STAC code checkbox\n");
-                        }
+                        }*/
 
+                        //Status of PAC and STAC input fields validation after selecting I have PAC or STAC CTA
+                        if (driver.findElements(By.xpath("//div[@class='form-element-container switcho2']")).size()>0) {
+                            log.debug("PAC/STAC code input field is enabled/displaying after selecting PAC/STAC code checkbox\n");
+                        } else {
+                            log.debug("Failed due to PAC/STAC code input field is not enabled/displaying after selecting PAC/STAC code checkbox\n");
+                            Assert.fail("Failed due to PAC/STAC code input field is not enabled/displaying after selecting PAC/STAC code checkbox\n");
+                        }
                         Screenshots.captureScreenshot();
 
                     } else {
@@ -1947,15 +1968,15 @@ public class DeliveryPageActions extends Environment {
             if (ofComStatus.equalsIgnoreCase("Enabled")) {
                 if (driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size() > 0) {
                     log.debug("As expected, ofCom Switching is enabled\n");
-                    log.debug("Currently validating PAC and STAC code check box functionality\n");
+                    //log.debug("Currently validating PAC and STAC code check box functionality\n");
 
                     //PAC and Stac code checkbox Validation
                     if (PacStacCheck.equalsIgnoreCase("Yes")) {
 
-                        //clicking on PAC and STAC checkbox
+                        /*//clicking on PAC and STAC checkbox
                         log.debug("Clicking on PAC and STAC code checkbox to enter the inputs for PAC/STAC fields\n");
                         DeliveryPage.PACSTACCheckBox.click();
-                        log.debug("Clicked on PAC and STAC code checkbox\n");
+                        log.debug("Clicked on PAC and STAC code checkbox\n");*/
                         pacStacCodeStatus = "Checked";
                         Screenshots.captureScreenshot();
 
@@ -1966,11 +1987,9 @@ public class DeliveryPageActions extends Environment {
                         log.debug("ofCom Switching PAC/STAC code is entered ie: " + PacStacCode + "\n");
                         Thread.sleep(2000);
                         Screenshots.captureScreenshot();
-
-
                     }
 
-                    if (PacStacCheck.equalsIgnoreCase("Yes") && PacStackRetainCheck.equalsIgnoreCase("Yes") && pacStacCodeStatus.equals("Checked")) {
+                    /*if (PacStacCheck.equalsIgnoreCase("Yes") && PacStackRetainCheck.equalsIgnoreCase("Yes") && pacStacCodeStatus.equals("Checked")) {
                         //Validating PAC/STAC fields retained values or not
 
                         log.debug("Clicking on PAC and STAC code checkbox to uncheck\n");
@@ -2001,7 +2020,7 @@ public class DeliveryPageActions extends Environment {
                             log.debug("Failed due to PAC and STAC code field not retained entered PAC and STAC code\n");
                             Assert.fail("Failed due to PAC and STAC code field not retained entered PAC and STAC code\n");
                         }
-                    }
+                    }*/
                 } else {
                     log.debug("Failed: ofCom Switching feature supposed to be Enabled but it is disabled\n");
                     Assert.fail("Failed: ofCom Switching feature supposed to be Enabled but it is disabled\n");
@@ -2048,10 +2067,10 @@ public class DeliveryPageActions extends Environment {
         try {
 
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,200)", "");
+            jse.executeScript("window.scrollBy(0,100)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            log.debug("Clicking on Continue button\n");
+            log.debug("Clicking on Continue/Confirm button\n");
            /* if (DeliveryPage.continueBtn.isDisplayed()) {
                 DeliveryPage.continueBtn.click();
             } else {
@@ -2068,9 +2087,9 @@ public class DeliveryPageActions extends Environment {
             Screenshots.captureScreenshot();
             String currentURL = driver.getCurrentUrl();
             Thread.sleep(2000);
-            if (currentURL.contains("delivery")) {
+            /*if (currentURL.contains("delivery")) {
                 log.debug("We are back to delivery page as the info provided is incorrect\n");
-
+*/
                 //Null Values and Incomplete code error
                 if (codeStatus.equalsIgnoreCase("Null") || codeStatus.equalsIgnoreCase("InComplete")) {
                     if (driver.findElements(By.xpath("//label[@id='mnumber-error']")).size() > 0) {
@@ -2160,9 +2179,9 @@ public class DeliveryPageActions extends Environment {
                         Assert.fail("Error message generated for Archived PAC/STAC code is not matching ie: " + archivedErrorPACSTACCode + "\n");
                     }
                 }
-            } else {
+            /*} else {
                 log.debug("We are in payment page\n");
-            }
+            }*/
         } catch (Exception e) {
             log.debug("Exception found: " + e);
         }
@@ -2582,7 +2601,7 @@ public class DeliveryPageActions extends Environment {
     }
 
     public static void SetDeliveryDeliveryPage() throws InterruptedException {
-        Thread.sleep(8000);
+        Thread.sleep(4000);
         try {
 
             /*if (DeliveryPage.Housenumber.isDisplayed()) {
@@ -2661,6 +2680,13 @@ public class DeliveryPageActions extends Environment {
                     Screenshots.captureScreenshot();
                 }
             }*/
+
+            jse.executeScript("window.scrollBy(0,200)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,200)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
         } catch (Exception e) {
             e.printStackTrace();
         }

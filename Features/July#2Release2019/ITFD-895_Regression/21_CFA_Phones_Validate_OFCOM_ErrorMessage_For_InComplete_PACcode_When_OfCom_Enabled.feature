@@ -13,8 +13,8 @@ Feature: 21_CFA_Phones_Validate_OFCOM_ErrorMessage_For_InComplete_PACcode_When_O
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    And Click on About You Continue CTA
+    And Select the "New Connection" which you want to perform
+    And Input about you details <Firstname> and <Surname> and other delivery details in delivery page
     And Validate OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey
     And In Consumer Enter input details <ofComMobileNum> <pacStacCode> for <pacStacCheck> code when ofcom status is <ofComStatus> and Validate <pacStackRetainCheck> functionality
     And Click on Continue CTA and validate error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist

@@ -325,7 +325,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//h2[normalize-space()='Are you switching to O2?']")
     public static WebElement switchingO2Question;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='ofComTextToSwitch']/p")
+    @FindBy(how = How.XPATH, using = "//div[@class='ofComTextToSwitch']/p[1]")
     public static WebElement switchingO2Intro;
 
     @FindBy(how = How.XPATH, using = "//a[contains(normalize-space(),'What is a PAC or STAC code?')]")
@@ -339,6 +339,12 @@ public class DeliveryPage {
 
     @FindBy(how = How.XPATH, using = "//div[@id='pac-npac-checked-container']//fieldset/div/label")
     public static WebElement PACSTACCheckBox;
+
+    @FindBy(how = How.XPATH, using = "//div[@class='pacnstac-button-container']/button[1]")
+    public static WebElement havePACSTACCTA;
+
+    @FindBy(how = How.XPATH, using = "//div[@class='pacnstac-button-container']/button[2]")
+    public static WebElement doNotHavePACSTACCTA;
 
     @FindBy(how = How.XPATH, using = "//div[@id='input-mnumber']/div/input")
     public static WebElement PACSTACMobileNum;

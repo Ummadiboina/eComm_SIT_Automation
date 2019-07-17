@@ -35,7 +35,7 @@ public class AccessoryPage {
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/accessories/jbl/xtreme#contractType=nonconnected')]")
 	public static WebElement JBLXtreme;
 
-	@FindBy(how = How.XPATH, using = "(//div[@component-name='productTile'])[1]//a | (//*[@data-qa-device-contract-type='nonconnected'])[1]")
+	@FindBy(how = How.XPATH, using = "(//div[@component-name='productTile'])[2]//a | (//*[@data-qa-device-contract-type='nonconnected'])[2]")
 	public static WebElement RandomAccessory;
 
 	@FindBy(how = How.XPATH, using = "(//span[contains(text(),'AirPods')])[1]")
