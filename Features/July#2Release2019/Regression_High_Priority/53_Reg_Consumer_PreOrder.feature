@@ -33,6 +33,6 @@ Feature: 53_Reg_Consumer_PreOrder
 
       #Close the browser
     Examples:
-      | handset  | condition | Firstname | BSCstatus | BillCap   | CapAmount | color  | Capacity | Surname | Username     | Status    | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone X | Perfect   | TEST      | Enabled   | CapMyBill | £200      | Silver | 64GB     | ACCEPTA | TEST ACCEPTA | Pre Order | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset       | condition | Firstname | BSCstatus | BillCap   | CapAmount | color | Capacity | Surname | Username     | Status    | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | iPhone 7 Plus | Perfect   | TEST      | Enabled   | CapMyBill | £200      | Gold  | 128GB    | ACCEPTA | TEST ACCEPTA | Pre Order | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
 

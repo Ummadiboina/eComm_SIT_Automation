@@ -29,4 +29,4 @@ Feature: 29_CFA_CnC_Phones_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enable
 
     Examples:
       | handset    | Firstname | Surname | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | Galaxy S10 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | STAC        | Yes                 | 07707003585    | 019278XBA   | Enabled   | CapMyBill | £15       |
+      | Galaxy S10 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | STAC        | Yes                 | 07521141028    | 173376XBA   | Enabled   | CapMyBill | £15       |

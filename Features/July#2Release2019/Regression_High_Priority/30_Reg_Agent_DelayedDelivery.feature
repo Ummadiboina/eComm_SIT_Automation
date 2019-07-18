@@ -26,5 +26,5 @@ Feature: 30_Reg_Agent_DelayedDelivery
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples:
-      | Status  | Device                | BSCstatus | BillCapAmount | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | Delayed | iPhone XR 128GB Coral | Enabled   | £20           | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |
+      | Status  | Device              | BSCstatus | BillCapAmount | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
+      | Delayed | iPhone 6s 32GB Gold | Enabled   | £20           | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |

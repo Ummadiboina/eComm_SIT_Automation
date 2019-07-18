@@ -2465,7 +2465,9 @@ public class E2EOrderPlaced_Steps {
             AgreementPageActions.PayMMobileAgreement();
             Thread.sleep(5000);
             AgreementPageActions.TermsDeclarationCheckbox();
-            //Thread.sleep(5000);
+            Thread.sleep(3000);
+            AgreementPageActions.go_to_review_cta();
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug(
@@ -6410,6 +6412,18 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
             DeliveryPageActions.ContinueAboutU();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
+            if(driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[2]//parent::button")).isDisplayed()) {
+
+                jse.executeScript("window.scrollBy(0,300)", "");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                DeliveryPageActions.ContinueDelivery();
+            }
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to perform action -Bring TradeIn Device checkbox is not displayed");
@@ -8460,7 +8474,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PayG_DevicesPage.class);
             PayG_DevicesPage.payGdeviceTab.click();
-            Thread.sleep(5000);
+            Thread.sleep(8000);
             PayG_DevicesPage.payG_CustomerCost_SortOption.click();
             Thread.sleep(6000);
             PayG_DevicesPage.payG_CustomerCost_SortOption.click();
@@ -14004,26 +14018,22 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             Screenshots.captureScreenshot();
-            JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,300)", "");
+
+            if(driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[2]//parent::button")).isDisplayed()) {
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,300)", "");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                DeliveryPageActions.ContinueDelivery();
+            }
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            /*jse.executeScript("window.scrollBy(0,300)", "");
-            Thread.sleep(2000);
-            Screenshots.captureScreenshot();
-            jse.executeScript("window.scrollBy(0,300)", "");
-            Thread.sleep(2000);
-            Screenshots.captureScreenshot();*/
-            DeliveryPageActions.ContinueDelivery();
-            Thread.sleep(2000);
-            Screenshots.captureScreenshot();
-            //jse.executeScript("window.scrollBy(0,100)", "");
-            Screenshots.captureScreenshot();
+
             //DeliveryPageActions.AboutYou(Firstname, Surname);
             if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).size()>0) {
                 driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).click();
             }
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             DeliveryPageActions.ContinuePaymentPage();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -14209,6 +14219,45 @@ public class E2EOrderPlaced_Steps {
             log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
 
+        }
+    }
+
+    @And("^Click on Go To Payment CTA in delivery page for CCA link journey$")
+    public void goToPaymentCTAInCCALinkJourney() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Screenshots.captureScreenshot();
+            if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).size()>0) {
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,-200)", "");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).click();
+            }
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinuePaymentPage();
+
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on Go To Payment CTA in delivery page");
+            Assert.fail("Unable to click on Go To Payment CTA in delivery page");
+        }
+    }
+
+    @And("^validate and select recycle option from basket page$")
+    public void selectRecycleFromBasket() {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            BasketPageActions.selectRecycleFromBasketPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to validate Recycle option in Basket Page: "+e+"\n");
+            Assert.fail("Unable to validate Recycle option in Basket Page: "+e+"\n");
         }
     }
 }

@@ -25,6 +25,7 @@ Feature: 78_AFA_Existing_Customer_CCA_Link_Phones_And_Validate_OFCOM_With_Valid_
     And Validate OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey
     And In Consumer Enter input details <ofComMobileNum> <pacStacCode> for <pacStacCheck> code when ofcom status is <ofComStatus> and Validate <pacStackRetainCheck> functionality
     And Click on Continue CTA and validate error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist
+    And Click on Go To Payment CTA in delivery page
     And land on the payment page and input details and click 'Continue on next step' in upgrade journey for CCA Link
     And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks for SECCI and CCA not accepted
     And Continue to Review page, check order contract text and review the order
@@ -33,4 +34,4 @@ Feature: 78_AFA_Existing_Customer_CCA_Link_Phones_And_Validate_OFCOM_With_Valid_
 
     Examples:
       | User        | Device                        | Tariffs | DeliveryType | BSCstatus | BillCapAmount | username                      | password | Username     | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | GDPRstatus2 | KeyEvent | PreSelected | journey | journey2 | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant | pacStacCode | pacStackRetainCheck |
-      | 07521138223 | iPhone 8 Plus 64GB Space Grey | Refresh | HomeDelivery | Enabled   | £30           | dono34204837@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | Disabled    | No       | No          | CFA     | CCA      | Connected  | Phone        | Enabled     | Yes          | 07707003214    | valid      | PAC         | XBA196160   | Yes                 |
+      | 07521138223 | iPhone 8 Plus 64GB Space Grey | Refresh | HomeDelivery | Enabled   | £30           | dono34204837@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | Disabled    | No       | No          | CFA     | CCA      | Connected  | Phone        | Enabled     | Yes          | 07521141164    | valid      | PAC         | XBA305361   | Yes                 |

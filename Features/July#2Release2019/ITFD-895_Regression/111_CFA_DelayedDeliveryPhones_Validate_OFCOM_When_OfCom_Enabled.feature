@@ -7,6 +7,7 @@ Feature: 111_CFA_DelayedDeliveryPhones_Validate_OFCOM_When_OfCom_Enabled
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
+    And check the status <Status> of the device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -26,5 +27,5 @@ Feature: 111_CFA_DelayedDeliveryPhones_Validate_OFCOM_When_OfCom_Enabled
     #And Validate OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>
 
     Examples:
-      | handset    | Firstname | Surname | Username     | journey               | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | Galaxy S10 | TEST      | ACCEPTA | TEST ACCEPTA | DelayedDelivery Phone | Enabled     | Yes          | valid      | PAC         | Yes                 | 07707003537    | XBA794587   | Enabled   | CapMyBill | £15       |
+      | handset   | Status           | Firstname | Surname | Username     | journey               | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
+      | iPhone 6s | Delayed Delivery | TEST      | ACCEPTA | TEST ACCEPTA | DelayedDelivery Phone | Enabled     | Yes          | valid      | PAC         | Yes                 | 07707003537    | XBA794587   | Enabled   | CapMyBill | £15       |

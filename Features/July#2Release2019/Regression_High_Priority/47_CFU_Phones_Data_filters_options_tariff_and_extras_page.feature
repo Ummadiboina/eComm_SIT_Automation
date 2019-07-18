@@ -44,4 +44,4 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
 
     Examples:
       | username                      | password | handset       | BSCstatus | BillCap   | CapAmount | color      | filtername | Action | sortoption                 | Username     | Make  | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | e2ed23527540@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | CapMyBill | £0        | Space Grey | low        | skip   | Monthly data (High to low) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | 09ma34979478@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | CapMyBill | £0        | Space Grey | low        | skip   | Monthly data (High to low) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

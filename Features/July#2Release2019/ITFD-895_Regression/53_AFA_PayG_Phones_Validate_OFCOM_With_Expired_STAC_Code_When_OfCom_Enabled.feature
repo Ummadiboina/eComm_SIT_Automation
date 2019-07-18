@@ -19,4 +19,4 @@ Feature: 53_AFA_PayG_Phones_Validate_OFCOM_With_Expired_STAC_Code_When_OfCom_Ena
 
     Examples:
       | Device                        | Tariffs | BSCstatus | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStacCode | pacStackRetainCheck | confirmPassword | Password | SecurityAnswer | codeStatus | codeVariant |
-      | iPhone 8 Plus 64GB Space Grey | Random  | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Phones  | Enabled     | Yes          | 07707003294    | 273566XBA   | Yes                 | test1234        | test1234 | vinudeep       | Expired    | STAC        |
+      | iPhone 8 Plus 64GB Space Grey | Random  | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Phones  | Enabled     | Yes          | 07707003715    | 717529XBA   | Yes                 | test1234        | test1234 | vinudeep       | Expired    | STAC        |

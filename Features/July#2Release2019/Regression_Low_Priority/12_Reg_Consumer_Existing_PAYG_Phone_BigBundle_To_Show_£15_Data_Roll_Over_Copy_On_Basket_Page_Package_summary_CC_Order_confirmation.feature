@@ -34,5 +34,5 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | password | handset   | color | Username     | Tariff_Value | Data | consumer | BSCstatus | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 05ap85244511@stf.ref.o2.co.uk | test123  | iPhone XR | White | TEST ACCEPTA | £15          | 5GB  | Me       | Disabled  | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username                                                 | password | handset   | color | Username     | Tariff_Value | Data | consumer | BSCstatus | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | sittester-3f111af8-a998-474b-9969-23ba2c311a0e@gmail.com | test123  | iPhone XR | White | TEST ACCEPTA | £15          | 5GB  | Me       | Disabled  | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

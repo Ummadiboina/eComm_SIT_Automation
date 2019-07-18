@@ -22,4 +22,4 @@ Feature: 37_CFA_Phones_Validate_OFCOM_With_Expired_STAC_Code_When_OfCom_Enabled
 
     Examples:
       | handset   | Firstname | Surname | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | iPhone XR | TEST      | ACCEPTA | Phone   | Enabled     | Yes          | Expired    | PAC         | Yes                 | 07707003293    | 094070XBA   | Enabled   | CapMyBill | £15       |
+      | iPhone XR | TEST      | ACCEPTA | Phone   | Enabled     | Yes          | Expired    | PAC         | Yes                 | 07707003714    | 267759XBA   | Enabled   | CapMyBill | £15       |

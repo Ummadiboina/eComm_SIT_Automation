@@ -372,6 +372,14 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SelectSearchedaccessory.click();
             log.debug("Selected In stock accessory ie: " + Device);
             Thread.sleep(3000);
+        } else if (Device.contains("Galaxy Watch 46mm Silver")) {
+            log.debug("searching Galaxy Watch 46mm Silver Accessory ie:" + Device);
+            Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys(Device);
+            log.debug("searched Galaxy Watch 46mm Silver Accessory");
+            Thread.sleep(3000);
+            Agent_DealBuilderPage.SelectSearchedaccessory.click();
+            log.debug("Selected In stock accessory ie: " + Device);
+            Thread.sleep(3000);
         } else {
             log.debug("searching In Stock Accessory");
             Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys("In Stock");

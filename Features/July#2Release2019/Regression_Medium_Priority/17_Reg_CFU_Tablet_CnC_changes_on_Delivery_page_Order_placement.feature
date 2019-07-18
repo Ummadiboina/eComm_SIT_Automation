@@ -36,4 +36,4 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
 
     Examples:
       | username                      | password | Firstname | Surname | BSCstatus | BillCap   | CapAmount | Tablet             | color      | Capacity | Username     | Action    | tariff | consumer | B1  | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 19fe78224448@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | CapMyBill | £30       | iPad 9.7 inch 2018 | Space Grey | 32GB     | TEST ACCEPTA | enterCode |        | Me       | Not | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | acce91642277@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | CapMyBill | £30       | iPad 9.7 inch 2018 | Space Grey | 32GB     | TEST ACCEPTA | enterCode |        | Me       | Not | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

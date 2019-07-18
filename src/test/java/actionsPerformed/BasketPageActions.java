@@ -1,7 +1,9 @@
 package actionsPerformed;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
@@ -21,6 +23,9 @@ import org.testng.Assert;
 import pageobjects.BasketPage;
 import pageobjects.UpgradeCustomerPage;
 import steps.Hooks;
+
+import org.openqa.selenium.Point;
+import org.openqa.selenium.interactions.Actions;
 
 public class BasketPageActions extends Environment {
 
@@ -1515,5 +1520,53 @@ public class BasketPageActions extends Environment {
 			log.debug("Exception found "+e);
 		}
 	}
+
+	public static void selectRecycleFromBasketPage() throws IOException, InterruptedException {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,400)", "");
+		Thread.sleep(2000);
+
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+
+			if (driver.findElements(By.xpath("//span[@id='recycle-optionsSelectBoxItArrowContainer']")).size() > 0) {
+				driver.findElement(By.xpath("//span[@id='recycle-optionsSelectBoxItArrowContainer']")).click();
+				Thread.sleep(3000);
+				Screenshots.captureScreenshot();
+
+				WebElement elementQuantity = null;
+				String recycleOption = "";
+				List<WebElement> eleQuantity = driver.findElements(By.xpath("//ul[@id='recycle-optionsSelectBoxItOptions']/li"));
+
+				for (int i = 1; i <= eleQuantity.size(); i++) {
+					recycleOption = driver.findElement(By.xpath("//ul[@id='recycle-optionsSelectBoxItOptions']/li[" + i + "]")).getText();
+					Thread.sleep(2000);
+					if (recycleOption.contains("bill credit")) {
+						elementQuantity = driver.findElement(By.xpath("//ul[@id='recycle-optionsSelectBoxItOptions']/li[" + i + "]"));
+						break;
+					}
+				}
+				log.debug("Moving Mouse Recycle dropdown");
+				Point coordinates = elementQuantity.getLocation();
+				Robot robot = new Robot();
+				robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+				Thread.sleep(2000);
+
+				Actions action = new Actions(driver);
+				action.moveToElement(elementQuantity).click().build().perform();
+				log.debug("Selected Bill Credit option from Recycle dropdown");
+				Thread.sleep(2000);
+			}
+
+			jse.executeScript("window.scrollBy(0,-400)", "");
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.debug("Unable to validate Recycle option\n");
+		}
+		Screenshots.captureScreenshot();
+	}
+
 }
 
