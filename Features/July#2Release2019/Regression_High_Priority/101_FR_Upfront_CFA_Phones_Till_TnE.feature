@@ -30,5 +30,5 @@ Feature: 101_FR_Upfront_CFA_Phones_Till_TnE.feature
 
     Examples:
       | handset   | Username     | tariffAmt | dataValue | color | Firstname | Surname | consumer | BSCstatus | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | upFront | term | data | PreSelected | KeyEvent |
-      | iPhone XR | Test Accepta | £39       | 8GB       | White | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | avg     | avg  | avg  | No          | No       |
+      | Galaxy S8 | Test Accepta | £39       | 8GB       | White | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | avg     | avg  | avg  | No          | No       |
 

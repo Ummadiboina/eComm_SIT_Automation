@@ -1791,7 +1791,7 @@ public class DeliveryPageActions extends Environment {
         try {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@class='ofComTextToSwitch']")));
-            //jse.executeScript("window.scrollBy(0,100)", "");
+            jse.executeScript("window.scrollBy(0,-100)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
 
@@ -1905,11 +1905,13 @@ public class DeliveryPageActions extends Environment {
                         DeliveryPage.PACSTACCheckBox.click();
                         log.debug("Clicked on PAC and STAC code checkbox\n");*/
 
+                        Thread.sleep(2000);
+
                         if(driver.findElements(By.xpath("//div[@class='pacnstac-button-container']/button[1]")).size()>0) {
 
                             driver.findElement(By.xpath("//div[@class='pacnstac-button-container']/button[1]")).click();
                         }
-                        Thread.sleep(2000);
+                        Thread.sleep(3000);
                         Screenshots.captureScreenshot();
 
                         /*//Status of PAC and STAC input fields validation after selecting checkbox
@@ -1985,6 +1987,7 @@ public class DeliveryPageActions extends Environment {
                         log.debug("ofCom Switching mobile number is entered ie: " + ofComMobileNum + "\n");
                         DeliveryPage.PACSTACcode.sendKeys(PacStacCode);
                         log.debug("ofCom Switching PAC/STAC code is entered ie: " + PacStacCode + "\n");
+                        DeliveryPage.PACSTACcode.sendKeys(Keys.TAB);
                         Thread.sleep(2000);
                         Screenshots.captureScreenshot();
                     }
@@ -2067,29 +2070,60 @@ public class DeliveryPageActions extends Environment {
         try {
 
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,100)", "");
+            //jse.executeScript("window.scrollBy(0,100)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            log.debug("Clicking on Continue/Confirm button\n");
+
+            //Null Values and Incomplete code error
+            if (codeStatus.equalsIgnoreCase("Null") || codeStatus.equalsIgnoreCase("InComplete")) {
+                if (driver.findElements(By.xpath("//label[@id='mnumber-error']")).size() > 0) {
+                    if (DeliveryPage.emptyMobileNumError.isDisplayed()) {
+                        String emptyMobileNumError = DeliveryPage.emptyMobileNumError.getText();
+                        Thread.sleep(2000);
+                        Screenshots.captureScreenshot();
+                        if (ofComMobileNum.equals("")) {
+                            log.debug("As expected, error message is generated for empty mobile number ie: " + emptyMobileNumError + "\n");
+                        } else if (emptyMobileNumError.equalsIgnoreCase("Enter a valid mobile number")) {
+                            log.debug("As expected, error message is generated for incorrect mobile number ie: " + emptyMobileNumError + "\n");
+                        }
+                    }
+                }
+
+                if (driver.findElements(By.xpath("//label[@id='pacnpac-error']")).size() > 0) {
+                    if (DeliveryPage.emptyPACSTACcodeError.isDisplayed()) {
+                        String emptyPACSTACCodeError = DeliveryPage.emptyPACSTACcodeError.getText();
+                        Thread.sleep(2000);
+                        Screenshots.captureScreenshot();
+                        if (PacStacCode.equals("")) {
+                            log.debug("As expected, error message is generated for empty PAC/STAC code ie: " + emptyPACSTACCodeError + "\n");
+                        } else if (emptyPACSTACCodeError.equalsIgnoreCase("Enter a valid PAC or STAC code")) {
+                            log.debug("As expected, error message is generated for incorrect PAC/STAC code ie: " + emptyPACSTACCodeError + "\n");
+                        }
+                    }
+                }
+            }
+
+            if (codeStatus.equalsIgnoreCase("Expired") || codeStatus.equalsIgnoreCase("Invalid") || codeStatus.equalsIgnoreCase("Cancelled") || codeStatus.equalsIgnoreCase("Locked") || codeStatus.equalsIgnoreCase("Archived") || codeStatus.equalsIgnoreCase("valid") || codeStatus.equalsIgnoreCase("Already used")) {
+                log.debug("Clicking on Continue/Confirm button\n");
            /* if (DeliveryPage.continueBtn.isDisplayed()) {
                 DeliveryPage.continueBtn.click();
             } else {
                 driver.findElement(By.xpath("(//button/span[@id='btn-continue-label'])[2]")).click();
             }*/
-            if (driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[3]")).size() > 0) {
-                DeliveryPageActions.ofComContinueCTA();
+                if (driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[3]")).size() > 0) {
+                    DeliveryPageActions.ofComContinueCTA();
+                    Thread.sleep(2000);
+                    log.debug("Clicked on Continue button\n");
+                }
+                Thread.sleep(8000);
+                jse.executeScript("window.scrollBy(0,-200)", "");
                 Thread.sleep(2000);
-                log.debug("Clicked on Continue button\n");
-            }
-            Thread.sleep(8000);
-            jse.executeScript("window.scrollBy(0,-200)", "");
-            Thread.sleep(2000);
-            Screenshots.captureScreenshot();
-            String currentURL = driver.getCurrentUrl();
-            Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                String currentURL = driver.getCurrentUrl();
+                Thread.sleep(2000);
             /*if (currentURL.contains("delivery")) {
                 log.debug("We are back to delivery page as the info provided is incorrect\n");
-*/
+
                 //Null Values and Incomplete code error
                 if (codeStatus.equalsIgnoreCase("Null") || codeStatus.equalsIgnoreCase("InComplete")) {
                     if (driver.findElements(By.xpath("//label[@id='mnumber-error']")).size() > 0) {
@@ -2117,7 +2151,7 @@ public class DeliveryPageActions extends Environment {
                             }
                         }
                     }
-                }
+                }*/
 
                 if (codeStatus.equalsIgnoreCase("Expired")) {
                     String expiredErrorPACSTACCode = DeliveryPage.PACSTACcodeError.getText();
@@ -2179,6 +2213,7 @@ public class DeliveryPageActions extends Environment {
                         Assert.fail("Error message generated for Archived PAC/STAC code is not matching ie: " + archivedErrorPACSTACCode + "\n");
                     }
                 }
+            }
             /*} else {
                 log.debug("We are in payment page\n");
             }*/
@@ -2622,11 +2657,11 @@ public class DeliveryPageActions extends Environment {
             pageobjects.DeliveryPage.Find_Address.click();
             log.debug("Clicked on the Find address button");
             Thread.sleep(5000);
-
-            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            Screenshots.captureScreenshot();
+            /*JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,100)", "");
             Thread.sleep(3000);
-            Screenshots.captureScreenshot();
+            Screenshots.captureScreenshot();*/
 
             if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                 if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
@@ -2681,12 +2716,12 @@ public class DeliveryPageActions extends Environment {
                 }
             }*/
 
-            jse.executeScript("window.scrollBy(0,200)", "");
+            /*jse.executeScript("window.scrollBy(0,200)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
             jse.executeScript("window.scrollBy(0,200)", "");
             Thread.sleep(2000);
-            Screenshots.captureScreenshot();
+            Screenshots.captureScreenshot();*/
         } catch (Exception e) {
             e.printStackTrace();
         }

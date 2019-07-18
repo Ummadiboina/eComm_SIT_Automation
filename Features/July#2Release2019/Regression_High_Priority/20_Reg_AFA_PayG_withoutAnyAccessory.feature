@@ -18,5 +18,5 @@ Feature: 20_Reg_AFA_PayG_withoutAnyAccessory
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device                              | Tariffs | DeliveryType | BSCstatus | Firstname | Surname | HouseNumber | PostCode | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
-      | Samsung Galaxy S10 Plus Prism White | Random  | HomeDelivery | Disabled  | TEST      | ACCEPTA | 4           | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |
+      | Device                   | Tariffs | DeliveryType | BSCstatus | Firstname | Surname | HouseNumber | PostCode | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
+      | iPhone Xs Max 256GB Gold | Random  | HomeDelivery | Disabled  | TEST      | ACCEPTA | 4           | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |

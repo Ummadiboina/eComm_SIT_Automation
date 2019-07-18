@@ -5,10 +5,10 @@ Feature: 67_Reg_CS_PayMTabletsHomeDeliveryWithAccessory
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page
     And select any available <Device> Tablet
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
+    #And select <Capacity> capacity of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -31,5 +31,5 @@ Feature: 67_Reg_CS_PayMTabletsHomeDeliveryWithAccessory
 
 
     Examples:
-      | Device             | color      | Capacity | BSCstatus | BillCap       | CapAmount | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPad 9.7 inch 2018 | Space Grey | 128GB    | Enabled   | DontCapMyBill | Nill      | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | Device                  | color      | Capacity | BSCstatus | BillCap       | CapAmount | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | iPad Pro 12.9 inch 2018 | Space Grey | 128GB    | Enabled   | DontCapMyBill | Nill      | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

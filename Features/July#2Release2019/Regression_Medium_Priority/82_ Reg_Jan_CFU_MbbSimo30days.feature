@@ -50,4 +50,4 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
 
     Examples:
       | Contract | username                      | BSCstatus | BillCap       | CapAmount | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 30 Days  | 10oc82720473@stf.ref.o2.co.uk | Enabled   | DontCapMyBill | Nill      | test123  | high       | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | 30 Days  | 22ma88552819@stf.ref.o2.co.uk | Enabled   | DontCapMyBill | Nill      | test123  | high       | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

@@ -27,7 +27,8 @@ Feature: 31_Reg_Agent_GenerateCCA
     And Signin using valid <username> and <password> credentials for New User
     And Click on 'Continue' button on upgrade page
     #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus2>
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus2> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus2> and <PreSelected>
+    And Click on Go To Payment CTA in delivery page for CCA link journey
     And land on the payment page and input details and click 'Continue on next step' in upgrade journey for CCA Link
     And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks for SECCI and CCA not accepted
     And Continue to Review page, check order contract text and review the order

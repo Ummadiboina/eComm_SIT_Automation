@@ -29,4 +29,4 @@ Feature: 28_CFA_Phones_Validate_OFCOM_With_Valid_PAC_Code_When_OfCom_Enabled
 
     Examples:
       | handset    | Firstname | Surname | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | Galaxy S10 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | PAC         | Yes                 | 07707003537    | XBA794587   | Enabled   | CapMyBill | £15       |
+      | Galaxy S10 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | PAC         | Yes                 | 07568422196    | XBA997061   | Enabled   | CapMyBill | £15       |

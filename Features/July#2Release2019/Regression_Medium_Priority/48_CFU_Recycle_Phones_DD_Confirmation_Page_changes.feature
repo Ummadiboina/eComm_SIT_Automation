@@ -9,29 +9,41 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
-    And Select a <handset> device from Recommended devices section
-    And Click on device 'Confirm CTA'
-    And Select ribboned tariff <tariff> in upgrade journey
+    # //vertical journey
+    #And Select a <handset> device from Recommended devices section
+    #And Click on device 'Confirm CTA'
+    #And Select ribboned tariff <tariff> in upgrade journey
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    #And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    #Then I should see 'Your Sim Card'section
+    #And no option should be selected
+    #And verify that Confirm CTA is not displayed
+    #And verify that copy text 'Your Sim Card'section
+    #And verfiy that two option are displayed
+    #And verify that 'Sim Swap Form'link is diplayed
+    #When I click on 'Sim Swap Form' I should be opned with a new tab
+    #And Select a 'I need a sim'option
+    #And Verify that 'Confirm CTA' is displayed
+    #And Click on 'Confirm CTA'
+    #And Click on 'Continue' button on upgrade page at extra section
+    #Then Verify that in the recycle value is displayed in the Recycle panel
+    #And Select <Make>, <Model> and <Network>
+    #And perform update device
+    #Then Select any one recycle option and click on 'Continue to Upgrade'
+    # //Vertical journey ends
+    And Verify phones tab selected by default
+    And Verify phones vertical upgrade journey is removed or not
+    And Click on View all Phones link in upgrade options page
+    And I choose PayM <handset>
+    And check the status <Status> of the device
+    And Navigate to device details page
+    And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    Then I should see 'Your Sim Card'section
-    And no option should be selected
-    And verify that Confirm CTA is not displayed
-    And verify that copy text 'Your Sim Card'section
-    And verfiy that two option are displayed
-    And verify that 'Sim Swap Form'link is diplayed
-    When I click on 'Sim Swap Form' I should be opned with a new tab
-    And Select a 'I need a sim'option
-    And Verify that 'Confirm CTA' is displayed
-    And Click on 'Confirm CTA'
-    And Click on 'Continue' button on upgrade page at extra section
-    #And Select a tariff in upgrade journey
-    #And I Land on the basket page for upgrades
-    Then Verify that in the recycle value is displayed in the Recycle panel
-    And Select <Make>, <Model> and <Network>
-    And perform update device
-    Then Select any one recycle option and click on 'Continue to Upgrade'
     And I Land on the basket page by clicking on Add to Basket button
+    And verify that 'Go to checkout' CTA is enabled
+    And Select a 'I need a sim'option
+    And validate and select recycle option from basket page
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
@@ -47,5 +59,5 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | password | BSCstatus | BillCap   | CapAmount | handset        | tariff                  | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 05ap96902337@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £5        | iPhone 6s Plus | 29.99upfront60.34amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username                     | password | BSCstatus | BillCap   | CapAmount | handset   | tariff                  | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | ing_mar7711@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £5        | iPhone 6s | 29.99upfront60.34amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

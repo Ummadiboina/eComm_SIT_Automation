@@ -31,5 +31,5 @@ Feature: 63_Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory
 
     #Close the browser
     Examples:
-      | handset   | color | Capacity | BSCstatus | BillCap   | CapAmount         | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone XR | Black | 256GB    | Enabled   | CapMyBill | DontCapMyBillLink | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset       | color | Capacity | BSCstatus | BillCap   | CapAmount         | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | iPhone Xs Max | Gold  | 256GB    | Enabled   | CapMyBill | DontCapMyBillLink | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
