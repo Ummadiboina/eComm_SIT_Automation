@@ -2278,10 +2278,48 @@ public class Agent_DealBuilderPageActions extends Environment {
             Screenshots.captureScreenshot();
         }
     }
+    public static void VerifySimoTariff_tarifftab(){
+        try {
+        Agent_DealBuilderPage.TariffsTab.click();
+        log.debug("Tariff Tab Clicked");
+        Iterator<WebElement> itr= Agent_DealBuilderPage.VerifyDeviceTariffs_family.iterator();
+        while (itr.hasNext()){
+            WebElement rows = itr.next();
+            System.out.println("Actual Tariff:::::"+ rows.getText());
+            if(rows.getText().contains("Simo")){
+                log.debug("Fail,Simo Tariffs are present under Device Tab");
+            }else
+            {
+                log.debug("All other tariff are present except Simo tariff under Device Tab");
+            }
+        }}catch(Exception e){
+        log.debug("Catch block-unable to validate Simo tariff under Device tab");
+        Assert.fail("Catch block-unable to validate Simo tariff under Device tab");
+    }
 
+    }
 
-    public static void SelectSimoTariff(String Tariff) throws InterruptedException, IOException {
+    public static void VerifySimoTariff_simotab(){
+      try{
         Agent_DealBuilderPage.SIMOTariffsTab.click();
+        log.debug("Simo Tab Clicked");
+        Iterator<WebElement> itr= Agent_DealBuilderPage.VerifySIMOTariffs_family.iterator();
+        while (itr.hasNext()){
+            WebElement row = itr.next();
+            System.out.println("Actual Tariff:::::"+ row.getText());
+            if(row.getText().contains("Simo")){
+               log.debug("Simo tariff only present under Simo Tab");
+            }else
+            {
+                log.debug("Fail,Other Tariff also present under Simo Tab");
+            }
+        }}catch(Exception e){
+          log.debug("Catch block-unable to validate Simo tariff under Simo tab");
+          Assert.fail("Catch block-unable to validate Simo tariff under Simo tab");
+      }
+    }
+    public static void SelectSimoTariff(String Tariff) throws InterruptedException, IOException {
+        //Agent_DealBuilderPage.SIMOTariffsTab.click();
         Thread.sleep(2000);
 
         if (Tariff.contains("Standard / Simo")) {
