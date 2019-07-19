@@ -5,9 +5,9 @@ Feature: 101_FR_Upfront_CFA_Phones_Till_TnE.feature
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
     And Build your plan with <upFront> <term> and <data>
     #And Click on Dont Select Cap My Bill CTA
     And I Land on the basket page and choose home delivery option

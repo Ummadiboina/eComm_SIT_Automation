@@ -401,8 +401,8 @@ public class UpgradeCustomerPageActions extends Environment {
             pageobjects.UpgradeCustomerPage.SecurityOtac.sendKeys("999999");
             Thread.sleep(2000);
             pageobjects.UpgradeCustomerPage.SecurityContinue.click();
-            //Thread.sleep(2000);
-            driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
+            Thread.sleep(10000);
+            //driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
             pageobjects.UpgradeCustomerPage.Continue.click();
             log.debug("Clicked on Continue button in Upgrade page");
         }

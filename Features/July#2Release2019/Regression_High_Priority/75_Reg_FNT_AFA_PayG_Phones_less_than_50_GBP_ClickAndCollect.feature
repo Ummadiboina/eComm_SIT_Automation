@@ -21,4 +21,4 @@ Feature: 75_Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect
 
     Examples:
       | Device               | Device   | BSCstatus | Tariffs | Firstname | Surname | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text | Email  | Phone  | Post | Consumer | status  | Password | confirmPassword | SecurityAnswer | MBBStatus | DeviceType | DeviceModule |
-      | Galaxy J5 2017 Black | In stock | Disabled  | 50      | TEST      | ACCEPTA | 4           | G13HF    | Select | Not | Select | Not | Not  | Select | Select | Not  | Me       | Enabled | test123  | test123         | Jkhan          | No        | Connected  | Phone        |
+      | Galaxy J5 2017 Black | In stock | Disabled  | 50      | TEST      | ACCEPTA | 4           | G13HF    | Select | Not | Select | Not | Not  | Select | Select | Not  | Me       | Enabled | test123  | test123         | Jkhan          | No        | Connected  | MBB          |

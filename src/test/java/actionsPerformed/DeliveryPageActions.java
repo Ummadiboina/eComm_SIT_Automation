@@ -330,9 +330,9 @@ public class DeliveryPageActions extends Environment {
     public static void ClickContinue() throws InterruptedException, IOException {
         Thread.sleep(3000);
         log.debug("in click continue function");
-        int count = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
+        //int count = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
         //Boolean isPresent = driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")).isEnabled();
-        if (count >= 1) {
+        if (driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size()>0) {
             log.debug("checkbox is present, so going to click on that");
             Thread.sleep(3000);
             js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
@@ -342,13 +342,16 @@ public class DeliveryPageActions extends Environment {
             Thread.sleep(4000);
             Screenshots.captureScreenshot();
         } else {
-            WebElement element = pageobjects.DeliveryPage.Continue;
-            JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", element);
-            //pageobjects.DeliveryPage.Continue.click();
-            log.debug("Clicking on the continue link");
-            Screenshots.captureScreenshot();
+            if(driver.findElements(By.xpath("//button[@id='btn-continue']")).size()>0) {
+                WebElement element = pageobjects.DeliveryPage.Continue;
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", element);
+                //pageobjects.DeliveryPage.Continue.click();
+                log.debug("Clicking on the continue link");
+                Screenshots.captureScreenshot();
+            }
         }
+
     }
 
     //code for GDPR--Venkata
