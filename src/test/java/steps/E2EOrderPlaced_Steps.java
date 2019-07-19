@@ -2434,6 +2434,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
+            Thread.sleep(15000);
+            AgreementPageActions.affordabilityValidation("Self-employed", "£20,001-£30,000");
             AgreementPageActions.KeyInformation();
             Thread.sleep(5000);
             AgreementPageActions.secciSection();
@@ -2441,6 +2443,8 @@ public class E2EOrderPlaced_Steps {
             AgreementPageActions.PayMMobileAgreement();
             Thread.sleep(5000);
             AgreementPageActions.TermsDeclarationCheckbox();
+            Thread.sleep(5000);
+            AgreementPageActions.go_to_review_cta();
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -6436,8 +6440,13 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(8000);
             DeliveryPageActions.ClickContinue();
-            log.debug("Clicked on continue button");
+            int upfrontSize = DeliveryPage.totalUpfront.getText().length();
+            totalUpfrontValue = DeliveryPage.totalUpfront.getText().substring(1, upfrontSize - 3);
+            log.debug("Total upFront cost has to pay is: "+totalUpfrontValue);
+            DeliveryPageActions.ContinuePaymentPage();
+            //log.debug("Clicked on continue button");
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to perform action in OTAC Page");
@@ -14274,7 +14283,7 @@ public class E2EOrderPlaced_Steps {
                 Screenshots.captureScreenshot();
                 driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).click();
             }
-            Thread.sleep(2000);
+            Thread.sleep(8000);
             Screenshots.captureScreenshot();
             DeliveryPageActions.ContinuePaymentPage();
 

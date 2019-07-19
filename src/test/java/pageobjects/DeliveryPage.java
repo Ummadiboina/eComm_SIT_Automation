@@ -414,7 +414,7 @@ public class DeliveryPage {
     @FindBy(how = How.ID, using = "store-postcode-submit")
     public static WebElement PostcodeSubmit;
 
-    @FindBy(how = How.XPATH, using = ("(//div[contains(@class,'tileContent')]/../div)[1]"))
+    @FindBy(how = How.XPATH, using = ("(//button[@class='button secondary secondary-button'])[1]"))
     public static WebElement firstStore;
 
     @FindBy(how = How.XPATH, using = ("//input[@id='first-name']/../label"))

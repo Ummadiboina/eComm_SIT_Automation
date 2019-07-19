@@ -28,4 +28,4 @@ Feature: 29_Reg_Agent_Buyout
 
     Examples:
       | User        | Device                             | BSCstatus | BillCapAmount | Tariffs | username                      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | 07568418727 | Apple iPhone 7 Plus 32GB Rose Gold | Enabled   | £15           | Refresh | dono27170022@stf.ref.o2.co.uk | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |
+      | 07568418727 | Apple iPhone 7 Plus 32GB Rose Gold | Enabled   | £15           | Refresh | 19se53279723@stf.ref.o2.co.uk | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |

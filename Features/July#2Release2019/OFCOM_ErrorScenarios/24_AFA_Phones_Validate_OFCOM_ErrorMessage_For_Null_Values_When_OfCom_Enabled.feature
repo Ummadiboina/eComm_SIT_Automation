@@ -1,11 +1,13 @@
-Feature: 27_AFA_PayM_SIMO_Validate_OFCOM_ErrorMessage_For_InComplete_STACcode_When_OfCom_Enabled
+Feature: 24_AFA_Phones_Validate_OFCOM_ErrorMessage_For_Null_Values_When_OfCom_Enabled
 
   #launch hooks and get browser
   @Web
-  Scenario Outline: 27_AFA_PayM_SIMO_Validate_OFCOM_ErrorMessage_For_InComplete_STACcode_When_OfCom_Enabled
+  Scenario Outline: 24_AFA_Phones_Validate_OFCOM_ErrorMessage_For_Null_Values_When_OfCom_Enabled
     Given I login to Agent shop
     And performs Acquisition for New user
-    And Select valid simo tariff <Tariffs> from simo tariffs tab
+    And Select a valid PayM <Device>
+    And Select valid <Tariffs> from tariffs tab
+    And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
@@ -17,5 +19,5 @@ Feature: 27_AFA_PayM_SIMO_Validate_OFCOM_ErrorMessage_For_InComplete_STACcode_Wh
     And Validate OFCOM error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist in agent journey
 
     Examples:
-      | Tariffs         | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStackRetainCheck | pacStacCode | Password | confirmPassword | SecurityAnswer | codeStatus |
-      | Standard / Simo | Enabled   | £60           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | SIMO    | Enabled     | Yes          | 07707003589    | Yes                 | 965998XB    | test1234 | test1234        | vinudeep       | InComplete |
+      | Device                      | Tariffs | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStacCode | pacStackRetainCheck | Password | confirmPassword | SecurityAnswer | codeStatus |
+      | Galaxy S9 64GB LILAC PURPLE | Refresh | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | AFA     | Enabled     | Yes          |                |             |                     | test1234 | test1234        | vinudeep       | Null       |
