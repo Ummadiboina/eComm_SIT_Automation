@@ -520,7 +520,12 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PhonesListingPage.class);
+            /*if(driver.findElement(By.xpath("//div[@id='k2cIntuativeHolder']")).isDisplayed()){
+                driver.findElement(By.xpath("//div[@id='k2cOffer2Header']")).click();
+                log.debug("Closed O2 Advisor popup\n");
+            }*/
             PhonesListingPageAction.PAYMPhoneSelect(handset);
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -695,6 +700,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             //ConnectedDeviceDetailsPageAction.GetTitle();
+            if(driver.findElement(By.xpath("//div[@id='k2cIntuativeHolder']")).isDisplayed()){
+                driver.findElement(By.xpath("//div[@id='k2cOffer2Header']")).click();
+                log.debug("Closed O2 Advisor popup\n");
+            }
             Thread.sleep(5000);
             ConnectedDeviceDetailsPageAction.ViewAllTariffs();
         } catch (Exception e) {
@@ -1119,6 +1128,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
+            /*if(driver.findElement(By.xpath("//div[@id='k2cIntuativeHolder']")).isDisplayed()){
+                driver.findElement(By.xpath("//div[@id='k2cOffer2Header']")).click();
+                log.debug("Closed O2 Advisor popup\n");
+            }*/
             PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
             Thread.sleep(1000);
             //PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
@@ -1211,6 +1224,10 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, BasketPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             String title = driver.getTitle();
+            /*if(driver.findElement(By.xpath("//div[@id='k2cIntuativeHolder']")).isDisplayed()){
+                driver.findElement(By.xpath("//div[@id='k2cOffer2Header']")).click();
+                log.debug("Closed O2 Advisor popup\n");
+            }*/
             if (title.contains("Thanks for waiting")) {
                 log.debug("Queue page is displayed");
             } else {
@@ -2129,7 +2146,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
-            Thread.sleep(15000);
+            Thread.sleep(10000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
@@ -2872,6 +2891,7 @@ public class E2EOrderPlaced_Steps {
             Agent_HomePagePageActions.FindUser(msisdn);
             Thread.sleep(3000);
             Agent_HomePagePageActions.NewConnection();
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out
@@ -2896,6 +2916,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Thread.sleep(2000);
+            log.debug("We are currently at:: "+driver.getCurrentUrl());
             Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
             Thread.sleep(2000);
         } catch (Exception e) {
@@ -5998,6 +6019,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             Thread.sleep(6000);
             UpgradeCustomerPageActions.clickOnContinueButton();
+            Thread.sleep(8000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -8873,6 +8895,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             Thread.sleep(5000);
+            if(driver.findElement(By.xpath("//div[@id='k2cIntuativeHolder']")).isDisplayed()){
+                driver.findElement(By.xpath("//div[@id='k2cOffer2Header']")).click();
+                log.debug("Closed O2 Advisor popup\n");
+            }
             ConnectedDeviceDetailsPageAction.UpdatedColordropdown();
 
         } catch (Exception e) {
@@ -13564,6 +13590,10 @@ public class E2EOrderPlaced_Steps {
             jse.executeScript("window.scrollBy(0,-400)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
+            if(Agent_CreditCheckDetailsPage.ContactNumber.getAttribute("value").isEmpty()){
+                Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07123456789");
+                log.debug("Entered contact number: 07123456789");
+            }
             Agent_CreditCheckDetailsPage.YearsatAddress.sendKeys("09");
             log.debug("Entered Number of Years at address");
 
@@ -14236,6 +14266,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(6000);
             Screenshots.captureScreenshot();
             if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).size()>0) {
                 JavascriptExecutor jse = (JavascriptExecutor) driver;

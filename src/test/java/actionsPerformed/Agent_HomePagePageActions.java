@@ -193,7 +193,7 @@ public class Agent_HomePagePageActions extends Environment {
 
 	public static void NewConnection() throws IOException {
 		driver.manage().deleteAllCookies();
-
+		log.debug("We are currently at:: "+driver.getCurrentUrl());
 		try {
 			Assert.assertTrue(pageobjects.Agent_HomePage.NewConnection.isDisplayed());
 			pageobjects.Agent_HomePage.NewConnection.click();

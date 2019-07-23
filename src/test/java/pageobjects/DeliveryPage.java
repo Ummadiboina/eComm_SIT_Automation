@@ -432,7 +432,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//button[normalize-space()='Go to Payments'] | //button[normalize-space()='Go To Agreement']")
     public static WebElement ContinuePaymentPage;
 
-    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[5]")
+    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[3]")
     public static WebElement ofComContinueCTA;
 
     @FindBy(how = How.XPATH, using = "//tr[@id='basket-total']/td[2]/h2")
