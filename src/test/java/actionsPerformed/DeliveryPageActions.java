@@ -1712,12 +1712,13 @@ public class DeliveryPageActions extends Environment {
             if (DeliveryPage.Housenumber.isDisplayed() || DeliveryPage.HouseNumberLabel.isDisplayed()) {
                 String houseNumberOrName = DeliveryPage.HouseNumberLabel.getText();
                 Thread.sleep(2000);
-                if (houseNumberOrName.contains("*")) {
+                //commented as per Super charge shop changes
+                /*if (houseNumberOrName.contains("*")) {
                     log.debug("Failed due to House Number or Name field contains *, which means field is not optional. This field should be optional\n");
                     Assert.fail("Failed due to House Number or Name field contains *, which means field is not optional. This field should be optional\n");
                 } else {
                     log.debug("House Number or Name field is not optional, ie Field Name is: " + houseNumberOrName + "\n");
-                }
+                }*/
             } else {
                 log.debug("Failed due to House Number or Name label/input field not present \n");
                 Assert.fail("Failed due to House Number or Name label/input field not present \n");
@@ -1726,12 +1727,13 @@ public class DeliveryPageActions extends Environment {
             if (DeliveryPage.Postcode.isDisplayed() || DeliveryPage.PostcodeLabel.isDisplayed()) {
                 String postcodeLabel = DeliveryPage.PostcodeLabel.getText();
                 Thread.sleep(2000);
-                if (postcodeLabel.contains("*")) {
+                //commented as per Super charge shop changes
+               /* if (postcodeLabel.contains("*")) {
                     log.debug("As expected, Post code field is not optional, ie Field Name is: " + postcodeLabel + "\n");
                 } else {
                     log.debug("Failed due to Post code field is optional. This field should not be optional \n");
                     Assert.fail("Failed due to Post code field is optional. This field should not be optional \n");
-                }
+                }*/
             } else {
                 log.debug("Failed due to Post code label/input field not present \n");
                 Assert.fail("Failed due to Post code label/input field not present \n");

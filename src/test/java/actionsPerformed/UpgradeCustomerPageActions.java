@@ -390,13 +390,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnContinueButton() throws Throwable {
 
-        List<WebElement> MissingElement = driver.findElements(By.xpath("//*[@class='rounded-button']"));
-        if (MissingElement.size() > 0) {
-            Screenshots.captureScreenshot();
-            pageobjects.UpgradeCustomerPage.Continue.click();
-            log.debug("Clicked on Continue button in Upgrade page");
-
-        } else {
+         if(driver.findElements(By.xpath("//input[@id='otac']")).size()>0) {
             log.debug("The Security checks page is displayed");
             pageobjects.UpgradeCustomerPage.SecurityOtac.sendKeys("999999");
             Thread.sleep(2000);
@@ -405,6 +399,15 @@ public class UpgradeCustomerPageActions extends Environment {
             //driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
             pageobjects.UpgradeCustomerPage.Continue.click();
             log.debug("Clicked on Continue button in Upgrade page");
+             Thread.sleep(8000);
+
+         }
+        //List<WebElement> MissingElement = driver.findElements(By.xpath("//*[@class='rounded-button']"));
+        if(driver.findElements(By.xpath("//a[@id='cancel']")).size()>0) {
+            Screenshots.captureScreenshot();
+            pageobjects.UpgradeCustomerPage.Continue.click();
+            log.debug("Clicked on Continue button in Upgrade page");
+
         }
         Screenshots.captureScreenshot();
     }

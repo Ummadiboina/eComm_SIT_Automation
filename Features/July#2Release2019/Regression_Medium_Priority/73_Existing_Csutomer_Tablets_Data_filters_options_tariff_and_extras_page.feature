@@ -29,14 +29,15 @@ Feature: 73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_pag
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
-    And Select the "Existing" which you want to perform
+    #And Select the "Existing" which you want to perform
     And Select existing account and begin fast checkout
     #And perform <Action> in OTAC page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     #And Click on the 'Continue button' in delivery page
     And land on the payment page and input <Username> and other details for existing customer
-    And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
+    #And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
+    And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
     #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>

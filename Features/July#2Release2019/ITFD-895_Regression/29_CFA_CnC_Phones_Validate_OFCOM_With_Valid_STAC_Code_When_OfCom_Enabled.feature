@@ -12,7 +12,7 @@ Feature: 29_CFA_CnC_Phones_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enable
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And select an insurance
-    And Choose some Accesssory
+    #And Choose some Accesssory
     And I Land on the basket page and choose to collect from store
     And click on "go to checkout" button
     And Select the "New Connection" which you want to perform
@@ -28,5 +28,5 @@ Feature: 29_CFA_CnC_Phones_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enable
     And Validate OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>
 
     Examples:
-      | handset    | Firstname | Surname | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | Galaxy S10 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | STAC        | Yes                 | 07521141028    | 173376XBA   | Enabled   | CapMyBill | £15       |
+      | handset   | Firstname | Surname | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
+      | iPhone XR | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | STAC        | Yes                 | 07521141028    | 173376XBA   | Enabled   | CapMyBill | £15       |

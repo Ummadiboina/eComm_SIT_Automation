@@ -887,7 +887,7 @@ public class BasketPageActions extends Environment {
 					/*scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader);
 					Screenshots.captureScreenshot();*/
 					JavascriptExecutor jse = (JavascriptExecutor) driver;
-					jse.executeScript("window.scrollBy(0,200)", "");
+					//jse.executeScript("window.scrollBy(0,200)", "");
 					log.debug("Bill Spend Cap header is displayed in " + pageTitle + " page ie :: " + pageobjects.BasketPage.BillSpendCapHeader.getText());
 
 					log.debug("Basket page Bill spend cap section overlay icon is displayed and clicking on it \n");
