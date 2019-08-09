@@ -17,10 +17,9 @@ Feature: 95_Reg_VOLTE_PayMPhonesClickAndCollect
     And Select the "New Connection" which you want to perform
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    #And input <Firstname> and <Surname>  and other valid details in Delivery page for click and collect journey
     #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
-    And input <Firstname> and <Surname>  and other valid details in Delivery page for click and collect journey
+    And Validate selected Click and collect store from BasketOrPD page and click on Confirm CTA in DeliveryPage and continue the CFA flow
     And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order

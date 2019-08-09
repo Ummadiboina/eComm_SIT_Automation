@@ -87,8 +87,19 @@ public class OTAC_PageObjects {
     @FindBy(how = How.XPATH, using= "//div[contains(@class,'terminationdate')]/div/label")
     public static WebElement actualBusinessDateFieldText;
 
-
     @FindBy(how = How.XPATH, using= "//button[@id='submit_stac_form']")
     public static WebElement submitCTA;
+
+    @FindBy(how = How.XPATH, using = "//a[@id='skip-this-step']")
+    public static WebElement skipThisStep_OTAC;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='sendOtac']")
+    public static WebElement sendCode_OTAC;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='otac']")
+    public static WebElement enterCode_OTAC;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='verifyOtac']")
+    public static WebElement submitCode_OTAC;
 
 }

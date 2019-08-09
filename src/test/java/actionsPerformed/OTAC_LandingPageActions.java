@@ -10,6 +10,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.openqa.selenium.By;
 import pageobjects.DeliveryPage;
+import pageobjects.OTAC_PageObjects;
+
+import java.io.IOException;
 
 public class OTAC_LandingPageActions extends Environment {
 
@@ -279,5 +282,54 @@ public class OTAC_LandingPageActions extends Environment {
         }catch(Exception e){
             log.debug("Unable to input details in STAC Form, Found exception ie :"+e);
         }
+    }
+
+    public static void simoOtacValidation(String arg) throws IOException, InterruptedException {
+        Thread.sleep(8000);
+        String pageDetails = driver.getCurrentUrl();
+        Thread.sleep(2000);
+        if(pageDetails.contains("otac")) {
+            log.debug("In OTAC page now: " + pageDetails + "\n");
+        }else{
+            log.debug("Customer did not redirected to otac page :" + pageDetails + "\n");
+            Assert.fail("Customer did not redirected to otac page :" + pageDetails + "\n");
+        }
+        Screenshots.captureScreenshot();
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,400)", "");
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        jse.executeScript("window.scrollBy(0,-400)", "");
+        Thread.sleep(2000);
+        if (arg.contains("skip")) {
+            log.debug("Skipping OTAC entry to verify account");
+            Thread.sleep(3000);
+            WebElement element = OTAC_PageObjects.skipThisStep_OTAC;
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", element);
+            Thread.sleep(2000);
+
+            log.debug("Clicked on skip this step");
+            log.debug("Skipped OTAC entry step to verify account");
+        }
+        if (arg.contains("enterCode")) {
+            log.debug("Entering OTAC to verify account");
+            Thread.sleep(3000);
+            WebElement element = OTAC_PageObjects.sendCode_OTAC;
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", element);
+            Thread.sleep(6000);
+            log.debug("Clicked on Send Code button");
+            Screenshots.captureScreenshot();
+            pageobjects.OTAC_PageObjects.enterCode_OTAC.sendKeys("999999");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            log.debug("Entered OTAC code 999999 successfully");
+
+            WebElement element1 = OTAC_PageObjects.submitCode_OTAC;
+            executor.executeScript("arguments[0].click();", element1);
+            Thread.sleep(5000);
+        }
+        Screenshots.captureScreenshot();
     }
 }

@@ -771,7 +771,7 @@ public class PAYMSimOPageActions extends Environment {
 			log.debug("Selecting a Random Tariff under 30 days tab");
 			pageobjects.PAYMSimOPage.days30tab.click();
 			Thread.sleep(3000);
-			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB30Days);
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomDataTariff30Months);
 
 		}
 		if (elementName.contains("12 Months")) {
@@ -779,7 +779,7 @@ public class PAYMSimOPageActions extends Environment {
 			log.debug("Selecting a Random Tariff under 12 Months tab");
 			pageobjects.PAYMSimOPage.months12tab.click();
 			Thread.sleep(3000);
-			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB12Months);
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomDataTariff12Months);
 		}
 		Screenshots.captureScreenshot();
 	}
@@ -844,21 +844,29 @@ public class PAYMSimOPageActions extends Environment {
 
 	}
 
-	public static void selectINeedNewSIM() throws IOException {
+	public static void selectINeedNewSIM() throws IOException, InterruptedException {
 
 		log.debug("Review Page validation :: " + driver.getTitle());
 		WebElement element = pageobjects.PAYMSimOPage.INeedNewSIM;
-		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.INeedNewSIM);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(2000);
 		Screenshots.captureScreenshot();
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 		log.debug("Clicked on I need a new sim option");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+		Thread.sleep(2000);
+		jse.executeScript("window.scrollBy(0,-300)", "");
+		Screenshots.captureScreenshot();
 
 	}
 
 	public static void clickOnTermsAndConditionsCheckboxInReviewPage() throws InterruptedException, IOException {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.TermsAndConditionsCheckbox_ReviewPage);
+		Thread.sleep(2000);
 		Screenshots.captureScreenshot();
 
 		String confirmTxt = pageobjects.PAYMSimOPage.confirmText.getText();
@@ -870,7 +878,7 @@ public class PAYMSimOPageActions extends Environment {
 		executor.executeScript("arguments[0].click();", element);
 		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,-100)", "");
+		jse.executeScript("window.scrollBy(0,-300)", "");
 	}
 
 	public static void clickOnPlaceYourOrderButton() throws InterruptedException {
@@ -1344,29 +1352,44 @@ public class PAYMSimOPageActions extends Environment {
 			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.twelevemonths);
 			Screenshots.captureScreenshot();
 		}
+		if (elementName.contains("18 Months")) {
+			log.debug("Selecting a Random simo phone Tariff under 18 Months tab");
+			pageobjects.PAYMSimOPage.months_contract_18.click();
+			Thread.sleep(6000);
+			Screenshots.captureScreenshot();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomDataTariff18Months);
+			log.debug("Selected a 18 Monmths months Random MBB Tariff");
+		}
 	}
 
 	public static void buyPhoneSimoTariff(String contract) throws InterruptedException, IOException {
+		//Screenshots.captureScreenshot();
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
 		if (contract.contains("30 Days")) {
 			log.debug("Selecting a Random simo phone tariff under 30 days tab");
 			pageobjects.PAYMSimOPage.days30tab.click();
-			Thread.sleep(3000);
-			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB30Days);
+			Thread.sleep(6000);
+			Screenshots.captureScreenshot();
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowPhoneRandomTariff30Days);
 
 		}
 		if (contract.contains("12 Months")) {
 			log.debug("Selecting a Random simo phone tariff under 12 Months tab");
 			pageobjects.PAYMSimOPage.months12tab.click();
-			Thread.sleep(3000);
-			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB12Months);
+			Thread.sleep(6000);
+			Screenshots.captureScreenshot();
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowPhoneRandomTariff12Months);
 		}
 		if (contract.contains("18 Months")) {
 			log.debug("Selecting a Random simo phone Tariff under 18 Months tab");
 			pageobjects.PAYMSimOPage.months_contract_18.click();
-			Thread.sleep(3000);
-			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomDataTariff18Months);
-
+			Thread.sleep(6000);
+			Screenshots.captureScreenshot();
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowPhoneRandomTariff18Months);
 		}
 		Screenshots.captureScreenshot();
 	}

@@ -17,6 +17,7 @@ import org.openqa.selenium.WebElement;
 import GlobalActions.Screenshots;
 import GlobalActions.scrollToAnElement;
 import helpers.Environment;
+import pageobjects.DeliveryPage;
 import pageobjects.ReviewAndConfirmPage;
 
 import static helpers.Environment.driver;
@@ -117,8 +118,45 @@ public class ReviewAndConfirmPageActions extends Environment {
             log.debug("Unable to validate BSC edit link in Review page:: " + e);
             Assert.fail("Unable to validate BSC edit link in Review page:: " + e);
         }
+    }
+
+    public static void ClickOnUseDifferentAddress() throws InterruptedException, IOException {
+        Thread.sleep(2000);
+        List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//a[normalize-space()='Use a different address'] | //a[@id='pre-selected-delivery-address']"));
+        if (DiffAddressLink.size() > 0) {
+
+            Screenshots.captureScreenshot();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            WebElement element = pageobjects.ReviewAndConfirmPage.DeliveryPageUseDiffAddressLink;
+            executor.executeScript("arguments[0].click();", element);
+            Thread.sleep(3000);
+            log.debug("Clicked on use different delivery address link\n");
+        } else {
+            log.debug("Unable to click on the Use a different address link\n");
+            Assert.fail("Unable to click on the Use a different address link\n");
+        }
+    }
+
+    public static void setDeliveryAddressBasedOnOTAC(String Action) {
+        try{
+            Screenshots.captureScreenshot();
+            if(Action.contains("skip")){
+                if (DeliveryPage.Postcode.isDisplayed() || DeliveryPage.PostcodeLabel.isDisplayed()) {
+                    log.debug("Failed due to Postal code field displaying when otac has been skipped\n");
+                    Assert.fail("Failed due to Postal code field displaying when otac has been skipped\n");
+                }else{
+                    log.debug("As expected, when otac got skipped postal input field is not displaying");
+                }
+            }else if(Action.contains("enterCode")){
+                DeliveryPageActions.SetDeliveryDeliveryPage();
+            }
+        }catch(Exception e){
+
+        }
 
     }
+
+
 }
 
 

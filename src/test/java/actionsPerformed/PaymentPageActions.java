@@ -60,8 +60,9 @@ public class PaymentPageActions extends Environment {
     public static void Set_Bank_details(String Username) throws IOException, InterruptedException {
 
         //scrollToAnElement.scrollToElement(PaymentPage.Name_On_Account);
+        Screenshots.captureScreenshot();
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scrollBy(0,300)", "");
+        jse.executeScript("window.scrollBy(0,120)", "");
 
         Thread.sleep(2000);
         if(driver.findElements(By.xpath("//input[@id='accountName']")).size()>0) {
@@ -85,7 +86,7 @@ public class PaymentPageActions extends Environment {
             log.debug("Entered sort code : 201596");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            jse.executeScript("window.scrollBy(0,220)", "");
+            jse.executeScript("window.scrollBy(0,120)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
             pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
@@ -697,15 +698,19 @@ public class PaymentPageActions extends Environment {
 
     public static void SIMO_Time_At_Address() throws IOException, InterruptedException {
         Thread.sleep(5000);
-        scrollToAnElement.scrollToElement(PaymentPage.Stay_Address_Years);
-
+        //scrollToAnElement.scrollToElement(PaymentPage.Stay_Address_Years);
+        Screenshots.captureScreenshot();
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,120)", "");
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
-        log.debug("Entered the stayed at address - 9");
+        log.debug("Entered the stayed at address - 9 years");
         Thread.sleep(2000);
         pageobjects.PaymentPage.Stay_Address_months.sendKeys("9");
-        log.debug("Entered the stayed at months - 9");
+        log.debug("Entered the stayed at months - 9 months");
+        Screenshots.captureScreenshot();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         Thread.sleep(2000);
-
         executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.SIMOConfirm_Address_Checkbox);
 
         /*pageobjects.PaymentPage.Confirm_Address_Checkbox.click();

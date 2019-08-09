@@ -45,9 +45,7 @@ public class ReviewAndConfirmPage extends Environment {
     @FindBy(how = How.XPATH, using = "//*[@class='form-element-container error-section']")
     public static WebElement AboutYouSection;
 
-
-
-
-
+    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Use a different address'] | //a[@id='pre-selected-delivery-address']")
+    public static WebElement DeliveryPageUseDiffAddressLink;
 
 }

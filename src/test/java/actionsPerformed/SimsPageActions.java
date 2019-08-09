@@ -274,11 +274,16 @@ public class SimsPageActions extends Environment {
             String currentUrl = driver.getCurrentUrl();
             Screenshots.captureScreenshot();
             log.debug("Current URL is :  " + currentUrl);
+            Screenshots.captureScreenshot();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
             if (currentUrl.contains("upgrade/sim-cards")) {
                 log.debug(" verified that the user landed on simo listing page\n");
             } else {
-                log.debug(" Failed due to user not landed on simo listing page");
-                Assert.fail(" Failed to user not landed on simo listing page");
+                log.debug(" Failed due to user not landed on simo listing page\n");
+                Assert.fail(" Failed to user not landed on simo listing page\n");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block

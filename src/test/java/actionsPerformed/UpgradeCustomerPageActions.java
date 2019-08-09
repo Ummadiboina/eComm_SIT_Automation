@@ -1519,7 +1519,22 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void Otac(String arg) throws IOException, InterruptedException {
         Thread.sleep(8000);
-        log.debug("In OTAC page");
+        String pageDetails = driver.getCurrentUrl();
+        Thread.sleep(2000);
+        log.debug("In OTAC page now: " + pageDetails + "\n");
+        /*if(pageDetails.contains("otac")) {
+            log.debug("In OTAC page now: " + pageDetails + "\n");
+        }else{
+            log.debug("Customer did not redirected to otac page :" + pageDetails + "\n");
+            Assert.fail("Customer did not redirected to otac page :" + pageDetails + "\n");
+        }*/
+        Screenshots.captureScreenshot();
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,400)", "");
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        jse.executeScript("window.scrollBy(0,-400)", "");
+        Thread.sleep(2000);
         if (arg.contains("skip")) {
             log.debug("Skipping OTAC entry to verify account");
             Thread.sleep(3000);
@@ -1539,9 +1554,10 @@ public class UpgradeCustomerPageActions extends Environment {
             executor.executeScript("arguments[0].click();", element);
             Thread.sleep(6000);
             log.debug("Clicked on Send Code button");
-
+            Screenshots.captureScreenshot();
             pageobjects.UpgradeCustomerPage.enterCode_OTAC.sendKeys("999999");
             Thread.sleep(2000);
+            Screenshots.captureScreenshot();
             log.debug("Entered OTAC code 999999 successfully");
 
             WebElement element1 = UpgradeCustomerPage.submitCode_OTAC;

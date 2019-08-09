@@ -61,7 +61,7 @@ public class ReviewPageActions extends Environment {
 		executor.executeScript("arguments[0].click();", element);
 		//pageobjects.ReviewPage.PayNow.click();
 		log.debug("Completing on Review page");
-
+		Screenshots.captureScreenshot();
 		Thread.sleep(5000);
 		Screenshots.captureScreenshot();
 
