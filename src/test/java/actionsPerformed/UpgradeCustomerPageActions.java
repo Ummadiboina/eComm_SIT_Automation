@@ -2889,7 +2889,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
             } else {
                 log.debug("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
-                Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
+                //Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
