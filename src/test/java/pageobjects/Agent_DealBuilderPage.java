@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import java.util.List;
+
 public class Agent_DealBuilderPage {
 
     @FindBy(how = How.ID, using = "plansTab")
@@ -420,6 +422,12 @@ public class Agent_DealBuilderPage {
 
     @FindBy(how = How.XPATH, using = ("//a[@id='simoPlanTab']"))
     public static WebElement SIMOTariffsTab;
+
+    @FindBy(how = How.XPATH, using = ("//*[@id=\'planTable\']/tbody/tr/td[6]"))
+    public static List<WebElement> VerifyDeviceTariffs_family;
+
+    @FindBy(how = How.XPATH, using = ("//*[@id='simonlyPlanTable']/tbody/tr/td[6]"))
+    public static List<WebElement> VerifySIMOTariffs_family;
 
     @FindBy(how = How.XPATH, using = ("//div[@id='simoPlanTabContent']/div/div/label/input"))
     public static WebElement SIMOTariffsInputField;
