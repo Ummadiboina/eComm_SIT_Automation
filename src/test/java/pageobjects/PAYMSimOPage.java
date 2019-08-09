@@ -187,20 +187,20 @@ public class PAYMSimOPage {
 	@FindBy(how = How.XPATH, using = ("//a[contains(@href, '#phone-tab')]"))
 	public static WebElement PhoneTab;
 	
-	@FindBy(how=How.XPATH,using=("//a[contains(text(),'12 months')]"))
+	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'12 months')])[2]"))
 	public static WebElement months12tab;
 	
-	@FindBy(how=How.XPATH,using=("//a[contains(text(),'30 days')]"))
+	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'30 days')])[2]"))
 	public static WebElement days30tab;
 	
 	//@FindBy(how=How.CSS,using=(".col-xs-12.promotion-ribbon"))
 	//public static WebElement PromotionTariff;
 	
-	@FindBy(how = How.XPATH, using = ("//div[@class='tariffs-container voice-tariffs']/div[1]//div/form/button | (//*[@name='P30D']//button[normalize-space()='Select'])[1]"))
-	public static WebElement BuyNowRandomTariffMBB30Days;
+	@FindBy(how = How.XPATH, using = ("(//*[@name='P30D']//button[normalize-space()='Select'])[1]"))
+	public static WebElement BuyNowPhoneRandomTariff30Days;
 	
-	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[2] | (//*[@name='P12M']//button[normalize-space()='Select'])[1]"))
-	public static WebElement BuyNowRandomTariffMBB12Months;
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[2] | (//*[@name='P12M']//button[normalize-space()='Select'])[2]"))
+	public static WebElement BuyNowPhoneRandomTariff12Months;
 
 	@FindBy(how = How.XPATH, using = ("(//*[@name='P12M']//button[normalize-space()='Select'])[1]"))
 	public static WebElement SelectSIMOTariff;
@@ -260,7 +260,7 @@ public class PAYMSimOPage {
 	@FindBy (how =How.XPATH, using=(""))
 	public static WebElement Unlimited_data_confirmation;
 
-	@FindBy (how =How.XPATH, using=("//li[@id='id-18-months' ]"))
+	@FindBy (how =How.XPATH, using=("(//li[@id='id-18-months'])[2]"))
 	public static WebElement months_contract_18;
 
 	@FindBy (how =How.XPATH, using=(""))
@@ -283,5 +283,8 @@ public class PAYMSimOPage {
 
 	@FindBy(how=How.XPATH,using=("(//*[@name='P18M']//button[normalize-space()='Select'])[1]"))
 	public static WebElement BuyNowRandomDataTariff18Months;
+
+	@FindBy(how=How.XPATH,using=("(//*[@name='P18M']//button[normalize-space()='Select'])[1]"))
+	public static WebElement BuyNowPhoneRandomTariff18Months;
 
 }

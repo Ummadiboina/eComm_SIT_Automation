@@ -33,7 +33,8 @@ Feature: 73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_pag
     And Select existing account and begin fast checkout
     #And perform <Action> in OTAC page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    And Click on GDPR Continue CTA
     #And Click on the 'Continue button' in delivery page
     And land on the payment page and input <Username> and other details for existing customer
     #And Continue to Agreements page and confirm all the agreement checks in Upgrade journey

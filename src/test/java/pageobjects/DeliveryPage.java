@@ -213,7 +213,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Promotions']/following-sibling::p")
     public static WebElement promotionVAlue_yourOrdre;
 
-    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Use a different delivery address'] | //a[normalize-space()='Use a different address']")
+    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Use a different delivery address'] | //a[@id='pre-selected-delivery-address']")
     public static WebElement DeliveryPageUseDiffAddressLink;
 
 
@@ -447,6 +447,11 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@id='date-dd-mm-yy']")
     public static WebElement DOB;
 
+    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[1]//parent::button")
+    public static WebElement ContinueAboutUCTA;
+
+    @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[2]//parent::button")
+    public static WebElement ContinueDeliveryCTA;
 }
 
 

@@ -700,10 +700,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             //ConnectedDeviceDetailsPageAction.GetTitle();
-            if(driver.findElement(By.xpath("//div[@id='k2cIntuativeHolder']")).isDisplayed()){
+            /*if(driver.findElement(By.xpath("//div[@id='k2cIntuativeHolder']")).isDisplayed()){
                 driver.findElement(By.xpath("//div[@id='k2cOffer2Header']")).click();
                 log.debug("Closed O2 Advisor popup\n");
-            }
+            }*/
             Thread.sleep(5000);
             ConnectedDeviceDetailsPageAction.ViewAllTariffs();
         } catch (Exception e) {
@@ -2381,7 +2381,7 @@ public class E2EOrderPlaced_Steps {
             // Write code here that turns the phrase above into concrete actions
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             log.debug("We are at agreement page\n");
-            Thread.sleep(30000);
+            Thread.sleep(20000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
 
@@ -2539,6 +2539,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(12000);
+            Screenshots.captureScreenshot();
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,300)", "");
             ReviewPageActions.gettitlepage();
@@ -8895,10 +8896,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             Thread.sleep(5000);
-            if(driver.findElement(By.xpath("//div[@id='k2cIntuativeHolder']")).isDisplayed()){
+            /*if(driver.findElement(By.xpath("//div[@id='k2cIntuativeHolder']")).isDisplayed()){
                 driver.findElement(By.xpath("//div[@id='k2cOffer2Header']")).click();
                 log.debug("Closed O2 Advisor popup\n");
-            }
+            }*/
             ConnectedDeviceDetailsPageAction.UpdatedColordropdown();
 
         } catch (Exception e) {
@@ -9883,10 +9884,14 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            log.debug("Currently we are at page:: "+driver.getCurrentUrl());
             ReviewAndConfirmPageActions.ReviewConfirmPageHeader();
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,500)", "");
-            Thread.sleep(4000);
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
             Screenshots.captureScreenshot();
 
         } catch (Exception e) {
@@ -9924,6 +9929,10 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
             Thread.sleep(2000);
             PAYMSimOPageActions.clickOnTermsAndConditionsCheckboxInReviewPage();
             Thread.sleep(2000);
@@ -10337,6 +10346,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             Thread.sleep(5000);
+            Screenshots.captureScreenshot();
             driver.findElement(By.xpath("(//a[@class='edt-btn-accord'])[2]")).click();
             Thread.sleep(3000);
             DeliveryPageActions.ClickOnUseDifferentAddress();
@@ -10989,17 +10999,18 @@ public class E2EOrderPlaced_Steps {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             Screenshots.captureScreenshot();
             jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            /*jse.executeScript("window.scrollBy(0,300)", "");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
             jse.executeScript("window.scrollBy(0,300)", "");
             Thread.sleep(3000);
-            Screenshots.captureScreenshot();
-            jse.executeScript("window.scrollBy(0,300)", "");
-            Thread.sleep(3000);
-            Screenshots.captureScreenshot();
-            jse.executeScript("window.scrollBy(0,300)", "");
-            Thread.sleep(3000);
-            Screenshots.captureScreenshot();
+            Screenshots.captureScreenshot();*/
+            jse.executeScript("window.scrollBy(0,-600)", "");
         } catch (Exception e) {
             System.out.println("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
             Assert.fail("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
@@ -11776,13 +11787,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.ContinueDelivery();
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).size()>0) {
-
-                jse.executeScript("window.scrollBy(0,-100)", "");
-                Thread.sleep(2000);
-                Screenshots.captureScreenshot();
-                driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).click();
-            }
+            DeliveryPageActions.selectDoNotHavePacStacCode();
             /*JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,-120)", "");*/
             Screenshots.captureScreenshot();
@@ -13585,7 +13590,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(12000);
+            Thread.sleep(8000);
             PaymentPageActions.SIMO_Time_At_Address();
 
             Thread.sleep(12000);
@@ -14090,27 +14095,24 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page for click and collect journey$")
-    public void DeliveryPageInputsClickAndCollect(String Firstname, String Surname) {
+    @And("^Validate selected Click and collect store from BasketOrPD page and click on Confirm CTA in DeliveryPage and continue the CFA flow$")
+    public void clickOnClickAndCollectConfirmCTAInDeliveryPage() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
+            log.debug("Verifying the selected click and collect store in delivery page\n");
             Screenshots.captureScreenshot();
-
-            if(driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[2]//parent::button")).isDisplayed()) {
-                JavascriptExecutor jse = (JavascriptExecutor) driver;
-                jse.executeScript("window.scrollBy(0,300)", "");
-                Thread.sleep(2000);
-                Screenshots.captureScreenshot();
-                DeliveryPageActions.ContinueDelivery();
-            }
+            //Click and Collect tab under delivery section should be in Active/Selected state
+            DeliveryPageActions.clickAndCollectTabState();
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            //jse.executeScript("window.scrollBy(0,120)", "");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-
-            //DeliveryPageActions.AboutYou(Firstname, Surname);
-            if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).size()>0) {
-                driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).click();
-            }
+            DeliveryPageActions.ContinueDelivery();
+            //jse.executeScript("window.scrollBy(0,-120)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.selectDoNotHavePacStacCode();
             Thread.sleep(3000);
             DeliveryPageActions.ContinuePaymentPage();
         } catch (Exception e) {
@@ -14167,7 +14169,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
             jse.executeScript("window.scrollBy(0,-300)", "");
-            Thread.sleep(2000);
+            Thread.sleep(4000);
             DeliveryPageActions.customerConnection(journeyType);
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
@@ -14187,13 +14189,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.ContinueDelivery();
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            if(driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).size()>0) {
-                JavascriptExecutor jse = (JavascriptExecutor) driver;
-                jse.executeScript("window.scrollBy(0,-100)", "");
-                Thread.sleep(2000);
-                Screenshots.captureScreenshot();
-                driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).click();
-            }
+            DeliveryPageActions.selectDoNotHavePacStacCode();
             /*JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,-120)", "");*/
             Screenshots.captureScreenshot();
@@ -14215,7 +14211,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.ContinueDelivery();
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).click();
+            DeliveryPageActions.selectDoNotHavePacStacCode();
             Screenshots.captureScreenshot();
             DeliveryPageActions.ContinuePaymentPage();
             Thread.sleep(2000);
@@ -14338,5 +14334,201 @@ public class E2EOrderPlaced_Steps {
             log.debug("Unable to validate Recycle option in Basket Page: "+e+"\n");
             Assert.fail("Unable to validate Recycle option in Basket Page: "+e+"\n");
         }
+    }
+
+    @And("^Verify connection tabs in \"([^\"]*)\" journey which you want perform$")
+    public void customerConnectionTabsValidation(String journeyType) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Screenshots.captureScreenshot();
+            log.debug("Currently we are at page :: "+driver.getCurrentUrl());
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,350)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.customerConnectionTabsValidation(journeyType);
+        } catch (Exception e) {
+            log.debug("Unable to select connection tab in delivery page");
+            Assert.fail("Unable to select connection tab in delivery page");
+        }
+    }
+
+    @And("^Verify \"([^\"]*)\" section CTA validation$")
+    public void aboutYouFieldsValidations(String sectionName) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+
+            DeliveryPageActions.sectionCTAValidation(sectionName);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate mandatory fields in delivery page");
+            Assert.fail("Unable to validate mandatory fields in delivery page");
+
+        }
+    }
+
+    @And("^Verify Go To Payment CTA \"([^\"]*)\" status before or after completing \"([^\"]*)\" section$")
+    public void goToPaymentCTAValidation(String CTAstatus, String section) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            //Screenshots.captureScreenshot();
+            DeliveryPageActions.goToPaymentCTAValidation(CTAstatus, section);
+            Thread.sleep(2000);
+
+        } catch (Exception e) {
+            log.debug("Unable to select connection tab in delivery page");
+            Assert.fail("Unable to select connection tab in delivery page");
+        }
+    }
+
+    @And("^Enter delivery details in delivery section$")
+    public void setPostalCodeInDeliverysection() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.SetDeliveryDeliveryPage();
+            DeliveryPageActions.ContinueDelivery();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input title details in delivery page");
+            Assert.fail("Unable to input title details in delivery page");
+        }
+    }
+
+    @And("^Select do not have PAC or STAC code CTA$")
+    public void selectNoPacStacCode() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+
+            DeliveryPageActions.selectDoNotHavePacStacCode();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input title details in delivery page");
+            Assert.fail("Unable to input title details in delivery page");
+        }
+    }
+
+    @And("^Click on GoToPayment or GoToAgreement CTA$")
+    public void clickOnGoToPaymentORGoToAgreementCTA() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+
+            DeliveryPageActions.ContinuePaymentPage();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input title details in delivery page");
+            Assert.fail("Unable to input title details in delivery page");
+        }
+    }
+
+    @Given("^I Land on the basket page and verify store selected from PD page is displaying$")
+    public void landOnBasketPageWithStoreSelectedFromDPpage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            String title = driver.getTitle();
+
+            PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Issue in Basket page");
+            Assert.fail("Issue in Basket page");
+
+        }
+    }
+
+    @And("^land on the existing customer payment page and input ([^\"]*) and other details for PayG order$")
+    public void existingCustomerPaymentPage_PayGOrders(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            Thread.sleep(5000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(10000);
+            PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(12000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in existing customer payment page");
+            Assert.fail("Unable to input details in existing customer payment page");
+
+        }
+    }
+
+    @Then("^perform ([^\"]*) in OTAC page in upgrade simo journey$")
+    public void performOTACPageAction(String Action) {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, OTAC_PageObjects.class);
+            OTAC_LandingPageActions.simoOtacValidation(Action);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to perform action in OTAC Page");
+        }
+    }
+
+    @And("^Click on 'Use a different delivery address'link and perform ([^\"]*) in OTAC page in upgrade simo journey$")
+    public void useDifferentDeliveryAddressAndPerformOTACForSimo(String Action) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            PageFactory.initElements(driver, OTAC_PageObjects.class);
+            Thread.sleep(3000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            ReviewAndConfirmPageActions.ClickOnUseDifferentAddress();
+            Thread.sleep(3000);
+            OTAC_LandingPageActions.simoOtacValidation(Action);
+            Thread.sleep(8000);
+            ReviewAndConfirmPageActions.ReviewConfirmPageHeader();
+            ReviewAndConfirmPageActions.setDeliveryAddressBasedOnOTAC(Action);
+            jse.executeScript("window.scrollBy(0,250)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
+            log.debug("Performed Use a different address link complete process\n");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to perform Use a different address link process");
+        }
+
+    }
+
+    @And("^Click on 'Use a different delivery address'link in upgrade simo journey$")
+    public void useDifferentDeliveryAddressInSimo() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
+            ReviewAndConfirmPageActions.ClickOnUseDifferentAddress();
+            log.debug("Clicked on Use a different address link");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to click on Use a different address link");
+        }
+
     }
 }

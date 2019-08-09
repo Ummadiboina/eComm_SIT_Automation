@@ -140,6 +140,7 @@ public class DeliveryPageActions extends Environment {
                 Thread.sleep(2000);
                 Screenshots.captureScreenshot();
                 DeliveryPage.storePostcode.sendKeys(Keys.TAB);
+                Thread.sleep(1000);
                 Screenshots.captureScreenshot();
                 //pageobjects.DeliveryPage.Find_Store.click();
                 WebElement element = pageobjects.DeliveryPage.Find_Store;
@@ -156,8 +157,13 @@ public class DeliveryPageActions extends Environment {
                 Screenshots.captureScreenshot();
                 pageobjects.DeliveryPage.Select_Store.click();
                 log.debug("Clicked on the Find address button");
-                Thread.sleep(3000);
+                Thread.sleep(5000);
+                jse.executeScript("window.scrollBy(0,-400)", "");
+                Thread.sleep(2000);
                 Screenshots.captureScreenshot();
+                String selectedStore = driver.findElement(By.xpath("//p[@class='selected-delivery-store']")).getText();
+                Thread.sleep(2000);
+                log.debug("The selected store is: "+selectedStore+"\n");
             }
 
         } catch (Exception e) {
@@ -530,24 +536,27 @@ public class DeliveryPageActions extends Environment {
 
             if (pageobjects.DeliveryPage.getNewNumberTab.isDisplayed()) {
                 pageobjects.DeliveryPage.getNewNumberTab.click();
-                Thread.sleep(4000);
+                Thread.sleep(5000);
             }
         }
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scrollBy(0,100)", "");
+        jse.executeScript("window.scrollBy(0,200)", "");
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
         Thread.sleep(5000);
         if (driver.findElements(By.xpath("//input[@id='existing-pay']")).size() > 0) {
-            js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.existingPaymentOption);
+            jse.executeScript("arguments[0].click();", pageobjects.DeliveryPage.existingPaymentOption);
             log.debug("Selected existing account option\n");
         }
+        jse.executeScript("window.scrollBy(0,150)", "");
         Thread.sleep(2000);
+        Screenshots.captureScreenshot();
         //pageobjects.DeliveryPage.SelectAcct.click();
-        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SelectAcct);
+        jse.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SelectAcct);
         log.debug("Selected existing account\n");
-        Thread.sleep(4000);
-        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinueCTA);
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        jse.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinueCTA);
         log.debug("Continue button is selected\n");
 
         //js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.FastCheckOut);
@@ -937,16 +946,14 @@ public class DeliveryPageActions extends Environment {
 
     public static void ClickOnUseDifferentAddress() throws InterruptedException, IOException {
         Thread.sleep(2000);
-        List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//a[normalize-space()='Use a different delivery address'] | //a[normalize-space()='Use a different address']"));
+        List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//a[normalize-space()='Use a different delivery address'] | //a[@id='pre-selected-delivery-address']"));
         if (DiffAddressLink.size() > 0) {
 
             //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//h2[normalize-space()='Home address']")));
             //Thread.sleep(2000);
             Screenshots.captureScreenshot();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("window.scrollBy(0,250)", "");
-            Thread.sleep(2000);
-            Screenshots.captureScreenshot();
+
             WebElement element = pageobjects.DeliveryPage.DeliveryPageUseDiffAddressLink;
 
             executor.executeScript("arguments[0].click();", element);
@@ -961,12 +968,16 @@ public class DeliveryPageActions extends Environment {
 
             pageobjects.DeliveryPage.Postcode.sendKeys("SL33FP");
             log.debug("Entered Post code");
+            Screenshots.captureScreenshot();
             pageobjects.DeliveryPage.Find_Address.click();
             log.debug("Clicked on the Find address button");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
 
-            executor.executeScript("window.scrollBy(0,500)", "");
+            executor.executeScript("window.scrollBy(0,400)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            executor.executeScript("window.scrollBy(0,150)", "");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
             DeliveryPageActions.ContinueDelivery();
@@ -1709,24 +1720,25 @@ public class DeliveryPageActions extends Environment {
 
         try {
             Screenshots.captureScreenshot();
-            if (DeliveryPage.Housenumber.isDisplayed() || DeliveryPage.HouseNumberLabel.isDisplayed()) {
+            /*if (DeliveryPage.Housenumber.isDisplayed() || DeliveryPage.HouseNumberLabel.isDisplayed()) {
                 String houseNumberOrName = DeliveryPage.HouseNumberLabel.getText();
                 Thread.sleep(2000);
                 //commented as per Super charge shop changes
-                /*if (houseNumberOrName.contains("*")) {
+                *//*if (houseNumberOrName.contains("*")) {
                     log.debug("Failed due to House Number or Name field contains *, which means field is not optional. This field should be optional\n");
                     Assert.fail("Failed due to House Number or Name field contains *, which means field is not optional. This field should be optional\n");
                 } else {
                     log.debug("House Number or Name field is not optional, ie Field Name is: " + houseNumberOrName + "\n");
-                }*/
+                }*//*
             } else {
                 log.debug("Failed due to House Number or Name label/input field not present \n");
                 Assert.fail("Failed due to House Number or Name label/input field not present \n");
-            }
+            }*/
 
             if (DeliveryPage.Postcode.isDisplayed() || DeliveryPage.PostcodeLabel.isDisplayed()) {
                 String postcodeLabel = DeliveryPage.PostcodeLabel.getText();
                 Thread.sleep(2000);
+                log.debug("As expected, Post code field is present, ie Field Name is: " + postcodeLabel + "\n");
                 //commented as per Super charge shop changes
                /* if (postcodeLabel.contains("*")) {
                     log.debug("As expected, Post code field is not optional, ie Field Name is: " + postcodeLabel + "\n");
@@ -1814,7 +1826,7 @@ public class DeliveryPageActions extends Environment {
                         Assert.fail("Failed: ofCom Switching feature supposed to be disabled "+journey+" journey\n");
                     }
                 } else {
-                    log.debug("Journey is not a Tablet/PayGsimo/MBB/CFU journey\n");
+                    log.debug("Journey is not a Tablet/PreOrder/Back Order/PayGsimo/MBB/CFU journey\n");
 
                     if (driver.findElements(By.xpath("//div[@class='ofComTextToSwitch']")).size() > 0) {
                         log.debug("As expected, ofCom Switching is enabled\n");
@@ -2124,7 +2136,7 @@ public class DeliveryPageActions extends Environment {
                 jse.executeScript("window.scrollBy(0,-200)", "");
                 Thread.sleep(2000);
                 Screenshots.captureScreenshot();
-                String currentURL = driver.getCurrentUrl();
+                //String currentURL = driver.getCurrentUrl();
                 Thread.sleep(2000);
             /*if (currentURL.contains("delivery")) {
                 log.debug("We are back to delivery page as the info provided is incorrect\n");
@@ -2663,10 +2675,10 @@ public class DeliveryPageActions extends Environment {
             log.debug("Clicked on the Find address button");
             Thread.sleep(5000);
             Screenshots.captureScreenshot();
-            /*JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,100)", "");
-            Thread.sleep(3000);
-            Screenshots.captureScreenshot();*/
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,180)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
 
             if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                 if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
@@ -2703,6 +2715,9 @@ public class DeliveryPageActions extends Environment {
                     }
                 }
             }
+            jse.executeScript("window.scrollBy(0,-180)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
 
             /*if (driver.findElement(By.xpath("//div[@id='deliveryAddresses'] | //div[@id='residentialAddresses']")).isDisplayed()) {
                 if (driver.findElements(By.xpath("//select[@id='delivery-address-selector']/option")).size() > 0) {
@@ -2734,9 +2749,10 @@ public class DeliveryPageActions extends Environment {
 
     public static void ContinueDelivery() throws InterruptedException, IOException {
         Thread.sleep(3000);
-        log.debug("in click continue function");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        log.debug("Delivery Continue button function\n");
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinueDelivery);
-        log.debug("Continue button is selected\n");
+        log.debug("Delivery Continue button is selected\n");
 
         Screenshots.captureScreenshot();
 
@@ -2744,7 +2760,8 @@ public class DeliveryPageActions extends Environment {
 
     public static void ContinueAboutU() throws InterruptedException {
         Thread.sleep(3000);
-        log.debug("in click of About you continue function");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        log.debug("About you Continue button function\n");
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinueAboutU);
         log.debug("About you Continue button is selected\n");
 
@@ -2754,7 +2771,8 @@ public class DeliveryPageActions extends Environment {
 
     public static void ofComContinueCTA() throws InterruptedException, IOException {
         Thread.sleep(3000);
-        log.debug("in click continue function");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        log.debug("OFCOM Continue button function\n");
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ofComContinueCTA);
         log.debug("OFCOM Continue button is selected\n");
 
@@ -2764,7 +2782,8 @@ public class DeliveryPageActions extends Environment {
 
     public static void ContinuePaymentPage() throws InterruptedException, IOException {
         Thread.sleep(3000);
-        log.debug("in click continue function");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        log.debug("Go to Payments Continue button function\n");
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinuePaymentPage);
         log.debug("Go to Payments Continue button is selected\n");
 
@@ -2773,6 +2792,7 @@ public class DeliveryPageActions extends Environment {
 
     public static void customerConnection(String journeyType) throws InterruptedException, IOException {
         Thread.sleep(3000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         if(journeyType.equalsIgnoreCase("New Connection")){
             log.debug("Selecting New connection tab\n");
             //pageobjects.DeliveryPage.cusomerNewTab.click();
@@ -2787,5 +2807,119 @@ public class DeliveryPageActions extends Environment {
 
         Screenshots.captureScreenshot();
     }
+
+    public static void customerConnectionTabsValidation(String journeyType) throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        log.debug("Validation connection tabs\n");
+        if(journeyType.equalsIgnoreCase("New Connection")) {
+            if (pageobjects.DeliveryPage.cusomerNewTab.isDisplayed()) {
+                log.debug("New connection tab is displayed\n");
+            } else {
+                log.debug("Failed due to New connection tab is not displayed\n");
+                Assert.fail("Failed due to New connection tab is not displayed\n");
+            }
+
+            if (pageobjects.DeliveryPage.cusomerExistingTab.isDisplayed()) {
+                log.debug("Existing connection tab is displayed\n");
+            } else {
+                log.debug("Failed due to Existing connection tab is not displayed\n");
+                Assert.fail("Failed due to Existing connection tab is not displayed\n");
+            }
+        }else if(journeyType.equalsIgnoreCase("Existing") || journeyType.equalsIgnoreCase("CFU")) {
+            if(driver.findElements(By.xpath("//a[@class='button primary redesign-button new-customer-btn']")).size()>0 || driver.findElements(By.xpath("//a[@class='button primary redesign-button existing-customer-btn']")).size()>0){
+                log.debug("Failed due to Connection type tabs displaying in Existing and CFU journeys\n");
+                Assert.fail("Failed due to Connection type tabs displaying in Existing and CFU journeys\n");
+            }else{
+                log.debug("As expected Connection type tabs are not displaying in Existing and CFU journeys\n");
+            }
+        }
+
+        Screenshots.captureScreenshot();
+    }
+
+    public static void sectionCTAValidation(String sectionName) {
+        try {
+
+            if(sectionName.equalsIgnoreCase("About You")){
+                //Clicking on About You Confirm CTA Before entering details
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,900)", "");
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
+                if(pageobjects.DeliveryPage.ContinueAboutUCTA.isEnabled()){
+                    log.debug("Failed due to Your details Confirm CTA is enabled before providing input details\n");
+                    Assert.fail("Failed due to Your details Confirm CTA is enabled before providing input details\n");
+                }else{
+                    log.debug("As expected, Your details Confirm CTA is disabled before providing input details\n");
+                }
+                jse.executeScript("window.scrollBy(0,-900)", "");
+            }else if(sectionName.equalsIgnoreCase("Delivery Details")){
+                //Clicking on Delivery Details Confirm CTA Before entering details
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,100)", "");
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
+                if(pageobjects.DeliveryPage.ContinueDeliveryCTA.isEnabled()){
+                    log.debug("Failed due to Delivery Confirm CTA is enabled before providing input details\n");
+                    Assert.fail("Failed due to Delivery Confirm CTA is enabled before providing input details\n");
+                }else{
+                    log.debug("As expected, Delivery Confirm CTA is disabled before providing input details\n");
+                }
+                jse.executeScript("window.scrollBy(0,-100)", "");
+            }
+        } catch (Exception e) {
+            log.debug("Failed to validate Delivey page Input fields: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public static void goToPaymentCTAValidation(String CTAstatus, String section) throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        if(CTAstatus.equalsIgnoreCase("Enable")){
+            if(pageobjects.DeliveryPage.ContinuePaymentPage.isEnabled()){
+                log.debug("As expected, Go to Payments CTA is enabled after completing "+section+" section\n");
+            }else{
+                log.debug("Failed due to Go to Payments CTA is disabled after completing "+section+" section\n");
+                Assert.fail("Failed due to Go to Payments CTA is disabled after completing "+section+" section\n");
+            }
+        }else if(CTAstatus.equalsIgnoreCase("Disable")){
+            if(pageobjects.DeliveryPage.ContinuePaymentPage.isEnabled()){
+                log.debug("Failed due to Go to Payments CTA is enabled before completing "+section+" section\n");
+                Assert.fail("Failed due to Go to Payments CTA is enabled before completing "+section+" section\n");
+            }else{
+                log.debug("As expected, Go to Payments CTA is disabled before completing "+section+" section\n");
+            }
+        }
+        Screenshots.captureScreenshot();
+    }
+
+    public static void clickAndCollectTabState() throws InterruptedException {
+        //Click and Collect tab under delivery section should be in Active/Selected state
+        //if (driver.findElements(By.xpath("//a[@class='default on']")).size() > 0) {
+        if (driver.findElement(By.xpath("//a[@id='deliver-to-store-tab']")).getAttribute("class").equalsIgnoreCase("default on")) {
+            log.debug("As expected, Click and Collect tab under delivery section is in Active/Selected state\n");
+            String selectedStore = driver.findElement(By.xpath("//p[@class='selected-delivery-store']")).getText();
+            Thread.sleep(1000);
+            log.debug("The selected store address is: " + selectedStore + "\n");
+        } else {
+            log.debug("Failed due to Click and Collect tab under delivery section is not in selected state for store already selected\n");
+            Assert.fail("Failed due to Click and Collect tab under delivery section is not in selected state for store already selected\n");
+        }
+    }
+
+    public static void selectDoNotHavePacStacCode() {
+        try {
+            if (driver.findElements(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).size() > 0) {
+                driver.findElement(By.xpath("(//span[@id='btn-continue-next-section-label'])[5]")).click();
+                log.debug("Selected I do not have PAC or STAC code CTA\n");
+                Screenshots.captureScreenshot();
+            } else {
+                log.debug("I do not have PAC or STAC code CTA is not displaying\n");
+            }
+        }catch(Exception e){
+            log.debug("Not able to select I do not have PAC or STAC code CTA is not displaying: "+e);
+        }
+    }
+
 
 }

@@ -1484,6 +1484,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		String BillCapStatus = "";
 		int cnt = 0;
 		try {
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
 			//Thread.sleep(6000);
 			if (BSCstatus.equalsIgnoreCase("Enabled")) {
 				if (driver.findElements(By.xpath("//div[contains(text(),'Your Spend Cap')] | //div/p/span[contains(text(),'Your Spend Cap')] | (//div/h2[contains(normalize-space(),'Your Spend Cap')])[1]")).size() > 0) {
@@ -1496,7 +1497,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						}
 
 						Thread.sleep(3000);
-						JavascriptExecutor jse = (JavascriptExecutor) driver;
+
 						jse.executeScript("window.scrollBy(0,100)", "");
 						Screenshots.captureScreenshot();
 						if (pageobjects.PAYMandPAYGTariffAndExtrasPage.capProsTop.isDisplayed()) {
@@ -1546,7 +1547,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 						//Selecting specified cap amount or clicking on Dont Cap My Bill Link
 						if (CapAmount.equalsIgnoreCase("DontCapMyBillLink")) {
-							pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink.click();
+							//pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink.click();
+							jse.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink);
 							log.debug("Dont cap my bill link is clicked");
 							Thread.sleep(3000);
 							/*JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -1644,7 +1646,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					} else if (BillCap.equalsIgnoreCase("DontCapMyBill")) {
 
 						if (CapAmount.equalsIgnoreCase("DontCapMyBillLink")) {
-							pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink.click();
+							//pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink.click();
+							jse.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink);
 							log.debug("Dont cap my bill link is clicked");
 							Thread.sleep(4000);
 						} else {
