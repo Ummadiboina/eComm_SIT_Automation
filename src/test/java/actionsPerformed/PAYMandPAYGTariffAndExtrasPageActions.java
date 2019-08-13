@@ -1754,7 +1754,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-			if (driver.findElements(By.xpath("//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link'] | //div[@class='edit-link']/../div/h2[contains(text(),'Spend Cap')]/../../div[2]/a | //a[@class='edit-bsc']")).size() > 0) {
+			if (driver.findElements(By.xpath("//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link'] | //div[@class='edit-link']/../div/h2[contains(text(),'Spend Cap')]/../../div[2]/a | //a[@class='edit-bsc'] | (//a[@class='edit-card'])[2]")).size() > 0) {
 				JavascriptExecutor jse = (JavascriptExecutor) driver;
 				jse.executeScript("window.scrollBy(0,-200)", "");
 				Thread.sleep(2000);
@@ -1775,7 +1775,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			if (driver.findElements(By.xpath("//a[normalize-space()='Change tariff'] | //div[@class='spentstariff']/div[2]/a | //a[@class='edit-your-plan']")).size() > 0) {
+			if (driver.findElements(By.xpath("//a[normalize-space()='Change tariff'] | //div[@class='spentstariff']/div[2]/a | //a[@class='edit-your-plan'] | (//a[@class='edit-card'])[1]")).size() > 0) {
 				log.debug("We are at the page: " + driver.getTitle() + "\n");
 				log.debug("Clicking on Tariff Edit link");
 				PAYMandPAYGTariffAndExtrasPage.TariffEditLink.click();

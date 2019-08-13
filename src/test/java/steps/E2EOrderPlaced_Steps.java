@@ -1350,7 +1350,7 @@ public class E2EOrderPlaced_Steps {
     public void i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option() {
         try {
             Thread.sleep(5000);
-            driver.findElement(By.xpath("//button[@id='btnAddToBasket'] | //input[@id='qa-proceed-to-basket']")).click();
+            driver.findElement(By.xpath("//button[@id='btnAddToBasket']")).click();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             Thread.sleep(7000);
@@ -4489,7 +4489,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             // BasketPageActions.ValidateContentEcomm11522();
             // BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
-            // AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
+            //AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
             AccessoryPageActions.check();
 
         } catch (Exception e) {

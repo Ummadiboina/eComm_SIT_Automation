@@ -30,10 +30,13 @@ public class BasketPage {
 	/*@FindBy(how = How.XPATH, using = "/*//*[@class='basket-nav']/div[@class='proceed-checkout']")
 	public static WebElement checkoutbtn;
 */
-	@FindBy(how = How.XPATH, using = "//*[@class='basket-nav']/div[@class='proceed-checkout']/form//input[@name='securecheckout']")
+	@FindBy(how = How.XPATH, using = " (//input[@class='checkout-btn'])[2]|(//input[@name='securecheckout'])[2]")
 	public static WebElement checkoutbtn;
 
-	@FindBy(how = How.XPATH, using = "//h2[normalize-space()='Your order']")
+	/*@FindBy(how = How.XPATH, using = "//h2[normalize-space()='Your order']")
+	public static WebElement YourOrder;*/
+
+	@FindBy(how = How.XPATH, using = "//h1[normalize-space()='Your basket']")
 	public static WebElement YourOrder;
 
 
@@ -46,11 +49,16 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='header']/div[2]/div[1]/div/button"))
 	public static WebElement GotoBasket;
 
-	@FindBy(how = How.XPATH, using = ("//Section[@class='product-details']"))
+	/*@FindBy(how = How.XPATH, using = ("//Section[@class='product-details']"))
+	public static WebElement DeviceDetailsDisplay;*/
+	@FindBy(how = How.XPATH, using = ("//div[@data-qa-type='device']"))
 	public static WebElement DeviceDetailsDisplay;
 
-	@FindBy(how = How.XPATH, using = ("//div[@class='your-order']"))
+	/*@FindBy(how = How.XPATH, using = ("//div[@class='your-order']"))
+	public static WebElement MainHeaders;*/
+	@FindBy(how = How.XPATH, using = ("//h1[normalize-space()='Your basket']"))
 	public static WebElement MainHeaders;
+
 
 	// String text =
 	// driver.findElement(By.cssSelector('.airtime-plan.is-refresh')).getText()
@@ -59,23 +67,33 @@ public class BasketPage {
 	@FindBy(css = "section.airtime-plan.is-refresh")
 	public static WebElement AirtimeDetails;
 
-	@FindBy(css = "section.airtime-plan")
+	//@FindBy(css = "section.airtime-plan")
+	//public static WebElement NonAirtimeDetails;
+
+	//div[@class='basket-card']
+	@FindBy(how = How.XPATH, using = ("//div[@class='basket-card']"))
 	public static WebElement NonAirtimeDetails;
 
-	@FindBy(how = How.XPATH, using = ("//li[@class='totals']"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='basket-card total-section']"))
 	public static WebElement totals;
 
 	@FindBy(how = How.ID, using = "homeDelivery")
 	public static WebElement HomeDeliverySelect;
 
-	@FindBy(how = How.XPATH, using = ("//div[@class='hasDelayedDeliveryItems']"))
+	/*@FindBy(how = How.XPATH, using = ("//div[@class='hasDelayedDeliveryItems']"))
+	public static WebElement HomeDeliveryText;*/
+	//div[@class='basket-card delivery-section']
+	@FindBy(how = How.XPATH, using = ("//div[@class='basket-card delivery-section']"))
 	public static WebElement HomeDeliveryText;
 
 	@FindBy(how = How.ID, using = ("clickAndCollect"))
 	public static WebElement clickAndCollectSelect;
 
-	@FindBy(how = How.XPATH, using = "//a[@id='checkStoreStock']")
+	@FindBy(how = How.XPATH, using = "//*[@id='clickAndCollect']")
 	public static WebElement clickAndCollect;
+
+	@FindBy(how = How.XPATH, using = "(//a[@class='card-link device-plan'])[2]")
+	public static WebElement changestore;
 
 	@FindBy(how = How.ID, using = ("checkStoreStock"))
 	public static WebElement checkSoteSotck_TradeIn;
@@ -114,13 +132,16 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("(//div[contains(@class,'tileContent')]/../div)[1]"))
 	public static WebElement firstStore;
 
-	@FindBy(how = How.XPATH, using = ("//div[@class='basket-header-xxl']"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='new-basket-header']"))
 	public static WebElement BasketHeaderXXL;
 
 	/// out of stock messages
 
-	@FindBy(how = How.XPATH, using = ("//div[@class='basket-nav']"))
+	/*@FindBy(how = How.XPATH, using = ("//div[@class='basket-nav']"))
+	public static WebElement BasketErrorText;*/
+	@FindBy(how = How.XPATH, using = ("//div[@class='partnerInfoContainer error-list']"))
 	public static WebElement BasketErrorText;
+	//div[@class='partnerInfoContainer error-list']
 
 	// Specific to Voucher code
 	@FindBy(how = How.ID, using = ("got-a-promo-code-label"))
@@ -135,23 +156,35 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='apply-voucher-error']"))
 	public static WebElement VoucherMessage;
 
-	@FindBy(how = How.XPATH, using = ("//a[@href='/shop/']"))
+	@FindBy(how = How.XPATH, using = ("//button[text()='Continue shopping']"))
 	public static WebElement ContinueShopping;
 
 	@FindAll({
 			@FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@data-qa-class='basket-item']/section/h3/span")) })
 	public static List<WebElement> DevicesList;
 
-	@FindAll({
+	/*@FindAll({
 			@FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@data-qa-class='basket-item']/section/h3/span")) })
 	public static List<WebElement> MyNonConnDevices;
 
 	@FindAll({
-			@FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@class='package include-rating']/section/h3/span")) })
+			@FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@class='package     include-rating']/section/h3/span")) })
 	public static List<WebElement> MyConnDevices;
 
 	@FindAll({ @FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@class='package ']/section/h3")) })
+	public static List<WebElement> MyTariffs;*/
+
+	@FindAll({
+			@FindBy(how = How.XPATH, using = ("//div[@data-qa-type='accessory']//div[@class='card-title']")) })
+	public static List<WebElement> MyNonConnDevices;
+
+	@FindAll({
+			@FindBy(how = How.XPATH, using = ("//div[@data-qa-type='device']//div[@class='card-title']")) })
+	public static List<WebElement> MyConnDevices;
+
+	@FindAll({ @FindBy(how = How.XPATH, using = ("//div[@data-qa-type='tariff']//div[@class='card-title']")) })
 	public static List<WebElement> MyTariffs;
+
 
 	@FindBy(how = How.XPATH, using = ("//li[@data-qa-type='accessory']/section/h3"))
 	public static WebElement BasketItemName;
@@ -186,16 +219,26 @@ public class BasketPage {
 	public static WebElement checkoutinProgress;
 
 	//Bill Spend cap
-	@FindBy(how = How.XPATH, using = "//section[@id='billSpendCapSection']/h3[2]/span")
+	//@FindBy(how = How.XPATH, using = "//section[@id='billSpendCapSection']/h3[2]/span")
+	//public static WebElement AppliedBillCap;
+
+	//(//div[@class='card-description device-description']/div)[1]
+	@FindBy(how = How.XPATH, using = "(//div[@class='card-description device-description']/div)[1]")
 	public static WebElement AppliedBillCap;
 
 	@FindBy(how = How.XPATH, using = "//a[@href='basket/changeBillSpendCap']")
 	public static WebElement BillCapEditLink_Basket;
 
-	@FindBy(how = How.XPATH, using = "//section[@id='billSpendCapSection']/h3[1]")
+	//@FindBy(how = How.XPATH, using = "//section[@id='billSpendCapSection']/h3[1]")
+	//public static WebElement BillSpendCapHeader;
+	//div[text()='SPEND CAP']
+	@FindBy(how = How.XPATH, using = "//div[text()='SPEND CAP']")
 	public static WebElement BillSpendCapHeader;
 
-	@FindBy(how = How.XPATH, using = "//section[@id='billSpendCapSection']/h3[1]/a")
+	//@FindBy(how = How.XPATH, using = "//section[@id='billSpendCapSection']/h3[1]/a")
+	//public static WebElement BasketBSCOverlay;
+	//a[@class='card-link device-plan spendcap-overlay accessible-class']
+	@FindBy(how = How.XPATH, using = "//a[@class='card-link device-plan spendcap-overlay accessible-class']")
 	public static WebElement BasketBSCOverlay;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='bscOverlay']")

@@ -773,16 +773,17 @@ public class AccessoryPageActions extends Environment {
 	public static void check() throws Exception {
 		getTotalQtyInBasket();
 
-		if (count + PAYMandPAYGTariffAndExtrasPageActions.AccessoryContainerSize > 12) {
+		if (count + PAYMandPAYGTariffAndExtrasPageActions.AccessoryContainerSize >= 12) {
+			//WebElement FirstAccessoryQuantityElement = driver.findElement(By.xpath("(//select[@id='accessory-quantity'])[1]"));
 			WebElement FirstAccessoryQuantityElement = driver
-					.findElement(By.xpath("(//select[@id='accessory-quantity'])[1]"));
+			.findElement(By.xpath("(//span[@id='accessory-quantity-desktop-0SelectBoxItText'])[1]"));
 			js.executeScript("arguments[0].setAttribute('style', 'display:block;')", FirstAccessoryQuantityElement);
 			WebElement countelement1 = new Select(FirstAccessoryQuantityElement).getFirstSelectedOption();
 			String FirstCount = countelement1.getText();
 			log.debug("Qty of Accessory displayed is " + FirstCount);
 
 			WebElement SecondAccessoryQuantityElement = driver
-					.findElement(By.xpath("(//select[@id='accessory-quantity'])[2]"));
+					.findElement(By.xpath("(//span[@id='accessory-quantity-desktop-1SelectBoxItText'])[1]"));
 			js.executeScript("arguments[0].setAttribute('style', 'display:block;')", SecondAccessoryQuantityElement);
 			WebElement countelement2 = new Select(SecondAccessoryQuantityElement).getFirstSelectedOption();
 			String SecondCount = countelement2.getText();
@@ -797,7 +798,7 @@ public class AccessoryPageActions extends Environment {
 		}
 		if (totalcount > 6) {
 			log.debug("Total count is greater than 6");
-			int checkoutbtnsize = driver.findElements(By.xpath("//*[@value='Go to checkout'][1]")).size();
+			int checkoutbtnsize = driver.findElements(By.xpath("(//input[@class='checkout-btn'])[2]|(//input[@name='securecheckout'])[2]")).size();
 			if (checkoutbtnsize != 0) {
 				Assert.fail("Checkout button is present even when the total qty in basket is greater than 6");
 			} else {

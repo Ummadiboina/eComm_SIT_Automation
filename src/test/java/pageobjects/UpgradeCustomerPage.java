@@ -124,13 +124,13 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//input[@id='email']")
 	public static WebElement BasketeMail;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='voucherCode']")
+	@FindBy(how = How.XPATH, using = "//input[@id='code")
 	public static WebElement promoCodeDetails;
 
 	@FindBy(how = How.XPATH, using = "//label[@id='got-a-promo-code-label' or contains(normalize-space(),'Got a promo code?')]")
 	public static WebElement plusAccordion;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='applyVoucher']")
+	@FindBy(how = How.XPATH, using = "(//button[@class='custom'])[1] | (//button[text()='Enter code'])[1]")
 	public static WebElement promoCodeSubmit;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='applyVoucher']//following-sibling::p")

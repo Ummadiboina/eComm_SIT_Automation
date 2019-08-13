@@ -196,7 +196,7 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void ValidateBasketPageContents(String Element, String expValue) throws IOException, InterruptedException {
+	public static void ValidateBasketPageContents(String Element, String expValue) throws IOException {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		boolean fname = false;
 		log.debug("Shop basket pages validations" + driver.getTitle());
@@ -205,7 +205,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 
 		// boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
-		if (driver.findElements(By.xpath("//*[@class='basket-nav']/div[@class='proceed-checkout']/form//input[@name='securecheckout']")).size() > 0) {
+		if (driver.findElements(By.xpath("(//input[@class='checkout-btn'])[2]|(//input[@name='securecheckout'])[2]")).size() > 0) {
 			if (pageobjects.BasketPage.checkoutbtn.isEnabled()) {
 				fname = true;
 			}
@@ -230,12 +230,12 @@ public class BasketPageActions extends Environment {
 
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 
-		if (driver.findElements(By.xpath("//div[@class='hasDelayedDeliveryItems']")).size() > 0) {
+		if (driver.findElements(By.xpath("//div[@class='basket-card delivery-section']")).size() > 0) {
 			log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
 		}
 
 
-		if (Element.equalsIgnoreCase("DataRollOver")) {
+		//if (Element.equalsIgnoreCase("DataRollOver")) {
 
 			/*String actValue = "";
 
@@ -245,16 +245,16 @@ public class BasketPageActions extends Environment {
 				actValue = actPlnListElm.get(i).getText().replaceAll("\"","").trim() + "|";
 			}*/
 
-			String actPlnListElmTxt = driver.findElement(By.xpath("//h3[@class='section-parent-header']//following-sibling::p")).getText();
-			Thread.sleep(2000);
-			if (actPlnListElmTxt.contains(expValue)) {
-				log.debug("Selected Data Roll over plan details is displayed in Basket page");
-			} else {
-				log.debug("Selected Data Roll over plan details is not displayed in Basket page");
-			}
-		}
+			//String actPlnListElmTxt = driver.findElement(By.xpath("//h3[@class='section-parent-header']//following-sibling::p")).getText();
+			//Thread.sleep(2000);
+			//if (actPlnListElmTxt.contains(expValue)) {
+				//log.debug("Selected Data Roll over plan details is displayed in Basket page");
+			//} else {
+				//log.debug("Selected Data Roll over plan details is not displayed in Basket page");
+			//}
+		//}
 
-		Screenshots.captureScreenshot();
+		//Screenshots.captureScreenshot();
 	}
 
 	public static void BasketContentsforNonConnected() throws IOException {
@@ -351,14 +351,19 @@ public class BasketPageActions extends Environment {
 				log.debug("click And Collect is Selected");
 				log.debug("clickAndCollect radio button is Selected");
 
+				//pageobjects.BasketPage.changestore.click();
+
 				pageobjects.BasketPage.StorePostcode.sendKeys("M4");
 				log.debug("PostCode Entered for Search");
 
 				Thread.sleep(4000);
 				Screenshots.captureScreenshot();
 				Thread.sleep(2000);
-				pageobjects.BasketPage.PostcodeSubmit.click();
-				Thread.sleep(5000);
+				//pageobjects.BasketPage.PostcodeSubmit.click();
+				//Thread.sleep(5000);
+
+				JavascriptExecutor jsee = (JavascriptExecutor) driver;
+				jsee.executeScript("arguments[0].click();", pageobjects.BasketPage.PostcodeSubmit);
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("Postcode Submitted for Search");
 
@@ -810,8 +815,8 @@ public class BasketPageActions extends Environment {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,300)", "");
 		Screenshots.captureScreenshot();
-		pageobjects.UpgradeCustomerPage.plusAccordion.click();
-		Thread.sleep(4000);
+		//pageobjects.UpgradeCustomerPage.plusAccordion.click();
+		//Thread.sleep(4000);
 		pageobjects.UpgradeCustomerPage.promoCodeDetails.sendKeys(promoCode);
 		log.debug("Promo Code Details entered");
 		Thread.sleep(3000);
@@ -881,7 +886,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 		try {
 			if (BSCstatus.equalsIgnoreCase("Enabled")) {
-				if (driver.findElements(By.xpath("//section[@id='billSpendCapSection']")).size() > 0) {
+				if (driver.findElements(By.xpath("//div[@class='basket-card basket-spend-cap-wrapper']")).size() > 0) {
 
 					log.debug("Bill spend cap section is displayed at " + pageTitle + " page \n");
 					/*scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader);
