@@ -51,5 +51,5 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                         | password | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action | tariff                   | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | testaccepta6818@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username                     | password | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action | tariff                   | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | inavl0ww_356240@o2.com       | test123  | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

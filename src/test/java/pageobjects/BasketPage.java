@@ -30,7 +30,7 @@ public class BasketPage {
 	/*@FindBy(how = How.XPATH, using = "/*//*[@class='basket-nav']/div[@class='proceed-checkout']")
 	public static WebElement checkoutbtn;
 */
-	@FindBy(how = How.XPATH, using = " (//input[@class='checkout-btn'])[2]|(//input[@name='securecheckout'])[2]")
+	@FindBy(how = How.XPATH, using = "(//input[@class='checkout-btn'])[2]|(//input[@name='securecheckout']) | //from[@data-qa-checkout='checkout']")
 	public static WebElement checkoutbtn;
 
 	/*@FindBy(how = How.XPATH, using = "//h2[normalize-space()='Your order']")
