@@ -171,11 +171,11 @@ public class BasketPageActions extends Environment {
 			Thread.sleep(4000);
 			if (!pageobjects.BasketPage.checkoutbtn.isEnabled()) {
 				//Thread.sleep(4000);
-				scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//input[@id='noNeedNewSim']")));
+				scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//label[@id='noNeedNewSim']")));
 				Screenshots.captureScreenshot();
 
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
-				executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//input[@id='noNeedNewSim']")));
+				executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//label[@id='noNeedNewSim']")));
 				//driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 			}
 			Thread.sleep(5000);
@@ -205,7 +205,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 
 		// boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
-		if (driver.findElements(By.xpath("(//input[@class='checkout-btn'])[2]|(//input[@name='securecheckout'])[2]")).size() > 0) {
+		if (driver.findElements(By.xpath("(//input[@class='checkout-btn'])[2]|(//input[@name='securecheckout']) | //from[@data-qa-checkout='checkout']")).size() > 0) {
 			if (pageobjects.BasketPage.checkoutbtn.isEnabled()) {
 				fname = true;
 			}
@@ -941,7 +941,7 @@ public class BasketPageActions extends Environment {
 					Assert.fail("Bill cap section is not present under order summary section in " + pageTitle + " page");
 				}
 			} else if (BSCstatus.equalsIgnoreCase("Disabled")) {
-				if (driver.findElements(By.xpath("//section[@id='billSpendCapSection']")).size() > 0) {
+				if (driver.findElements(By.xpath("//div[@class='basket-card basket-spend-cap-wrapper']")).size() > 0) {
 					log.debug("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
 					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
 				} else {
