@@ -34,4 +34,4 @@ Feature: 98_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Active_Voucherable_Pro
 
     Examples:
       | username                      | tariffAmt | dataValue | promoCode | password | BSCstatus | BillCap       | CapAmount | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 19fe82296938@stf.ref.o2.co.uk | £20       | 25GB      | fivepound | test123  | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | till55563595@stf.ref.o2.co.uk | £20       | 25GB      | fivepound | test123  | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

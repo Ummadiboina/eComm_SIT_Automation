@@ -148,7 +148,14 @@ public class BasketPageActions extends Environment {
 	public static void gotoCheckout() throws IOException, InterruptedException {
 
 		Thread.sleep(4000);
-		scrollToAnElement.scrollToElement(BasketPage.YourOrder);
+		//scrollToAnElement.scrollToElement(BasketPage.YourOrder);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(2000);
 		Screenshots.captureScreenshot();
 		String title = driver.getTitle();
 		if (title.contains("Thanks for waiting")) {
@@ -179,7 +186,7 @@ public class BasketPageActions extends Environment {
 				//driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 			}
 			Thread.sleep(5000);
-			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			//JavascriptExecutor jse = (JavascriptExecutor) driver;
 			jse.executeScript("window.scrollBy(0,400)", "");
 			Screenshots.captureScreenshot();
 			log.debug("Queue page is not displayed");
@@ -196,14 +203,21 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void ValidateBasketPageContents(String Element, String expValue) throws IOException {
+	public static void ValidateBasketPageContents(String Element, String expValue) throws IOException, InterruptedException {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		boolean fname = false;
 		log.debug("Shop basket pages validations" + driver.getTitle());
 
-		scrollToAnElement.scrollToElement(BasketPage.YourOrder);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(2000);
 		Screenshots.captureScreenshot();
-
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
 		// boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
 		if (driver.findElements(By.xpath("(//input[@class='checkout-btn'])[2]|(//input[@name='securecheckout']) | //from[@data-qa-checkout='checkout']")).size() > 0) {
 			if (pageobjects.BasketPage.checkoutbtn.isEnabled()) {
@@ -462,7 +476,7 @@ public class BasketPageActions extends Environment {
 		log.debug("Verifying if the devices selected are in basket");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,600)", "");
-
+		Screenshots.captureScreenshot();
 		pageobjects.BasketPage.ContinueShopping.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Continue Shopping in Basket Page");
 

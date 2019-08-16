@@ -1234,7 +1234,7 @@ public class E2EOrderPlaced_Steps {
                 log.debug("Queue page is not displayed");
                 PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
                 // BasketPageActions.ValidateBasketPageContents();
-                //Thread.sleep(4000);
+                Thread.sleep(4000);
                 BasketPageActions.CollectionorDelivery("homeDelivery");
             }
         } catch (Exception e) {
@@ -1282,9 +1282,9 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, BasketPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-            Thread.sleep(3000);
+            Thread.sleep(8000);
             BasketPageActions.ValidateBasketPageContents("", "");
-            Thread.sleep(5000);
+            Thread.sleep(4000);
             BasketPageActions.CollectionorDelivery("clickAndCollect");
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -4487,6 +4487,20 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, BasketPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,-300)", "");
+            Thread.sleep(2000);
+            //Screenshots.captureScreenshot();
             // BasketPageActions.ValidateContentEcomm11522();
             // BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
             //AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();

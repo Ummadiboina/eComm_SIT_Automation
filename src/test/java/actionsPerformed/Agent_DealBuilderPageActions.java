@@ -331,6 +331,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void SelectAccessoryDevice(String Device) throws InterruptedException, IOException {
 
         Agent_DealBuilderPage.AccessoriesTab.click();
+        Thread.sleep(4000);
 
         if (Device.contains("iPhone 7 Evo Elite Brushed Black")) {
             log.debug("searched iPhone 7 Evo Elite Brushed Black");
@@ -380,7 +381,15 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SelectSearchedaccessory.click();
             log.debug("Selected In stock accessory ie: " + Device);
             Thread.sleep(3000);
-        } else {
+        } else if (Device.contains("Samsung S9 Crystal Bundle")) {
+            log.debug("searching Galaxy Watch 46mm Silver Accessory ie:" + Device);
+            Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys(Device);
+            log.debug("searched Galaxy Watch 46mm Silver Accessory");
+            Thread.sleep(3000);
+            Agent_DealBuilderPage.SelectSearchedaccessory.click();
+            log.debug("Selected In stock accessory ie: " + Device);
+            Thread.sleep(3000);
+        }else {
             log.debug("searching In Stock Accessory");
             Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys("In Stock");
             log.debug("searched In Stock Accessory");

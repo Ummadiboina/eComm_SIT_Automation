@@ -28,5 +28,5 @@ Feature: 120_FR_Mix_CFU_Phone
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username         | password | Firstname | Surname | BSCstatus | Username     | Action | handset   | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | upFront | term | data | PreSelected | KeyEvent |
-      | standup@flex.com | test123  | Test      | Accepta | Enabled   | TEST ACCEPTA | skip   | Galaxy S9 | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | max     | max  | max  | No          | No       |
+      | username                      | password | Firstname | Surname | BSCstatus | Username     | Action | handset   | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | upFront | term | data | PreSelected | KeyEvent |
+      | 15se18962042@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | TEST ACCEPTA | skip   | Galaxy S9 | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | max     | max  | max  | No          | No       |

@@ -135,7 +135,7 @@ public class DeliveryPageActions extends Environment {
                 Thread.sleep(7000);
                 pageobjects.DeliveryPage.storePostcode.clear();
                 Thread.sleep(2000);
-                pageobjects.DeliveryPage.storePostcode.sendKeys("M4");
+                pageobjects.DeliveryPage.storePostcode.sendKeys("G13HF");
                 log.debug("Entered Post code");
                 Thread.sleep(2000);
                 Screenshots.captureScreenshot();
@@ -886,12 +886,19 @@ public class DeliveryPageActions extends Environment {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             Screenshots.captureScreenshot();
-            if (driver.findElements(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).size() > 0) {
+            if (driver.findElements(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')] | //div[@class='basket-card delivery-section']")).size() > 0) {
 
                 JavascriptExecutor jse = (JavascriptExecutor) driver;
                 jse.executeScript("window.scrollBy(0,300)", "");
+                Thread.sleep(2000);
                 Screenshots.captureScreenshot();
-                if (driver.findElement(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).isDisplayed()) {
+                jse.executeScript("window.scrollBy(0,300)", "");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                jse.executeScript("window.scrollBy(0,300)", "");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                if (driver.findElement(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')] | //div[@class='basket-card delivery-section']")).isDisplayed()) {
                     log.debug(" The Out of stock message is Displayed in the 'Your package' section");
                 }
             } else {
