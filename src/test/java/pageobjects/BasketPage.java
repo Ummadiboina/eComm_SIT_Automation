@@ -89,7 +89,7 @@ public class BasketPage {
 	@FindBy(how = How.ID, using = ("clickAndCollect"))
 	public static WebElement clickAndCollectSelect;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='clickAndCollect']")
+	@FindBy(how = How.XPATH, using = "(//*[@id='clickAndCollect'])[2]")
 	public static WebElement clickAndCollect;
 
 	@FindBy(how = How.XPATH, using = "(//a[@class='card-link device-plan'])[2]")
