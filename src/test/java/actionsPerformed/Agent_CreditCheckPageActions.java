@@ -222,8 +222,10 @@ public class Agent_CreditCheckPageActions extends Environment {
 			if(driver.findElements(By.xpath("//h2[@id='creditCheckHeader']")).size()>0)
 			{
 				String refStatus = Agent_CreditCheckDetailsPage.CreditCheckReferStatus.getText();
-
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				jse.executeScript("window.scrollBy(0,-300)", "");
 				Thread.sleep(5000);
+				Screenshots.captureScreenshot();
 				if(refStatus.contains("Refer: You've been conditionally referred. You'll be able to upgrade to a new device after six months on this tariff. Are you happy to continue? If the customer agrees to the six month restriction, call the referral team before placing the order on 08001116000.")){
 					System.out.println("Credit Check status for SIMO only validated successfully::  " + refStatus);
 					log.debug("Credit Check status for SIMO only validated successfully::  " + refStatus);

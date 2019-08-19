@@ -22,4 +22,4 @@ Feature: 32_CFA_CnC_Phones_Validate_OFCOM_With_InValid_PAC_Code_When_OfCom_Enabl
 
     Examples:
       | handset   | Firstname | Surname | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | iPhone XR | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | Invalid    | PAC         | Yes                 | 07521141016    | XBA266019   | Enabled   | CapMyBill | £15       |
+      | iPhone XR | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | Invalid    | PAC         | Yes                 | 07707003735    | XBA603120   | Enabled   | CapMyBill | £15       |

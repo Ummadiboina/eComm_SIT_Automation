@@ -197,10 +197,11 @@ public class Agent_HomePagePageActions extends Environment {
 		try {
 			Assert.assertTrue(pageobjects.Agent_HomePage.NewConnection.isDisplayed());
 			pageobjects.Agent_HomePage.NewConnection.click();
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			log.debug("Performing existing user new connection");
 			Reporter.log("Performing existing user new connection");
 			Screenshots.captureScreenshot();
+			log.debug("Currently we are at page: "+driver.getCurrentUrl());
 		} catch (Exception e) {
 			Assert.fail();
 			Screenshots.captureScreenshot();

@@ -2328,7 +2328,7 @@ public class Agent_DealBuilderPageActions extends Environment {
       }
     }
     public static void SelectSimoTariff(String Tariff) throws InterruptedException, IOException {
-        //Agent_DealBuilderPage.SIMOTariffsTab.click();
+        Agent_DealBuilderPage.SIMOTariffsTab.click();
         Thread.sleep(2000);
 
         if (Tariff.contains("Standard / Simo")) {

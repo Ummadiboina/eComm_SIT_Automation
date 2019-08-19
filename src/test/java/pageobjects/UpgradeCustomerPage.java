@@ -124,7 +124,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//input[@id='email']")
 	public static WebElement BasketeMail;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='code")
+	@FindBy(how = How.XPATH, using = "//input[@id='code']")
 	public static WebElement promoCodeDetails;
 
 	@FindBy(how = How.XPATH, using = "//label[@id='got-a-promo-code-label' or contains(normalize-space(),'Got a promo code?')]")
@@ -133,10 +133,10 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "(//button[@class='custom'])[1] | (//button[text()='Enter code'])[1]")
 	public static WebElement promoCodeSubmit;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='applyVoucher']//following-sibling::p")
+	@FindBy(how = How.XPATH, using = "//input[@id='applyVoucher']//following-sibling::p | //div[@id='basket-apply-voucher-error']")
 	public static WebElement promoCodeStatus;
 
-	@FindBy(how = How.XPATH, using = "//div/h3[contains(text(),'SIMOOFF')]")
+	@FindBy(how = How.XPATH, using = "//div/h3[contains(text(),'SIMOOFF')] | //div[@id='basket-apply-voucher-error']")
 	public static WebElement AppliedPromoCodeValidation;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='recaptcha-anchor']")
@@ -157,10 +157,10 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[1]/p[3]/a | //*[@id='sim-section']/div/div/div/div/p[3]/a")
 	public static WebElement SimSwaplink;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1]/label | //input[@id='needNewSim']")
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1]/label | //input[@id='needNewSim'] | //*[@id='sim-section']/div/div[2]/div[2]/form/p[2]/label | //input[@id='noNeedNewSim'] | //label[@id='needNew-Sim']")
 	public static WebElement IneedAsimRadio;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2]/label | //input[@id='noNeedNewSim']")
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2]/label | //input[@id='noNeedNewSim'] | //label[@id='noNeedNewSim']")
 	public static WebElement IdontNeedSimRadio;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='confirmSim']")
@@ -220,10 +220,10 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//section[@id='qa-upgrade-promotion-discount']//p[@class='upfront']")
 	public static WebElement TradeInCost2MyPkg;
 
-	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[2]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='discount-section']/div)[1]")
 	public static WebElement BuyOutTextBasketPage;
 
-	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[2]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='discount-section']/div)[5]")
 	public static WebElement TradeInTextBasketPage;
 
 	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[1]")
@@ -238,16 +238,16 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[2])[2]")
 	public static WebElement BuyOutText4BasketPage;
 
-	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']//p[@class='upfront'])[1]")
+	@FindBy(how = How.XPATH, using = "//div[normalize-space()='DEVICE PLAN BALANCE']/../div[3]/div[2]/div[2]")
 	public static WebElement BuyOutCost1BasketPage;
 
-	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']//p[@class='upfront'])[1]")
+	@FindBy(how = How.XPATH, using = "//div[normalize-space()='DEVICE PLAN BALANCE']/../div[3]/div[2]/div[2]")
 	public static WebElement TradeInCost1BasketPage;
 	
-	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']//p[@class='upfront'])[2]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='discount-section']/div[2]/div[2]/div[2]/p)[1]")
 	public static WebElement BuyOutCost2BasketPage;
 
-	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']//p[@class='upfront'])[2]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='discount-section']/div[2]/div[2]/div[2]/p)[1]")
 	public static WebElement TradeInCost2BasketPage;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='buy-out-discount']/td[2]/p")

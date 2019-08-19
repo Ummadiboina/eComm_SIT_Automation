@@ -2172,14 +2172,19 @@ public class UpgradeCustomerPageActions extends Environment {
         return a;
     }
 
-    public static void verifyBuyOutDisplayedInBasketPage(int BouOutValueFromMyPackageSection) throws IOException {
+    public static void verifyBuyOutDisplayedInBasketPage(int BouOutValueFromMyPackageSection) throws IOException, InterruptedException {
         log.debug("verifyBuyOutDisplayedInBasketPage");
         String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
         int a = 0;
         int b = 0;
         int BouOutValue_FromMyPackageSection = BouOutValueFromMyPackageSection;
 
-        scrollToAnElement.scrollToElement(UpgradeCustomerPage.BuyOutTextBasketPage);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,300)", "");
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        jse.executeScript("window.scrollBy(0,500)", "");
+        Thread.sleep(2000);
         Screenshots.captureScreenshot();
         AcText = UpgradeCustomerPage.BuyOutTextBasketPage.getText();
         Actcost1 = UpgradeCustomerPage.BuyOutCost1BasketPage.getText();
@@ -2223,15 +2228,19 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyTradeInDisplayedInBasketPage(int TradeInValueFromMyPackageSection) throws IOException {
+    public static void verifyTradeInDisplayedInBasketPage(int TradeInValueFromMyPackageSection) throws IOException, InterruptedException {
         log.debug("verifyTradeInDisplayedInBasketPage");
         String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
         int a = 0;
         int b = 0;
         int TradeInValue_FromMyPackageSection = TradeInValueFromMyPackageSection;
 
-        scrollToAnElement.scrollToElement(UpgradeCustomerPage.TradeInTextBasketPage);
-
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,300)", "");
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        jse.executeScript("window.scrollBy(0,500)", "");
+        Thread.sleep(2000);
         Screenshots.captureScreenshot();
         AcText = UpgradeCustomerPage.TradeInTextBasketPage.getText();
         Actcost1 = UpgradeCustomerPage.TradeInCost1BasketPage.getText();

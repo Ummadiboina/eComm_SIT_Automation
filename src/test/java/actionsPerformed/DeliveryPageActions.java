@@ -2140,7 +2140,7 @@ public class DeliveryPageActions extends Environment {
                     log.debug("Clicked on Continue button\n");
                 }
                 Thread.sleep(8000);
-                jse.executeScript("window.scrollBy(0,-200)", "");
+                jse.executeScript("window.scrollBy(0,-320)", "");
                 Thread.sleep(2000);
                 Screenshots.captureScreenshot();
                 //String currentURL = driver.getCurrentUrl();

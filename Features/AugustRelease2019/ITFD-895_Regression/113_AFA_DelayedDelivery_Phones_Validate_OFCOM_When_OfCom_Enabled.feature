@@ -5,8 +5,8 @@ Feature: 113_AFA_DelayedDelivery_Phones_Validate_OFCOM_When_OfCom_Enabled
   Scenario Outline: 113_AFA_DelayedDelivery_Phones_Validate_OFCOM_When_OfCom_Enabled
     Given I login to Agent shop
     And performs Acquisition for New user
-    #And Select a valid PayM <Device>
-    And Search for <Status> device
+    And Select a valid PayM <Device>
+    #And Search for <Status> device
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
@@ -24,5 +24,5 @@ Feature: 113_AFA_DelayedDelivery_Phones_Validate_OFCOM_When_OfCom_Enabled
     #And Validate Agent OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>
 
     Examples:
-      | Status           | Tariffs | Accessory | Extras    | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | journey               | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant | pacStacCode | pacStackRetainCheck |
-      | Delayed Delivery | Refresh | Random    | Insurance | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | DelayedDelivery Phone | Connected  | Phone        | Enabled     | Yes          | 07707003538    | valid      | PAC         | XBA031038   | Yes                 |
+      | Status           | Device              | Tariffs | Accessory | Extras    | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | journey               | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant | pacStacCode | pacStackRetainCheck |
+      | Delayed Delivery | iPhone 6s 32GB Gold | Refresh | Random    | Insurance | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | DelayedDelivery Phone | Connected  | Phone        | Enabled     | Yes          | 07707003538    | valid      | PAC         | XBA031038   | Yes                 |

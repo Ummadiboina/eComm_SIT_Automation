@@ -29,4 +29,4 @@ Feature: 72_CFA_Existing_customer_Phones_Validate_OFCOM_With_Valid_PAC_Code_When
 
     Examples:
       | handset   | color      | Capacity | BSCstatus | BillCap   | CapAmount | username               | password | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode |
-      | Galaxy S9 | Space Grey | 512GB    | Enabled   | CapMyBill | £60       | in01808o_211509@o2.com | test123  | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | PAC         | Yes                 | 07707003693    | XBA665853   |
+      | Galaxy S9 | Space Grey | 512GB    | Enabled   | CapMyBill | £60       | in01808o_211509@o2.com | test123  | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | PAC         | Yes                 | 07707003736    | XBA132005   |
