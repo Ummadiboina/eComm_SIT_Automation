@@ -21,4 +21,4 @@ Feature: 33_CFA_PayG_Phones_Validate_OFCOM_With_InValid_STAC_Code_When_OfCom_Ena
 
     Examples:
       | handset   | Firstname | Surname | tariff | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus |
-      | iPhone XR | TEST      | ACCEPTA |        | Phone   | Enabled     | Yes          | Invalid    | STAC        | Yes                 | 07521139255    | 490362XBA   | Disabled  |
+      | iPhone XR | TEST      | ACCEPTA |        | Phone   | Enabled     | Yes          | Invalid    | STAC        | Yes                 | 07707003763    | 392314XBA   | Disabled  |

@@ -95,16 +95,16 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "(//a[@class='card-link device-plan'])[2]")
 	public static WebElement changestore;
 
-	@FindBy(how = How.ID, using = ("checkStoreStock"))
+	@FindBy(how = How.XPATH, using = ("//a[@id='checkStoreStock']"))
 	public static WebElement checkSoteSotck_TradeIn;
 
 	// specific to accessories
 
 	// orders
-	@FindBy(how = How.XPATH, using = ("//li[@class='accessory has-image']"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='accessories-section']"))
 	public static WebElement AccessoryDetails;
 
-	@FindBy(how = How.XPATH, using = ("//*[@class='ac-qauantity-heading']"))
+	@FindBy(how = How.XPATH, using = ("//*[@class='card-description']"))
 	public static WebElement DeviceHeadingNonConnected;
 
 
@@ -310,6 +310,8 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "//button[@id='btnNext']")
 	public static WebElement payPalCTANext;
 
+	@FindBy(how = How.XPATH, using = "//div[@class='recycle-header']")
+	public static WebElement recycleHeader;
 
 
 }

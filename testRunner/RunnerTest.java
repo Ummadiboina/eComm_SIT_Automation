@@ -35,7 +35,7 @@ import cucumber.api.CucumberOptions;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//MayRelease2019//ITFD-895//FirstBatchRun" },
+		features = { "Features//MayRelease2019//ITFD-895//" },
 		glue = { "steps" },
 		tags = {"@Web"})
 

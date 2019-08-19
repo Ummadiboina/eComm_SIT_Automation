@@ -21,4 +21,4 @@ Feature: 52_AFA_Phones_Validate_OFCOM_With_Expired_PAC_Code_When_OfCom_Enabled
 
     Examples:
       | Device                  | Tariffs | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | journey | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant | pacStacCode | pacStackRetainCheck |
-      | Huawei P20 Pro Twilight | Refresh | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | AFA     | Enabled     | Yes          | 07521137589    | Expired    | PAC         | XBA702192   | Yes                 |
+      | Huawei P20 Pro Twilight | Refresh | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | AFA     | Enabled     | Yes          | 07707003754    | Expired    | PAC         | XBA009297   | Yes                 |

@@ -402,22 +402,23 @@ public class BasketPageActions extends Environment {
 
 	public static void checkStoreStockForTradeIn(String elementName) throws InterruptedException, IOException {
 
-
+		JavascriptExecutor jsee = (JavascriptExecutor) driver;
 		if (elementName.contains("homeDelivery")) {
 			pageobjects.BasketPage.HomeDeliverySelect.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("HomeDelivery is Selected");
-			log.debug("HomeDelivery is Selected");
+			//log.debug("HomeDelivery is Selected");
 			Screenshots.captureScreenshot();
 
 		}
 		if (elementName.contains("clickAndCollect")) {
-			pageobjects.BasketPage.checkSoteSotck_TradeIn.click();
+			//pageobjects.BasketPage.checkSoteSotck_TradeIn.click();
+			jsee.executeScript("arguments[0].click();", pageobjects.BasketPage.checkSoteSotck_TradeIn);
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("click And Collect is Selected");
 			log.debug("clickAndCollect radio button is Selected");
 			Thread.sleep(4000);
-			pageobjects.BasketPage.StorePostcode.sendKeys("M4");
+			pageobjects.BasketPage.StorePostcode.sendKeys("G2");
 			log.debug("PostCode Entered for Search");
 			Thread.sleep(3000);
 			Screenshots.captureScreenshot();
@@ -1542,14 +1543,26 @@ public class BasketPageActions extends Environment {
 
 	public static void selectRecycleFromBasketPage() throws IOException, InterruptedException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,400)", "");
-		Thread.sleep(2000);
-
+		//jse.executeScript("window.scrollBy(0,400)", "");
+		scrollToAnElement.scrollToElement(pageobjects.BasketPage.recycleHeader);
+		Thread.sleep(4000);
 		Screenshots.captureScreenshot();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		try {
 
-			if (driver.findElements(By.xpath("//span[@id='recycle-optionsSelectBoxItArrowContainer']")).size() > 0) {
+			List<WebElement> recycleOptions = driver.findElements(By.xpath("//div[@class='recycle-radio-wrapper']/div"));
+			log.debug("Recycle available options are::\n");
+			for(int i=1;i<recycleOptions.size();i++){
+				String recycleText =  recycleOptions.get(i).getText();
+				log.debug("Option "+i+" is: "+recycleText+"\n");
+			}
+
+			log.debug("Selecting Recycle credit option\n");
+			driver.findElement(By.xpath("//div[@class='recycle-radio-wrapper']/div/div/input")).click();
+			log.debug("Selected Recycle credit option ie::"+recycleOptions.get(1).getText());
+			Screenshots.captureScreenshot();
+
+			/*if (driver.findElements(By.xpath("//span[@id='recycle-optionsSelectBoxItArrowContainer']")).size() > 0) {
 				driver.findElement(By.xpath("//span[@id='recycle-optionsSelectBoxItArrowContainer']")).click();
 				Thread.sleep(3000);
 				Screenshots.captureScreenshot();
@@ -1576,9 +1589,9 @@ public class BasketPageActions extends Environment {
 				action.moveToElement(elementQuantity).click().build().perform();
 				log.debug("Selected Bill Credit option from Recycle dropdown");
 				Thread.sleep(2000);
-			}
+			}*/
 
-			jse.executeScript("window.scrollBy(0,-400)", "");
+			jse.executeScript("window.scrollBy(0,-2000)", "");
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
