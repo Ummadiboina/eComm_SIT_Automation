@@ -1,6 +1,5 @@
 Feature: 111_CFA_DelayedDeliveryPhones_Validate_OFCOM_When_OfCom_Enabled
 
-
   @Web
   Scenario Outline:111_CFA_DelayedDeliveryPhones_Validate_OFCOM_When_OfCom_Enabled
 
