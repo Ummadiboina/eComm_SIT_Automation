@@ -223,7 +223,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "(//div[@id='discount-section']/div)[1]")
 	public static WebElement BuyOutTextBasketPage;
 
-	@FindBy(how = How.XPATH, using = "(//div[@id='discount-section']/div)[5]")
+	@FindBy(how = How.XPATH, using = "(//div[@id='discount-section']/div)[1]")
 	public static WebElement TradeInTextBasketPage;
 
 	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[1]")

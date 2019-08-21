@@ -5,10 +5,10 @@ Feature: 115_FR_Upfront_CFA_PayMTablets_Till_TnE.feature
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page
     And select any available <Device> Tablet
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
+    #And select <Capacity> capacity of the connected device
     And Build your plan with <upFront> <term> and <data>
     #And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option

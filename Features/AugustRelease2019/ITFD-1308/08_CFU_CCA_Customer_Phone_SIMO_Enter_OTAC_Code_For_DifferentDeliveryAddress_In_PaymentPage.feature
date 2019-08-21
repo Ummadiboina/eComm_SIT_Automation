@@ -29,5 +29,5 @@ Feature: 08_CFU_CCA_Customer_Phone_SIMO_Enter_OTAC_Code_For_DifferentDeliveryAdd
 
     Examples:
       | username               | Action    | houseNumber | postCode | password | BillCap   | CapAmount         | BSCstatus | contractLength | Username     |
-      | inavl0ww_356240@o2.com | enterCode |             | SL33FP   | test123  | CapMyBill | DontCapMyBillLink | Enabled   | 12 Months      | Test Accepta |
+      | in02818o_759850@o2.com | enterCode |             | SL33FP   | test123  | CapMyBill | DontCapMyBillLink | Enabled   | 12 Months      | Test Accepta |
 

@@ -27,6 +27,9 @@ Feature: 126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Inco
     And Click on Add to basket CTA in Simo Listing Page
     Then I should see 'Your Sim Card'section in upgrade
     And Select 'I need a new sim' option
+    And Click on 'Use a different delivery address'link in upgrade simo journey
+    And perform <Action> in OTAC page in upgrade simo journey
+    And enter <houseNumber> and <postCode> in Delivery section to set different delivery address
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
@@ -39,6 +42,6 @@ Feature: 126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Inco
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | password | BillCap       | CapAmount | NewBillCap | NewCapAmount | BSCstatus | contractLength | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 02fe89026587@stf.ref.o2.co.uk | test123  | DontCapMyBill | Nill      | CapMyBill  | £10          | Enabled   | 12 Months      | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username                                                | Action    | houseNumber | postCode | password | BillCap       | CapAmount | NewBillCap | NewCapAmount | BSCstatus | contractLength | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | stester11e6856fe4-a6a7-4c4f-9bba-f65942cf4353@gmail.com | enterCode |             | SL33FP   | test123  | DontCapMyBill | Nill      | CapMyBill  | £10          | Enabled   | 12 Months      | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
 
