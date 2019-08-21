@@ -29,4 +29,4 @@ Feature: 33_Reg_Agent_TradeIn
 
     Examples:
       | User        | Device                      | Tariffs | BSCstatus | BillCapAmount | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | 07521151405 | Galaxy S9 64GB LILAC PURPLE | Refresh | Enabled   | £200          | dont67992371@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
+      | 07521150038 | Galaxy S9 64GB LILAC PURPLE | Refresh | Enabled   | £200          | dont61678511@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |

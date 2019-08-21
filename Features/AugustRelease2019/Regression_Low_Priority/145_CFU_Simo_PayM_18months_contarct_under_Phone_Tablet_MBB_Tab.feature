@@ -32,5 +32,5 @@ Feature: 145_CFU_Simo_PayM_18months_contarct_under_Phone_Tablet_MBB_Tab
     Then order confirmation is displayed
 
     Examples:
-      | Contract  | username               | BSCstatus | BillCap       | CapAmount | password |
-      | 12 months | in02818o_991985@o2.com | Enabled   | DontCapMyBill | Nill      | test123  |
+      | Contract  | username                                                | BSCstatus | BillCap       | CapAmount | password |
+      | 12 months | stester11edc49f8c-0144-467b-8df5-688f693f36e0@gmail.com | Enabled   | DontCapMyBill | Nill      | test123  |

@@ -43,5 +43,5 @@ Feature: 50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placem
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Tablet             | Action | color      | Capacity | Surname | BSCstatus | BillCap   | CapAmount | Username     | filtername | sortoption                 | username                      | password | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPad 9.7 inch 2018 | skip   | Space Grey | 512GB    | ACCEPTA | Enabled   | CapMyBill | £100      | TEST ACCEPTA | high       | Monthly data (High to low) | 05ap67917348@stf.ref.o2.co.uk | test123  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | Tablet             | Action | color      | Capacity | Surname | BSCstatus | BillCap   | CapAmount | Username     | filtername | sortoption                 | username               | password | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | iPad 9.7 inch 2018 | skip   | Space Grey | 512GB    | ACCEPTA | Enabled   | CapMyBill | £100      | TEST ACCEPTA | high       | Monthly data (High to low) | in01808o_485904@o2.com | test123  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

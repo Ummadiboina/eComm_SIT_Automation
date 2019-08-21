@@ -30,4 +30,4 @@ Feature: 122_FR_Mix_CFU_Phone
 
     Examples:
       | username                      | password | handset       | upFront | term | data | Action | Firstname | Surname | Username     | filtername | BSCstatus | sortoption                 | tabletname | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 15se87467555@stf.ref.o2.co.uk | test123  | iPhone Xs Max | avg     | avg  | avg  | skip   | TEST      | ACCEPTA | TEST ACCEPTA | low        | Disabled  | Monthly data (High to low) | A3 10      | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | e2ed63000330@stf.ref.o2.co.uk | test123  | iPhone Xs Max | avg     | avg  | avg  | skip   | TEST      | ACCEPTA | TEST ACCEPTA | low        | Disabled  | Monthly data (High to low) | A3 10      | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

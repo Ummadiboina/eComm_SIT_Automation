@@ -187,10 +187,10 @@ public class PAYMSimOPage {
 	@FindBy(how = How.XPATH, using = ("//a[contains(@href, '#phone-tab')]"))
 	public static WebElement PhoneTab;
 	
-	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'12 months')])[2]"))
+	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'12 months')])[2] | (//a[contains(text(),'12 months')])"))
 	public static WebElement months12tab;
 	
-	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'30 days')])[2]"))
+	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'30 days')])[2] | (//a[contains(text(),'30 days')])"))
 	public static WebElement days30tab;
 	
 	//@FindBy(how=How.CSS,using=(".col-xs-12.promotion-ribbon"))
@@ -260,7 +260,7 @@ public class PAYMSimOPage {
 	@FindBy (how =How.XPATH, using=(""))
 	public static WebElement Unlimited_data_confirmation;
 
-	@FindBy (how =How.XPATH, using=("(//li[@id='id-18-months'])[2]"))
+	@FindBy (how =How.XPATH, using=("(//li[@id='id-18-months'])[2] | (//li[@id='id-18-months'])"))
 	public static WebElement months_contract_18;
 
 	@FindBy (how =How.XPATH, using=(""))

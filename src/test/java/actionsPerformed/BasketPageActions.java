@@ -367,7 +367,7 @@ public class BasketPageActions extends Environment {
 
 				//pageobjects.BasketPage.changestore.click();
 
-				pageobjects.BasketPage.StorePostcode.sendKeys("M4");
+				pageobjects.BasketPage.StorePostcode.sendKeys("G2");
 				log.debug("PostCode Entered for Search");
 
 				Thread.sleep(4000);
@@ -1558,8 +1558,9 @@ public class BasketPageActions extends Environment {
 			}
 
 			log.debug("Selecting Recycle credit option\n");
-			driver.findElement(By.xpath("//div[@class='recycle-radio-wrapper']/div/div/input")).click();
+			driver.findElement(By.xpath("(//div[@class='recycle-radio-wrapper']/div/div/input)[1]")).click();
 			log.debug("Selected Recycle credit option ie::"+recycleOptions.get(1).getText());
+			Thread.sleep(2000);
 			Screenshots.captureScreenshot();
 
 			/*if (driver.findElements(By.xpath("//span[@id='recycle-optionsSelectBoxItArrowContainer']")).size() > 0) {

@@ -25,5 +25,5 @@ Feature: 01_CFU_Phone_SIMO_Enter_OTAC_Code_For_DifferentDeliveryAddress
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | contractLength | username            | BSCstatus | BillCap   | CapAmount | password | Action    |
-      | 12 Months      | set242424@fdfdf.com | Enabled   | CapMyBill | £20       | test123  | enterCode |
+      | contractLength | username               | BSCstatus | BillCap   | CapAmount | password | Action    |
+      | 12 Months      | in00322v_887443@o2.com | Enabled   | CapMyBill | £20       | test123  | enterCode |

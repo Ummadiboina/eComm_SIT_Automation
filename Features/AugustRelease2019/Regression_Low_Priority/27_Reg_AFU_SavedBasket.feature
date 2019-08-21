@@ -15,5 +15,5 @@ Feature: 27_Reg_AFU_SavedBasket
     And Verify email is sent successfully
 
     Examples:
-      | user        | Device                              | Tariffs | BSCstatus | BillCapAmount |
-      | 07521117110 | Galaxy S9 Plus 128GB Midnight Black | Refresh | Enabled   | No spend cap  |
+      | user        | Device                        | Tariffs | BSCstatus | BillCapAmount |
+      | 07521116176 | iPhone 8 Plus 64GB Space Grey | Refresh | Enabled   | No spend cap  |
