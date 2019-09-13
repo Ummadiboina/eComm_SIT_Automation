@@ -1337,6 +1337,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(3000);
             Autoredirection.redirectforHTTPsconnections();
             BasketPageActions.BasketContentsforNonConnected();
+
             BasketPageActions.CollectionorDelivery("homeDelivery");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2543,7 +2544,7 @@ public class E2EOrderPlaced_Steps {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,300)", "");
             ReviewPageActions.gettitlepage();
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             Screenshots.captureScreenshot();
             driver.findElement(By.xpath("//div[@class='review_acc_wrap']")).click();
             Thread.sleep(3000);
@@ -8529,7 +8530,7 @@ public class E2EOrderPlaced_Steps {
             List<WebElement> stockSize = driver.findElements(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr/td[4]"));
             for (int i = 1; i < stockSize.size(); i++) {
                 String stockStatus = driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr[" + i + "]/td[4]")).getText();
-                if (stockStatus.contains("In stock")) {
+                if (stockStatus.contains("In stock") || stockStatus.contains("Delayed delivery")) {
                     log.debug("Selecting Device from " + stockStatus);
                     driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr[" + i + "]/td[1]//img")).click();
                     Thread.sleep(5000);
@@ -8598,7 +8599,7 @@ public class E2EOrderPlaced_Steps {
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkStoreStockForPayG.selectStoreAddress);
             //scrollToAnElement.scrollToElement(checkStoreStockForPayG.selectStoreAddress);
             CommonUtilities.driverWait(driver, 3000);
-            log.debug("before selectiong the store");
+            log.debug("before selecting the store");
             checkStoreStockForPayG.selectStoreAddress.click();
             log.debug("after selecting the store");
             CommonUtilities.driverWait(driver, 3000);
@@ -14544,5 +14545,18 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to click on Use a different address link");
         }
 
+    }
+
+    //ITFD-1228, Sep Release 2019
+    @Given("^Select valid ([^\"]*) from gift extras tab$")
+    public void selectGiftExtrasTab(String perk) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.selectGiftExtrasPerk(perk);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            Assert.fail("Unable to select gift extras tab");
+        }
     }
 }

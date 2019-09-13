@@ -442,7 +442,7 @@ public class PaymentPageActions extends Environment {
             PaymentPage.CardMonth.sendKeys("12");
             log.debug("Entered Expiry Month");
             Thread.sleep(2000);
-            PaymentPage.CardYear.sendKeys("2019");
+            PaymentPage.CardYear.sendKeys("2020");
             log.debug("Entered Expiry Year");
             Thread.sleep(2000);
             PaymentPage.SecurityCode.sendKeys("123");

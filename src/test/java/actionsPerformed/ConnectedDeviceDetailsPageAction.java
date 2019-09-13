@@ -32,14 +32,12 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     public static String upFrontCost;
     public static String totalCostPerMonth;
 
-    public static void GetTitle() throws InterruptedException, IOException {
+    public static void GetTitle() throws IOException {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.debug("Currently in Device details page");
         String Ele1 = driver.getTitle();
         log.debug("The Page title is " + Ele1);
-        log.debug("Currently in Device details page");
-        log.debug("The Page title is " + Ele1);
-        Thread.sleep(5000);
+
         Screenshots.captureScreenshot();
     }
 

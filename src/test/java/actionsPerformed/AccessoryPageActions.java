@@ -750,16 +750,16 @@ public class AccessoryPageActions extends Environment {
 
 		int loop = 0;
 		String XpathQty = null;
-		loop = driver.findElements(By.xpath("(//select[@id='accessory-quantity'])")).size();
+		loop = driver.findElements(By.xpath("//span[@class='selectboxit-option-icon-container']/../span[contains(@id,'accessory-quantity-desktop')][1]")).size();
 		log.debug("loop count is " + loop);
 		for (int w = 1; w <= loop; w++) {
 
-			XpathQty = "(//select[@id='accessory-quantity'])[" + w + "]";
+			XpathQty = "(//span[@class='selectboxit-option-icon-container']/../span[contains(@id,'accessory-quantity-desktop')][1])[" + w + "]";
 
 			WebElement countelement3 = driver.findElement(By.xpath(XpathQty));
-			js.executeScript("arguments[0].setAttribute('style', 'display:block;')", countelement3);
+			//js.executeScript("arguments[0].setAttribute('style', 'display:block;')", countelement3);
 
-			countelement3 = new Select(countelement3).getFirstSelectedOption();
+			//countelement3 = new Select(countelement3).getFirstSelectedOption();
 
 			log.debug("[" + w + "] Accessory Quantity is " + countelement3.getText());
 			totalcount = totalcount + Integer.parseInt(countelement3.getText());
@@ -773,18 +773,18 @@ public class AccessoryPageActions extends Environment {
 	public static void check() throws Exception {
 		getTotalQtyInBasket();
 
-		if (count + PAYMandPAYGTariffAndExtrasPageActions.AccessoryContainerSize >= 12) {
+		/*if (count + PAYMandPAYGTariffAndExtrasPageActions.AccessoryContainerSize >= 12) {
 			//WebElement FirstAccessoryQuantityElement = driver.findElement(By.xpath("(//select[@id='accessory-quantity'])[1]"));
 			WebElement FirstAccessoryQuantityElement = driver
 			.findElement(By.xpath("(//span[@id='accessory-quantity-desktop-0SelectBoxItText'])[1]"));
-			js.executeScript("arguments[0].setAttribute('style', 'display:block;')", FirstAccessoryQuantityElement);
+			//js.executeScript("arguments[0].setAttribute('style', 'display:block;')", FirstAccessoryQuantityElement);
 			WebElement countelement1 = new Select(FirstAccessoryQuantityElement).getFirstSelectedOption();
 			String FirstCount = countelement1.getText();
 			log.debug("Qty of Accessory displayed is " + FirstCount);
 
 			WebElement SecondAccessoryQuantityElement = driver
 					.findElement(By.xpath("(//span[@id='accessory-quantity-desktop-1SelectBoxItText'])[1]"));
-			js.executeScript("arguments[0].setAttribute('style', 'display:block;')", SecondAccessoryQuantityElement);
+			//js.executeScript("arguments[0].setAttribute('style', 'display:block;')", SecondAccessoryQuantityElement);
 			WebElement countelement2 = new Select(SecondAccessoryQuantityElement).getFirstSelectedOption();
 			String SecondCount = countelement2.getText();
 			log.debug("Qty of Fitness Tracker displayed is " + SecondCount);
@@ -795,7 +795,7 @@ public class AccessoryPageActions extends Environment {
 			}
 		} else {
 			log.debug("Qty is less than 12");
-		}
+		}*/
 		if (totalcount > 6) {
 			log.debug("Total count is greater than 6");
 			int checkoutbtnsize = driver.findElements(By.xpath("(//input[@class='checkout-btn'])[2]|(//input[@name='securecheckout'])[2]")).size();
@@ -808,7 +808,29 @@ public class AccessoryPageActions extends Environment {
 			Screenshots.captureScreenshot();
 			clickOnRemoveButton();
 			Thread.sleep(15000);
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
 			clickOnRemoveButton();
+			//JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
 		} else {
 			log.debug("Total Qty is less than 6 so we will be able to proceed to checkout");
 		}
@@ -816,10 +838,11 @@ public class AccessoryPageActions extends Environment {
 
 	}
 
-	public static void clickOnRemoveButton() throws IOException {
+	public static void clickOnRemoveButton() throws IOException, InterruptedException {
 
 		pageobjects.BasketPage.RemoveButton.click();
 		log.debug("Clicked on Remove button");
+		Thread.sleep(5000);
 		Screenshots.captureScreenshot();
 	}
 

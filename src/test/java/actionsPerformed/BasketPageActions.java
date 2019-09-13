@@ -271,7 +271,7 @@ public class BasketPageActions extends Environment {
 		//Screenshots.captureScreenshot();
 	}
 
-	public static void BasketContentsforNonConnected() throws IOException {
+	public static void BasketContentsforNonConnected() throws IOException, InterruptedException {
 
 		try {
 			Assert.assertEquals("Your basket", pageobjects.BasketPage.BasketHeaderXXL.getText());
@@ -283,28 +283,34 @@ public class BasketPageActions extends Environment {
 			Assert.fail("Unable to find BasketHeaderXXL element in Reference shop Basket page");
 			Screenshots.captureScreenshot();
 		}
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
 
-		if (pageobjects.BasketPage.BasketErrorText.getText().contains("out of stock"))
-
-		{
-			log.debug("Stock is not available, perhaps out of stock");
-			log.debug("Stock is not available, perhaps out of stock");
-			Assert.fail("Stock is not available, perhaps out of stock");
-
+		if(driver.findElements(By.xpath("//div[@class='partnerInfoContainer error-list']")).size()>0) {
+			if (pageobjects.BasketPage.BasketErrorText.getText().contains("out of stock")) {
+				log.debug("Stock is not available, perhaps out of stock");
+				//log.debug("Stock is not available, perhaps out of stock");
+				Assert.fail("Stock is not available, perhaps out of stock");
+			}
 		}
 
 		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
 
-		log.debug("The Device names is/are : " + pageobjects.BasketPage.AccessoryDetails.getText());
+		//log.debug("The Device names is/are : " + pageobjects.BasketPage.AccessoryDetails.getText());
 
 		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceHeadingNonConnected.getText());
 
 		// Taking element name and storing it
 		String devicename1 = "Text111";
 
-		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
+		log.debug("The Device quantity : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
 
-		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
+		//log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
 
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 		Screenshots.captureScreenshot();
@@ -348,11 +354,11 @@ public class BasketPageActions extends Environment {
 
 	public static void CollectionorDelivery(String elementName) throws InterruptedException, IOException {
 		Thread.sleep(6000);
-		if (driver.findElements(By.xpath("//*[@id='homeDelivery']")).size() > 0) {
+		if (driver.findElements(By.xpath("//input[@id='homeDelivery']")).size() > 0) {
 			//if(!BasketPage.checkoutbtn.isDisplayed()){
 			if (elementName.contains("homeDelivery")) {
 				Thread.sleep(3000);
-				boolean b = driver.findElement(By.xpath("//*[@id='homeDelivery']")).isSelected();
+				boolean b = driver.findElement(By.xpath("//input[@id='homeDelivery']")).isSelected();
 				if (!b) {
 					pageobjects.BasketPage.HomeDeliverySelect.click();
 					// Assert.assertEquals(elementName,"Galaxy S7 is not found");

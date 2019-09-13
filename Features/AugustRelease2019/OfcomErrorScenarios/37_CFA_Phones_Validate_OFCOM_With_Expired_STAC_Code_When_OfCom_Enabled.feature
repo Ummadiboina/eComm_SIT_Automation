@@ -1,8 +1,8 @@
-Feature: 19_CFA_Phones_Validate_OFCOM_ErrorMessage_For_Null_Values_When_OfCom_Enabled
+Feature: 37_CFA_Phones_Validate_OFCOM_With_Expired_STAC_Code_When_OfCom_Enabled
 
 
   @Web
-  Scenario Outline:19_CFA_Phones_Validate_OFCOM_ErrorMessage_For_Null_Values_When_OfCom_Enabled
+  Scenario Outline:37_CFA_Phones_Validate_OFCOM_With_Expired_STAC_Code_When_OfCom_Enabled
 
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
@@ -11,15 +11,17 @@ Feature: 19_CFA_Phones_Validate_OFCOM_ErrorMessage_For_Null_Values_When_OfCom_En
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    And select an insurance
+    And Choose some Accesssory
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    And Click on About You Continue CTA
+    And Select the "New Connection" which you want to perform
+    And Input about you details <Firstname> and <Surname> and other delivery details in delivery page
     And Validate OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey
     And In Consumer Enter input details <ofComMobileNum> <pacStacCode> for <pacStacCheck> code when ofcom status is <ofComStatus> and Validate <pacStackRetainCheck> functionality
     And Click on Continue CTA and validate error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist
 
 
     Examples:
-      | handset   | Firstname | Surname | journey | ofComStatus | pacStacCheck | pacStacCode | ofComMobileNum | pacStackRetainCheck | BSCstatus | BillCap   | CapAmount | codeStatus |
-      | Galaxy S9 | TEST      | ACCEPTA | CFA     | Enabled     | Yes          |             |                |                     | Enabled   | CapMyBill | £15       | Null       |
+      | handset   | Firstname | Surname | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
+      | Galaxy S9 | TEST      | ACCEPTA | Phone   | Enabled     | Yes          | Expired    | PAC         | Yes                 | 07707003771    | 291048XBA   | Enabled   | CapMyBill | £15       |

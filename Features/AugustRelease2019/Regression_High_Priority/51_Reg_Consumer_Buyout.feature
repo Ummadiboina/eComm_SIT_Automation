@@ -24,7 +24,7 @@ Feature: 51_Reg_Consumer_Buyout
     #And Click on 'Continue' button on upgrade page at extra section
     #And verify if the buyout offer is displayed in UpGradeOptionsPage
     #And I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey
-    # //Vertical journey ends //
+    #//Vertical journey ends //
     And Verify phones tab selected by default
     And Verify phones vertical upgrade journey is removed or not
     And Click on View all Phones link in upgrade options page

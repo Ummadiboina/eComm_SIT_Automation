@@ -89,7 +89,7 @@ public class BasketPage {
 	@FindBy(how = How.ID, using = ("clickAndCollect"))
 	public static WebElement clickAndCollectSelect;
 
-	@FindBy(how = How.XPATH, using = "(//*[@id='clickAndCollect'])[2]")
+	@FindBy(how = How.XPATH, using = "(//*[@id='clickAndCollect'])[2] | (//a[@id='checkStoreStock'])")
 	public static WebElement clickAndCollect;
 
 	@FindBy(how = How.XPATH, using = "(//a[@class='card-link device-plan'])[2]")
@@ -108,7 +108,7 @@ public class BasketPage {
 	public static WebElement DeviceHeadingNonConnected;
 
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='accessory-quantitySelectBoxItContainer']"))
+	@FindBy(how = How.XPATH, using = ("(//span[@class='selectboxit-option-icon-container']/../span[contains(@id,'accessory-quantity-desktop')])[1]"))
 	public static WebElement DeviceQuantityNonConnected;
 
 	@FindBy(how = How.XPATH, using = "//input[@name='storePostcode']")
@@ -204,7 +204,7 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("//div[@class='promotion secondary']/a[@alt='ribbon information']"))
 	public static WebElement SecondaryPromotionOverlay;
 
-	@FindBy(how = How.XPATH, using = ("//section[@class='device-insurance']"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='insurance-section']"))
 	public static WebElement InsuranceSection;
 
 	/////////////////Upgrade Your sim////////////////////////////////////////
