@@ -29,7 +29,7 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     #And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
     #And land on the existing customer payment page and input <Username> and other details for Click and collect order
     And land on the existing customer payment page and input <Username> and other details for PayG order
-    And Continue to Agreements page and confirm all the agreement checks
+    #And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
     #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>

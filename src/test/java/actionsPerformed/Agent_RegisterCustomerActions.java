@@ -138,7 +138,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 				pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
 				//Thread.sleep(3000);
 				log.debug("Clicked on the Find address button");
-				Thread.sleep(3000);
+				Thread.sleep(7000);
 				JavascriptExecutor executor = (JavascriptExecutor)driver;
 				executor.executeScript("arguments[0].click();", pageobjects.Agent_RegisterCustomerPage.Selectedaddress);
 				//pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
