@@ -2381,7 +2381,7 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("in verify tradein message function");
         //driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
         Thread.sleep(5000);
-        String text = driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer'] | (//div[@id='tradeInOfferTile']/div/p)[1]")).getText();
+        String text = driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer'] | (//div[@id='tradeInOfferTile']/div/p)[1] | (//div[@id='tradeInOfferTile'])[1]")).getText();
         Screenshots.captureScreenshot();
         Thread.sleep(3000);
         if (text.contains("trade in")) {

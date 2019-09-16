@@ -6479,7 +6479,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             Thread.sleep(8000);
-            DeliveryPageActions.ClickContinue();
+            DeliveryPageActions.ContinueDelivery();
+            //DeliveryPageActions.ClickContinue();
             int upfrontSize = DeliveryPage.totalUpfront.getText().length();
             totalUpfrontValue = DeliveryPage.totalUpfront.getText().substring(1, upfrontSize - 3);
             log.debug("Total upFront cost has to pay is: "+totalUpfrontValue);

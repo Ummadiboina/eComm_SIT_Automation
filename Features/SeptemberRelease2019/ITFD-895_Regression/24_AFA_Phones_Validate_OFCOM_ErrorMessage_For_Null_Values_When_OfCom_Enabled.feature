@@ -19,5 +19,5 @@ Feature: 24_AFA_Phones_Validate_OFCOM_ErrorMessage_For_Null_Values_When_OfCom_En
     And Validate OFCOM error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist in agent journey
 
     Examples:
-      | Device                      | Tariffs | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStacCode | pacStackRetainCheck | Password | confirmPassword | SecurityAnswer | codeStatus |
-      | Galaxy S9 64GB LILAC PURPLE | Refresh | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | AFA     | Enabled     | Yes          |                |             |                     | test1234 | test1234        | vinudeep       | Null       |
+      | Device       | Tariffs | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | journey | ofComStatus | pacStacCheck | ofComMobileNum | pacStacCode | pacStackRetainCheck | Password | confirmPassword | SecurityAnswer | codeStatus |
+      | Galaxy Note9 | Refresh | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | AFA     | Enabled     | Yes          |                |             |                     | test1234 | test1234        | vinudeep       | Null       |
