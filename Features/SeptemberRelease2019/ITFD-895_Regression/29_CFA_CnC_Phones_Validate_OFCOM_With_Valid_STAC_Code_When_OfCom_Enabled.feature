@@ -29,4 +29,4 @@ Feature: 29_CFA_CnC_Phones_Validate_OFCOM_With_Valid_STAC_Code_When_OfCom_Enable
 
     Examples:
       | handset      | Firstname | Surname | Username     | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | Galaxy Note9 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | STAC        | Yes                 | 07707003767    | 882772XBA   | Enabled   | CapMyBill | £15       |
+      | Galaxy Note9 | TEST      | ACCEPTA | TEST ACCEPTA | Phone   | Enabled     | Yes          | valid      | STAC        | Yes                 | 07707003844    | 380691XBA   | Enabled   | CapMyBill | £15       |

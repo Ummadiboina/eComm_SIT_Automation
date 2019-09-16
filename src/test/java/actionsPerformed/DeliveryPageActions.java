@@ -2868,9 +2868,9 @@ public class DeliveryPageActions extends Environment {
                 //Clicking on Delivery Details Confirm CTA Before entering details
                 JavascriptExecutor jse = (JavascriptExecutor) driver;
                 jse.executeScript("window.scrollBy(0,100)", "");
-                Thread.sleep(3000);
+                Thread.sleep(5000);
                 Screenshots.captureScreenshot();
-                if(pageobjects.DeliveryPage.ContinueDeliveryCTA.isEnabled()){
+                if(pageobjects.DeliveryPage.ContinueDeliveryCTA.isDisplayed()){
                     log.debug("Failed due to Delivery Confirm CTA is enabled before providing input details\n");
                     Assert.fail("Failed due to Delivery Confirm CTA is enabled before providing input details\n");
                 }else{

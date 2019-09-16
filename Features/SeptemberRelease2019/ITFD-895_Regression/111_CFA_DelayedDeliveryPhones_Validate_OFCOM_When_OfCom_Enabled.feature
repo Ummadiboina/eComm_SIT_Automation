@@ -30,5 +30,5 @@ Feature: 111_CFA_DelayedDeliveryPhones_Validate_OFCOM_When_OfCom_Enabled
     #And Validate OFCOM switching input <ofComMobileNum> <codeVariant> and status in Order Confirmation page in <journey> when <codeStatus> Pac and Stac code <pacStacCheck> selected when ofcom status is <ofComStatus>
 
     Examples:
-      | handset   | color | Capacity | Status           | Firstname | Surname | Username     | journey               | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | iPhone 6s | Gold  | 32GB     | Delayed Delivery | TEST      | ACCEPTA | TEST ACCEPTA | DelayedDelivery Phone | Enabled     | Yes          | valid      | PAC         | Yes                 | 07707003537    | XBA794587   | Enabled   | CapMyBill | £15       |
+      | handset  | color | Capacity | Status           | Firstname | Surname | Username     | journey               | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
+      | iPhone 8 | Gold  | 64GB     | Delayed Delivery | TEST      | ACCEPTA | TEST ACCEPTA | DelayedDelivery Phone | Enabled     | Yes          | valid      | PAC         | Yes                 | 07707003537    | XBA794587   | Enabled   | CapMyBill | £15       |

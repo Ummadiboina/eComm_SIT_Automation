@@ -184,6 +184,8 @@ public class BasketPageActions extends Environment {
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
 				executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//label[@id='noNeedNewSim']")));
 				//driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
+			}else{
+				log.debug("CheckOut button is enabled\n");
 			}
 			Thread.sleep(5000);
 			//JavascriptExecutor jse = (JavascriptExecutor) driver;

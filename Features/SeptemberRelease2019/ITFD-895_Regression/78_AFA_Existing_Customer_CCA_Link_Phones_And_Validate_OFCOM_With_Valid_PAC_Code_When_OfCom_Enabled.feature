@@ -22,6 +22,7 @@ Feature: 78_AFA_Existing_Customer_CCA_Link_Phones_And_Validate_OFCOM_With_Valid_
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials for upgrade CCA User
     And Click on 'Continue' button on upgrade page
+    And Click on the 'Continue button' in delivery page
     And Validate OFCOM switching functionality in consumer channel when ofCom status is <ofComStatus> and performing <journey> journey
     And In Consumer Enter input details <ofComMobileNum> <pacStacCode> for <pacStacCheck> code when ofcom status is <ofComStatus> and Validate <pacStackRetainCheck> functionality
     And Click on Continue CTA and validate error text for <ofComMobileNum> <pacStacCode> <codeStatus> if exist
@@ -34,4 +35,4 @@ Feature: 78_AFA_Existing_Customer_CCA_Link_Phones_And_Validate_OFCOM_With_Valid_
 
     Examples:
       | User        | Device                              | Tariffs | DeliveryType | BSCstatus | BillCapAmount | username                      | password | Username     | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | GDPRstatus2 | KeyEvent | PreSelected | journey | journey2 | DeviceType | DeviceModule | ofComStatus | pacStacCheck | ofComMobileNum | codeStatus | codeVariant | pacStacCode | pacStackRetainCheck |
-      | 07521138223 | Galaxy S9 Plus 128GB Midnight Black | Refresh | HomeDelivery | Enabled   | £30           | dono34204837@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | Disabled    | No       | No          | CFA     | CCA      | Connected  | Phone        | Enabled     | Yes          | 07707003734    | valid      | PAC         | XBA021923   | Yes                 |
+      | 07734714661 | Galaxy S9 Plus 128GB Midnight Black | Refresh | HomeDelivery | Enabled   | £30           | 23oc57047547@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | Disabled    | No       | No          | CFA     | CCA      | Connected  | Phone        | Enabled     | Yes          | 07707003812    | valid      | PAC         | XBA087623   | Yes                 |

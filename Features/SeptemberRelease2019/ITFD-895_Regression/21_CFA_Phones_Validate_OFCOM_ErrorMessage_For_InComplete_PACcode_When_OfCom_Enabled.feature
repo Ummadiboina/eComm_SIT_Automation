@@ -21,5 +21,5 @@ Feature: 21_CFA_Phones_Validate_OFCOM_ErrorMessage_For_InComplete_PACcode_When_O
 
 
     Examples:
-      | handset  | Firstname | Surname | journey | ofComStatus | pacStacCheck | pacStacCode | ofComMobileNum | pacStackRetainCheck | codeStatus | BSCstatus | BillCap   | CapAmount |
-      | Galaxy S9 | TEST      | ACCEPTA | CFA     | Enabled     | Yes          | XBA36886    | 0770700363     | Yes                 | InComplete | Enabled   | CapMyBill | £15       |
+      | handset   | Firstname | Surname | journey | ofComStatus | pacStacCheck | pacStacCode | ofComMobileNum | pacStackRetainCheck | codeStatus | BSCstatus | BillCap   | CapAmount |
+      | Galaxy S9 | TEST      | ACCEPTA | CFA     | Enabled     | Yes          | XBA42282    | 07707003       | Yes                 | InComplete | Enabled   | CapMyBill | £15       |

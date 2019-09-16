@@ -468,6 +468,6 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "//*[@id='perksTabContent']/div/table/tbody/tr[1]/td[1]")
     public static WebElement firstAssociativePerk;
 
-    @FindBy(how = How.XPATH, using = "//a[@id='perksTab']/label/input")
+    @FindBy(how = How.XPATH, using = "//div[@id='perksTable_filter']/label/input")
     public static WebElement perkSearchTextBox;
 }

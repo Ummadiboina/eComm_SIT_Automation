@@ -24,4 +24,4 @@ Feature: 37_CFA_Phones_Validate_OFCOM_With_Expired_STAC_Code_When_OfCom_Enabled
 
     Examples:
       | handset   | Firstname | Surname | journey | ofComStatus | pacStacCheck | codeStatus | codeVariant | pacStackRetainCheck | ofComMobileNum | pacStacCode | BSCstatus | BillCap   | CapAmount |
-      | Galaxy S9 | TEST      | ACCEPTA | Phone   | Enabled     | Yes          | Expired    | PAC         | Yes                 | 07707003771    | 291048XBA   | Enabled   | CapMyBill | £15       |
+      | Galaxy S9 | TEST      | ACCEPTA | Phone   | Enabled     | Yes          | Expired    | PAC         | Yes                 | 07707003855    | 438444XBA   | Enabled   | CapMyBill | £15       |
