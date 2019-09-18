@@ -50,5 +50,5 @@ Feature: 66_Reg_CFU_PayMSimOnly
 
 
     Examples:
-      | contractLength | GiftBlock  | username               | BSCstatus | BillCap   | CapAmount | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 30 Days        | Configured | in034242_089822@o2.com | Enabled   | CapMyBill | £30       | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | contractLength | GiftBlock  | username                                                | BSCstatus | BillCap   | CapAmount | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 30 Days        | Configured | stester1188913e17-b549-41d4-8b28-bfd19a43d5bc@gmail.com | Enabled   | CapMyBill | £30       | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

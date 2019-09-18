@@ -31,4 +31,4 @@ Feature: 57_Reg_CS_CFU_SavedBasket
 
     Examples:
       | username                      | password | status  | consumer | handset       | tariff | BSCstatus | BillCap       | CapAmount |
-      | 12au23144905@stf.ref.o2.co.uk | test123  | Enabled | Me       | iPhone 8 Plus | Random | Enabled   | DontCapMyBill | Nill      |
+      | 05ju95681919@stf.ref.o2.co.uk | test123  | Enabled | Me       | iPhone 8 Plus | Random | Enabled   | DontCapMyBill | Nill      |

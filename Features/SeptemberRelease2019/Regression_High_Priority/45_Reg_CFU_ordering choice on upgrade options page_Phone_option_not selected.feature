@@ -35,7 +35,7 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page by clicking on Add to Basket button
-    And verify that 'Go to checkout' CTA is enabled
+    #And verify that 'Go to checkout' CTA is enabled
     And click on "go to checkout" button
     #And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained
     And perform <Action> in OTAC page
@@ -51,5 +51,5 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username               | password | handset         | BSCstatus | BillCap       | CapAmount | Username     | Action | tariff                   | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | gb124941_477873@o2.com | test123  | Galaxy S10 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username                      | password | handset         | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 22au52896692@stf.ref.o2.co.uk | test123  | Galaxy S10 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |

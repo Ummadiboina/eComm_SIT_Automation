@@ -60,5 +60,5 @@ Feature: 127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Opti
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username               | password | handset      | HouseNumber | PostCode | BillCap   | CapAmount | NewCapAmount | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | inavpte4_607088@o2.com | test123  | Galaxy Note9 | 11          | SL11ER   | CapMyBill | £5        | £10          | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | Yes         | No       |
+      | username                      | password | handset      | HouseNumber | PostCode | BillCap   | CapAmount | NewCapAmount | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 29au54298455@stf.ref.o2.co.uk | test123  | Galaxy Note9 | 11          | SL11ER   | CapMyBill | £5        | £10          | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | Yes         | No       |

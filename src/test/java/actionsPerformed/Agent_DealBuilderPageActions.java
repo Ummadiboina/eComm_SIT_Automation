@@ -2407,6 +2407,8 @@ public class Agent_DealBuilderPageActions extends Environment {
                 log.debug("Selected specified gift perk:"+perk+" \n");
                 Thread.sleep(2000);
             }
+        }else{
+            log.debug("No Perks available\n");
         }
 
         Screenshots.captureScreenshot();
