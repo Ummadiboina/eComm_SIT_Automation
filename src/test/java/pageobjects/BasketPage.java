@@ -209,10 +209,10 @@ public class BasketPage {
 
 	/////////////////Upgrade Your sim////////////////////////////////////////
 
-	@FindBy(how = How.XPATH, using = ("//*[@class='basket-nav']/div[1]/form[@class='qa-checkout-form ng-pristine ng-valid']/input[@class='button primary disabled']"))
+	@FindBy(how = How.XPATH, using = ("//input[@class='checkout-btn disable'] | //form[@class='qa-checkout-from ng-pristine ng-valid']"))
 	public static WebElement DisabledCheckout;
 
-	@FindBy(how = How.XPATH, using = ("//*[@class='basket-nav']/div[1]/form[@class='qa-checkout-form ng-pristine ng-valid']/input[@class='button primary']"))
+	@FindBy(how = How.XPATH, using = ("//input[@class='checkout-btn'] | //from[@class='qa-checkout-from ng-pristine ng-valid']"))
 	public static WebElement EnabledCheckout;
 
 	@FindBy(how = How.XPATH, using = "//h1[@class='staticPage']")

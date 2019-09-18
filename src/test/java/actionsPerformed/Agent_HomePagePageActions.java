@@ -68,7 +68,7 @@ public class Agent_HomePagePageActions extends Environment {
 		log.debug("Clicking on upgrade link");
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		Screenshots.captureScreenshot();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 
 		if(driver.findElements(By.xpath("//a[@id='abandonCheckout']")).size()>0)
 		{

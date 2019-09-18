@@ -33,4 +33,4 @@ Feature: 145_CFU_Simo_PayM_18months_contarct_under_Phone_Tablet_MBB_Tab
 
     Examples:
       | Contract  | username                      | BSCstatus | BillCap       | CapAmount | password |
-      | 12 months | till60871354@stf.ref.o2.co.uk | Enabled   | DontCapMyBill | Nill      | test123  |
+      | 18 months | till60871354@stf.ref.o2.co.uk | Enabled   | DontCapMyBill | Nill      | test123  |

@@ -14,6 +14,7 @@ Feature: 98_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Active_Voucherable_Pro
     Then Verify customer landed on simo listing page
     And Verify phones, tablet and MBB simo tabs displayed
     And the two contract lenght should be displayed
+    And Click on different <Contract>  Months Tariff in Tab
     And the data filters is displayed
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -33,5 +34,5 @@ Feature: 98_Reg_CFU_Validate_Basket_Page_Simo_Tariff_With_Active_Voucherable_Pro
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | tariffAmt | dataValue | promoCode   | password | BSCstatus | BillCap       | CapAmount | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 22au59643131@stf.ref.o2.co.uk | £22       | 40GB      | SIMO_V_TRUE | test123  | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username                      | Contract  | tariffAmt | dataValue | promoCode          | password | BSCstatus | BillCap       | CapAmount | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 29au19453984@stf.ref.o2.co.uk | 18 months | £22       | 40GB      | 1SIMOOFFERMONETARY | test123  | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

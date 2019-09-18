@@ -34,7 +34,7 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page by clicking on Add to Basket button
-    And verify that 'Go to checkout' CTA is enabled
+    #And verify that 'Go to checkout' CTA is enabled
     And Select a 'I need a sim'option
     #And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained
     And click on "go to checkout" button
@@ -42,7 +42,7 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
     #And Click on the 'Continue button' in delivery page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
-    And Verify connection tabs in "CFU" journey which you want perform
+    #And Verify connection tabs in "CFU" journey which you want perform
     And Click on GDPR Continue CTA
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
@@ -52,5 +52,5 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | password | handset         | BSCstatus | BillCap   | CapAmount         | Username     | Action | tariff                  | consumer | B1     | B2     | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 22au58762393@stf.ref.o2.co.uk | test123  | Galaxy S10 Plus | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Someone  | Select | Select | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username                      | password | handset         | BSCstatus | BillCap   | CapAmount         | Username     | Action    | tariff                  | consumer | B1     | B2     | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 22au58762393@stf.ref.o2.co.uk | test123  | Galaxy S10 Plus | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | enterCode | 19.99upfront45.00amonth | Someone  | Select | Select | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
