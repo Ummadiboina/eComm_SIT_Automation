@@ -1,7 +1,7 @@
-Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not selected
+Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selected
 
   @Web
-  Scenario Outline: This test ensures that customer is given a choice not to take a sim when the customer is on a phones upgrade journey
+  Scenario Outline: This test ensures that customer is given a choice to take a sim when the customer is on a phones upgrade journey
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     #And Navigate to upgrade phone
@@ -20,12 +20,11 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
     #And verfiy that two option are displayed
     #And verify that 'Sim Swap Form'link is diplayed
     #When I click on 'Sim Swap Form' I should be opned with a new tab
-    #And Select a 'I dont need a new sim'option
+    #And Select a 'I need a sim'option
     #And Verify that 'Confirm CTA' is displayed
     #And Click on 'Confirm CTA'
     #And Click on 'Continue' button on upgrade page at extra section
-    #And I Land on the basket page by clicking on Add to Basket button
-    # //Vertical journey ends//
+        #//Vertical journey ends
     And Verify phones tab selected by default
     And Verify phones vertical upgrade journey is removed or not
     And Click on View all Phones link in upgrade options page
@@ -36,12 +35,14 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page by clicking on Add to Basket button
     #And verify that 'Go to checkout' CTA is enabled
-    And click on "go to checkout" button
+    And Select a 'I need a sim'option
     #And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained
+    And click on "go to checkout" button
     And perform <Action> in OTAC page
     #And Click on the 'Continue button' in delivery page
     #And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
+    #And Verify connection tabs in "CFU" journey which you want perform
     And Click on GDPR Continue CTA
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks in Upgrade journey
@@ -51,5 +52,5 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | password | handset         | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | acce36004941@stf.ref.o2.co.uk | test123  | Galaxy S10 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username                      | password | handset         | BSCstatus | BillCap   | CapAmount         | Username     | Action    | tariff                  | consumer | B1     | B2     | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 22au58762393@stf.ref.o2.co.uk | test123  | Galaxy S10 Plus | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | enterCode | 19.99upfront45.00amonth | Someone  | Select | Select | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

@@ -482,8 +482,8 @@ public class DeliveryPageActions extends Environment {
         Screenshots.captureScreenshot();
 
 
-        Boolean isPresent = driver.findElements(By.xpath("//span[@id='trade-in-confirmation-required-custom']")).size() > 0;
-        if (isPresent) {
+        //Boolean isPresent = driver.findElements(By.xpath("//span[@id='trade-in-confirmation-required-custom']")).size() > 0;
+        if (driver.findElements(By.xpath("//span[@id='trade-in-confirmation-required-custom']")).size() > 0) {
             log.debug("TradeIn checkbox is present, so going to click on that");
             Thread.sleep(3000);
             js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[@id='trade-in-confirmation-required-custom']")));
