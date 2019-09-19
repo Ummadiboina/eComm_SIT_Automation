@@ -462,7 +462,7 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "(//span[@class='insuranceName']/../a)[1]")
     public static WebElement selectInsurance;
 
-    @FindBy(how = How.XPATH, using = "(//a[@id='perksTab'])")
+    @FindBy(how = How.XPATH, using = "//*[@id='perksTab']")
     public static WebElement giftExtrasTab;
 
     @FindBy(how = How.XPATH, using = "//*[@id='perksTabContent']/div/table/tbody/tr[1]/td[1]")

@@ -2387,28 +2387,30 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void selectGiftExtrasPerk(String perk) throws InterruptedException, IOException {
 
         // Selecting an Extra
-        Agent_DealBuilderPage.giftExtrasTab.click();
-        log.debug("Clicked on Gift Extras Tab");
-        Thread.sleep(6000);
-        Screenshots.captureScreenshot();
+        if(driver.findElement(By.xpath("//*[@id='perksTab']")).isDisplayed()) {
+            Agent_DealBuilderPage.giftExtrasTab.click();
+            log.debug("Clicked on Gift Extras Tab");
+            Thread.sleep(6000);
+            Screenshots.captureScreenshot();
 
-        if(driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr/td[1]")).size()>0) {
-            if (perk.contains("Random")) {
-                Agent_DealBuilderPage.firstAssociativePerk.click();
-                Thread.sleep(3000);
-                log.debug("Selected Random gift perk \n");
+            if (driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr/td[1]")).size() > 0) {
+                if (perk.contains("Random")) {
+                    Agent_DealBuilderPage.firstAssociativePerk.click();
+                    Thread.sleep(3000);
+                    log.debug("Selected Random gift perk \n");
+                } else {
+                    //Thread.sleep(2000);
+                    Agent_DealBuilderPage.perkSearchTextBox.sendKeys(perk);
+                    log.debug("Clicked on SearchTextBox to search : " + perk);
+                    Thread.sleep(2000);
+                    Screenshots.captureScreenshot();
+                    Agent_DealBuilderPage.firstAssociativePerk.click();
+                    log.debug("Selected specified gift perk:" + perk + " \n");
+                    Thread.sleep(2000);
+                }
             } else {
-                //Thread.sleep(2000);
-                Agent_DealBuilderPage.perkSearchTextBox.sendKeys(perk);
-                log.debug("Clicked on SearchTextBox to search : " + perk);
-                Thread.sleep(2000);
-                Screenshots.captureScreenshot();
-                Agent_DealBuilderPage.firstAssociativePerk.click();
-                log.debug("Selected specified gift perk:"+perk+" \n");
-                Thread.sleep(2000);
+                log.debug("No Perks available\n");
             }
-        }else{
-            log.debug("No Perks available\n");
         }
 
         Screenshots.captureScreenshot();
