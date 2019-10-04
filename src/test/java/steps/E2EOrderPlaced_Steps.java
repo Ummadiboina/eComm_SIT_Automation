@@ -60,6 +60,7 @@ public class E2EOrderPlaced_Steps {
     ArrayList<Integer> drupalOriginalDataTariffList = null;
     ArrayList<Integer> drupalOriginalUpFrontTariffList = null;
     public static int TradeInValueFromBasketPage = 0;
+    public static String giftPerk="";
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
@@ -3122,7 +3123,6 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to select valid tariff, please see the failure screenshot");
 
         }
-
     }
 
     @And("^Select a pay as you go data roll over ([^\"]*) and validate Data Roll over copy for ([^\"]*) and ([^\"]*)$")
@@ -14549,15 +14549,58 @@ public class E2EOrderPlaced_Steps {
     }
 
     //ITFD-1228, Sep Release 2019
-    @Given("^Select valid ([^\"]*) from gift extras tab$")
-    public void selectGiftExtrasTab(String perk) {
+    @And("^Select valid ([^\"]*) of type ([^\"]*) in ([^\"]*) agent channel$")
+    public void selectGiftExtrasTab(String perk, String perkType, String journey) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.selectGiftExtrasPerk(perk);
+            Agent_DealBuilderPageActions.selectExtrasPerkInAgentChannel(perk, perkType, journey);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             Assert.fail("Unable to select gift extras tab");
+        }
+    }
+
+    //ITFD-1228, OPal Sep release 2019
+    @And("^Select a valid perk associated tariff ([^\"]*) and ([^\"]*)$")
+    public void selectSpecifiedTariffInAgentChannel(String tariffTerm, String tariffAmt, String dataValue) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(2000);
+            Agent_DealBuilderPageActions.selectSpecifiedTariffInAgentChannel(tariffTerm, tariffAmt, dataValue);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select specified tariff, please see the failure screenshot");
+            Assert.fail("Unable to select specified tariff, please see the failure screenshot");
+        }
+    }
+
+    @And("^Validate gift extras tab and perks displayed under gift extras tab when OPAL is ([^\"]*)$")
+    public void selectSpecifiedTariffInAgentChannel(String statusOpal) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(2000);
+            Agent_DealBuilderPageActions.validateGiftExtrasTab(statusOpal);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select specified tariff, please see the failure screenshot");
+            Assert.fail("Unable to select specified tariff, please see the failure screenshot");
+        }
+    }
+
+    @And("^Validate perk ([^\"]*) of type ([^\"]*) selected in Agent ([^\"]*) SSC pages when OPAL is ([^\"]*)$")
+    public void validateSelectedPerkInAgentSSCPages(String perk, String perkType, String journey, String statusOpal) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(2000);
+            Agent_DealBuilderPageActions.validateSelectedPerkInAgentSSCPages(perk, perkType, journey, statusOpal);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select specified tariff, please see the failure screenshot");
+            Assert.fail("Unable to select specified tariff, please see the failure screenshot");
         }
     }
 }

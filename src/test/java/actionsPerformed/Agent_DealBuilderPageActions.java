@@ -19,6 +19,7 @@ import helpers.Environment;
 import pageobjects.Agent_DealBuilderPage;
 
 import org.junit.Assert;
+import steps.E2EOrderPlaced_Steps;
 
 public class Agent_DealBuilderPageActions extends Environment {
 
@@ -167,7 +168,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
                 }
 
-                log.debug("Selected combination of handset and talk plan");
+                log.debug("Selected device and tariff price combination\n");
                 Thread.sleep(5000);
             }
             Screenshots.captureScreenshot();
@@ -2384,37 +2385,282 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     }
 
-    public static void selectGiftExtrasPerk(String perk) throws InterruptedException, IOException {
+    public static void selectExtrasPerkInAgentChannel(String perk, String perkType, String journey) throws InterruptedException, IOException {
 
-        // Selecting an Extra
-        if(driver.findElement(By.xpath("//*[@id='perksTab']")).isDisplayed()) {
-            Agent_DealBuilderPage.giftExtrasTab.click();
-            log.debug("Clicked on Gift Extras Tab");
-            Thread.sleep(6000);
-            Screenshots.captureScreenshot();
-
-            if (driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr/td[1]")).size() > 0) {
-                if (perk.contains("Random")) {
-                    Agent_DealBuilderPage.firstAssociativePerk.click();
-                    Thread.sleep(3000);
-                    log.debug("Selected Random gift perk \n");
-                } else {
-                    //Thread.sleep(2000);
-                    Agent_DealBuilderPage.perkSearchTextBox.sendKeys(perk);
-                    log.debug("Clicked on SearchTextBox to search : " + perk);
-                    Thread.sleep(2000);
-                    Screenshots.captureScreenshot();
-                    Agent_DealBuilderPage.firstAssociativePerk.click();
-                    log.debug("Selected specified gift perk:" + perk + " \n");
-                    Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        //Before selecting perk, deal builder validation for perks
+        if(journey.equalsIgnoreCase("AFA")){
+            if(driver.findElements(By.xpath("//table[contains(@class,'lineItemTable boltons')]/tbody/tr[2]")).size()>0) {
+                log.debug("As expected, In Agent acquisition journey Bolton section is displaying\n");
+                String boltonStatusInfo = driver.findElement(By.xpath("//table[contains(@class,'lineItemTable boltons')]/tbody/tr[2]")).getText();
+                Thread.sleep(2000);
+                if(boltonStatusInfo.contains("You haven't chosen an extra. You've got 30 days to choose one in My O2.")) {
+                    log.debug("And, add later perk info message is matching ie:: " + boltonStatusInfo);
+                }else{
+                    log.debug("Failed:: Add later perk info message is not displaying before selecting the associated perk\n");
+                    Assert.fail("Failed:: Add later perk info message is not displaying before selecting the associated perk\n");
                 }
-            } else {
-                log.debug("No Perks available\n");
+            }else{
+                log.debug("Failed:: In Agent acquisition journey Bolton section is not displaying with 'Add later perk' info message before selecting the associated perk\n");
+                Assert.fail("Failed:: In Agent acquisition journey Bolton section is not displaying with 'Add later perk' info message before selecting the associated perk\n");
+            }
+        }else if(journey.equalsIgnoreCase("AFU")){
+
+            //Error copy should display to select Perk
+            if(driver.findElements(By.xpath("//li[@class='basketError']")).size()>0){
+                String perkErrorCopy = Agent_DealBuilderPage.perkErrorCopy.getText();
+                Thread.sleep(1000);
+                if(perkErrorCopy.contains("Choose a gift perk to checkout")){
+                    log.debug("As expected, error copy is displaying/matching before selecting the perk in AFU journey ie:: "+perkErrorCopy);
+                }else{
+                    log.debug("Failed, Perk error copy is not matching which is displayed before selecting the perk in AFU journey ie:: "+perkErrorCopy);
+                    Assert.fail("Failed, Perk error copy is not matching which is displayed before selecting the perk in AFU journey ie:: "+perkErrorCopy);
+                }
+            }else{
+                log.debug("Failed, Perk error copy is not displaying before selecting the perk in AFU journey for perk associated tariff\n");
+                Assert.fail("Failed, Perk error copy is not displaying before selecting the perk in AFU journey for perk associated tariff\n");
+            }
+
+            //Checkout CTA should be disabled before selecting perk
+            if(driver.findElement(By.xpath("//input[@id='startCheckoutFromPrivateBasketButton']")).isEnabled()){
+                log.debug("Failed, Checkout CTA is enabled before selecting the perk\n");
+                Assert.fail("Failed, Checkout CTA is enabled before selecting the perk\n");
+            }else{
+                log.debug("As expected, Checkout CTA is disabled before selecting the perk\n");
             }
         }
 
-        Screenshots.captureScreenshot();
+        if(perkType.equalsIgnoreCase("giftPerk")){
 
+            List<WebElement> listOfPerksDisplayed = driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr"));
+
+            log.debug("-----The gift perks associated to selected tariff are-----\n");
+
+            for(int i=1; i<=listOfPerksDisplayed.size();i++){
+                //log.debug("Perk"+(i+1)+":: "+listOfPerksDisplayed.get(i).getText()+"\n");
+
+                String perksUpsel = driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[9]")).getText();
+                Thread.sleep(1000);
+                if(perksUpsel.equals("")){
+                    log.debug("Perk Product Id: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[3]")).getText()+"\n");
+                    log.debug("Perk Description: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[4]")).getText()+"\n");
+                }
+            }
+
+            if (perk.contains("Random")) {
+                String giftPerk="";
+                for(int i=1; i<=listOfPerksDisplayed.size();i++){
+                    //log.debug("Perk"+(i+1)+":: "+listOfPerksDisplayed.get(i).getText()+"\n");
+                    String perksUpsel = driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[9]")).getText();
+                    Thread.sleep(1000);
+                    if(perksUpsel.equals("")){
+                        driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[1]")).click();
+                        E2EOrderPlaced_Steps.giftPerk = driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[3]")).getText();
+                        giftPerk = E2EOrderPlaced_Steps.giftPerk;
+                        break;
+                    }
+                }
+                log.debug("Selected Random gift perk from the list ie:: "+giftPerk+"\n");
+                Thread.sleep(3000);
+                String boltonStatusInfo = driver.findElement(By.xpath("//table[contains(@class,'lineItemTable boltons')]/tbody/tr[2]")).getText();
+                Screenshots.captureScreenshot();
+                if(boltonStatusInfo.contains(giftPerk)) {
+                    log.debug("As expected, Selected perk is added in deal builder section ie:: " + boltonStatusInfo);
+                }else{
+                    log.debug("Failed:: Selected perk is not added in deal builder section\n");
+                    Assert.fail("Failed:: Selected perk is not added in deal builder section\n");
+                }
+            } else {
+                Agent_DealBuilderPage.perkSearchTextBox.sendKeys(perk);
+                log.debug("Searching specified " + perk +" perk to select from the list\n");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                Agent_DealBuilderPage.firstAssociativePerk.click();
+                log.debug("Selected specified gift perk:" + perk + " \n");
+                Thread.sleep(3000);
+                String boltonStatusInfo = driver.findElement(By.xpath("//table[contains(@class,'lineItemTable boltons')]/tbody/tr[2]")).getText();
+                Screenshots.captureScreenshot();
+                if(boltonStatusInfo.contains(perk)) {
+                    log.debug("As expected, Selected perk is added in deal builder section ie:: " + boltonStatusInfo);
+                }else{
+                    log.debug("Failed:: Selected perk is not added in deal builder section\n");
+                    Assert.fail("Failed:: Selected perk is not added in deal builder section\n");
+                }
+            }
+
+        }else if(perkType.equalsIgnoreCase("retentionPerk")){
+
+        }else if(perkType.equalsIgnoreCase("laterPerk") || perkType.equalsIgnoreCase("")){
+            log.debug("Perk is not opted\n");
+            String boltonStatusInfo = driver.findElement(By.xpath("//table[contains(@class,'lineItemTable boltons')]/tbody/tr[2]]")).getText();
+            Thread.sleep(2000);
+            if(boltonStatusInfo.contains("You haven't chosen an extra. You've got 30 days to choose one in My O2.")) {
+                log.debug("As expected, Add later perk info message is matching ie:: " + boltonStatusInfo);
+            }else{
+                log.debug("Failed:: Add later perk info message is not displaying before selecting the associated perk\n");
+                Assert.fail("Failed:: Add later perk info message is not displaying before selecting the associated perk\n");
+            }
+
+        }else if(perkType.equalsIgnoreCase("paidPerk")){
+
+        }else if(perkType.equalsIgnoreCase("discountedPerk")){
+
+        }
+
+        //Checkout CTA should be disabled After selecting perk
+        if(driver.findElement(By.xpath("//input[@id='startCheckoutFromPrivateBasketButton']")).isEnabled()){
+            log.debug("As expected, Checkout CTA is enabled after selecting the perk\n");
+        }else{
+            log.debug("Failed, Checkout CTA is disabled after selecting the perk\n");
+            Assert.fail("Failed, Checkout CTA is disabled after selecting the perk\n");
+        }
+        Screenshots.captureScreenshot();
+    }
+
+    public static void selectSpecifiedTariffInAgentChannel(String tariffTerm, String tariffAmt, String dataValue) throws InterruptedException, IOException {
+        Agent_DealBuilderPage.TariffsTab.click();
+        Thread.sleep(5000);
+
+        Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys(tariffTerm + " " + tariffAmt + " " + dataValue);
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        if(driver.findElements(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[1]")).size()>0) {
+            Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+            log.debug("Selected specified Tariff ie:: Tariff amount=  "+tariffAmt+" and Tariff data = "+dataValue);
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+        }else{
+            log.debug("Specified tariffs not available\n");
+            Assert.fail("Specified tariffs not available\n");
+        }
+    }
+
+    public static void validateGiftExtrasTab(String statusOpal) throws InterruptedException, IOException {
+
+        if(statusOpal.equalsIgnoreCase("Enabled")) {
+
+            if (driver.findElements(By.xpath("//*[@id='perksTab']")).size()>0) {
+                log.debug("As expected, Gift Extras Tab is displaying for Enabled status\n");
+
+                //Fetching device and tariff price combination selected from deal builder section
+                String selectElement = driver.findElement(By.xpath("//*[@class='priceSelection']/select/option[@selected='selected']")).getText();
+                Boolean priceCombinationFlag;
+                if(selectElement.contains("select price combination")){
+                    log.debug("Device and tariff price combination is not selected\n");
+                    Agent_DealBuilderPage.giftExtrasTab.click();
+                    log.debug("Clicked on Gift Extras Tab");
+                    Thread.sleep(6000);
+                    priceCombinationFlag = false;
+                }else{
+                    log.debug("Device and tariff price combination is selected\n");
+                    priceCombinationFlag = true;
+                }
+
+                Screenshots.captureScreenshot();
+
+                //Validating perks are displaying Before/After selecting device and tariff price combination
+                if(priceCombinationFlag){
+                    //log.debug("Currently we are validating gift Extras tab after selecting device and tariff price combination\n");
+                    if (driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr")).size() > 0) {
+                        log.debug("As expected, Associated perks are displaying after selecting device and tariff price combination\n");
+
+                        log.debug("The list of perks displayed are::\n");
+
+                        List<WebElement> listOfPerksDisplayed = driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr"));
+
+                        for(int i=1; i<=listOfPerksDisplayed.size();i++){
+                            //log.debug("Perk"+(i+1)+":: "+listOfPerksDisplayed.get(i).getText()+"\n");
+
+                            log.debug("-----------Perk "+i+" Details-----------\n");
+                            log.debug("Perk Category: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[2]")).getText()+"\n");
+                            log.debug("Perk Product Id: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[3]")).getText()+"\n");
+                            log.debug("Perk Description: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[4]")).getText()+"\n");
+                            log.debug("Perk Discounted Cost: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[6]")).getText()+"\n");
+                            log.debug("Perk Discounted Duration(cost): "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[7]")).getText()+"\n");
+                            log.debug("Perk Future Subscription Cost: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[8]")).getText()+"\n");
+                            log.debug("Perk Upsell: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[9]")).getText()+"\n");
+                        }
+
+                    }else{
+                        log.debug("Failed, Associated Perks are not displaying\n");
+                        Assert.fail("Failed, Associated Perks are not displaying\n");
+                    }
+                }else{
+                    //log.debug("Currently we are validating gift Extras tab before selecting device and tariff price combination\n");
+
+                    String perksCopy = driver.findElement(By.xpath("(//*[@id='perksTabContent']/div/table/tbody/tr/td)[1]")).getText();
+                    if (perksCopy.contains("No Gift perks are available with the option in the deal builder.")) {
+                        log.debug("As expected, Perks are not displaying before selecting device and tariff price combination from deal builder\n");
+                    }else{
+                        log.debug("Failed, Perks are displaying before selecting device and tariff price combination, please check the failure screen shot\n");
+                        Assert.fail("Failed, Perks are displaying before selecting device and tariff price combination, please check the failure screen shot\n");
+                    }
+                }
+            }else{
+                log.debug("Gift Extras Tab is not displaying for Enabled status\n");
+                Assert.fail("Gift Extras Tab is not displaying for Enabled status\n");
+            }
+        }else if(statusOpal.equalsIgnoreCase("Disabled")){
+            if (driver.findElements(By.xpath("//*[@id='perksTab']")).size()>0) {
+                log.debug("Gift Extras Tab is displaying for Disabled status\n");
+                Assert.fail("Gift Extras Tab is displaying for Disabled status\n");
+            }else{
+                log.debug("As expected, Gift Extras Tab is disabled\n");
+            }
+        }
+        Screenshots.captureScreenshot();
+    }
+
+    public static void validateSelectedPerkInAgentSSCPages(String perk, String perkType, String journey, String statusOpal) throws InterruptedException, IOException {
+        Thread.sleep(5000);
+        if(statusOpal.equalsIgnoreCase("Enabled")){
+            if(perkType.equalsIgnoreCase("giftPerk")){
+                String boltonStatusInfo = driver.findElement(By.xpath("//table[contains(@class,'lineItemTable boltons')]/tbody/tr[2]")).getText();
+                Screenshots.captureScreenshot();
+                if (perk.contains("Random")) {
+
+                    Screenshots.captureScreenshot();
+                    if(boltonStatusInfo.contains(E2EOrderPlaced_Steps.giftPerk)) {
+                        log.debug("As expected, Selected perk is added in Order Summary section ie:: " + boltonStatusInfo);
+                    }else{
+                        log.debug("Failed:: Selected perk is not added in Order Summary section\n");
+                        Assert.fail("Failed:: Selected perk is not added in Order Summary section\n");
+                    }
+                } else {
+
+                    if(boltonStatusInfo.contains(perk)) {
+                        log.debug("As expected, Selected perk is added in Order Summary section ie:: " + boltonStatusInfo);
+                    }else{
+                        log.debug("Failed:: Selected perk is not added in Order Summary section\n");
+                        Assert.fail("Failed:: Selected perk is not added in Order Summary section\n");
+                    }
+                }
+
+            }else if(perkType.equalsIgnoreCase("retentionPerk")){
+
+            }else if(perkType.equalsIgnoreCase("laterPerk") || perkType.equalsIgnoreCase("")){
+                String boltonStatusInfo = driver.findElement(By.xpath("//table[contains(@class,'lineItemTable boltons')]/tbody/tr[2]")).getText();
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                if(boltonStatusInfo.contains("You haven't chosen an extra. You've got 30 days to choose one in My O2.")) {
+                log.debug("As expected, Add later perk info message is matching ie:: " + boltonStatusInfo);
+                }else{
+                log.debug("Failed:: Add later perk info message is not displaying before selecting the associated perk\n");
+                Assert.fail("Failed:: Add later perk info message is not displaying before selecting the associated perk\n");
+                }
+            }else if(perkType.equalsIgnoreCase("paidPerk")){
+
+            }else if(perkType.equalsIgnoreCase("discountedPerk")){
+
+            }
+        }else if(statusOpal.equalsIgnoreCase("Disabled")){
+            if (driver.findElements(By.xpath("//*[@id='perksTab']")).size()>0) {
+                log.debug("Gift Extras Tab is displaying for Disabled status\n");
+                Assert.fail("Gift Extras Tab is displaying for Disabled status\n");
+            }else{
+                log.debug("As expected, Gift Extras Tab is disabled\n");
+            }
+        }
     }
 
 }
