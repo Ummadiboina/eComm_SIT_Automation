@@ -28,4 +28,4 @@ Feature: 01_CFU_SIMO_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_Preticked_to
 
     Examples:
       | username                      | BSCstatus | BillCap   | CapAmount | Username     | password | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | 02ma49092549@stf.ref.o2.co.uk | Enabled   | CapMyBill | £30       | TEST ACCEPTA | test123  | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Yes         |
+      | 02ma49092549@stf.ref.o2.co.uk | abcd   | CapMyBill | £30       | TEST ACCEPTA | test123  | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Yes         |
