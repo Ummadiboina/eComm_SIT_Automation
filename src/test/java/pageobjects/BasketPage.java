@@ -77,7 +77,7 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("//div[@class='basket-card total-section']"))
 	public static WebElement totals;
 
-	@FindBy(how = How.XPATH, using = "//label[@id='homeDelivery']")
+	@FindBy(how = How.XPATH, using = "//label[@id='homeDelivery'] | //input[@id='homeDelivery']")
 	public static WebElement HomeDeliverySelect;
 
 	/*@FindBy(how = How.XPATH, using = ("//div[@class='hasDelayedDeliveryItems']"))
