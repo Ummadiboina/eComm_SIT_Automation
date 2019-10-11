@@ -2490,6 +2490,33 @@ public class Agent_DealBuilderPageActions extends Environment {
 
         }else if(perkType.equalsIgnoreCase("retentionPerk")){
 
+            // Selecting an Extra tab
+            Agent_DealBuilderPage.ExtrasTab.click();
+            log.debug("Clicked on Extras Tab\n");
+            Thread.sleep(3000);
+
+            List<WebElement> listOfRetentionPerksDisplayed = driver.findElements(By.xpath("(//th[contains(normalize-space(),'Perks')])/../../../tbody/tr"));
+
+            log.debug("-----The retention perks associated to selected tariff are-----\n");
+
+            for(int i=1; i<=listOfRetentionPerksDisplayed.size();i++){
+
+                String retentionPerkDetails = driver.findElement(By.xpath("(//th[contains(normalize-space(),'Perks')])/../../../tbody/tr["+i+"]/td")).getText();
+                Thread.sleep(1000);
+                log.debug("Retention Perk displayed: "+retentionPerkDetails+"\n");
+            }
+
+            for(int i=1; i<=listOfRetentionPerksDisplayed.size();i++){
+
+                String retentionPerkDetails = driver.findElement(By.xpath("(//th[contains(normalize-space(),'Perks')])/../../../tbody/tr["+i+"]/td[1]")).getText();
+                Thread.sleep(1000);
+                if(retentionPerkDetails.contains(perk)) {
+                    driver.findElement(By.xpath("(//th[contains(normalize-space(),'Perks')])/../../../tbody/tr["+i+"]/td[1]/a")).click();
+                    log.debug("Specified Retention Perk Selected ie: " + retentionPerkDetails + "\n");
+                    break;
+                }
+            }
+
         }else if(perkType.equalsIgnoreCase("laterPerk") || perkType.equalsIgnoreCase("")){
             log.debug("Perk is not opted\n");
             String boltonStatusInfo = driver.findElement(By.xpath("//table[contains(@class,'lineItemTable boltons')]/tbody/tr[2]]")).getText();
@@ -2502,6 +2529,34 @@ public class Agent_DealBuilderPageActions extends Environment {
             }
 
         }else if(perkType.equalsIgnoreCase("paidPerk")){
+
+            // Selecting an Extra tab
+            Agent_DealBuilderPage.ExtrasTab.click();
+            log.debug("Clicked on Extras Tab\n");
+            Thread.sleep(3000);
+
+            List<WebElement> listOfPaidPerksDisplayed = driver.findElements(By.xpath("(//th[contains(normalize-space(),'Perks')])/../../../tbody/tr"));
+
+            log.debug("-----The paid perks associated to selected tariff are-----\n");
+
+            for(int i=1; i<=listOfPaidPerksDisplayed.size();i++){
+
+                String paidPerkDetails = driver.findElement(By.xpath("(//th[contains(normalize-space(),'Perks')])/../../../tbody/tr["+i+"]/td")).getText();
+                Thread.sleep(1000);
+                log.debug("Paid Perk displayed: "+paidPerkDetails+"\n");
+
+            }
+
+            for(int i=1; i<=listOfPaidPerksDisplayed.size();i++){
+
+                String paidPerkDetails = driver.findElement(By.xpath("(//th[contains(normalize-space(),'Perks')])/../../../tbody/tr["+i+"]/td[1]")).getText();
+                Thread.sleep(1000);
+                if(paidPerkDetails.contains(perk)) {
+                    driver.findElement(By.xpath("(//th[contains(normalize-space(),'Perks')])/../../../tbody/tr["+i+"]/td[1]/a")).click();
+                    log.debug("Specified Paid Perk Selected ie: " + paidPerkDetails + "\n");
+                    break;
+                }
+            }
 
         }else if(perkType.equalsIgnoreCase("discountedPerk")){
 
@@ -2614,7 +2669,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void validateSelectedPerkInAgentSSCPages(String perk, String perkType, String journey, String statusOpal) throws InterruptedException, IOException {
         Thread.sleep(5000);
         if(statusOpal.equalsIgnoreCase("Enabled")){
-            if(perkType.equalsIgnoreCase("giftPerk")){
+            if(perkType.equalsIgnoreCase("giftPerk") || perkType.equalsIgnoreCase("retentionPerk") || perkType.equalsIgnoreCase("paidPerk")){
                 String boltonStatusInfo = driver.findElement(By.xpath("//table[contains(@class,'lineItemTable boltons')]/tbody/tr[2]")).getText();
                 Screenshots.captureScreenshot();
                 if (perk.contains("Random")) {
@@ -2636,8 +2691,6 @@ public class Agent_DealBuilderPageActions extends Environment {
                     }
                 }
 
-            }else if(perkType.equalsIgnoreCase("retentionPerk")){
-
             }else if(perkType.equalsIgnoreCase("laterPerk") || perkType.equalsIgnoreCase("")){
                 String boltonStatusInfo = driver.findElement(By.xpath("//table[contains(@class,'lineItemTable boltons')]/tbody/tr[2]")).getText();
                 Thread.sleep(2000);
@@ -2648,8 +2701,6 @@ public class Agent_DealBuilderPageActions extends Environment {
                 log.debug("Failed:: Add later perk info message is not displaying before selecting the associated perk\n");
                 Assert.fail("Failed:: Add later perk info message is not displaying before selecting the associated perk\n");
                 }
-            }else if(perkType.equalsIgnoreCase("paidPerk")){
-
             }else if(perkType.equalsIgnoreCase("discountedPerk")){
 
             }
@@ -2662,7 +2713,6 @@ public class Agent_DealBuilderPageActions extends Environment {
             }
         }
     }
-
 }
 
 

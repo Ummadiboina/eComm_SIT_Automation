@@ -1,12 +1,12 @@
-Feature: 01_AFA_Phone_Premium_Tariff_And_Later_Perk_Without_Accessorries
+Feature: 21_AFA_Phone_Premium_Tariff_And_Paid_Perk_Only
 
   #launch hooks and get browser
   @Web
-  Scenario Outline: 01_AFA_Phone_Premium_Tariff_And_Later_Perk_Without_Accessorries
+  Scenario Outline: 21_AFA_Phone_Premium_Tariff_And_Paid_Perk_Only
     Given I login to Agent shop
     And performs Acquisition for New user
-    And Select a valid PayM <Device>
     And Select a valid perk associated tariff <tariffTerm> <tariffAmt> and <dataValue>
+    And Select a valid PayM <Device>
     And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal>
     And select a valid Handset and Tariff combination
     And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal>
@@ -27,5 +27,5 @@ Feature: 01_AFA_Phone_Premium_Tariff_And_Later_Perk_Without_Accessorries
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device                   | tariffAmt | tariffTerm | dataValue | perk      | perkType  | journey | statusOpal | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
-      | iPhone Xs Max 256GB Gold | £27       | 30D        | 30GB      | laterPerk | laterPerk | AFA     | Enabled    | HomeDelivery | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |
+      | Device | Extras | tariffTerm | tariffAmt | dataValue | perk                               | perkType | journey | statusOpal | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
+      | Random | Perk   | 30D        | £27       | 30GB      | Amazon Prime Video Auto-enrol perk | paidPerk | AFA     | Enabled    | HomeDelivery | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |
