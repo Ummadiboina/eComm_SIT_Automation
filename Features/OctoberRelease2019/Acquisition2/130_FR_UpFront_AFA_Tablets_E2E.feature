@@ -22,5 +22,5 @@ Feature: 130_FR_UpFront_AFA_Tablets_E2E
     And Click on 'Generate CCA' button
 
     Examples:
-      | Device                             | Tariffs | upFront | term | data | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | DeviceModule | Password | confirmPassword | SecurityAnswer |
-      | iPad Pro 10.5 inch 64GB Space Grey | Refresh | avg     | avg  | avg  | HomeDelivery | Enabled   | £100          | TEST      | ACCEPTA | TEST ACCEPTA | 18          | SL11UP   | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Tablet       | test123  | test123         | vinudeep       |
+      | Device                              | Tariffs | upFront | term | data | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | DeviceModule | Password | confirmPassword | SecurityAnswer |
+      | Apple iPad 9.7 inch 2018 128GB Gold | Refresh | avg     | avg  | avg  | HomeDelivery | Enabled   | £100          | TEST      | ACCEPTA | TEST ACCEPTA | 18          | SL11UP   | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Tablet       | test123  | test123         | vinudeep       |

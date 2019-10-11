@@ -11,7 +11,7 @@ Feature: 92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory
     #And click on the color dropdown
     #And verify the name of the colour is next to the colour tile in CFAPhoneColour
     #And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
+   # And select <Capacity> capacity of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
