@@ -24,10 +24,10 @@ Feature: 37_Reg_CFA_Cover_me_copy_update_on_basket_summary
     And navigate to PAYM Tablets page
     #And I choose <tabletname> Tablet
     And Select PayM Tablet <tabletname>
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
-    And select <capacity> capacity of the connected device
+   # And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
+    #And select <capacity> capacity of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
