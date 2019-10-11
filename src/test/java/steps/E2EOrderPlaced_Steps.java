@@ -6757,7 +6757,7 @@ public class E2EOrderPlaced_Steps {
     @And("^check the status ([^\"]*) of the device$")
     public void check_status_of_device(String status) {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(8000);
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             if (status.equals("Pre Order")) {
@@ -14562,7 +14562,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     //ITFD-1228, OPal Sep release 2019
-    @And("^Select a valid perk associated tariff ([^\"]*) and ([^\"]*)$")
+    @And("^Select a valid perk associated tariff ([^\"]*) ([^\"]*) and ([^\"]*)$")
     public void selectSpecifiedTariffInAgentChannel(String tariffTerm, String tariffAmt, String dataValue) {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);

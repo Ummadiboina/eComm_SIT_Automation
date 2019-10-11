@@ -360,7 +360,7 @@ public class BasketPageActions extends Environment {
 			//if(!BasketPage.checkoutbtn.isDisplayed()){
 			if (elementName.contains("homeDelivery")) {
 				Thread.sleep(3000);
-				boolean b = driver.findElement(By.xpath("//input[@id='homeDelivery']")).isSelected();
+				boolean b = driver.findElement(By.xpath("//input[@id='homeDelivery'] | //label[@id='homeDelivery']")).isSelected();
 				if (!b) {
 					pageobjects.BasketPage.HomeDeliverySelect.click();
 					// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -368,7 +368,10 @@ public class BasketPageActions extends Environment {
 					Screenshots.captureScreenshot();
 				}
 			} else if (elementName.contains("clickAndCollect")) {
-				pageobjects.BasketPage.clickAndCollect.click();
+				//pageobjects.BasketPage.clickAndCollect.click();
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				log.debug("In Basket page select click and collect option\n");
+				js.executeScript("arguments[0].click();", pageobjects.BasketPage.clickAndCollect);
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("click And Collect is Selected");
 				log.debug("clickAndCollect radio button is Selected");
