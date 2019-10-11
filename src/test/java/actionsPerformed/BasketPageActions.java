@@ -356,11 +356,11 @@ public class BasketPageActions extends Environment {
 
 	public static void CollectionorDelivery(String elementName) throws InterruptedException, IOException {
 		Thread.sleep(6000);
-		if (driver.findElements(By.xpath("//label[@id='homeDelivery']")).size() > 0) {
+		if (driver.findElements(By.xpath("//input[@id='homeDelivery']")).size() > 0) {
 			//if(!BasketPage.checkoutbtn.isDisplayed()){
 			if (elementName.contains("homeDelivery")) {
 				Thread.sleep(3000);
-				boolean b = driver.findElement(By.xpath("//label[@id='homeDelivery']")).isSelected();
+				boolean b = driver.findElement(By.xpath("//input[@id='homeDelivery'] | //label[@id='homeDelivery']")).isSelected();
 				if (!b) {
 					pageobjects.BasketPage.HomeDeliverySelect.click();
 					// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -368,16 +368,13 @@ public class BasketPageActions extends Environment {
 					Screenshots.captureScreenshot();
 				}
 			} else if (elementName.contains("clickAndCollect")) {
+				//pageobjects.BasketPage.clickAndCollect.click();
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				log.debug("In Basket page select click and collect option\n");
 				js.executeScript("arguments[0].click();", pageobjects.BasketPage.clickAndCollect);
-				log.debug("In Basket page select click and collect option is Selected\n");
-
-				Screenshots.captureScreenshot();
-				//pageobjects.BasketPage.clickAndCollect.click();
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-				//log.debug("click And Collect is Selected");
-				//log.debug("clickAndCollect radio button is Selected");
+				log.debug("click And Collect is Selected");
+				log.debug("clickAndCollect radio button is Selected");
 
 				//pageobjects.BasketPage.changestore.click();
 
