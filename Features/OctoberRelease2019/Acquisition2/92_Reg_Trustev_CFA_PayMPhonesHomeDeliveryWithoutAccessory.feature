@@ -34,4 +34,4 @@ Feature: 92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory
     #Close the browser
     Examples:
       | handset       | color | Capacity | Firstname | Surname | BSCstatus | BillCap   | CapAmount         | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone Xs Max | White | 64GB     | TEST      | ACCEPTA | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |
+      | iPhone XR     | White | 64GB     | TEST      | ACCEPTA | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |
