@@ -11,7 +11,7 @@ Feature: 92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory
     #And click on the color dropdown
     #And verify the name of the colour is next to the colour tile in CFAPhoneColour
     #And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
+   # And select <Capacity> capacity of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -34,4 +34,4 @@ Feature: 92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory
     #Close the browser
     Examples:
       | handset       | color | Capacity | Firstname | Surname | BSCstatus | BillCap   | CapAmount         | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone Xs Max | White | 64GB     | TEST      | ACCEPTA | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |
+      | iPhone XR     | White | 64GB     | TEST      | ACCEPTA | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |
