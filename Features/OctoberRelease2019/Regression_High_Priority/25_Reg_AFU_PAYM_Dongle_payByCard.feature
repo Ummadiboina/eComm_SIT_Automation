@@ -20,4 +20,4 @@ Feature: 25_Reg_AFU_PAYM_Dongle_payByCard
 
     Examples:
       | user        | Device | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | 07521155211 | dongle | Refresh | Enabled   | £200          | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Yes         |
+      | 07801427159 | dongle | Refresh | Enabled   | £200          | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |

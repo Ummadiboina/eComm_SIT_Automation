@@ -2386,7 +2386,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
     public static void selectExtrasPerkInAgentChannel(String perk, String perkType, String journey) throws InterruptedException, IOException {
-
+        Thread.sleep(3000);
         Screenshots.captureScreenshot();
         //Before selecting perk, deal builder validation for perks
         if(journey.equalsIgnoreCase("AFA")){

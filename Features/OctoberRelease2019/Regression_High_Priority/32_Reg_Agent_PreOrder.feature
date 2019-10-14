@@ -28,5 +28,5 @@ Feature: 32_Reg_Agent_PreOrder
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples:
-      | Status   | Device                   | Tariffs | Extras | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | preorder | Huawei Mate 20 Pro Black | Random  | Base   | HomeDelivery | Enabled   | £200          | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | Phone        |
+      | Status   | Device                        | Tariffs | Extras | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
+      | preorder | OnePlus 6T 128GB Mirror Black | Random  | Base   | HomeDelivery | Enabled   | £200          | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | Phone        |

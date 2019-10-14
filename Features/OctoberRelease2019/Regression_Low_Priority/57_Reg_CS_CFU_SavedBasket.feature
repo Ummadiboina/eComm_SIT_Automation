@@ -30,5 +30,5 @@ Feature: 57_Reg_CS_CFU_SavedBasket
     And choose to email basket to save the basket in CFU for <username>
 
     Examples:
-      | username                      | password | status  | consumer | handset       | tariff | BSCstatus | BillCap       | CapAmount |
-      | 05ju95681919@stf.ref.o2.co.uk | test123  | Enabled | Me       | iPhone 8 Plus | Random | Enabled   | DontCapMyBill | Nill      |
+      | username    | password | status  | consumer | handset       | tariff | BSCstatus | BillCap       | CapAmount |
+      | ins_feb6898 | test123  | Enabled | Me       | iPhone 8 Plus | Random | Enabled   | DontCapMyBill | Nill      |

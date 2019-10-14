@@ -9,7 +9,7 @@ Feature: 33_Reg_Agent_TradeIn
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination_new
-    And Select valid <perk> from gift extras tab
+    And Select valid <perk> of type <perkType> in <journey> agent channel
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And Clicks on 'Trade In'button
@@ -29,5 +29,5 @@ Feature: 33_Reg_Agent_TradeIn
     Then order confirmation is displayed
 
     Examples:
-      | User        | Device                            | Tariffs | perk                              | BSCstatus | BillCapAmount | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | 07521152872 | Galaxy Note9 128GB Midnight Black | Refresh | B:CR7682:Amazon:3M:PrimeVideo:FOC | Enabled   | £200          | dont52324025@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
+      | User        | Device                            | Tariffs | perk                   | perkType | journey | BSCstatus | BillCapAmount | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | 07521167950 | Galaxy Note9 128GB Midnight Black | Refresh | B:CR7696:Cafeyn:6M:FOC | giftPerk | AFU     | Enabled   | £200          | dont65546508@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
