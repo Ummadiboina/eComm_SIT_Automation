@@ -9,7 +9,7 @@ Feature: 29_Reg_Agent_Buyout
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination_new
-    And Select valid <perk> from gift extras tab
+    #And Select valid <perk> of type <perkType> in <journey> agent channel
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And clicks on 'Buyout' button
@@ -28,5 +28,5 @@ Feature: 29_Reg_Agent_Buyout
     Then order confirmation is displayed
 
     Examples:
-      | User        | Device                             | perk                    | BSCstatus | BillCapAmount | Tariffs | username                      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | 07568416158 | Apple iPhone 7 Plus 32GB Rose Gold | B:CR7696:LeKiosk:6M:FOC | Enabled   | £15           | Refresh | dont25284671@stf.ref.o2.co.uk | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |
+      | User        | Device                             | perk                    | perkType | journey | BSCstatus | BillCapAmount | Tariffs | username                      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | 07568418727 | Apple iPhone 7 Plus 32GB Rose Gold | B:CR7696:LeKiosk:6M:FOC | giftPerk | AFU     | Enabled   | £15           | Refresh | 19se53279723@stf.ref.o2.co.uk | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |

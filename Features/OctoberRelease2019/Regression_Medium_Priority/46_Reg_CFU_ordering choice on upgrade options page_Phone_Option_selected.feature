@@ -53,4 +53,4 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
 
     Examples:
       | username                      | password | handset         | BSCstatus | BillCap   | CapAmount         | Username     | Action    | tariff                  | consumer | B1     | B2     | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 22au58762393@stf.ref.o2.co.uk | test123  | Galaxy S10 Plus | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | enterCode | 19.99upfront45.00amonth | Someone  | Select | Select | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | 09ma31230326@stf.ref.o2.co.uk | test123  | Galaxy S10 Plus | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | enterCode | 19.99upfront45.00amonth | Someone  | Select | Select | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

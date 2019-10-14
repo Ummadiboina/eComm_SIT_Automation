@@ -5,10 +5,10 @@ Feature: 62_Reg_CS_PayMPhonesHomeDeliveryWithAccessory
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
-   #edit the above
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
+    #edit the above
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
@@ -30,5 +30,5 @@ Feature: 62_Reg_CS_PayMPhonesHomeDeliveryWithAccessory
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset      | color          | Firstname | BSCstatus | BillCap       | CapAmount | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | Galaxy Note9 | Midnight Black | TEST      | Enabled   | DontCapMyBill | Nill      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset        | color          | Firstname | BSCstatus | BillCap       | CapAmount | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Galaxy S8 Plus | Midnight Black | TEST      | Enabled   | DontCapMyBill | Nill      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
