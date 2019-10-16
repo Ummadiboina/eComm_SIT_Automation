@@ -1554,9 +1554,9 @@ public class BasketPageActions extends Environment {
 
 	public static void selectRecycleFromBasketPage() throws IOException, InterruptedException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		//jse.executeScript("window.scrollBy(0,400)", "");
+		jse.executeScript("window.scrollBy(0,400)", "");
 		scrollToAnElement.scrollToElement(pageobjects.BasketPage.recycleHeader);
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
 		Thread.sleep(2000);
 		try {
@@ -1567,7 +1567,7 @@ public class BasketPageActions extends Environment {
 				String recycleText =  recycleOptions.get(i).getText();
 				log.debug("Option "+i+" is: "+recycleText+"\n");
 			}
-
+			Thread.sleep(2000);
 			log.debug("Selecting Recycle credit option\n");
 			driver.findElement(By.xpath("(//div[@class='recycle-radio-wrapper']/div/div/input)[1]")).click();
 			log.debug("Selected Recycle credit option ie::"+recycleOptions.get(1).getText());

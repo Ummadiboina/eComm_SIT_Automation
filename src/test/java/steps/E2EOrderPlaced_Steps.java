@@ -11521,9 +11521,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             log.debug("Currently we are at page: " + driver.getTitle());
-            Thread.sleep(4000);
+            Thread.sleep(6000);
             Agent_DealBuilderPageActions.ValidateBillSpendCap_AgentDealBuilder(BSCstatus);
-            Thread.sleep(4000);
+            Thread.sleep(6000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to validate your bill cap in Agent deal builder page");
@@ -13501,7 +13501,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Thread.sleep(2000);
             Agent_DealBuilderPageActions.SelectSimoTariff(Tariff);
-            Thread.sleep(2000);
+            Thread.sleep(8000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -14576,13 +14576,13 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Validate gift extras tab and perks displayed under gift extras tab when OPAL is ([^\"]*)$")
-    public void selectSpecifiedTariffInAgentChannel(String statusOpal) {
+    @And("^Validate gift extras tab and perks displayed under gift extras tab when OPAL is ([^\"]*) for tariff ([^\"]*)$")
+    public void selectSpecifiedTariffInAgentChannel(String statusOpal, String tariffTerm) {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Thread.sleep(2000);
-            Agent_DealBuilderPageActions.validateGiftExtrasTab(statusOpal);
+            Agent_DealBuilderPageActions.validateGiftExtrasTab(statusOpal, tariffTerm);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to select specified tariff, please see the failure screenshot");

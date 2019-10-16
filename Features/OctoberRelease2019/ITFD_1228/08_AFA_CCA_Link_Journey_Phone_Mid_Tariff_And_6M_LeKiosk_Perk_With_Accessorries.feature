@@ -1,15 +1,15 @@
-Feature: 08_AFA_CCA_Link_Journey_Phone_Mid_Tariff_And_6M_LeKiosk_Perk_With_Accessorries
+Feature: 08_AFA_CCA_Link_Journey_Phone_Mid_Tariff_And_6M_Cafeyn_Perk_With_Accessorries
 
   #launch hooks and get browser
   @Web
-  Scenario Outline: 08_AFA_CCA_Link_Journey_Phone_Mid_Tariff_And_6M_LeKiosk_Perk_With_Accessorries
+  Scenario Outline: 08_AFA_CCA_Link_Journey_Phone_Mid_Tariff_And_6M_Cafeyn_Perk_With_Accessorries
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select a valid perk associated tariff <tariffTerm> <tariffAmt> and <dataValue>
-    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal>
+    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal> for tariff <tariffTerm>
     And select a valid Handset and Tariff combination_new
-    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal>
+    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal> for tariff <tariffTerm>
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And Select valid <perk> of type <perkType> in <journey> agent channel
@@ -33,5 +33,5 @@ Feature: 08_AFA_CCA_Link_Journey_Phone_Mid_Tariff_And_6M_LeKiosk_Perk_With_Acces
     Then order confirmation is displayed
 
     Examples:
-      | Device                | username        | password | tariffTerm | tariffAmt | dataValue | perk                                   | perkType | journey | statusOpal | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
-      | Huawei P30 Pro Aurora | random@test.com | test123  | 30D        | £28       | 20GB      | B:CR7682:Amazon:12M:UnlimitedMusic:FOC | giftPerk | AFA     | Enabled    | HomeDelivery | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |
+      | Device                | username        | password | tariffTerm | tariffAmt | dataValue | perk                   | perkType | journey | statusOpal | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
+      | Huawei P30 Pro Aurora | random@test.com | test123  | 30D        | £28       | 20GB      | B:CR7696:Cafeyn:6M:FOC | giftPerk | AFA     | Enabled    | HomeDelivery | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |

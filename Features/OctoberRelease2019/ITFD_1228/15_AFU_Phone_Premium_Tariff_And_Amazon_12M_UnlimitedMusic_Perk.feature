@@ -7,9 +7,9 @@ Feature: 15_AFU_Phone_Premium_Tariff_And_Amazon_12M_UnlimitedMusic_Perk
     And performs Upgrade for <user>
     And Select a valid PayM <Device>
     And Select a valid perk associated tariff <tariffTerm> <tariffAmt> and <dataValue>
-    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal>
+    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal> for tariff <tariffTerm>
     And select a valid Handset and Tariff combination
-    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal>
+    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal> for tariff <tariffTerm>
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And Select valid <perk> of type <perkType> in <journey> agent channel
