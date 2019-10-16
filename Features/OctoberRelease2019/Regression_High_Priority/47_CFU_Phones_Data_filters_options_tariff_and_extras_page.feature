@@ -43,5 +43,5 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username    | password | handset         | BSCstatus | BillCap   | CapAmount | color      | filtername | Action    | sortoption                 | Username     | Make  | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | inq_jan9269 | test123  | Galaxy S10 Plus | Enabled   | CapMyBill | £0        | Space Grey | high       | enterCode | Monthly data (High to low) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username        | password | handset         | BSCstatus | BillCap   | CapAmount | color      | filtername | Action    | sortoption                 | Username     | Make  | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | testaccepta6818 | test123  | Galaxy S10 Plus | Enabled   | CapMyBill | £0        | Space Grey | high       | enterCode | Monthly data (High to low) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

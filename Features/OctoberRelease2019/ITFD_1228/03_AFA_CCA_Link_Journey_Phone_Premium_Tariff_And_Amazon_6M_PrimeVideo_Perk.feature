@@ -7,9 +7,9 @@ Feature: 03_AFA_CCA_Link_Journey_Phone_Premium_Tariff_And_Amazon_6M_PrimeVideo_P
     And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select a valid perk associated tariff <tariffTerm> <tariffAmt> and <dataValue>
-    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal>
+    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal> for tariff <tariffTerm>
     And select a valid Handset and Tariff combination_new
-    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal>
+    And Validate gift extras tab and perks displayed under gift extras tab when OPAL is <statusOpal> for tariff <tariffTerm>
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And Select valid <perk> of type <perkType> in <journey> agent channel
@@ -34,4 +34,4 @@ Feature: 03_AFA_CCA_Link_Journey_Phone_Premium_Tariff_And_Amazon_6M_PrimeVideo_P
 
     Examples:
       | username                     | password | Device                         | tariffAmt | tariffTerm | dataValue | perk                                   | perkType | journey | statusOpal | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
-      | ink_jun8829@stf.ref.o2.co.uk | test123  | iPhone Xs Max 512GB Space Grey | £31       | 30D        | 30GB      | B:CR7682:Amazon:12M:UnlimitedMusic:FOC | giftPerk | AFA     | Enabled    | HomeDelivery | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |
+      | ink_jun8829@stf.ref.o2.co.uk | test123  | iPhone Xs Max 512GB Space Grey | £31       | 30D        | 30GB      | B:CR7682:Amazon:6M:PrimeVideo:FOC | giftPerk | AFA     | Enabled    | HomeDelivery | Enabled   | £30           | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |

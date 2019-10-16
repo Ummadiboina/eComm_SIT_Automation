@@ -2330,7 +2330,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
     public static void SelectSimoTariff(String Tariff) throws InterruptedException, IOException {
         Agent_DealBuilderPage.SIMOTariffsTab.click();
-        Thread.sleep(2000);
+        Thread.sleep(6000);
 
         if (Tariff.contains("Standard / Simo")) {
             Agent_DealBuilderPage.SIMOTariffsInputField.sendKeys(Tariff);
@@ -2590,7 +2590,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
     }
 
-    public static void validateGiftExtrasTab(String statusOpal) throws InterruptedException, IOException {
+    public static void validateGiftExtrasTab(String statusOpal, String tariffTerm) throws InterruptedException, IOException {
 
         if(statusOpal.equalsIgnoreCase("Enabled")) {
 
@@ -2604,7 +2604,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     log.debug("Device and tariff price combination is not selected\n");
                     Agent_DealBuilderPage.giftExtrasTab.click();
                     log.debug("Clicked on Gift Extras Tab");
-                    Thread.sleep(6000);
+                    Thread.sleep(8000);
                     priceCombinationFlag = false;
                 }else{
                     log.debug("Device and tariff price combination is selected\n");
@@ -2616,29 +2616,55 @@ public class Agent_DealBuilderPageActions extends Environment {
                 //Validating perks are displaying Before/After selecting device and tariff price combination
                 if(priceCombinationFlag){
                     //log.debug("Currently we are validating gift Extras tab after selecting device and tariff price combination\n");
-                    if (driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr")).size() > 0) {
-                        log.debug("As expected, Associated perks are displaying after selecting device and tariff price combination\n");
+                    if(tariffTerm.contains("24M") || tariffTerm.contains("24m")){
+                        if (driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr")).size() > 0) {
+                            log.debug("Perks are displaying for standard tariff. This might be configuration from IBM test data\n");
 
-                        log.debug("The list of perks displayed are::\n");
+                            log.debug("The list of perks displayed are::\n");
 
-                        List<WebElement> listOfPerksDisplayed = driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr"));
+                            List<WebElement> listOfPerksDisplayed = driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr"));
 
-                        for(int i=1; i<=listOfPerksDisplayed.size();i++){
-                            //log.debug("Perk"+(i+1)+":: "+listOfPerksDisplayed.get(i).getText()+"\n");
+                            for (int i = 1; i <= listOfPerksDisplayed.size(); i++) {
+                                //log.debug("Perk"+(i+1)+":: "+listOfPerksDisplayed.get(i).getText()+"\n");
 
-                            log.debug("-----------Perk "+i+" Details-----------\n");
-                            log.debug("Perk Category: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[2]")).getText()+"\n");
-                            log.debug("Perk Product Id: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[3]")).getText()+"\n");
-                            log.debug("Perk Description: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[4]")).getText()+"\n");
-                            log.debug("Perk Discounted Cost: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[6]")).getText()+"\n");
-                            log.debug("Perk Discounted Duration(cost): "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[7]")).getText()+"\n");
-                            log.debug("Perk Future Subscription Cost: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[8]")).getText()+"\n");
-                            log.debug("Perk Upsell: "+driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr["+i+"]/td[9]")).getText()+"\n");
+                                log.debug("-----------Perk " + i + " Details-----------\n");
+                                log.debug("Perk Category: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[2]")).getText() + "\n");
+                                log.debug("Perk Product Id: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[3]")).getText() + "\n");
+                                log.debug("Perk Description: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[4]")).getText() + "\n");
+                                log.debug("Perk Discounted Cost: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[6]")).getText() + "\n");
+                                log.debug("Perk Discounted Duration(cost): " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[7]")).getText() + "\n");
+                                log.debug("Perk Future Subscription Cost: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[8]")).getText() + "\n");
+                                log.debug("Perk Upsell: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[9]")).getText() + "\n");
+                            }
+                            //Assert.fail("Perks are displaying for standard tariff. This might be configuration from IBM test data\n");
+                        }else{
+                                log.debug("As expected, Perks are not displaying for standard tariff\n");
                         }
+                    }else {
+                        if (driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr")).size() > 0) {
+                            log.debug("As expected, Associated perks are displaying after selecting device and tariff price combination\n");
 
-                    }else{
-                        log.debug("Failed, Associated Perks are not displaying\n");
-                        Assert.fail("Failed, Associated Perks are not displaying\n");
+                            log.debug("The list of perks displayed are::\n");
+
+                            List<WebElement> listOfPerksDisplayed = driver.findElements(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr"));
+
+                            for (int i = 1; i <= listOfPerksDisplayed.size(); i++) {
+                                //log.debug("Perk"+(i+1)+":: "+listOfPerksDisplayed.get(i).getText()+"\n");
+
+                                log.debug("-----------Perk " + i + " Details-----------\n");
+                                log.debug("Perk Category: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[2]")).getText() + "\n");
+                                log.debug("Perk Product Id: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[3]")).getText() + "\n");
+                                log.debug("Perk Description: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[4]")).getText() + "\n");
+                                log.debug("Perk Discounted Cost: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[6]")).getText() + "\n");
+                                log.debug("Perk Discounted Duration(cost): " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[7]")).getText() + "\n");
+                                log.debug("Perk Future Subscription Cost: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[8]")).getText() + "\n");
+                                log.debug("Perk Upsell: " + driver.findElement(By.xpath("//*[@id='perksTabContent']/div/table/tbody/tr[" + i + "]/td[9]")).getText() + "\n");
+                            }
+
+                        } else {
+                            log.debug("Failed, Associated Perks are not displaying\n");
+                            Assert.fail("Failed, Associated Perks are not displaying\n");
+                        }
                     }
                 }else{
                     //log.debug("Currently we are validating gift Extras tab before selecting device and tariff price combination\n");

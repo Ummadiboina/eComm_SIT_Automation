@@ -9,7 +9,7 @@ Feature: 53_Reg_Consumer_PreOrder
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
-    #And select <Capacity> capacity of the connected device
+    And select <Capacity> capacity of the connected device
     #And select <condition> condition of the connected device
     And check the status <Status> of the device
     And Navigate to View tariff page
@@ -33,6 +33,6 @@ Feature: 53_Reg_Consumer_PreOrder
 
       #Close the browser
     Examples:
-      | handset     | condition | Firstname | BSCstatus | BillCap   | CapAmount | color | Capacity | Surname | Username     | Status    | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | Mate 20 Pro | Perfect   | TEST      | Enabled   | CapMyBill | £200      | Black | 128GB    | ACCEPTA | TEST ACCEPTA | Pre Order | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset | condition | Firstname | BSCstatus | BillCap   | CapAmount | color      | Capacity | Surname | Username     | Status    | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Pixel 3 | Perfect   | TEST      | Enabled   | CapMyBill | £200      | Just Black | 128GB    | ACCEPTA | TEST ACCEPTA | Pre Order | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
 

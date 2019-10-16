@@ -13,7 +13,7 @@ Feature: 29_Reg_Agent_Buyout
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And clicks on 'Buyout' button
-    #And Validate all the Basket content and checkout
+    And Validate all the Basket content and checkout
     Then Validate deal summary for applied Bill Spend Cap <BillCapAmount> when BSC is <BSCstatus>
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey <PreSelected>
     Then perform all the advisory checks_new
@@ -29,4 +29,4 @@ Feature: 29_Reg_Agent_Buyout
 
     Examples:
       | User        | Device                             | perk                    | perkType | journey | BSCstatus | BillCapAmount | Tariffs | username                      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | 07568418727 | Apple iPhone 7 Plus 32GB Rose Gold | B:CR7696:LeKiosk:6M:FOC | giftPerk | AFU     | Enabled   | £15           | Refresh | 19se53279723@stf.ref.o2.co.uk | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |
+      | 07731445719 | Apple iPhone 7 Plus 32GB Rose Gold | B:CR7696:LeKiosk:6M:FOC | giftPerk | AFU     | Enabled   | £15           | Refresh | 19se53279723@stf.ref.o2.co.uk | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |

@@ -35,5 +35,5 @@ Feature: 140_CFU_Phone_SIMO_OneAddressMatching_PostCode_And_matchingAddress_Shou
 
 
     Examples:
-      | contractLength | Action    | username                      | BSCstatus | houseNumber | postCode | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | 12 Months      | enterCode | 27fe71555947@stf.ref.o2.co.uk | Enabled   |             | SL33FP   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |
+      | contractLength | Action    | username               | BSCstatus | houseNumber | postCode | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | 12 Months      | enterCode | inavl0wx_888973@o2.com | Enabled   |             | SL33FP   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |

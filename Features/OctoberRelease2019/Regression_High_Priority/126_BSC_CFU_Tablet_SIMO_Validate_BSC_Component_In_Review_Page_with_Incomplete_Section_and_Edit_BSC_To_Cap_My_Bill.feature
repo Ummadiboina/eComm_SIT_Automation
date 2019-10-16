@@ -42,6 +42,6 @@ Feature: 126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Inco
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                     | Action    | houseNumber | postCode | password | BillCap       | CapAmount | NewBillCap | NewCapAmount | BSCstatus | contractLength | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 000-11986-20120207170037955@stf.ref.o2.co.uk | enterCode |             | SL33FP   | test123  | DontCapMyBill | Nill      | CapMyBill  | £10          | Enabled   | 12 Months      | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | username                                                | Action    | houseNumber | postCode | password | BillCap       | CapAmount | NewBillCap | NewCapAmount | BSCstatus | contractLength | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | stester1188913e17-b549-41d4-8b28-bfd19a43d5bc@gmail.com | enterCode |             | SL33FP   | test123  | DontCapMyBill | Nill      | CapMyBill  | £10          | Enabled   | 12 Months      | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
 

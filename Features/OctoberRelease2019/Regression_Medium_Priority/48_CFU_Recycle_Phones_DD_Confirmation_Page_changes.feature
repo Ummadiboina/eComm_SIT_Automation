@@ -38,7 +38,7 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
+    #And select <Capacity> capacity of the connected device
     And check the status <Status> of the device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
@@ -65,4 +65,4 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
 
     Examples:
       | username               | color | Capacity | password | BSCstatus | BillCap   | CapAmount | handset  | tariff                  | Firstname | Surname | Username     | Action    | Status           | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | in06427n_456810@o2.com | Gold  | 64GB     | test123  | Enabled   | CapMyBill | £5        | iPhone 8 | 29.99upfront60.34amonth | TEST      | ACCEPTA | TEST ACCEPTA | enterCode | Delayed Delivery | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
+      | in06427n_247379@o2.com | Gold  | 64GB     | test123  | Enabled   | CapMyBill | £5        | iPhone 8 | 29.99upfront60.34amonth | TEST      | ACCEPTA | TEST ACCEPTA | enterCode | Delayed Delivery | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | Yes         | No       |
