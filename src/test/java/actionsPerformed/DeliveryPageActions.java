@@ -2301,10 +2301,32 @@ public class DeliveryPageActions extends Environment {
             String emailAdd = DeliveryPage.Email_Address.getAttribute("value");
             log.debug("Email field is pre populated from PayPal account ie: " + emailAdd);
 
-            Select dropdown = new Select(pageobjects.DeliveryPage.Title);
-            dropdown.selectByIndex(2);
-            log.debug("Selected the dropdown Mrs");
-            Reporter.log("Selected the dropdown Mrs");
+            if (driver.findElements(By.xpath("//span[@id='titleSelectBoxItArrowContainer']")).size() > 0) {
+                driver.findElement(By.xpath("//span[@id='titleSelectBoxItArrowContainer']")).click();
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
+
+                WebElement addressElement = driver.findElement(By.xpath("//ul[@id='titleSelectBoxItOptions']/li[2]"));
+                String selectedAddress = addressElement.getText();
+
+                Thread.sleep(3000);
+                Point coordinates = addressElement.getLocation();
+                Robot robotClass = new Robot();
+                robotClass.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                Thread.sleep(2000);
+                log.debug("Moving Mouse address dropdown");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(addressElement).click().build().perform();
+                log.debug("Address selected from dropdown list: " + selectedAddress);
+            }
+
+            Thread.sleep(1000);
+            Screenshots.captureScreenshot();
+
+            log.debug("Selected the dropdown Mr");
+            Reporter.log("Selected the dropdown Mr");
+
 
 
             String firstName = DeliveryPage.First_Name.getAttribute("value");
@@ -2322,10 +2344,10 @@ public class DeliveryPageActions extends Environment {
 
             DeliveryPage.Password.sendKeys("NTTDATA123");
             DeliveryPage.security_answer.sendKeys("SitTester");
-            DeliveryPage.date.sendKeys("25");
-            DeliveryPage.Month.sendKeys("01");
-            DeliveryPage.year.sendKeys("1957");
-            DeliveryPage.year.sendKeys(Keys.TAB);
+            DeliveryPage.DOB.sendKeys("1-09-1988");
+            DeliveryPage.DOB.sendKeys(Keys.TAB);
+            log.debug("Entered all the relavant details");
+            Screenshots.captureScreenshot();
             log.debug("Entered all the other relavant details");
             Screenshots.captureScreenshot();
         } catch (Exception e) {
@@ -2930,6 +2952,175 @@ public class DeliveryPageActions extends Environment {
         }catch(Exception e){
             log.debug("Not able to select I do not have PAC or STAC code CTA is not displaying: "+e);
         }
+    }
+    public static void ContinueDPPaymentPage() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        log.debug("Go to Payments Continue button function\n");
+        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinuePaymentPage);
+        log.debug("Go to Payments Continue button is selected\n");
+
+        Screenshots.captureScreenshot();
+    }
+
+    public static void SetDPDeliveryPage() throws InterruptedException {
+        Thread.sleep(4000);
+        try {
+
+            String PaypalDeliveryImg = DeliveryPage.PayPalDeliveryImg.getText();
+            log.debug("Paypal Img shown is delivery page window is: " + PaypalDeliveryImg + "\n");
+
+            String PaypalDeliveryPostalcode = DeliveryPage.PayPalPostralcode.getText();
+            log.debug("Paypal Delivery postalcode shown is delivery page window is: " + PaypalDeliveryPostalcode + "\n");
+            Thread.sleep(2000);
+
+                if (driver.findElements(By.xpath("(//input[@id='housenumber'])[1]")).size() > 0) {
+                    pageobjects.DeliveryPage.HouseNumberorName.sendKeys("312");
+                    log.debug("House number or name enter ");
+                    Thread.sleep(5000);
+                    pageobjects.DeliveryPage.Find_Button.click();
+                    log.debug("Clicked on the Find address button");
+                    Thread.sleep(5000);
+                    Screenshots.captureScreenshot();
+                }
+
+
+                /*JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,180)", "");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();*/
+
+                if (driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItContainer']")).isDisplayed()) {
+                    if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
+                        List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
+                        log.debug("The size of matching address: " + addresses.size());
+                        postalcodeStatus = "Valid";
+
+                            if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
+                                driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
+                                Thread.sleep(3000);
+                                Screenshots.captureScreenshot();
+
+                                WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
+                                String selectedAddress = addressElement.getText();
+
+                                Thread.sleep(3000);
+                                Point coordinates = addressElement.getLocation();
+                                Robot robot = new Robot();
+                                robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                                Thread.sleep(2000);
+                                log.debug("Moving Mouse address dropdown");
+
+                                Actions action = new Actions(driver);
+                                action.moveToElement(addressElement).click().build().perform();
+                                log.debug("Address selected from dropdown list: " + selectedAddress);
+                                Thread.sleep(3000);
+                                Screenshots.captureScreenshot();
+                            }
+
+                    }
+                }//DeliveryPage.ContinueDeliveryDPaddress.click();
+                //jse.executeScript("window.scrollBy(0,-180)", "");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+
+
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+    public static void DPDeliveryPageValidation(String postalCode, String HouseNumber, String postalCodeType) throws InterruptedException {
+        Thread.sleep(4000);
+        try {
+            String PaypalDeliveryImg = DeliveryPage.PayPalDeliveryImg.getText();
+            log.debug("Paypal Img shown is delivery page window is: " + PaypalDeliveryImg + "\n");
+
+            if (postalCodeType.equals("Valid")) {
+                String PaypalDeliveryPostalcode = DeliveryPage.PayPalPostralcode.getText();
+                log.debug("Paypal Delivery postalcode shown is delivery page window is: " + PaypalDeliveryPostalcode + "\n");
+
+                if (postalCode.equals("residential")) {
+
+                    if (driver.findElements(By.xpath("(//input[@id='housenumber'])[1]")).size() > 0) {
+                        pageobjects.DeliveryPage.HouseNumberorName.sendKeys(HouseNumber);
+                        pageobjects.DeliveryPage.HouseNumberorName.sendKeys(Keys.TAB);
+                        log.debug("House number or name enter ");
+                        Thread.sleep(5000);
+                        if (HouseNumber.equals("312") || HouseNumber.equals("123")) {
+                            pageobjects.DeliveryPage.Find_Button.click();
+                            log.debug("Clicked on the Find address button");
+                            Thread.sleep(5000);
+                        }else{
+                            String invalideTextMsg = DeliveryPage.HouseNumberInvalide.getText();
+                            log.debug(" Entered invalid HouseNumber in Housenumber field & displayed error message as ::  (" + invalideTextMsg + ")");
+                            Thread.sleep(2000);
+                        }
+                        Screenshots.captureScreenshot();
+                    }else{
+                        log.debug("House NUmber field is not displaying for residential postal code\n");
+                        Assert.fail("House NUmber field is not displaying for residential postal code\n");
+                    }
+                } else if(postalCode.equals("Commercial")) {
+
+                    log.debug("Paypal Delivery postalcode shown is delivery page window is: " + PaypalDeliveryPostalcode + "\n");
+                }
+
+                if (postalCode.equals("Commercial") || (postalCode.equals("residential") && HouseNumber.equals("312") || HouseNumber.equals("123"))) {
+
+                    if (driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItContainer']")).isDisplayed()) {
+                        if (driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li")).size() > 0) {
+                            List<WebElement> addresses = driver.findElements(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li | //ul[@id='address-selectorSelectBoxItOptions']/li"));
+                            log.debug("The size of matching address: " + addresses.size());
+                            postalcodeStatus = "Valid";
+
+                            if (driver.findElements(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).size() > 0) {
+                                driver.findElement(By.xpath("//span[@id='delivery-address-selectorSelectBoxItArrowContainer'] | //span[@id='address-selectorSelectBoxItArrowContainer']")).click();
+                                Thread.sleep(3000);
+                                Screenshots.captureScreenshot();
+
+                                WebElement addressElement = driver.findElement(By.xpath("//ul[@id='delivery-address-selectorSelectBoxItOptions']/li[1] | //ul[@id='address-selectorSelectBoxItOptions']/li[1]"));
+                                String selectedAddress = addressElement.getText();
+
+                                Thread.sleep(3000);
+                                Point coordinates = addressElement.getLocation();
+                                Robot robot = new Robot();
+                                robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+                                Thread.sleep(2000);
+                                log.debug("Moving Mouse address dropdown");
+
+                                Actions action = new Actions(driver);
+                                action.moveToElement(addressElement).click().build().perform();
+                                log.debug("Address selected from dropdown list: " + selectedAddress);
+                                Thread.sleep(3000);
+                                Screenshots.captureScreenshot();
+                            }
+
+                        }
+                    }
+                }
+            } else if (postalCodeType.equals("InValid")) {
+                String PaypalDeliveryPostalcodeErrorMsg = DeliveryPage.PaypalDeliveryPostalcodeErrorMsg.getText();
+
+                if (pageobjects.DeliveryPage.PaypalDeliveryPostalcodeErrorMsg.isDisplayed()) {
+                    log.debug("As expected error message is displaying for Invalid postal code is: " + PaypalDeliveryPostalcodeErrorMsg + "\n");
+                } else {
+                    log.debug("As expected error message is not displaying for Invalid postal code");
+                    Assert.fail("As expected error message is not displaying for Invalid postal code\n");
+                }
+            }
+        }catch(Exception e) {
+                e.printStackTrace();
+            }
+    }
+    public static void DeliveryDPaddressButton() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        log.debug("Delivery Continue button function\n");
+        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.ContinueDeliveryDPaddress);
+        log.debug("Delivery Continue button is selected\n");
+
+        Screenshots.captureScreenshot();
+
     }
 
 

@@ -253,16 +253,20 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "//a[text()='Change tariff']")
 	public static WebElement changetariff;
 
-	@FindBy(how = How.XPATH, using = "//div[@class='basket-right-container']/aside/section[2]/h2")
+	//@FindBy(how = How.XPATH, using = "//div[@class='basket-right-container']/aside/section[2]/h2")
+	//public static WebElement acceptedPayments;
+
+	@FindBy(how = How.XPATH, using = "(//div[@class='checkout-img-container'])[1]")
 	public static WebElement acceptedPayments;
 
-	@FindBy(how = How.XPATH, using = "(//button[@id='fastCheckoutBtn'])[1]")
+	//div[@class='checkout-img-container'])[1]
+	@FindBy(how = How.XPATH, using = "//input[@id='fastCheckoutBtn']")
 	public static WebElement paymentCTA;
 
-	@FindBy(how = How.XPATH, using = "(//div[@class='expCheckout-txt'])[1]")
+	@FindBy(how = How.XPATH, using = "//input[@id='fastCheckoutBtn']")
 	public static WebElement paymentCopyText;
 
-	@FindBy(how = How.XPATH, using = "//div[contains(@class,'overlay-box fatcheckoutPopUp')]")
+	@FindBy(how = How.XPATH, using = "//div[contains(@class,'activateOverlayContent overlay-box accessible-class fatcheckoutPopUp')]")
 	public static WebElement fastCheckoutOverlay;
 
 	@FindBy(how = How.XPATH, using = "//div[@id='checkoutpopup']/p[1]")
@@ -295,7 +299,7 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "//button[@id='btnLogin']")
 	public static WebElement payPalLogInCTA;
 
-	@FindBy(how = How.XPATH, using = "//section[@class='product-details']/div[3]/div/p[1]")
+	@FindBy(how = How.XPATH, using = "//div[@class='basket-card total-section']")
 	public static WebElement upFrontValue;
 
 	@FindBy(how = How.XPATH, using = "//p[@class='bannerLine']")
@@ -312,6 +316,18 @@ public class BasketPage {
 
 	@FindBy(how = How.XPATH, using = "//div[@class='recycle-header']")
 	public static WebElement recycleHeader;
+
+
+	@FindBy(how = How.XPATH, using = "(//h4[@class='noBottom paymentsHeader alpha'])")
+	public static WebElement Choose_a_way_to_pay;
+
+	@FindBy(how = How.XPATH, using = "//div[@id='button']")
+	public static WebElement continueCTA;
+
+	@FindBy(how = How.XPATH, using = "//div[@id='button']")
+	public static WebElement InternatinalcardErrorMsg;
+
+
 
 
 }

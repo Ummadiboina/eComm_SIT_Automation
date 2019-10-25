@@ -2357,6 +2357,7 @@ public class E2EOrderPlaced_Steps {
 
             Thread.sleep(5000);
             AgreementPageActions.KeyInformation();
+
             Thread.sleep(5000);
             AgreementPageActions.secciSection();
             Thread.sleep(5000);
@@ -13697,7 +13698,7 @@ public class E2EOrderPlaced_Steps {
         try{
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
-            BasketPageActions.validateDigitalPaymentInBasketPage(journey, DPFlag, DPStatus);
+            BasketPageActions.DigitalPaymentInBasketPageValidation(journey, DPFlag, DPStatus);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -13711,7 +13712,7 @@ public class E2EOrderPlaced_Steps {
         try{
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
-            BasketPageActions.makePaymentWithPayPalInBasketPage(payPalUser, payPalPassword);
+            BasketPageActions.PaymentWithPayPalInBasketPage(payPalUser, payPalPassword);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -14603,4 +14604,185 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to select specified tariff, please see the failure screenshot");
         }
     }
+
+    @And("^Enter delivery details and validate DP delivery address in delivery page$")
+    public void setDPPostalCodeInDeliveryPage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.SetDPDeliveryPage();
+            Thread.sleep(2000);
+            DeliveryPageActions.DeliveryDPaddressButton();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.selectDoNotHavePacStacCode();
+            /*JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-120)", "");*/
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinuePaymentPage();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input title details in delivery page");
+            Assert.fail("Unable to input title details in delivery page");
+        }
+    }
+
+
+    @And("^land on the payment page and input ([^\"]*) and other details and Validate DP$")
+    public void CheckPaymentPage_DP_journey(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+
+            Thread.sleep(10000);
+            //CommonFunctionscheckTitle("Payment Page");
+            PaymentPageActions.Set_Bank_details(Username);
+            Thread.sleep(5000);
+            PaymentPageActions.Time_At_Address();
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(5000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
+
+            Thread.sleep(12000);
+
+          PaymentPageActions.GoToAgreement();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
+
+    @And("^Enter delivery details and Validate ([^\"]*) and ([^\"]*) details for ([^\"]*) in delivery page$")
+    public void setDPPostalCodeInvalide(String postalCode, String HouseNumber, String postalCodeType) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.DPDeliveryPageValidation(postalCode, HouseNumber, postalCodeType);
+            Thread.sleep(2000);
+            DeliveryPageActions.DeliveryDPaddressButton();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.selectDoNotHavePacStacCode();
+            /*JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-120)", "");*/
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinuePaymentPage();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input title details in delivery page");
+            Assert.fail("Unable to input title details in delivery page");
+        }
+    }
+
+    @And("^Validate Unverified account user and error message$")
+    public void validateUnverfiedUser() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            PaymentPageActions.validateUnverfiedUserErrorPage();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable Validate Unverified account user and error message");
+            Assert.fail("Validate Unverified account user and error message");
+        }
+    }
+
+    @And("^Validate Error message for International card$")
+    public void validateInternationalCard() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            BasketPageActions.validateInternationalCard();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable Validate Error message for International card");
+            Assert.fail("Unable Validate Error message for International card");
+        }
+    }
+    @And("^Enter delivery details and validate DP Click and Collect delivery address in delivery page$")
+    public void validateClickandcollectDeliveryPage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            log.debug("Verifying the selected click and collect store in delivery page\n");
+            Screenshots.captureScreenshot();
+            //Click and Collect tab under delivery section should be in Active/Selected state
+            DeliveryPageActions.clickAndCollectTabState();
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            //jse.executeScript("window.scrollBy(0,120)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ContinueDelivery();
+            //jse.executeScript("window.scrollBy(0,-120)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.selectDoNotHavePacStacCode();
+            Thread.sleep(3000);
+            DeliveryPageActions.ContinuePaymentPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page for click and collect journey\n");
+            Assert.fail("Unable to input details in delivery page for click and collect journey\n");
+        }
+    }
+    @And("^land on the payment page and input ([^\"]*) and other details and Validate DP with click and collect address store$")
+    public void paymentchecks_ClickAndCollect(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            //CommonFunctionscheckTitle("Payment Page");
+            PaymentPageActions.Set_Bank_details(Username);
+            Thread.sleep(10000);
+            PaymentPageActions.Time_At_Address_CC();
+            //PaymentPageActions.Time_At_Address();
+            Thread.sleep(10000);
+            PaymentPageActions.affordabilityValidation("Employed", "£10,001-£20,000");
+            Thread.sleep(10000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
+    @Then("^upon entering Valid details for DP additional deposite$")
+    public void AdditionalDipposite_DPCarddetails() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, AdditionalInformationPage.class);
+            AdditionalInformationPageActions.AdditionalDPCarddetails();
+            Thread.sleep(2000);
+            AdditionalInformationPageActions.continueDPPayment_Button();
+            Thread.sleep(2000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("unable to add details in Additional information page");
+            Assert.fail("unable to add details in Additional information page");
+
+        }
+    }
+
+
 }
