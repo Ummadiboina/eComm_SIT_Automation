@@ -182,4 +182,11 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//input[@id='newSortCode']")
     public static WebElement sortCode;
 
+    @FindBy(how = How.XPATH, using = "//button[@id='continueDigitalPayment']")
+    public static WebElement GoToAgreement;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='continueDigitalPayment']")
+    public static WebElement PaypalUnverifiedUserErrorMsg;
+
+
 }

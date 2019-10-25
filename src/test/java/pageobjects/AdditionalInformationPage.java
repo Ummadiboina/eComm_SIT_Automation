@@ -91,4 +91,22 @@ public class AdditionalInformationPage {
 	@FindBy(how=How.XPATH,using="//label[@for='otac']")
 	public static WebElement EnterOtacCodeText;
 
+	@FindBy(how = How.XPATH, using = "(//h4[@class='noBottom paymentsHeader alpha'])")
+	public static WebElement Choose_a_way_to_pay;
+
+	@FindBy(how = How.XPATH, using = "//ul[@class='charges']/li[2]")
+	public static WebElement cardOption;
+
+	@FindBy(how = How.XPATH, using = "//div[@id='button']")
+	public static WebElement continueCTA;
+
+	@FindBy(how = How.XPATH, using = "//input[@id='confirmButtonTop']")
+	public static WebElement continuePayPalCTA;
+
+	@FindBy(how = How.XPATH, using = "//div[@id='paypal-button']/div/div")
+	public static WebElement PayPalCTA;
+
+	@FindBy(how = How.XPATH, using = "//span[@id='continueDigitalPayment-label']")
+	public static WebElement continueDPPayment;
+
 }
