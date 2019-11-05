@@ -14783,6 +14783,51 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+    
+    @And("Verify network type of tariff in TnE page ([^\"]*)$")
+    public void verifyTypleOfNetworkInTnEpage(String networkType) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(2000);
+            PAYMandPAYGTariffAndExtrasPageActions.verifyNetorkTye(networkType);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Falied to validate the Newroktype TnE page");
+            Assert.fail("Falied to validate the Newroktype TnE page");
+        }
+    }
+
+    @And("Verify network type from prepackage tariff in TnE page ([^\"]*)$")
+    public void verifyPrepackageType_TnEpage(String networkType) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(2000);
+            PAYMandPAYGTariffAndExtrasPageActions.VerifyOnly5GtariffsShouldDisplay_PrepackageSection_TnE(networkType);
+            Thread.sleep(2000);
+            PAYMandPAYGTariffAndExtrasPageActions.verifyNetorkTye(networkType);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Falied to validate the Newroktype TnE page");
+            Assert.fail("Falied to validate the Newroktype TnE page");
+        }
+    }
+
+
+    @And("Select 5G tariff")
+    public void select5G_Tariff() {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            Thread.sleep(2000);
+            PAYMSimOPageActions.select5Gtariff();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Falied to validate the Newroktype TnE page");
+            Assert.fail("Falied to validate the Newroktype TnE page");
+        }
+    }
 
 
 }
