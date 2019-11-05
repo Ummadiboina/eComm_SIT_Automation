@@ -91,7 +91,7 @@ public class PaymentPageActions extends Environment {
             Screenshots.captureScreenshot();
             pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
             log.debug("Clicked on the Accept Terms checkbox");
-            Thread.sleep(5000);
+            Thread.sleep(7000);
             Screenshots.captureScreenshot();
             jse.executeScript("arguments[0].click();", pageobjects.PaymentPage.payment_method_continueCTA);
             //pageobjects.PaymentPage.payment_method_continue_cta.click();
@@ -693,6 +693,7 @@ public class PaymentPageActions extends Environment {
             log.debug("Clicked on Payment method continue button");
         }
         Screenshots.captureScreenshot();
+
     }
 
     public static void SIMO_Time_At_Address() throws IOException, InterruptedException {
@@ -711,8 +712,32 @@ public class PaymentPageActions extends Environment {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         Thread.sleep(2000);
         executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.SIMOConfirm_Address_Checkbox);
+
         /*pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
         log.debug("Clicked on the Confirm Address checkbox");*/
         Screenshots.captureScreenshot();
     }
+
+    public static void GoToAgreement() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        log.debug("Go to Payments Continue button function\n");
+        js.executeScript("arguments[0].click();", pageobjects.PaymentPage.GoToAgreement);
+        log.debug("Go to Payments Continue button is selected\n");
+
+        Screenshots.captureScreenshot();
+    }
+
+    public static void validateUnverfiedUserErrorPage() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        String UnverifiedUserErrorMsg = PaymentPage.PaypalUnverifiedUserErrorMsg.getText();
+
+                if (pageobjects.PaymentPage.PaypalUnverifiedUserErrorMsg.isDisplayed()) {
+                    log.debug("As expected error message is displaying for Paypal Unverified user: " + UnverifiedUserErrorMsg + "\n");
+         } else {
+        log.debug("As expected error message is not displaying for Paypal Unverified user");
+        Assert.fail("As expected error message is not displaying for Paypal Unverified user\n");
+    }Screenshots.captureScreenshot();
+}
+
 }
