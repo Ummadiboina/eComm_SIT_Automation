@@ -189,6 +189,10 @@ public class PAYMSimOPage {
 	
 	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'12 months')])[2] | (//a[contains(text(),'12 months')])"))
 	public static WebElement months12tab;
+
+	@FindBy(how=How.XPATH,using=("//div[@name='P12M']//li[@class='dmt-line-item col-md-4']/span[contains(text(),'data')]"))
+	public static WebElement dataNetworkType;
+
 	
 	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'30 days')])[2] | (//a[contains(text(),'30 days')])"))
 	public static WebElement days30tab;

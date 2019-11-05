@@ -8,10 +8,6 @@ Feature: 08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
-    #provide handset which is already set as delayed delivery
-    #And click on the color dropdown
-    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    #And select <color> color of the connected device
     And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>

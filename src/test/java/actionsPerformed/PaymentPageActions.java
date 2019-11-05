@@ -693,7 +693,6 @@ public class PaymentPageActions extends Environment {
             log.debug("Clicked on Payment method continue button");
         }
         Screenshots.captureScreenshot();
-
     }
 
     public static void SIMO_Time_At_Address() throws IOException, InterruptedException {
@@ -712,10 +711,8 @@ public class PaymentPageActions extends Environment {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         Thread.sleep(2000);
         executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.SIMOConfirm_Address_Checkbox);
-
         /*pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
         log.debug("Clicked on the Confirm Address checkbox");*/
         Screenshots.captureScreenshot();
     }
-
 }

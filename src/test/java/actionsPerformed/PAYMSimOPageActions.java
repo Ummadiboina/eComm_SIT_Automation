@@ -1,26 +1,19 @@
 package actionsPerformed;
 
-import java.awt.AWTException;
-import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
+import GlobalActions.Screenshots;
 import GlobalActions.scrollToAnElement;
-import org.openqa.selenium.Keys;
+import helpers.Environment;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import GlobalActions.Screenshots;
-import helpers.Environment;
 import pageobjects.PAYMSimOPage;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class PAYMSimOPageActions extends Environment {
 	final static Logger log = Logger.getLogger("PAYMSimOPageActions");
@@ -1377,4 +1370,28 @@ public class PAYMSimOPageActions extends Environment {
 		}
 		Screenshots.captureScreenshot();
 	}
+
+	public static void select5Gtariff() {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+			int tariffsDispayed_payMonthlyDeal = driver.findElements(By.xpath("//div[@name='P12M']//li[@class='dmt-line-item col-md-4']/span[contains(text(),'data')]")).size();
+			if (tariffsDispayed_payMonthlyDeal > 0) {
+				for (int i = 0; i < tariffsDispayed_payMonthlyDeal - 1; i++) {
+					if (driver.findElement(By.xpath("(//div[@name='P12M']//li[@class='dmt-line-item col-md-4']/span[contains(text(),'data')])[" + i + "]")).getText().contains("5G")) {
+						driver.findElement(By.xpath("(//div[@name='P12M']//li[@class='dmt-line-item col-md-4']/span[contains(text(),'data')]/../../../..//button)[" + i + "]")).click();
+						Thread.sleep(2000);
+						break;
+					}
+				}
+			} else {
+				Assert.fail("Non Of the 5G tariff is configure for the sim only Journey");
+			}
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.debug("Fail to select 5G tariff");
+			org.testng.Assert.fail("Fail to select 5G tariff");
+		}
+	}
+
 }

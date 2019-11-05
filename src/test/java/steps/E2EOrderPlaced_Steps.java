@@ -1,38 +1,29 @@
 package steps;
 
-        import java.awt.*;
-        import java.awt.event.KeyEvent;
-        import java.io.IOException;
-        import java.util.*;
-        import java.util.List;
-        import java.util.concurrent.TimeUnit;
-
         import GlobalActions.*;
-        import actionsPerformed.*;
-        import cucumber.api.DataTable;
-        import javafx.stage.Screen;
-        import org.apache.log4j.Logger;
-        import org.openqa.selenium.By;
-        import org.openqa.selenium.JavascriptExecutor;
-        import org.openqa.selenium.WebDriver;
-        import org.openqa.selenium.WebElement;
-        import org.openqa.selenium.support.PageFactory;
+import actionsPerformed.*;
+import cucumber.api.DataTable;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import helpers.Filereadingutility;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import pageobjects.*;
 
-        import GlobalActions.Autoredirection;
-        import GlobalActions.CommonUtilities;
-        import GlobalActions.JuneReleaseValidations;
-        import GlobalActions.MouseHoverAction;
-
-
-        import cucumber.api.PendingException;
-        import cucumber.api.java.en.And;
-        import cucumber.api.java.en.Given;
-        import cucumber.api.java.en.Then;
-        import cucumber.api.java.en.When;
-        import helpers.Filereadingutility;
-        import org.testng.Assert;
-        import org.testng.asserts.Assertion;
-        import pageobjects.*;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.*;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class E2EOrderPlaced_Steps {
 
@@ -14603,4 +14594,51 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to select specified tariff, please see the failure screenshot");
         }
     }
+
+    @And("Verify network type of tariff in TnE page ([^\"]*)$")
+    public void verifyTypleOfNetworkInTnEpage(String networkType) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(2000);
+            PAYMandPAYGTariffAndExtrasPageActions.verifyNetorkTye(networkType);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Falied to validate the Newroktype TnE page");
+            Assert.fail("Falied to validate the Newroktype TnE page");
+        }
+    }
+
+    @And("Verify network type from prepackage tariff in TnE page ([^\"]*)$")
+    public void verifyPrepackageType_TnEpage(String networkType) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(2000);
+            PAYMandPAYGTariffAndExtrasPageActions.VerifyOnly5GtariffsShouldDisplay_PrepackageSection_TnE(networkType);
+            Thread.sleep(2000);
+            PAYMandPAYGTariffAndExtrasPageActions.verifyNetorkTye(networkType);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Falied to validate the Newroktype TnE page");
+            Assert.fail("Falied to validate the Newroktype TnE page");
+        }
+    }
+
+
+    @And("Select 5G tariff")
+    public void select5G_Tariff() {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            Thread.sleep(2000);
+            PAYMSimOPageActions.select5Gtariff();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Falied to validate the Newroktype TnE page");
+            Assert.fail("Falied to validate the Newroktype TnE page");
+        }
+    }
+
+
 }
