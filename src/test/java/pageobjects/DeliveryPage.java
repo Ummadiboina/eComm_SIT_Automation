@@ -452,6 +452,28 @@ public class DeliveryPage {
 
     @FindBy(how = How.XPATH, using = "(//span[@id='btn-continue-next-section-label'])[2]//parent::button")
     public static WebElement ContinueDeliveryCTA;
+
+    @FindBy(how = How.XPATH, using = "//img[@alt='Paypal Logo']")
+    public static WebElement PayPalDeliveryImg;
+
+    @FindBy(how = How.XPATH, using = "//p[@id='postcodeDetails']")
+    public static WebElement PayPalPostralcode;
+
+    @FindBy(how = How.XPATH, using = "(//input[@id='housenumber'])[1]")
+    public static WebElement HouseNumberorName;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='housenumber-find']")
+    public static WebElement Find_Button;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='confirm-address']")
+    public static WebElement ContinueDeliveryDPaddress;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='confirm-address']")
+    public static WebElement HouseNumberInvalide;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='confirm-address']")
+    public static WebElement PaypalDeliveryPostalcodeErrorMsg;
+
 }
 
 

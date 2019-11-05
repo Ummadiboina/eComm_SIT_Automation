@@ -2,7 +2,9 @@ package actionsPerformed;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -12,6 +14,8 @@ import cucumber.api.DataTable;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import pageobjects.AdditionalInformationPage;
+import pageobjects.BasketPage;
 import pageobjects.PaymentPage;
 
 public class AdditionalInformationPageActions extends Environment {
@@ -170,5 +174,68 @@ public class AdditionalInformationPageActions extends Environment {
 
 		Screenshots.captureScreenshot();
 	}
+	public static void AdditionalDPCarddetails() {
+		try{
+		AdditionalInformationPage.PayPalCTA.click();
+		Thread.sleep(20000);
+		Screenshots.captureScreenshot();
+
+		String Mainwindow = driver.getWindowHandle();
+		//getting all the popup windows , hence using getwindowhandles instead of
+
+		Set<String> s1 = driver.getWindowHandles();
+		Iterator<String> i1 = s1.iterator();
+		while (i1.hasNext()) {
+			String ChildWindow = i1.next();
+			if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
+				// Switching to Child window
+				driver.switchTo().window(ChildWindow);
+				log.debug("Switched to child window");
+
+				String ChooseWayToPay = AdditionalInformationPage.Choose_a_way_to_pay.getText();
+		        log.debug("Choose_a_way_to_pay displayed in PayPal window is: "+ChooseWayToPay+"\n");
+		         Thread.sleep(2000);
+		         if(ChooseWayToPay.contains("Choose a way to pay")){
+			     log.debug("Choose_a_way_to_pay displayed in PayPal window is shown in Basket page\n");
+		         }else{
+			    log.debug("Failed: Choose_a_way_to_pay displayed in PayPal window not shown in Basket page\n");
+			   //Assert.fail("Failed: Choose_a_way_to_pay displayed in PayPal window not shown in Basket page\n");
+		}
+
+		log.debug("Selecting card option with ending number 106\n");
+		AdditionalInformationPage.cardOption.click();
+		log.debug("Selected card option with ending number 106\n");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+
+		log.debug("Clicking on PayPal continue CTA\n");
+		AdditionalInformationPage.continueCTA.click();
+		log.debug("Clicked on PayPal continue CTA\n");
+		Thread.sleep(3000);
+
+		log.debug("Clicking on PayPal continue CTA\n");
+		AdditionalInformationPage.continuePayPalCTA.click();
+		log.debug("Clicked on PayPal continue CTA\n");
+		Thread.sleep(3000);
+	}
+}}catch(Exception e){
+		log.debug("Exception found "+e);
+	}
+}
+
+	public static void continueDPPayment_Button() throws InterruptedException, IOException {
+		Thread.sleep(3000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		log.debug("Delivery Continue button function\n");
+		js.executeScript("arguments[0].click();", pageobjects.AdditionalInformationPage.continueDPPayment);
+		log.debug("Delivery Continue button is selected\n");
+
+		Screenshots.captureScreenshot();
+
+	}
+
+
 
 }
+
+
