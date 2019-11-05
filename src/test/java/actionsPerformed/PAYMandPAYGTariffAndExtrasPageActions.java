@@ -1,28 +1,26 @@
 package actionsPerformed;
 
-import java.awt.*;
+import GlobalActions.Screenshots;
+import GlobalActions.scrollToAnElement;
+import helpers.Environment;
+import helpers.setRuntimeProperty;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.log4j.Logger;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import pageobjects.PAYMandPAYGTariffAndExtrasPage;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import GlobalActions.scrollToAnElement;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.openqa.selenium.*;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-
-import GlobalActions.Screenshots;
-import helpers.Environment;
-import helpers.setRuntimeProperty;
-import pageobjects.PAYMandPAYGTariffAndExtrasPage;
-import steps.Hooks;
 
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	final static Logger log = Logger.getLogger("PAYMandPAYGTariffAndExtrasPageActions");
@@ -1921,6 +1919,35 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}else{
 			Assert.fail("Not able to GO PD page");
 		}Screenshots.captureScreenshot();
+	}
+
+	public static void verifyNetorkTye(String network) throws IOException, InterruptedException {
+		Thread.sleep(3000);
+		if (driver.findElements(By.xpath("//li[@class='tariffSpeed']")).contains("5G ready")) {
+			log.debug("Successfully verifyed the netwrok type is 5G in the TnE page");
+		}else {
+			Assert.fail("Failed :: You have choosen 4G type network, Please select the 5G network type tariff and procced your journey");
+		}
+		Screenshots.captureScreenshot();
+	}
+
+	public static void VerifyOnly5GtariffsShouldDisplay_PrepackageSection_TnE(String network) throws IOException, InterruptedException {
+		Thread.sleep(3000);
+		int noOfTariffsDisplayed = driver.findElements(By.xpath("//div[@class='dataMobile']")).size();
+		Screenshots.captureScreenshot();
+
+		if (PAYMandPAYGTariffAndExtrasPage.mobileData.getText().contains("5G")) {
+			for (int i = 1; i < noOfTariffsDisplayed; i++) {
+				if (driver.findElement(By.xpath("//(div[@class='dataMobile'])[" + i + "]")).getText().contains("5G")) {
+					log.debug("Displayed netwrok type is 5G in the TnE page");
+				} else {
+					Assert.fail("Displayed 4G ready tariff insteade 5G");
+				}
+			}
+
+		}
+		PAYMandPAYGTariffAndExtrasPage.SelectAnyPayGTariff.click();
+		Thread.sleep(1000);
 	}
 
 }

@@ -17,5 +17,5 @@ Feature: 72_CVOSPreOrder
    # And I click on 'Stockpot' tab and search using <SKUID> to see the stock status then I should see them in Pre Order status
 
     Examples:
-      | username          | Password          | SKUID    | Search_by_model  | Username1    | Password1     |
-      | SupplyChainAdmin1 | SupplyChainAdmin1 | 1AMFI32N | Amazon Fire 64GB | TradingAdmin | TradingAdmin1 |
+      | username          | Password          | SKUID    | Search_by_model  | Username1     | Password1     |
+      | SupplyChainAdmin1 | SupplyChainAdmin1 | 1AMFI32N | Amazon Fire 64GB | TradingAdmin1 | TradingAdmin1 |
